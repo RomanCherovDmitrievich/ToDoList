@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.todomanager.controllers.MainController"
+      spacing="20" 
+      style="-fx-padding: 20; -fx-background-color: #f5f5f5;">
+
+    <!-- Заголовок -->
+    <HBox spacing="20" alignment="CENTER_LEFT" style="-fx-background-color: #2c3e50; -fx-padding: 20; -fx-background-radius: 10;">
+        <Label text="📅 Умный Планировщик Задач" style="-fx-text-fill: white; -fx-font-size: 24; -fx-font-weight: bold;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="addTaskBtn" text="+ Добавить задачу" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <!-- Фильтры -->
+    <HBox spacing="15" alignment="CENTER_LEFT">
+        <Label text="Фильтры:" style="-fx-font-weight: bold;"/>
+        <ComboBox fx:id="priorityFilter" promptText="Приоритет" prefWidth="150"/>
+        <ComboBox fx:id="statusFilter" promptText="Статус" prefWidth="150"/>
+        <DatePicker fx:id="dateFilter" promptText="Дата" prefWidth="150"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="📅 Календарь" onAction="#showCalendar" style="-fx-background-color: #9b59b6; -fx-text-fill: white;"/>
+    </HBox>
+
+    <!-- Основной контент -->
+    <HBox spacing="20" VBox.vgrow="ALWAYS">
+        <!-- Боковая панель -->
+        <VBox spacing="20" prefWidth="300" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10;">
+            <VBox spacing="10">
+                <Label text="Статистика" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                <VBox fx:id="statsBox" spacing="8" style="-fx-background-color: #f8f9fa; -fx-padding: 15; -fx-background-radius: 5;">
+                    <Label fx:id="totalTasksLabel" text="Всего задач: 0"/>
+                    <Label fx:id="completedTasksLabel" text="Выполнено: 0"/>
+                    <Label fx:id="pendingTasksLabel" text="Активных: 0"/>
+                    <Label fx:id="overdueTasksLabel" text="Просрочено: 0"/>
+                </VBox>
+            </VBox>
+            
+            <VBox spacing="10">
+                <Label text="Сегодня" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                <Label fx:id="currentDateLabel" style="-fx-font-size: 16; -fx-text-fill: #7f8c8d;"/>
+            </VBox>
+        </VBox>
+
+        <!-- Список задач -->
+        <VBox spacing="15" VBox.vgrow="ALWAYS" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10;">
+            <Label text="Список задач" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            <ListView fx:id="tasksListView" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </HBox>
+
+</VBox>

@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "ArcadeInteractive",
+            "request": "launch",
+            "mainClass": "ArcadeInteractive",
+            "projectName": "To-Do_List"
+        },
+        {
+            "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "Test",
+            "projectName": "Test"
+        }
+    ]
+}
