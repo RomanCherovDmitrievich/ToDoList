@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.todoapp.controllers.TaskDetailController" spacing="10" 
+      style="-fx-padding: 20;" prefWidth="500" prefHeight="400">
+   
+   <Label text="Редактирование задачи" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+   
+   <GridPane hgap="10" vgap="10">
+      <columnConstraints>
+         <ColumnConstraints prefWidth="100"/>
+         <ColumnConstraints prefWidth="300"/>
+      </columnConstraints>
+      
+      <rowConstraints>
+         <RowConstraints prefHeight="30"/>
+         <RowConstraints prefHeight="30"/>
+         <RowConstraints prefHeight="30"/>
+         <RowConstraints prefHeight="30"/>
+         <RowConstraints prefHeight="100"/>
+         <RowConstraints prefHeight="30"/>
+      </rowConstraints>
+      
+      <Label text="Название:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+      <TextField fx:id="titleField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+      
+      <Label text="Приоритет:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+      <ChoiceBox fx:id="priorityChoiceBox" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+      
+      <Label text="Категория:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+      <ChoiceBox fx:id="categoryChoiceBox" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+      
+      <Label text="Дата выполнения:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+      <DatePicker fx:id="dueDatePicker" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+      
+      <Label text="Описание:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+      <TextArea fx:id="descriptionArea" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+      
+      <Label fx:id="createdAtLabel" GridPane.rowIndex="5" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
+   </GridPane>
+   
+   <HBox spacing="10" style="-fx-padding: 10 0 0 0;">
+      <Button fx:id="saveButton" text="Сохранить" onAction="#handleSave" 
+              style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+      <Button fx:id="cancelButton" text="Отмена" onAction="#handleCancel" 
+              style="-fx-background-color: #9E9E9E; -fx-text-fill: white;"/>
+   </HBox>
+</VBox>

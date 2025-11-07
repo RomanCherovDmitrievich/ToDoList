@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.todoapp.controllers.MainController" spacing="10" 
+      style="-fx-padding: 20; -fx-background-color: #f4f4f4;">
+   
+   <HBox spacing="20">
+      <!-- Левая панель - добавление задачи -->
+      <VBox spacing="10" style="-fx-padding: 15; -fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 5;">
+         <Label text="Новая задача" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+         
+         <GridPane hgap="10" vgap="10">
+            <columnConstraints>
+               <ColumnConstraints prefWidth="100"/>
+               <ColumnConstraints prefWidth="200"/>
+            </columnConstraints>
+            
+            <rowConstraints>
+               <RowConstraints prefHeight="30"/>
+               <RowConstraints prefHeight="30"/>
+               <RowConstraints prefHeight="30"/>
+               <RowConstraints prefHeight="30"/>
+               <RowConstraints prefHeight="80"/>
+            </rowConstraints>
+            
+            <Label text="Название:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="titleField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            
+            <Label text="Приоритет:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <ChoiceBox fx:id="priorityChoiceBox" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            
+            <Label text="Категория:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <ChoiceBox fx:id="categoryChoiceBox" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            
+            <Label text="Дата выполнения:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <DatePicker fx:id="datePicker" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            
+            <Label text="Описание:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <TextArea fx:id="descriptionArea" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+         </GridPane>
+         
+         <Button fx:id="addButton" text="Добавить задачу" onAction="#handleAddTask" 
+                 style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+      </VBox>
+      
+      <!-- Правая панель - список задач -->
+      <VBox spacing="10" style="-fx-padding: 15; -fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 5;">
+         <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Список задач" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+            <Button text="Сегодня" onAction="#handleShowTodayTasks"/>
+            <Button text="Неделя" onAction="#handleShowWeekTasks"/>
+            <Button fx:id="calendarButton" text="Календарь" onAction="#handleShowCalendar"/>
+            <Button text="Экспорт" onAction="#handleExportTasks"/>
+            <Label fx:id="overdueCountLabel" text="Просрочено: 0" style="-fx-text-fill: red;"/>
+         </HBox>
+         
+         <!-- Панель поиска и фильтров -->
+         <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Поиск:"/>
+            <TextField fx:id="searchField" promptText="Введите для поиска..." prefWidth="150"/>
+            <Label text="Фильтр:"/>
+            <ComboBox fx:id="filterComboBox" prefWidth="150"/>
+         </HBox>
+         
+         <ListView fx:id="taskListView" prefWidth="500" prefHeight="300"/>
+         
+         <HBox spacing="10">
+            <Button fx:id="markCompletedButton" text="Отметить выполненной" 
+                    onAction="#handleMarkCompleted" 
+                    style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+            <Button fx:id="editButton" text="Редактировать" onAction="#handleEditTask"
+                    style="-fx-background-color: #FF9800; -fx-text-fill: white;"/>
+            <Button fx:id="deleteButton" text="Удалить" onAction="#handleDeleteTask" 
+                    style="-fx-background-color: #f44336; -fx-text-fill: white;"/>
+         </HBox>
+      </VBox>
+   </HBox>
+</VBox>

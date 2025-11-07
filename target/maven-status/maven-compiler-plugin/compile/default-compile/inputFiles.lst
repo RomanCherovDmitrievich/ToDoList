@@ -1,0 +1,13 @@
+/Users/sigm/Work/Institut/5semestr/OOP_Java/Project/src/main/java/com/todoapp/Main.java
+/Users/sigm/Work/Institut/5semestr/OOP_Java/Project/src/main/java/com/todoapp/SimpleTest.java
+/Users/sigm/Work/Institut/5semestr/OOP_Java/Project/src/main/java/com/todoapp/controllers/CalendarController.java
+/Users/sigm/Work/Institut/5semestr/OOP_Java/Project/src/main/java/com/todoapp/controllers/MainController.java
+/Users/sigm/Work/Institut/5semestr/OOP_Java/Project/src/main/java/com/todoapp/controllers/TaskDetailController.java
+/Users/sigm/Work/Institut/5semestr/OOP_Java/Project/src/main/java/com/todoapp/models/CalendarModel.java
+/Users/sigm/Work/Institut/5semestr/OOP_Java/Project/src/main/java/com/todoapp/models/Task.java
+/Users/sigm/Work/Institut/5semestr/OOP_Java/Project/src/main/java/com/todoapp/models/TaskManager.java
+/Users/sigm/Work/Institut/5semestr/OOP_Java/Project/src/main/java/com/todoapp/utils/DateUtils.java
+/Users/sigm/Work/Institut/5semestr/OOP_Java/Project/src/main/java/com/todoapp/utils/FileManager.java
+/Users/sigm/Work/Institut/5semestr/OOP_Java/Project/src/main/java/com/todoapp/utils/NotificationManager.java
+/Users/sigm/Work/Institut/5semestr/OOP_Java/Project/src/main/java/com/todoapp/views/CalendarView.java
+/Users/sigm/Work/Institut/5semestr/OOP_Java/Project/src/main/java/com/todoapp/views/CustomTaskCell.java

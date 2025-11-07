@@ -1,5 +1,8 @@
 {
-    "java.project.sourcePaths": ["src"],
+    "java.project.referencedLibraries": [
+        "javafx-sdk-25.0.1/lib/*.jar"
+    ],
+    "java.project.sourcePaths": ["src/main/java"],
     "java.project.outputPath": "target",
     "java.configuration.updateBuildConfiguration": "interactive",
     "java.autobuild.enabled": true
