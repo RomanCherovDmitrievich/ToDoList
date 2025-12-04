@@ -1,0 +1,423 @@
+DEBUG: Сохранение в путь: data/tasks.json
+DEBUG: Количество задач для сохранения: 1
+DEBUG toJsonString: {"id":"bb16c314-92ff-44b6-bad6-c9b20f9ca2e9","title":"Тестовая задача 1","description":"Первая тестовая задача","startTime":"2025-12-04T05:35:07","endTime":"2025-12-04T09:35:07","priority":"URGENT","category":"WORK","completed":false,"overdue":false,"createdAt":"2025-12-04T07:35:07"}
+DEBUG: JSON для сохранения: [
+  {"id":"bb16c314-92ff-44b6-bad6-c9b20f9ca2e9","title":"Тестовая задача 1","description":"Первая т...
+DEBUG: Файл успешно сохранен, размер: 324 байт
+DEBUG: Сохранение в путь: data/tasks.json
+DEBUG: Количество задач для сохранения: 2
+DEBUG toJsonString: {"id":"b61bd0c7-27b4-43ee-869a-1f036e84818c","title":"Тестовая задача 1","description":"Первая тестовая задача","startTime":"2025-12-04T05:35:07","endTime":"2025-12-04T09:35:07","priority":"URGENT","category":"WORK","completed":false,"overdue":false,"createdAt":"2025-12-04T07:35:07"}
+DEBUG toJsonString: {"id":"ee1d5478-3082-452b-9d87-a8a69be06ef4","title":"Тестовая задача 2","description":"Вторая тестовая задача с \"кавычками\"","startTime":"2025-12-04T06:35:07","endTime":"2025-12-04T08:35:07","priority":"IMPORTANT","category":"HOME","completed":true,"overdue":false,"createdAt":"2025-12-04T07:35:07"}
+DEBUG: JSON для сохранения: [
+  {"id":"b61bd0c7-27b4-43ee-869a-1f036e84818c","title":"Тестовая задача 1","description":"Первая т...
+DEBUG: Файл успешно сохранен, размер: 674 байт
+DEBUG: Сохранение в путь: data/tasks.json
+DEBUG: Количество задач для сохранения: 1
+DEBUG toJsonString: {"id":"ee1d5478-3082-452b-9d87-a8a69be06ef4","title":"Тестовая задача 2","description":"Вторая тестовая задача с \\\"кавычками\\\"","startTime":"2025-12-04T06:35:07","endTime":"2025-12-04T08:35:07","priority":"IMPORTANT","category":"HOME","completed":true,"overdue":false,"createdAt":"2025-12-04T07:35:07"}
+DEBUG: JSON для сохранения: [
+  {"id":"ee1d5478-3082-452b-9d87-a8a69be06ef4","title":"Тестовая задача 2","description":"Вторая т...
+DEBUG: Файл успешно сохранен, размер: 356 байт
+DEBUG: Сохранение в путь: data/tasks.json
+DEBUG: Количество задач для сохранения: 2
+DEBUG toJsonString: {"id":"d319bb37-2694-4a10-a842-86fabb6c114d","title":"Тестовая задача 1","description":"Первая тестовая задача","startTime":"2025-12-04T05:35:07","endTime":"2025-12-04T09:35:07","priority":"URGENT","category":"WORK","completed":false,"overdue":false,"createdAt":"2025-12-04T07:35:07"}
+DEBUG toJsonString: {"id":"a71e464f-0a49-49fe-94d3-c9281aab06b2","title":"Тестовая задача 2","description":"Вторая тестовая задача с \"кавычками\"","startTime":"2025-12-04T06:35:07","endTime":"2025-12-04T08:35:07","priority":"IMPORTANT","category":"HOME","completed":true,"overdue":false,"createdAt":"2025-12-04T07:35:07"}
+DEBUG: JSON для сохранения: [
+  {"id":"d319bb37-2694-4a10-a842-86fabb6c114d","title":"Тестовая задача 1","description":"Первая т...
+DEBUG: Файл успешно сохранен, размер: 674 байт
+DEBUG: Сохранение в путь: data/tasks.json
+DEBUG: Количество задач для сохранения: 0
+DEBUG: JSON для сохранения: []...
+DEBUG: Файл успешно сохранен, размер: 2 байт
+DEBUG: Сохранение в путь: data/tasks.json
+DEBUG: Количество задач для сохранения: 1
+DEBUG toJsonString: {"id":"1fc00fc5-6a77-4dd4-bfc9-0113a6f1f38e","title":"Тестовая задача 1","description":"Первая тестовая задача","startTime":"2025-12-04T05:35:08","endTime":"2025-12-04T09:35:08","priority":"URGENT","category":"WORK","completed":false,"overdue":false,"createdAt":"2025-12-04T07:35:08"}
+DEBUG: JSON для сохранения: [
+  {"id":"1fc00fc5-6a77-4dd4-bfc9-0113a6f1f38e","title":"Тестовая задача 1","description":"Первая т...
+DEBUG: Файл успешно сохранен, размер: 324 байт
+DEBUG: Сохранение в путь: data/tasks.json
+DEBUG: Количество задач для сохранения: 1
+DEBUG toJsonString: {"id":"553c2375-bcff-42b1-b10b-a8845df5ad5a","title":"Задача с \"кавычками\"","description":"Описание с \n переносом строки и \\ обратным слешем","startTime":"2025-12-04T07:35:08","endTime":"2025-12-04T08:35:08","priority":"NORMAL","category":"OTHER","completed":false,"overdue":false,"createdAt":"2025-12-04T07:35:08"}
+DEBUG: JSON для сохранения: [
+  {"id":"553c2375-bcff-42b1-b10b-a8845df5ad5a","title":"Задача с \"кавычками\"","description":"Опи...
+DEBUG: Файл успешно сохранен, размер: 380 байт
+DEBUG: Сохранение в путь: data/tasks.json
+DEBUG: Количество задач для сохранения: 1
+DEBUG toJsonString: {"id":"d743a3ee-2875-4d5f-8932-3cea9dc92dde","title":"Тестовая задача 1","description":"Первая тестовая задача","startTime":"2025-12-04T05:35:08","endTime":"2025-12-04T09:35:08","priority":"URGENT","category":"WORK","completed":false,"overdue":false,"createdAt":"2025-12-04T07:35:08"}
+DEBUG: JSON для сохранения: [
+  {"id":"d743a3ee-2875-4d5f-8932-3cea9dc92dde","title":"Тестовая задача 1","description":"Первая т...
+DEBUG: Файл успешно сохранен, размер: 324 байт
+DEBUG: Сохранение в путь: data/tasks.json
+DEBUG: Количество задач для сохранения: 2
+DEBUG toJsonString: {"id":"31a47243-2eb6-4635-a99c-851f8f8bc716","title":"Тестовая задача 1","description":"Первая тестовая задача","startTime":"2025-12-04T05:35:08","endTime":"2025-12-04T09:35:08","priority":"URGENT","category":"WORK","completed":false,"overdue":false,"createdAt":"2025-12-04T07:35:08"}
+DEBUG toJsonString: {"id":"87e4dca7-622a-4c06-8aa1-993a0ffc021c","title":"Тестовая задача 2","description":"Вторая тестовая задача с \"кавычками\"","startTime":"2025-12-04T06:35:08","endTime":"2025-12-04T08:35:08","priority":"IMPORTANT","category":"HOME","completed":true,"overdue":false,"createdAt":"2025-12-04T07:35:08"}
+DEBUG: JSON для сохранения: [
+  {"id":"31a47243-2eb6-4635-a99c-851f8f8bc716","title":"Тестовая задача 1","description":"Первая т...
+DEBUG: Файл успешно сохранен, размер: 674 байт
+DEBUG: Сохранение в путь: data/tasks.json
+DEBUG: Количество задач для сохранения: 1
+DEBUG toJsonString: {"id":"46b0bf34-0a0c-4270-977e-5b6692a3fd6a","title":"Тестовая задача 1","description":"Первая тестовая задача","startTime":"2025-12-04T05:35:08","endTime":"2025-12-04T09:35:08","priority":"URGENT","category":"WORK","completed":false,"overdue":false,"createdAt":"2025-12-04T07:35:08"}
+DEBUG: JSON для сохранения: [
+  {"id":"46b0bf34-0a0c-4270-977e-5b6692a3fd6a","title":"Тестовая задача 1","description":"Первая т...
+DEBUG: Файл успешно сохранен, размер: 324 байт
+DEBUG: Сохранение в путь: data/tasks.json
+DEBUG: Количество задач для сохранения: 2
+DEBUG toJsonString: {"id":"46b0bf34-0a0c-4270-977e-5b6692a3fd6a","title":"Тестовая задача 1","description":"Первая тестовая задача","startTime":"2025-12-04T05:35:08","endTime":"2025-12-04T09:35:08","priority":"URGENT","category":"WORK","completed":false,"overdue":false,"createdAt":"2025-12-04T07:35:08"}
+DEBUG toJsonString: {"id":"1d3c9670-3d76-4e04-851e-8d486d3ec50e","title":"Тестовая задача 2","description":"Вторая тестовая задача с \"кавычками\"","startTime":"2025-12-04T06:35:08","endTime":"2025-12-04T08:35:08","priority":"IMPORTANT","category":"HOME","completed":true,"overdue":false,"createdAt":"2025-12-04T07:35:08"}
+DEBUG: JSON для сохранения: [
+  {"id":"46b0bf34-0a0c-4270-977e-5b6692a3fd6a","title":"Тестовая задача 1","description":"Первая т...
+DEBUG: Файл успешно сохранен, размер: 674 байт
+DEBUG: Сохранение в путь: /var/folders/kz/8c7qgytn2n3f87yq0p4r6rxh0000gn/T/junit18326122172447610682/export.json
+DEBUG: Количество задач для сохранения: 2
+DEBUG toJsonString: {"id":"bb64cdcf-923e-473e-8742-d618257f5c32","title":"Тестовая задача 1","description":"Первая тестовая задача","startTime":"2025-12-04T05:35:08","endTime":"2025-12-04T09:35:08","priority":"URGENT","category":"WORK","completed":false,"overdue":false,"createdAt":"2025-12-04T07:35:08"}
+DEBUG toJsonString: {"id":"97d81bc7-f873-4999-826f-cebb0c85a764","title":"Тестовая задача 2","description":"Вторая тестовая задача с \"кавычками\"","startTime":"2025-12-04T06:35:08","endTime":"2025-12-04T08:35:08","priority":"IMPORTANT","category":"HOME","completed":true,"overdue":false,"createdAt":"2025-12-04T07:35:08"}
+DEBUG: JSON для сохранения: [
+  {"id":"bb64cdcf-923e-473e-8742-d618257f5c32","title":"Тестовая задача 1","description":"Первая т...
+DEBUG: Файл успешно сохранен, размер: 674 байт
+DEBUG: Сохранение в путь: data/tasks.json
+DEBUG: Количество задач для сохранения: 1
+DEBUG toJsonString: {"id":"7e81a4d2-c03f-4fb0-af96-b356c7403643","title":"Тестовая задача 1","description":"Первая тестовая задача","startTime":"2025-12-04T05:35:08","endTime":"2025-12-04T09:35:08","priority":"URGENT","category":"WORK","completed":false,"overdue":false,"createdAt":"2025-12-04T07:35:08"}
+DEBUG: JSON для сохранения: [
+  {"id":"7e81a4d2-c03f-4fb0-af96-b356c7403643","title":"Тестовая задача 1","description":"Первая т...
+DEBUG: Файл успешно сохранен, размер: 324 байт
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by com.sun.glass.utils.NativeLibLoader in an unnamed module (file:/Users/sigm/Work/Institut/5semestr/OOP_Java/javafx-sdk-25.0.1/lib/javafx.graphics.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+Exception in thread "Thread-0" java.lang.IllegalStateException: Toolkit not initialized
+	at com.sun.javafx.application.PlatformImpl.runLater(PlatformImpl.java:408)
+	at com.sun.javafx.application.PlatformImpl.runLater(PlatformImpl.java:403)
+	at javafx.application.Platform.runLater(Platform.java:171)
+	at javafx.scene.media.Media$_MetadataListener.onMetadata(Media.java:542)
+	at com.sun.media.jfxmediaimpl.MetadataParserImpl.done(MetadataParserImpl.java:121)
+	at com.sun.media.jfxmediaimpl.platform.java.ID3MetadataParser.parse(ID3MetadataParser.java:255)
+	at com.sun.media.jfxmediaimpl.MetadataParserImpl.run(MetadataParserImpl.java:100)
+Ошибка загрузки аудио файлов: Toolkit not initialized
+DEBUG toJsonString: {"id":"a44f16a3-77fe-4adf-b2b8-1ca6b2ce390a","title":"Задача с \"кавычками\" и \n переносом","description":"Описание с \\ обратным слешем","startTime":"2025-01-01T09:00:00","endTime":"2025-01-01T18:00:00","priority":"NORMAL","category":"HOME","completed":false,"overdue":false,"createdAt":"2025-12-04T07:35:08"}
+DEBUG toJsonString: {"id":"7b2b5dc6-1f21-40d1-ba89-fa580a9b0b51","title":"Тестовая задача","description":"Описание тестовой задачи","startTime":"2025-01-01T09:00:00","endTime":"2025-01-01T18:00:00","priority":"IMPORTANT","category":"WORK","completed":false,"overdue":false,"createdAt":"2025-12-04T07:35:08"}
+[36m╷[0m
+[36m├─[0m [36mJUnit Jupiter[0m [32m✔[0m
+[36m│  ├─[0m [36mТестирование JsonUtil[0m [32m✔[0m
+[36m│  │  ├─[0m [31mСохранение и загрузка одной задачи[0m [31m✘[0m [31mexpected: <true> but was: <false>[0m
+[36m│  │  ├─[0m [34mУдаление задачи из файла[0m [32m✔[0m
+[36m│  │  ├─[0m [31mОбновление несуществующей задачи[0m [31m✘[0m [31mText '2025-12-04T07:35:07.997950' could not be parsed, unparsed text found at index 19[0m
+[36m│  │  ├─[0m [31mОчистка файла задач[0m [31m✘[0m [31m/var/folders/kz/8c7qgytn2n3f87yq0p4r6rxh0000gn/T/junit9012646252656703850/data/tasks.json[0m
+[36m│  │  ├─[0m [31mОбновление задачи в файле[0m [31m✘[0m [31mText '2025-12-04T05:35:08.000377' could not be parsed, unparsed text found at index 19[0m
+[36m│  │  ├─[0m [31mЗагрузка с некорректным JSON[0m [31m✘[0m [31mexpected: <true> but was: <false>[0m
+[36m│  │  ├─[0m [31mЗагрузка из несуществующего файла[0m [31m✘[0m [31mДля несуществующего файла должен возвращаться пустой список ==> expected: <true> but was: <false>[0m
+[36m│  │  ├─[0m [31mЗагрузка из пустого файла[0m [31m✘[0m [31mexpected: <true> but was: <false>[0m
+[36m│  │  ├─[0m [31mЗагрузка из файла с пустым JSON массивом[0m [31m✘[0m [31mexpected: <true> but was: <false>[0m
+[36m│  │  ├─[0m [31mОбработка специальных символов в JSON[0m [31m✘[0m [31m/var/folders/kz/8c7qgytn2n3f87yq0p4r6rxh0000gn/T/junit11821068395263619684/data/tasks.json[0m
+[36m│  │  ├─[0m [34mУдаление несуществующей задачи[0m [32m✔[0m
+[36m│  │  ├─[0m [34mСохранение и загрузка нескольких задач[0m [32m✔[0m
+[36m│  │  ├─[0m [34mДобавление одной задачи в существующий файл[0m [32m✔[0m
+[36m│  │  ├─[0m [34mЭкспорт задач в другой файл[0m [32m✔[0m
+[36m│  │  └─[0m [31mСоздание резервной копии[0m [31m✘[0m [31mДолжен быть создан хотя бы один файл бэкапа ==> expected: <true> but was: <false>[0m
+[36m│  ├─[0m [36mТестирование TaskViewModel[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение отображаемых имен приоритета и категории[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение имени иконки приоритета[0m [32m✔[0m
+[36m│  │  ├─[0m [34mТестирование toString()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mОбновление ViewModel при изменении статуса просроченности[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение базовой модели задачи[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение статуса задачи в виде строки[0m [32m✔[0m
+[36m│  │  ├─[0m [34mРасчет оставшегося времени[0m [32m✔[0m
+[36m│  │  ├─[0m [34mСоздание ViewModel из модели Task[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка свойств JavaFX[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение цветов приоритета и категории[0m [32m✔[0m
+[36m│  │  ├─[0m [34mФорматирование дат для отображения[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка equals() и hashCode()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mДвусторонняя привязка свойств - изменение Model[0m [32m✔[0m
+[36m│  │  └─[0m [34mДвусторонняя привязка свойств - изменение ViewModel[0m [32m✔[0m
+[36m│  ├─[0m [36mТестирование AudioManager[0m [32m✔[0m
+[36m│  │  ├─[0m [31mВключение/выключение звуков[0m [31m✘[0m [31mexpected: <true> but was: <false>[0m
+[36m│  │  ├─[0m [34mПолучение списка доступных звуков[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка паттерна Singleton[0m [32m✔[0m
+[36m│  │  ├─[0m [34mВоспроизведение звуков при включенных звуках[0m [32m✔[0m
+[36m│  │  ├─[0m [31mПовторное создание после dispose[0m [31m✘[0m [31mexpected: not same but was: <util.AudioManager@934b6cb>[0m
+[36m│  │  ├─[0m [34mОстановка всех звуков[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка наличия аудио файлов[0m [32m✔[0m
+[36m│  │  ├─[0m [34mТестирование методов без реальных аудио файлов[0m [32m✔[0m
+[36m│  │  ├─[0m [34mВоспроизведение звуков при выключенных звуках[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка многократного вызова методов[0m [32m✔[0m
+[36m│  │  ├─[0m [34mОсвобождение ресурсов[0m [32m✔[0m
+[36m│  │  └─[0m [34mУстановка громкости[0m [32m✔[0m
+[36m│  ├─[0m [36mТестирование Task[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПарсинг задачи из JSON строки[0m [32m✔[0m
+[36m│  │  ├─[0m [34mСоздание задачи с null приоритетом и категорией[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка toString()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mЭкранирование специальных символов в JSON[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка метода toJsonString()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mСоздание задачи с пустым заголовком[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка просроченности задачи[0m [32m✔[0m
+[36m│  │  ├─[0m [34mАвтоматическая генерация ID[0m [32m✔[0m
+[36m│  │  ├─[0m [36mПроверка статуса выполнения[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[1] true[0m [32m✔[0m
+[36m│  │  │  └─[0m [34m[2] false[0m [32m✔[0m
+[36m│  │  ├─[0m [34mСоздание задачи с валидными данными[0m [32m✔[0m
+[36m│  │  ├─[0m [34mФорматирование дат для отображения[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка equals() и hashCode()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка сеттеров[0m [32m✔[0m
+[36m│  │  └─[0m [34mПроверка обновления просроченности при изменении времени[0m [32m✔[0m
+[36m│  ├─[0m [36mТестирование TaskManager[0m [32m✔[0m
+[36m│  │  ├─[0m [34mДобавление нескольких задач[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение задач по статусу выполнения[0m [32m✔[0m
+[36m│  │  ├─[0m [34mДобавление задачи в менеджер[0m [32m✔[0m
+[36m│  │  ├─[0m [34mОчистка всех задач[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПоиск задач по тексту (регистронезависимый)[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка неизменяемости возвращаемых списков[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение количества просроченных задач[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПоиск по пустому запросу[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка паттерна Singleton[0m [32m✔[0m
+[36m│  │  ├─[0m [34mОтметка задачи как выполненной[0m [32m✔[0m
+[36m│  │  ├─[0m [34mОтметка несуществующей задачи как выполненной[0m [32m✔[0m
+[36m│  │  ├─[0m [34mУдаление несуществующей задачи[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка обновления просроченности при изменении статуса[0m [32m✔[0m
+[36m│  │  ├─[0m [34mУдаление задачи по ID[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение количества задач[0m [32m✔[0m
+[36m│  │  ├─[0m [34mАвтоматическая проверка просроченности[0m [32m✔[0m
+[36m│  │  └─[0m [34mЗагрузка списка задач[0m [32m✔[0m
+[36m│  ├─[0m [36mТестирование Priority[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка сравнения приоритетов[0m [32m✔[0m
+[36m│  │  ├─[0m [36mПреобразование строки в Priority (регистронезависимое)[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[1] Срочно[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[2] срочно[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[3] СРОЧНО[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[4] Важно[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[5] важно[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[6] Желательно[0m [32m✔[0m
+[36m│  │  │  └─[0m [34m[7] желательно[0m [32m✔[0m
+[36m│  │  ├─[0m [36mПроверка цветов для всех приоритетов[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[1] URGENT[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[2] IMPORTANT[0m [32m✔[0m
+[36m│  │  │  └─[0m [34m[3] NORMAL[0m [32m✔[0m
+[36m│  │  ├─[0m [36mПроверка отображаемых имен для всех приоритетов[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[1] URGENT[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[2] IMPORTANT[0m [32m✔[0m
+[36m│  │  │  └─[0m [34m[3] NORMAL[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка имени иконки[0m [32m✔[0m
+[36m│  │  ├─[0m [36mПреобразование некорректной строки в Priority[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[1] [0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[2] неизвестно[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[3] high[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[4] low[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[5] 123[0m [32m✔[0m
+[36m│  │  │  └─[0m [34m[6] приоритет[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка всех значений перечисления[0m [32m✔[0m
+[36m│  │  └─[0m [34mПроверка приоритета по умолчанию[0m [32m✔[0m
+[36m│  └─[0m [36mТестирование Category[0m [32m✔[0m
+[36m│     ├─[0m [36mПреобразование строки в Category (регистронезависимое)[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[1] Работа[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[2] работа[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[3] РАБОТА[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[4] Дом[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[5] дом[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[6] Учёба[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[7] учёба[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[8] Другое[0m [32m✔[0m
+[36m│     │  └─[0m [34m[9] другое[0m [32m✔[0m
+[36m│     ├─[0m [36mПроверка цветов для всех категорий[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[1] WORK[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[2] HOME[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[3] STUDY[0m [32m✔[0m
+[36m│     │  └─[0m [34m[4] OTHER[0m [32m✔[0m
+[36m│     ├─[0m [36mПроверка отображаемых имен для всех категорий[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[1] WORK[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[2] HOME[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[3] STUDY[0m [32m✔[0m
+[36m│     │  └─[0m [34m[4] OTHER[0m [32m✔[0m
+[36m│     ├─[0m [34mПроверка уникальности отображаемых имен[0m [32m✔[0m
+[36m│     ├─[0m [34mПроверка сравнения категорий[0m [32m✔[0m
+[36m│     ├─[0m [36mПреобразование некорректной строки в Category[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[1] [0m [32m✔[0m
+[36m│     │  ├─[0m [34m[2] неизвестно[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[3] категория[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[4] 123[0m [32m✔[0m
+[36m│     │  └─[0m [34m[5] test[0m [32m✔[0m
+[36m│     └─[0m [34mПроверка всех значений перечисления[0m [32m✔[0m
+[36m├─[0m [36mJUnit Vintage[0m [32m✔[0m
+[36m└─[0m [36mJUnit Platform Suite[0m [32m✔[0m
+
+Failures (12):
+  JUnit Jupiter:Тестирование JsonUtil:Сохранение и загрузка одной задачи
+    MethodSource [className = 'unit.util.JsonUtilTest', methodName = 'testSaveAndLoadSingleTask', methodParameterTypes = '']
+    => org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+       org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+       org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+       org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+       org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+       org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+       org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:180)
+       unit.util.JsonUtilTest.testSaveAndLoadSingleTask(JsonUtilTest.java:129)
+       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+       [...]
+  JUnit Jupiter:Тестирование JsonUtil:Обновление несуществующей задачи
+    MethodSource [className = 'unit.util.JsonUtilTest', methodName = 'testUpdateNonExistentTask', methodParameterTypes = '']
+    => java.time.format.DateTimeParseException: Text '2025-12-04T07:35:07.997950' could not be parsed, unparsed text found at index 19
+       java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2111)
+       java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:2010)
+       java.base/java.time.LocalDateTime.parse(LocalDateTime.java:496)
+       model.Task.<init>(Task.java:163)
+       unit.util.JsonUtilTest.testUpdateNonExistentTask(JsonUtilTest.java:291)
+       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+       org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+       [...]
+  JUnit Jupiter:Тестирование JsonUtil:Очистка файла задач
+    MethodSource [className = 'unit.util.JsonUtilTest', methodName = 'testClearAllTasks', methodParameterTypes = '']
+    => java.nio.file.NoSuchFileException: /var/folders/kz/8c7qgytn2n3f87yq0p4r6rxh0000gn/T/junit9012646252656703850/data/tasks.json
+       java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+       java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+       java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+       java.base/sun.nio.fs.UnixFileSystemProvider.newFileChannel(UnixFileSystemProvider.java:213)
+       java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:244)
+       java.base/java.nio.file.Files.newByteChannel(Files.java:357)
+       java.base/java.nio.file.Files.newByteChannel(Files.java:399)
+       java.base/java.nio.file.Files.readAllBytes(Files.java:2973)
+       java.base/java.nio.file.Files.readString(Files.java:3043)
+       java.base/java.nio.file.Files.readString(Files.java:3006)
+       [...]
+  JUnit Jupiter:Тестирование JsonUtil:Обновление задачи в файле
+    MethodSource [className = 'unit.util.JsonUtilTest', methodName = 'testUpdateTask', methodParameterTypes = '']
+    => java.time.format.DateTimeParseException: Text '2025-12-04T05:35:08.000377' could not be parsed, unparsed text found at index 19
+       java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2111)
+       java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:2010)
+       java.base/java.time.LocalDateTime.parse(LocalDateTime.java:496)
+       model.Task.<init>(Task.java:163)
+       unit.util.JsonUtilTest.testUpdateTask(JsonUtilTest.java:257)
+       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+       org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+       [...]
+  JUnit Jupiter:Тестирование JsonUtil:Загрузка с некорректным JSON
+    MethodSource [className = 'unit.util.JsonUtilTest', methodName = 'testLoadWithInvalidJson', methodParameterTypes = '']
+    => org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+       org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+       org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+       org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+       org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+       org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+       org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:180)
+       unit.util.JsonUtilTest.testLoadWithInvalidJson(JsonUtilTest.java:412)
+       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+       [...]
+  JUnit Jupiter:Тестирование JsonUtil:Загрузка из несуществующего файла
+    MethodSource [className = 'unit.util.JsonUtilTest', methodName = 'testLoadFromNonExistentFile', methodParameterTypes = '']
+    => org.opentest4j.AssertionFailedError: Для несуществующего файла должен возвращаться пустой список ==> expected: <true> but was: <false>
+       org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+       org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+       org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+       org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+       org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:211)
+       unit.util.JsonUtilTest.testLoadFromNonExistentFile(JsonUtilTest.java:91)
+       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+       [...]
+  JUnit Jupiter:Тестирование JsonUtil:Загрузка из пустого файла
+    MethodSource [className = 'unit.util.JsonUtilTest', methodName = 'testLoadFromEmptyFile', methodParameterTypes = '']
+    => org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+       org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+       org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+       org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+       org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+       org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+       org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:180)
+       unit.util.JsonUtilTest.testLoadFromEmptyFile(JsonUtilTest.java:104)
+       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+       [...]
+  JUnit Jupiter:Тестирование JsonUtil:Загрузка из файла с пустым JSON массивом
+    MethodSource [className = 'unit.util.JsonUtilTest', methodName = 'testLoadFromEmptyJsonArray', methodParameterTypes = '']
+    => org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+       org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+       org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+       org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+       org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+       org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+       org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:180)
+       unit.util.JsonUtilTest.testLoadFromEmptyJsonArray(JsonUtilTest.java:116)
+       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+       [...]
+  JUnit Jupiter:Тестирование JsonUtil:Обработка специальных символов в JSON
+    MethodSource [className = 'unit.util.JsonUtilTest', methodName = 'testSpecialCharactersInJson', methodParameterTypes = '']
+    => java.nio.file.NoSuchFileException: /var/folders/kz/8c7qgytn2n3f87yq0p4r6rxh0000gn/T/junit11821068395263619684/data/tasks.json
+       java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+       java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+       java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+       java.base/sun.nio.fs.UnixFileSystemProvider.newFileChannel(UnixFileSystemProvider.java:213)
+       java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:244)
+       java.base/java.nio.file.Files.newByteChannel(Files.java:357)
+       java.base/java.nio.file.Files.newByteChannel(Files.java:399)
+       java.base/java.nio.file.Files.readAllBytes(Files.java:2973)
+       java.base/java.nio.file.Files.readString(Files.java:3043)
+       java.base/java.nio.file.Files.readString(Files.java:3006)
+       [...]
+  JUnit Jupiter:Тестирование JsonUtil:Создание резервной копии
+    MethodSource [className = 'unit.util.JsonUtilTest', methodName = 'testCreateBackup', methodParameterTypes = '']
+    => org.opentest4j.AssertionFailedError: Должен быть создан хотя бы один файл бэкапа ==> expected: <true> but was: <false>
+       org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+       org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+       org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+       org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+       org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:211)
+       unit.util.JsonUtilTest.testCreateBackup(JsonUtilTest.java:373)
+       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+       [...]
+  JUnit Jupiter:Тестирование AudioManager:Включение/выключение звуков
+    MethodSource [className = 'unit.util.AudioManagerTest', methodName = 'testSoundsEnabled', methodParameterTypes = '']
+    => org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+       org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+       org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+       org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+       org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+       org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+       org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:180)
+       unit.util.AudioManagerTest.testSoundsEnabled(AudioManagerTest.java:62)
+       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+       [...]
+  JUnit Jupiter:Тестирование AudioManager:Повторное создание после dispose
+    MethodSource [className = 'unit.util.AudioManagerTest', methodName = 'testRecreateAfterDispose', methodParameterTypes = '']
+    => org.opentest4j.AssertionFailedError: expected: not same but was: <util.AudioManager@934b6cb>
+       org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+       org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+       org.junit.jupiter.api.AssertNotSame.failSame(AssertNotSame.java:49)
+       org.junit.jupiter.api.AssertNotSame.assertNotSame(AssertNotSame.java:35)
+       org.junit.jupiter.api.AssertNotSame.assertNotSame(AssertNotSame.java:30)
+       org.junit.jupiter.api.Assertions.assertNotSame(Assertions.java:2877)
+       unit.util.AudioManagerTest.testRecreateAfterDispose(AudioManagerTest.java:150)
+       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+       [...]
+
+Test run finished after 272 ms
+[        19 containers found      ]
+[         0 containers skipped    ]
+[        19 containers started    ]
+[         0 containers aborted    ]
+[        19 containers successful ]
+[         0 containers failed     ]
+[       121 tests found           ]
+[         0 tests skipped         ]
+[       121 tests started         ]
+[         0 tests aborted         ]
+[       109 tests successful      ]
+[        12 tests failed          ]
+

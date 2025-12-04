@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Тестовый отчет - ToDo List</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .header { background: #4CAF50; color: white; padding: 20px; border-radius: 5px; }
+        .stats { margin: 20px 0; }
+        .stat-item { display: inline-block; margin: 10px 20px; padding: 15px; border-radius: 5px; }
+        .total { background: #2196F3; color: white; }
+        .passed { background: #4CAF50; color: white; }
+        .failed { background: #f44336; color: white; }
+        .skipped { background: #ff9800; color: white; }
+        .rate { background: #9C27B0; color: white; }
+        .logs { background: #f5f5f5; padding: 20px; border-radius: 5px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🧪 Тестовый отчет - ToDo List Application</h1>
+        <p>Дата: 2025-12-04 07:50:27 | Время выполнения: 1с</p>
+    </div>
+    
+    <div class="stats">
+        <div class="stat-item total">
+            <h3>Всего тестов</h3>
+            <h2>121</h2>
+        </div>
+        
+        <div class="stat-item passed">
+            <h3>Успешно</h3>
+            <h2>110</h2>
+        </div>
+        
+        <div class="stat-item failed">
+            <h3>Провалено</h3>
+            <h2>11</h2>
+        </div>
+        
+        <div class="stat-item skipped">
+            <h3>Пропущено</h3>
+            <h2>0</h2>
+        </div>
+        
+        <div class="stat-item rate">
+            <h3>Успешность</h3>
+            <h2>90%</h2>
+        </div>
+    </div>
+    
+    <div class="logs">
+        <h3>Последние логи:</h3>
+        <pre>       unit.util.AudioManagerTest.testSoundsEnabled(AudioManagerTest.java:62)
+       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+       java.base/java.lang.reflect.Method.invoke(Method.java:565)
+       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+       [...]
+
+Test run finished after 301 ms
+[        19 containers found      ]
+[         0 containers skipped    ]
+[        19 containers started    ]
+[         0 containers aborted    ]
+[        19 containers successful ]
+[         0 containers failed     ]
+[       121 tests found           ]
+[         0 tests skipped         ]
+[       121 tests started         ]
+[         0 tests aborted         ]
+[       110 tests successful      ]
+[        11 tests failed          ]</pre>
+        <p><a href="test_results_20251204_075027.txt">Полные логи</a></p>
+    </div>
+</body>
+</html>

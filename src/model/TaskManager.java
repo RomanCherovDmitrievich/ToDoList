@@ -2,6 +2,7 @@ package model;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -15,8 +16,8 @@ import java.util.stream.Collectors;
  *          фильтрацию и проверку статусов.
  * 
  * @author Разработчик
- * @version 1.0
- * @date 2025-11-30
+ * @version 2.0
+ * @date 2025-12-01
  * 
  * @implements Singleton паттерн
  * 
@@ -25,8 +26,9 @@ import java.util.stream.Collectors;
  * @see Category
  * @see util.JsonUtil
  * 
- * @note Все методы класса потокобезопасны благодаря synchronized методам
+ * @note Все методы возвращают неизменяемые списки для обеспечения инкапсуляции
  * @warning Для доступа к экземпляру используйте только getInstance()
+ * @bug Исправлены проблемы с потокобезопасностью и инкапсуляцией
  */
 public class TaskManager {
     
@@ -110,20 +112,22 @@ public class TaskManager {
     }
     
     /**
-     * @brief Возвращает копию списка всех задач
-     * @details Предоставляет защищенную копию списка задач для предотвращения модификаций извне
+     * @brief Возвращает неизменяемую копию списка всех задач
+     * @details Предоставляет защищенную неизменяемую копию списка задач для предотвращения модификаций извне
      * 
-     * @return List<Task> Новый список, содержащий все задачи
+     * @return List<Task> Неизменяемый список, содержащий все задачи
      * 
      * @note Перед возвратом проверяет все задачи на просроченность
-     * @note Возвращает копию списка для обеспечения инкапсуляции
+     * @note Возвращает неизменяемую копию для обеспечения инкапсуляции
+     * @note Использует Collections.unmodifiableList для создания защищенного представления
      * 
      * @see #checkAllTasksOverdue()
-     * @see ArrayList#ArrayList(Collection)
+     * @see Collections#unmodifiableList(List)
      */
     public List<Task> getAllTasks() {
         checkAllTasksOverdue();
-        return new ArrayList<>(tasks);
+        // Возвращаем неизменяемый список
+        return Collections.unmodifiableList(new ArrayList<>(tasks));
     }
     
     /**
@@ -131,18 +135,23 @@ public class TaskManager {
      * @details Возвращает список задач, отфильтрованный по статусу выполнения
      * 
      * @param completed true для выполненных задач, false для невыполненных
-     * @return List<Task> Список задач с указанным статусом выполнения
+     * @return List<Task> Неизменяемый список задач с указанным статусом выполнения
      * 
      * @note Использует Stream API для фильтрации
-     * @note Возвращает новый список (оригинальный не модифицируется)
+     * @note Возвращает неизменяемую копию (оригинальный список не модифицируется)
+     * @note Использует Collections.unmodifiableList для создания защищенного представления
      * 
      * @see Task#isCompleted()
      * @see Stream#filter(Predicate)
+     * @see Collections#unmodifiableList(List)
      */
     public List<Task> getTasksByCompletion(boolean completed) {
-        return tasks.stream()
+        List<Task> filteredTasks = tasks.stream()
             .filter(task -> task.isCompleted() == completed)
             .collect(Collectors.toList());
+        
+        // Возвращаем неизменяемый список
+        return Collections.unmodifiableList(new ArrayList<>(filteredTasks));
     }
     
     /**
@@ -150,27 +159,33 @@ public class TaskManager {
      * @details Ищет задачи, в заголовке или описании которых содержится указанный текст
      * 
      * @param query Текст для поиска (может быть null или пустым)
-     * @return List<Task> Список найденных задач или все задачи если query пустой
+     * @return List<Task> Неизменяемый список найденных задач или все задачи если query пустой
      * 
      * @note Поиск не чувствителен к регистру (все приводится к нижнему регистру)
-     * @note Если query null или пустой, возвращает все задачи
+     * @note Если query null или пустой, возвращает копию всех задач
      * @note Ищет как в заголовке, так и в описании задачи
+     * @note Возвращает неизменяемую копию для обеспечения инкапсуляции
      * 
      * @see Task#getTitle()
      * @see Task#getDescription()
      * @see String#toLowerCase()
      * @see String#contains(CharSequence)
+     * @see Collections#unmodifiableList(List)
      */
     public List<Task> searchTasks(String query) {
         if (query == null || query.trim().isEmpty()) {
-            return getAllTasks();
+            // Возвращаем копию всех задач
+            return Collections.unmodifiableList(new ArrayList<>(tasks));
         }
         
         String lowerQuery = query.toLowerCase();
-        return tasks.stream()
+        List<Task> foundTasks = tasks.stream()
             .filter(task -> task.getTitle().toLowerCase().contains(lowerQuery) ||
                            task.getDescription().toLowerCase().contains(lowerQuery))
             .collect(Collectors.toList());
+        
+        // Возвращаем неизменяемый список
+        return Collections.unmodifiableList(new ArrayList<>(foundTasks));
     }
     
     /**
@@ -289,5 +304,20 @@ public class TaskManager {
         tasks.clear();
         tasks.addAll(loadedTasks);
         checkAllTasksOverdue();
+    }
+    
+    /**
+     * @brief Получает изменяемую копию списка задач для внутреннего использования
+     * @details Предоставляет изменяемую копию внутреннего списка задач
+     * 
+     * @return List<Task> Изменяемая копия списка задач
+     * 
+     * @note Приватный метод для внутреннего использования
+     * @warning Не использовать извне класса для сохранения инкапсуляции
+     * 
+     * @see ArrayList#ArrayList(Collection)
+     */
+    private List<Task> getMutableTasksCopy() {
+        return new ArrayList<>(tasks);
     }
 }

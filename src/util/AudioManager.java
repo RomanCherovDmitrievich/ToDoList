@@ -129,6 +129,10 @@ public class AudioManager {
             player.play();
         }
     }
+
+    public int getAudioFilesCount() {
+        return mediaPlayers.size();
+    }
     
     /**
      * @brief Воспроизводит звук добавления
@@ -259,6 +263,7 @@ public class AudioManager {
             }
         }
         mediaPlayers.clear();
+        instance = null; // СБРАСЫВАЕМ ИНСТАНС!
     }
     
     /**
@@ -270,6 +275,7 @@ public class AudioManager {
      * @see #mediaPlayers
      */
     public boolean hasAudioFiles() {
+        // Проверяем, есть ли вообще загруженные аудио файлы
         return !mediaPlayers.isEmpty();
     }
     

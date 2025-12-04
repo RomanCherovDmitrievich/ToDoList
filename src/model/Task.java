@@ -2,6 +2,7 @@ package model;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -359,16 +360,30 @@ public class Task {
      * @see util.JsonUtil#saveTasks(List)
      */
     public String toJsonString() {
-        return String.format(
+        DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
+        // Экранируем специальные символы
+        String escapedTitle = escapeJson(title);
+        String escapedDescription = escapeJson(description);
+    
+        String result = String.format(
             "{\"id\":\"%s\",\"title\":\"%s\",\"description\":\"%s\"," +
             "\"startTime\":\"%s\",\"endTime\":\"%s\",\"priority\":\"%s\"," +
             "\"category\":\"%s\",\"completed\":%s,\"overdue\":%s," +
             "\"createdAt\":\"%s\"}",
-            id, escapeJson(title), escapeJson(description),
-            startTime.format(FORMATTER), endTime.format(FORMATTER),
-            priority.name(), category.name(),
-            completed, overdue, createdAt.format(FORMATTER)
-        );
+            id, 
+            escapedTitle, 
+            escapedDescription,
+            startTime.format(outputFormatter), 
+            endTime.format(outputFormatter),
+            priority.name(), 
+            category.name(),
+            completed, 
+            overdue, 
+            createdAt.format(outputFormatter)
+    );
+    
+    System.out.println("DEBUG toJsonString: " + result);
+    return result;
     }
     
     /**
@@ -382,10 +397,14 @@ public class Task {
      * @private
      */
     private String escapeJson(String str) {
-        return str.replace("\"", "\\\"")
-                  .replace("\n", "\\n")
-                  .replace("\r", "\\r")
-                  .replace("\t", "\\t");
+        if (str == null) return "";
+        return str.replace("\\", "\\\\")
+              .replace("\"", "\\\"")
+              .replace("\n", "\\n")
+              .replace("\r", "\\r")
+              .replace("\t", "\\t")
+              .replace("\b", "\\b")
+              .replace("\f", "\\f");
     }
     
     // ====================================================

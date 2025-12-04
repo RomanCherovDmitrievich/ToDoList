@@ -7,6 +7,7 @@ import javafx.beans.property.StringProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import model.Task;
+import model.TaskManager;
 import model.Priority;
 import model.Category;
 
@@ -551,10 +552,16 @@ public class TaskViewModel {
     public String getStatusText() {
         if (completed.get()) {
             return "Выполнено";
-        } else if (overdue.get()) {
-            return "Просрочено";
         } else {
-            return "Активно";
+            // Проверяем актуальную просроченность
+            boolean isActuallyOverdue = LocalDateTime.now().isAfter(endTime.get());
+            if (isActuallyOverdue) {
+                // Обновляем свойство overdue
+                overdue.set(true);
+                return "Просрочено";
+            } else {
+                return "Активно";
+            }
         }
     }
     
