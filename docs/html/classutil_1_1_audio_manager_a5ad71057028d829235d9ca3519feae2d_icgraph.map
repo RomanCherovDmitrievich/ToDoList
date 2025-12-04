@@ -1,0 +1,11 @@
+<map id="util.AudioManager.loadSounds" name="util.AudioManager.loadSounds">
+<area shape="rect" id="Node000001" title="Загружает все звуки приложения" alt="" coords="741,31,938,56"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_audio_manager.html#ab16a211144282895701d2b0a64a66145" title="Приватный конструктор" alt="" coords="482,31,693,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="723,44,694,46,694,41,728,43"/>
+<area shape="rect" id="Node000003" href="$classutil_1_1_audio_manager.html#aaf7ec801730bf60f659b843ace062d86" title="Получает единственный экземпляр AudioManager." alt="" coords="238,31,434,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="464,44,435,46,434,41,469,43"/>
+<area shape="rect" id="Node000004" href="$classapp_1_1_main_app.html#acbf781550cefac29e6c8ecbdd2b38904" title="Метод инициализации приложения" alt="" coords="38,5,157,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="220,32,157,27,157,22,225,31"/>
+<area shape="rect" id="Node000005" href="$classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,55,190,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="220,55,190,61,190,56,225,55"/>
+</map>

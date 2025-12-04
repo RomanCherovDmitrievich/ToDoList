@@ -1,0 +1,846 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Умный планировщик задач (To-Do List): Класс model.TaskManager</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">JavaFX приложение для управления задачами с новогодней темой</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classmodel_1_1_task_manager.html','','classmodel_1_1_task_manager-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс model.TaskManager</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Менеджер задач - центральный класс для управления задачами  
+ <a href="#details">Подробнее...</a></p>
+<div class="dynheader">
+Граф связей класса model.TaskManager:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_task_manager__coll__graph.png" border="0" usemap="#amodel_8_task_manager_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="amodel_8_task_manager_coll__map" id="amodel_8_task_manager_coll__map">
+<area shape="rect" title="Менеджер задач &#45; центральный класс для управления задачами" alt="" coords="5,102,144,128"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html" title="Менеджер задач &#45; центральный класс для управления задачами" alt="" coords="5,5,144,31"/>
+<area shape="poly" title=" " alt="" coords="77,45,77,102,72,101,72,48"/>
+<area shape="poly" title=" " alt="" coords="159,9,170,18,162,26,145,29,143,24,160,22,165,18,159,14"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a0248e3e7f014e9e35cce33f4f36bdc3e" id="r_a0248e3e7f014e9e35cce33f4f36bdc3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0248e3e7f014e9e35cce33f4f36bdc3e">addTask</a> (<a class="el" href="classmodel_1_1_task.html">Task</a> task)</td></tr>
+<tr class="memdesc:a0248e3e7f014e9e35cce33f4f36bdc3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет новую задачу в менеджер  <br /></td></tr>
+<tr class="memitem:a46e1d00e8a9e4c37eaf71795c5d0b1b5" id="r_a46e1d00e8a9e4c37eaf71795c5d0b1b5"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46e1d00e8a9e4c37eaf71795c5d0b1b5">removeTask</a> (String taskId)</td></tr>
+<tr class="memdesc:a46e1d00e8a9e4c37eaf71795c5d0b1b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удаляет задачу по её идентификатору  <br /></td></tr>
+<tr class="memitem:abc809a0b2d184494368cc5cc6dae6346" id="r_abc809a0b2d184494368cc5cc6dae6346"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classmodel_1_1_task.html">Task</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc809a0b2d184494368cc5cc6dae6346">getAllTasks</a> ()</td></tr>
+<tr class="memdesc:abc809a0b2d184494368cc5cc6dae6346"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает копию списка всех задач  <br /></td></tr>
+<tr class="memitem:a7bb0de58bf371543965a953b7f2261b5" id="r_a7bb0de58bf371543965a953b7f2261b5"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classmodel_1_1_task.html">Task</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7bb0de58bf371543965a953b7f2261b5">getTasksByCompletion</a> (boolean completed)</td></tr>
+<tr class="memdesc:a7bb0de58bf371543965a953b7f2261b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Фильтрует задачи по статусу выполнения  <br /></td></tr>
+<tr class="memitem:aeeb1bbd577dfd42c694e1120de83f476" id="r_aeeb1bbd577dfd42c694e1120de83f476"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classmodel_1_1_task.html">Task</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeeb1bbd577dfd42c694e1120de83f476">searchTasks</a> (String query)</td></tr>
+<tr class="memdesc:aeeb1bbd577dfd42c694e1120de83f476"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выполняет поиск задач по тексту  <br /></td></tr>
+<tr class="memitem:a3be20318c826cf81cdd44962c31bbf86" id="r_a3be20318c826cf81cdd44962c31bbf86"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3be20318c826cf81cdd44962c31bbf86">markAsCompleted</a> (String taskId, boolean completed)</td></tr>
+<tr class="memdesc:a3be20318c826cf81cdd44962c31bbf86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Изменяет статус выполнения задачи  <br /></td></tr>
+<tr class="memitem:a6ff214cd422dcd5f0d8c5d573cd251b6" id="r_a6ff214cd422dcd5f0d8c5d573cd251b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ff214cd422dcd5f0d8c5d573cd251b6">checkAllTasksOverdue</a> ()</td></tr>
+<tr class="memdesc:a6ff214cd422dcd5f0d8c5d573cd251b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет все задачи на просроченность  <br /></td></tr>
+<tr class="memitem:a83be2e7272a4f79d69be72380893f0f6" id="r_a83be2e7272a4f79d69be72380893f0f6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83be2e7272a4f79d69be72380893f0f6">getTaskCount</a> (boolean completed)</td></tr>
+<tr class="memdesc:a83be2e7272a4f79d69be72380893f0f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Подсчитывает количество задач по статусу выполнения  <br /></td></tr>
+<tr class="memitem:a593c44bb00c7932604aefff2aed3713f" id="r_a593c44bb00c7932604aefff2aed3713f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a593c44bb00c7932604aefff2aed3713f">getOverdueTaskCount</a> ()</td></tr>
+<tr class="memdesc:a593c44bb00c7932604aefff2aed3713f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Подсчитывает количество просроченных задач  <br /></td></tr>
+<tr class="memitem:adcdfb8fc100b092808161ba2a72d4ee5" id="r_adcdfb8fc100b092808161ba2a72d4ee5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adcdfb8fc100b092808161ba2a72d4ee5">clearAllTasks</a> ()</td></tr>
+<tr class="memdesc:adcdfb8fc100b092808161ba2a72d4ee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очищает все задачи  <br /></td></tr>
+<tr class="memitem:a34ef794553cd1ac2b4603298b564dafb" id="r_a34ef794553cd1ac2b4603298b564dafb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34ef794553cd1ac2b4603298b564dafb">loadTasks</a> (List&lt; <a class="el" href="classmodel_1_1_task.html">Task</a> &gt; loadedTasks)</td></tr>
+<tr class="memdesc:a34ef794553cd1ac2b4603298b564dafb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загружает задачи из внешнего списка  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:a25e2f8d72d281275facbc0e9badb47ea" id="r_a25e2f8d72d281275facbc0e9badb47ea"><td class="memItemLeft" align="right" valign="top">static synchronized <a class="el" href="#a49a919d7e57b63860295ab705046937c">TaskManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25e2f8d72d281275facbc0e9badb47ea">getInstance</a> ()</td></tr>
+<tr class="memdesc:a25e2f8d72d281275facbc0e9badb47ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает единственный экземпляр <a class="el" href="classmodel_1_1_task_manager.html" title="Менеджер задач - центральный класс для управления задачами">TaskManager</a>.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:a49a919d7e57b63860295ab705046937c" id="r_a49a919d7e57b63860295ab705046937c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49a919d7e57b63860295ab705046937c">TaskManager</a> ()</td></tr>
+<tr class="memdesc:a49a919d7e57b63860295ab705046937c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Приватный конструктор  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:a3f4cf909b65371b019c344ceb2c65a6d" id="r_a3f4cf909b65371b019c344ceb2c65a6d"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classmodel_1_1_task.html">Task</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f4cf909b65371b019c344ceb2c65a6d">tasks</a></td></tr>
+<tr class="memdesc:a3f4cf909b65371b019c344ceb2c65a6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Список всех задач  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Закрытые статические данные</h2></td></tr>
+<tr class="memitem:aaa6f3dca38b29f6106f5f5c781caf626" id="r_aaa6f3dca38b29f6106f5f5c781caf626"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="#a49a919d7e57b63860295ab705046937c">TaskManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa6f3dca38b29f6106f5f5c781caf626">instance</a></td></tr>
+<tr class="memdesc:aaa6f3dca38b29f6106f5f5c781caf626"><td class="mdescLeft">&#160;</td><td class="mdescRight">Единственный экземпляр <a class="el" href="classmodel_1_1_task_manager.html" title="Менеджер задач - центральный класс для управления задачами">TaskManager</a>.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Менеджер задач - центральный класс для управления задачами </p>
+<p>Класс <a class="el" href="classmodel_1_1_task_manager.html" title="Менеджер задач - центральный класс для управления задачами">TaskManager</a> реализует паттерн Singleton и служит центральным хранилищем и менеджером для всех задач в приложении. Отвечает за операции CRUD (Create, Read, Update, Delete) с задачами, поиск, фильтрацию и проверку статусов.</p>
+<dl class="section author"><dt>Автор</dt><dd>Разработчик </dd></dl>
+<dl class="section version"><dt>Версия</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Дата</dt><dd>2025-11-30</dd></dl>
+<p>паттерн</p>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a> </dd>
+<dd>
+<a class="el" href="enummodel_1_1_priority.html">Priority</a> </dd>
+<dd>
+<a class="el" href="enummodel_1_1_category.html">Category</a> </dd>
+<dd>
+<a class="el" href="classutil_1_1_json_util.html" title="Утилита для работы с JSON файлами задач">util.JsonUtil</a></dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Все методы класса потокобезопасны благодаря synchronized методам </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Для доступа к экземпляру используйте только <a class="el" href="#a25e2f8d72d281275facbc0e9badb47ea" title="Возвращает единственный экземпляр TaskManager.">getInstance()</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_manager_8java_source.html">TaskManager.java</a> строка <a class="el" href="_task_manager_8java_source.html#l00031">31</a></p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="a49a919d7e57b63860295ab705046937c" name="a49a919d7e57b63860295ab705046937c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49a919d7e57b63860295ab705046937c">&#9670;&#160;</a></span>TaskManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">model.TaskManager.TaskManager </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Приватный конструктор </p>
+<p>Предотвращает создание экземпляров извне класса</p>
+<dl class="section note"><dt>Заметки</dt><dd>Инициализирует пустой список задач </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Только для внутреннего использования </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_manager_8java_source.html">TaskManager.java</a> строка <a class="el" href="_task_manager_8java_source.html#l00058">58</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_manager_8java_source.html#l00073">getInstance()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_task_manager_a49a919d7e57b63860295ab705046937c_icgraph.png" border="0" usemap="#aclassmodel_1_1_task_manager_a49a919d7e57b63860295ab705046937c_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassmodel_1_1_task_manager_a49a919d7e57b63860295ab705046937c_icgraph" id="aclassmodel_1_1_task_manager_a49a919d7e57b63860295ab705046937c_icgraph">
+<area shape="rect" title="Приватный конструктор" alt="" coords="495,31,714,56"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea" title="Возвращает единственный экземпляр TaskManager." alt="" coords="238,31,447,56"/>
+<area shape="poly" title=" " alt="" coords="477,44,447,46,447,41,482,43"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,5,190,31"/>
+<area shape="poly" title=" " alt="" coords="219,31,190,30,190,25,225,31"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834" title="Метод остановки приложения" alt="" coords="34,55,161,80"/>
+<area shape="poly" title=" " alt="" coords="220,56,161,64,161,59,225,55"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="a0248e3e7f014e9e35cce33f4f36bdc3e" name="a0248e3e7f014e9e35cce33f4f36bdc3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0248e3e7f014e9e35cce33f4f36bdc3e">&#9670;&#160;</a></span>addTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void model.TaskManager.addTask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmodel_1_1_task.html">Task</a></td>          <td class="paramname"><span class="paramname"><em>task</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Добавляет новую задачу в менеджер </p>
+<p>Добавляет задачу в внутренний список и проверяет все задачи на просроченность</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">task</td><td>Задача для добавления (не может быть null)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">NullPointerException</td><td>если task равен null</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>После добавления автоматически проверяет все задачи на просроченность </dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="#a6ff214cd422dcd5f0d8c5d573cd251b6" title="Проверяет все задачи на просроченность">checkAllTasksOverdue()</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_manager_8java_source.html">TaskManager.java</a> строка <a class="el" href="_task_manager_8java_source.html#l00091">91</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_manager_8java_source.html#l00213">checkAllTasksOverdue()</a> и <a class="el" href="_task_manager_8java_source.html#l00040">tasks</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_task_manager_a0248e3e7f014e9e35cce33f4f36bdc3e_cgraph.png" border="0" usemap="#aclassmodel_1_1_task_manager_a0248e3e7f014e9e35cce33f4f36bdc3e_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassmodel_1_1_task_manager_a0248e3e7f014e9e35cce33f4f36bdc3e_cgraph" id="aclassmodel_1_1_task_manager_a0248e3e7f014e9e35cce33f4f36bdc3e_cgraph">
+<area shape="rect" title="Добавляет новую задачу в менеджер" alt="" coords="5,13,196,38"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a6ff214cd422dcd5f0d8c5d573cd251b6" title="Проверяет все задачи на просроченность" alt="" coords="244,5,435,46"/>
+<area shape="poly" title=" " alt="" coords="196,23,230,25,225,26,196,28"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6ff214cd422dcd5f0d8c5d573cd251b6" name="a6ff214cd422dcd5f0d8c5d573cd251b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ff214cd422dcd5f0d8c5d573cd251b6">&#9670;&#160;</a></span>checkAllTasksOverdue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void model.TaskManager.checkAllTasksOverdue </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Проверяет все задачи на просроченность </p>
+<p>Проходит по всем задачам и обновляет их статус просроченности</p>
+<dl class="section note"><dt>Заметки</dt><dd>Вызывается автоматически при добавлении задачи и получении списка </dd>
+<dd>
+Проверяет только невыполненные задачи </dd>
+<dd>
+Использует текущее системное время для проверки</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd>LocalDateTime#now() </dd>
+<dd>
+<a class="el" href="classmodel_1_1_task.html#a9e92e43dca03f30943efdb87b476e71c" title="Проверяет, выполнена ли задача">Task.isCompleted()</a> </dd>
+<dd>
+<a class="el" href="classmodel_1_1_task.html#a7a97e0aae6d6edf514a6b7442ce76232" title="Возвращает время окончания задачи">Task.getEndTime()</a> </dd>
+<dd>
+<a class="el" href="classmodel_1_1_task.html#a51d5d85ac6843e7c4631f7ab9b24853e" title="Проверяет, не просрочена ли задача">Task.checkOverdue()</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_manager_8java_source.html">TaskManager.java</a> строка <a class="el" href="_task_manager_8java_source.html#l00213">213</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_manager_8java_source.html#l00040">tasks</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_task_manager_8java_source.html#l00091">addTask()</a>, <a class="el" href="_task_manager_8java_source.html#l00124">getAllTasks()</a> и <a class="el" href="_task_manager_8java_source.html#l00288">loadTasks()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_task_manager_a6ff214cd422dcd5f0d8c5d573cd251b6_icgraph.png" border="0" usemap="#aclassmodel_1_1_task_manager_a6ff214cd422dcd5f0d8c5d573cd251b6_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassmodel_1_1_task_manager_a6ff214cd422dcd5f0d8c5d573cd251b6_icgraph" id="aclassmodel_1_1_task_manager_a6ff214cd422dcd5f0d8c5d573cd251b6_icgraph">
+<area shape="rect" title="Проверяет все задачи на просроченность" alt="" coords="482,55,673,96"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a0248e3e7f014e9e35cce33f4f36bdc3e" title="Добавляет новую задачу в менеджер" alt="" coords="239,5,429,31"/>
+<area shape="poly" title=" " alt="" coords="471,51,392,34,392,29,476,51"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#abc809a0b2d184494368cc5cc6dae6346" title="Возвращает копию списка всех задач" alt="" coords="247,55,421,96"/>
+<area shape="poly" title=" " alt="" coords="464,76,422,78,421,73,469,75"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a34ef794553cd1ac2b4603298b564dafb" title="Загружает задачи из внешнего списка" alt="" coords="234,120,434,146"/>
+<area shape="poly" title=" " alt="" coords="476,100,392,122,391,117,471,100"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#aeeb1bbd577dfd42c694e1120de83f476" title="Выполняет поиск задач по тексту" alt="" coords="5,27,186,68"/>
+<area shape="poly" title=" " alt="" coords="229,64,186,61,186,55,234,63"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834" title="Метод остановки приложения" alt="" coords="32,92,159,118"/>
+<area shape="poly" title=" " alt="" coords="228,89,160,100,159,94,234,87"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adcdfb8fc100b092808161ba2a72d4ee5" name="adcdfb8fc100b092808161ba2a72d4ee5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcdfb8fc100b092808161ba2a72d4ee5">&#9670;&#160;</a></span>clearAllTasks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void model.TaskManager.clearAllTasks </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Очищает все задачи </p>
+<p>Удаляет все задачи из внутреннего списка</p>
+<dl class="section note"><dt>Заметки</dt><dd>После очистки список задач становится пустым </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Операция необратима, задачи не сохраняются автоматически</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd>ArrayList#clear() </dd>
+<dd>
+util.JsonUtil#saveTasks(List) </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_manager_8java_source.html">TaskManager.java</a> строка <a class="el" href="_task_manager_8java_source.html#l00269">269</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_manager_8java_source.html#l00040">tasks</a>.</p>
+
+</div>
+</div>
+<a id="abc809a0b2d184494368cc5cc6dae6346" name="abc809a0b2d184494368cc5cc6dae6346"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc809a0b2d184494368cc5cc6dae6346">&#9670;&#160;</a></span>getAllTasks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="classmodel_1_1_task.html">Task</a> &gt; model.TaskManager.getAllTasks </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает копию списка всех задач </p>
+<p>Предоставляет защищенную копию списка задач для предотвращения модификаций извне</p>
+<dl class="section return"><dt>Возвращает</dt><dd>List&lt;Task&gt; Новый список, содержащий все задачи</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Перед возвратом проверяет все задачи на просроченность </dd>
+<dd>
+Возвращает копию списка для обеспечения инкапсуляции</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="#a6ff214cd422dcd5f0d8c5d573cd251b6" title="Проверяет все задачи на просроченность">checkAllTasksOverdue()</a> </dd>
+<dd>
+ArrayList#ArrayList(Collection) </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_manager_8java_source.html">TaskManager.java</a> строка <a class="el" href="_task_manager_8java_source.html#l00124">124</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_manager_8java_source.html#l00213">checkAllTasksOverdue()</a> и <a class="el" href="_task_manager_8java_source.html#l00040">tasks</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_task_manager_8java_source.html#l00164">searchTasks()</a> и <a class="el" href="_main_app_8java_source.html#l00243">app.MainApp.stop()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_task_manager_abc809a0b2d184494368cc5cc6dae6346_cgraph.png" border="0" usemap="#aclassmodel_1_1_task_manager_abc809a0b2d184494368cc5cc6dae6346_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassmodel_1_1_task_manager_abc809a0b2d184494368cc5cc6dae6346_cgraph" id="aclassmodel_1_1_task_manager_abc809a0b2d184494368cc5cc6dae6346_cgraph">
+<area shape="rect" title="Возвращает копию списка всех задач" alt="" coords="5,5,180,46"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a6ff214cd422dcd5f0d8c5d573cd251b6" title="Проверяет все задачи на просроченность" alt="" coords="228,5,419,46"/>
+<area shape="poly" title=" " alt="" coords="180,23,215,25,209,26,180,28"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_task_manager_abc809a0b2d184494368cc5cc6dae6346_icgraph.png" border="0" usemap="#aclassmodel_1_1_task_manager_abc809a0b2d184494368cc5cc6dae6346_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassmodel_1_1_task_manager_abc809a0b2d184494368cc5cc6dae6346_icgraph" id="aclassmodel_1_1_task_manager_abc809a0b2d184494368cc5cc6dae6346_icgraph">
+<area shape="rect" title="Возвращает копию списка всех задач" alt="" coords="234,35,408,75"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#aeeb1bbd577dfd42c694e1120de83f476" title="Выполняет поиск задач по тексту" alt="" coords="5,5,186,46"/>
+<area shape="poly" title=" " alt="" coords="216,42,186,40,186,35,221,41"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834" title="Метод остановки приложения" alt="" coords="32,70,159,96"/>
+<area shape="poly" title=" " alt="" coords="216,68,160,78,159,73,221,67"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a25e2f8d72d281275facbc0e9badb47ea" name="a25e2f8d72d281275facbc0e9badb47ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25e2f8d72d281275facbc0e9badb47ea">&#9670;&#160;</a></span>getInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized <a class="el" href="#a49a919d7e57b63860295ab705046937c">TaskManager</a> model.TaskManager.getInstance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает единственный экземпляр <a class="el" href="classmodel_1_1_task_manager.html" title="Менеджер задач - центральный класс для управления задачами">TaskManager</a>. </p>
+<p>Реализация паттерна Singleton с ленивой инициализацией</p>
+<dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="classmodel_1_1_task_manager.html" title="Менеджер задач - центральный класс для управления задачами">TaskManager</a> Единственный экземпляр менеджера задач</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Использует synchronized для потокобезопасности </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Всегда используйте этот метод для получения экземпляра</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd>Singleton паттерн </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_manager_8java_source.html">TaskManager.java</a> строка <a class="el" href="_task_manager_8java_source.html#l00073">73</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_manager_8java_source.html#l00049">instance</a> и <a class="el" href="_task_manager_8java_source.html#l00058">TaskManager()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00190">view.MainController.initialize()</a> и <a class="el" href="_main_app_8java_source.html#l00243">app.MainApp.stop()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_task_manager_a25e2f8d72d281275facbc0e9badb47ea_cgraph.png" border="0" usemap="#aclassmodel_1_1_task_manager_a25e2f8d72d281275facbc0e9badb47ea_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassmodel_1_1_task_manager_a25e2f8d72d281275facbc0e9badb47ea_cgraph" id="aclassmodel_1_1_task_manager_a25e2f8d72d281275facbc0e9badb47ea_cgraph">
+<area shape="rect" title="Возвращает единственный экземпляр TaskManager." alt="" coords="5,5,215,31"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c" title="Приватный конструктор" alt="" coords="263,5,482,31"/>
+<area shape="poly" title=" " alt="" coords="215,16,250,18,245,18,215,21"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_task_manager_a25e2f8d72d281275facbc0e9badb47ea_icgraph.png" border="0" usemap="#aclassmodel_1_1_task_manager_a25e2f8d72d281275facbc0e9badb47ea_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassmodel_1_1_task_manager_a25e2f8d72d281275facbc0e9badb47ea_icgraph" id="aclassmodel_1_1_task_manager_a25e2f8d72d281275facbc0e9badb47ea_icgraph">
+<area shape="rect" title="Возвращает единственный экземпляр TaskManager." alt="" coords="238,31,447,56"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,5,190,31"/>
+<area shape="poly" title=" " alt="" coords="219,31,190,30,190,25,225,31"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834" title="Метод остановки приложения" alt="" coords="34,55,161,80"/>
+<area shape="poly" title=" " alt="" coords="220,56,161,64,161,59,225,55"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a593c44bb00c7932604aefff2aed3713f" name="a593c44bb00c7932604aefff2aed3713f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a593c44bb00c7932604aefff2aed3713f">&#9670;&#160;</a></span>getOverdueTaskCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int model.TaskManager.getOverdueTaskCount </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Подсчитывает количество просроченных задач </p>
+<p>Возвращает количество невыполненных задач, у которых истек срок выполнения</p>
+<dl class="section return"><dt>Возвращает</dt><dd>int Количество просроченных невыполненных задач</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Учитывает только невыполненные задачи (выполненные не могут быть просроченными) </dd>
+<dd>
+Использует Stream API для фильтрации и подсчета</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classmodel_1_1_task.html#a6c49d13cb1e76676ef53876e9acc3ca4" title="Проверяет, просрочена ли задача">Task.isOverdue()</a> </dd>
+<dd>
+<a class="el" href="classmodel_1_1_task.html#a9e92e43dca03f30943efdb87b476e71c" title="Проверяет, выполнена ли задача">Task.isCompleted()</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_manager_8java_source.html">TaskManager.java</a> строка <a class="el" href="_task_manager_8java_source.html#l00253">253</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_manager_8java_source.html#l00040">tasks</a>.</p>
+
+</div>
+</div>
+<a id="a83be2e7272a4f79d69be72380893f0f6" name="a83be2e7272a4f79d69be72380893f0f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83be2e7272a4f79d69be72380893f0f6">&#9670;&#160;</a></span>getTaskCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int model.TaskManager.getTaskCount </td>
+          <td>(</td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>completed</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Подсчитывает количество задач по статусу выполнения </p>
+<p>Возвращает количество задач с указанным статусом выполнения</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">completed</td><td>Статус выполнения для подсчета (true - выполненные, false - невыполненные) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>int Количество задач с указанным статусом</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Использует Stream API с фильтрацией и подсчетом </dd>
+<dd>
+Более эффективен чем <a class="el" href="#a7bb0de58bf371543965a953b7f2261b5" title="Фильтрует задачи по статусу выполнения">getTasksByCompletion()</a>.size()</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd>Stream#filter(Predicate) </dd>
+<dd>
+Stream#count() </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_manager_8java_source.html">TaskManager.java</a> строка <a class="el" href="_task_manager_8java_source.html#l00235">235</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_manager_8java_source.html#l00040">tasks</a>.</p>
+
+</div>
+</div>
+<a id="a7bb0de58bf371543965a953b7f2261b5" name="a7bb0de58bf371543965a953b7f2261b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bb0de58bf371543965a953b7f2261b5">&#9670;&#160;</a></span>getTasksByCompletion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="classmodel_1_1_task.html">Task</a> &gt; model.TaskManager.getTasksByCompletion </td>
+          <td>(</td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>completed</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Фильтрует задачи по статусу выполнения </p>
+<p>Возвращает список задач, отфильтрованный по статусу выполнения</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">completed</td><td>true для выполненных задач, false для невыполненных </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>List&lt;Task&gt; Список задач с указанным статусом выполнения</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Использует Stream API для фильтрации </dd>
+<dd>
+Возвращает новый список (оригинальный не модифицируется)</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classmodel_1_1_task.html#a9e92e43dca03f30943efdb87b476e71c" title="Проверяет, выполнена ли задача">Task.isCompleted()</a> </dd>
+<dd>
+Stream#filter(Predicate) </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_manager_8java_source.html">TaskManager.java</a> строка <a class="el" href="_task_manager_8java_source.html#l00142">142</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_manager_8java_source.html#l00040">tasks</a>.</p>
+
+</div>
+</div>
+<a id="a34ef794553cd1ac2b4603298b564dafb" name="a34ef794553cd1ac2b4603298b564dafb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34ef794553cd1ac2b4603298b564dafb">&#9670;&#160;</a></span>loadTasks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void model.TaskManager.loadTasks </td>
+          <td>(</td>
+          <td class="paramtype">List&lt; <a class="el" href="classmodel_1_1_task.html">Task</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>loadedTasks</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Загружает задачи из внешнего списка </p>
+<p>Заменяет текущий список задач новым списком</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">loadedTasks</td><td>Новый список задач для загрузки</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">NullPointerException</td><td>если loadedTasks равен null</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>После загрузки автоматически проверяет все задачи на просроченность </dd>
+<dd>
+Очищает предыдущий список задач</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="#adcdfb8fc100b092808161ba2a72d4ee5" title="Очищает все задачи">clearAllTasks()</a> </dd>
+<dd>
+<a class="el" href="#a6ff214cd422dcd5f0d8c5d573cd251b6" title="Проверяет все задачи на просроченность">checkAllTasksOverdue()</a> </dd>
+<dd>
+ArrayList#addAll(Collection) </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_manager_8java_source.html">TaskManager.java</a> строка <a class="el" href="_task_manager_8java_source.html#l00288">288</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_manager_8java_source.html#l00213">checkAllTasksOverdue()</a> и <a class="el" href="_task_manager_8java_source.html#l00040">tasks</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_task_manager_a34ef794553cd1ac2b4603298b564dafb_cgraph.png" border="0" usemap="#aclassmodel_1_1_task_manager_a34ef794553cd1ac2b4603298b564dafb_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassmodel_1_1_task_manager_a34ef794553cd1ac2b4603298b564dafb_cgraph" id="aclassmodel_1_1_task_manager_a34ef794553cd1ac2b4603298b564dafb_cgraph">
+<area shape="rect" title="Загружает задачи из внешнего списка" alt="" coords="5,13,206,38"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a6ff214cd422dcd5f0d8c5d573cd251b6" title="Проверяет все задачи на просроченность" alt="" coords="254,5,445,46"/>
+<area shape="poly" title=" " alt="" coords="206,23,240,26,235,26,206,28"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3be20318c826cf81cdd44962c31bbf86" name="a3be20318c826cf81cdd44962c31bbf86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3be20318c826cf81cdd44962c31bbf86">&#9670;&#160;</a></span>markAsCompleted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean model.TaskManager.markAsCompleted </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>taskId</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>completed</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Изменяет статус выполнения задачи </p>
+<p>Помечает задачу как выполненную или невыполненную по её ID</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">taskId</td><td>Уникальный идентификатор задачи </td></tr>
+    <tr><td class="paramname">completed</td><td>Новый статус выполнения (true - выполнена, false - не выполнена) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true если задача найдена и статус изменен, false если задача не найдена</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>При установке статуса "выполнено" автоматически снимается флаг просроченности </dd>
+<dd>
+Использует обычный цикл for для возможности возврата после нахождения задачи</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classmodel_1_1_task.html#a1f753adaaf4a456af6ecb36ae340c238" title="Устанавливает статус выполнения задачи">Task.setCompleted(boolean)</a> </dd>
+<dd>
+<a class="el" href="classmodel_1_1_task.html#ad8dccd120a6f3e607f46f0c3765de3a5" title="Возвращает уникальный идентификатор задачи">Task.getId()</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_manager_8java_source.html">TaskManager.java</a> строка <a class="el" href="_task_manager_8java_source.html#l00190">190</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_manager_8java_source.html#l00040">tasks</a>.</p>
+
+</div>
+</div>
+<a id="a46e1d00e8a9e4c37eaf71795c5d0b1b5" name="a46e1d00e8a9e4c37eaf71795c5d0b1b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46e1d00e8a9e4c37eaf71795c5d0b1b5">&#9670;&#160;</a></span>removeTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean model.TaskManager.removeTask </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>taskId</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Удаляет задачу по её идентификатору </p>
+<p>Находит и удаляет задачу с указанным ID из списка</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">taskId</td><td>Уникальный идентификатор задачи для удаления </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true если задача была найдена и удалена, false если задача не найдена</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Использует Stream API для поиска задачи по ID </dd>
+<dd>
+ID задачи генерируется при создании (UUID)</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classmodel_1_1_task.html#ad8dccd120a6f3e607f46f0c3765de3a5" title="Возвращает уникальный идентификатор задачи">Task.getId()</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_manager_8java_source.html">TaskManager.java</a> строка <a class="el" href="_task_manager_8java_source.html#l00108">108</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_manager_8java_source.html#l00040">tasks</a>.</p>
+
+</div>
+</div>
+<a id="aeeb1bbd577dfd42c694e1120de83f476" name="aeeb1bbd577dfd42c694e1120de83f476"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeeb1bbd577dfd42c694e1120de83f476">&#9670;&#160;</a></span>searchTasks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="classmodel_1_1_task.html">Task</a> &gt; model.TaskManager.searchTasks </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>query</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Выполняет поиск задач по тексту </p>
+<p>Ищет задачи, в заголовке или описании которых содержится указанный текст</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">query</td><td>Текст для поиска (может быть null или пустым) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>List&lt;Task&gt; Список найденных задач или все задачи если query пустой</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Поиск не чувствителен к регистру (все приводится к нижнему регистру) </dd>
+<dd>
+Если query null или пустой, возвращает все задачи </dd>
+<dd>
+Ищет как в заголовке, так и в описании задачи</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classmodel_1_1_task.html#a3016babcf59132145ef35906075ea109" title="Возвращает заголовок задачи">Task.getTitle()</a> </dd>
+<dd>
+<a class="el" href="classmodel_1_1_task.html#a8dc5a073ec12dc2747bda501f29a0127" title="Возвращает описание задачи">Task.getDescription()</a> </dd>
+<dd>
+String#toLowerCase() </dd>
+<dd>
+String#contains(CharSequence) </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_manager_8java_source.html">TaskManager.java</a> строка <a class="el" href="_task_manager_8java_source.html#l00164">164</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_manager_8java_source.html#l00124">getAllTasks()</a> и <a class="el" href="_task_manager_8java_source.html#l00040">tasks</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_task_manager_aeeb1bbd577dfd42c694e1120de83f476_cgraph.png" border="0" usemap="#aclassmodel_1_1_task_manager_aeeb1bbd577dfd42c694e1120de83f476_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassmodel_1_1_task_manager_aeeb1bbd577dfd42c694e1120de83f476_cgraph" id="aclassmodel_1_1_task_manager_aeeb1bbd577dfd42c694e1120de83f476_cgraph">
+<area shape="rect" title="Выполняет поиск задач по тексту" alt="" coords="5,5,186,46"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#abc809a0b2d184494368cc5cc6dae6346" title="Возвращает копию списка всех задач" alt="" coords="234,5,408,46"/>
+<area shape="poly" title=" " alt="" coords="186,23,220,25,215,26,186,28"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a6ff214cd422dcd5f0d8c5d573cd251b6" title="Проверяет все задачи на просроченность" alt="" coords="456,5,647,46"/>
+<area shape="poly" title=" " alt="" coords="408,23,443,26,438,26,408,28"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="aaa6f3dca38b29f6106f5f5c781caf626" name="aaa6f3dca38b29f6106f5f5c781caf626"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa6f3dca38b29f6106f5f5c781caf626">&#9670;&#160;</a></span>instance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a49a919d7e57b63860295ab705046937c">TaskManager</a> model.TaskManager.instance</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Единственный экземпляр <a class="el" href="classmodel_1_1_task_manager.html" title="Менеджер задач - центральный класс для управления задачами">TaskManager</a>. </p>
+<p>Реализация паттерна Singleton</p>
+<dl class="section note"><dt>Заметки</dt><dd>Инициализируется лениво (при первом вызове <a class="el" href="#a25e2f8d72d281275facbc0e9badb47ea" title="Возвращает единственный экземпляр TaskManager.">getInstance()</a>) </dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="#a25e2f8d72d281275facbc0e9badb47ea" title="Возвращает единственный экземпляр TaskManager.">getInstance()</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_manager_8java_source.html">TaskManager.java</a> строка <a class="el" href="_task_manager_8java_source.html#l00049">49</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_manager_8java_source.html#l00073">getInstance()</a>.</p>
+
+</div>
+</div>
+<a id="a3f4cf909b65371b019c344ceb2c65a6d" name="a3f4cf909b65371b019c344ceb2c65a6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f4cf909b65371b019c344ceb2c65a6d">&#9670;&#160;</a></span>tasks</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;<a class="el" href="classmodel_1_1_task.html">Task</a>&gt; model.TaskManager.tasks</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Список всех задач </p>
+<p>Внутреннее хранилище задач приложения</p>
+<dl class="section note"><dt>Заметки</dt><dd>Использует ArrayList для быстрого доступа по индексу </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Не использовать напрямую, только через методы класса </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_manager_8java_source.html">TaskManager.java</a> строка <a class="el" href="_task_manager_8java_source.html#l00040">40</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_manager_8java_source.html#l00091">addTask()</a>, <a class="el" href="_task_manager_8java_source.html#l00213">checkAllTasksOverdue()</a>, <a class="el" href="_task_manager_8java_source.html#l00269">clearAllTasks()</a>, <a class="el" href="_task_manager_8java_source.html#l00124">getAllTasks()</a>, <a class="el" href="_task_manager_8java_source.html#l00253">getOverdueTaskCount()</a>, <a class="el" href="_task_manager_8java_source.html#l00235">getTaskCount()</a>, <a class="el" href="_task_manager_8java_source.html#l00142">getTasksByCompletion()</a>, <a class="el" href="_task_manager_8java_source.html#l00288">loadTasks()</a>, <a class="el" href="_task_manager_8java_source.html#l00190">markAsCompleted()</a>, <a class="el" href="_task_manager_8java_source.html#l00108">removeTask()</a> и <a class="el" href="_task_manager_8java_source.html#l00164">searchTasks()</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>src/model/<a class="el" href="_task_manager_8java_source.html">TaskManager.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacemodel.html">model</a></li><li class="navelem"><a href="classmodel_1_1_task_manager.html">TaskManager</a></li>
+    <li class="footer">Документация по Умный планировщик задач (To-Do List). Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<map id="view.SnowflakeAnimation.start" name="view.SnowflakeAnimation.start">
+<area shape="rect" id="Node000001" title="Запускает анимацию снежинок" alt="" coords="5,46,205,72"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_snowflake_animation.html#a6d24131cdec8106f0705a107f30a538a" title="Создает одну снежинку со случайными параметрами" alt="" coords="254,5,464,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="205,43,241,41,236,42,206,48"/>
+<area shape="rect" id="Node000003" href="$classview_1_1_snowflake_animation.html#af7005561e512332b841adecb9d03f0c1" title="Обновляет позиции всех снежинок" alt="" coords="253,71,465,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="205,69,240,75,234,76,205,74"/>
+</map>

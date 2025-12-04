@@ -1,0 +1,1478 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Умный планировщик задач (To-Do List): Класс model.Task</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">JavaFX приложение для управления задачами с новогодней темой</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classmodel_1_1_task.html','','classmodel_1_1_task-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс model.Task</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Основной класс, представляющий задачу в приложении  
+ <a href="#details">Подробнее...</a></p>
+<div class="dynheader">
+Граф связей класса model.Task:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_task__coll__graph.png" border="0" usemap="#amodel_8_task_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="amodel_8_task_coll__map" id="amodel_8_task_coll__map">
+<area shape="rect" title="Основной класс, представляющий задачу в приложении" alt="" coords="77,102,166,128"/>
+<area shape="rect" href="enummodel_1_1_priority.html" title=" " alt="" coords="5,5,107,31"/>
+<area shape="poly" title=" " alt="" coords="74,41,116,101,110,102,71,46"/>
+<area shape="rect" href="enummodel_1_1_category.html" title=" " alt="" coords="131,5,245,31"/>
+<area shape="poly" title=" " alt="" coords="175,43,151,80,133,104,129,100,147,76,170,45"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ac875313dc638186c0d5cab57f83e7a5c" id="r_ac875313dc638186c0d5cab57f83e7a5c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac875313dc638186c0d5cab57f83e7a5c">Task</a> (String <a class="el" href="#a34c52d9ff8e7da7d626571734c42c3d8">title</a>, String <a class="el" href="#a07ef4f25f3f680def771f2c13cb03664">description</a>, LocalDateTime <a class="el" href="#a4d724b7a2a78a0c4f5fb64ac7f105ab2">startTime</a>, LocalDateTime <a class="el" href="#aa34d9212eb23aae2d16526ad491a869c">endTime</a>, <a class="el" href="enummodel_1_1_priority.html">Priority</a> <a class="el" href="#a130a669bee59c82b5dbc1bdc16ced301">priority</a>, <a class="el" href="enummodel_1_1_category.html">Category</a> <a class="el" href="#a084412f7db98a3a81a77761a22e6d00c">category</a>)</td></tr>
+<tr class="memdesc:ac875313dc638186c0d5cab57f83e7a5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор для создания новой задачи  <br /></td></tr>
+<tr class="memitem:a588c01505352172d2ba968bfcf483b5b" id="r_a588c01505352172d2ba968bfcf483b5b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a588c01505352172d2ba968bfcf483b5b">Task</a> (String <a class="el" href="#aa21bd9d6331060a2941919100058e93a">id</a>, String <a class="el" href="#a34c52d9ff8e7da7d626571734c42c3d8">title</a>, String <a class="el" href="#a07ef4f25f3f680def771f2c13cb03664">description</a>, String <a class="el" href="#a4d724b7a2a78a0c4f5fb64ac7f105ab2">startTime</a>, String <a class="el" href="#aa34d9212eb23aae2d16526ad491a869c">endTime</a>, String <a class="el" href="#a130a669bee59c82b5dbc1bdc16ced301">priority</a>, String <a class="el" href="#a084412f7db98a3a81a77761a22e6d00c">category</a>, boolean <a class="el" href="#a05c129aa054e0d7d98d701724f7956da">completed</a>, boolean <a class="el" href="#a02c952a8c39fc4492b71a9e303d5f3ed">overdue</a>, String <a class="el" href="#a20967dcf39425b7ec0e2aecec7b6f9a4">createdAt</a>)</td></tr>
+<tr class="memdesc:a588c01505352172d2ba968bfcf483b5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор для загрузки из JSON.  <br /></td></tr>
+<tr class="memitem:a51d5d85ac6843e7c4631f7ab9b24853e" id="r_a51d5d85ac6843e7c4631f7ab9b24853e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51d5d85ac6843e7c4631f7ab9b24853e">checkOverdue</a> ()</td></tr>
+<tr class="memdesc:a51d5d85ac6843e7c4631f7ab9b24853e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, не просрочена ли задача  <br /></td></tr>
+<tr class="memitem:ad8dccd120a6f3e607f46f0c3765de3a5" id="r_ad8dccd120a6f3e607f46f0c3765de3a5"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8dccd120a6f3e607f46f0c3765de3a5">getId</a> ()</td></tr>
+<tr class="memdesc:ad8dccd120a6f3e607f46f0c3765de3a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает уникальный идентификатор задачи  <br /></td></tr>
+<tr class="memitem:a3016babcf59132145ef35906075ea109" id="r_a3016babcf59132145ef35906075ea109"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3016babcf59132145ef35906075ea109">getTitle</a> ()</td></tr>
+<tr class="memdesc:a3016babcf59132145ef35906075ea109"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает заголовок задачи  <br /></td></tr>
+<tr class="memitem:a8dc5a073ec12dc2747bda501f29a0127" id="r_a8dc5a073ec12dc2747bda501f29a0127"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8dc5a073ec12dc2747bda501f29a0127">getDescription</a> ()</td></tr>
+<tr class="memdesc:a8dc5a073ec12dc2747bda501f29a0127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает описание задачи  <br /></td></tr>
+<tr class="memitem:aafb825513f5c3287cb724ddf5943ec03" id="r_aafb825513f5c3287cb724ddf5943ec03"><td class="memItemLeft" align="right" valign="top">LocalDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafb825513f5c3287cb724ddf5943ec03">getStartTime</a> ()</td></tr>
+<tr class="memdesc:aafb825513f5c3287cb724ddf5943ec03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает время начала задачи  <br /></td></tr>
+<tr class="memitem:a7a97e0aae6d6edf514a6b7442ce76232" id="r_a7a97e0aae6d6edf514a6b7442ce76232"><td class="memItemLeft" align="right" valign="top">LocalDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a97e0aae6d6edf514a6b7442ce76232">getEndTime</a> ()</td></tr>
+<tr class="memdesc:a7a97e0aae6d6edf514a6b7442ce76232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает время окончания задачи  <br /></td></tr>
+<tr class="memitem:a84dce864c8b8cc246e25e11d9cf200ca" id="r_a84dce864c8b8cc246e25e11d9cf200ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enummodel_1_1_priority.html">Priority</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84dce864c8b8cc246e25e11d9cf200ca">getPriority</a> ()</td></tr>
+<tr class="memdesc:a84dce864c8b8cc246e25e11d9cf200ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает приоритет задачи  <br /></td></tr>
+<tr class="memitem:a79d344fdb9abdebc5978f3936f7782dd" id="r_a79d344fdb9abdebc5978f3936f7782dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enummodel_1_1_category.html">Category</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79d344fdb9abdebc5978f3936f7782dd">getCategory</a> ()</td></tr>
+<tr class="memdesc:a79d344fdb9abdebc5978f3936f7782dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает категорию задачи  <br /></td></tr>
+<tr class="memitem:a9e92e43dca03f30943efdb87b476e71c" id="r_a9e92e43dca03f30943efdb87b476e71c"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e92e43dca03f30943efdb87b476e71c">isCompleted</a> ()</td></tr>
+<tr class="memdesc:a9e92e43dca03f30943efdb87b476e71c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, выполнена ли задача  <br /></td></tr>
+<tr class="memitem:a6c49d13cb1e76676ef53876e9acc3ca4" id="r_a6c49d13cb1e76676ef53876e9acc3ca4"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c49d13cb1e76676ef53876e9acc3ca4">isOverdue</a> ()</td></tr>
+<tr class="memdesc:a6c49d13cb1e76676ef53876e9acc3ca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, просрочена ли задача  <br /></td></tr>
+<tr class="memitem:ad6ec5cffb9609071d2f5161d6e4b045f" id="r_ad6ec5cffb9609071d2f5161d6e4b045f"><td class="memItemLeft" align="right" valign="top">LocalDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6ec5cffb9609071d2f5161d6e4b045f">getCreatedAt</a> ()</td></tr>
+<tr class="memdesc:ad6ec5cffb9609071d2f5161d6e4b045f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает дату создания задачи  <br /></td></tr>
+<tr class="memitem:a8ef502c3d231d993871a0203b7a4b082" id="r_a8ef502c3d231d993871a0203b7a4b082"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ef502c3d231d993871a0203b7a4b082">setTitle</a> (String <a class="el" href="#a34c52d9ff8e7da7d626571734c42c3d8">title</a>)</td></tr>
+<tr class="memdesc:a8ef502c3d231d993871a0203b7a4b082"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает новый заголовок задачи  <br /></td></tr>
+<tr class="memitem:a58431c5f948db73f7dc1c5f60692f0de" id="r_a58431c5f948db73f7dc1c5f60692f0de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58431c5f948db73f7dc1c5f60692f0de">setDescription</a> (String <a class="el" href="#a07ef4f25f3f680def771f2c13cb03664">description</a>)</td></tr>
+<tr class="memdesc:a58431c5f948db73f7dc1c5f60692f0de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает новое описание задачи  <br /></td></tr>
+<tr class="memitem:a503fd5efc13be8165437554e698574eb" id="r_a503fd5efc13be8165437554e698574eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a503fd5efc13be8165437554e698574eb">setStartTime</a> (LocalDateTime <a class="el" href="#a4d724b7a2a78a0c4f5fb64ac7f105ab2">startTime</a>)</td></tr>
+<tr class="memdesc:a503fd5efc13be8165437554e698574eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает новое время начала задачи  <br /></td></tr>
+<tr class="memitem:a34c594727dee7b4ef90ac2fada9ade86" id="r_a34c594727dee7b4ef90ac2fada9ade86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34c594727dee7b4ef90ac2fada9ade86">setEndTime</a> (LocalDateTime <a class="el" href="#aa34d9212eb23aae2d16526ad491a869c">endTime</a>)</td></tr>
+<tr class="memdesc:a34c594727dee7b4ef90ac2fada9ade86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает новое время окончания задачи  <br /></td></tr>
+<tr class="memitem:a36053c0c038c4c0b529c27fe4c6250d0" id="r_a36053c0c038c4c0b529c27fe4c6250d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36053c0c038c4c0b529c27fe4c6250d0">setPriority</a> (<a class="el" href="enummodel_1_1_priority.html">Priority</a> <a class="el" href="#a130a669bee59c82b5dbc1bdc16ced301">priority</a>)</td></tr>
+<tr class="memdesc:a36053c0c038c4c0b529c27fe4c6250d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает новый приоритет задачи  <br /></td></tr>
+<tr class="memitem:a0f22c2e8a132499a19948f40cfffa47f" id="r_a0f22c2e8a132499a19948f40cfffa47f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f22c2e8a132499a19948f40cfffa47f">setCategory</a> (<a class="el" href="enummodel_1_1_category.html">Category</a> <a class="el" href="#a084412f7db98a3a81a77761a22e6d00c">category</a>)</td></tr>
+<tr class="memdesc:a0f22c2e8a132499a19948f40cfffa47f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает новую категорию задачи  <br /></td></tr>
+<tr class="memitem:a1f753adaaf4a456af6ecb36ae340c238" id="r_a1f753adaaf4a456af6ecb36ae340c238"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f753adaaf4a456af6ecb36ae340c238">setCompleted</a> (boolean <a class="el" href="#a05c129aa054e0d7d98d701724f7956da">completed</a>)</td></tr>
+<tr class="memdesc:a1f753adaaf4a456af6ecb36ae340c238"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает статус выполнения задачи  <br /></td></tr>
+<tr class="memitem:aaccdcedbfad9e320aac68c2c78da90be" id="r_aaccdcedbfad9e320aac68c2c78da90be"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaccdcedbfad9e320aac68c2c78da90be">getFormattedStartTime</a> ()</td></tr>
+<tr class="memdesc:aaccdcedbfad9e320aac68c2c78da90be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает отформатированное время начала  <br /></td></tr>
+<tr class="memitem:a6fc04a059d729e6dcede486b3020e292" id="r_a6fc04a059d729e6dcede486b3020e292"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6fc04a059d729e6dcede486b3020e292">getFormattedEndTime</a> ()</td></tr>
+<tr class="memdesc:a6fc04a059d729e6dcede486b3020e292"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает отформатированное время окончания  <br /></td></tr>
+<tr class="memitem:a4a39463630098008c8e7f1566d50fdcf" id="r_a4a39463630098008c8e7f1566d50fdcf"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a39463630098008c8e7f1566d50fdcf">toJsonString</a> ()</td></tr>
+<tr class="memdesc:a4a39463630098008c8e7f1566d50fdcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Преобразует задачу в JSON строку  <br /></td></tr>
+<tr class="memitem:a96557889dbc2c8c92c71ecd2381332bd" id="r_a96557889dbc2c8c92c71ecd2381332bd"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96557889dbc2c8c92c71ecd2381332bd">toString</a> ()</td></tr>
+<tr class="memdesc:a96557889dbc2c8c92c71ecd2381332bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает строковое представление задачи  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:a06ac3cb0d7ec1aa23be54ce85963aa75" id="r_a06ac3cb0d7ec1aa23be54ce85963aa75"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06ac3cb0d7ec1aa23be54ce85963aa75">escapeJson</a> (String str)</td></tr>
+<tr class="memdesc:a06ac3cb0d7ec1aa23be54ce85963aa75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Экранирует специальные символы для JSON.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:aa21bd9d6331060a2941919100058e93a" id="r_aa21bd9d6331060a2941919100058e93a"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa21bd9d6331060a2941919100058e93a">id</a></td></tr>
+<tr class="memdesc:aa21bd9d6331060a2941919100058e93a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Уникальный идентификатор задачи  <br /></td></tr>
+<tr class="memitem:a34c52d9ff8e7da7d626571734c42c3d8" id="r_a34c52d9ff8e7da7d626571734c42c3d8"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34c52d9ff8e7da7d626571734c42c3d8">title</a></td></tr>
+<tr class="memdesc:a34c52d9ff8e7da7d626571734c42c3d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заголовок задачи  <br /></td></tr>
+<tr class="memitem:a07ef4f25f3f680def771f2c13cb03664" id="r_a07ef4f25f3f680def771f2c13cb03664"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07ef4f25f3f680def771f2c13cb03664">description</a></td></tr>
+<tr class="memdesc:a07ef4f25f3f680def771f2c13cb03664"><td class="mdescLeft">&#160;</td><td class="mdescRight">Описание задачи  <br /></td></tr>
+<tr class="memitem:a4d724b7a2a78a0c4f5fb64ac7f105ab2" id="r_a4d724b7a2a78a0c4f5fb64ac7f105ab2"><td class="memItemLeft" align="right" valign="top">LocalDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d724b7a2a78a0c4f5fb64ac7f105ab2">startTime</a></td></tr>
+<tr class="memdesc:a4d724b7a2a78a0c4f5fb64ac7f105ab2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Время начала задачи  <br /></td></tr>
+<tr class="memitem:aa34d9212eb23aae2d16526ad491a869c" id="r_aa34d9212eb23aae2d16526ad491a869c"><td class="memItemLeft" align="right" valign="top">LocalDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa34d9212eb23aae2d16526ad491a869c">endTime</a></td></tr>
+<tr class="memdesc:aa34d9212eb23aae2d16526ad491a869c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Время окончания задачи (дедлайн).  <br /></td></tr>
+<tr class="memitem:a130a669bee59c82b5dbc1bdc16ced301" id="r_a130a669bee59c82b5dbc1bdc16ced301"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enummodel_1_1_priority.html">Priority</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a130a669bee59c82b5dbc1bdc16ced301">priority</a></td></tr>
+<tr class="memdesc:a130a669bee59c82b5dbc1bdc16ced301"><td class="mdescLeft">&#160;</td><td class="mdescRight">Приоритет задачи  <br /></td></tr>
+<tr class="memitem:a084412f7db98a3a81a77761a22e6d00c" id="r_a084412f7db98a3a81a77761a22e6d00c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enummodel_1_1_category.html">Category</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a084412f7db98a3a81a77761a22e6d00c">category</a></td></tr>
+<tr class="memdesc:a084412f7db98a3a81a77761a22e6d00c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Категория задачи  <br /></td></tr>
+<tr class="memitem:a05c129aa054e0d7d98d701724f7956da" id="r_a05c129aa054e0d7d98d701724f7956da"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05c129aa054e0d7d98d701724f7956da">completed</a></td></tr>
+<tr class="memdesc:a05c129aa054e0d7d98d701724f7956da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Статус выполнения задачи  <br /></td></tr>
+<tr class="memitem:a02c952a8c39fc4492b71a9e303d5f3ed" id="r_a02c952a8c39fc4492b71a9e303d5f3ed"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02c952a8c39fc4492b71a9e303d5f3ed">overdue</a></td></tr>
+<tr class="memdesc:a02c952a8c39fc4492b71a9e303d5f3ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Статус просроченности задачи  <br /></td></tr>
+<tr class="memitem:a20967dcf39425b7ec0e2aecec7b6f9a4" id="r_a20967dcf39425b7ec0e2aecec7b6f9a4"><td class="memItemLeft" align="right" valign="top">LocalDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20967dcf39425b7ec0e2aecec7b6f9a4">createdAt</a></td></tr>
+<tr class="memdesc:a20967dcf39425b7ec0e2aecec7b6f9a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Дата создания задачи  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Закрытые статические данные</h2></td></tr>
+<tr class="memitem:a4976fbdff14534c011de338c8d8d75ce" id="r_a4976fbdff14534c011de338c8d8d75ce"><td class="memItemLeft" align="right" valign="top">static final DateTimeFormatter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4976fbdff14534c011de338c8d8d75ce">FORMATTER</a></td></tr>
+<tr class="memdesc:a4976fbdff14534c011de338c8d8d75ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Форматер для даты и времени  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Основной класс, представляющий задачу в приложении </p>
+<p>Класс <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a> содержит все данные о задаче: заголовок, описание, даты начала и окончания, приоритет, категорию и статусы выполнения. Предоставляет методы для проверки просроченности, форматирования времени и сериализации в JSON формат для сохранения.</p>
+<dl class="section author"><dt>Автор</dt><dd>Разработчик </dd></dl>
+<dl class="section version"><dt>Версия</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Дата</dt><dd>2025-11-30</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="enummodel_1_1_priority.html">Priority</a> </dd>
+<dd>
+<a class="el" href="enummodel_1_1_category.html">Category</a> </dd>
+<dd>
+<a class="el" href="classmodel_1_1_task_manager.html" title="Менеджер задач - центральный класс для управления задачами">TaskManager</a> </dd>
+<dd>
+<a class="el" href="classutil_1_1_json_util.html" title="Утилита для работы с JSON файлами задач">util.JsonUtil</a></dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Все даты хранятся в формате LocalDateTime </dd>
+<dd>
+ID задачи генерируется автоматически при создании через UUID </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00028">28</a></p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="ac875313dc638186c0d5cab57f83e7a5c" name="ac875313dc638186c0d5cab57f83e7a5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac875313dc638186c0d5cab57f83e7a5c">&#9670;&#160;</a></span>Task() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">model.Task.Task </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>title</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>description</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LocalDateTime</td>          <td class="paramname"><span class="paramname"><em>startTime</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LocalDateTime</td>          <td class="paramname"><span class="paramname"><em>endTime</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enummodel_1_1_priority.html">Priority</a></td>          <td class="paramname"><span class="paramname"><em>priority</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enummodel_1_1_category.html">Category</a></td>          <td class="paramname"><span class="paramname"><em>category</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор для создания новой задачи </p>
+<p>Создает задачу с автоматически сгенерированным ID и текущей датой создания</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>Заголовок задачи (не может быть null или пустым) </td></tr>
+    <tr><td class="paramname">description</td><td>Описание задачи (может быть пустым) </td></tr>
+    <tr><td class="paramname">startTime</td><td>Время начала задачи </td></tr>
+    <tr><td class="paramname">endTime</td><td>Время окончания (дедлайн) </td></tr>
+    <tr><td class="paramname">priority</td><td>Приоритет задачи (если null, используется IMPORTANT по умолчанию) </td></tr>
+    <tr><td class="paramname">category</td><td>Категория задачи (если null, используется OTHER по умолчанию)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>если title пустой или endTime раньше startTime</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Приоритет по умолчанию - IMPORTANT, категория - OTHER </dd>
+<dd>
+ID генерируется с помощью UUID.randomUUID() </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00118">118</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00072">category</a>, <a class="el" href="_task_8java_source.html#l00047">description</a>, <a class="el" href="_task_8java_source.html#l00060">endTime</a>, <a class="el" href="_priority_8java_source.html#l00180">model.Priority.getDefault()</a>, <a class="el" href="_category_8java_source.html#l00050">model.Category.OTHER</a>, <a class="el" href="_task_8java_source.html#l00066">priority</a>, <a class="el" href="_task_8java_source.html#l00053">startTime</a> и <a class="el" href="_task_8java_source.html#l00041">title</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_task_ac875313dc638186c0d5cab57f83e7a5c_cgraph.png" border="0" usemap="#aclassmodel_1_1_task_ac875313dc638186c0d5cab57f83e7a5c_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassmodel_1_1_task_ac875313dc638186c0d5cab57f83e7a5c_cgraph" id="aclassmodel_1_1_task_ac875313dc638186c0d5cab57f83e7a5c_cgraph">
+<area shape="rect" title="Конструктор для создания новой задачи" alt="" coords="5,5,126,31"/>
+<area shape="rect" href="enummodel_1_1_priority.html#a80b9836442ce641c8f1deeb10d9ef177" title="Возвращает приоритет по умолчанию" alt="" coords="174,5,337,31"/>
+<area shape="poly" title=" " alt="" coords="126,16,161,18,155,18,126,21"/>
+<area shape="rect" href="enummodel_1_1_priority.html#a6ea7a40e9195dbd8cc7aa9fa8cdb8c3d" title="Конструктор приоритета" alt="" coords="385,5,529,31"/>
+<area shape="poly" title=" " alt="" coords="337,16,372,18,367,18,337,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a588c01505352172d2ba968bfcf483b5b" name="a588c01505352172d2ba968bfcf483b5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a588c01505352172d2ba968bfcf483b5b">&#9670;&#160;</a></span>Task() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">model.Task.Task </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>title</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>description</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>startTime</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>endTime</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>priority</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>category</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>completed</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>overdue</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>createdAt</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор для загрузки из JSON. </p>
+<p>Создает задачу из данных, загруженных из JSON файла Проверяет просроченность при создании</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Уникальный идентификатор задачи </td></tr>
+    <tr><td class="paramname">title</td><td>Заголовок задачи </td></tr>
+    <tr><td class="paramname">description</td><td>Описание задачи </td></tr>
+    <tr><td class="paramname">startTime</td><td>Время начала в строковом формате (yyyy-MM-dd'T'HH:mm:ss) </td></tr>
+    <tr><td class="paramname">endTime</td><td>Время окончания в строковом формате (yyyy-MM-dd'T'HH:mm:ss) </td></tr>
+    <tr><td class="paramname">priority</td><td>Приоритет в строковом формате (enum name) </td></tr>
+    <tr><td class="paramname">category</td><td>Категория в строковом формате (enum name) </td></tr>
+    <tr><td class="paramname">completed</td><td>Статус выполнения </td></tr>
+    <tr><td class="paramname">overdue</td><td>Статус просроченности </td></tr>
+    <tr><td class="paramname">createdAt</td><td>Дата создания в строковом формате (yyyy-MM-dd'T'HH:mm:ss)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">java.time.format.DateTimeParseException</td><td>если строки дат не соответствуют формату </td></tr>
+    <tr><td class="paramname">IllegalArgumentException</td><td>если priority или category не являются допустимыми enum значениями</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Используется JsonUtil для десериализации задач из файла </dd>
+<dd>
+Автоматически вызывает <a class="el" href="#a51d5d85ac6843e7c4631f7ab9b24853e" title="Проверяет, не просрочена ли задача">checkOverdue()</a> после создания</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classutil_1_1_json_util.html" title="Утилита для работы с JSON файлами задач">util.JsonUtil</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00156">156</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00072">category</a>, <a class="el" href="_task_8java_source.html#l00185">checkOverdue()</a>, <a class="el" href="_task_8java_source.html#l00078">completed</a>, <a class="el" href="_task_8java_source.html#l00091">createdAt</a>, <a class="el" href="_task_8java_source.html#l00047">description</a>, <a class="el" href="_task_8java_source.html#l00060">endTime</a>, <a class="el" href="_task_8java_source.html#l00099">FORMATTER</a>, <a class="el" href="_task_8java_source.html#l00035">id</a>, <a class="el" href="_task_8java_source.html#l00085">overdue</a>, <a class="el" href="_task_8java_source.html#l00066">priority</a>, <a class="el" href="_task_8java_source.html#l00053">startTime</a> и <a class="el" href="_task_8java_source.html#l00041">title</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_task_a588c01505352172d2ba968bfcf483b5b_cgraph.png" border="0" usemap="#aclassmodel_1_1_task_a588c01505352172d2ba968bfcf483b5b_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassmodel_1_1_task_a588c01505352172d2ba968bfcf483b5b_cgraph" id="aclassmodel_1_1_task_a588c01505352172d2ba968bfcf483b5b_cgraph">
+<area shape="rect" title="Конструктор для загрузки из JSON." alt="" coords="5,5,126,31"/>
+<area shape="rect" href="classmodel_1_1_task.html#a51d5d85ac6843e7c4631f7ab9b24853e" title="Проверяет, не просрочена ли задача" alt="" coords="174,5,350,31"/>
+<area shape="poly" title=" " alt="" coords="126,16,161,18,156,18,126,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="a51d5d85ac6843e7c4631f7ab9b24853e" name="a51d5d85ac6843e7c4631f7ab9b24853e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51d5d85ac6843e7c4631f7ab9b24853e">&#9670;&#160;</a></span>checkOverdue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void model.Task.checkOverdue </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Проверяет, не просрочена ли задача </p>
+<p>Сравнивает текущее время с дедлайном задачи Автоматически обновляет поле overdue</p>
+<dl class="section note"><dt>Заметки</dt><dd>Метод вызывается при создании задачи из JSON и изменении времени окончания </dd>
+<dd>
+Просроченными считаются только невыполненные задачи</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="#a34c594727dee7b4ef90ac2fada9ade86" title="Устанавливает новое время окончания задачи">setEndTime(LocalDateTime)</a> </dd>
+<dd>
+<a class="el" href="#a1f753adaaf4a456af6ecb36ae340c238" title="Устанавливает статус выполнения задачи">setCompleted(boolean)</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00185">185</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00078">completed</a> и <a class="el" href="_task_8java_source.html#l00060">endTime</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00285">setEndTime()</a> и <a class="el" href="_task_8java_source.html#l00156">Task()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_task_a51d5d85ac6843e7c4631f7ab9b24853e_icgraph.png" border="0" usemap="#aclassmodel_1_1_task_a51d5d85ac6843e7c4631f7ab9b24853e_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassmodel_1_1_task_a51d5d85ac6843e7c4631f7ab9b24853e_icgraph" id="aclassmodel_1_1_task_a51d5d85ac6843e7c4631f7ab9b24853e_icgraph">
+<area shape="rect" title="Проверяет, не просрочена ли задача" alt="" coords="216,31,392,56"/>
+<area shape="rect" href="classmodel_1_1_task.html#a34c594727dee7b4ef90ac2fada9ade86" title="Устанавливает новое время окончания задачи" alt="" coords="5,5,168,31"/>
+<area shape="poly" title=" " alt="" coords="197,32,168,30,168,25,203,31"/>
+<area shape="rect" href="classmodel_1_1_task.html#a588c01505352172d2ba968bfcf483b5b" title="Конструктор для загрузки из JSON." alt="" coords="26,55,147,80"/>
+<area shape="poly" title=" " alt="" coords="197,55,147,64,147,58,203,55"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a06ac3cb0d7ec1aa23be54ce85963aa75" name="a06ac3cb0d7ec1aa23be54ce85963aa75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06ac3cb0d7ec1aa23be54ce85963aa75">&#9670;&#160;</a></span>escapeJson()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String model.Task.escapeJson </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>str</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Экранирует специальные символы для JSON. </p>
+<p>Заменяет символы, которые должны быть экранированы в JSON строке</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>Исходная строка </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>String Строка с экранированными символами</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Экранирует: кавычки, переносы строк, возвраты каретки, табуляции </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00384">384</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00361">toJsonString()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_task_a06ac3cb0d7ec1aa23be54ce85963aa75_icgraph.png" border="0" usemap="#aclassmodel_1_1_task_a06ac3cb0d7ec1aa23be54ce85963aa75_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassmodel_1_1_task_a06ac3cb0d7ec1aa23be54ce85963aa75_icgraph" id="aclassmodel_1_1_task_a06ac3cb0d7ec1aa23be54ce85963aa75_icgraph">
+<area shape="rect" title="Экранирует специальные символы для JSON." alt="" coords="1108,161,1270,187"/>
+<area shape="rect" href="classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="895,161,1060,187"/>
+<area shape="poly" title=" " alt="" coords="1090,174,1061,177,1060,172,1095,174"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="674,154,847,194"/>
+<area shape="poly" title=" " alt="" coords="877,174,847,177,847,172,882,174"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a5aa0245ff55c9b9f55087ee01f926c98" title="Экспортирует задачи в указанный файл" alt="" coords="461,136,626,162"/>
+<area shape="poly" title=" " alt="" coords="656,163,627,161,627,156,661,162"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421" title="Сохраняет все задачи в JSON файл" alt="" coords="465,185,622,211"/>
+<area shape="poly" title=" " alt="" coords="656,186,623,192,622,187,661,185"/>
+<area shape="rect" href="classutil_1_1_json_util.html#ac6e9a870e12429cc80b4ddf8ba98af0d" title="Добавляет одну задачу в файл" alt="" coords="254,5,397,31"/>
+<area shape="poly" title=" " alt="" coords="461,176,459,176,446,160,438,143,434,109,431,76,424,61,411,45,396,34,395,29,415,42,428,58,436,75,440,109,443,141,450,157,463,172,466,177"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title="Обработчик кнопки добавления новой задачи" alt="" coords="238,55,413,96"/>
+<area shape="poly" title=" " alt="" coords="465,178,459,176,443,160,434,143,426,127,411,111,393,99,393,94,415,107,431,124,439,141,447,157,463,172,470,178"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title="Обработчик кнопки удаления задачи" alt="" coords="238,120,413,161"/>
+<area shape="poly" title=" " alt="" coords="475,181,406,164,406,159,480,180"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a9911e93dd04ddd5151397f9a50e2811f" title="Удаляет задачу по ID." alt="" coords="243,185,408,211"/>
+<area shape="poly" title=" " alt="" coords="447,199,409,201,408,196,452,198"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title="Настраивает колонки таблицы задач" alt="" coords="241,235,410,276"/>
+<area shape="poly" title=" " alt="" coords="475,216,406,237,405,232,480,215"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834" title="Метод остановки приложения" alt="" coords="262,300,388,326"/>
+<area shape="poly" title=" " alt="" coords="517,220,470,257,414,290,383,302,381,297,412,285,467,253,512,222"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a48c5f07142384cff793469f5aec70968" title="Обновляет существующую задачу" alt="" coords="245,349,406,375"/>
+<area shape="poly" title=" " alt="" coords="528,223,481,284,450,314,414,340,391,351,390,346,412,336,446,310,477,280,523,225"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,243,190,268"/>
+<area shape="poly" title=" " alt="" coords="223,256,191,258,190,253,228,255"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a79d344fdb9abdebc5978f3936f7782dd" name="a79d344fdb9abdebc5978f3936f7782dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79d344fdb9abdebc5978f3936f7782dd">&#9670;&#160;</a></span>getCategory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enummodel_1_1_category.html">Category</a> model.Task.getCategory </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает категорию задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="enummodel_1_1_category.html">Category</a> Категория задачи </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00235">235</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00072">category</a>.</p>
+
+</div>
+</div>
+<a id="ad6ec5cffb9609071d2f5161d6e4b045f" name="ad6ec5cffb9609071d2f5161d6e4b045f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6ec5cffb9609071d2f5161d6e4b045f">&#9670;&#160;</a></span>getCreatedAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LocalDateTime model.Task.getCreatedAt </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает дату создания задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd>LocalDateTime Дата и время создания задачи </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00253">253</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00091">createdAt</a>.</p>
+
+</div>
+</div>
+<a id="a8dc5a073ec12dc2747bda501f29a0127" name="a8dc5a073ec12dc2747bda501f29a0127"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dc5a073ec12dc2747bda501f29a0127">&#9670;&#160;</a></span>getDescription()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String model.Task.getDescription </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает описание задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd>String Описание задачи </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00211">211</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00047">description</a>.</p>
+
+</div>
+</div>
+<a id="a7a97e0aae6d6edf514a6b7442ce76232" name="a7a97e0aae6d6edf514a6b7442ce76232"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a97e0aae6d6edf514a6b7442ce76232">&#9670;&#160;</a></span>getEndTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LocalDateTime model.Task.getEndTime </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает время окончания задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd>LocalDateTime Время окончания (дедлайн) </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00223">223</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00060">endTime</a>.</p>
+
+</div>
+</div>
+<a id="a6fc04a059d729e6dcede486b3020e292" name="a6fc04a059d729e6dcede486b3020e292"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fc04a059d729e6dcede486b3020e292">&#9670;&#160;</a></span>getFormattedEndTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String model.Task.getFormattedEndTime </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает отформатированное время окончания </p>
+<p>Форматирует LocalDateTime в читаемую строку</p>
+<dl class="section return"><dt>Возвращает</dt><dd>String Время окончания в формате "dd.MM.yyyy HH:mm"</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Используется для отображения в пользовательском интерфейсе </dd>
+<dd>
+Отображается в TableView и диалоговых окнах </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00342">342</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00060">endTime</a>.</p>
+
+</div>
+</div>
+<a id="aaccdcedbfad9e320aac68c2c78da90be" name="aaccdcedbfad9e320aac68c2c78da90be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaccdcedbfad9e320aac68c2c78da90be">&#9670;&#160;</a></span>getFormattedStartTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String model.Task.getFormattedStartTime </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает отформатированное время начала </p>
+<p>Форматирует LocalDateTime в читаемую строку</p>
+<dl class="section return"><dt>Возвращает</dt><dd>String Время начала в формате "dd.MM.yyyy HH:mm"</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Используется для отображения в пользовательском интерфейсе </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00329">329</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00053">startTime</a>.</p>
+
+</div>
+</div>
+<a id="ad8dccd120a6f3e607f46f0c3765de3a5" name="ad8dccd120a6f3e607f46f0c3765de3a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8dccd120a6f3e607f46f0c3765de3a5">&#9670;&#160;</a></span>getId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String model.Task.getId </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает уникальный идентификатор задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd>String Уникальный ID задачи </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00199">199</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00035">id</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_json_util_8java_source.html#l00231">util.JsonUtil.updateTask()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_task_ad8dccd120a6f3e607f46f0c3765de3a5_icgraph.png" border="0" usemap="#aclassmodel_1_1_task_ad8dccd120a6f3e607f46f0c3765de3a5_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassmodel_1_1_task_ad8dccd120a6f3e607f46f0c3765de3a5_icgraph" id="aclassmodel_1_1_task_ad8dccd120a6f3e607f46f0c3765de3a5_icgraph">
+<area shape="rect" title="Возвращает уникальный идентификатор задачи" alt="" coords="215,5,336,31"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a48c5f07142384cff793469f5aec70968" title="Обновляет существующую задачу" alt="" coords="5,5,167,31"/>
+<area shape="poly" title=" " alt="" coords="197,18,167,21,167,16,202,18"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a84dce864c8b8cc246e25e11d9cf200ca" name="a84dce864c8b8cc246e25e11d9cf200ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84dce864c8b8cc246e25e11d9cf200ca">&#9670;&#160;</a></span>getPriority()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enummodel_1_1_priority.html">Priority</a> model.Task.getPriority </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает приоритет задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="enummodel_1_1_priority.html">Priority</a> Приоритет задачи </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00229">229</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00066">priority</a>.</p>
+
+</div>
+</div>
+<a id="aafb825513f5c3287cb724ddf5943ec03" name="aafb825513f5c3287cb724ddf5943ec03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafb825513f5c3287cb724ddf5943ec03">&#9670;&#160;</a></span>getStartTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LocalDateTime model.Task.getStartTime </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает время начала задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd>LocalDateTime Время начала </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00217">217</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00053">startTime</a>.</p>
+
+</div>
+</div>
+<a id="a3016babcf59132145ef35906075ea109" name="a3016babcf59132145ef35906075ea109"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3016babcf59132145ef35906075ea109">&#9670;&#160;</a></span>getTitle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String model.Task.getTitle </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает заголовок задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd>String Заголовок задачи </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00205">205</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00041">title</a>.</p>
+
+</div>
+</div>
+<a id="a9e92e43dca03f30943efdb87b476e71c" name="a9e92e43dca03f30943efdb87b476e71c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e92e43dca03f30943efdb87b476e71c">&#9670;&#160;</a></span>isCompleted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean model.Task.isCompleted </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Проверяет, выполнена ли задача </p>
+<dl class="section return"><dt>Возвращает</dt><dd>boolean true если задача выполнена, иначе false </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00241">241</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00078">completed</a>.</p>
+
+</div>
+</div>
+<a id="a6c49d13cb1e76676ef53876e9acc3ca4" name="a6c49d13cb1e76676ef53876e9acc3ca4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c49d13cb1e76676ef53876e9acc3ca4">&#9670;&#160;</a></span>isOverdue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean model.Task.isOverdue </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Проверяет, просрочена ли задача </p>
+<dl class="section return"><dt>Возвращает</dt><dd>boolean true если задача просрочена, иначе false </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00247">247</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00085">overdue</a>.</p>
+
+</div>
+</div>
+<a id="a0f22c2e8a132499a19948f40cfffa47f" name="a0f22c2e8a132499a19948f40cfffa47f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f22c2e8a132499a19948f40cfffa47f">&#9670;&#160;</a></span>setCategory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void model.Task.setCategory </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enummodel_1_1_category.html">Category</a></td>          <td class="paramname"><span class="paramname"><em>category</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Устанавливает новую категорию задачи </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">category</td><td>Новая категория </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00300">300</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00072">category</a>.</p>
+
+</div>
+</div>
+<a id="a1f753adaaf4a456af6ecb36ae340c238" name="a1f753adaaf4a456af6ecb36ae340c238"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f753adaaf4a456af6ecb36ae340c238">&#9670;&#160;</a></span>setCompleted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void model.Task.setCompleted </td>
+          <td>(</td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>completed</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Устанавливает статус выполнения задачи </p>
+<p>При установке статуса "выполнено" автоматически снимается флаг просроченности</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">completed</td><td>Новый статус выполнения</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Если задача помечается как выполненная, она не может быть просроченной </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00310">310</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00078">completed</a>.</p>
+
+</div>
+</div>
+<a id="a58431c5f948db73f7dc1c5f60692f0de" name="a58431c5f948db73f7dc1c5f60692f0de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58431c5f948db73f7dc1c5f60692f0de">&#9670;&#160;</a></span>setDescription()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void model.Task.setDescription </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>description</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Устанавливает новое описание задачи </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">description</td><td>Новое описание задачи </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00269">269</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00047">description</a>.</p>
+
+</div>
+</div>
+<a id="a34c594727dee7b4ef90ac2fada9ade86" name="a34c594727dee7b4ef90ac2fada9ade86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34c594727dee7b4ef90ac2fada9ade86">&#9670;&#160;</a></span>setEndTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void model.Task.setEndTime </td>
+          <td>(</td>
+          <td class="paramtype">LocalDateTime</td>          <td class="paramname"><span class="paramname"><em>endTime</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Устанавливает новое время окончания задачи </p>
+<p>При изменении времени окончания автоматически проверяется просроченность</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">endTime</td><td>Новое время окончания (дедлайн)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="#a51d5d85ac6843e7c4631f7ab9b24853e" title="Проверяет, не просрочена ли задача">checkOverdue()</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00285">285</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00185">checkOverdue()</a> и <a class="el" href="_task_8java_source.html#l00060">endTime</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_task_a34c594727dee7b4ef90ac2fada9ade86_cgraph.png" border="0" usemap="#aclassmodel_1_1_task_a34c594727dee7b4ef90ac2fada9ade86_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassmodel_1_1_task_a34c594727dee7b4ef90ac2fada9ade86_cgraph" id="aclassmodel_1_1_task_a34c594727dee7b4ef90ac2fada9ade86_cgraph">
+<area shape="rect" title="Устанавливает новое время окончания задачи" alt="" coords="5,5,168,31"/>
+<area shape="rect" href="classmodel_1_1_task.html#a51d5d85ac6843e7c4631f7ab9b24853e" title="Проверяет, не просрочена ли задача" alt="" coords="216,5,392,31"/>
+<area shape="poly" title=" " alt="" coords="168,16,203,18,197,18,168,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a36053c0c038c4c0b529c27fe4c6250d0" name="a36053c0c038c4c0b529c27fe4c6250d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36053c0c038c4c0b529c27fe4c6250d0">&#9670;&#160;</a></span>setPriority()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void model.Task.setPriority </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enummodel_1_1_priority.html">Priority</a></td>          <td class="paramname"><span class="paramname"><em>priority</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Устанавливает новый приоритет задачи </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">priority</td><td>Новый приоритет </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00294">294</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00066">priority</a>.</p>
+
+</div>
+</div>
+<a id="a503fd5efc13be8165437554e698574eb" name="a503fd5efc13be8165437554e698574eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a503fd5efc13be8165437554e698574eb">&#9670;&#160;</a></span>setStartTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void model.Task.setStartTime </td>
+          <td>(</td>
+          <td class="paramtype">LocalDateTime</td>          <td class="paramname"><span class="paramname"><em>startTime</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Устанавливает новое время начала задачи </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">startTime</td><td>Новое время начала </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00275">275</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00053">startTime</a>.</p>
+
+</div>
+</div>
+<a id="a8ef502c3d231d993871a0203b7a4b082" name="a8ef502c3d231d993871a0203b7a4b082"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ef502c3d231d993871a0203b7a4b082">&#9670;&#160;</a></span>setTitle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void model.Task.setTitle </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>title</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Устанавливает новый заголовок задачи </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>Новый заголовок задачи </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00263">263</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00041">title</a>.</p>
+
+</div>
+</div>
+<a id="a4a39463630098008c8e7f1566d50fdcf" name="a4a39463630098008c8e7f1566d50fdcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a39463630098008c8e7f1566d50fdcf">&#9670;&#160;</a></span>toJsonString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String model.Task.toJsonString </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Преобразует задачу в JSON строку </p>
+<p>Сериализует все поля задачи в формат JSON для сохранения в файл</p>
+<dl class="section return"><dt>Возвращает</dt><dd>JSON строка, представляющая задачу</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Используется JsonUtil для сохранения задач в файл </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Не использовать для отображения пользователю</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd>util.JsonUtil#saveTasks(List) </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00361">361</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00072">category</a>, <a class="el" href="_task_8java_source.html#l00078">completed</a>, <a class="el" href="_task_8java_source.html#l00091">createdAt</a>, <a class="el" href="_task_8java_source.html#l00047">description</a>, <a class="el" href="_task_8java_source.html#l00060">endTime</a>, <a class="el" href="_task_8java_source.html#l00384">escapeJson()</a>, <a class="el" href="_task_8java_source.html#l00099">FORMATTER</a>, <a class="el" href="_task_8java_source.html#l00085">overdue</a>, <a class="el" href="_task_8java_source.html#l00066">priority</a>, <a class="el" href="_task_8java_source.html#l00053">startTime</a> и <a class="el" href="_task_8java_source.html#l00041">title</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_json_util_8java_source.html#l00261">util.JsonUtil.convertTasksToJson()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_task_a4a39463630098008c8e7f1566d50fdcf_cgraph.png" border="0" usemap="#aclassmodel_1_1_task_a4a39463630098008c8e7f1566d50fdcf_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassmodel_1_1_task_a4a39463630098008c8e7f1566d50fdcf_cgraph" id="aclassmodel_1_1_task_a4a39463630098008c8e7f1566d50fdcf_cgraph">
+<area shape="rect" title="Преобразует задачу в JSON строку" alt="" coords="5,5,171,31"/>
+<area shape="rect" href="classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="219,5,381,31"/>
+<area shape="poly" title=" " alt="" coords="171,16,206,18,200,18,171,21"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_task_a4a39463630098008c8e7f1566d50fdcf_icgraph.png" border="0" usemap="#aclassmodel_1_1_task_a4a39463630098008c8e7f1566d50fdcf_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassmodel_1_1_task_a4a39463630098008c8e7f1566d50fdcf_icgraph" id="aclassmodel_1_1_task_a4a39463630098008c8e7f1566d50fdcf_icgraph">
+<area shape="rect" title="Преобразует задачу в JSON строку" alt="" coords="895,161,1060,187"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="674,154,847,194"/>
+<area shape="poly" title=" " alt="" coords="877,174,847,177,847,172,882,174"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a5aa0245ff55c9b9f55087ee01f926c98" title="Экспортирует задачи в указанный файл" alt="" coords="461,136,626,162"/>
+<area shape="poly" title=" " alt="" coords="656,163,627,161,627,156,661,162"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421" title="Сохраняет все задачи в JSON файл" alt="" coords="465,185,622,211"/>
+<area shape="poly" title=" " alt="" coords="656,186,623,192,622,187,661,185"/>
+<area shape="rect" href="classutil_1_1_json_util.html#ac6e9a870e12429cc80b4ddf8ba98af0d" title="Добавляет одну задачу в файл" alt="" coords="254,5,397,31"/>
+<area shape="poly" title=" " alt="" coords="461,176,459,176,446,160,438,143,434,109,431,76,424,61,411,45,396,34,395,29,415,42,428,58,436,75,440,109,443,141,450,157,463,172,466,177"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title="Обработчик кнопки добавления новой задачи" alt="" coords="238,55,413,96"/>
+<area shape="poly" title=" " alt="" coords="465,178,459,176,443,160,434,143,426,127,411,111,393,99,393,94,415,107,431,124,439,141,447,157,463,172,470,178"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title="Обработчик кнопки удаления задачи" alt="" coords="238,120,413,161"/>
+<area shape="poly" title=" " alt="" coords="475,181,406,164,406,159,480,180"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a9911e93dd04ddd5151397f9a50e2811f" title="Удаляет задачу по ID." alt="" coords="243,185,408,211"/>
+<area shape="poly" title=" " alt="" coords="447,199,409,201,408,196,452,198"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title="Настраивает колонки таблицы задач" alt="" coords="241,235,410,276"/>
+<area shape="poly" title=" " alt="" coords="475,216,406,237,405,232,480,215"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834" title="Метод остановки приложения" alt="" coords="262,300,388,326"/>
+<area shape="poly" title=" " alt="" coords="517,220,470,257,414,290,383,302,381,297,412,285,467,253,512,222"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a48c5f07142384cff793469f5aec70968" title="Обновляет существующую задачу" alt="" coords="245,349,406,375"/>
+<area shape="poly" title=" " alt="" coords="528,223,481,284,450,314,414,340,391,351,390,346,412,336,446,310,477,280,523,225"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,243,190,268"/>
+<area shape="poly" title=" " alt="" coords="223,256,191,258,190,253,228,255"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a96557889dbc2c8c92c71ecd2381332bd" name="a96557889dbc2c8c92c71ecd2381332bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96557889dbc2c8c92c71ecd2381332bd">&#9670;&#160;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String model.Task.toString </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает строковое представление задачи </p>
+<p>Формат: "Заголовок [Приоритет]"</p>
+<dl class="section return"><dt>Возвращает</dt><dd>String Строковое представление задачи</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Используется для отладки и логгирования </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00404">404</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00066">priority</a> и <a class="el" href="_task_8java_source.html#l00041">title</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="a084412f7db98a3a81a77761a22e6d00c" name="a084412f7db98a3a81a77761a22e6d00c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a084412f7db98a3a81a77761a22e6d00c">&#9670;&#160;</a></span>category</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enummodel_1_1_category.html">Category</a> model.Task.category</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Категория задачи </p>
+<p>Классифицирует задачу по тематике </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00072">72</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00235">getCategory()</a>, <a class="el" href="_task_8java_source.html#l00300">setCategory()</a>, <a class="el" href="_task_8java_source.html#l00156">Task()</a>, <a class="el" href="_task_8java_source.html#l00118">Task()</a> и <a class="el" href="_task_8java_source.html#l00361">toJsonString()</a>.</p>
+
+</div>
+</div>
+<a id="a05c129aa054e0d7d98d701724f7956da" name="a05c129aa054e0d7d98d701724f7956da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05c129aa054e0d7d98d701724f7956da">&#9670;&#160;</a></span>completed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean model.Task.completed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Статус выполнения задачи </p>
+<p>true - задача выполнена, false - задача активна </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00078">78</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00185">checkOverdue()</a>, <a class="el" href="_task_8java_source.html#l00241">isCompleted()</a>, <a class="el" href="_task_8java_source.html#l00310">setCompleted()</a>, <a class="el" href="_task_8java_source.html#l00156">Task()</a> и <a class="el" href="_task_8java_source.html#l00361">toJsonString()</a>.</p>
+
+</div>
+</div>
+<a id="a20967dcf39425b7ec0e2aecec7b6f9a4" name="a20967dcf39425b7ec0e2aecec7b6f9a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20967dcf39425b7ec0e2aecec7b6f9a4">&#9670;&#160;</a></span>createdAt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LocalDateTime model.Task.createdAt</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Дата создания задачи </p>
+<p>Дата и время, когда задача была создана в системе </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00091">91</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00253">getCreatedAt()</a>, <a class="el" href="_task_8java_source.html#l00156">Task()</a> и <a class="el" href="_task_8java_source.html#l00361">toJsonString()</a>.</p>
+
+</div>
+</div>
+<a id="a07ef4f25f3f680def771f2c13cb03664" name="a07ef4f25f3f680def771f2c13cb03664"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07ef4f25f3f680def771f2c13cb03664">&#9670;&#160;</a></span>description</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String model.Task.description</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Описание задачи </p>
+<p>Подробное описание задачи, может быть многострочным </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00047">47</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00211">getDescription()</a>, <a class="el" href="_task_8java_source.html#l00269">setDescription()</a>, <a class="el" href="_task_8java_source.html#l00156">Task()</a>, <a class="el" href="_task_8java_source.html#l00118">Task()</a> и <a class="el" href="_task_8java_source.html#l00361">toJsonString()</a>.</p>
+
+</div>
+</div>
+<a id="aa34d9212eb23aae2d16526ad491a869c" name="aa34d9212eb23aae2d16526ad491a869c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa34d9212eb23aae2d16526ad491a869c">&#9670;&#160;</a></span>endTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LocalDateTime model.Task.endTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Время окончания задачи (дедлайн). </p>
+<p>Дата и время, к которому задача должна быть выполнена Используется для определения просроченности </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00060">60</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00185">checkOverdue()</a>, <a class="el" href="_task_8java_source.html#l00223">getEndTime()</a>, <a class="el" href="_task_8java_source.html#l00342">getFormattedEndTime()</a>, <a class="el" href="_task_8java_source.html#l00285">setEndTime()</a>, <a class="el" href="_task_8java_source.html#l00156">Task()</a>, <a class="el" href="_task_8java_source.html#l00118">Task()</a> и <a class="el" href="_task_8java_source.html#l00361">toJsonString()</a>.</p>
+
+</div>
+</div>
+<a id="a4976fbdff14534c011de338c8d8d75ce" name="a4976fbdff14534c011de338c8d8d75ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4976fbdff14534c011de338c8d8d75ce">&#9670;&#160;</a></span>FORMATTER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final DateTimeFormatter model.Task.FORMATTER</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= </div>
+<div class="line">        DateTimeFormatter.ofPattern(<span class="stringliteral">&quot;yyyy-MM-dd&#39;T&#39;HH:mm:ss&quot;</span>)</div>
+</div><!-- fragment -->
+<p>Форматер для даты и времени </p>
+<p>Используется для сериализации и десериализации дат в JSON</p>
+<dl class="section note"><dt>Заметки</dt><dd>Формат: "yyyy-MM-dd'T'HH:mm:ss" (ISO-like) </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00099">99</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00156">Task()</a> и <a class="el" href="_task_8java_source.html#l00361">toJsonString()</a>.</p>
+
+</div>
+</div>
+<a id="aa21bd9d6331060a2941919100058e93a" name="aa21bd9d6331060a2941919100058e93a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa21bd9d6331060a2941919100058e93a">&#9670;&#160;</a></span>id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String model.Task.id</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Уникальный идентификатор задачи </p>
+<p>Генерируется автоматически при создании новой задачи Используется для однозначной идентификации задачи в системе </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00035">35</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00199">getId()</a> и <a class="el" href="_task_8java_source.html#l00156">Task()</a>.</p>
+
+</div>
+</div>
+<a id="a02c952a8c39fc4492b71a9e303d5f3ed" name="a02c952a8c39fc4492b71a9e303d5f3ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02c952a8c39fc4492b71a9e303d5f3ed">&#9670;&#160;</a></span>overdue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean model.Task.overdue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Статус просроченности задачи </p>
+<p>true - задача просрочена, false - задача в срок Автоматически обновляется при проверке </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00085">85</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00247">isOverdue()</a>, <a class="el" href="_task_8java_source.html#l00156">Task()</a> и <a class="el" href="_task_8java_source.html#l00361">toJsonString()</a>.</p>
+
+</div>
+</div>
+<a id="a130a669bee59c82b5dbc1bdc16ced301" name="a130a669bee59c82b5dbc1bdc16ced301"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a130a669bee59c82b5dbc1bdc16ced301">&#9670;&#160;</a></span>priority</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enummodel_1_1_priority.html">Priority</a> model.Task.priority</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Приоритет задачи </p>
+<p>Определяет важность и срочность задачи </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00066">66</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00229">getPriority()</a>, <a class="el" href="_task_8java_source.html#l00294">setPriority()</a>, <a class="el" href="_task_8java_source.html#l00156">Task()</a>, <a class="el" href="_task_8java_source.html#l00118">Task()</a>, <a class="el" href="_task_8java_source.html#l00361">toJsonString()</a> и <a class="el" href="_task_8java_source.html#l00404">toString()</a>.</p>
+
+</div>
+</div>
+<a id="a4d724b7a2a78a0c4f5fb64ac7f105ab2" name="a4d724b7a2a78a0c4f5fb64ac7f105ab2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d724b7a2a78a0c4f5fb64ac7f105ab2">&#9670;&#160;</a></span>startTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LocalDateTime model.Task.startTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Время начала задачи </p>
+<p>Дата и время, когда задача должна быть начата </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00053">53</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00329">getFormattedStartTime()</a>, <a class="el" href="_task_8java_source.html#l00217">getStartTime()</a>, <a class="el" href="_task_8java_source.html#l00275">setStartTime()</a>, <a class="el" href="_task_8java_source.html#l00156">Task()</a>, <a class="el" href="_task_8java_source.html#l00118">Task()</a> и <a class="el" href="_task_8java_source.html#l00361">toJsonString()</a>.</p>
+
+</div>
+</div>
+<a id="a34c52d9ff8e7da7d626571734c42c3d8" name="a34c52d9ff8e7da7d626571734c42c3d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34c52d9ff8e7da7d626571734c42c3d8">&#9670;&#160;</a></span>title</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String model.Task.title</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Заголовок задачи </p>
+<p>Краткое название задачи, отображается в таблице </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00041">41</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00205">getTitle()</a>, <a class="el" href="_task_8java_source.html#l00263">setTitle()</a>, <a class="el" href="_task_8java_source.html#l00156">Task()</a>, <a class="el" href="_task_8java_source.html#l00118">Task()</a>, <a class="el" href="_task_8java_source.html#l00361">toJsonString()</a> и <a class="el" href="_task_8java_source.html#l00404">toString()</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>src/model/<a class="el" href="_task_8java_source.html">Task.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacemodel.html">model</a></li><li class="navelem"><a href="classmodel_1_1_task.html">Task</a></li>
+    <li class="footer">Документация по Умный планировщик задач (To-Do List). Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

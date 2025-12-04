@@ -1,0 +1,13 @@
+<map id="model.TaskManager.checkAllTasksOverdue" name="model.TaskManager.checkAllTasksOverdue">
+<area shape="rect" id="Node000001" title="Проверяет все задачи на просроченность" alt="" coords="482,55,673,96"/>
+<area shape="rect" id="Node000002" href="$classmodel_1_1_task_manager.html#a0248e3e7f014e9e35cce33f4f36bdc3e" title="Добавляет новую задачу в менеджер" alt="" coords="239,5,429,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="471,51,392,34,392,29,476,51"/>
+<area shape="rect" id="Node000003" href="$classmodel_1_1_task_manager.html#abc809a0b2d184494368cc5cc6dae6346" title="Возвращает копию списка всех задач" alt="" coords="247,55,421,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="464,76,422,78,421,73,469,75"/>
+<area shape="rect" id="Node000006" href="$classmodel_1_1_task_manager.html#a34ef794553cd1ac2b4603298b564dafb" title="Загружает задачи из внешнего списка" alt="" coords="234,120,434,146"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="476,100,392,122,391,117,471,100"/>
+<area shape="rect" id="Node000004" href="$classmodel_1_1_task_manager.html#aeeb1bbd577dfd42c694e1120de83f476" title="Выполняет поиск задач по тексту" alt="" coords="5,27,186,68"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="229,64,186,61,186,55,234,63"/>
+<area shape="rect" id="Node000005" href="$classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834" title="Метод остановки приложения" alt="" coords="32,92,159,118"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="228,89,160,100,159,94,234,87"/>
+</map>

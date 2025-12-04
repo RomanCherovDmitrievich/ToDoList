@@ -1,0 +1,5 @@
+<map id="model.TaskManager.getInstance" name="model.TaskManager.getInstance">
+<area shape="rect" id="Node000001" title="Возвращает единственный экземпляр TaskManager." alt="" coords="5,5,215,31"/>
+<area shape="rect" id="Node000002" href="$classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c" title="Приватный конструктор" alt="" coords="263,5,482,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="215,16,250,18,245,18,215,21"/>
+</map>

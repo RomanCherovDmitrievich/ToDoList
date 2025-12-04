@@ -3,14 +3,24 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Launch TodoApp",
+            "name": "Launch ToDoList App",
             "request": "launch",
-            "mainClass": "com.todoapp.Main",
-            "vmArgs": [
-                "--module-path=/Users/sigm/Work/Institut/5semestr/OOP_Java/Project/javafx-sdk-25.0.1/lib",
-                "--add-modules=javafx.controls,javafx.fxml,javafx.base,javafx.graphics"
-            ],
-            "args": []
+            "mainClass": "app.App",
+            "projectName": "ToDoList",
+            "vmArgs": "--module-path ../javafx-sdk-25.0.1/lib --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.base,javafx.web",
+            "args": "",
+            "env": {
+                "JAVA_HOME": "/Library/Java/JavaVirtualMachines/temurin-25.jdk/Contents/Home"
+            },
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "preLaunchTask": "build"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
         }
     ]
 }

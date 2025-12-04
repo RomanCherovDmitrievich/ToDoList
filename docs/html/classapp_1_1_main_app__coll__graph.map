@@ -1,0 +1,8 @@
+<map id="app.MainApp" name="app.MainApp">
+<area shape="rect" id="Node000001" title="Главный класс приложения To&#45;Do List." alt="" coords="42,102,139,128"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,91,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="61,43,88,101,83,102,58,47"/>
+<area shape="rect" id="Node000003" href="$classutil_1_1_audio_manager.html" title="Менеджер для работы с аудио в приложении" alt="" coords="115,5,240,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="159,42,104,103,100,99,154,43"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="256,9,267,18,258,27,241,30,240,24,256,22,261,18,255,14"/>
+</map>

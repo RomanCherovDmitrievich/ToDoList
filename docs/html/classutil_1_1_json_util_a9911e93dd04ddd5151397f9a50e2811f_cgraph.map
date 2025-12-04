@@ -1,0 +1,19 @@
+<map id="util.JsonUtil.removeTask" name="util.JsonUtil.removeTask">
+<area shape="rect" id="Node000001" title="Удаляет задачу по ID." alt="" coords="5,80,171,106"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_json_util.html#a2a80078f88c932a5ab230d4775c2391d" title="Загружает все задачи из JSON файла" alt="" coords="221,51,374,76"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,79,208,76,203,77,172,84"/>
+<area shape="rect" id="Node000006" href="$classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421" title="Сохраняет все задачи в JSON файл" alt="" coords="219,104,376,130"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="171,100,206,106,201,106,171,105"/>
+<area shape="rect" id="Node000003" href="$classutil_1_1_json_util.html#a92865a18b3e9681f516419fd55bfb27a" title="Парсит JSON строку в список задач" alt="" coords="430,39,591,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="374,59,417,61,411,62,375,65"/>
+<area shape="rect" id="Node000004" href="$classutil_1_1_json_util.html#a428f650826f08a9ee580d87bb60a1443" title="Парсит один JSON объект задачи" alt="" coords="645,5,835,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="590,42,647,35,653,34,591,48"/>
+<area shape="rect" id="Node000005" href="$classutil_1_1_json_util.html#a53c77a1cd244ad8e37075b9a6c44da32" title="Разделяет JSON массив на отдельные объекты" alt="" coords="644,55,836,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="591,60,632,63,626,64,591,65"/>
+<area shape="rect" id="Node000007" href="$classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="424,104,596,145"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="376,117,411,121,406,121,376,122"/>
+<area shape="rect" id="Node000008" href="$classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="657,112,823,138"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="597,122,644,125,639,125,597,127"/>
+<area shape="rect" id="Node000009" href="$classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="884,112,1046,138"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="823,122,871,125,866,125,823,127"/>
+</map>

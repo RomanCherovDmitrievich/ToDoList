@@ -1,0 +1,5 @@
+<map id="model.Task.toJsonString" name="model.Task.toJsonString">
+<area shape="rect" id="Node000001" title="Преобразует задачу в JSON строку" alt="" coords="5,5,171,31"/>
+<area shape="rect" id="Node000002" href="$classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="219,5,381,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,16,206,18,200,18,171,21"/>
+</map>

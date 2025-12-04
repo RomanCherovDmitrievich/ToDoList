@@ -1,0 +1,5 @@
+<map id="util.AudioManager.stopAllSounds" name="util.AudioManager.stopAllSounds">
+<area shape="rect" id="Node000001" title="Останавливает все звуки" alt="" coords="227,5,395,46"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_audio_manager.html#a67ab556a4d2e6faff27ec5b80d97220c" title="Освобождает ресурсы" alt="" coords="5,13,179,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,26,179,28,179,23,214,25"/>
+</map>

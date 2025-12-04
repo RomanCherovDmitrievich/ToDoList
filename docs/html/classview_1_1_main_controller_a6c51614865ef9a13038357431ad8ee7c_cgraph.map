@@ -1,0 +1,9 @@
+<map id="view.MainController.refreshTable" name="view.MainController.refreshTable">
+<area shape="rect" id="Node000001" title="Обновляет содержимое таблицы задач" alt="" coords="5,39,183,79"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_main_controller.html#a4bfffd15238c2895e76c565921cd3441" title="Сортирует задачи по приоритету" alt="" coords="231,39,390,79"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,56,218,59,213,59,183,62"/>
+<area shape="rect" id="Node000003" href="$classviewmodel_1_1_task_view_model.html#aa34a9517a43daff6eef84dc13e1cd0a9" title="Возвращает время окончания (дедлайн) задачи" alt="" coords="438,5,639,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="390,45,425,42,420,43,391,50"/>
+<area shape="rect" id="Node000004" href="$classview_1_1_main_controller.html#a5032b7916281cf67edeec56fdc65cfad" title="Показывает информационное диалоговое окно" alt="" coords="454,71,623,111"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="391,68,442,77,436,77,390,73"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="viewmodel.TaskViewModel.isOverdue" name="viewmodel.TaskViewModel.isOverdue">
+<area shape="rect" id="Node000001" title="Проверяет, просрочена ли задача" alt="" coords="455,5,648,46"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title="Настраивает колонки таблицы задач" alt="" coords="238,5,407,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="437,26,408,28,407,23,442,26"/>
+<area shape="rect" id="Node000003" href="$classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,13,190,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+</map>

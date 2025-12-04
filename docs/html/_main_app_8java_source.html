@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Умный планировщик задач (To-Do List): Исходный файл src/app/MainApp.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">JavaFX приложение для управления задачами с новогодней темой</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_main_app_8java_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">MainApp.java</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_main_app_8java.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="namespaceapp.html">    1</a></span><span class="keyword">package </span>app;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> javafx.application.Application;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">import</span> javafx.fxml.FXMLLoader;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> javafx.scene.Parent;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">import</span> javafx.scene.Scene;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">import</span> javafx.scene.image.Image;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">import</span> javafx.stage.Stage;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">import</span> <a class="code hl_package" href="namespaceutil.html">util</a>.<a class="code hl_class" href="classutil_1_1_audio_manager.html">AudioManager</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">import</span> java.io.IOException;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">import</span> java.util.Objects;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="};">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classapp_1_1_main_app.html">   37</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classapp_1_1_main_app.html">MainApp</a> <span class="keyword">extends</span> Application {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classapp_1_1_main_app.html#a4de943445d70b65abd35b43f95dfcf72">   43</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String <a class="code hl_variable" href="classapp_1_1_main_app.html#a4de943445d70b65abd35b43f95dfcf72">APP_TITLE</a> = <span class="stringliteral">&quot;Умный планировщик задач&quot;</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classapp_1_1_main_app.html#a565d6f2ea906cb6b7c64d0a2e6a3da31">   49</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classapp_1_1_main_app.html#a565d6f2ea906cb6b7c64d0a2e6a3da31">WINDOW_WIDTH</a> = 900;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classapp_1_1_main_app.html#ae939f4a6c6431cf101b4c427d11710ed">   55</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classapp_1_1_main_app.html#ae939f4a6c6431cf101b4c427d11710ed">WINDOW_HEIGHT</a> = 600;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classapp_1_1_main_app.html#a37ee9c5df8c0291fa0a35f78cbd54e0d">   61</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classapp_1_1_main_app.html#a37ee9c5df8c0291fa0a35f78cbd54e0d">MIN_WIDTH</a> = 700;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classapp_1_1_main_app.html#adb5ea69d0160842c8866b1482238712b">   67</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classapp_1_1_main_app.html#adb5ea69d0160842c8866b1482238712b">MIN_HEIGHT</a> = 500;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classapp_1_1_main_app.html#afbe7794c7747dbb9041de396c018cac9">   73</a></span>    <span class="keyword">private</span> Stage <a class="code hl_variable" href="classapp_1_1_main_app.html#afbe7794c7747dbb9041de396c018cac9">primaryStage</a>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classapp_1_1_main_app.html#a821a0cbc770b47e801af93c8b55c7c98">   79</a></span>    <span class="keyword">private</span> <a class="code hl_class" href="classutil_1_1_audio_manager.html">AudioManager</a> <a class="code hl_variable" href="classapp_1_1_main_app.html#a821a0cbc770b47e801af93c8b55c7c98">audioManager</a>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    </div>
+<div class="foldopen" id="foldopen00095" data-start="{" data-end="}">
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classapp_1_1_main_app.html#a9788978994366c880434d9cc05a21cb1">   95</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classapp_1_1_main_app.html#a9788978994366c880434d9cc05a21cb1">main</a>(String[] args) {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="comment">// Проверяем доступность JavaFX</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            Class.forName(<span class="stringliteral">&quot;javafx.application.Application&quot;</span>);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            launch(args);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        } <span class="keywordflow">catch</span> (ClassNotFoundException e) {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            System.err.println(<span class="stringliteral">&quot;Ошибка: JavaFX не найден в classpath!&quot;</span>);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            System.err.println(<span class="stringliteral">&quot;Убедитесь, что вы добавили javafx-sdk в библиотеки проекта.&quot;</span>);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            System.err.println(<span class="stringliteral">&quot;Текущая версия: Java 25.0.1, JavaFX 25.0.1&quot;</span>);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            System.exit(1);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    }</div>
+</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    @Override</div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="classapp_1_1_main_app.html#acbf781550cefac29e6c8ecbdd2b38904">  123</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classapp_1_1_main_app.html#acbf781550cefac29e6c8ecbdd2b38904">init</a>() {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        System.out.println(<span class="stringliteral">&quot;Инициализация приложения...&quot;</span>);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        System.out.println(<span class="stringliteral">&quot;Версия Java: &quot;</span> + System.getProperty(<span class="stringliteral">&quot;java.version&quot;</span>));</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        System.out.println(<span class="stringliteral">&quot;Версия JavaFX: &quot;</span> + System.getProperty(<span class="stringliteral">&quot;javafx.version&quot;</span>));</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            <span class="comment">// Инициализируем AudioManager</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            <a class="code hl_variable" href="classapp_1_1_main_app.html#a821a0cbc770b47e801af93c8b55c7c98">audioManager</a> = <a class="code hl_class" href="classutil_1_1_audio_manager.html">AudioManager</a>.<a class="code hl_function" href="classutil_1_1_audio_manager.html#aaf7ec801730bf60f659b843ace062d86">getInstance</a>();</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            System.out.println(<span class="stringliteral">&quot;Аудио менеджер инициализирован&quot;</span>);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        } <span class="keywordflow">catch</span> (Exception e) {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            System.err.println(<span class="stringliteral">&quot;Ошибка инициализации аудио менеджера: &quot;</span> + e.getMessage());</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        }</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    }</div>
+</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    @Override</div>
+<div class="foldopen" id="foldopen00162" data-start="{" data-end="}">
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="classapp_1_1_main_app.html#a2f925faf172d4a1a66bf616b47a8b368">  162</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classapp_1_1_main_app.html#a2f925faf172d4a1a66bf616b47a8b368">start</a>(Stage <a class="code hl_variable" href="classapp_1_1_main_app.html#afbe7794c7747dbb9041de396c018cac9">primaryStage</a>) {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            this.primaryStage = <a class="code hl_variable" href="classapp_1_1_main_app.html#afbe7794c7747dbb9041de396c018cac9">primaryStage</a>;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            this.primaryStage.setTitle(<a class="code hl_variable" href="classapp_1_1_main_app.html#a4de943445d70b65abd35b43f95dfcf72">APP_TITLE</a>);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            <span class="comment">// Загружаем главное окно из FXML</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            FXMLLoader loader = <span class="keyword">new</span> FXMLLoader(getClass().getResource(<span class="stringliteral">&quot;/view/MainView.fxml&quot;</span>));</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            Parent root = loader.load();</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            <span class="comment">// Настраиваем сцену</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            Scene scene = <span class="keyword">new</span> Scene(root, <a class="code hl_variable" href="classapp_1_1_main_app.html#a565d6f2ea906cb6b7c64d0a2e6a3da31">WINDOW_WIDTH</a>, <a class="code hl_variable" href="classapp_1_1_main_app.html#ae939f4a6c6431cf101b4c427d11710ed">WINDOW_HEIGHT</a>);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            <span class="comment">// Загружаем CSS стили</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                String css = Objects.requireNonNull(getClass().getResource(<span class="stringliteral">&quot;/resources/styles/styles.css&quot;</span>)).toExternalForm();</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                scene.getStylesheets().add(css);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                System.out.println(<span class="stringliteral">&quot;CSS стили загружены&quot;</span>);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            } <span class="keywordflow">catch</span> (NullPointerException e) {</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                System.err.println(<span class="stringliteral">&quot;CSS файл не найден, используются стили по умолчанию&quot;</span>);</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            }</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            <span class="comment">// Настраиваем иконку приложения</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>            <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>                Image appIcon = <span class="keyword">new</span> Image(Objects.requireNonNull(getClass().getResourceAsStream(<span class="stringliteral">&quot;/images/app_icon.png&quot;</span>)));</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>                <a class="code hl_variable" href="classapp_1_1_main_app.html#afbe7794c7747dbb9041de396c018cac9">primaryStage</a>.getIcons().add(appIcon);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                System.out.println(<span class="stringliteral">&quot;Иконка приложения загружена&quot;</span>);</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>            } <span class="keywordflow">catch</span> (Exception e) {</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>                System.err.println(<span class="stringliteral">&quot;Не удалось загрузить иконку приложения: &quot;</span> + e.getMessage());</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>            }</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>            </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>            <span class="comment">// Настраиваем главное окно</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>            <a class="code hl_variable" href="classapp_1_1_main_app.html#afbe7794c7747dbb9041de396c018cac9">primaryStage</a>.setScene(scene);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>            <a class="code hl_variable" href="classapp_1_1_main_app.html#afbe7794c7747dbb9041de396c018cac9">primaryStage</a>.setMinWidth(<a class="code hl_variable" href="classapp_1_1_main_app.html#a37ee9c5df8c0291fa0a35f78cbd54e0d">MIN_WIDTH</a>);</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>            <a class="code hl_variable" href="classapp_1_1_main_app.html#afbe7794c7747dbb9041de396c018cac9">primaryStage</a>.setMinHeight(<a class="code hl_variable" href="classapp_1_1_main_app.html#adb5ea69d0160842c8866b1482238712b">MIN_HEIGHT</a>);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>            <a class="code hl_variable" href="classapp_1_1_main_app.html#afbe7794c7747dbb9041de396c018cac9">primaryStage</a>.centerOnScreen();</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>            </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>            <span class="comment">// Обработчик закрытия окна</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>            <a class="code hl_variable" href="classapp_1_1_main_app.html#afbe7794c7747dbb9041de396c018cac9">primaryStage</a>.setOnCloseRequest(event -&gt; {</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>                System.out.println(<span class="stringliteral">&quot;Закрытие приложения...&quot;</span>);</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classapp_1_1_main_app.html#a821a0cbc770b47e801af93c8b55c7c98">audioManager</a> != <span class="keyword">null</span>) {</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>                    <a class="code hl_variable" href="classapp_1_1_main_app.html#a821a0cbc770b47e801af93c8b55c7c98">audioManager</a>.dispose();</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>                }</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            });</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>            </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>            <span class="comment">// Отображаем окно</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>            <a class="code hl_variable" href="classapp_1_1_main_app.html#afbe7794c7747dbb9041de396c018cac9">primaryStage</a>.show();</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>            </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            System.out.println(<span class="stringliteral">&quot;Приложение успешно запущено&quot;</span>);</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        } <span class="keywordflow">catch</span> (IOException e) {</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            System.err.println(<span class="stringliteral">&quot;Ошибка загрузки FXML файла: &quot;</span> + e.getMessage());</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            e.printStackTrace();</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            <a class="code hl_function" href="classapp_1_1_main_app.html#a92cfa72f96cc381ef46d20c6fb1ae193">showErrorDialog</a>(<span class="stringliteral">&quot;Ошибка запуска&quot;</span>, </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>                          <span class="stringliteral">&quot;Не удалось загрузить интерфейс приложения&quot;</span>, </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>                          e.getMessage());</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        } <span class="keywordflow">catch</span> (Exception e) {</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            System.err.println(<span class="stringliteral">&quot;Критическая ошибка при запуске: &quot;</span> + e.getMessage());</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>            e.printStackTrace();</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>            <a class="code hl_function" href="classapp_1_1_main_app.html#a92cfa72f96cc381ef46d20c6fb1ae193">showErrorDialog</a>(<span class="stringliteral">&quot;Критическая ошибка&quot;</span>, </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                          <span class="stringliteral">&quot;Приложение не может быть запущено&quot;</span>, </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                          e.getMessage());</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        }</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    }</div>
+</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    @Override</div>
+<div class="foldopen" id="foldopen00243" data-start="{" data-end="}">
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834">  243</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834">stop</a>() {</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        System.out.println(<span class="stringliteral">&quot;Остановка приложения...&quot;</span>);</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        </div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        <span class="comment">// Сохраняем задачи перед выходом</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>            <a class="code hl_class" href="classmodel_1_1_task_manager.html">model.TaskManager</a> taskManager = <a class="code hl_package" href="namespacemodel.html">model</a>.<a class="code hl_class" href="classmodel_1_1_task_manager.html">TaskManager</a>.<a class="code hl_function" href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea">getInstance</a>();</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            <a class="code hl_package" href="namespaceutil.html">util</a>.<a class="code hl_class" href="classutil_1_1_json_util.html">JsonUtil</a>.<a class="code hl_function" href="classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421">saveTasks</a>(taskManager.<a class="code hl_function" href="classmodel_1_1_task_manager.html#abc809a0b2d184494368cc5cc6dae6346">getAllTasks</a>());</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>            System.out.println(<span class="stringliteral">&quot;Задачи сохранены&quot;</span>);</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        } <span class="keywordflow">catch</span> (Exception e) {</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>            System.err.println(<span class="stringliteral">&quot;Ошибка при сохранении задач: &quot;</span> + e.getMessage());</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        }</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        <span class="comment">// Освобождаем ресурсы AudioManager</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classapp_1_1_main_app.html#a821a0cbc770b47e801af93c8b55c7c98">audioManager</a> != <span class="keyword">null</span>) {</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>            <a class="code hl_variable" href="classapp_1_1_main_app.html#a821a0cbc770b47e801af93c8b55c7c98">audioManager</a>.dispose();</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>            System.out.println(<span class="stringliteral">&quot;Аудио ресурсы освобождены&quot;</span>);</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        }</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        </div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        System.out.println(<span class="stringliteral">&quot;Приложение остановлено&quot;</span>);</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    }</div>
+</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    </div>
+<div class="foldopen" id="foldopen00274" data-start="{" data-end="}">
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno"><a class="line" href="classapp_1_1_main_app.html#a58283a36a2e01e38efa19edd9ba77d59">  274</a></span>    <span class="keyword">public</span> Stage <a class="code hl_function" href="classapp_1_1_main_app.html#a58283a36a2e01e38efa19edd9ba77d59">getPrimaryStage</a>() {</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classapp_1_1_main_app.html#afbe7794c7747dbb9041de396c018cac9">primaryStage</a>;</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    }</div>
+</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    </div>
+<div class="foldopen" id="foldopen00292" data-start="{" data-end="}">
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno"><a class="line" href="classapp_1_1_main_app.html#a92cfa72f96cc381ef46d20c6fb1ae193">  292</a></span>    <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classapp_1_1_main_app.html#a92cfa72f96cc381ef46d20c6fb1ae193">showErrorDialog</a>(String title, String header, String content) {</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>        javafx.scene.control.Alert alert = <span class="keyword">new</span> javafx.scene.control.Alert(</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>            javafx.scene.control.Alert.AlertType.ERROR);</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        alert.setTitle(title);</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        alert.setHeaderText(header);</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        alert.setContentText(content);</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>        alert.showAndWait();</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    }</div>
+</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    </div>
+<div class="foldopen" id="foldopen00314" data-start="{" data-end="}">
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno"><a class="line" href="classapp_1_1_main_app.html#a5546682bda948ba9513d649b6aaf33a8">  314</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classapp_1_1_main_app.html#a5546682bda948ba9513d649b6aaf33a8">reloadMainView</a>() {</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>            FXMLLoader loader = <span class="keyword">new</span> FXMLLoader(getClass().getResource(<span class="stringliteral">&quot;/view/MainView.fxml&quot;</span>));</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>            Parent root = loader.load();</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>            Scene scene = <span class="keyword">new</span> Scene(root, <a class="code hl_variable" href="classapp_1_1_main_app.html#afbe7794c7747dbb9041de396c018cac9">primaryStage</a>.getWidth(), <a class="code hl_variable" href="classapp_1_1_main_app.html#afbe7794c7747dbb9041de396c018cac9">primaryStage</a>.getHeight());</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>            </div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>            <span class="comment">// Восстанавливаем CSS</span></div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>            <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>                String css = Objects.requireNonNull(getClass().getResource(<span class="stringliteral">&quot;/css/styles.css&quot;</span>)).toExternalForm();</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>                scene.getStylesheets().add(css);</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>            } <span class="keywordflow">catch</span> (Exception e) {</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>                <span class="comment">// Игнорируем ошибку CSS</span></div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>            }</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>            </div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>            <a class="code hl_variable" href="classapp_1_1_main_app.html#afbe7794c7747dbb9041de396c018cac9">primaryStage</a>.setScene(scene);</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>            <a class="code hl_variable" href="classapp_1_1_main_app.html#afbe7794c7747dbb9041de396c018cac9">primaryStage</a>.centerOnScreen();</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>            </div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>        } <span class="keywordflow">catch</span> (IOException e) {</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>            System.err.println(<span class="stringliteral">&quot;Ошибка перезагрузки интерфейса: &quot;</span> + e.getMessage());</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>        }</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>    }</div>
+</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>}</div>
+</div>
+<div class="ttc" id="aclassapp_1_1_main_app_html"><div class="ttname"><a href="classapp_1_1_main_app.html">app.MainApp</a></div><div class="ttdoc">Главный класс приложения To-Do List.</div><div class="ttdef"><b>Определения</b> <a href="#l00037">MainApp.java:37</a></div></div>
+<div class="ttc" id="aclassapp_1_1_main_app_html_a2f925faf172d4a1a66bf616b47a8b368"><div class="ttname"><a href="classapp_1_1_main_app.html#a2f925faf172d4a1a66bf616b47a8b368">app.MainApp.start</a></div><div class="ttdeci">void start(Stage primaryStage)</div><div class="ttdoc">Метод запуска JavaFX приложения</div><div class="ttdef"><b>Определения</b> <a href="#l00162">MainApp.java:162</a></div></div>
+<div class="ttc" id="aclassapp_1_1_main_app_html_a37ee9c5df8c0291fa0a35f78cbd54e0d"><div class="ttname"><a href="classapp_1_1_main_app.html#a37ee9c5df8c0291fa0a35f78cbd54e0d">app.MainApp.MIN_WIDTH</a></div><div class="ttdeci">static final int MIN_WIDTH</div><div class="ttdoc">Минимальная ширина окна</div><div class="ttdef"><b>Определения</b> <a href="#l00061">MainApp.java:61</a></div></div>
+<div class="ttc" id="aclassapp_1_1_main_app_html_a4de943445d70b65abd35b43f95dfcf72"><div class="ttname"><a href="classapp_1_1_main_app.html#a4de943445d70b65abd35b43f95dfcf72">app.MainApp.APP_TITLE</a></div><div class="ttdeci">static final String APP_TITLE</div><div class="ttdoc">Заголовок приложения</div><div class="ttdef"><b>Определения</b> <a href="#l00043">MainApp.java:43</a></div></div>
+<div class="ttc" id="aclassapp_1_1_main_app_html_a5546682bda948ba9513d649b6aaf33a8"><div class="ttname"><a href="classapp_1_1_main_app.html#a5546682bda948ba9513d649b6aaf33a8">app.MainApp.reloadMainView</a></div><div class="ttdeci">void reloadMainView()</div><div class="ttdoc">Перезагружает главное окно</div><div class="ttdef"><b>Определения</b> <a href="#l00314">MainApp.java:314</a></div></div>
+<div class="ttc" id="aclassapp_1_1_main_app_html_a565d6f2ea906cb6b7c64d0a2e6a3da31"><div class="ttname"><a href="classapp_1_1_main_app.html#a565d6f2ea906cb6b7c64d0a2e6a3da31">app.MainApp.WINDOW_WIDTH</a></div><div class="ttdeci">static final int WINDOW_WIDTH</div><div class="ttdoc">Начальная ширина окна</div><div class="ttdef"><b>Определения</b> <a href="#l00049">MainApp.java:49</a></div></div>
+<div class="ttc" id="aclassapp_1_1_main_app_html_a58283a36a2e01e38efa19edd9ba77d59"><div class="ttname"><a href="classapp_1_1_main_app.html#a58283a36a2e01e38efa19edd9ba77d59">app.MainApp.getPrimaryStage</a></div><div class="ttdeci">Stage getPrimaryStage()</div><div class="ttdoc">Возвращает главное окно приложения</div><div class="ttdef"><b>Определения</b> <a href="#l00274">MainApp.java:274</a></div></div>
+<div class="ttc" id="aclassapp_1_1_main_app_html_a81713cb9b4148cc9775e965fc14a1834"><div class="ttname"><a href="classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834">app.MainApp.stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Метод остановки приложения</div><div class="ttdef"><b>Определения</b> <a href="#l00243">MainApp.java:243</a></div></div>
+<div class="ttc" id="aclassapp_1_1_main_app_html_a821a0cbc770b47e801af93c8b55c7c98"><div class="ttname"><a href="classapp_1_1_main_app.html#a821a0cbc770b47e801af93c8b55c7c98">app.MainApp.audioManager</a></div><div class="ttdeci">AudioManager audioManager</div><div class="ttdoc">Менеджер аудио</div><div class="ttdef"><b>Определения</b> <a href="#l00079">MainApp.java:79</a></div></div>
+<div class="ttc" id="aclassapp_1_1_main_app_html_a92cfa72f96cc381ef46d20c6fb1ae193"><div class="ttname"><a href="classapp_1_1_main_app.html#a92cfa72f96cc381ef46d20c6fb1ae193">app.MainApp.showErrorDialog</a></div><div class="ttdeci">void showErrorDialog(String title, String header, String content)</div><div class="ttdoc">Показывает диалоговое окно с ошибкой</div><div class="ttdef"><b>Определения</b> <a href="#l00292">MainApp.java:292</a></div></div>
+<div class="ttc" id="aclassapp_1_1_main_app_html_a9788978994366c880434d9cc05a21cb1"><div class="ttname"><a href="classapp_1_1_main_app.html#a9788978994366c880434d9cc05a21cb1">app.MainApp.main</a></div><div class="ttdeci">static void main(String[] args)</div><div class="ttdoc">Точка входа в приложение</div><div class="ttdef"><b>Определения</b> <a href="#l00095">MainApp.java:95</a></div></div>
+<div class="ttc" id="aclassapp_1_1_main_app_html_acbf781550cefac29e6c8ecbdd2b38904"><div class="ttname"><a href="classapp_1_1_main_app.html#acbf781550cefac29e6c8ecbdd2b38904">app.MainApp.init</a></div><div class="ttdeci">void init()</div><div class="ttdoc">Метод инициализации приложения</div><div class="ttdef"><b>Определения</b> <a href="#l00123">MainApp.java:123</a></div></div>
+<div class="ttc" id="aclassapp_1_1_main_app_html_adb5ea69d0160842c8866b1482238712b"><div class="ttname"><a href="classapp_1_1_main_app.html#adb5ea69d0160842c8866b1482238712b">app.MainApp.MIN_HEIGHT</a></div><div class="ttdeci">static final int MIN_HEIGHT</div><div class="ttdoc">Минимальная высота окна</div><div class="ttdef"><b>Определения</b> <a href="#l00067">MainApp.java:67</a></div></div>
+<div class="ttc" id="aclassapp_1_1_main_app_html_ae939f4a6c6431cf101b4c427d11710ed"><div class="ttname"><a href="classapp_1_1_main_app.html#ae939f4a6c6431cf101b4c427d11710ed">app.MainApp.WINDOW_HEIGHT</a></div><div class="ttdeci">static final int WINDOW_HEIGHT</div><div class="ttdoc">Начальная высота окна</div><div class="ttdef"><b>Определения</b> <a href="#l00055">MainApp.java:55</a></div></div>
+<div class="ttc" id="aclassapp_1_1_main_app_html_afbe7794c7747dbb9041de396c018cac9"><div class="ttname"><a href="classapp_1_1_main_app.html#afbe7794c7747dbb9041de396c018cac9">app.MainApp.primaryStage</a></div><div class="ttdeci">Stage primaryStage</div><div class="ttdoc">Главное окно приложения</div><div class="ttdef"><b>Определения</b> <a href="#l00073">MainApp.java:73</a></div></div>
+<div class="ttc" id="aclassmodel_1_1_task_manager_html"><div class="ttname"><a href="classmodel_1_1_task_manager.html">model.TaskManager</a></div><div class="ttdoc">Менеджер задач - центральный класс для управления задачами</div><div class="ttdef"><b>Определения</b> <a href="_task_manager_8java_source.html#l00031">TaskManager.java:31</a></div></div>
+<div class="ttc" id="aclassmodel_1_1_task_manager_html_a25e2f8d72d281275facbc0e9badb47ea"><div class="ttname"><a href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea">model.TaskManager.getInstance</a></div><div class="ttdeci">static synchronized TaskManager getInstance()</div><div class="ttdoc">Возвращает единственный экземпляр TaskManager.</div><div class="ttdef"><b>Определения</b> <a href="_task_manager_8java_source.html#l00073">TaskManager.java:73</a></div></div>
+<div class="ttc" id="aclassmodel_1_1_task_manager_html_abc809a0b2d184494368cc5cc6dae6346"><div class="ttname"><a href="classmodel_1_1_task_manager.html#abc809a0b2d184494368cc5cc6dae6346">model.TaskManager.getAllTasks</a></div><div class="ttdeci">List&lt; Task &gt; getAllTasks()</div><div class="ttdoc">Возвращает копию списка всех задач</div><div class="ttdef"><b>Определения</b> <a href="_task_manager_8java_source.html#l00124">TaskManager.java:124</a></div></div>
+<div class="ttc" id="aclassutil_1_1_audio_manager_html"><div class="ttname"><a href="classutil_1_1_audio_manager.html">util.AudioManager</a></div><div class="ttdoc">Менеджер для работы с аудио в приложении</div><div class="ttdef"><b>Определения</b> <a href="_audio_manager_8java_source.html#l00028">AudioManager.java:28</a></div></div>
+<div class="ttc" id="aclassutil_1_1_audio_manager_html_aaf7ec801730bf60f659b843ace062d86"><div class="ttname"><a href="classutil_1_1_audio_manager.html#aaf7ec801730bf60f659b843ace062d86">util.AudioManager.getInstance</a></div><div class="ttdeci">static synchronized AudioManager getInstance()</div><div class="ttdoc">Получает единственный экземпляр AudioManager.</div><div class="ttdef"><b>Определения</b> <a href="_audio_manager_8java_source.html#l00072">AudioManager.java:72</a></div></div>
+<div class="ttc" id="aclassutil_1_1_json_util_html"><div class="ttname"><a href="classutil_1_1_json_util.html">util.JsonUtil</a></div><div class="ttdoc">Утилита для работы с JSON файлами задач</div><div class="ttdef"><b>Определения</b> <a href="_json_util_8java_source.html#l00036">JsonUtil.java:36</a></div></div>
+<div class="ttc" id="aclassutil_1_1_json_util_html_aaca9aa25da0edb1a143c540d0c618421"><div class="ttname"><a href="classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421">util.JsonUtil.saveTasks</a></div><div class="ttdeci">static boolean saveTasks(List&lt; Task &gt; tasks)</div><div class="ttdoc">Сохраняет все задачи в JSON файл</div><div class="ttdef"><b>Определения</b> <a href="_json_util_8java_source.html#l00139">JsonUtil.java:139</a></div></div>
+<div class="ttc" id="anamespacemodel_html"><div class="ttname"><a href="namespacemodel.html">model</a></div><div class="ttdef"><b>Определения</b> <a href="_category_8java_source.html#l00001">Category.java:1</a></div></div>
+<div class="ttc" id="anamespaceutil_html"><div class="ttname"><a href="namespaceutil.html">util</a></div><div class="ttdef"><b>Определения</b> <a href="_audio_manager_8java_source.html#l00001">AudioManager.java:1</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_5194e5fea318fda12687127c23f8aba1.html">app</a></li><li class="navelem"><a href="_main_app_8java.html">MainApp.java</a></li>
+    <li class="footer">Документация по Умный планировщик задач (To-Do List). Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

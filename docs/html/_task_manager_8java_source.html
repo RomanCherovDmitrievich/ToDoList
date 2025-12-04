@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Умный планировщик задач (To-Do List): Исходный файл src/model/TaskManager.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">JavaFX приложение для управления задачами с новогодней темой</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_task_manager_8java_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">TaskManager.java</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_task_manager_8java.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">package </span>model;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> java.time.LocalDateTime;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">import</span> java.util.ArrayList;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> java.util.List;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">import</span> java.util.stream.Collectors;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classmodel_1_1_task_manager.html">   31</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c">TaskManager</a> {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classmodel_1_1_task_manager.html#a3f4cf909b65371b019c344ceb2c65a6d">   40</a></span>    <span class="keyword">private</span> List&lt;Task&gt; <a class="code hl_variable" href="classmodel_1_1_task_manager.html#a3f4cf909b65371b019c344ceb2c65a6d">tasks</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classmodel_1_1_task_manager.html#aaa6f3dca38b29f6106f5f5c781caf626">   49</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <a class="code hl_function" href="classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c">TaskManager</a> <a class="code hl_variable" href="classmodel_1_1_task_manager.html#aaa6f3dca38b29f6106f5f5c781caf626">instance</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    </div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c">   58</a></span>    <span class="keyword">private</span> <a class="code hl_function" href="classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c">TaskManager</a>() {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        this.tasks = <span class="keyword">new</span> ArrayList&lt;&gt;();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
+</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    </div>
+<div class="foldopen" id="foldopen00073" data-start="{" data-end="}">
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea">   73</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> <a class="code hl_function" href="classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c">TaskManager</a> <a class="code hl_function" href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea">getInstance</a>() {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmodel_1_1_task_manager.html#aaa6f3dca38b29f6106f5f5c781caf626">instance</a> == <span class="keyword">null</span>) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <a class="code hl_variable" href="classmodel_1_1_task_manager.html#aaa6f3dca38b29f6106f5f5c781caf626">instance</a> = <span class="keyword">new</span> <a class="code hl_function" href="classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c">TaskManager</a>();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classmodel_1_1_task_manager.html#aaa6f3dca38b29f6106f5f5c781caf626">instance</a>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    }</div>
+</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    </div>
+<div class="foldopen" id="foldopen00091" data-start="{" data-end="}">
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="classmodel_1_1_task_manager.html#a0248e3e7f014e9e35cce33f4f36bdc3e">   91</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmodel_1_1_task_manager.html#a0248e3e7f014e9e35cce33f4f36bdc3e">addTask</a>(<a class="code hl_class" href="classmodel_1_1_task.html">Task</a> task) {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <a class="code hl_variable" href="classmodel_1_1_task_manager.html#a3f4cf909b65371b019c344ceb2c65a6d">tasks</a>.add(task);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <a class="code hl_function" href="classmodel_1_1_task_manager.html#a6ff214cd422dcd5f0d8c5d573cd251b6">checkAllTasksOverdue</a>();</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    }</div>
+</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    </div>
+<div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classmodel_1_1_task_manager.html#a46e1d00e8a9e4c37eaf71795c5d0b1b5">  108</a></span>    <span class="keyword">public</span> <span class="keywordtype">boolean</span> <a class="code hl_function" href="classmodel_1_1_task_manager.html#a46e1d00e8a9e4c37eaf71795c5d0b1b5">removeTask</a>(String taskId) {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classmodel_1_1_task_manager.html#a3f4cf909b65371b019c344ceb2c65a6d">tasks</a>.removeIf(task -&gt; task.getId().equals(taskId));</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    }</div>
+</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    </div>
+<div class="foldopen" id="foldopen00124" data-start="{" data-end="}">
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="classmodel_1_1_task_manager.html#abc809a0b2d184494368cc5cc6dae6346">  124</a></span>    <span class="keyword">public</span> List&lt;Task&gt; <a class="code hl_function" href="classmodel_1_1_task_manager.html#abc809a0b2d184494368cc5cc6dae6346">getAllTasks</a>() {</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <a class="code hl_function" href="classmodel_1_1_task_manager.html#a6ff214cd422dcd5f0d8c5d573cd251b6">checkAllTasksOverdue</a>();</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> ArrayList&lt;&gt;(<a class="code hl_variable" href="classmodel_1_1_task_manager.html#a3f4cf909b65371b019c344ceb2c65a6d">tasks</a>);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    }</div>
+</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    </div>
+<div class="foldopen" id="foldopen00142" data-start="{" data-end="}">
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="classmodel_1_1_task_manager.html#a7bb0de58bf371543965a953b7f2261b5">  142</a></span>    <span class="keyword">public</span> List&lt;Task&gt; <a class="code hl_function" href="classmodel_1_1_task_manager.html#a7bb0de58bf371543965a953b7f2261b5">getTasksByCompletion</a>(<span class="keywordtype">boolean</span> completed) {</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classmodel_1_1_task_manager.html#a3f4cf909b65371b019c344ceb2c65a6d">tasks</a>.stream()</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            .filter(task -&gt; task.isCompleted() == completed)</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            .collect(Collectors.toList());</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    }</div>
+</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    </div>
+<div class="foldopen" id="foldopen00164" data-start="{" data-end="}">
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="classmodel_1_1_task_manager.html#aeeb1bbd577dfd42c694e1120de83f476">  164</a></span>    <span class="keyword">public</span> List&lt;Task&gt; <a class="code hl_function" href="classmodel_1_1_task_manager.html#aeeb1bbd577dfd42c694e1120de83f476">searchTasks</a>(String query) {</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <span class="keywordflow">if</span> (query == <span class="keyword">null</span> || query.trim().isEmpty()) {</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classmodel_1_1_task_manager.html#abc809a0b2d184494368cc5cc6dae6346">getAllTasks</a>();</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        }</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        String lowerQuery = query.toLowerCase();</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classmodel_1_1_task_manager.html#a3f4cf909b65371b019c344ceb2c65a6d">tasks</a>.stream()</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            .filter(task -&gt; task.getTitle().toLowerCase().contains(lowerQuery) ||</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                           task.getDescription().toLowerCase().contains(lowerQuery))</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            .collect(Collectors.toList());</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    }</div>
+</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    </div>
+<div class="foldopen" id="foldopen00190" data-start="{" data-end="}">
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="classmodel_1_1_task_manager.html#a3be20318c826cf81cdd44962c31bbf86">  190</a></span>    <span class="keyword">public</span> <span class="keywordtype">boolean</span> <a class="code hl_function" href="classmodel_1_1_task_manager.html#a3be20318c826cf81cdd44962c31bbf86">markAsCompleted</a>(String taskId, <span class="keywordtype">boolean</span> completed) {</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        <span class="keywordflow">for</span> (<a class="code hl_class" href="classmodel_1_1_task.html">Task</a> task : <a class="code hl_variable" href="classmodel_1_1_task_manager.html#a3f4cf909b65371b019c344ceb2c65a6d">tasks</a>) {</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>            <span class="keywordflow">if</span> (task.getId().equals(taskId)) {</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>                task.setCompleted(completed);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>            }</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        }</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    }</div>
+</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    </div>
+<div class="foldopen" id="foldopen00213" data-start="{" data-end="}">
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno"><a class="line" href="classmodel_1_1_task_manager.html#a6ff214cd422dcd5f0d8c5d573cd251b6">  213</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmodel_1_1_task_manager.html#a6ff214cd422dcd5f0d8c5d573cd251b6">checkAllTasksOverdue</a>() {</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        LocalDateTime now = LocalDateTime.now();</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        <span class="keywordflow">for</span> (<a class="code hl_class" href="classmodel_1_1_task.html">Task</a> task : <a class="code hl_variable" href="classmodel_1_1_task_manager.html#a3f4cf909b65371b019c344ceb2c65a6d">tasks</a>) {</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            <span class="keywordflow">if</span> (!task.isCompleted() &amp;&amp; now.isAfter(task.getEndTime())) {</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>                task.checkOverdue();</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            }</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        }</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    }</div>
+</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    </div>
+<div class="foldopen" id="foldopen00235" data-start="{" data-end="}">
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno"><a class="line" href="classmodel_1_1_task_manager.html#a83be2e7272a4f79d69be72380893f0f6">  235</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classmodel_1_1_task_manager.html#a83be2e7272a4f79d69be72380893f0f6">getTaskCount</a>(<span class="keywordtype">boolean</span> completed) {</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        <span class="keywordflow">return</span> (<span class="keywordtype">int</span>) <a class="code hl_variable" href="classmodel_1_1_task_manager.html#a3f4cf909b65371b019c344ceb2c65a6d">tasks</a>.stream()</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>            .filter(task -&gt; task.isCompleted() == completed)</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>            .count();</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    }</div>
+</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    </div>
+<div class="foldopen" id="foldopen00253" data-start="{" data-end="}">
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno"><a class="line" href="classmodel_1_1_task_manager.html#a593c44bb00c7932604aefff2aed3713f">  253</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classmodel_1_1_task_manager.html#a593c44bb00c7932604aefff2aed3713f">getOverdueTaskCount</a>() {</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        <span class="keywordflow">return</span> (<span class="keywordtype">int</span>) <a class="code hl_variable" href="classmodel_1_1_task_manager.html#a3f4cf909b65371b019c344ceb2c65a6d">tasks</a>.stream()</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>            .filter(task -&gt; task.isOverdue() &amp;&amp; !task.isCompleted())</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>            .count();</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    }</div>
+</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    </div>
+<div class="foldopen" id="foldopen00269" data-start="{" data-end="}">
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno"><a class="line" href="classmodel_1_1_task_manager.html#adcdfb8fc100b092808161ba2a72d4ee5">  269</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmodel_1_1_task_manager.html#adcdfb8fc100b092808161ba2a72d4ee5">clearAllTasks</a>() {</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>        <a class="code hl_variable" href="classmodel_1_1_task_manager.html#a3f4cf909b65371b019c344ceb2c65a6d">tasks</a>.clear();</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    }</div>
+</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    </div>
+<div class="foldopen" id="foldopen00288" data-start="{" data-end="}">
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno"><a class="line" href="classmodel_1_1_task_manager.html#a34ef794553cd1ac2b4603298b564dafb">  288</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmodel_1_1_task_manager.html#a34ef794553cd1ac2b4603298b564dafb">loadTasks</a>(List&lt;Task&gt; loadedTasks) {</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        <a class="code hl_variable" href="classmodel_1_1_task_manager.html#a3f4cf909b65371b019c344ceb2c65a6d">tasks</a>.clear();</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>        <a class="code hl_variable" href="classmodel_1_1_task_manager.html#a3f4cf909b65371b019c344ceb2c65a6d">tasks</a>.addAll(loadedTasks);</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        <a class="code hl_function" href="classmodel_1_1_task_manager.html#a6ff214cd422dcd5f0d8c5d573cd251b6">checkAllTasksOverdue</a>();</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    }</div>
+</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>}</div>
+</div>
+<div class="ttc" id="aclassmodel_1_1_task_html"><div class="ttname"><a href="classmodel_1_1_task.html">model.Task</a></div><div class="ttdoc">Основной класс, представляющий задачу в приложении</div><div class="ttdef"><b>Определения</b> <a href="_task_8java_source.html#l00028">Task.java:28</a></div></div>
+<div class="ttc" id="aclassmodel_1_1_task_manager_html_a0248e3e7f014e9e35cce33f4f36bdc3e"><div class="ttname"><a href="classmodel_1_1_task_manager.html#a0248e3e7f014e9e35cce33f4f36bdc3e">model.TaskManager.addTask</a></div><div class="ttdeci">void addTask(Task task)</div><div class="ttdoc">Добавляет новую задачу в менеджер</div><div class="ttdef"><b>Определения</b> <a href="#l00091">TaskManager.java:91</a></div></div>
+<div class="ttc" id="aclassmodel_1_1_task_manager_html_a25e2f8d72d281275facbc0e9badb47ea"><div class="ttname"><a href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea">model.TaskManager.getInstance</a></div><div class="ttdeci">static synchronized TaskManager getInstance()</div><div class="ttdoc">Возвращает единственный экземпляр TaskManager.</div><div class="ttdef"><b>Определения</b> <a href="#l00073">TaskManager.java:73</a></div></div>
+<div class="ttc" id="aclassmodel_1_1_task_manager_html_a34ef794553cd1ac2b4603298b564dafb"><div class="ttname"><a href="classmodel_1_1_task_manager.html#a34ef794553cd1ac2b4603298b564dafb">model.TaskManager.loadTasks</a></div><div class="ttdeci">void loadTasks(List&lt; Task &gt; loadedTasks)</div><div class="ttdoc">Загружает задачи из внешнего списка</div><div class="ttdef"><b>Определения</b> <a href="#l00288">TaskManager.java:288</a></div></div>
+<div class="ttc" id="aclassmodel_1_1_task_manager_html_a3be20318c826cf81cdd44962c31bbf86"><div class="ttname"><a href="classmodel_1_1_task_manager.html#a3be20318c826cf81cdd44962c31bbf86">model.TaskManager.markAsCompleted</a></div><div class="ttdeci">boolean markAsCompleted(String taskId, boolean completed)</div><div class="ttdoc">Изменяет статус выполнения задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00190">TaskManager.java:190</a></div></div>
+<div class="ttc" id="aclassmodel_1_1_task_manager_html_a3f4cf909b65371b019c344ceb2c65a6d"><div class="ttname"><a href="classmodel_1_1_task_manager.html#a3f4cf909b65371b019c344ceb2c65a6d">model.TaskManager.tasks</a></div><div class="ttdeci">List&lt; Task &gt; tasks</div><div class="ttdoc">Список всех задач</div><div class="ttdef"><b>Определения</b> <a href="#l00040">TaskManager.java:40</a></div></div>
+<div class="ttc" id="aclassmodel_1_1_task_manager_html_a46e1d00e8a9e4c37eaf71795c5d0b1b5"><div class="ttname"><a href="classmodel_1_1_task_manager.html#a46e1d00e8a9e4c37eaf71795c5d0b1b5">model.TaskManager.removeTask</a></div><div class="ttdeci">boolean removeTask(String taskId)</div><div class="ttdoc">Удаляет задачу по её идентификатору</div><div class="ttdef"><b>Определения</b> <a href="#l00108">TaskManager.java:108</a></div></div>
+<div class="ttc" id="aclassmodel_1_1_task_manager_html_a49a919d7e57b63860295ab705046937c"><div class="ttname"><a href="classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c">model.TaskManager.TaskManager</a></div><div class="ttdeci">TaskManager()</div><div class="ttdoc">Приватный конструктор</div><div class="ttdef"><b>Определения</b> <a href="#l00058">TaskManager.java:58</a></div></div>
+<div class="ttc" id="aclassmodel_1_1_task_manager_html_a593c44bb00c7932604aefff2aed3713f"><div class="ttname"><a href="classmodel_1_1_task_manager.html#a593c44bb00c7932604aefff2aed3713f">model.TaskManager.getOverdueTaskCount</a></div><div class="ttdeci">int getOverdueTaskCount()</div><div class="ttdoc">Подсчитывает количество просроченных задач</div><div class="ttdef"><b>Определения</b> <a href="#l00253">TaskManager.java:253</a></div></div>
+<div class="ttc" id="aclassmodel_1_1_task_manager_html_a6ff214cd422dcd5f0d8c5d573cd251b6"><div class="ttname"><a href="classmodel_1_1_task_manager.html#a6ff214cd422dcd5f0d8c5d573cd251b6">model.TaskManager.checkAllTasksOverdue</a></div><div class="ttdeci">void checkAllTasksOverdue()</div><div class="ttdoc">Проверяет все задачи на просроченность</div><div class="ttdef"><b>Определения</b> <a href="#l00213">TaskManager.java:213</a></div></div>
+<div class="ttc" id="aclassmodel_1_1_task_manager_html_a7bb0de58bf371543965a953b7f2261b5"><div class="ttname"><a href="classmodel_1_1_task_manager.html#a7bb0de58bf371543965a953b7f2261b5">model.TaskManager.getTasksByCompletion</a></div><div class="ttdeci">List&lt; Task &gt; getTasksByCompletion(boolean completed)</div><div class="ttdoc">Фильтрует задачи по статусу выполнения</div><div class="ttdef"><b>Определения</b> <a href="#l00142">TaskManager.java:142</a></div></div>
+<div class="ttc" id="aclassmodel_1_1_task_manager_html_a83be2e7272a4f79d69be72380893f0f6"><div class="ttname"><a href="classmodel_1_1_task_manager.html#a83be2e7272a4f79d69be72380893f0f6">model.TaskManager.getTaskCount</a></div><div class="ttdeci">int getTaskCount(boolean completed)</div><div class="ttdoc">Подсчитывает количество задач по статусу выполнения</div><div class="ttdef"><b>Определения</b> <a href="#l00235">TaskManager.java:235</a></div></div>
+<div class="ttc" id="aclassmodel_1_1_task_manager_html_aaa6f3dca38b29f6106f5f5c781caf626"><div class="ttname"><a href="classmodel_1_1_task_manager.html#aaa6f3dca38b29f6106f5f5c781caf626">model.TaskManager.instance</a></div><div class="ttdeci">static TaskManager instance</div><div class="ttdoc">Единственный экземпляр TaskManager.</div><div class="ttdef"><b>Определения</b> <a href="#l00049">TaskManager.java:49</a></div></div>
+<div class="ttc" id="aclassmodel_1_1_task_manager_html_abc809a0b2d184494368cc5cc6dae6346"><div class="ttname"><a href="classmodel_1_1_task_manager.html#abc809a0b2d184494368cc5cc6dae6346">model.TaskManager.getAllTasks</a></div><div class="ttdeci">List&lt; Task &gt; getAllTasks()</div><div class="ttdoc">Возвращает копию списка всех задач</div><div class="ttdef"><b>Определения</b> <a href="#l00124">TaskManager.java:124</a></div></div>
+<div class="ttc" id="aclassmodel_1_1_task_manager_html_adcdfb8fc100b092808161ba2a72d4ee5"><div class="ttname"><a href="classmodel_1_1_task_manager.html#adcdfb8fc100b092808161ba2a72d4ee5">model.TaskManager.clearAllTasks</a></div><div class="ttdeci">void clearAllTasks()</div><div class="ttdoc">Очищает все задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00269">TaskManager.java:269</a></div></div>
+<div class="ttc" id="aclassmodel_1_1_task_manager_html_aeeb1bbd577dfd42c694e1120de83f476"><div class="ttname"><a href="classmodel_1_1_task_manager.html#aeeb1bbd577dfd42c694e1120de83f476">model.TaskManager.searchTasks</a></div><div class="ttdeci">List&lt; Task &gt; searchTasks(String query)</div><div class="ttdoc">Выполняет поиск задач по тексту</div><div class="ttdef"><b>Определения</b> <a href="#l00164">TaskManager.java:164</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_5dd65160827af56e6353642206b80129.html">model</a></li><li class="navelem"><a href="_task_manager_8java.html">TaskManager.java</a></li>
+    <li class="footer">Документация по Умный планировщик задач (To-Do List). Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

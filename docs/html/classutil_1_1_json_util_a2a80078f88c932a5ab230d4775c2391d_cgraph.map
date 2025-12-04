@@ -1,0 +1,9 @@
+<map id="util.JsonUtil.loadTasks" name="util.JsonUtil.loadTasks">
+<area shape="rect" id="Node000001" title="Загружает все задачи из JSON файла" alt="" coords="5,31,159,56"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_json_util.html#a92865a18b3e9681f516419fd55bfb27a" title="Парсит JSON строку в список задач" alt="" coords="207,23,368,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,41,194,43,188,44,159,46"/>
+<area shape="rect" id="Node000003" href="$classutil_1_1_json_util.html#a428f650826f08a9ee580d87bb60a1443" title="Парсит один JSON объект задачи" alt="" coords="416,5,607,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="368,32,404,30,398,31,368,37"/>
+<area shape="rect" id="Node000004" href="$classutil_1_1_json_util.html#a53c77a1cd244ad8e37075b9a6c44da32" title="Разделяет JSON массив на отдельные объекты" alt="" coords="416,55,607,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="368,49,403,56,398,56,368,55"/>
+</map>

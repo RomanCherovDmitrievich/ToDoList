@@ -1,0 +1,5 @@
+<map id="view.NewTaskController.isTaskCreated" name="view.NewTaskController.isTaskCreated">
+<area shape="rect" id="Node000001" title="Проверяет, была ли создана задача" alt="" coords="229,5,403,46"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title="Обработчик кнопки добавления новой задачи" alt="" coords="5,5,181,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,26,181,28,181,23,215,25"/>
+</map>

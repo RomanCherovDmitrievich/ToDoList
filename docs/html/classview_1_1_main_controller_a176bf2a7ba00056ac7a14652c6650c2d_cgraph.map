@@ -1,0 +1,5 @@
+<map id="view.MainController.initSnowflakes" name="view.MainController.initSnowflakes">
+<area shape="rect" id="Node000001" title="Инициализирует снежинки для всего окна" alt="" coords="5,5,160,46"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_main_controller.html#ab66a02b22de6d12575196237192dbc81" title="Создает снежинки для всего окна" alt="" coords="208,5,381,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,23,195,25,189,26,160,28"/>
+</map>

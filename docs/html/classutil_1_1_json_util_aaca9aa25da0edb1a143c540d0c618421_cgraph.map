@@ -1,0 +1,9 @@
+<map id="util.JsonUtil.saveTasks" name="util.JsonUtil.saveTasks">
+<area shape="rect" id="Node000001" title="Сохраняет все задачи в JSON файл" alt="" coords="5,13,163,38"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="211,5,383,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,23,198,25,192,26,163,28"/>
+<area shape="rect" id="Node000003" href="$classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="431,13,596,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="383,23,418,26,413,26,383,28"/>
+<area shape="rect" id="Node000004" href="$classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="644,13,807,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="596,23,631,26,626,26,597,28"/>
+</map>

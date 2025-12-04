@@ -1,0 +1,1190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Умный планировщик задач (To-Do List): Класс util.JsonUtil</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">JavaFX приложение для управления задачами с новогодней темой</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classutil_1_1_json_util.html','','classutil_1_1_json_util-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс util.JsonUtil</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Утилита для работы с JSON файлами задач  
+ <a href="#details">Подробнее...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:a2a80078f88c932a5ab230d4775c2391d" id="r_a2a80078f88c932a5ab230d4775c2391d"><td class="memItemLeft" align="right" valign="top">static List&lt; <a class="el" href="classmodel_1_1_task.html">Task</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a80078f88c932a5ab230d4775c2391d">loadTasks</a> ()</td></tr>
+<tr class="memdesc:a2a80078f88c932a5ab230d4775c2391d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загружает все задачи из JSON файла  <br /></td></tr>
+<tr class="memitem:aaca9aa25da0edb1a143c540d0c618421" id="r_aaca9aa25da0edb1a143c540d0c618421"><td class="memItemLeft" align="right" valign="top">static boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaca9aa25da0edb1a143c540d0c618421">saveTasks</a> (List&lt; <a class="el" href="classmodel_1_1_task.html">Task</a> &gt; tasks)</td></tr>
+<tr class="memdesc:aaca9aa25da0edb1a143c540d0c618421"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сохраняет все задачи в JSON файл  <br /></td></tr>
+<tr class="memitem:ac6e9a870e12429cc80b4ddf8ba98af0d" id="r_ac6e9a870e12429cc80b4ddf8ba98af0d"><td class="memItemLeft" align="right" valign="top">static boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6e9a870e12429cc80b4ddf8ba98af0d">addTask</a> (<a class="el" href="classmodel_1_1_task.html">Task</a> task)</td></tr>
+<tr class="memdesc:ac6e9a870e12429cc80b4ddf8ba98af0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет одну задачу в файл  <br /></td></tr>
+<tr class="memitem:a9911e93dd04ddd5151397f9a50e2811f" id="r_a9911e93dd04ddd5151397f9a50e2811f"><td class="memItemLeft" align="right" valign="top">static boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9911e93dd04ddd5151397f9a50e2811f">removeTask</a> (String taskId)</td></tr>
+<tr class="memdesc:a9911e93dd04ddd5151397f9a50e2811f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удаляет задачу по ID.  <br /></td></tr>
+<tr class="memitem:a48c5f07142384cff793469f5aec70968" id="r_a48c5f07142384cff793469f5aec70968"><td class="memItemLeft" align="right" valign="top">static boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48c5f07142384cff793469f5aec70968">updateTask</a> (<a class="el" href="classmodel_1_1_task.html">Task</a> updatedTask)</td></tr>
+<tr class="memdesc:a48c5f07142384cff793469f5aec70968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновляет существующую задачу  <br /></td></tr>
+<tr class="memitem:a5aa0245ff55c9b9f55087ee01f926c98" id="r_a5aa0245ff55c9b9f55087ee01f926c98"><td class="memItemLeft" align="right" valign="top">static boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5aa0245ff55c9b9f55087ee01f926c98">exportTasks</a> (String filePath, List&lt; <a class="el" href="classmodel_1_1_task.html">Task</a> &gt; tasks)</td></tr>
+<tr class="memdesc:a5aa0245ff55c9b9f55087ee01f926c98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Экспортирует задачи в указанный файл  <br /></td></tr>
+<tr class="memitem:a3dd1f85ca03096b50444f662632f0e01" id="r_a3dd1f85ca03096b50444f662632f0e01"><td class="memItemLeft" align="right" valign="top">static boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3dd1f85ca03096b50444f662632f0e01">createBackup</a> ()</td></tr>
+<tr class="memdesc:a3dd1f85ca03096b50444f662632f0e01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создает резервную копию файла задач  <br /></td></tr>
+<tr class="memitem:ae911700fb851d4f6e7a7e4283ab3f654" id="r_ae911700fb851d4f6e7a7e4283ab3f654"><td class="memItemLeft" align="right" valign="top">static boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae911700fb851d4f6e7a7e4283ab3f654">clearAllTasks</a> ()</td></tr>
+<tr class="memdesc:ae911700fb851d4f6e7a7e4283ab3f654"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очищает файл задач  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-methods" class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Закрытые статические члены</h2></td></tr>
+<tr class="memitem:aaaa83983070d38c894e85492c2ef7243" id="r_aaaa83983070d38c894e85492c2ef7243"><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaaa83983070d38c894e85492c2ef7243">convertTasksToJson</a> (List&lt; <a class="el" href="classmodel_1_1_task.html">Task</a> &gt; tasks)</td></tr>
+<tr class="memdesc:aaaa83983070d38c894e85492c2ef7243"><td class="mdescLeft">&#160;</td><td class="mdescRight">Преобразует список задач в JSON строку  <br /></td></tr>
+<tr class="memitem:a92865a18b3e9681f516419fd55bfb27a" id="r_a92865a18b3e9681f516419fd55bfb27a"><td class="memItemLeft" align="right" valign="top">static List&lt; <a class="el" href="classmodel_1_1_task.html">Task</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92865a18b3e9681f516419fd55bfb27a">parseTasksFromJson</a> (String jsonContent)</td></tr>
+<tr class="memdesc:a92865a18b3e9681f516419fd55bfb27a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Парсит JSON строку в список задач  <br /></td></tr>
+<tr class="memitem:a53c77a1cd244ad8e37075b9a6c44da32" id="r_a53c77a1cd244ad8e37075b9a6c44da32"><td class="memItemLeft" align="right" valign="top">static List&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53c77a1cd244ad8e37075b9a6c44da32">splitJsonObjects</a> (String arrayContent)</td></tr>
+<tr class="memdesc:a53c77a1cd244ad8e37075b9a6c44da32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Разделяет JSON массив на отдельные объекты  <br /></td></tr>
+<tr class="memitem:a428f650826f08a9ee580d87bb60a1443" id="r_a428f650826f08a9ee580d87bb60a1443"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmodel_1_1_task.html">Task</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a428f650826f08a9ee580d87bb60a1443">parseSingleTask</a> (String json)</td></tr>
+<tr class="memdesc:a428f650826f08a9ee580d87bb60a1443"><td class="mdescLeft">&#160;</td><td class="mdescRight">Парсит один JSON объект задачи  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Закрытые статические данные</h2></td></tr>
+<tr class="memitem:a1b093819f098a9bcac891cf1d9f7a87e" id="r_a1b093819f098a9bcac891cf1d9f7a87e"><td class="memItemLeft" align="right" valign="top">static final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b093819f098a9bcac891cf1d9f7a87e">DATA_DIR</a> = &quot;data&quot;</td></tr>
+<tr class="memdesc:a1b093819f098a9bcac891cf1d9f7a87e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Директория для хранения данных  <br /></td></tr>
+<tr class="memitem:a1e5d1af8d9c0a9768aa1c5059117453d" id="r_a1e5d1af8d9c0a9768aa1c5059117453d"><td class="memItemLeft" align="right" valign="top">static final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e5d1af8d9c0a9768aa1c5059117453d">TASKS_FILE</a> = &quot;tasks.json&quot;</td></tr>
+<tr class="memdesc:a1e5d1af8d9c0a9768aa1c5059117453d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Имя файла задач  <br /></td></tr>
+<tr class="memitem:a9795042787a9329d699f03e5e6cc117d" id="r_a9795042787a9329d699f03e5e6cc117d"><td class="memItemLeft" align="right" valign="top">static final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9795042787a9329d699f03e5e6cc117d">FULL_PATH</a> = <a class="el" href="#a1b093819f098a9bcac891cf1d9f7a87e">DATA_DIR</a> + &quot;/&quot; + <a class="el" href="#a1e5d1af8d9c0a9768aa1c5059117453d">TASKS_FILE</a></td></tr>
+<tr class="memdesc:a9795042787a9329d699f03e5e6cc117d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Полный путь к файлу задач  <br /></td></tr>
+<tr class="memitem:a8c11cfd67ef078ca6a5a54bc8616de11" id="r_a8c11cfd67ef078ca6a5a54bc8616de11"><td class="memItemLeft" align="right" valign="top">static final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c11cfd67ef078ca6a5a54bc8616de11">DATE_PATTERN</a> = &quot;yyyy-MM-dd'T'HH:mm:ss&quot;</td></tr>
+<tr class="memdesc:a8c11cfd67ef078ca6a5a54bc8616de11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Паттерн для парсинга даты  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Утилита для работы с JSON файлами задач </p>
+<p>Класс предоставляет статические методы для загрузки, сохранения и управления задачами в формате JSON. Все задачи хранятся в файле tasks.json в директории data/. Класс использует стандартные Java библиотеки для работы с файлами и парсинга JSON без внешних зависимостей.</p>
+<dl class="section author"><dt>Автор</dt><dd>Разработчик </dd></dl>
+<dl class="section version"><dt>Версия</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Дата</dt><dd>2025-11-30</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a> </dd>
+<dd>
+<a class="el" href="enummodel_1_1_priority.html">Priority</a> </dd>
+<dd>
+<a class="el" href="enummodel_1_1_category.html">Category</a> </dd>
+<dd>
+Files </dd>
+<dd>
+Path</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Использует ручной парсинг JSON без сторонних библиотек </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Не потокобезопасен - для многопоточного использования требуется синхронизация </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000001">Ошибка</a></b></dt><dd>При повреждении JSON файла может выбросить RuntimeException </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_json_util_8java_source.html">JsonUtil.java</a> строка <a class="el" href="_json_util_8java_source.html#l00036">36</a></p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="ac6e9a870e12429cc80b4ddf8ba98af0d" name="ac6e9a870e12429cc80b4ddf8ba98af0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6e9a870e12429cc80b4ddf8ba98af0d">&#9670;&#160;</a></span>addTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean util.JsonUtil.addTask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmodel_1_1_task.html">Task</a></td>          <td class="paramname"><span class="paramname"><em>task</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавляет одну задачу в файл </p>
+<p>Загружает существующие задачи, добавляет новую и сохраняет обратно. Неэффективно для частых добавлений - лучше использовать <a class="el" href="#aaca9aa25da0edb1a143c540d0c618421" title="Сохраняет все задачи в JSON файл">saveTasks()</a>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">task</td><td>Задача для добавления (не может быть null) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>boolean true если добавление успешно, false при ошибке</dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">NullPointerException</td><td>если task равен null</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Для одиночных добавлений используйте этот метод </dd>
+<dd>
+Для массовых операций лучше использовать <a class="el" href="#aaca9aa25da0edb1a143c540d0c618421" title="Сохраняет все задачи в JSON файл">saveTasks()</a></dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="#a2a80078f88c932a5ab230d4775c2391d" title="Загружает все задачи из JSON файла">loadTasks()</a> </dd>
+<dd>
+#saveTasks(List) </dd>
+<dd>
+List#add(Object) </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_json_util_8java_source.html">JsonUtil.java</a> строка <a class="el" href="_json_util_8java_source.html#l00183">183</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_json_util_8java_source.html#l00081">loadTasks()</a> и <a class="el" href="_json_util_8java_source.html#l00139">saveTasks()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_json_util_ac6e9a870e12429cc80b4ddf8ba98af0d_cgraph.png" border="0" usemap="#aclassutil_1_1_json_util_ac6e9a870e12429cc80b4ddf8ba98af0d_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_json_util_ac6e9a870e12429cc80b4ddf8ba98af0d_cgraph" id="aclassutil_1_1_json_util_ac6e9a870e12429cc80b4ddf8ba98af0d_cgraph">
+<area shape="rect" title="Добавляет одну задачу в файл" alt="" coords="5,80,149,106"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a2a80078f88c932a5ab230d4775c2391d" title="Загружает все задачи из JSON файла" alt="" coords="199,51,352,76"/>
+<area shape="poly" title=" " alt="" coords="148,80,186,76,181,78,150,85"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421" title="Сохраняет все задачи в JSON файл" alt="" coords="197,104,354,130"/>
+<area shape="poly" title=" " alt="" coords="149,99,184,105,178,106,149,104"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a92865a18b3e9681f516419fd55bfb27a" title="Парсит JSON строку в список задач" alt="" coords="408,39,569,80"/>
+<area shape="poly" title=" " alt="" coords="352,59,394,61,389,62,353,65"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a428f650826f08a9ee580d87bb60a1443" title="Парсит один JSON объект задачи" alt="" coords="623,5,813,31"/>
+<area shape="poly" title=" " alt="" coords="568,42,625,35,631,34,569,48"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a53c77a1cd244ad8e37075b9a6c44da32" title="Разделяет JSON массив на отдельные объекты" alt="" coords="622,55,814,80"/>
+<area shape="poly" title=" " alt="" coords="569,60,610,63,604,64,569,65"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="402,104,574,145"/>
+<area shape="poly" title=" " alt="" coords="354,117,389,121,384,121,354,122"/>
+<area shape="rect" href="classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="635,112,801,138"/>
+<area shape="poly" title=" " alt="" coords="575,122,622,125,617,125,575,127"/>
+<area shape="rect" href="classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="862,112,1024,138"/>
+<area shape="poly" title=" " alt="" coords="801,122,849,125,844,125,801,127"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae911700fb851d4f6e7a7e4283ab3f654" name="ae911700fb851d4f6e7a7e4283ab3f654"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae911700fb851d4f6e7a7e4283ab3f654">&#9670;&#160;</a></span>clearAllTasks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean util.JsonUtil.clearAllTasks </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Очищает файл задач </p>
+<p>Записывает пустой JSON массив в файл tasks.json. Эффективно удаляет все задачи из хранилища.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>boolean true если очистка успешна, false при ошибке</dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IOException</td><td>если возникают проблемы с записью файла</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Необратимо удаляет все задачи! Используйте с осторожностью </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Создает файл если он не существует</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd>Files#write(Path, byte[], OpenOption...) </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_json_util_8java_source.html">JsonUtil.java</a> строка <a class="el" href="_json_util_8java_source.html#l00571">571</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_json_util_8java_source.html#l00054">FULL_PATH</a>.</p>
+
+</div>
+</div>
+<a id="aaaa83983070d38c894e85492c2ef7243" name="aaaa83983070d38c894e85492c2ef7243"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaa83983070d38c894e85492c2ef7243">&#9670;&#160;</a></span>convertTasksToJson()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String util.JsonUtil.convertTasksToJson </td>
+          <td>(</td>
+          <td class="paramtype">List&lt; <a class="el" href="classmodel_1_1_task.html">Task</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>tasks</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Преобразует список задач в JSON строку </p>
+<p>Создает JSON массив из объектов <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a>. Каждая задача преобразуется с помощью <a class="el" href="classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку">Task.toJsonString()</a>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tasks</td><td>Список задач для преобразования (может быть пустым) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>String JSON строка в формате массива объектов</dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">NullPointerException</td><td>если tasks равен null</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Возвращает "[]" для пустого списка </dd>
+<dd>
+Добавляет отступы и переносы строк для читаемости</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку">Task.toJsonString()</a> </dd>
+<dd>
+StringBuilder </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_json_util_8java_source.html">JsonUtil.java</a> строка <a class="el" href="_json_util_8java_source.html#l00261">261</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00361">model.Task.toJsonString()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_json_util_8java_source.html#l00510">exportTasks()</a> и <a class="el" href="_json_util_8java_source.html#l00139">saveTasks()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_json_util_aaaa83983070d38c894e85492c2ef7243_cgraph.png" border="0" usemap="#aclassutil_1_1_json_util_aaaa83983070d38c894e85492c2ef7243_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_json_util_aaaa83983070d38c894e85492c2ef7243_cgraph" id="aclassutil_1_1_json_util_aaaa83983070d38c894e85492c2ef7243_cgraph">
+<area shape="rect" title="Преобразует список задач в JSON строку" alt="" coords="5,5,178,46"/>
+<area shape="rect" href="classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="226,13,391,38"/>
+<area shape="poly" title=" " alt="" coords="178,23,213,25,208,26,178,28"/>
+<area shape="rect" href="classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="439,13,601,38"/>
+<area shape="poly" title=" " alt="" coords="391,23,426,26,421,26,391,28"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_json_util_aaaa83983070d38c894e85492c2ef7243_icgraph.png" border="0" usemap="#aclassutil_1_1_json_util_aaaa83983070d38c894e85492c2ef7243_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_json_util_aaaa83983070d38c894e85492c2ef7243_icgraph" id="aclassutil_1_1_json_util_aaaa83983070d38c894e85492c2ef7243_icgraph">
+<area shape="rect" title="Преобразует список задач в JSON строку" alt="" coords="674,154,847,194"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a5aa0245ff55c9b9f55087ee01f926c98" title="Экспортирует задачи в указанный файл" alt="" coords="461,136,626,162"/>
+<area shape="poly" title=" " alt="" coords="656,163,627,161,627,156,661,162"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421" title="Сохраняет все задачи в JSON файл" alt="" coords="465,185,622,211"/>
+<area shape="poly" title=" " alt="" coords="656,186,623,192,622,187,661,185"/>
+<area shape="rect" href="classutil_1_1_json_util.html#ac6e9a870e12429cc80b4ddf8ba98af0d" title="Добавляет одну задачу в файл" alt="" coords="254,5,397,31"/>
+<area shape="poly" title=" " alt="" coords="461,176,459,176,446,160,438,143,434,109,431,76,424,61,411,45,396,34,395,29,415,42,428,58,436,75,440,109,443,141,450,157,463,172,466,177"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title="Обработчик кнопки добавления новой задачи" alt="" coords="238,55,413,96"/>
+<area shape="poly" title=" " alt="" coords="465,178,459,176,443,160,434,143,426,127,411,111,393,99,393,94,415,107,431,124,439,141,447,157,463,172,470,178"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title="Обработчик кнопки удаления задачи" alt="" coords="238,120,413,161"/>
+<area shape="poly" title=" " alt="" coords="475,181,406,164,406,159,480,180"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a9911e93dd04ddd5151397f9a50e2811f" title="Удаляет задачу по ID." alt="" coords="243,185,408,211"/>
+<area shape="poly" title=" " alt="" coords="447,199,409,201,408,196,452,198"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title="Настраивает колонки таблицы задач" alt="" coords="241,235,410,276"/>
+<area shape="poly" title=" " alt="" coords="475,216,406,237,405,232,480,215"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834" title="Метод остановки приложения" alt="" coords="262,300,388,326"/>
+<area shape="poly" title=" " alt="" coords="517,220,470,257,414,290,383,302,381,297,412,285,467,253,512,222"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a48c5f07142384cff793469f5aec70968" title="Обновляет существующую задачу" alt="" coords="245,349,406,375"/>
+<area shape="poly" title=" " alt="" coords="528,223,481,284,450,314,414,340,391,351,390,346,412,336,446,310,477,280,523,225"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,243,190,268"/>
+<area shape="poly" title=" " alt="" coords="223,256,191,258,190,253,228,255"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3dd1f85ca03096b50444f662632f0e01" name="a3dd1f85ca03096b50444f662632f0e01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dd1f85ca03096b50444f662632f0e01">&#9670;&#160;</a></span>createBackup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean util.JsonUtil.createBackup </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Создает резервную копию файла задач </p>
+<p>Копирует текущий файл tasks.json с добавлением временной метки в имени. Создает backup в той же директории data/.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>boolean true если резервное копирование успешно, false при ошибке</dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IOException</td><td>если возникают проблемы с чтением/записью файлов</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Имя backup файла: tasks_backup_YYYYMMDD_HHMMSS.json </dd>
+<dd>
+Если исходный файл не существует, возвращает false</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd>Files#copy(Path, Path, CopyOption...) </dd>
+<dd>
+LocalDateTime#format(java.time.format.DateTimeFormatter) </dd>
+<dd>
+StandardCopyOption#REPLACE_EXISTING </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_json_util_8java_source.html">JsonUtil.java</a> строка <a class="el" href="_json_util_8java_source.html#l00540">540</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_json_util_8java_source.html#l00042">DATA_DIR</a> и <a class="el" href="_json_util_8java_source.html#l00054">FULL_PATH</a>.</p>
+
+</div>
+</div>
+<a id="a5aa0245ff55c9b9f55087ee01f926c98" name="a5aa0245ff55c9b9f55087ee01f926c98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5aa0245ff55c9b9f55087ee01f926c98">&#9670;&#160;</a></span>exportTasks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean util.JsonUtil.exportTasks </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>filePath</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">List&lt; <a class="el" href="classmodel_1_1_task.html">Task</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>tasks</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Экспортирует задачи в указанный файл </p>
+<p>Сохраняет список задач в формате JSON по указанному пути. Полезно для создания резервных копий или экспорта данных.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePath</td><td>Полный путь к файлу для экспорта </td></tr>
+    <tr><td class="paramname">tasks</td><td>Список задач для экспорта </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>boolean true если экспорт успешен, false при ошибке</dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IOException</td><td>если возникают проблемы с записью файла </td></tr>
+    <tr><td class="paramname">NullPointerException</td><td>если filePath или tasks равны null</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Перезаписывает существующий файл по указанному пути </dd>
+<dd>
+Использует тот же формат, что и основной файл задач</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd>#convertTasksToJson(List) </dd>
+<dd>
+Files#write(Path, byte[], OpenOption...) </dd>
+<dd>
+Paths#get(String, String...) </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_json_util_8java_source.html">JsonUtil.java</a> строка <a class="el" href="_json_util_8java_source.html#l00510">510</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_json_util_8java_source.html#l00261">convertTasksToJson()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_json_util_a5aa0245ff55c9b9f55087ee01f926c98_cgraph.png" border="0" usemap="#aclassutil_1_1_json_util_a5aa0245ff55c9b9f55087ee01f926c98_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_json_util_a5aa0245ff55c9b9f55087ee01f926c98_cgraph" id="aclassutil_1_1_json_util_a5aa0245ff55c9b9f55087ee01f926c98_cgraph">
+<area shape="rect" title="Экспортирует задачи в указанный файл" alt="" coords="5,13,171,38"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="219,5,391,46"/>
+<area shape="poly" title=" " alt="" coords="171,23,206,25,200,26,171,28"/>
+<area shape="rect" href="classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="439,13,604,38"/>
+<area shape="poly" title=" " alt="" coords="391,23,426,26,421,26,391,28"/>
+<area shape="rect" href="classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="652,13,815,38"/>
+<area shape="poly" title=" " alt="" coords="604,23,639,26,634,26,605,28"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2a80078f88c932a5ab230d4775c2391d" name="a2a80078f88c932a5ab230d4775c2391d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a80078f88c932a5ab230d4775c2391d">&#9670;&#160;</a></span>loadTasks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="classmodel_1_1_task.html">Task</a> &gt; util.JsonUtil.loadTasks </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Загружает все задачи из JSON файла </p>
+<p>Читает файл tasks.json, парсит его содержимое и создает список объектов <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a>. Автоматически создает директорию data/ если она не существует.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>List&lt;Task&gt; Список загруженных задач (может быть пустым)</dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IOException</td><td>если возникают проблемы с чтением файла </td></tr>
+    <tr><td class="paramname">IllegalArgumentException</td><td>если JSON имеет неверный формат </td></tr>
+    <tr><td class="paramname">RuntimeException</td><td>если не удается распарсить JSON или создать задачи</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Если файл не существует, возвращает пустой список </dd>
+<dd>
+Логирует количество загруженных задач в консоль</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="#a92865a18b3e9681f516419fd55bfb27a" title="Парсит JSON строку в список задач">parseTasksFromJson(String)</a> </dd>
+<dd>
+Files#readAllLines(Path) </dd>
+<dd>
+Files#createDirectories(Path) </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_json_util_8java_source.html">JsonUtil.java</a> строка <a class="el" href="_json_util_8java_source.html#l00081">81</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_json_util_8java_source.html#l00042">DATA_DIR</a>, <a class="el" href="_json_util_8java_source.html#l00054">FULL_PATH</a> и <a class="el" href="_json_util_8java_source.html#l00301">parseTasksFromJson()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_json_util_8java_source.html#l00183">addTask()</a>, <a class="el" href="_main_controller_8java_source.html#l00883">view.MainController.loadTasks()</a>, <a class="el" href="_json_util_8java_source.html#l00206">removeTask()</a> и <a class="el" href="_json_util_8java_source.html#l00231">updateTask()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_json_util_a2a80078f88c932a5ab230d4775c2391d_cgraph.png" border="0" usemap="#aclassutil_1_1_json_util_a2a80078f88c932a5ab230d4775c2391d_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_json_util_a2a80078f88c932a5ab230d4775c2391d_cgraph" id="aclassutil_1_1_json_util_a2a80078f88c932a5ab230d4775c2391d_cgraph">
+<area shape="rect" title="Загружает все задачи из JSON файла" alt="" coords="5,31,159,56"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a92865a18b3e9681f516419fd55bfb27a" title="Парсит JSON строку в список задач" alt="" coords="207,23,368,64"/>
+<area shape="poly" title=" " alt="" coords="159,41,194,43,188,44,159,46"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a428f650826f08a9ee580d87bb60a1443" title="Парсит один JSON объект задачи" alt="" coords="416,5,607,31"/>
+<area shape="poly" title=" " alt="" coords="368,32,404,30,398,31,368,37"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a53c77a1cd244ad8e37075b9a6c44da32" title="Разделяет JSON массив на отдельные объекты" alt="" coords="416,55,607,80"/>
+<area shape="poly" title=" " alt="" coords="368,49,403,56,398,56,368,55"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_json_util_a2a80078f88c932a5ab230d4775c2391d_icgraph.png" border="0" usemap="#aclassutil_1_1_json_util_a2a80078f88c932a5ab230d4775c2391d_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_json_util_a2a80078f88c932a5ab230d4775c2391d_icgraph" id="aclassutil_1_1_json_util_a2a80078f88c932a5ab230d4775c2391d_icgraph">
+<area shape="rect" title="Загружает все задачи из JSON файла" alt="" coords="451,92,604,118"/>
+<area shape="rect" href="classutil_1_1_json_util.html#ac6e9a870e12429cc80b4ddf8ba98af0d" title="Добавляет одну задачу в файл" alt="" coords="249,5,392,31"/>
+<area shape="poly" title=" " alt="" coords="486,84,402,46,369,34,369,29,404,41,491,84"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af03ff4fe034cfc97fd82327d0e618e59" title="Загружает задачи из файла и отображает их в таблице" alt="" coords="240,55,401,96"/>
+<area shape="poly" title=" " alt="" coords="433,92,402,90,401,84,438,92"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a9911e93dd04ddd5151397f9a50e2811f" title="Удаляет задачу по ID." alt="" coords="238,120,403,146"/>
+<area shape="poly" title=" " alt="" coords="433,118,404,124,403,119,438,117"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a48c5f07142384cff793469f5aec70968" title="Обновляет существующую задачу" alt="" coords="240,169,401,195"/>
+<area shape="poly" title=" " alt="" coords="487,124,404,161,371,171,370,166,402,156,482,125"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,63,190,88"/>
+<area shape="poly" title=" " alt="" coords="222,76,191,78,190,73,227,75"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a428f650826f08a9ee580d87bb60a1443" name="a428f650826f08a9ee580d87bb60a1443"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a428f650826f08a9ee580d87bb60a1443">&#9670;&#160;</a></span>parseSingleTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmodel_1_1_task.html">Task</a> util.JsonUtil.parseSingleTask </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>json</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Парсит один JSON объект задачи </p>
+<p>Разбирает JSON объект задачи и создает объект <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a>. Извлекает все поля задачи из JSON.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">json</td><td>JSON строка одного объекта задачи (со скобками) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a> Объект задачи, созданный из JSON</dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>если JSON имеет неверный формат </td></tr>
+    <tr><td class="paramname">RuntimeException</td><td>если не удается создать задачу из извлеченных полей</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Ожидает валидный JSON объект с фигурными скобками </dd>
+<dd>
+Корректно обрабатывает строки с экранированными символами</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classmodel_1_1_task.html#a588c01505352172d2ba968bfcf483b5b" title="Конструктор для загрузки из JSON.">Task.Task(String, String, String, String, String, String, String, boolean, boolean, String)</a> </dd>
+<dd>
+Map </dd>
+<dd>
+StringBuilder </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_json_util_8java_source.html">JsonUtil.java</a> строка <a class="el" href="_json_util_8java_source.html#l00401">401</a></p>
+
+<p class="reference">Используется в <a class="el" href="_json_util_8java_source.html#l00301">parseTasksFromJson()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_json_util_a428f650826f08a9ee580d87bb60a1443_icgraph.png" border="0" usemap="#aclassutil_1_1_json_util_a428f650826f08a9ee580d87bb60a1443_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_json_util_a428f650826f08a9ee580d87bb60a1443_icgraph" id="aclassutil_1_1_json_util_a428f650826f08a9ee580d87bb60a1443_icgraph">
+<area shape="rect" title="Парсит один JSON объект задачи" alt="" coords="862,92,1052,118"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a92865a18b3e9681f516419fd55bfb27a" title="Парсит JSON строку в список задач" alt="" coords="652,84,814,125"/>
+<area shape="poly" title=" " alt="" coords="843,105,814,107,814,102,849,105"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a2a80078f88c932a5ab230d4775c2391d" title="Загружает все задачи из JSON файла" alt="" coords="451,92,604,118"/>
+<area shape="poly" title=" " alt="" coords="634,105,605,107,605,102,640,105"/>
+<area shape="rect" href="classutil_1_1_json_util.html#ac6e9a870e12429cc80b4ddf8ba98af0d" title="Добавляет одну задачу в файл" alt="" coords="249,5,392,31"/>
+<area shape="poly" title=" " alt="" coords="486,84,402,46,369,34,369,29,404,41,491,84"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af03ff4fe034cfc97fd82327d0e618e59" title="Загружает задачи из файла и отображает их в таблице" alt="" coords="240,55,401,96"/>
+<area shape="poly" title=" " alt="" coords="433,92,402,90,401,84,438,92"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a9911e93dd04ddd5151397f9a50e2811f" title="Удаляет задачу по ID." alt="" coords="238,120,403,146"/>
+<area shape="poly" title=" " alt="" coords="433,118,404,124,403,119,438,117"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a48c5f07142384cff793469f5aec70968" title="Обновляет существующую задачу" alt="" coords="240,169,401,195"/>
+<area shape="poly" title=" " alt="" coords="487,124,404,161,371,171,370,166,402,156,482,125"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,63,190,88"/>
+<area shape="poly" title=" " alt="" coords="222,76,191,78,190,73,227,75"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a92865a18b3e9681f516419fd55bfb27a" name="a92865a18b3e9681f516419fd55bfb27a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92865a18b3e9681f516419fd55bfb27a">&#9670;&#160;</a></span>parseTasksFromJson()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="classmodel_1_1_task.html">Task</a> &gt; util.JsonUtil.parseTasksFromJson </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>jsonContent</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Парсит JSON строку в список задач </p>
+<p>Разбирает JSON строку, извлекает отдельные объекты и создает из них объекты <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jsonContent</td><td>JSON строка для парсинга </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>List&lt;Task&gt; Список распарсенных задач</dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>если JSON имеет неверный формат </td></tr>
+    <tr><td class="paramname">RuntimeException</td><td>если не удается распарсить JSON или создать задачи</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Ожидает JSON в формате массива объектов </dd>
+<dd>
+Игнорирует задачи, которые не удалось распарсить (логирует ошибку)</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="#a53c77a1cd244ad8e37075b9a6c44da32" title="Разделяет JSON массив на отдельные объекты">splitJsonObjects(String)</a> </dd>
+<dd>
+<a class="el" href="#a428f650826f08a9ee580d87bb60a1443" title="Парсит один JSON объект задачи">parseSingleTask(String)</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_json_util_8java_source.html">JsonUtil.java</a> строка <a class="el" href="_json_util_8java_source.html#l00301">301</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_json_util_8java_source.html#l00401">parseSingleTask()</a> и <a class="el" href="_json_util_8java_source.html#l00350">splitJsonObjects()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_json_util_8java_source.html#l00081">loadTasks()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_json_util_a92865a18b3e9681f516419fd55bfb27a_cgraph.png" border="0" usemap="#aclassutil_1_1_json_util_a92865a18b3e9681f516419fd55bfb27a_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_json_util_a92865a18b3e9681f516419fd55bfb27a_cgraph" id="aclassutil_1_1_json_util_a92865a18b3e9681f516419fd55bfb27a_cgraph">
+<area shape="rect" title="Парсит JSON строку в список задач" alt="" coords="5,23,167,64"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a428f650826f08a9ee580d87bb60a1443" title="Парсит один JSON объект задачи" alt="" coords="215,5,406,31"/>
+<area shape="poly" title=" " alt="" coords="166,32,202,30,197,31,167,37"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a53c77a1cd244ad8e37075b9a6c44da32" title="Разделяет JSON массив на отдельные объекты" alt="" coords="215,55,406,80"/>
+<area shape="poly" title=" " alt="" coords="167,49,202,55,197,56,167,55"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_json_util_a92865a18b3e9681f516419fd55bfb27a_icgraph.png" border="0" usemap="#aclassutil_1_1_json_util_a92865a18b3e9681f516419fd55bfb27a_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_json_util_a92865a18b3e9681f516419fd55bfb27a_icgraph" id="aclassutil_1_1_json_util_a92865a18b3e9681f516419fd55bfb27a_icgraph">
+<area shape="rect" title="Парсит JSON строку в список задач" alt="" coords="652,84,814,125"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a2a80078f88c932a5ab230d4775c2391d" title="Загружает все задачи из JSON файла" alt="" coords="451,92,604,118"/>
+<area shape="poly" title=" " alt="" coords="634,105,605,107,605,102,640,105"/>
+<area shape="rect" href="classutil_1_1_json_util.html#ac6e9a870e12429cc80b4ddf8ba98af0d" title="Добавляет одну задачу в файл" alt="" coords="249,5,392,31"/>
+<area shape="poly" title=" " alt="" coords="486,84,402,46,369,34,369,29,404,41,491,84"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af03ff4fe034cfc97fd82327d0e618e59" title="Загружает задачи из файла и отображает их в таблице" alt="" coords="240,55,401,96"/>
+<area shape="poly" title=" " alt="" coords="433,92,402,90,401,84,438,92"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a9911e93dd04ddd5151397f9a50e2811f" title="Удаляет задачу по ID." alt="" coords="238,120,403,146"/>
+<area shape="poly" title=" " alt="" coords="433,118,404,124,403,119,438,117"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a48c5f07142384cff793469f5aec70968" title="Обновляет существующую задачу" alt="" coords="240,169,401,195"/>
+<area shape="poly" title=" " alt="" coords="487,124,404,161,371,171,370,166,402,156,482,125"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,63,190,88"/>
+<area shape="poly" title=" " alt="" coords="222,76,191,78,190,73,227,75"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9911e93dd04ddd5151397f9a50e2811f" name="a9911e93dd04ddd5151397f9a50e2811f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9911e93dd04ddd5151397f9a50e2811f">&#9670;&#160;</a></span>removeTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean util.JsonUtil.removeTask </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>taskId</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Удаляет задачу по ID. </p>
+<p>Загружает задачи, ищет задачу с указанным ID и удаляет ее, затем сохраняет обновленный список.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">taskId</td><td>Уникальный идентификатор задачи для удаления </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>boolean true если задача найдена и удалена, false если не найдена</dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">NullPointerException</td><td>если taskId равен null</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>ID сравнивается как строка (String.equals()) </dd>
+<dd>
+Если задача не найдена, возвращает false без изменения файла</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="#a2a80078f88c932a5ab230d4775c2391d" title="Загружает все задачи из JSON файла">loadTasks()</a> </dd>
+<dd>
+#saveTasks(List) </dd>
+<dd>
+List#removeIf(java.util.function.Predicate) </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_json_util_8java_source.html">JsonUtil.java</a> строка <a class="el" href="_json_util_8java_source.html#l00206">206</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_json_util_8java_source.html#l00081">loadTasks()</a> и <a class="el" href="_json_util_8java_source.html#l00139">saveTasks()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_json_util_a9911e93dd04ddd5151397f9a50e2811f_cgraph.png" border="0" usemap="#aclassutil_1_1_json_util_a9911e93dd04ddd5151397f9a50e2811f_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_json_util_a9911e93dd04ddd5151397f9a50e2811f_cgraph" id="aclassutil_1_1_json_util_a9911e93dd04ddd5151397f9a50e2811f_cgraph">
+<area shape="rect" title="Удаляет задачу по ID." alt="" coords="5,80,171,106"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a2a80078f88c932a5ab230d4775c2391d" title="Загружает все задачи из JSON файла" alt="" coords="221,51,374,76"/>
+<area shape="poly" title=" " alt="" coords="170,79,208,76,203,77,172,84"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421" title="Сохраняет все задачи в JSON файл" alt="" coords="219,104,376,130"/>
+<area shape="poly" title=" " alt="" coords="171,100,206,106,201,106,171,105"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a92865a18b3e9681f516419fd55bfb27a" title="Парсит JSON строку в список задач" alt="" coords="430,39,591,80"/>
+<area shape="poly" title=" " alt="" coords="374,59,417,61,411,62,375,65"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a428f650826f08a9ee580d87bb60a1443" title="Парсит один JSON объект задачи" alt="" coords="645,5,835,31"/>
+<area shape="poly" title=" " alt="" coords="590,42,647,35,653,34,591,48"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a53c77a1cd244ad8e37075b9a6c44da32" title="Разделяет JSON массив на отдельные объекты" alt="" coords="644,55,836,80"/>
+<area shape="poly" title=" " alt="" coords="591,60,632,63,626,64,591,65"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="424,104,596,145"/>
+<area shape="poly" title=" " alt="" coords="376,117,411,121,406,121,376,122"/>
+<area shape="rect" href="classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="657,112,823,138"/>
+<area shape="poly" title=" " alt="" coords="597,122,644,125,639,125,597,127"/>
+<area shape="rect" href="classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="884,112,1046,138"/>
+<area shape="poly" title=" " alt="" coords="823,122,871,125,866,125,823,127"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaca9aa25da0edb1a143c540d0c618421" name="aaca9aa25da0edb1a143c540d0c618421"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaca9aa25da0edb1a143c540d0c618421">&#9670;&#160;</a></span>saveTasks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean util.JsonUtil.saveTasks </td>
+          <td>(</td>
+          <td class="paramtype">List&lt; <a class="el" href="classmodel_1_1_task.html">Task</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>tasks</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Сохраняет все задачи в JSON файл </p>
+<p>Преобразует список задач в JSON строку и записывает ее в файл. Перезаписывает существующий файл полностью.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tasks</td><td>Список задач для сохранения </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>boolean true если сохранение успешно, false при ошибке</dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IOException</td><td>если возникают проблемы с записью в файл</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Автоматически создает директорию data/ если она не существует </dd>
+<dd>
+Использует StandardOpenOption.TRUNCATE_EXISTING для перезаписи файла </dd>
+<dd>
+Логирует количество сохраненных задач в консоль</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd>#convertTasksToJson(List) </dd>
+<dd>
+Files#write(Path, byte[], OpenOption...) </dd>
+<dd>
+StandardOpenOption#CREATE </dd>
+<dd>
+StandardOpenOption#TRUNCATE_EXISTING </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_json_util_8java_source.html">JsonUtil.java</a> строка <a class="el" href="_json_util_8java_source.html#l00139">139</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_json_util_8java_source.html#l00261">convertTasksToJson()</a>, <a class="el" href="_json_util_8java_source.html#l00042">DATA_DIR</a> и <a class="el" href="_json_util_8java_source.html#l00054">FULL_PATH</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_json_util_8java_source.html#l00183">addTask()</a>, <a class="el" href="_main_controller_8java_source.html#l00953">view.MainController.handleAddTask()</a>, <a class="el" href="_main_controller_8java_source.html#l01004">view.MainController.handleDeleteTask()</a>, <a class="el" href="_json_util_8java_source.html#l00206">removeTask()</a>, <a class="el" href="_main_controller_8java_source.html#l00246">view.MainController.setupTableColumns()</a>, <a class="el" href="_main_app_8java_source.html#l00243">app.MainApp.stop()</a> и <a class="el" href="_json_util_8java_source.html#l00231">updateTask()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_json_util_aaca9aa25da0edb1a143c540d0c618421_cgraph.png" border="0" usemap="#aclassutil_1_1_json_util_aaca9aa25da0edb1a143c540d0c618421_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_json_util_aaca9aa25da0edb1a143c540d0c618421_cgraph" id="aclassutil_1_1_json_util_aaca9aa25da0edb1a143c540d0c618421_cgraph">
+<area shape="rect" title="Сохраняет все задачи в JSON файл" alt="" coords="5,13,163,38"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="211,5,383,46"/>
+<area shape="poly" title=" " alt="" coords="163,23,198,25,192,26,163,28"/>
+<area shape="rect" href="classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="431,13,596,38"/>
+<area shape="poly" title=" " alt="" coords="383,23,418,26,413,26,383,28"/>
+<area shape="rect" href="classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="644,13,807,38"/>
+<area shape="poly" title=" " alt="" coords="596,23,631,26,626,26,597,28"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_json_util_aaca9aa25da0edb1a143c540d0c618421_icgraph.png" border="0" usemap="#aclassutil_1_1_json_util_aaca9aa25da0edb1a143c540d0c618421_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_json_util_aaca9aa25da0edb1a143c540d0c618421_icgraph" id="aclassutil_1_1_json_util_aaca9aa25da0edb1a143c540d0c618421_icgraph">
+<area shape="rect" title="Сохраняет все задачи в JSON файл" alt="" coords="461,185,618,211"/>
+<area shape="rect" href="classutil_1_1_json_util.html#ac6e9a870e12429cc80b4ddf8ba98af0d" title="Добавляет одну задачу в файл" alt="" coords="254,5,397,31"/>
+<area shape="poly" title=" " alt="" coords="521,171,478,109,447,75,412,46,389,34,389,29,414,41,451,71,482,105,526,172"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title="Обработчик кнопки добавления новой задачи" alt="" coords="238,55,413,96"/>
+<area shape="poly" title=" " alt="" coords="508,175,465,144,412,111,387,99,386,94,414,106,468,140,513,175"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title="Обработчик кнопки удаления задачи" alt="" coords="238,120,413,161"/>
+<area shape="poly" title=" " alt="" coords="471,181,404,164,404,159,477,180"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a9911e93dd04ddd5151397f9a50e2811f" title="Удаляет задачу по ID." alt="" coords="243,185,408,211"/>
+<area shape="poly" title=" " alt="" coords="443,199,409,201,408,196,448,198"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title="Настраивает колонки таблицы задач" alt="" coords="241,235,410,276"/>
+<area shape="poly" title=" " alt="" coords="471,216,405,237,403,232,477,215"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834" title="Метод остановки приложения" alt="" coords="262,300,388,326"/>
+<area shape="poly" title=" " alt="" coords="514,220,469,257,414,290,383,302,382,297,412,285,466,253,509,222"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a48c5f07142384cff793469f5aec70968" title="Обновляет существующую задачу" alt="" coords="245,349,406,375"/>
+<area shape="poly" title=" " alt="" coords="524,223,479,284,449,314,414,340,392,351,390,346,412,336,445,310,475,280,520,225"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,243,190,268"/>
+<area shape="poly" title=" " alt="" coords="223,256,191,258,190,253,228,255"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a53c77a1cd244ad8e37075b9a6c44da32" name="a53c77a1cd244ad8e37075b9a6c44da32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53c77a1cd244ad8e37075b9a6c44da32">&#9670;&#160;</a></span>splitJsonObjects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; String &gt; util.JsonUtil.splitJsonObjects </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>arrayContent</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Разделяет JSON массив на отдельные объекты </p>
+<p>Анализирует строку JSON массива и извлекает отдельные объекты. Учитывает вложенные объекты и строки с кавычками.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arrayContent</td><td>Содержимое JSON массива (без внешних скобок) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>List&lt;String&gt; Список JSON строк отдельных объектов</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Корректно обрабатывает экранированные кавычки внутри строк </dd>
+<dd>
+Учитывает вложенные объекты и массивы</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd>StringBuilder </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_json_util_8java_source.html">JsonUtil.java</a> строка <a class="el" href="_json_util_8java_source.html#l00350">350</a></p>
+
+<p class="reference">Используется в <a class="el" href="_json_util_8java_source.html#l00301">parseTasksFromJson()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_json_util_a53c77a1cd244ad8e37075b9a6c44da32_icgraph.png" border="0" usemap="#aclassutil_1_1_json_util_a53c77a1cd244ad8e37075b9a6c44da32_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_json_util_a53c77a1cd244ad8e37075b9a6c44da32_icgraph" id="aclassutil_1_1_json_util_a53c77a1cd244ad8e37075b9a6c44da32_icgraph">
+<area shape="rect" title="Разделяет JSON массив на отдельные объекты" alt="" coords="862,92,1053,118"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a92865a18b3e9681f516419fd55bfb27a" title="Парсит JSON строку в список задач" alt="" coords="652,84,814,125"/>
+<area shape="poly" title=" " alt="" coords="843,105,814,107,814,102,849,105"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a2a80078f88c932a5ab230d4775c2391d" title="Загружает все задачи из JSON файла" alt="" coords="451,92,604,118"/>
+<area shape="poly" title=" " alt="" coords="634,105,605,107,605,102,640,105"/>
+<area shape="rect" href="classutil_1_1_json_util.html#ac6e9a870e12429cc80b4ddf8ba98af0d" title="Добавляет одну задачу в файл" alt="" coords="249,5,392,31"/>
+<area shape="poly" title=" " alt="" coords="486,84,402,46,369,34,369,29,404,41,491,84"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af03ff4fe034cfc97fd82327d0e618e59" title="Загружает задачи из файла и отображает их в таблице" alt="" coords="240,55,401,96"/>
+<area shape="poly" title=" " alt="" coords="433,92,402,90,401,84,438,92"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a9911e93dd04ddd5151397f9a50e2811f" title="Удаляет задачу по ID." alt="" coords="238,120,403,146"/>
+<area shape="poly" title=" " alt="" coords="433,118,404,124,403,119,438,117"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a48c5f07142384cff793469f5aec70968" title="Обновляет существующую задачу" alt="" coords="240,169,401,195"/>
+<area shape="poly" title=" " alt="" coords="487,124,404,161,371,171,370,166,402,156,482,125"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,63,190,88"/>
+<area shape="poly" title=" " alt="" coords="222,76,191,78,190,73,227,75"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a48c5f07142384cff793469f5aec70968" name="a48c5f07142384cff793469f5aec70968"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48c5f07142384cff793469f5aec70968">&#9670;&#160;</a></span>updateTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean util.JsonUtil.updateTask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmodel_1_1_task.html">Task</a></td>          <td class="paramname"><span class="paramname"><em>updatedTask</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обновляет существующую задачу </p>
+<p>Загружает задачи, находит задачу по ID и заменяет ее новой версией.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">updatedTask</td><td>Обновленная версия задачи (должна иметь тот же ID) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>boolean true если задача найдена и обновлена, false если не найдена</dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">NullPointerException</td><td>если updatedTask равен null</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Сравнивает ID задачи для поиска </dd>
+<dd>
+Полностью заменяет старую задачу новой</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="#a2a80078f88c932a5ab230d4775c2391d" title="Загружает все задачи из JSON файла">loadTasks()</a> </dd>
+<dd>
+#saveTasks(List) </dd>
+<dd>
+List#set(int, Object) </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_json_util_8java_source.html">JsonUtil.java</a> строка <a class="el" href="_json_util_8java_source.html#l00231">231</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00199">model.Task.getId()</a>, <a class="el" href="_json_util_8java_source.html#l00081">loadTasks()</a> и <a class="el" href="_json_util_8java_source.html#l00139">saveTasks()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_json_util_a48c5f07142384cff793469f5aec70968_cgraph.png" border="0" usemap="#aclassutil_1_1_json_util_a48c5f07142384cff793469f5aec70968_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_json_util_a48c5f07142384cff793469f5aec70968_cgraph" id="aclassutil_1_1_json_util_a48c5f07142384cff793469f5aec70968_cgraph">
+<area shape="rect" title="Обновляет существующую задачу" alt="" coords="5,55,167,80"/>
+<area shape="rect" href="classmodel_1_1_task.html#ad8dccd120a6f3e607f46f0c3765de3a5" title="Возвращает уникальный идентификатор задачи" alt="" coords="233,5,354,31"/>
+<area shape="poly" title=" " alt="" coords="142,51,224,34,219,37,144,57"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a2a80078f88c932a5ab230d4775c2391d" title="Загружает все задачи из JSON файла" alt="" coords="217,55,370,80"/>
+<area shape="poly" title=" " alt="" coords="167,65,204,67,198,68,168,70"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421" title="Сохраняет все задачи в JSON файл" alt="" coords="215,108,372,134"/>
+<area shape="poly" title=" " alt="" coords="139,78,228,102,223,105,139,84"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a92865a18b3e9681f516419fd55bfb27a" title="Парсит JSON строку в список задач" alt="" coords="426,43,587,84"/>
+<area shape="poly" title=" " alt="" coords="370,63,413,65,407,66,371,69"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a428f650826f08a9ee580d87bb60a1443" title="Парсит один JSON объект задачи" alt="" coords="641,9,831,35"/>
+<area shape="poly" title=" " alt="" coords="586,46,643,39,649,38,587,52"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a53c77a1cd244ad8e37075b9a6c44da32" title="Разделяет JSON массив на отдельные объекты" alt="" coords="640,59,832,84"/>
+<area shape="poly" title=" " alt="" coords="587,64,628,67,622,68,587,69"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="420,108,592,149"/>
+<area shape="poly" title=" " alt="" coords="372,121,407,125,402,125,372,126"/>
+<area shape="rect" href="classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="653,116,819,142"/>
+<area shape="poly" title=" " alt="" coords="593,126,640,129,635,129,593,131"/>
+<area shape="rect" href="classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="880,116,1042,142"/>
+<area shape="poly" title=" " alt="" coords="819,126,867,129,862,129,819,131"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="a1b093819f098a9bcac891cf1d9f7a87e" name="a1b093819f098a9bcac891cf1d9f7a87e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b093819f098a9bcac891cf1d9f7a87e">&#9670;&#160;</a></span>DATA_DIR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String util.JsonUtil.DATA_DIR = &quot;data&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Директория для хранения данных </p>
+<p>Относительный путь к папке, где хранятся файлы задач </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_json_util_8java_source.html">JsonUtil.java</a> строка <a class="el" href="_json_util_8java_source.html#l00042">42</a></p>
+
+<p class="reference">Используется в <a class="el" href="_json_util_8java_source.html#l00540">createBackup()</a>, <a class="el" href="_json_util_8java_source.html#l00081">loadTasks()</a> и <a class="el" href="_json_util_8java_source.html#l00139">saveTasks()</a>.</p>
+
+</div>
+</div>
+<a id="a8c11cfd67ef078ca6a5a54bc8616de11" name="a8c11cfd67ef078ca6a5a54bc8616de11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c11cfd67ef078ca6a5a54bc8616de11">&#9670;&#160;</a></span>DATE_PATTERN</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String util.JsonUtil.DATE_PATTERN = &quot;yyyy-MM-dd'T'HH:mm:ss&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Паттерн для парсинга даты </p>
+<p>Формат даты и времени, используемый в JSON файле </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_json_util_8java_source.html">JsonUtil.java</a> строка <a class="el" href="_json_util_8java_source.html#l00060">60</a></p>
+
+</div>
+</div>
+<a id="a9795042787a9329d699f03e5e6cc117d" name="a9795042787a9329d699f03e5e6cc117d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9795042787a9329d699f03e5e6cc117d">&#9670;&#160;</a></span>FULL_PATH</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String util.JsonUtil.FULL_PATH = <a class="el" href="#a1b093819f098a9bcac891cf1d9f7a87e">DATA_DIR</a> + &quot;/&quot; + <a class="el" href="#a1e5d1af8d9c0a9768aa1c5059117453d">TASKS_FILE</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Полный путь к файлу задач </p>
+<p>Конкатенация DATA_DIR и TASKS_FILE </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_json_util_8java_source.html">JsonUtil.java</a> строка <a class="el" href="_json_util_8java_source.html#l00054">54</a></p>
+
+<p class="reference">Используется в <a class="el" href="_json_util_8java_source.html#l00571">clearAllTasks()</a>, <a class="el" href="_json_util_8java_source.html#l00540">createBackup()</a>, <a class="el" href="_json_util_8java_source.html#l00081">loadTasks()</a> и <a class="el" href="_json_util_8java_source.html#l00139">saveTasks()</a>.</p>
+
+</div>
+</div>
+<a id="a1e5d1af8d9c0a9768aa1c5059117453d" name="a1e5d1af8d9c0a9768aa1c5059117453d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e5d1af8d9c0a9768aa1c5059117453d">&#9670;&#160;</a></span>TASKS_FILE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String util.JsonUtil.TASKS_FILE = &quot;tasks.json&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Имя файла задач </p>
+<p>Основной файл для хранения всех задач в формате JSON </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_json_util_8java_source.html">JsonUtil.java</a> строка <a class="el" href="_json_util_8java_source.html#l00048">48</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>src/util/<a class="el" href="_json_util_8java_source.html">JsonUtil.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespaceutil.html">util</a></li><li class="navelem"><a href="classutil_1_1_json_util.html">JsonUtil</a></li>
+    <li class="footer">Документация по Умный планировщик задач (To-Do List). Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

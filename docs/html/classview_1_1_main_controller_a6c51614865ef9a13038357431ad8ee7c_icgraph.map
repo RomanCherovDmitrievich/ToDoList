@@ -1,0 +1,11 @@
+<map id="view.MainController.refreshTable" name="view.MainController.refreshTable">
+<area shape="rect" id="Node000001" title="Обновляет содержимое таблицы задач" alt="" coords="461,71,638,111"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title="Обработчик кнопки добавления новой задачи" alt="" coords="238,5,413,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="460,66,398,49,398,44,466,66"/>
+<area shape="rect" id="Node000003" href="$classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title="Обработчик кнопки удаления задачи" alt="" coords="238,71,413,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="443,91,414,94,413,88,448,91"/>
+<area shape="rect" id="Node000004" href="$classview_1_1_main_controller.html#af03ff4fe034cfc97fd82327d0e618e59" title="Загружает задачи из файла и отображает их в таблице" alt="" coords="245,136,406,177"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="466,116,398,138,397,133,460,117"/>
+<area shape="rect" id="Node000005" href="$classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,144,190,169"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="227,157,190,159,190,154,232,156"/>
+</map>

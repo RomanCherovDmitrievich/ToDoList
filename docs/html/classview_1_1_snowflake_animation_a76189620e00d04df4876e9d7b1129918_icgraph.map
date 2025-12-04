@@ -1,0 +1,5 @@
+<map id="view.SnowflakeAnimation.stop" name="view.SnowflakeAnimation.stop">
+<area shape="rect" id="Node000001" title="Останавливает анимацию снежинок" alt="" coords="245,13,443,38"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_snowflake_animation.html#ae74fca562da4c50024a5a00ba779de1e" title="Изменяет количество снежинок в анимации" alt="" coords="5,5,197,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="226,26,197,28,197,23,232,25"/>
+</map>

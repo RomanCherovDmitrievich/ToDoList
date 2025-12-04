@@ -1,0 +1,11 @@
+<map id="src/model/TaskManager.java" name="src/model/TaskManager.java">
+<area shape="rect" id="Node000001" title=" " alt="" coords="228,5,416,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,172,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="284,33,143,77,142,71,280,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="195,79,318,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="313,30,279,70,276,65,309,32"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="342,79,433,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="334,29,369,68,363,67,332,34"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="456,79,630,105"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="360,29,494,74,489,74,359,34"/>
+</map>

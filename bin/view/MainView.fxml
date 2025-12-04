@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/11" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="view.MainController"
+      stylesheets="@../resources/styles/styles.css"
+      spacing="10"
+      style="-fx-padding: 15;">
+    
+    <!-- Заголовок -->
+    <HBox alignment="CENTER" VBox.vgrow="NEVER">
+        <Label fx:id="appTitleLabel" 
+               text="🎄 Умный планировщик задач 🎅" 
+               style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #ff3366;"/>
+    </HBox>
+    
+    <!-- Основной контейнер который растягивается -->
+    <Pane VBox.vgrow="ALWAYS" style="-fx-background-color: rgba(13, 21, 41, 0.85); -fx-background-radius: 10; -fx-border-color: rgba(255, 102, 153, 0.3); -fx-border-width: 1; -fx-border-radius: 10;">
+        
+        <!-- Панель для снежинок - заполняет весь контейнер -->
+        <Pane fx:id="snowPane" 
+              style="-fx-background-color: transparent;"
+              prefWidth="900" prefHeight="600"/>
+        
+        <!-- Контент поверх снега -->
+        <VBox spacing="10" style="-fx-padding: 15;">
+            
+            <!-- Панель поиска -->
+            <HBox spacing="8" alignment="CENTER_LEFT" VBox.vgrow="NEVER">
+                <Label text="🔍 Поиск:" style="-fx-font-weight: bold; -fx-text-fill: white; -fx-font-size: 13px;"/>
+                <TextField fx:id="searchField" 
+                           promptText="Найти задачу..."
+                           HBox.hgrow="ALWAYS"
+                           style="-fx-font-size: 13px;"/>
+            </HBox>
+            
+            <!-- Панель инструментов -->
+            <HBox spacing="8" alignment="CENTER_LEFT" VBox.vgrow="NEVER">
+                <Button fx:id="addButton" 
+                        text="➕ Добавить" 
+                        onAction="#handleAddTask"
+                        style="-fx-font-size: 12px; -fx-padding: 5 10; -fx-background-color: #00cc66;"
+                        prefWidth="120"/>
+                
+                <Button fx:id="deleteButton" 
+                        text="🗑️ Удалить" 
+                        onAction="#handleDeleteTask"
+                        style="-fx-font-size: 12px; -fx-padding: 5 10; -fx-background-color: #ff6600;"
+                        prefWidth="120"/>
+
+                <!-- Кнопки сортировки -->
+                <Button fx:id="sortByDateButton" 
+                    onAction="#sortByDate"
+                    style="-fx-font-size: 12px; -fx-padding: 5 10; -fx-background-color: #3498db; -fx-text-fill: white;"
+                    prefWidth="120"/>
+    
+                <Button fx:id="sortByPriorityButton" 
+                    onAction="#sortByPriority"
+                    style="-fx-font-size: 12px; -fx-padding: 5 10; -fx-background-color: #9b59b6; -fx-text-fill: white;"
+                    prefWidth="120"/>
+                
+                <Region HBox.hgrow="ALWAYS"/>
+                
+                <Button text="🚪 Выход" 
+                        onAction="#handleExit"
+                        style="-fx-font-size: 12px; -fx-padding: 5 10; -fx-background-color: #6666ff;"
+                        prefWidth="80"/>
+            </HBox>
+            
+            <!-- Таблица задач - растягивается по вертикали -->
+            <TableView fx:id="taskTable" 
+                       VBox.vgrow="ALWAYS"
+                       style="-fx-font-size: 12px; -fx-background-color: rgba(255, 255, 255, 0.95);">
+                <columns>
+                    <TableColumn fx:id="titleColumn" text="Заголовок" minWidth="150" prefWidth="200"/>
+                    <TableColumn fx:id="descriptionColumn" text="Описание" minWidth="200" prefWidth="300"/>
+                    <TableColumn fx:id="deadlineColumn" text="Срок выполнения" minWidth="120" prefWidth="150"/>
+                    <TableColumn fx:id="priorityColumn" text="Приоритет" minWidth="80" prefWidth="100"/>
+                    <TableColumn fx:id="categoryColumn" text="Категория" minWidth="80" prefWidth="100"/>
+                    <TableColumn fx:id="statusColumn" text="Выполнено" minWidth="70" prefWidth="80"/>
+                </columns>
+                <columnResizePolicy>
+                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                </columnResizePolicy>
+            </TableView>
+            
+            <!-- Статусная строка -->
+            <HBox spacing="5" style="-fx-background-color: rgba(13,21,41,0.9); -fx-padding: 8; -fx-border-radius: 5;" VBox.vgrow="NEVER">
+                <Label fx:id="statusLabel" 
+                       style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: white;"
+                       text="Всего задач: 0 | Выполнено: 0 | Просрочено: 0"/>
+            </HBox>
+            
+        </VBox>
+        
+    </Pane>
+    
+</VBox>

@@ -1,0 +1,5 @@
+<map id="model.Task.setEndTime" name="model.Task.setEndTime">
+<area shape="rect" id="Node000001" title="Устанавливает новое время окончания задачи" alt="" coords="5,5,168,31"/>
+<area shape="rect" id="Node000002" href="$classmodel_1_1_task.html#a51d5d85ac6843e7c4631f7ab9b24853e" title="Проверяет, не просрочена ли задача" alt="" coords="216,5,392,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,16,203,18,197,18,168,21"/>
+</map>

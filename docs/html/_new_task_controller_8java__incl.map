@@ -1,0 +1,23 @@
+<map id="src/view/NewTaskController.java" name="src/view/NewTaskController.java">
+<area shape="rect" id="Node000001" title=" " alt="" coords="663,5,875,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,130,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="660,28,430,51,145,81,145,76,429,46,665,27"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="154,79,301,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="676,34,317,81,316,76,674,29"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="325,79,487,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="710,31,483,78,482,73,704,32"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="512,79,642,105"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="739,31,624,76,623,71,734,32"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="666,79,754,105"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="762,30,731,69,728,65,757,32"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="778,79,880,105"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="780,29,811,68,807,66,778,34"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="904,79,1018,105"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="802,29,917,73,911,73,801,34"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="1042,79,1179,105"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="827,29,1040,75,1035,75,827,34"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="1203,79,1369,105"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="857,29,1190,77,1185,77,857,34"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="1393,79,1531,105"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="875,26,1102,47,1380,79,1375,79,1101,52,875,31"/>
+</map>

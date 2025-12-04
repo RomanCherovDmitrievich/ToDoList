@@ -1,0 +1,7 @@
+<map id="model.Task.Task" name="model.Task.Task">
+<area shape="rect" id="Node000001" title="Конструктор для создания новой задачи" alt="" coords="5,5,126,31"/>
+<area shape="rect" id="Node000002" href="$enummodel_1_1_priority.html#a80b9836442ce641c8f1deeb10d9ef177" title="Возвращает приоритет по умолчанию" alt="" coords="174,5,337,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,16,161,18,155,18,126,21"/>
+<area shape="rect" id="Node000003" href="$enummodel_1_1_priority.html#a6ea7a40e9195dbd8cc7aa9fa8cdb8c3d" title="Конструктор приоритета" alt="" coords="385,5,529,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="337,16,372,18,367,18,337,21"/>
+</map>

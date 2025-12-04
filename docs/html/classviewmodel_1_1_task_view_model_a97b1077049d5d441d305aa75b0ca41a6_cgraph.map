@@ -1,0 +1,5 @@
+<map id="viewmodel.TaskViewModel.TaskViewModel" name="viewmodel.TaskViewModel.TaskViewModel">
+<area shape="rect" id="Node000001" title="Конструктор на основе модели Task." alt="" coords="5,5,189,46"/>
+<area shape="rect" id="Node000002" href="$classviewmodel_1_1_task_view_model.html#a7e8946bef2493f00c0582c432330b56b" title="Настраивает двусторонние привязки между ViewModel и Model." alt="" coords="237,5,452,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,23,224,25,218,26,189,28"/>
+</map>

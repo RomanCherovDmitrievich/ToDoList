@@ -1,0 +1,5 @@
+<map id="app.MainApp.showErrorDialog" name="app.MainApp.showErrorDialog">
+<area shape="rect" id="Node000001" title="Показывает диалоговое окно с ошибкой" alt="" coords="181,5,378,31"/>
+<area shape="rect" id="Node000002" href="$classapp_1_1_main_app.html#a2f925faf172d4a1a66bf616b47a8b368" title="Метод запуска JavaFX приложения" alt="" coords="5,5,133,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,18,133,21,133,16,168,18"/>
+</map>

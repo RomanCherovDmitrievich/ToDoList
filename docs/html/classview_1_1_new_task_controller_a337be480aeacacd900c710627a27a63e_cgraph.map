@@ -1,0 +1,13 @@
+<map id="view.NewTaskController.handleCreateTask" name="view.NewTaskController.handleCreateTask">
+<area shape="rect" id="Node000001" title="Обработчик кнопки создания задачи" alt="" coords="5,47,208,88"/>
+<area shape="rect" id="Node000002" href="$enummodel_1_1_category.html#a8a5c20cba2237009b02d6b351785e64e" title=" " alt="" coords="265,5,486,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="207,46,289,34,284,35,209,52"/>
+<area shape="rect" id="Node000004" href="$enummodel_1_1_priority.html#aefbb6c4f1528905793f8bee0902c457b" title=" " alt="" coords="271,55,480,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="208,65,258,67,253,68,208,70"/>
+<area shape="rect" id="Node000006" href="$classview_1_1_new_task_controller.html#a66c1573253964fcde19808f4d57ba3e3" title="Проверяет корректность заполнения формы" alt="" coords="256,104,495,130"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="208,83,289,100,284,101,208,89"/>
+<area shape="rect" id="Node000003" href="$enummodel_1_1_category.html#a6e338cb2f171d3dd42fc7698d864e9b5" title="Конструктор категории" alt="" coords="543,5,711,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="486,16,530,18,525,18,486,21"/>
+<area shape="rect" id="Node000005" href="$enummodel_1_1_priority.html#a6ea7a40e9195dbd8cc7aa9fa8cdb8c3d" title="Конструктор приоритета" alt="" coords="555,55,699,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="480,65,542,67,537,68,480,70"/>
+</map>

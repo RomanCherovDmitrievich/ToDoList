@@ -1,0 +1,5 @@
+<map id="model.Task.Task" name="model.Task.Task">
+<area shape="rect" id="Node000001" title="Конструктор для загрузки из JSON." alt="" coords="5,5,126,31"/>
+<area shape="rect" id="Node000002" href="$classmodel_1_1_task.html#a51d5d85ac6843e7c4631f7ab9b24853e" title="Проверяет, не просрочена ли задача" alt="" coords="174,5,350,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,16,161,18,156,18,126,21"/>
+</map>

@@ -1,0 +1,15 @@
+var searchData=
+[
+  ['iconname_0',['iconName',['../enummodel_1_1_priority.html#a9d4bb7d2963660f657069d44a90860fb',1,'model::Priority']]],
+  ['id_1',['id',['../classmodel_1_1_task.html#aa21bd9d6331060a2941919100058e93a',1,'model.Task.id'],['../classviewmodel_1_1_task_view_model.html#a81c1f7c14ffd517a4224b527dae12b4a',1,'viewmodel.TaskViewModel.id']]],
+  ['idproperty_2',['idProperty',['../classviewmodel_1_1_task_view_model.html#a78bbc21be4a7366ff977474cb547ca0e',1,'viewmodel::TaskViewModel']]],
+  ['important_3',['IMPORTANT',['../enummodel_1_1_priority.html#ac3d13333280e0a7bc1f33a340a57a9cf',1,'model::Priority']]],
+  ['init_4',['init',['../classapp_1_1_main_app.html#acbf781550cefac29e6c8ecbdd2b38904',1,'app::MainApp']]],
+  ['initialize_5',['initialize',['../classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd',1,'view.MainController.initialize()'],['../classview_1_1_new_task_controller.html#a9dcf704ac7b311d8bfe516eff8643ad1',1,'view.NewTaskController.initialize()']]],
+  ['initsnowflakes_6',['initSnowflakes',['../classview_1_1_main_controller.html#a176bf2a7ba00056ac7a14652c6650c2d',1,'view::MainController']]],
+  ['instance_7',['instance',['../classmodel_1_1_task_manager.html#aaa6f3dca38b29f6106f5f5c781caf626',1,'model.TaskManager.instance'],['../classutil_1_1_audio_manager.html#a3fda3878e3ef5d2cba54657417d98670',1,'util.AudioManager.instance']]],
+  ['iscompleted_8',['isCompleted',['../classmodel_1_1_task.html#a9e92e43dca03f30943efdb87b476e71c',1,'model.Task.isCompleted()'],['../classviewmodel_1_1_task_view_model.html#a6b568ef75542da4868a533844bbbe3a1',1,'viewmodel.TaskViewModel.isCompleted()']]],
+  ['isoverdue_9',['isOverdue',['../classmodel_1_1_task.html#a6c49d13cb1e76676ef53876e9acc3ca4',1,'model.Task.isOverdue()'],['../classviewmodel_1_1_task_view_model.html#a81effd078fee106eea52436907468ed9',1,'viewmodel.TaskViewModel.isOverdue()']]],
+  ['issoundsenabled_10',['isSoundsEnabled',['../classutil_1_1_audio_manager.html#a62a0acbea9b3248bf06398f2dfdeda4c',1,'util::AudioManager']]],
+  ['istaskcreated_11',['isTaskCreated',['../classview_1_1_new_task_controller.html#ad985a55d5cf42453ff70863d8619713b',1,'view::NewTaskController']]]
+];

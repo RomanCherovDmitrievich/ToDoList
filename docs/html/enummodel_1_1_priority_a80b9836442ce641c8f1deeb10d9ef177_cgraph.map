@@ -1,0 +1,5 @@
+<map id="model.Priority.getDefault" name="model.Priority.getDefault">
+<area shape="rect" id="Node000001" title="Возвращает приоритет по умолчанию" alt="" coords="5,5,169,31"/>
+<area shape="rect" id="Node000002" href="$enummodel_1_1_priority.html#a6ea7a40e9195dbd8cc7aa9fa8cdb8c3d" title="Конструктор приоритета" alt="" coords="217,5,361,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,16,204,18,199,18,169,21"/>
+</map>

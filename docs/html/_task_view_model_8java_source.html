@@ -1,0 +1,591 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Умный планировщик задач (To-Do List): Исходный файл src/viewmodel/TaskViewModel.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">JavaFX приложение для управления задачами с новогодней темой</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_task_view_model_8java_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">TaskViewModel.java</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_task_view_model_8java.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="namespaceviewmodel.html">    1</a></span><span class="keyword">package </span>viewmodel;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> javafx.beans.property.BooleanProperty;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">import</span> javafx.beans.property.SimpleBooleanProperty;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> javafx.beans.property.SimpleStringProperty;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">import</span> javafx.beans.property.StringProperty;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">import</span> javafx.beans.property.ObjectProperty;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">import</span> javafx.beans.property.SimpleObjectProperty;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">import</span> <a class="code hl_package" href="namespacemodel.html">model</a>.<a class="code hl_class" href="classmodel_1_1_task.html">Task</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">import</span> <a class="code hl_package" href="namespacemodel.html">model</a>.<a class="code hl_class" href="enummodel_1_1_priority.html">Priority</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">import</span> <a class="code hl_package" href="namespacemodel.html">model</a>.<a class="code hl_class" href="enummodel_1_1_category.html">Category</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">import</span> java.time.LocalDateTime;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">import</span> java.time.format.DateTimeFormatter;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="};">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html">   34</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a97b1077049d5d441d305aa75b0ca41a6">TaskViewModel</a> {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a81c1f7c14ffd517a4224b527dae12b4a">   36</a></span>    <span class="keyword">private</span> <span class="keyword">final</span> StringProperty <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a81c1f7c14ffd517a4224b527dae12b4a">id</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a5985ed58b0e977027b51e79a3f17a205">   39</a></span>    <span class="keyword">private</span> <span class="keyword">final</span> StringProperty <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a5985ed58b0e977027b51e79a3f17a205">title</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a627b02d9ff5b7b4d83df0ac7399fca44">   42</a></span>    <span class="keyword">private</span> <span class="keyword">final</span> StringProperty <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a627b02d9ff5b7b4d83df0ac7399fca44">description</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a6803f8e2e1d27bf672e331486aff9934">   45</a></span>    <span class="keyword">private</span> <span class="keyword">final</span> ObjectProperty&lt;LocalDateTime&gt; <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a6803f8e2e1d27bf672e331486aff9934">startTime</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a1406520ea09048f9fdbeeaa66056ff84">   48</a></span>    <span class="keyword">private</span> <span class="keyword">final</span> ObjectProperty&lt;LocalDateTime&gt; <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a1406520ea09048f9fdbeeaa66056ff84">endTime</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#aceccd89ccf126f89b7235548b8586a5b">   51</a></span>    <span class="keyword">private</span> <span class="keyword">final</span> ObjectProperty&lt;Priority&gt; <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#aceccd89ccf126f89b7235548b8586a5b">priority</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a7fe0ba6c6faa0f7cfe0ff14c3dc88f02">   54</a></span>    <span class="keyword">private</span> <span class="keyword">final</span> ObjectProperty&lt;Category&gt; <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a7fe0ba6c6faa0f7cfe0ff14c3dc88f02">category</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#abac2ca51dc0b6b90ff866c71c3371930">   57</a></span>    <span class="keyword">private</span> <span class="keyword">final</span> BooleanProperty <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#abac2ca51dc0b6b90ff866c71c3371930">completed</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a24805572ae9b3de96a4dc520c0496f43">   60</a></span>    <span class="keyword">private</span> <span class="keyword">final</span> BooleanProperty <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a24805572ae9b3de96a4dc520c0496f43">overdue</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#ae66ade7b1fc8d06fd1dfba6560f94ad3">   63</a></span>    <span class="keyword">private</span> <span class="keyword">final</span> ObjectProperty&lt;LocalDateTime&gt; <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#ae66ade7b1fc8d06fd1dfba6560f94ad3">createdAt</a>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">   66</a></span>    <span class="keyword">private</span> <span class="keyword">final</span> <a class="code hl_class" href="classmodel_1_1_task.html">Task</a> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a02530490b1fbaf28814ffa30e70f3bef">   72</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> DateTimeFormatter <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a02530490b1fbaf28814ffa30e70f3bef">DATE_TIME_FORMATTER</a> = </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        DateTimeFormatter.ofPattern(<span class="stringliteral">&quot;dd.MM.yyyy HH:mm&quot;</span>);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a3d6f42acec8f9aa4fe9edca2b5d9e664">   79</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> DateTimeFormatter <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a3d6f42acec8f9aa4fe9edca2b5d9e664">DATE_FORMATTER</a> = </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        DateTimeFormatter.ofPattern(<span class="stringliteral">&quot;dd.MM.yyyy&quot;</span>);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#ad7df044a5e274feaa87e002eafdd3afa">   86</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> DateTimeFormatter <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#ad7df044a5e274feaa87e002eafdd3afa">TIME_FORMATTER</a> = </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        DateTimeFormatter.ofPattern(<span class="stringliteral">&quot;HH:mm&quot;</span>);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    </div>
+<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a97b1077049d5d441d305aa75b0ca41a6">  105</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a97b1077049d5d441d305aa75b0ca41a6">TaskViewModel</a>(<a class="code hl_class" href="classmodel_1_1_task.html">Task</a> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        this.task = <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="comment">// Инициализация всех свойств значениями из модели Task</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        this.id = <span class="keyword">new</span> SimpleStringProperty(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>.getId());</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        this.title = <span class="keyword">new</span> SimpleStringProperty(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>.getTitle());</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        this.description = <span class="keyword">new</span> SimpleStringProperty(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>.getDescription());</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        this.startTime = <span class="keyword">new</span> SimpleObjectProperty&lt;&gt;(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>.getStartTime());</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        this.endTime = <span class="keyword">new</span> SimpleObjectProperty&lt;&gt;(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>.getEndTime());</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        this.priority = <span class="keyword">new</span> SimpleObjectProperty&lt;&gt;(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>.getPriority());</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        this.category = <span class="keyword">new</span> SimpleObjectProperty&lt;&gt;(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>.getCategory());</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        this.completed = <span class="keyword">new</span> SimpleBooleanProperty(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>.isCompleted());</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        this.overdue = <span class="keyword">new</span> SimpleBooleanProperty(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>.isOverdue());</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        this.createdAt = <span class="keyword">new</span> SimpleObjectProperty&lt;&gt;(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>.getCreatedAt());</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="comment">// Настройка двусторонних привязок между ViewModel и Model</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a7e8946bef2493f00c0582c432330b56b">setupBindings</a>();</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    }</div>
+</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    </div>
+<div class="foldopen" id="foldopen00139" data-start="{" data-end="}">
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a7e8946bef2493f00c0582c432330b56b">  139</a></span>    <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a7e8946bef2493f00c0582c432330b56b">setupBindings</a>() {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="comment">// Привязка заголовка: UI → Model</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a5985ed58b0e977027b51e79a3f17a205">title</a>.addListener((observable, oldValue, newValue) -&gt; {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>.setTitle(newValue);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        });</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <span class="comment">// Привязка описания: UI → Model</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a627b02d9ff5b7b4d83df0ac7399fca44">description</a>.addListener((observable, oldValue, newValue) -&gt; {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>.setDescription(newValue);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        });</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <span class="comment">// Привязка времени начала: UI → Model</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a6803f8e2e1d27bf672e331486aff9934">startTime</a>.addListener((observable, oldValue, newValue) -&gt; {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>            <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>.setStartTime(newValue);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        });</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        <span class="comment">// Привязка времени окончания: UI → Model</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a1406520ea09048f9fdbeeaa66056ff84">endTime</a>.addListener((observable, oldValue, newValue) -&gt; {</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>.setEndTime(newValue);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        });</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="comment">// Привязка приоритета: UI → Model</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#aceccd89ccf126f89b7235548b8586a5b">priority</a>.addListener((observable, oldValue, newValue) -&gt; {</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>.setPriority(newValue);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        });</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <span class="comment">// Привязка категории: UI → Model</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a7fe0ba6c6faa0f7cfe0ff14c3dc88f02">category</a>.addListener((observable, oldValue, newValue) -&gt; {</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>.setCategory(newValue);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        });</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <span class="comment">// Привязка статуса выполнения: UI → Model</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#abac2ca51dc0b6b90ff866c71c3371930">completed</a>.addListener((observable, oldValue, newValue) -&gt; {</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>.setCompleted(newValue);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            <span class="comment">// При изменении статуса выполнения обновляем просроченность</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            <span class="keywordflow">if</span> (newValue) {</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a24805572ae9b3de96a4dc520c0496f43">overdue</a>.set(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            }</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        });</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    }</div>
+</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <span class="comment">// ====================================================</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="comment">// Геттеры и сеттеры свойств (для привязки в FXML)</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="comment">// ====================================================</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    </div>
+<div class="foldopen" id="foldopen00188" data-start="{" data-end="}">
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#ac50f2e97f44fd66fc50fa959730eb78f">  188</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#ac50f2e97f44fd66fc50fa959730eb78f">getId</a>() {</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        <span class="keywordflow">return</span> <span class="keywordtype">id</span>.get();</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    }</div>
+</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    </div>
+<div class="foldopen" id="foldopen00196" data-start="{" data-end="}">
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a78bbc21be4a7366ff977474cb547ca0e">  196</a></span>    <span class="keyword">public</span> StringProperty <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a78bbc21be4a7366ff977474cb547ca0e">idProperty</a>() {</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a81c1f7c14ffd517a4224b527dae12b4a">id</a>;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    }</div>
+</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    </div>
+<div class="foldopen" id="foldopen00204" data-start="{" data-end="}">
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a1a618ae9eecfd3fefadebd848a99ec92">  204</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a1a618ae9eecfd3fefadebd848a99ec92">getTitle</a>() {</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a5985ed58b0e977027b51e79a3f17a205">title</a>.get();</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    }</div>
+</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    </div>
+<div class="foldopen" id="foldopen00212" data-start="{" data-end="}">
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#acae67880baf2c3c2f7b47810b572edd6">  212</a></span>    <span class="keyword">public</span> StringProperty <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#acae67880baf2c3c2f7b47810b572edd6">titleProperty</a>() {</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a5985ed58b0e977027b51e79a3f17a205">title</a>;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    }</div>
+</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    </div>
+<div class="foldopen" id="foldopen00220" data-start="{" data-end="}">
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#ac18ff6fe31191a83d34a265bfaa1cb01">  220</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#ac18ff6fe31191a83d34a265bfaa1cb01">setTitle</a>(String <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a5985ed58b0e977027b51e79a3f17a205">title</a>) {</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        this.title.set(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a5985ed58b0e977027b51e79a3f17a205">title</a>);</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    }</div>
+</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    </div>
+<div class="foldopen" id="foldopen00228" data-start="{" data-end="}">
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a046488b4a90fb611ff40402bada134b0">  228</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a046488b4a90fb611ff40402bada134b0">getDescription</a>() {</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a627b02d9ff5b7b4d83df0ac7399fca44">description</a>.get();</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    }</div>
+</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    </div>
+<div class="foldopen" id="foldopen00236" data-start="{" data-end="}">
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a5db03d493b6825913f27ec6c286821ab">  236</a></span>    <span class="keyword">public</span> StringProperty <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a5db03d493b6825913f27ec6c286821ab">descriptionProperty</a>() {</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a627b02d9ff5b7b4d83df0ac7399fca44">description</a>;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    }</div>
+</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    </div>
+<div class="foldopen" id="foldopen00244" data-start="{" data-end="}">
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a691a9b9777b75eaac085a7f19e062f20">  244</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a691a9b9777b75eaac085a7f19e062f20">setDescription</a>(String <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a627b02d9ff5b7b4d83df0ac7399fca44">description</a>) {</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        this.description.set(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a627b02d9ff5b7b4d83df0ac7399fca44">description</a>);</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    }</div>
+</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    </div>
+<div class="foldopen" id="foldopen00252" data-start="{" data-end="}">
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#ad274b2e6ae4bfa67e9e4877d1f0d3104">  252</a></span>    <span class="keyword">public</span> LocalDateTime <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#ad274b2e6ae4bfa67e9e4877d1f0d3104">getStartTime</a>() {</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a6803f8e2e1d27bf672e331486aff9934">startTime</a>.get();</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    }</div>
+</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    </div>
+<div class="foldopen" id="foldopen00260" data-start="{" data-end="}">
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a0697007e0ca7f6b9ebb9c66ff339c27c">  260</a></span>    <span class="keyword">public</span> ObjectProperty&lt;LocalDateTime&gt; <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a0697007e0ca7f6b9ebb9c66ff339c27c">startTimeProperty</a>() {</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a6803f8e2e1d27bf672e331486aff9934">startTime</a>;</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    }</div>
+</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    </div>
+<div class="foldopen" id="foldopen00268" data-start="{" data-end="}">
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a163f018285b5cba883b0f4adabefa77d">  268</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a163f018285b5cba883b0f4adabefa77d">setStartTime</a>(LocalDateTime <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a6803f8e2e1d27bf672e331486aff9934">startTime</a>) {</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>        this.startTime.set(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a6803f8e2e1d27bf672e331486aff9934">startTime</a>);</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    }</div>
+</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    </div>
+<div class="foldopen" id="foldopen00276" data-start="{" data-end="}">
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#aa34a9517a43daff6eef84dc13e1cd0a9">  276</a></span>    <span class="keyword">public</span> LocalDateTime <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#aa34a9517a43daff6eef84dc13e1cd0a9">getEndTime</a>() {</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a1406520ea09048f9fdbeeaa66056ff84">endTime</a>.get();</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    }</div>
+</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    </div>
+<div class="foldopen" id="foldopen00284" data-start="{" data-end="}">
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#ab340fded3c0f9487bcf0c86486adc7da">  284</a></span>    <span class="keyword">public</span> ObjectProperty&lt;LocalDateTime&gt; <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#ab340fded3c0f9487bcf0c86486adc7da">endTimeProperty</a>() {</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a1406520ea09048f9fdbeeaa66056ff84">endTime</a>;</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    }</div>
+</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    </div>
+<div class="foldopen" id="foldopen00292" data-start="{" data-end="}">
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a9386fe9a79e7326ff41793f4973b518b">  292</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a9386fe9a79e7326ff41793f4973b518b">setEndTime</a>(LocalDateTime <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a1406520ea09048f9fdbeeaa66056ff84">endTime</a>) {</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>        this.endTime.set(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a1406520ea09048f9fdbeeaa66056ff84">endTime</a>);</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    }</div>
+</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    </div>
+<div class="foldopen" id="foldopen00300" data-start="{" data-end="}">
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a2d17f86b46ef153a4dc499a194d5e885">  300</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="enummodel_1_1_priority.html">Priority</a> <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a2d17f86b46ef153a4dc499a194d5e885">getPriority</a>() {</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#aceccd89ccf126f89b7235548b8586a5b">priority</a>.get();</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    }</div>
+</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    </div>
+<div class="foldopen" id="foldopen00308" data-start="{" data-end="}">
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#ac8555eb492fedda8c9303d75a33f626f">  308</a></span>    <span class="keyword">public</span> ObjectProperty&lt;Priority&gt; <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#ac8555eb492fedda8c9303d75a33f626f">priorityProperty</a>() {</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#aceccd89ccf126f89b7235548b8586a5b">priority</a>;</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    }</div>
+</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    </div>
+<div class="foldopen" id="foldopen00316" data-start="{" data-end="}">
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a431f716cf65f5afcb54f969b44b4d380">  316</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a431f716cf65f5afcb54f969b44b4d380">setPriority</a>(<a class="code hl_class" href="enummodel_1_1_priority.html">Priority</a> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#aceccd89ccf126f89b7235548b8586a5b">priority</a>) {</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>        this.priority.set(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#aceccd89ccf126f89b7235548b8586a5b">priority</a>);</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>    }</div>
+</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>    </div>
+<div class="foldopen" id="foldopen00324" data-start="{" data-end="}">
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#aee7644b03c0ca5faa3aee9e691d658a3">  324</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="enummodel_1_1_category.html">Category</a> <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#aee7644b03c0ca5faa3aee9e691d658a3">getCategory</a>() {</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a7fe0ba6c6faa0f7cfe0ff14c3dc88f02">category</a>.get();</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    }</div>
+</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>    </div>
+<div class="foldopen" id="foldopen00332" data-start="{" data-end="}">
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#af4b66ae3828898e18e44ba926a565cbe">  332</a></span>    <span class="keyword">public</span> ObjectProperty&lt;Category&gt; <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#af4b66ae3828898e18e44ba926a565cbe">categoryProperty</a>() {</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a7fe0ba6c6faa0f7cfe0ff14c3dc88f02">category</a>;</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>    }</div>
+</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>    </div>
+<div class="foldopen" id="foldopen00340" data-start="{" data-end="}">
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a9ba1b0aebba5b80c88b67bec21710689">  340</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a9ba1b0aebba5b80c88b67bec21710689">setCategory</a>(<a class="code hl_class" href="enummodel_1_1_category.html">Category</a> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a7fe0ba6c6faa0f7cfe0ff14c3dc88f02">category</a>) {</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>        this.category.set(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a7fe0ba6c6faa0f7cfe0ff14c3dc88f02">category</a>);</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>    }</div>
+</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>    </div>
+<div class="foldopen" id="foldopen00348" data-start="{" data-end="}">
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a6b568ef75542da4868a533844bbbe3a1">  348</a></span>    <span class="keyword">public</span> <span class="keywordtype">boolean</span> <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a6b568ef75542da4868a533844bbbe3a1">isCompleted</a>() {</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#abac2ca51dc0b6b90ff866c71c3371930">completed</a>.get();</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>    }</div>
+</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>    </div>
+<div class="foldopen" id="foldopen00356" data-start="{" data-end="}">
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a99d8237ca04d46fdcc2f00c04ee064f4">  356</a></span>    <span class="keyword">public</span> BooleanProperty <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a99d8237ca04d46fdcc2f00c04ee064f4">completedProperty</a>() {</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#abac2ca51dc0b6b90ff866c71c3371930">completed</a>;</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>    }</div>
+</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>    </div>
+<div class="foldopen" id="foldopen00366" data-start="{" data-end="}">
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a1a2e539e816467e5df6588744541071b">  366</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a1a2e539e816467e5df6588744541071b">setCompleted</a>(<span class="keywordtype">boolean</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#abac2ca51dc0b6b90ff866c71c3371930">completed</a>) {</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>        this.completed.set(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#abac2ca51dc0b6b90ff866c71c3371930">completed</a>);</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>    }</div>
+</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>    </div>
+<div class="foldopen" id="foldopen00374" data-start="{" data-end="}">
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a81effd078fee106eea52436907468ed9">  374</a></span>    <span class="keyword">public</span> <span class="keywordtype">boolean</span> <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a81effd078fee106eea52436907468ed9">isOverdue</a>() {</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a24805572ae9b3de96a4dc520c0496f43">overdue</a>.get();</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>    }</div>
+</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>    </div>
+<div class="foldopen" id="foldopen00382" data-start="{" data-end="}">
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a2ce50df11a5d6a9ed8511aafc878c02a">  382</a></span>    <span class="keyword">public</span> BooleanProperty <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a2ce50df11a5d6a9ed8511aafc878c02a">overdueProperty</a>() {</div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a24805572ae9b3de96a4dc520c0496f43">overdue</a>;</div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>    }</div>
+</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>    </div>
+<div class="foldopen" id="foldopen00390" data-start="{" data-end="}">
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a78e914dde721b09b9b4f6fef691aef02">  390</a></span>    <span class="keyword">public</span> LocalDateTime <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a78e914dde721b09b9b4f6fef691aef02">getCreatedAt</a>() {</div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#ae66ade7b1fc8d06fd1dfba6560f94ad3">createdAt</a>.get();</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>    }</div>
+</div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>    </div>
+<div class="foldopen" id="foldopen00398" data-start="{" data-end="}">
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a46792a8fe06ca7f494a3253118f72da7">  398</a></span>    <span class="keyword">public</span> ObjectProperty&lt;LocalDateTime&gt; <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a46792a8fe06ca7f494a3253118f72da7">createdAtProperty</a>() {</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#ae66ade7b1fc8d06fd1dfba6560f94ad3">createdAt</a>;</div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>    }</div>
+</div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>    </div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>    <span class="comment">// ====================================================</span></div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>    <span class="comment">// Методы для удобного отображения в таблице</span></div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>    <span class="comment">// ====================================================</span></div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>    </div>
+<div class="foldopen" id="foldopen00413" data-start="{" data-end="}">
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a5b507f08d5d17134eb0051f9198026ef">  413</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a5b507f08d5d17134eb0051f9198026ef">getFormattedStartTime</a>() {</div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a6803f8e2e1d27bf672e331486aff9934">startTime</a>.get().format(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a02530490b1fbaf28814ffa30e70f3bef">DATE_TIME_FORMATTER</a>);</div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>    }</div>
+</div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>    </div>
+<div class="foldopen" id="foldopen00424" data-start="{" data-end="}">
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a5f2424316f62a7ed7067602067535809">  424</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a5f2424316f62a7ed7067602067535809">getFormattedEndTime</a>() {</div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a1406520ea09048f9fdbeeaa66056ff84">endTime</a>.get().format(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a02530490b1fbaf28814ffa30e70f3bef">DATE_TIME_FORMATTER</a>);</div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>    }</div>
+</div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>    </div>
+<div class="foldopen" id="foldopen00435" data-start="{" data-end="}">
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a7c7c15b784f5c86b74d58943dd897cc6">  435</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a7c7c15b784f5c86b74d58943dd897cc6">getFormattedEndDate</a>() {</div>
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a1406520ea09048f9fdbeeaa66056ff84">endTime</a>.get().format(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a3d6f42acec8f9aa4fe9edca2b5d9e664">DATE_FORMATTER</a>);</div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>    }</div>
+</div>
+<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>    </div>
+<div class="foldopen" id="foldopen00446" data-start="{" data-end="}">
+<div class="line"><a id="l00446" name="l00446"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a5be935664988b6d0a49931df9beed5cc">  446</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a5be935664988b6d0a49931df9beed5cc">getFormattedEndTimeOnly</a>() {</div>
+<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a1406520ea09048f9fdbeeaa66056ff84">endTime</a>.get().format(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#ad7df044a5e274feaa87e002eafdd3afa">TIME_FORMATTER</a>);</div>
+<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>    }</div>
+</div>
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>    </div>
+<div class="foldopen" id="foldopen00456" data-start="{" data-end="}">
+<div class="line"><a id="l00456" name="l00456"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#abd84bdfcc6b71fd286231b1b4e19e4a0">  456</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#abd84bdfcc6b71fd286231b1b4e19e4a0">getPriorityDisplay</a>() {</div>
+<div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#aceccd89ccf126f89b7235548b8586a5b">priority</a>.get().getDisplayName();</div>
+<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span>    }</div>
+</div>
+<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span>    </div>
+<div class="foldopen" id="foldopen00467" data-start="{" data-end="}">
+<div class="line"><a id="l00467" name="l00467"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#ad9bc7c38357c8e5fd8ca4b399b5e5567">  467</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#ad9bc7c38357c8e5fd8ca4b399b5e5567">getPriorityColor</a>() {</div>
+<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#aceccd89ccf126f89b7235548b8586a5b">priority</a>.get().getColor();</div>
+<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>    }</div>
+</div>
+<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span>    </div>
+<div class="foldopen" id="foldopen00478" data-start="{" data-end="}">
+<div class="line"><a id="l00478" name="l00478"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a5065f6eaa5f6039f4eee54f3376525ff">  478</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a5065f6eaa5f6039f4eee54f3376525ff">getPriorityIconName</a>() {</div>
+<div class="line"><a id="l00479" name="l00479"></a><span class="lineno">  479</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#aceccd89ccf126f89b7235548b8586a5b">priority</a>.get().getIconName();</div>
+<div class="line"><a id="l00480" name="l00480"></a><span class="lineno">  480</span>    }</div>
+</div>
+<div class="line"><a id="l00481" name="l00481"></a><span class="lineno">  481</span>    </div>
+<div class="foldopen" id="foldopen00488" data-start="{" data-end="}">
+<div class="line"><a id="l00488" name="l00488"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#ad9417fde49996b27e6554ff9c72582a3">  488</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#ad9417fde49996b27e6554ff9c72582a3">getCategoryDisplay</a>() {</div>
+<div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a7fe0ba6c6faa0f7cfe0ff14c3dc88f02">category</a>.get().getDisplayName();</div>
+<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>    }</div>
+</div>
+<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>    </div>
+<div class="foldopen" id="foldopen00499" data-start="{" data-end="}">
+<div class="line"><a id="l00499" name="l00499"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a5db1325cc03d4923c411bbaedb74051c">  499</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a5db1325cc03d4923c411bbaedb74051c">getCategoryColor</a>() {</div>
+<div class="line"><a id="l00500" name="l00500"></a><span class="lineno">  500</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a7fe0ba6c6faa0f7cfe0ff14c3dc88f02">category</a>.get().getColor();</div>
+<div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span>    }</div>
+</div>
+<div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span>    </div>
+<div class="foldopen" id="foldopen00513" data-start="{" data-end="}">
+<div class="line"><a id="l00513" name="l00513"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a53215ef77e237ab827e3e3156860d2f5">  513</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a53215ef77e237ab827e3e3156860d2f5">getTimeRemaining</a>() {</div>
+<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>        LocalDateTime now = LocalDateTime.now();</div>
+<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span>        LocalDateTime deadline = <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a1406520ea09048f9fdbeeaa66056ff84">endTime</a>.get();</div>
+<div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span>        </div>
+<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>        <span class="keywordflow">if</span> (now.isAfter(deadline)) {</div>
+<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>            <span class="comment">// Задача просрочена</span></div>
+<div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span>            <span class="keywordtype">long</span> days = now.toLocalDate().toEpochDay() - deadline.toLocalDate().toEpochDay();</div>
+<div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span>            <span class="keywordflow">if</span> (days == 0) {</div>
+<div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Просрочено сегодня&quot;</span>;</div>
+<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (days == 1) {</div>
+<div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Просрочено вчера&quot;</span>;</div>
+<div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Просрочено &quot;</span> + days + <span class="stringliteral">&quot; дн. назад&quot;</span>;</div>
+<div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>            }</div>
+<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>            <span class="comment">// Задача еще не просрочена</span></div>
+<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>            <span class="keywordtype">long</span> days = deadline.toLocalDate().toEpochDay() - now.toLocalDate().toEpochDay();</div>
+<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>            <span class="keywordflow">if</span> (days == 0) {</div>
+<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Сегодня&quot;</span>;</div>
+<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (days == 1) {</div>
+<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Завтра&quot;</span>;</div>
+<div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Через &quot;</span> + days + <span class="stringliteral">&quot; дн.&quot;</span>;</div>
+<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span>            }</div>
+<div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span>        }</div>
+<div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span>    }</div>
+</div>
+<div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span>    </div>
+<div class="foldopen" id="foldopen00551" data-start="{" data-end="}">
+<div class="line"><a id="l00551" name="l00551"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#acac81fa6ee313ed5801a06dfece854f7">  551</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#acac81fa6ee313ed5801a06dfece854f7">getStatusText</a>() {</div>
+<div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#abac2ca51dc0b6b90ff866c71c3371930">completed</a>.get()) {</div>
+<div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;Выполнено&quot;</span>;</div>
+<div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a24805572ae9b3de96a4dc520c0496f43">overdue</a>.get()) {</div>
+<div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;Просрочено&quot;</span>;</div>
+<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;Активно&quot;</span>;</div>
+<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span>        }</div>
+<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span>    }</div>
+</div>
+<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>    </div>
+<div class="foldopen" id="foldopen00568" data-start="{" data-end="}">
+<div class="line"><a id="l00568" name="l00568"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#aa0b4460345353c790c23679ca9cb37c6">  568</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="classmodel_1_1_task.html">Task</a> <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#aa0b4460345353c790c23679ca9cb37c6">getTask</a>() {</div>
+<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>;</div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>    }</div>
+</div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>    </div>
+<div class="foldopen" id="foldopen00584" data-start="{" data-end="}">
+<div class="line"><a id="l00584" name="l00584"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#a61d0e437b7d85c8ec2462d15b7ef58e1">  584</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a61d0e437b7d85c8ec2462d15b7ef58e1">updateFromModel</a>() {</div>
+<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>        <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a5985ed58b0e977027b51e79a3f17a205">title</a>.set(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>.getTitle());</div>
+<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>        <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a627b02d9ff5b7b4d83df0ac7399fca44">description</a>.set(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>.getDescription());</div>
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>        <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a6803f8e2e1d27bf672e331486aff9934">startTime</a>.set(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>.getStartTime());</div>
+<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>        <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a1406520ea09048f9fdbeeaa66056ff84">endTime</a>.set(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>.getEndTime());</div>
+<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>        <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#aceccd89ccf126f89b7235548b8586a5b">priority</a>.set(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>.getPriority());</div>
+<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>        <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a7fe0ba6c6faa0f7cfe0ff14c3dc88f02">category</a>.set(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>.getCategory());</div>
+<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>        <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#abac2ca51dc0b6b90ff866c71c3371930">completed</a>.set(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>.isCompleted());</div>
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>        <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a24805572ae9b3de96a4dc520c0496f43">overdue</a>.set(<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">task</a>.isOverdue());</div>
+<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span>    }</div>
+</div>
+<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span>    </div>
+<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>    @Override</div>
+<div class="foldopen" id="foldopen00602" data-start="{" data-end="}">
+<div class="line"><a id="l00602" name="l00602"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#ad99556d90305e5cf07b1188055ee8477">  602</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#ad99556d90305e5cf07b1188055ee8477">toString</a>() {</div>
+<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>        <span class="keywordflow">return</span> String.format(<span class="stringliteral">&quot;TaskViewModel{title=&#39;%s&#39;, priority=%s, completed=%s}&quot;</span>, </div>
+<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>            <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a5985ed58b0e977027b51e79a3f17a205">title</a>.get(), <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#aceccd89ccf126f89b7235548b8586a5b">priority</a>.get().getDisplayName(), <a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#abac2ca51dc0b6b90ff866c71c3371930">completed</a>.get());</div>
+<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>    }</div>
+</div>
+<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>    </div>
+<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>    @Override</div>
+<div class="foldopen" id="foldopen00617" data-start="{" data-end="}">
+<div class="line"><a id="l00617" name="l00617"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#abd590a45fda140d14ba745db51c46490">  617</a></span>    <span class="keyword">public</span> <span class="keywordtype">boolean</span> <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#abd590a45fda140d14ba745db51c46490">equals</a>(Object obj) {</div>
+<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>        <span class="keywordflow">if</span> (<span class="keyword">this</span> == obj) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>        <span class="keywordflow">if</span> (obj == <span class="keyword">null</span> || getClass() != obj.getClass()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>        <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a97b1077049d5d441d305aa75b0ca41a6">TaskViewModel</a> that = (<a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#a97b1077049d5d441d305aa75b0ca41a6">TaskViewModel</a>) obj;</div>
+<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>        <span class="keywordflow">return</span> <span class="keywordtype">id</span>.get().equals(that.<a class="code hl_variable" href="classviewmodel_1_1_task_view_model.html#a81c1f7c14ffd517a4224b527dae12b4a">id</a>.get());</div>
+<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>    }</div>
+</div>
+<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>    </div>
+<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>    @Override</div>
+<div class="foldopen" id="foldopen00631" data-start="{" data-end="}">
+<div class="line"><a id="l00631" name="l00631"></a><span class="lineno"><a class="line" href="classviewmodel_1_1_task_view_model.html#ad70dc62dc109b6038a4504708d3ed961">  631</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classviewmodel_1_1_task_view_model.html#ad70dc62dc109b6038a4504708d3ed961">hashCode</a>() {</div>
+<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>        <span class="keywordflow">return</span> <span class="keywordtype">id</span>.get().hashCode();</div>
+<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>    }</div>
+</div>
+<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>}</div>
+</div>
+<div class="ttc" id="aclassmodel_1_1_task_html"><div class="ttname"><a href="classmodel_1_1_task.html">model.Task</a></div><div class="ttdoc">Основной класс, представляющий задачу в приложении</div><div class="ttdef"><b>Определения</b> <a href="_task_8java_source.html#l00028">Task.java:28</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a02530490b1fbaf28814ffa30e70f3bef"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a02530490b1fbaf28814ffa30e70f3bef">viewmodel.TaskViewModel.DATE_TIME_FORMATTER</a></div><div class="ttdeci">static final DateTimeFormatter DATE_TIME_FORMATTER</div><div class="ttdoc">Форматер для полного отображения даты и времени @value &quot;dd.MM.yyyy HH:mm&quot; (пример: &quot;31....</div><div class="ttdef"><b>Определения</b> <a href="#l00072">TaskViewModel.java:72</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a046488b4a90fb611ff40402bada134b0"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a046488b4a90fb611ff40402bada134b0">viewmodel.TaskViewModel.getDescription</a></div><div class="ttdeci">String getDescription()</div><div class="ttdoc">Возвращает описание задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00228">TaskViewModel.java:228</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a0697007e0ca7f6b9ebb9c66ff339c27c"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a0697007e0ca7f6b9ebb9c66ff339c27c">viewmodel.TaskViewModel.startTimeProperty</a></div><div class="ttdeci">ObjectProperty&lt; LocalDateTime &gt; startTimeProperty()</div><div class="ttdoc">Возвращает свойство времени начала задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00260">TaskViewModel.java:260</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a1406520ea09048f9fdbeeaa66056ff84"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a1406520ea09048f9fdbeeaa66056ff84">viewmodel.TaskViewModel.endTime</a></div><div class="ttdeci">final ObjectProperty&lt; LocalDateTime &gt; endTime</div><div class="ttdoc">Время окончания (дедлайн) задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00048">TaskViewModel.java:48</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a163f018285b5cba883b0f4adabefa77d"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a163f018285b5cba883b0f4adabefa77d">viewmodel.TaskViewModel.setStartTime</a></div><div class="ttdeci">void setStartTime(LocalDateTime startTime)</div><div class="ttdoc">Устанавливает новое время начала задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00268">TaskViewModel.java:268</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a1a2e539e816467e5df6588744541071b"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a1a2e539e816467e5df6588744541071b">viewmodel.TaskViewModel.setCompleted</a></div><div class="ttdeci">void setCompleted(boolean completed)</div><div class="ttdoc">Устанавливает статус выполнения задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00366">TaskViewModel.java:366</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a1a618ae9eecfd3fefadebd848a99ec92"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a1a618ae9eecfd3fefadebd848a99ec92">viewmodel.TaskViewModel.getTitle</a></div><div class="ttdeci">String getTitle()</div><div class="ttdoc">Возвращает заголовок задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00204">TaskViewModel.java:204</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a24805572ae9b3de96a4dc520c0496f43"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a24805572ae9b3de96a4dc520c0496f43">viewmodel.TaskViewModel.overdue</a></div><div class="ttdeci">final BooleanProperty overdue</div><div class="ttdoc">Флаг просроченности задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00060">TaskViewModel.java:60</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a2ce50df11a5d6a9ed8511aafc878c02a"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a2ce50df11a5d6a9ed8511aafc878c02a">viewmodel.TaskViewModel.overdueProperty</a></div><div class="ttdeci">BooleanProperty overdueProperty()</div><div class="ttdoc">Возвращает свойство просроченности задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00382">TaskViewModel.java:382</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a2d17f86b46ef153a4dc499a194d5e885"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a2d17f86b46ef153a4dc499a194d5e885">viewmodel.TaskViewModel.getPriority</a></div><div class="ttdeci">Priority getPriority()</div><div class="ttdoc">Возвращает приоритет задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00300">TaskViewModel.java:300</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a3d6f42acec8f9aa4fe9edca2b5d9e664"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a3d6f42acec8f9aa4fe9edca2b5d9e664">viewmodel.TaskViewModel.DATE_FORMATTER</a></div><div class="ttdeci">static final DateTimeFormatter DATE_FORMATTER</div><div class="ttdoc">Форматер для отображения только даты @value &quot;dd.MM.yyyy&quot; (пример: &quot;31.12.2025&quot;).</div><div class="ttdef"><b>Определения</b> <a href="#l00079">TaskViewModel.java:79</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a431f716cf65f5afcb54f969b44b4d380"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a431f716cf65f5afcb54f969b44b4d380">viewmodel.TaskViewModel.setPriority</a></div><div class="ttdeci">void setPriority(Priority priority)</div><div class="ttdoc">Устанавливает новый приоритет задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00316">TaskViewModel.java:316</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a46792a8fe06ca7f494a3253118f72da7"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a46792a8fe06ca7f494a3253118f72da7">viewmodel.TaskViewModel.createdAtProperty</a></div><div class="ttdeci">ObjectProperty&lt; LocalDateTime &gt; createdAtProperty()</div><div class="ttdoc">Возвращает свойство даты создания задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00398">TaskViewModel.java:398</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a5065f6eaa5f6039f4eee54f3376525ff"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a5065f6eaa5f6039f4eee54f3376525ff">viewmodel.TaskViewModel.getPriorityIconName</a></div><div class="ttdeci">String getPriorityIconName()</div><div class="ttdef"><b>Определения</b> <a href="#l00478">TaskViewModel.java:478</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a53215ef77e237ab827e3e3156860d2f5"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a53215ef77e237ab827e3e3156860d2f5">viewmodel.TaskViewModel.getTimeRemaining</a></div><div class="ttdeci">String getTimeRemaining()</div><div class="ttdef"><b>Определения</b> <a href="#l00513">TaskViewModel.java:513</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a5985ed58b0e977027b51e79a3f17a205"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a5985ed58b0e977027b51e79a3f17a205">viewmodel.TaskViewModel.title</a></div><div class="ttdeci">final StringProperty title</div><div class="ttdoc">Заголовок задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00039">TaskViewModel.java:39</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a5b507f08d5d17134eb0051f9198026ef"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a5b507f08d5d17134eb0051f9198026ef">viewmodel.TaskViewModel.getFormattedStartTime</a></div><div class="ttdeci">String getFormattedStartTime()</div><div class="ttdef"><b>Определения</b> <a href="#l00413">TaskViewModel.java:413</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a5be935664988b6d0a49931df9beed5cc"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a5be935664988b6d0a49931df9beed5cc">viewmodel.TaskViewModel.getFormattedEndTimeOnly</a></div><div class="ttdeci">String getFormattedEndTimeOnly()</div><div class="ttdef"><b>Определения</b> <a href="#l00446">TaskViewModel.java:446</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a5db03d493b6825913f27ec6c286821ab"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a5db03d493b6825913f27ec6c286821ab">viewmodel.TaskViewModel.descriptionProperty</a></div><div class="ttdeci">StringProperty descriptionProperty()</div><div class="ttdoc">Возвращает свойство описания задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00236">TaskViewModel.java:236</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a5db1325cc03d4923c411bbaedb74051c"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a5db1325cc03d4923c411bbaedb74051c">viewmodel.TaskViewModel.getCategoryColor</a></div><div class="ttdeci">String getCategoryColor()</div><div class="ttdef"><b>Определения</b> <a href="#l00499">TaskViewModel.java:499</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a5f2424316f62a7ed7067602067535809"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a5f2424316f62a7ed7067602067535809">viewmodel.TaskViewModel.getFormattedEndTime</a></div><div class="ttdeci">String getFormattedEndTime()</div><div class="ttdef"><b>Определения</b> <a href="#l00424">TaskViewModel.java:424</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a61d0e437b7d85c8ec2462d15b7ef58e1"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a61d0e437b7d85c8ec2462d15b7ef58e1">viewmodel.TaskViewModel.updateFromModel</a></div><div class="ttdeci">void updateFromModel()</div><div class="ttdoc">Обновляет ViewModel на основе изменений в модели</div><div class="ttdef"><b>Определения</b> <a href="#l00584">TaskViewModel.java:584</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a627b02d9ff5b7b4d83df0ac7399fca44"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a627b02d9ff5b7b4d83df0ac7399fca44">viewmodel.TaskViewModel.description</a></div><div class="ttdeci">final StringProperty description</div><div class="ttdoc">Описание задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00042">TaskViewModel.java:42</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a6803f8e2e1d27bf672e331486aff9934"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a6803f8e2e1d27bf672e331486aff9934">viewmodel.TaskViewModel.startTime</a></div><div class="ttdeci">final ObjectProperty&lt; LocalDateTime &gt; startTime</div><div class="ttdoc">Время начала выполнения задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00045">TaskViewModel.java:45</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a691a9b9777b75eaac085a7f19e062f20"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a691a9b9777b75eaac085a7f19e062f20">viewmodel.TaskViewModel.setDescription</a></div><div class="ttdeci">void setDescription(String description)</div><div class="ttdoc">Устанавливает новое описание задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00244">TaskViewModel.java:244</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a6b568ef75542da4868a533844bbbe3a1"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a6b568ef75542da4868a533844bbbe3a1">viewmodel.TaskViewModel.isCompleted</a></div><div class="ttdeci">boolean isCompleted()</div><div class="ttdoc">Проверяет, выполнена ли задача</div><div class="ttdef"><b>Определения</b> <a href="#l00348">TaskViewModel.java:348</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a78bbc21be4a7366ff977474cb547ca0e"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a78bbc21be4a7366ff977474cb547ca0e">viewmodel.TaskViewModel.idProperty</a></div><div class="ttdeci">StringProperty idProperty()</div><div class="ttdoc">Возвращает свойство идентификатора задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00196">TaskViewModel.java:196</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a78e914dde721b09b9b4f6fef691aef02"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a78e914dde721b09b9b4f6fef691aef02">viewmodel.TaskViewModel.getCreatedAt</a></div><div class="ttdeci">LocalDateTime getCreatedAt()</div><div class="ttdoc">Возвращает дату и время создания задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00390">TaskViewModel.java:390</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a7c7c15b784f5c86b74d58943dd897cc6"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a7c7c15b784f5c86b74d58943dd897cc6">viewmodel.TaskViewModel.getFormattedEndDate</a></div><div class="ttdeci">String getFormattedEndDate()</div><div class="ttdef"><b>Определения</b> <a href="#l00435">TaskViewModel.java:435</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a7e8946bef2493f00c0582c432330b56b"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a7e8946bef2493f00c0582c432330b56b">viewmodel.TaskViewModel.setupBindings</a></div><div class="ttdeci">void setupBindings()</div><div class="ttdoc">Настраивает двусторонние привязки между ViewModel и Model.</div><div class="ttdef"><b>Определения</b> <a href="#l00139">TaskViewModel.java:139</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a7fe0ba6c6faa0f7cfe0ff14c3dc88f02"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a7fe0ba6c6faa0f7cfe0ff14c3dc88f02">viewmodel.TaskViewModel.category</a></div><div class="ttdeci">final ObjectProperty&lt; Category &gt; category</div><div class="ttdoc">Категория задачи (WORK, HOME, STUDY, OTHER).</div><div class="ttdef"><b>Определения</b> <a href="#l00054">TaskViewModel.java:54</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a81c1f7c14ffd517a4224b527dae12b4a"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a81c1f7c14ffd517a4224b527dae12b4a">viewmodel.TaskViewModel.id</a></div><div class="ttdeci">final StringProperty id</div><div class="ttdoc">Уникальный идентификатор задачи (неизменяемый).</div><div class="ttdef"><b>Определения</b> <a href="#l00036">TaskViewModel.java:36</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a81effd078fee106eea52436907468ed9"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a81effd078fee106eea52436907468ed9">viewmodel.TaskViewModel.isOverdue</a></div><div class="ttdeci">boolean isOverdue()</div><div class="ttdoc">Проверяет, просрочена ли задача</div><div class="ttdef"><b>Определения</b> <a href="#l00374">TaskViewModel.java:374</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a9386fe9a79e7326ff41793f4973b518b"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a9386fe9a79e7326ff41793f4973b518b">viewmodel.TaskViewModel.setEndTime</a></div><div class="ttdeci">void setEndTime(LocalDateTime endTime)</div><div class="ttdoc">Устанавливает новое время окончания задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00292">TaskViewModel.java:292</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a97b1077049d5d441d305aa75b0ca41a6"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a97b1077049d5d441d305aa75b0ca41a6">viewmodel.TaskViewModel.TaskViewModel</a></div><div class="ttdeci">TaskViewModel(Task task)</div><div class="ttdoc">Конструктор на основе модели Task.</div><div class="ttdef"><b>Определения</b> <a href="#l00105">TaskViewModel.java:105</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a97f13543b8cfec1764e1ccc0241b0309"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309">viewmodel.TaskViewModel.task</a></div><div class="ttdeci">final Task task</div><div class="ttdoc">Ссылка на исходную модель данных Task.</div><div class="ttdef"><b>Определения</b> <a href="#l00066">TaskViewModel.java:66</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a99d8237ca04d46fdcc2f00c04ee064f4"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a99d8237ca04d46fdcc2f00c04ee064f4">viewmodel.TaskViewModel.completedProperty</a></div><div class="ttdeci">BooleanProperty completedProperty()</div><div class="ttdoc">Возвращает свойство статуса выполнения задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00356">TaskViewModel.java:356</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_a9ba1b0aebba5b80c88b67bec21710689"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#a9ba1b0aebba5b80c88b67bec21710689">viewmodel.TaskViewModel.setCategory</a></div><div class="ttdeci">void setCategory(Category category)</div><div class="ttdoc">Устанавливает новую категорию задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00340">TaskViewModel.java:340</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_aa0b4460345353c790c23679ca9cb37c6"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#aa0b4460345353c790c23679ca9cb37c6">viewmodel.TaskViewModel.getTask</a></div><div class="ttdeci">Task getTask()</div><div class="ttdoc">Возвращает базовую модель задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00568">TaskViewModel.java:568</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_aa34a9517a43daff6eef84dc13e1cd0a9"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#aa34a9517a43daff6eef84dc13e1cd0a9">viewmodel.TaskViewModel.getEndTime</a></div><div class="ttdeci">LocalDateTime getEndTime()</div><div class="ttdoc">Возвращает время окончания (дедлайн) задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00276">TaskViewModel.java:276</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_ab340fded3c0f9487bcf0c86486adc7da"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#ab340fded3c0f9487bcf0c86486adc7da">viewmodel.TaskViewModel.endTimeProperty</a></div><div class="ttdeci">ObjectProperty&lt; LocalDateTime &gt; endTimeProperty()</div><div class="ttdoc">Возвращает свойство времени окончания задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00284">TaskViewModel.java:284</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_abac2ca51dc0b6b90ff866c71c3371930"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#abac2ca51dc0b6b90ff866c71c3371930">viewmodel.TaskViewModel.completed</a></div><div class="ttdeci">final BooleanProperty completed</div><div class="ttdoc">Флаг выполнения задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00057">TaskViewModel.java:57</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_abd590a45fda140d14ba745db51c46490"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#abd590a45fda140d14ba745db51c46490">viewmodel.TaskViewModel.equals</a></div><div class="ttdeci">boolean equals(Object obj)</div><div class="ttdoc">Сравнивает два объекта TaskViewModel на равенство</div><div class="ttdef"><b>Определения</b> <a href="#l00617">TaskViewModel.java:617</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_abd84bdfcc6b71fd286231b1b4e19e4a0"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#abd84bdfcc6b71fd286231b1b4e19e4a0">viewmodel.TaskViewModel.getPriorityDisplay</a></div><div class="ttdeci">String getPriorityDisplay()</div><div class="ttdoc">Возвращает отображаемое имя приоритета</div><div class="ttdef"><b>Определения</b> <a href="#l00456">TaskViewModel.java:456</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_ac18ff6fe31191a83d34a265bfaa1cb01"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#ac18ff6fe31191a83d34a265bfaa1cb01">viewmodel.TaskViewModel.setTitle</a></div><div class="ttdeci">void setTitle(String title)</div><div class="ttdoc">Устанавливает новый заголовок задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00220">TaskViewModel.java:220</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_ac50f2e97f44fd66fc50fa959730eb78f"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#ac50f2e97f44fd66fc50fa959730eb78f">viewmodel.TaskViewModel.getId</a></div><div class="ttdeci">String getId()</div><div class="ttdoc">Возвращает идентификатор задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00188">TaskViewModel.java:188</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_ac8555eb492fedda8c9303d75a33f626f"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#ac8555eb492fedda8c9303d75a33f626f">viewmodel.TaskViewModel.priorityProperty</a></div><div class="ttdeci">ObjectProperty&lt; Priority &gt; priorityProperty()</div><div class="ttdoc">Возвращает свойство приоритета задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00308">TaskViewModel.java:308</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_acac81fa6ee313ed5801a06dfece854f7"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#acac81fa6ee313ed5801a06dfece854f7">viewmodel.TaskViewModel.getStatusText</a></div><div class="ttdeci">String getStatusText()</div><div class="ttdoc">Возвращает статус задачи в виде строки</div><div class="ttdef"><b>Определения</b> <a href="#l00551">TaskViewModel.java:551</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_acae67880baf2c3c2f7b47810b572edd6"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#acae67880baf2c3c2f7b47810b572edd6">viewmodel.TaskViewModel.titleProperty</a></div><div class="ttdeci">StringProperty titleProperty()</div><div class="ttdoc">Возвращает свойство заголовка задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00212">TaskViewModel.java:212</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_aceccd89ccf126f89b7235548b8586a5b"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#aceccd89ccf126f89b7235548b8586a5b">viewmodel.TaskViewModel.priority</a></div><div class="ttdeci">final ObjectProperty&lt; Priority &gt; priority</div><div class="ttdoc">Приоритет задачи (URGENT, IMPORTANT, NORMAL).</div><div class="ttdef"><b>Определения</b> <a href="#l00051">TaskViewModel.java:51</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_ad274b2e6ae4bfa67e9e4877d1f0d3104"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#ad274b2e6ae4bfa67e9e4877d1f0d3104">viewmodel.TaskViewModel.getStartTime</a></div><div class="ttdeci">LocalDateTime getStartTime()</div><div class="ttdoc">Возвращает время начала задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00252">TaskViewModel.java:252</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_ad70dc62dc109b6038a4504708d3ed961"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#ad70dc62dc109b6038a4504708d3ed961">viewmodel.TaskViewModel.hashCode</a></div><div class="ttdeci">int hashCode()</div><div class="ttdoc">Возвращает хэш-код объекта</div><div class="ttdef"><b>Определения</b> <a href="#l00631">TaskViewModel.java:631</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_ad7df044a5e274feaa87e002eafdd3afa"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#ad7df044a5e274feaa87e002eafdd3afa">viewmodel.TaskViewModel.TIME_FORMATTER</a></div><div class="ttdeci">static final DateTimeFormatter TIME_FORMATTER</div><div class="ttdoc">Форматер для отображения только времени @value &quot;HH:mm&quot; (пример: &quot;23:59&quot;).</div><div class="ttdef"><b>Определения</b> <a href="#l00086">TaskViewModel.java:86</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_ad9417fde49996b27e6554ff9c72582a3"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#ad9417fde49996b27e6554ff9c72582a3">viewmodel.TaskViewModel.getCategoryDisplay</a></div><div class="ttdeci">String getCategoryDisplay()</div><div class="ttdoc">Возвращает отображаемое имя категории</div><div class="ttdef"><b>Определения</b> <a href="#l00488">TaskViewModel.java:488</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_ad99556d90305e5cf07b1188055ee8477"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#ad99556d90305e5cf07b1188055ee8477">viewmodel.TaskViewModel.toString</a></div><div class="ttdeci">String toString()</div><div class="ttdoc">Возвращает строковое представление ViewModel.</div><div class="ttdef"><b>Определения</b> <a href="#l00602">TaskViewModel.java:602</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_ad9bc7c38357c8e5fd8ca4b399b5e5567"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#ad9bc7c38357c8e5fd8ca4b399b5e5567">viewmodel.TaskViewModel.getPriorityColor</a></div><div class="ttdeci">String getPriorityColor()</div><div class="ttdef"><b>Определения</b> <a href="#l00467">TaskViewModel.java:467</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_ae66ade7b1fc8d06fd1dfba6560f94ad3"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#ae66ade7b1fc8d06fd1dfba6560f94ad3">viewmodel.TaskViewModel.createdAt</a></div><div class="ttdeci">final ObjectProperty&lt; LocalDateTime &gt; createdAt</div><div class="ttdoc">Дата и время создания задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00063">TaskViewModel.java:63</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_aee7644b03c0ca5faa3aee9e691d658a3"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#aee7644b03c0ca5faa3aee9e691d658a3">viewmodel.TaskViewModel.getCategory</a></div><div class="ttdeci">Category getCategory()</div><div class="ttdoc">Возвращает категорию задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00324">TaskViewModel.java:324</a></div></div>
+<div class="ttc" id="aclassviewmodel_1_1_task_view_model_html_af4b66ae3828898e18e44ba926a565cbe"><div class="ttname"><a href="classviewmodel_1_1_task_view_model.html#af4b66ae3828898e18e44ba926a565cbe">viewmodel.TaskViewModel.categoryProperty</a></div><div class="ttdeci">ObjectProperty&lt; Category &gt; categoryProperty()</div><div class="ttdoc">Возвращает свойство категории задачи</div><div class="ttdef"><b>Определения</b> <a href="#l00332">TaskViewModel.java:332</a></div></div>
+<div class="ttc" id="aenummodel_1_1_category_html"><div class="ttname"><a href="enummodel_1_1_category.html">model.Category</a></div><div class="ttdef"><b>Определения</b> <a href="_category_8java_source.html#l00025">Category.java:25</a></div></div>
+<div class="ttc" id="aenummodel_1_1_priority_html"><div class="ttname"><a href="enummodel_1_1_priority.html">model.Priority</a></div><div class="ttdef"><b>Определения</b> <a href="_priority_8java_source.html#l00026">Priority.java:26</a></div></div>
+<div class="ttc" id="anamespacemodel_html"><div class="ttname"><a href="namespacemodel.html">model</a></div><div class="ttdef"><b>Определения</b> <a href="_category_8java_source.html#l00001">Category.java:1</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_72713b21f72cbbc30bfed132df6c9d3a.html">viewmodel</a></li><li class="navelem"><a href="_task_view_model_8java.html">TaskViewModel.java</a></li>
+    <li class="footer">Документация по Умный планировщик задач (To-Do List). Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

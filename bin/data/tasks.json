@@ -1,0 +1,50 @@
+[
+  {
+    "id": "77ec9df9-bb77-4caf-abd6-4fbc6810d33e",
+    "title": "Изучение JavaFX",
+    "description": "Освоить продвинутые возможности JavaFX",
+    "startTime": "2025-11-29T09:00:00",
+    "endTime": "2025-12-05T18:00:00",
+    "priority": "IMPORTANT",
+    "category": "STUDY",
+    "completed": false,
+    "overdue": false,
+    "createdAt": "2025-11-27T07:39:33"
+  },
+  {
+    "id": "88fc9df9-cc77-4caf-bcd6-4fbc6810d44f",
+    "title": "Сделать покупки",
+    "description": "Купить продукты на неделю",
+    "startTime": "2025-12-01T10:00:00",
+    "endTime": "2025-12-01T12:00:00",
+    "priority": "NORMAL",
+    "category": "HOME",
+    "completed": true,
+    "overdue": false,
+    "createdAt": "2025-11-28T08:20:15"
+  },
+  {
+    "id": "99ac9df9-dd77-4caf-cdd6-4fbc6810d55g",
+    "title": "Сдать отчет",
+    "description": "Подготовить квартальный отчет для руководства",
+    "startTime": "2025-11-25T14:00:00",
+    "endTime": "2025-11-30T17:00:00",
+    "priority": "URGENT",
+    "category": "WORK",
+    "completed": false,
+    "overdue": true,
+    "createdAt": "2025-11-20T09:15:22"
+  },
+  {
+    "id": "66bc9df9-ee77-4caf-edd6-4fbc6810d66h",
+    "title": "Встреча с друзьями",
+    "description": "Встретиться в кафе в центре города",
+    "startTime": "2025-12-10T19:00:00",
+    "endTime": "2025-12-10T22:00:00",
+    "priority": "NORMAL",
+    "category": "OTHER",
+    "completed": false,
+    "overdue": false,
+    "createdAt": "2025-11-29T12:45:10"
+  }
+]

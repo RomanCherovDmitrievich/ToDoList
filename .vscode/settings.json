@@ -1,9 +1,11 @@
 {
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
-        "javafx-sdk-25.0.1/lib/*.jar"
+        "../javafx-sdk-25.0.1/lib/*.jar",
+        "lib/gson-2.10.1.jar"
     ],
-    "java.project.sourcePaths": ["src/main/java"],
-    "java.project.outputPath": "target",
-    "java.configuration.updateBuildConfiguration": "interactive",
-    "java.autobuild.enabled": true
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m -Xlog:disable"
 }

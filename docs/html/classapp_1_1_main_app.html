@@ -1,0 +1,754 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Умный планировщик задач (To-Do List): Класс app.MainApp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">JavaFX приложение для управления задачами с новогодней темой</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classapp_1_1_main_app.html','','classapp_1_1_main_app-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс app.MainApp</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Главный класс приложения To-Do List.  
+ <a href="#details">Подробнее...</a></p>
+<div class="dynheader">
+Граф наследования:app.MainApp:</div>
+<div class="dyncontent">
+<div class="center"><img src="classapp_1_1_main_app__inherit__graph.png" border="0" usemap="#aapp_8_main_app_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<map name="aapp_8_main_app_inherit__map" id="aapp_8_main_app_inherit__map">
+<area shape="rect" title="Главный класс приложения To&#45;Do List." alt="" coords="5,79,103,105"/>
+<area shape="rect" title=" " alt="" coords="11,5,97,31"/>
+<area shape="poly" title=" " alt="" coords="56,45,57,79,51,78,52,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
+<div class="dynheader">
+Граф связей класса app.MainApp:</div>
+<div class="dyncontent">
+<div class="center"><img src="classapp_1_1_main_app__coll__graph.png" border="0" usemap="#aapp_8_main_app_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="aapp_8_main_app_coll__map" id="aapp_8_main_app_coll__map">
+<area shape="rect" title="Главный класс приложения To&#45;Do List." alt="" coords="42,102,139,128"/>
+<area shape="rect" title=" " alt="" coords="5,5,91,31"/>
+<area shape="poly" title=" " alt="" coords="61,43,88,101,83,102,58,47"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html" title="Менеджер для работы с аудио в приложении" alt="" coords="115,5,240,31"/>
+<area shape="poly" title=" " alt="" coords="159,42,104,103,100,99,154,43"/>
+<area shape="poly" title=" " alt="" coords="256,9,267,18,258,27,241,30,240,24,256,22,261,18,255,14"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:acbf781550cefac29e6c8ecbdd2b38904" id="r_acbf781550cefac29e6c8ecbdd2b38904"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbf781550cefac29e6c8ecbdd2b38904">init</a> ()</td></tr>
+<tr class="memdesc:acbf781550cefac29e6c8ecbdd2b38904"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метод инициализации приложения  <br /></td></tr>
+<tr class="memitem:a2f925faf172d4a1a66bf616b47a8b368" id="r_a2f925faf172d4a1a66bf616b47a8b368"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f925faf172d4a1a66bf616b47a8b368">start</a> (Stage <a class="el" href="#afbe7794c7747dbb9041de396c018cac9">primaryStage</a>)</td></tr>
+<tr class="memdesc:a2f925faf172d4a1a66bf616b47a8b368"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метод запуска JavaFX приложения  <br /></td></tr>
+<tr class="memitem:a81713cb9b4148cc9775e965fc14a1834" id="r_a81713cb9b4148cc9775e965fc14a1834"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81713cb9b4148cc9775e965fc14a1834">stop</a> ()</td></tr>
+<tr class="memdesc:a81713cb9b4148cc9775e965fc14a1834"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метод остановки приложения  <br /></td></tr>
+<tr class="memitem:a58283a36a2e01e38efa19edd9ba77d59" id="r_a58283a36a2e01e38efa19edd9ba77d59"><td class="memItemLeft" align="right" valign="top">Stage&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58283a36a2e01e38efa19edd9ba77d59">getPrimaryStage</a> ()</td></tr>
+<tr class="memdesc:a58283a36a2e01e38efa19edd9ba77d59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает главное окно приложения  <br /></td></tr>
+<tr class="memitem:a5546682bda948ba9513d649b6aaf33a8" id="r_a5546682bda948ba9513d649b6aaf33a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5546682bda948ba9513d649b6aaf33a8">reloadMainView</a> ()</td></tr>
+<tr class="memdesc:a5546682bda948ba9513d649b6aaf33a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Перезагружает главное окно  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:a9788978994366c880434d9cc05a21cb1" id="r_a9788978994366c880434d9cc05a21cb1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9788978994366c880434d9cc05a21cb1">main</a> (String[] args)</td></tr>
+<tr class="memdesc:a9788978994366c880434d9cc05a21cb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Точка входа в приложение  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:a92cfa72f96cc381ef46d20c6fb1ae193" id="r_a92cfa72f96cc381ef46d20c6fb1ae193"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92cfa72f96cc381ef46d20c6fb1ae193">showErrorDialog</a> (String title, String header, String content)</td></tr>
+<tr class="memdesc:a92cfa72f96cc381ef46d20c6fb1ae193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Показывает диалоговое окно с ошибкой  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:afbe7794c7747dbb9041de396c018cac9" id="r_afbe7794c7747dbb9041de396c018cac9"><td class="memItemLeft" align="right" valign="top">Stage&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afbe7794c7747dbb9041de396c018cac9">primaryStage</a></td></tr>
+<tr class="memdesc:afbe7794c7747dbb9041de396c018cac9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Главное окно приложения  <br /></td></tr>
+<tr class="memitem:a821a0cbc770b47e801af93c8b55c7c98" id="r_a821a0cbc770b47e801af93c8b55c7c98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classutil_1_1_audio_manager.html">AudioManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a821a0cbc770b47e801af93c8b55c7c98">audioManager</a></td></tr>
+<tr class="memdesc:a821a0cbc770b47e801af93c8b55c7c98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Менеджер аудио  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Закрытые статические данные</h2></td></tr>
+<tr class="memitem:a4de943445d70b65abd35b43f95dfcf72" id="r_a4de943445d70b65abd35b43f95dfcf72"><td class="memItemLeft" align="right" valign="top">static final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4de943445d70b65abd35b43f95dfcf72">APP_TITLE</a> = &quot;Умный планировщик задач&quot;</td></tr>
+<tr class="memdesc:a4de943445d70b65abd35b43f95dfcf72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заголовок приложения  <br /></td></tr>
+<tr class="memitem:a565d6f2ea906cb6b7c64d0a2e6a3da31" id="r_a565d6f2ea906cb6b7c64d0a2e6a3da31"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a565d6f2ea906cb6b7c64d0a2e6a3da31">WINDOW_WIDTH</a> = 900</td></tr>
+<tr class="memdesc:a565d6f2ea906cb6b7c64d0a2e6a3da31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Начальная ширина окна  <br /></td></tr>
+<tr class="memitem:ae939f4a6c6431cf101b4c427d11710ed" id="r_ae939f4a6c6431cf101b4c427d11710ed"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae939f4a6c6431cf101b4c427d11710ed">WINDOW_HEIGHT</a> = 600</td></tr>
+<tr class="memdesc:ae939f4a6c6431cf101b4c427d11710ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Начальная высота окна  <br /></td></tr>
+<tr class="memitem:a37ee9c5df8c0291fa0a35f78cbd54e0d" id="r_a37ee9c5df8c0291fa0a35f78cbd54e0d"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37ee9c5df8c0291fa0a35f78cbd54e0d">MIN_WIDTH</a> = 700</td></tr>
+<tr class="memdesc:a37ee9c5df8c0291fa0a35f78cbd54e0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Минимальная ширина окна  <br /></td></tr>
+<tr class="memitem:adb5ea69d0160842c8866b1482238712b" id="r_adb5ea69d0160842c8866b1482238712b"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb5ea69d0160842c8866b1482238712b">MIN_HEIGHT</a> = 500</td></tr>
+<tr class="memdesc:adb5ea69d0160842c8866b1482238712b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Минимальная высота окна  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Главный класс приложения To-Do List. </p>
+<p>Класс <a class="el" href="classapp_1_1_main_app.html" title="Главный класс приложения To-Do List.">MainApp</a> является точкой входа JavaFX приложения. Отвечает за инициализацию, настройку и запуск главного окна приложения. Управляет жизненным циклом приложения, загрузкой ресурсов и обработкой ошибок.</p>
+<dl class="section author"><dt>Автор</dt><dd>Разработчик </dd></dl>
+<dl class="section version"><dt>Версия</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Дата</dt><dd>2025-11-30</dd></dl>
+<p>(JavaFX)</p>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classview_1_1_main_controller.html" title="Контроллер главного окна приложения To-Do List.">view.MainController</a> </dd>
+<dd>
+<a class="el" href="classutil_1_1_audio_manager.html" title="Менеджер для работы с аудио в приложении">util.AudioManager</a> </dd>
+<dd>
+<a class="el" href="classmodel_1_1_task_manager.html" title="Менеджер задач - центральный класс для управления задачами">model.TaskManager</a> </dd>
+<dd>
+<a class="el" href="classutil_1_1_json_util.html" title="Утилита для работы с JSON файлами задач">util.JsonUtil</a></dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Этот класс использует паттерн Singleton для <a class="el" href="classutil_1_1_audio_manager.html" title="Менеджер для работы с аудио в приложении">AudioManager</a> и TaskManager </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Требует JavaFX SDK в classpath для работы </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00037">37</a></p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="a58283a36a2e01e38efa19edd9ba77d59" name="a58283a36a2e01e38efa19edd9ba77d59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58283a36a2e01e38efa19edd9ba77d59">&#9670;&#160;</a></span>getPrimaryStage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Stage app.MainApp.getPrimaryStage </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает главное окно приложения </p>
+<p>Предоставляет доступ к первичному Stage для других компонентов</p>
+<dl class="section return"><dt>Возвращает</dt><dd>Stage Главное окно приложения</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Используется для модальных диалогов и управления окном</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd>Stage </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00274">274</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_app_8java_source.html#l00073">primaryStage</a>.</p>
+
+</div>
+</div>
+<a id="acbf781550cefac29e6c8ecbdd2b38904" name="acbf781550cefac29e6c8ecbdd2b38904"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbf781550cefac29e6c8ecbdd2b38904">&#9670;&#160;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app.MainApp.init </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Метод инициализации приложения </p>
+<p>Вызывается автоматически JavaFX перед методом <a class="el" href="#a2f925faf172d4a1a66bf616b47a8b368" title="Метод запуска JavaFX приложения">start()</a> Выполняет предварительную настройку приложения</p>
+<dl class="section note"><dt>Заметки</dt><dd>В этом методе:<ul>
+<li>Выводится информация о версиях Java и JavaFX</li>
+<li>Инициализируется <a class="el" href="classutil_1_1_audio_manager.html" title="Менеджер для работы с аудио в приложении">AudioManager</a></li>
+<li>Логируются ошибки инициализации</li>
+</ul>
+</dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Исключения в этом методе не прерывают запуск приложения</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classutil_1_1_audio_manager.html#aaf7ec801730bf60f659b843ace062d86" title="Получает единственный экземпляр AudioManager.">AudioManager.getInstance()</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00123">123</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_app_8java_source.html#l00079">audioManager</a> и <a class="el" href="_audio_manager_8java_source.html#l00072">util.AudioManager.getInstance()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classapp_1_1_main_app_acbf781550cefac29e6c8ecbdd2b38904_cgraph.png" border="0" usemap="#aclassapp_1_1_main_app_acbf781550cefac29e6c8ecbdd2b38904_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassapp_1_1_main_app_acbf781550cefac29e6c8ecbdd2b38904_cgraph" id="aclassapp_1_1_main_app_acbf781550cefac29e6c8ecbdd2b38904_cgraph">
+<area shape="rect" title="Метод инициализации приложения" alt="" coords="5,5,124,31"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#aaf7ec801730bf60f659b843ace062d86" title="Получает единственный экземпляр AudioManager." alt="" coords="172,5,368,31"/>
+<area shape="poly" title=" " alt="" coords="124,16,159,18,154,18,124,21"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#ab16a211144282895701d2b0a64a66145" title="Приватный конструктор" alt="" coords="416,5,627,31"/>
+<area shape="poly" title=" " alt="" coords="369,16,403,18,398,18,369,21"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#a5ad71057028d829235d9ca3519feae2d" title="Загружает все звуки приложения" alt="" coords="675,5,872,31"/>
+<area shape="poly" title=" " alt="" coords="628,16,662,18,657,18,628,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9788978994366c880434d9cc05a21cb1" name="a9788978994366c880434d9cc05a21cb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9788978994366c880434d9cc05a21cb1">&#9670;&#160;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app.MainApp.main </td>
+          <td>(</td>
+          <td class="paramtype">String[]</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Точка входа в приложение </p>
+<p>Главный метод, вызываемый JVM для запуска приложения</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>Аргументы командной строки (не используются)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ClassNotFoundException</td><td>если JavaFX не найден в classpath </td></tr>
+    <tr><td class="paramname">RuntimeException</td><td>если не удается запустить JavaFX Application</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Метод проверяет наличие JavaFX перед запуском приложения </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Без JavaFX приложение не сможет запуститься</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd>Application#launch(String...) </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00095">95</a></p>
+
+</div>
+</div>
+<a id="a5546682bda948ba9513d649b6aaf33a8" name="a5546682bda948ba9513d649b6aaf33a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5546682bda948ba9513d649b6aaf33a8">&#9670;&#160;</a></span>reloadMainView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app.MainApp.reloadMainView </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Перезагружает главное окно </p>
+<p>Загружает заново FXML файл главного окна и обновляет сцену</p>
+<dl class="section note"><dt>Заметки</dt><dd>Используется для обновления интерфейса без перезапуска приложения </dd>
+<dd>
+Сохраняет текущие размеры окна</dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IOException</td><td>если не удается загрузить FXML файл</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>См. также</dt><dd>FXMLLoader </dd>
+<dd>
+Scene </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Не сохраняет состояние таблицы и другие UI элементы </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00314">314</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_app_8java_source.html#l00073">primaryStage</a>.</p>
+
+</div>
+</div>
+<a id="a92cfa72f96cc381ef46d20c6fb1ae193" name="a92cfa72f96cc381ef46d20c6fb1ae193"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92cfa72f96cc381ef46d20c6fb1ae193">&#9670;&#160;</a></span>showErrorDialog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app.MainApp.showErrorDialog </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>title</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>header</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>content</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Показывает диалоговое окно с ошибкой </p>
+<p>Создает и отображает модальное диалоговое окно с сообщением об ошибке</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>Заголовок диалогового окна </td></tr>
+    <tr><td class="paramname">header</td><td>Основной заголовок сообщения </td></tr>
+    <tr><td class="paramname">content</td><td>Подробное описание ошибки</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Используется для информирования пользователя о критических ошибках </dd>
+<dd>
+Окно блокирует взаимодействие с основным приложением до закрытия</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd>Alert </dd>
+<dd>
+Alert.AlertType#ERROR </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00292">292</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00162">start()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classapp_1_1_main_app_a92cfa72f96cc381ef46d20c6fb1ae193_icgraph.png" border="0" usemap="#aclassapp_1_1_main_app_a92cfa72f96cc381ef46d20c6fb1ae193_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassapp_1_1_main_app_a92cfa72f96cc381ef46d20c6fb1ae193_icgraph" id="aclassapp_1_1_main_app_a92cfa72f96cc381ef46d20c6fb1ae193_icgraph">
+<area shape="rect" title="Показывает диалоговое окно с ошибкой" alt="" coords="181,5,378,31"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a2f925faf172d4a1a66bf616b47a8b368" title="Метод запуска JavaFX приложения" alt="" coords="5,5,133,31"/>
+<area shape="poly" title=" " alt="" coords="163,18,133,21,133,16,168,18"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2f925faf172d4a1a66bf616b47a8b368" name="a2f925faf172d4a1a66bf616b47a8b368"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f925faf172d4a1a66bf616b47a8b368">&#9670;&#160;</a></span>start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app.MainApp.start </td>
+          <td>(</td>
+          <td class="paramtype">Stage</td>          <td class="paramname"><span class="paramname"><em>primaryStage</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Метод запуска JavaFX приложения </p>
+<p>Основной метод настройки и отображения пользовательского интерфейса</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">primaryStage</td><td>Главное окно приложения, предоставляемое JavaFX</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IOException</td><td>если не удается загрузить FXML файл главного окна </td></tr>
+    <tr><td class="paramname">NullPointerException</td><td>если не найден CSS файл или иконка</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>В этом методе:<ul>
+<li>Загружается FXML файл главного окна</li>
+<li>Настраивается сцена с CSS стилями</li>
+<li>Устанавливается иконка приложения</li>
+<li>Настраиваются минимальные размеры окна</li>
+<li>Добавляется обработчик закрытия окна</li>
+<li>Отображается главное окно</li>
+</ul>
+</dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Все исключения перехватываются и показываются в диалоговом окне</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd>FXMLLoader </dd>
+<dd>
+Scene </dd>
+<dd>
+Stage </dd>
+<dd>
+<a class="el" href="#a92cfa72f96cc381ef46d20c6fb1ae193" title="Показывает диалоговое окно с ошибкой">showErrorDialog(String, String, String)</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00162">162</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_app_8java_source.html#l00043">APP_TITLE</a>, <a class="el" href="_main_app_8java_source.html#l00079">audioManager</a>, <a class="el" href="_main_app_8java_source.html#l00067">MIN_HEIGHT</a>, <a class="el" href="_main_app_8java_source.html#l00061">MIN_WIDTH</a>, <a class="el" href="_main_app_8java_source.html#l00073">primaryStage</a>, <a class="el" href="_main_app_8java_source.html#l00292">showErrorDialog()</a>, <a class="el" href="_main_app_8java_source.html#l00055">WINDOW_HEIGHT</a> и <a class="el" href="_main_app_8java_source.html#l00049">WINDOW_WIDTH</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classapp_1_1_main_app_a2f925faf172d4a1a66bf616b47a8b368_cgraph.png" border="0" usemap="#aclassapp_1_1_main_app_a2f925faf172d4a1a66bf616b47a8b368_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassapp_1_1_main_app_a2f925faf172d4a1a66bf616b47a8b368_cgraph" id="aclassapp_1_1_main_app_a2f925faf172d4a1a66bf616b47a8b368_cgraph">
+<area shape="rect" title="Метод запуска JavaFX приложения" alt="" coords="5,5,133,31"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a92cfa72f96cc381ef46d20c6fb1ae193" title="Показывает диалоговое окно с ошибкой" alt="" coords="181,5,378,31"/>
+<area shape="poly" title=" " alt="" coords="133,16,167,18,162,18,133,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a81713cb9b4148cc9775e965fc14a1834" name="a81713cb9b4148cc9775e965fc14a1834"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81713cb9b4148cc9775e965fc14a1834">&#9670;&#160;</a></span>stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app.MainApp.stop </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Метод остановки приложения </p>
+<p>Вызывается автоматически JavaFX при завершении приложения Выполняет очистку ресурсов и сохранение данных</p>
+<dl class="section note"><dt>Заметки</dt><dd>В этом методе:<ul>
+<li>Сохраняются все задачи в JSON файл</li>
+<li>Освобождаются ресурсы <a class="el" href="classutil_1_1_audio_manager.html" title="Менеджер для работы с аудио в приложении">AudioManager</a></li>
+<li>Логируется процесс остановки</li>
+</ul>
+</dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Метод гарантированно вызывается при нормальном завершении приложения</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd>TaskManager#getInstance() </dd>
+<dd>
+JsonUtil#saveTasks(List) </dd>
+<dd>
+<a class="el" href="classutil_1_1_audio_manager.html#a67ab556a4d2e6faff27ec5b80d97220c" title="Освобождает ресурсы">AudioManager.dispose()</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00243">243</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_app_8java_source.html#l00079">audioManager</a>, <a class="el" href="_task_manager_8java_source.html#l00124">model.TaskManager.getAllTasks()</a>, <a class="el" href="_task_manager_8java_source.html#l00073">model.TaskManager.getInstance()</a> и <a class="el" href="_json_util_8java_source.html#l00139">util.JsonUtil.saveTasks()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classapp_1_1_main_app_a81713cb9b4148cc9775e965fc14a1834_cgraph.png" border="0" usemap="#aclassapp_1_1_main_app_a81713cb9b4148cc9775e965fc14a1834_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassapp_1_1_main_app_a81713cb9b4148cc9775e965fc14a1834_cgraph" id="aclassapp_1_1_main_app_a81713cb9b4148cc9775e965fc14a1834_cgraph">
+<area shape="rect" title="Метод остановки приложения" alt="" coords="5,70,132,96"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#abc809a0b2d184494368cc5cc6dae6346" title="Возвращает копию списка всех задач" alt="" coords="197,5,372,46"/>
+<area shape="poly" title=" " alt="" coords="119,67,193,49,188,52,121,72"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea" title="Возвращает единственный экземпляр TaskManager." alt="" coords="180,70,389,96"/>
+<area shape="poly" title=" " alt="" coords="132,80,167,82,162,84,133,86"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421" title="Сохраняет все задачи в JSON файл" alt="" coords="206,124,363,149"/>
+<area shape="poly" title=" " alt="" coords="124,94,217,118,212,121,123,99"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a6ff214cd422dcd5f0d8c5d573cd251b6" title="Проверяет все задачи на просроченность" alt="" coords="451,5,642,46"/>
+<area shape="poly" title=" " alt="" coords="372,23,438,25,433,26,372,28"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c" title="Приватный конструктор" alt="" coords="437,70,656,96"/>
+<area shape="poly" title=" " alt="" coords="389,80,424,83,419,83,390,86"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="460,120,633,161"/>
+<area shape="poly" title=" " alt="" coords="364,135,448,139,442,139,364,140"/>
+<area shape="rect" href="classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="704,128,870,153"/>
+<area shape="poly" title=" " alt="" coords="633,138,691,140,686,140,634,143"/>
+<area shape="rect" href="classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="918,128,1080,153"/>
+<area shape="poly" title=" " alt="" coords="870,138,905,140,899,140,870,143"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="a4de943445d70b65abd35b43f95dfcf72" name="a4de943445d70b65abd35b43f95dfcf72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4de943445d70b65abd35b43f95dfcf72">&#9670;&#160;</a></span>APP_TITLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String app.MainApp.APP_TITLE = &quot;Умный планировщик задач&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Заголовок приложения </p>
+<p>Отображается в заголовке главного окна </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00043">43</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00162">start()</a>.</p>
+
+</div>
+</div>
+<a id="a821a0cbc770b47e801af93c8b55c7c98" name="a821a0cbc770b47e801af93c8b55c7c98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a821a0cbc770b47e801af93c8b55c7c98">&#9670;&#160;</a></span>audioManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutil_1_1_audio_manager.html">AudioManager</a> app.MainApp.audioManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Менеджер аудио </p>
+<p>Управляет звуковыми эффектами приложения (Singleton) </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00079">79</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00123">init()</a>, <a class="el" href="_main_app_8java_source.html#l00162">start()</a> и <a class="el" href="_main_app_8java_source.html#l00243">stop()</a>.</p>
+
+</div>
+</div>
+<a id="adb5ea69d0160842c8866b1482238712b" name="adb5ea69d0160842c8866b1482238712b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb5ea69d0160842c8866b1482238712b">&#9670;&#160;</a></span>MIN_HEIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final int app.MainApp.MIN_HEIGHT = 500</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Минимальная высота окна </p>
+<p>Минимальная высота, до которой пользователь может уменьшить окно </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00067">67</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00162">start()</a>.</p>
+
+</div>
+</div>
+<a id="a37ee9c5df8c0291fa0a35f78cbd54e0d" name="a37ee9c5df8c0291fa0a35f78cbd54e0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37ee9c5df8c0291fa0a35f78cbd54e0d">&#9670;&#160;</a></span>MIN_WIDTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final int app.MainApp.MIN_WIDTH = 700</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Минимальная ширина окна </p>
+<p>Минимальная ширина, до которой пользователь может уменьшить окно </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00061">61</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00162">start()</a>.</p>
+
+</div>
+</div>
+<a id="afbe7794c7747dbb9041de396c018cac9" name="afbe7794c7747dbb9041de396c018cac9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbe7794c7747dbb9041de396c018cac9">&#9670;&#160;</a></span>primaryStage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Stage app.MainApp.primaryStage</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Главное окно приложения </p>
+<p>Ссылка на первичную Stage (окно) JavaFX приложения </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00073">73</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00274">getPrimaryStage()</a>, <a class="el" href="_main_app_8java_source.html#l00314">reloadMainView()</a> и <a class="el" href="_main_app_8java_source.html#l00162">start()</a>.</p>
+
+</div>
+</div>
+<a id="ae939f4a6c6431cf101b4c427d11710ed" name="ae939f4a6c6431cf101b4c427d11710ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae939f4a6c6431cf101b4c427d11710ed">&#9670;&#160;</a></span>WINDOW_HEIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final int app.MainApp.WINDOW_HEIGHT = 600</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Начальная высота окна </p>
+<p>Высота главного окна при запуске приложения (в пикселях) </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00055">55</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00162">start()</a>.</p>
+
+</div>
+</div>
+<a id="a565d6f2ea906cb6b7c64d0a2e6a3da31" name="a565d6f2ea906cb6b7c64d0a2e6a3da31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a565d6f2ea906cb6b7c64d0a2e6a3da31">&#9670;&#160;</a></span>WINDOW_WIDTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final int app.MainApp.WINDOW_WIDTH = 900</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Начальная ширина окна </p>
+<p>Ширина главного окна при запуске приложения (в пикселях) </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00049">49</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00162">start()</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>src/app/<a class="el" href="_main_app_8java_source.html">MainApp.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespaceapp.html">app</a></li><li class="navelem"><a href="classapp_1_1_main_app.html">MainApp</a></li>
+    <li class="footer">Документация по Умный планировщик задач (To-Do List). Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

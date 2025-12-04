@@ -1,0 +1,7 @@
+<map id="util.JsonUtil.convertTasksToJson" name="util.JsonUtil.convertTasksToJson">
+<area shape="rect" id="Node000001" title="Преобразует список задач в JSON строку" alt="" coords="5,5,178,46"/>
+<area shape="rect" id="Node000002" href="$classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="226,13,391,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,23,213,25,208,26,178,28"/>
+<area shape="rect" id="Node000003" href="$classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="439,13,601,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="391,23,426,26,421,26,391,28"/>
+</map>

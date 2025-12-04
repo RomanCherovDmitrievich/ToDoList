@@ -1,0 +1,11 @@
+<map id="view.NewTaskController.initialize" name="view.NewTaskController.initialize">
+<area shape="rect" id="Node000001" title="Инициализация контроллера" alt="" coords="5,55,217,80"/>
+<area shape="rect" id="Node000002" href="$enummodel_1_1_priority.html#a80b9836442ce641c8f1deeb10d9ef177" title="Возвращает приоритет по умолчанию" alt="" coords="303,5,466,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,51,297,33,292,35,187,57"/>
+<area shape="rect" id="Node000004" href="$enummodel_1_1_priority.html#a3cf5e815f238abd0cf21096783fea607" title="Возвращает читаемое имя приоритета" alt="" coords="284,55,484,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="217,65,271,67,266,68,217,70"/>
+<area shape="rect" id="Node000005" href="$classview_1_1_new_task_controller.html#a66c1573253964fcde19808f4d57ba3e3" title="Проверяет корректность заполнения формы" alt="" coords="265,104,504,130"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="187,78,297,100,292,101,186,84"/>
+<area shape="rect" id="Node000003" href="$enummodel_1_1_priority.html#a6ea7a40e9195dbd8cc7aa9fa8cdb8c3d" title="Конструктор приоритета" alt="" coords="552,5,696,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="466,16,539,18,534,19,467,21"/>
+</map>

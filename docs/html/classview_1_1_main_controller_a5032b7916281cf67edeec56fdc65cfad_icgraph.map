@@ -1,0 +1,23 @@
+<map id="view.MainController.showAlert" name="view.MainController.showAlert">
+<area shape="rect" id="Node000001" title="Показывает информационное диалоговое окно" alt="" coords="894,107,1062,147"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title="Обработчик кнопки добавления новой задачи" alt="" coords="238,5,413,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="925,99,887,83,845,68,730,45,613,32,504,26,414,26,413,20,504,21,613,27,731,40,846,63,889,78,930,99"/>
+<area shape="rect" id="Node000003" href="$classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title="Обработчик кнопки удаления задачи" alt="" coords="238,136,413,177"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="878,134,413,155,413,150,880,129"/>
+<area shape="rect" id="Node000004" href="$classview_1_1_main_controller.html#afefa6c872fcfd41bdbae5d6aa1078b21" title="Сортирует задачи по дате выполнения" alt="" coords="686,192,846,233"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="914,153,819,194,818,189,909,154"/>
+<area shape="rect" id="Node000007" href="$classview_1_1_main_controller.html#a4bfffd15238c2895e76c565921cd3441" title="Сортирует задачи по приоритету" alt="" coords="686,77,846,118"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="876,113,846,111,846,106,881,113"/>
+<area shape="rect" id="Node000005" href="$classview_1_1_main_controller.html#aa87f060a3d3e1f5747310cdf4945a256" title="Настраивает кнопки интерфейса" alt="" coords="465,192,634,233"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="668,212,635,215,635,210,673,212"/>
+<area shape="rect" id="Node000006" href="$classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,140,190,165"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="447,209,347,205,237,191,142,168,142,163,238,186,347,199,452,209"/>
+<area shape="poly" id="edge12_Node000007_Node000005" title=" " alt="" coords="715,125,591,194,589,189,710,126"/>
+<area shape="rect" id="Node000008" href="$classview_1_1_main_controller.html#a6c51614865ef9a13038357431ad8ee7c" title="Обновляет содержимое таблицы задач" alt="" coords="461,73,638,114"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="668,96,639,98,639,93,673,96"/>
+<area shape="poly" id="edge8_Node000008_Node000002" title=" " alt="" coords="463,69,395,49,395,44,468,68"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="462,118,402,138,400,133,457,119"/>
+<area shape="rect" id="Node000009" href="$classview_1_1_main_controller.html#af03ff4fe034cfc97fd82327d0e618e59" title="Загружает задачи из файла и отображает их в таблице" alt="" coords="245,71,406,111"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="443,93,407,95,406,89,448,92"/>
+<area shape="poly" id="edge11_Node000009_Node000006" title=" " alt="" coords="230,117,149,141,147,136,235,114"/>
+</map>

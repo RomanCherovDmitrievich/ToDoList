@@ -1,0 +1,5 @@
+<map id="viewmodel.TaskViewModel.TaskViewModel" name="viewmodel.TaskViewModel.TaskViewModel">
+<area shape="rect" id="Node000001" title="Конструктор на основе модели Task." alt="" coords="275,5,458,46"/>
+<area shape="rect" id="Node000002" href="$classviewmodel_1_1_task_view_model.html#abd590a45fda140d14ba745db51c46490" title="Сравнивает два объекта TaskViewModel на равенство" alt="" coords="5,13,227,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="256,26,227,28,227,23,262,26"/>
+</map>

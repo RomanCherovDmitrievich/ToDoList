@@ -1,0 +1,2344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Умный планировщик задач (To-Do List): Класс view.MainController</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">JavaFX приложение для управления задачами с новогодней темой</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classview_1_1_main_controller.html','','classview_1_1_main_controller-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс view.MainController</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Контроллер главного окна приложения To-Do List.  
+ <a href="#details">Подробнее...</a></p>
+<div class="dynheader">
+Граф связей класса view.MainController:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller__coll__graph.png" border="0" usemap="#aview_8_main_controller_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="aview_8_main_controller_coll__map" id="aview_8_main_controller_coll__map">
+<area shape="rect" title="Контроллер главного окна приложения To&#45;Do List." alt="" coords="125,102,259,128"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html" title="Менеджер задач &#45; центральный класс для управления задачами" alt="" coords="5,5,144,31"/>
+<area shape="poly" title=" " alt="" coords="102,38,179,100,174,102,100,43"/>
+<area shape="poly" title=" " alt="" coords="159,9,170,18,162,26,145,29,143,24,160,22,165,18,159,14"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html" title="Менеджер для работы с аудио в приложении" alt="" coords="249,5,374,31"/>
+<area shape="poly" title=" " alt="" coords="288,40,209,104,206,99,283,41"/>
+<area shape="poly" title=" " alt="" coords="390,9,401,18,393,27,375,30,374,24,391,22,396,18,389,14"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:SnowflakeData" id="r_SnowflakeData"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classview_1_1_main_controller_1_1_snowflake_data.html">SnowflakeData</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Внутренний класс для хранения данных одной снежинки  <a href="classview_1_1_main_controller_1_1_snowflake_data.html#details">Подробнее...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ace0c2bdaa74f6158c7d2b1856fcb99fd" id="r_ace0c2bdaa74f6158c7d2b1856fcb99fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace0c2bdaa74f6158c7d2b1856fcb99fd">initialize</a> ()</td></tr>
+<tr class="memdesc:ace0c2bdaa74f6158c7d2b1856fcb99fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализация контроллера  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:ae16c7e665a88192e87fb07fff3dd7ad5" id="r_ae16c7e665a88192e87fb07fff3dd7ad5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae16c7e665a88192e87fb07fff3dd7ad5">setupTableColumns</a> ()</td></tr>
+<tr class="memdesc:ae16c7e665a88192e87fb07fff3dd7ad5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Настраивает колонки таблицы задач  <br /></td></tr>
+<tr class="memitem:a18f9d437b1015bdbe51340d0275c2a43" id="r_a18f9d437b1015bdbe51340d0275c2a43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18f9d437b1015bdbe51340d0275c2a43">setupAdaptiveLayout</a> ()</td></tr>
+<tr class="memdesc:a18f9d437b1015bdbe51340d0275c2a43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Настраивает адаптивный layout интерфейса  <br /></td></tr>
+<tr class="memitem:ae4fb9b136c72c5affdf42b517c5e6e91" id="r_ae4fb9b136c72c5affdf42b517c5e6e91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4fb9b136c72c5affdf42b517c5e6e91">setupResizeListeners</a> ()</td></tr>
+<tr class="memdesc:ae4fb9b136c72c5affdf42b517c5e6e91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Настраивает слушатели изменения размеров окна  <br /></td></tr>
+<tr class="memitem:ab0783c7504d7a4fe9637653fbbdeff9a" id="r_ab0783c7504d7a4fe9637653fbbdeff9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0783c7504d7a4fe9637653fbbdeff9a">adjustTableColumns</a> ()</td></tr>
+<tr class="memdesc:ab0783c7504d7a4fe9637653fbbdeff9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Настраивает ширины колонок таблицы  <br /></td></tr>
+<tr class="memitem:af4f451efaddaf24ec9e252f9d1f7bbc1" id="r_af4f451efaddaf24ec9e252f9d1f7bbc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4f451efaddaf24ec9e252f9d1f7bbc1">adjustTableHeight</a> ()</td></tr>
+<tr class="memdesc:af4f451efaddaf24ec9e252f9d1f7bbc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Настраивает высоту таблицы  <br /></td></tr>
+<tr class="memitem:aa87f060a3d3e1f5747310cdf4945a256" id="r_aa87f060a3d3e1f5747310cdf4945a256"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa87f060a3d3e1f5747310cdf4945a256">setupButtons</a> ()</td></tr>
+<tr class="memdesc:aa87f060a3d3e1f5747310cdf4945a256"><td class="mdescLeft">&#160;</td><td class="mdescRight">Настраивает кнопки интерфейса  <br /></td></tr>
+<tr class="memitem:afefa6c872fcfd41bdbae5d6aa1078b21" id="r_afefa6c872fcfd41bdbae5d6aa1078b21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afefa6c872fcfd41bdbae5d6aa1078b21">sortByDate</a> ()</td></tr>
+<tr class="memdesc:afefa6c872fcfd41bdbae5d6aa1078b21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сортирует задачи по дате выполнения  <br /></td></tr>
+<tr class="memitem:a4bfffd15238c2895e76c565921cd3441" id="r_a4bfffd15238c2895e76c565921cd3441"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4bfffd15238c2895e76c565921cd3441">sortByPriority</a> ()</td></tr>
+<tr class="memdesc:a4bfffd15238c2895e76c565921cd3441"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сортирует задачи по приоритету  <br /></td></tr>
+<tr class="memitem:a176bf2a7ba00056ac7a14652c6650c2d" id="r_a176bf2a7ba00056ac7a14652c6650c2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a176bf2a7ba00056ac7a14652c6650c2d">initSnowflakes</a> ()</td></tr>
+<tr class="memdesc:a176bf2a7ba00056ac7a14652c6650c2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует снежинки для всего окна  <br /></td></tr>
+<tr class="memitem:ab66a02b22de6d12575196237192dbc81" id="r_ab66a02b22de6d12575196237192dbc81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab66a02b22de6d12575196237192dbc81">createSnowflakesForWindow</a> (double windowWidth, double windowHeight)</td></tr>
+<tr class="memdesc:ab66a02b22de6d12575196237192dbc81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создает снежинки для всего окна  <br /></td></tr>
+<tr class="memitem:ae7c0b0165f6acc4f9b614e26c5f52925" id="r_ae7c0b0165f6acc4f9b614e26c5f52925"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7c0b0165f6acc4f9b614e26c5f52925">updateSnowflakesForWindow</a> ()</td></tr>
+<tr class="memdesc:ae7c0b0165f6acc4f9b614e26c5f52925"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновляет снежинки при изменении размера окна  <br /></td></tr>
+<tr class="memitem:ad174cb4a233843c3a918f44f8c04df3d" id="r_ad174cb4a233843c3a918f44f8c04df3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad174cb4a233843c3a918f44f8c04df3d">startSnowAnimation</a> ()</td></tr>
+<tr class="memdesc:ad174cb4a233843c3a918f44f8c04df3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запускает анимацию снежинок  <br /></td></tr>
+<tr class="memitem:a7747886ba8b07db62a5639a71af582d1" id="r_a7747886ba8b07db62a5639a71af582d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7747886ba8b07db62a5639a71af582d1">updateSnowflakesAnimation</a> (double deltaTime)</td></tr>
+<tr class="memdesc:a7747886ba8b07db62a5639a71af582d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновляет анимацию снежинок  <br /></td></tr>
+<tr class="memitem:af03ff4fe034cfc97fd82327d0e618e59" id="r_af03ff4fe034cfc97fd82327d0e618e59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af03ff4fe034cfc97fd82327d0e618e59">loadTasks</a> ()</td></tr>
+<tr class="memdesc:af03ff4fe034cfc97fd82327d0e618e59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загружает задачи из файла и отображает их в таблице  <br /></td></tr>
+<tr class="memitem:a6c51614865ef9a13038357431ad8ee7c" id="r_a6c51614865ef9a13038357431ad8ee7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c51614865ef9a13038357431ad8ee7c">refreshTable</a> ()</td></tr>
+<tr class="memdesc:a6c51614865ef9a13038357431ad8ee7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновляет содержимое таблицы задач  <br /></td></tr>
+<tr class="memitem:a073ccddeb707b28c89c4f0c69065fcfb" id="r_a073ccddeb707b28c89c4f0c69065fcfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a073ccddeb707b28c89c4f0c69065fcfb">updateStatusLabel</a> ()</td></tr>
+<tr class="memdesc:a073ccddeb707b28c89c4f0c69065fcfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновляет статусную строку с информацией о задачах  <br /></td></tr>
+<tr class="memitem:a7b2629529c3951a605585504047aca21" id="r_a7b2629529c3951a605585504047aca21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b2629529c3951a605585504047aca21">handleAddTask</a> ()</td></tr>
+<tr class="memdesc:a7b2629529c3951a605585504047aca21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик кнопки добавления новой задачи  <br /></td></tr>
+<tr class="memitem:a97dc6cade09436222a2a9a4876b94b78" id="r_a97dc6cade09436222a2a9a4876b94b78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97dc6cade09436222a2a9a4876b94b78">handleDeleteTask</a> ()</td></tr>
+<tr class="memdesc:a97dc6cade09436222a2a9a4876b94b78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик кнопки удаления задачи  <br /></td></tr>
+<tr class="memitem:ab0a0b6174538107b445044eb3139e87c" id="r_ab0a0b6174538107b445044eb3139e87c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0a0b6174538107b445044eb3139e87c">searchTasks</a> ()</td></tr>
+<tr class="memdesc:ab0a0b6174538107b445044eb3139e87c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выполняет поиск задач по текстовому запросу  <br /></td></tr>
+<tr class="memitem:a5032b7916281cf67edeec56fdc65cfad" id="r_a5032b7916281cf67edeec56fdc65cfad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5032b7916281cf67edeec56fdc65cfad">showAlert</a> (String title, String header, String content)</td></tr>
+<tr class="memdesc:a5032b7916281cf67edeec56fdc65cfad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Показывает информационное диалоговое окно  <br /></td></tr>
+<tr class="memitem:a923c864e4e8cb56706451947145459a5" id="r_a923c864e4e8cb56706451947145459a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a923c864e4e8cb56706451947145459a5">handleExit</a> ()</td></tr>
+<tr class="memdesc:a923c864e4e8cb56706451947145459a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик закрытия приложения  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:a913d44ac87626a10112f0dfce47d4779" id="r_a913d44ac87626a10112f0dfce47d4779"><td class="memItemLeft" align="right" valign="top">TableView&lt; <a class="el" href="classviewmodel_1_1_task_view_model.html">TaskViewModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a913d44ac87626a10112f0dfce47d4779">taskTable</a></td></tr>
+<tr class="memdesc:a913d44ac87626a10112f0dfce47d4779"><td class="mdescLeft">&#160;</td><td class="mdescRight">Таблица для отображения задач  <br /></td></tr>
+<tr class="memitem:a024755eb2f6747771ff804d5fc9f89d1" id="r_a024755eb2f6747771ff804d5fc9f89d1"><td class="memItemLeft" align="right" valign="top">TableColumn&lt; <a class="el" href="classviewmodel_1_1_task_view_model.html">TaskViewModel</a>, String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a024755eb2f6747771ff804d5fc9f89d1">titleColumn</a></td></tr>
+<tr class="memdesc:a024755eb2f6747771ff804d5fc9f89d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Колонка таблицы для заголовка задачи  <br /></td></tr>
+<tr class="memitem:a968cc913497e5ab12be4d432e8a28eb2" id="r_a968cc913497e5ab12be4d432e8a28eb2"><td class="memItemLeft" align="right" valign="top">TableColumn&lt; <a class="el" href="classviewmodel_1_1_task_view_model.html">TaskViewModel</a>, String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a968cc913497e5ab12be4d432e8a28eb2">descriptionColumn</a></td></tr>
+<tr class="memdesc:a968cc913497e5ab12be4d432e8a28eb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Колонка таблицы для описания задачи  <br /></td></tr>
+<tr class="memitem:aa47a876a0d7c38aedf2f248d8cffe05a" id="r_aa47a876a0d7c38aedf2f248d8cffe05a"><td class="memItemLeft" align="right" valign="top">TableColumn&lt; <a class="el" href="classviewmodel_1_1_task_view_model.html">TaskViewModel</a>, LocalDateTime &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa47a876a0d7c38aedf2f248d8cffe05a">deadlineColumn</a></td></tr>
+<tr class="memdesc:aa47a876a0d7c38aedf2f248d8cffe05a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Колонка таблицы для срока выполнения задачи  <br /></td></tr>
+<tr class="memitem:a990ea6d6440ed941c68f1f51bd10f5dd" id="r_a990ea6d6440ed941c68f1f51bd10f5dd"><td class="memItemLeft" align="right" valign="top">TableColumn&lt; <a class="el" href="classviewmodel_1_1_task_view_model.html">TaskViewModel</a>, <a class="el" href="enummodel_1_1_priority.html">Priority</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a990ea6d6440ed941c68f1f51bd10f5dd">priorityColumn</a></td></tr>
+<tr class="memdesc:a990ea6d6440ed941c68f1f51bd10f5dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Колонка таблицы для приоритета задачи  <br /></td></tr>
+<tr class="memitem:a9650b688c33a565ff303aad7a0a0364e" id="r_a9650b688c33a565ff303aad7a0a0364e"><td class="memItemLeft" align="right" valign="top">TableColumn&lt; <a class="el" href="classviewmodel_1_1_task_view_model.html">TaskViewModel</a>, String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9650b688c33a565ff303aad7a0a0364e">categoryColumn</a></td></tr>
+<tr class="memdesc:a9650b688c33a565ff303aad7a0a0364e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Колонка таблицы для категории задачи  <br /></td></tr>
+<tr class="memitem:a0859893b8b9dc5032b836774a2e07229" id="r_a0859893b8b9dc5032b836774a2e07229"><td class="memItemLeft" align="right" valign="top">TableColumn&lt; <a class="el" href="classviewmodel_1_1_task_view_model.html">TaskViewModel</a>, Boolean &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0859893b8b9dc5032b836774a2e07229">statusColumn</a></td></tr>
+<tr class="memdesc:a0859893b8b9dc5032b836774a2e07229"><td class="mdescLeft">&#160;</td><td class="mdescRight">Колонка таблицы для статуса выполнения задачи  <br /></td></tr>
+<tr class="memitem:a4f8d5b8214e956d51dab2d44a760aeb1" id="r_a4f8d5b8214e956d51dab2d44a760aeb1"><td class="memItemLeft" align="right" valign="top">TextField&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f8d5b8214e956d51dab2d44a760aeb1">searchField</a></td></tr>
+<tr class="memdesc:a4f8d5b8214e956d51dab2d44a760aeb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Поле для поиска задач  <br /></td></tr>
+<tr class="memitem:a22521069c59ba2b0bdbc22a47f159223" id="r_a22521069c59ba2b0bdbc22a47f159223"><td class="memItemLeft" align="right" valign="top">Button&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22521069c59ba2b0bdbc22a47f159223">addButton</a></td></tr>
+<tr class="memdesc:a22521069c59ba2b0bdbc22a47f159223"><td class="mdescLeft">&#160;</td><td class="mdescRight">Кнопка для добавления новой задачи  <br /></td></tr>
+<tr class="memitem:abb8e4227b9fa0499cd8fd28edd45695c" id="r_abb8e4227b9fa0499cd8fd28edd45695c"><td class="memItemLeft" align="right" valign="top">Button&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb8e4227b9fa0499cd8fd28edd45695c">deleteButton</a></td></tr>
+<tr class="memdesc:abb8e4227b9fa0499cd8fd28edd45695c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Кнопка для удаления выбранной задачи  <br /></td></tr>
+<tr class="memitem:a08c6fc68b23fdbadd9bbdbc1b44e5c7a" id="r_a08c6fc68b23fdbadd9bbdbc1b44e5c7a"><td class="memItemLeft" align="right" valign="top">Button&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08c6fc68b23fdbadd9bbdbc1b44e5c7a">sortByDateButton</a></td></tr>
+<tr class="memdesc:a08c6fc68b23fdbadd9bbdbc1b44e5c7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Кнопка для сортировки задач по дате  <br /></td></tr>
+<tr class="memitem:abcf16b7820504772707b5b011ff56898" id="r_abcf16b7820504772707b5b011ff56898"><td class="memItemLeft" align="right" valign="top">Button&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abcf16b7820504772707b5b011ff56898">sortByPriorityButton</a></td></tr>
+<tr class="memdesc:abcf16b7820504772707b5b011ff56898"><td class="mdescLeft">&#160;</td><td class="mdescRight">Кнопка для сортировки задач по приоритету  <br /></td></tr>
+<tr class="memitem:a229f68a68979f67428e5ecf5523131f6" id="r_a229f68a68979f67428e5ecf5523131f6"><td class="memItemLeft" align="right" valign="top">Label&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a229f68a68979f67428e5ecf5523131f6">statusLabel</a></td></tr>
+<tr class="memdesc:a229f68a68979f67428e5ecf5523131f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метка для отображения статистики задач  <br /></td></tr>
+<tr class="memitem:aabbc255cb401c48a4ea3f64c1a7292a9" id="r_aabbc255cb401c48a4ea3f64c1a7292a9"><td class="memItemLeft" align="right" valign="top">Pane&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aabbc255cb401c48a4ea3f64c1a7292a9">snowPane</a></td></tr>
+<tr class="memdesc:aabbc255cb401c48a4ea3f64c1a7292a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Панель для анимации снежинок  <br /></td></tr>
+<tr class="memitem:a28672b48fd401684108b52a3806de7cb" id="r_a28672b48fd401684108b52a3806de7cb"><td class="memItemLeft" align="right" valign="top">Label&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28672b48fd401684108b52a3806de7cb">appTitleLabel</a></td></tr>
+<tr class="memdesc:a28672b48fd401684108b52a3806de7cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метка с заголовком приложения  <br /></td></tr>
+<tr class="memitem:a3bea8aa103232816bfd84a1da6f70dd9" id="r_a3bea8aa103232816bfd84a1da6f70dd9"><td class="memItemLeft" align="right" valign="top">Pane&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bea8aa103232816bfd84a1da6f70dd9">mainContainer</a></td></tr>
+<tr class="memdesc:a3bea8aa103232816bfd84a1da6f70dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Главный контейнер интерфейса  <br /></td></tr>
+<tr class="memitem:a98518138e35ef80460fb346d3e2b8e4f" id="r_a98518138e35ef80460fb346d3e2b8e4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmodel_1_1_task_manager.html">TaskManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98518138e35ef80460fb346d3e2b8e4f">taskManager</a></td></tr>
+<tr class="memdesc:a98518138e35ef80460fb346d3e2b8e4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Менеджер задач для работы с бизнес-логикой  <br /></td></tr>
+<tr class="memitem:adf49d42c90d8876b46d204cdc35b08c5" id="r_adf49d42c90d8876b46d204cdc35b08c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classutil_1_1_audio_manager.html">AudioManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf49d42c90d8876b46d204cdc35b08c5">audioManager</a></td></tr>
+<tr class="memdesc:adf49d42c90d8876b46d204cdc35b08c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Менеджер аудио для воспроизведения звуковых эффектов  <br /></td></tr>
+<tr class="memitem:afd63b350c4b30bb4072ac6bd9d3d7da6" id="r_afd63b350c4b30bb4072ac6bd9d3d7da6"><td class="memItemLeft" align="right" valign="top">AnimationTimer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd63b350c4b30bb4072ac6bd9d3d7da6">snowTimer</a></td></tr>
+<tr class="memdesc:afd63b350c4b30bb4072ac6bd9d3d7da6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Таймер для анимации снежинок  <br /></td></tr>
+<tr class="memitem:ad92a8438dd70b5ed4ea5e6a259ca61e3" id="r_ad92a8438dd70b5ed4ea5e6a259ca61e3"><td class="memItemLeft" align="right" valign="top">Random&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad92a8438dd70b5ed4ea5e6a259ca61e3">random</a></td></tr>
+<tr class="memdesc:ad92a8438dd70b5ed4ea5e6a259ca61e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Генератор случайных чисел для создания снежинок  <br /></td></tr>
+<tr class="memitem:ae84a525bfb7679121df719060ae5785c" id="r_ae84a525bfb7679121df719060ae5785c"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classview_1_1_main_controller_1_1_snowflake_data.html">SnowflakeData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae84a525bfb7679121df719060ae5785c">snowflakes</a></td></tr>
+<tr class="memdesc:ae84a525bfb7679121df719060ae5785c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Список данных снежинок для анимации  <br /></td></tr>
+<tr class="memitem:ae06ddcbecf646568c4570a8d5b5e1c96" id="r_ae06ddcbecf646568c4570a8d5b5e1c96"><td class="memItemLeft" align="right" valign="top">ObservableList&lt; <a class="el" href="classviewmodel_1_1_task_view_model.html">TaskViewModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae06ddcbecf646568c4570a8d5b5e1c96">taskList</a></td></tr>
+<tr class="memdesc:ae06ddcbecf646568c4570a8d5b5e1c96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Наблюдаемый список задач для отображения в таблице  <br /></td></tr>
+<tr class="memitem:aef8f3aaf553a94a2d7fc3e662309ef79" id="r_aef8f3aaf553a94a2d7fc3e662309ef79"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef8f3aaf553a94a2d7fc3e662309ef79">sortByDateAscending</a> = true</td></tr>
+<tr class="memdesc:aef8f3aaf553a94a2d7fc3e662309ef79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Флаг направления сортировки по дате (true - возрастание, false - убывание).  <br /></td></tr>
+<tr class="memitem:a23a0e446693c2e65459640e0bb6a4ac1" id="r_a23a0e446693c2e65459640e0bb6a4ac1"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23a0e446693c2e65459640e0bb6a4ac1">sortByPriorityAscending</a> = false</td></tr>
+<tr class="memdesc:a23a0e446693c2e65459640e0bb6a4ac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Флаг направления сортировки по приоритету  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Контроллер главного окна приложения To-Do List. </p>
+<p>Управляет пользовательским интерфейсом главного окна, обрабатывает все пользовательские взаимодействия, координирует работу между моделью данных и представлением. Отвечает за отображение задач, обработку действий пользователя, сортировку, поиск и анимацию снежинок.</p>
+<dl class="section author"><dt>Автор</dt><dd>Разработчик проекта </dd></dl>
+<dl class="section version"><dt>Версия</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Дата</dt><dd>Ноябрь 2025</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classmodel_1_1_task_manager.html" title="Менеджер задач - центральный класс для управления задачами">TaskManager</a> </dd>
+<dd>
+<a class="el" href="classviewmodel_1_1_task_view_model.html" title="ViewModel для отображения задачи в пользовательском интерфейсе">TaskViewModel</a> </dd>
+<dd>
+<a class="el" href="classview_1_1_new_task_controller.html" title="Контроллер для диалогового окна создания новой задачи">NewTaskController</a> </dd>
+<dd>
+<a class="el" href="classutil_1_1_json_util.html" title="Утилита для работы с JSON файлами задач">JsonUtil</a> </dd>
+<dd>
+<a class="el" href="classutil_1_1_audio_manager.html" title="Менеджер для работы с аудио в приложении">AudioManager</a></dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Реализует паттерн MVC/MVVM для разделения ответственности </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Все методы, помеченные @FXML, вызываются автоматически JavaFX </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00060">60</a></p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="ab0783c7504d7a4fe9637653fbbdeff9a" name="ab0783c7504d7a4fe9637653fbbdeff9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0783c7504d7a4fe9637653fbbdeff9a">&#9670;&#160;</a></span>adjustTableColumns()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.MainController.adjustTableColumns </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Настраивает ширины колонок таблицы </p>
+<p>Вычисляет оптимальные ширины колонок таблицы на основе текущей ширины таблицы и предопределенных процентных соотношений.</p>
+<dl class="section note"><dt>Заметки</dt><dd>Процентные соотношения колонок:<ul>
+<li>Заголовок: 20%</li>
+<li>Описание: 30%</li>
+<li>Срок выполнения: 15%</li>
+<li>Приоритет: 10%</li>
+<li>Категория: 10%</li>
+<li>Статус: 8% </li>
+</ul>
+</dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00482">482</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_controller_8java_source.html#l00081">categoryColumn</a>, <a class="el" href="_main_controller_8java_source.html#l00075">deadlineColumn</a>, <a class="el" href="_main_controller_8java_source.html#l00072">descriptionColumn</a>, <a class="el" href="_main_controller_8java_source.html#l00078">priorityColumn</a>, <a class="el" href="_main_controller_8java_source.html#l00084">statusColumn</a>, <a class="el" href="_main_controller_8java_source.html#l00066">taskTable</a> и <a class="el" href="_main_controller_8java_source.html#l00069">titleColumn</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00453">setupResizeListeners()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_ab0783c7504d7a4fe9637653fbbdeff9a_icgraph.png" border="0" usemap="#aclassview_1_1_main_controller_ab0783c7504d7a4fe9637653fbbdeff9a_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_ab0783c7504d7a4fe9637653fbbdeff9a_icgraph" id="aclassview_1_1_main_controller_ab0783c7504d7a4fe9637653fbbdeff9a_icgraph">
+<area shape="rect" title="Настраивает ширины колонок таблицы" alt="" coords="672,5,845,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae4fb9b136c72c5affdf42b517c5e6e91" title="Настраивает слушатели изменения размеров окна" alt="" coords="455,5,624,46"/>
+<area shape="poly" title=" " alt="" coords="654,26,625,28,625,23,659,26"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a18f9d437b1015bdbe51340d0275c2a43" title="Настраивает адаптивный layout интерфейса" alt="" coords="238,5,407,46"/>
+<area shape="poly" title=" " alt="" coords="437,26,407,28,407,23,442,26"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,13,190,38"/>
+<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af4f451efaddaf24ec9e252f9d1f7bbc1" name="af4f451efaddaf24ec9e252f9d1f7bbc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4f451efaddaf24ec9e252f9d1f7bbc1">&#9670;&#160;</a></span>adjustTableHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.MainController.adjustTableHeight </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Настраивает высоту таблицы </p>
+<p>Устанавливает предпочтительную высоту таблицы как процент от высоты окна, чтобы таблица занимала фиксированную часть интерфейса.</p>
+<dl class="section note"><dt>Заметки</dt><dd>Таблица занимает 60% от доступной высоты окна, остальное пространство отводится под другие элементы интерфейса </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00508">508</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_controller_8java_source.html#l00066">taskTable</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00453">setupResizeListeners()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_af4f451efaddaf24ec9e252f9d1f7bbc1_icgraph.png" border="0" usemap="#aclassview_1_1_main_controller_af4f451efaddaf24ec9e252f9d1f7bbc1_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_af4f451efaddaf24ec9e252f9d1f7bbc1_icgraph" id="aclassview_1_1_main_controller_af4f451efaddaf24ec9e252f9d1f7bbc1_icgraph">
+<area shape="rect" title="Настраивает высоту таблицы" alt="" coords="672,5,845,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae4fb9b136c72c5affdf42b517c5e6e91" title="Настраивает слушатели изменения размеров окна" alt="" coords="455,5,624,46"/>
+<area shape="poly" title=" " alt="" coords="654,26,625,28,625,23,659,26"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a18f9d437b1015bdbe51340d0275c2a43" title="Настраивает адаптивный layout интерфейса" alt="" coords="238,5,407,46"/>
+<area shape="poly" title=" " alt="" coords="437,26,407,28,407,23,442,26"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,13,190,38"/>
+<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab66a02b22de6d12575196237192dbc81" name="ab66a02b22de6d12575196237192dbc81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab66a02b22de6d12575196237192dbc81">&#9670;&#160;</a></span>createSnowflakesForWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.MainController.createSnowflakesForWindow </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>windowWidth</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>windowHeight</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Создает снежинки для всего окна </p>
+<p>Создает указанное количество снежинок со случайными параметрами: размером, позицией, прозрачностью, скоростью и амплитудой покачивания.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">windowWidth</td><td>Ширина окна для распределения снежинок </td></tr>
+    <tr><td class="paramname">windowHeight</td><td>Высота окна для распределения снежинок</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Каждая снежинка имеет уникальные параметры для естественного вида </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00692">692</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_controller_8java_source.html#l00135">random</a>, <a class="el" href="_main_controller_8java_source.html#l00138">snowflakes</a> и <a class="el" href="_main_controller_8java_source.html#l00116">snowPane</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00666">initSnowflakes()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_ab66a02b22de6d12575196237192dbc81_icgraph.png" border="0" usemap="#aclassview_1_1_main_controller_ab66a02b22de6d12575196237192dbc81_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_ab66a02b22de6d12575196237192dbc81_icgraph" id="aclassview_1_1_main_controller_ab66a02b22de6d12575196237192dbc81_icgraph">
+<area shape="rect" title="Создает снежинки для всего окна" alt="" coords="440,5,613,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a176bf2a7ba00056ac7a14652c6650c2d" title="Инициализирует снежинки для всего окна" alt="" coords="238,5,392,46"/>
+<area shape="poly" title=" " alt="" coords="422,26,393,28,393,23,427,26"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,13,190,38"/>
+<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,225,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7b2629529c3951a605585504047aca21" name="a7b2629529c3951a605585504047aca21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b2629529c3951a605585504047aca21">&#9670;&#160;</a></span>handleAddTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.MainController.handleAddTask </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обработчик кнопки добавления новой задачи </p>
+<p>Открывает модальное диалоговое окно для создания новой задачи. Загружает FXML файл диалога, инициализирует контроллер и отображает окно. После закрытия диалога проверяет, была ли создана новая задача, и если да, добавляет её в менеджер задач и сохраняет изменения.</p>
+<p>@event OnAction кнопки "Добавить"</p>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IOException</td><td>если не удается загрузить FXML файл диалога </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classview_1_1_new_task_controller.html" title="Контроллер для диалогового окна создания новой задачи">NewTaskController</a> </dd>
+<dd>
+JsonUtil#saveTasks(List) </dd>
+<dd>
+<a class="el" href="#a6c51614865ef9a13038357431ad8ee7c" title="Обновляет содержимое таблицы задач">refreshTable()</a> </dd>
+<dd>
+<a class="el" href="#a073ccddeb707b28c89c4f0c69065fcfb" title="Обновляет статусную строку с информацией о задачах">updateStatusLabel()</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00953">953</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_controller_8java_source.html#l00094">addButton</a>, <a class="el" href="_new_task_controller_8java_source.html#l00357">view.NewTaskController.getCreatedTask()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00370">view.NewTaskController.isTaskCreated()</a>, <a class="el" href="_main_controller_8java_source.html#l00899">refreshTable()</a>, <a class="el" href="_json_util_8java_source.html#l00139">util.JsonUtil.saveTasks()</a>, <a class="el" href="_main_controller_8java_source.html#l01065">showAlert()</a>, <a class="el" href="_main_controller_8java_source.html#l00126">taskManager</a> и <a class="el" href="_main_controller_8java_source.html#l00926">updateStatusLabel()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_a7b2629529c3951a605585504047aca21_cgraph.png" border="0" usemap="#aclassview_1_1_main_controller_a7b2629529c3951a605585504047aca21_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_a7b2629529c3951a605585504047aca21_cgraph" id="aclassview_1_1_main_controller_a7b2629529c3951a605585504047aca21_cgraph">
+<area shape="rect" title="Обработчик кнопки добавления новой задачи" alt="" coords="5,165,181,206"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a2b0dc44b9437aa1e0548cbf6c51e5721" title="Возвращает созданную задачу" alt="" coords="229,5,411,46"/>
+<area shape="poly" title=" " alt="" coords="109,163,159,111,192,82,227,57,241,51,237,55,230,61,195,86,163,115,113,167"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#ad985a55d5cf42453ff70863d8619713b" title="Проверяет, была ли создана задача" alt="" coords="233,71,407,111"/>
+<area shape="poly" title=" " alt="" coords="137,162,228,122,249,116,244,119,230,127,140,167"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6c51614865ef9a13038357431ad8ee7c" title="Обновляет содержимое таблицы задач" alt="" coords="231,136,408,177"/>
+<area shape="poly" title=" " alt="" coords="180,172,218,169,213,171,182,177"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a5032b7916281cf67edeec56fdc65cfad" title="Показывает информационное диалоговое окно" alt="" coords="696,193,864,234"/>
+<area shape="poly" title=" " alt="" coords="181,187,681,207,680,212,181,192"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421" title="Сохраняет все задачи в JSON файл" alt="" coords="241,252,398,277"/>
+<area shape="poly" title=" " alt="" coords="154,204,268,245,264,247,154,209"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a073ccddeb707b28c89c4f0c69065fcfb" title="Обновляет статусную строку с информацией о задачах" alt="" coords="232,301,408,342"/>
+<area shape="poly" title=" " alt="" coords="117,204,168,246,230,287,241,295,236,294,227,292,164,250,116,209"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4bfffd15238c2895e76c565921cd3441" title="Сортирует задачи по приоритету" alt="" coords="466,136,625,177"/>
+<area shape="poly" title=" " alt="" coords="408,154,452,156,447,157,409,159"/>
+<area shape="rect" href="classviewmodel_1_1_task_view_model.html#aa34a9517a43daff6eef84dc13e1cd0a9" title="Возвращает время окончания (дедлайн) задачи" alt="" coords="679,128,881,169"/>
+<area shape="poly" title=" " alt="" coords="625,151,666,152,661,153,626,156"/>
+<area shape="poly" title=" " alt="" coords="625,173,683,189,678,190,625,178"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="459,251,631,291"/>
+<area shape="poly" title=" " alt="" coords="399,264,446,268,440,268,399,269"/>
+<area shape="rect" href="classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="697,258,863,284"/>
+<area shape="poly" title=" " alt="" coords="632,268,685,271,679,271,632,274"/>
+<area shape="rect" href="classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="929,258,1091,284"/>
+<area shape="poly" title=" " alt="" coords="863,268,916,271,910,271,863,274"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a97dc6cade09436222a2a9a4876b94b78" name="a97dc6cade09436222a2a9a4876b94b78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97dc6cade09436222a2a9a4876b94b78">&#9670;&#160;</a></span>handleDeleteTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.MainController.handleDeleteTask </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обработчик кнопки удаления задачи </p>
+<p>Удаляет выбранную в таблице задачу после подтверждения пользователем. Показывает диалог подтверждения удаления. Если пользователь соглашается, задача удаляется из менеджера задач, изменения сохраняются в файл, а таблица и статусная строка обновляются.</p>
+<p>@event OnAction кнопки "Удалить"</p>
+<dl class="section note"><dt>Заметки</dt><dd>Требует предварительного выбора задачи в таблице </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Безвозвратно удаляет задачу после подтверждения</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classmodel_1_1_task_manager.html#a46e1d00e8a9e4c37eaf71795c5d0b1b5" title="Удаляет задачу по её идентификатору">TaskManager.removeTask(String)</a> </dd>
+<dd>
+JsonUtil#saveTasks(List) </dd>
+<dd>
+<a class="el" href="#a6c51614865ef9a13038357431ad8ee7c" title="Обновляет содержимое таблицы задач">refreshTable()</a> </dd>
+<dd>
+<a class="el" href="#a073ccddeb707b28c89c4f0c69065fcfb" title="Обновляет статусную строку с информацией о задачах">updateStatusLabel()</a> </dd>
+<dd>
+<a class="el" href="#a5032b7916281cf67edeec56fdc65cfad" title="Показывает информационное диалоговое окно">showAlert(String, String, String)</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l01004">1004</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00188">viewmodel.TaskViewModel.getId()</a>, <a class="el" href="_task_view_model_8java_source.html#l00204">viewmodel.TaskViewModel.getTitle()</a>, <a class="el" href="_main_controller_8java_source.html#l00899">refreshTable()</a>, <a class="el" href="_json_util_8java_source.html#l00139">util.JsonUtil.saveTasks()</a>, <a class="el" href="_main_controller_8java_source.html#l01065">showAlert()</a>, <a class="el" href="_main_controller_8java_source.html#l00126">taskManager</a>, <a class="el" href="_main_controller_8java_source.html#l00066">taskTable</a> и <a class="el" href="_main_controller_8java_source.html#l00926">updateStatusLabel()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_a97dc6cade09436222a2a9a4876b94b78_cgraph.png" border="0" usemap="#aclassview_1_1_main_controller_a97dc6cade09436222a2a9a4876b94b78_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_a97dc6cade09436222a2a9a4876b94b78_cgraph" id="aclassview_1_1_main_controller_a97dc6cade09436222a2a9a4876b94b78_cgraph">
+<area shape="rect" title="Обработчик кнопки удаления задачи" alt="" coords="5,150,181,190"/>
+<area shape="rect" href="classviewmodel_1_1_task_view_model.html#ac50f2e97f44fd66fc50fa959730eb78f" title="Возвращает идентификатор задачи" alt="" coords="229,5,441,31"/>
+<area shape="poly" title=" " alt="" coords="108,148,157,94,191,65,227,41,245,35,241,38,230,46,194,70,161,98,112,151"/>
+<area shape="rect" href="classviewmodel_1_1_task_view_model.html#a1a618ae9eecfd3fefadebd848a99ec92" title="Возвращает заголовок задачи" alt="" coords="234,55,436,96"/>
+<area shape="poly" title=" " alt="" coords="135,147,228,106,252,100,247,103,230,111,138,151"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6c51614865ef9a13038357431ad8ee7c" title="Обновляет содержимое таблицы задач" alt="" coords="246,120,424,161"/>
+<area shape="poly" title=" " alt="" coords="180,157,233,152,228,155,182,162"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a5032b7916281cf67edeec56fdc65cfad" title="Показывает информационное диалоговое окно" alt="" coords="726,178,894,218"/>
+<area shape="poly" title=" " alt="" coords="181,171,711,192,710,197,181,176"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421" title="Сохраняет все задачи в JSON файл" alt="" coords="256,236,414,262"/>
+<area shape="poly" title=" " alt="" coords="153,188,229,214,276,231,271,231,228,219,153,194"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a073ccddeb707b28c89c4f0c69065fcfb" title="Обновляет статусную строку с информацией о задачах" alt="" coords="247,286,423,326"/>
+<area shape="poly" title=" " alt="" coords="116,188,167,231,230,272,242,280,237,279,227,276,164,235,115,194"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4bfffd15238c2895e76c565921cd3441" title="Сортирует задачи по приоритету" alt="" coords="496,120,655,161"/>
+<area shape="poly" title=" " alt="" coords="424,138,482,140,477,141,424,143"/>
+<area shape="rect" href="classviewmodel_1_1_task_view_model.html#aa34a9517a43daff6eef84dc13e1cd0a9" title="Возвращает время окончания (дедлайн) задачи" alt="" coords="709,112,911,153"/>
+<area shape="poly" title=" " alt="" coords="655,135,696,136,691,137,655,141"/>
+<area shape="poly" title=" " alt="" coords="655,158,713,174,708,174,655,163"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="489,235,661,276"/>
+<area shape="poly" title=" " alt="" coords="414,248,476,252,471,253,414,254"/>
+<area shape="rect" href="classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="727,243,893,268"/>
+<area shape="poly" title=" " alt="" coords="662,253,715,255,709,256,662,258"/>
+<area shape="rect" href="classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="959,243,1121,268"/>
+<area shape="poly" title=" " alt="" coords="893,253,946,255,940,256,893,258"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a923c864e4e8cb56706451947145459a5" name="a923c864e4e8cb56706451947145459a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a923c864e4e8cb56706451947145459a5">&#9670;&#160;</a></span>handleExit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.MainController.handleExit </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обработчик закрытия приложения </p>
+<p>Останавливает анимацию снежинок и закрывает главное окно приложения. Вызывается при завершении работы программы для корректного освобождения ресурсов.</p>
+<p>@event Может быть привязан к кнопке закрытия или пункту меню "Выход"</p>
+<dl class="section note"><dt>Заметки</dt><dd>Останавливает AnimationTimer для предотвращения утечек ресурсов </dd></dl>
+<dl class="section see"><dt>См. также</dt><dd>AnimationTimer#stop() </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l01084">1084</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_controller_8java_source.html#l00132">snowTimer</a> и <a class="el" href="_main_controller_8java_source.html#l00066">taskTable</a>.</p>
+
+</div>
+</div>
+<a id="ace0c2bdaa74f6158c7d2b1856fcb99fd" name="ace0c2bdaa74f6158c7d2b1856fcb99fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace0c2bdaa74f6158c7d2b1856fcb99fd">&#9670;&#160;</a></span>initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.MainController.initialize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Инициализация контроллера </p>
+<p>Вызывается автоматически JavaFX после загрузки FXML файла. Инициализирует все компоненты интерфейса, загружает задачи, настраивает слушатели событий и запускает анимацию.</p>
+<dl class="section note"><dt>Заметки</dt><dd>Этот метод является точкой входа для инициализации контроллера </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Не вызывайте этот метод напрямую, он вызывается JavaFX Framework </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00190">190</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_controller_8java_source.html#l00119">appTitleLabel</a>, <a class="el" href="_main_controller_8java_source.html#l00129">audioManager</a>, <a class="el" href="_task_manager_8java_source.html#l00073">model.TaskManager.getInstance()</a>, <a class="el" href="_audio_manager_8java_source.html#l00072">util.AudioManager.getInstance()</a>, <a class="el" href="_main_controller_8java_source.html#l00666">initSnowflakes()</a>, <a class="el" href="_main_controller_8java_source.html#l00883">loadTasks()</a>, <a class="el" href="_main_controller_8java_source.html#l00135">random</a>, <a class="el" href="_main_controller_8java_source.html#l00091">searchField</a>, <a class="el" href="_main_controller_8java_source.html#l01042">searchTasks()</a>, <a class="el" href="_main_controller_8java_source.html#l00429">setupAdaptiveLayout()</a>, <a class="el" href="_main_controller_8java_source.html#l00524">setupButtons()</a>, <a class="el" href="_main_controller_8java_source.html#l00246">setupTableColumns()</a>, <a class="el" href="_main_controller_8java_source.html#l00138">snowflakes</a>, <a class="el" href="_main_controller_8java_source.html#l00116">snowPane</a>, <a class="el" href="_main_controller_8java_source.html#l00799">startSnowAnimation()</a>, <a class="el" href="_main_controller_8java_source.html#l00141">taskList</a>, <a class="el" href="_main_controller_8java_source.html#l00126">taskManager</a> и <a class="el" href="_main_controller_8java_source.html#l00926">updateStatusLabel()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_ace0c2bdaa74f6158c7d2b1856fcb99fd_cgraph.png" border="0" usemap="#aclassview_1_1_main_controller_ace0c2bdaa74f6158c7d2b1856fcb99fd_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_ace0c2bdaa74f6158c7d2b1856fcb99fd_cgraph" id="aclassview_1_1_main_controller_ace0c2bdaa74f6158c7d2b1856fcb99fd_cgraph">
+<area shape="rect" title="Инициализация контроллера" alt="" coords="5,311,190,336"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea" title="Возвращает единственный экземпляр TaskManager." alt="" coords="238,9,447,35"/>
+<area shape="poly" title=" " alt="" coords="99,310,112,261,138,191,157,153,179,116,205,81,236,51,256,40,253,44,239,55,209,85,183,119,161,156,143,194,117,263,104,311"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#aaf7ec801730bf60f659b843ace062d86" title="Получает единственный экземпляр AudioManager." alt="" coords="244,65,440,91"/>
+<area shape="poly" title=" " alt="" coords="102,309,119,271,148,219,187,163,210,136,236,113,272,95,268,99,239,118,214,140,191,166,152,221,124,273,107,311"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a176bf2a7ba00056ac7a14652c6650c2d" title="Инициализирует снежинки для всего окна" alt="" coords="265,127,420,168"/>
+<area shape="poly" title=" " alt="" coords="110,309,164,259,236,203,288,173,284,177,239,207,168,264,115,311"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af03ff4fe034cfc97fd82327d0e618e59" title="Загружает задачи из файла и отображает их в таблице" alt="" coords="262,216,423,257"/>
+<area shape="poly" title=" " alt="" coords="134,308,270,261,267,265,138,312"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ab0a0b6174538107b445044eb3139e87c" title="Выполняет поиск задач по текстовому запросу" alt="" coords="254,331,430,372"/>
+<area shape="poly" title=" " alt="" coords="189,332,241,338,237,341,191,336"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a18f9d437b1015bdbe51340d0275c2a43" title="Настраивает адаптивный layout интерфейса" alt="" coords="258,396,427,437"/>
+<area shape="poly" title=" " alt="" coords="127,334,239,381,261,390,256,392,237,386,129,339"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aa87f060a3d3e1f5747310cdf4945a256" title="Настраивает кнопки интерфейса" alt="" coords="520,284,689,325"/>
+<area shape="poly" title=" " alt="" coords="189,318,506,306,503,311,191,323"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title="Настраивает колонки таблицы задач" alt="" coords="258,635,427,676"/>
+<area shape="poly" title=" " alt="" coords="110,334,319,621,314,623,108,339"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a073ccddeb707b28c89c4f0c69065fcfb" title="Обновляет статусную строку с информацией о задачах" alt="" coords="516,896,693,937"/>
+<area shape="poly" title=" " alt="" coords="101,334,116,395,142,486,183,589,209,639,240,686,298,756,352,802,414,839,496,881,513,891,507,890,494,886,412,844,349,806,294,759,236,689,204,642,178,591,137,487,111,397,101,339"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ad174cb4a233843c3a918f44f8c04df3d" title="Запускает анимацию снежинок" alt="" coords="261,890,424,930"/>
+<area shape="poly" title=" " alt="" coords="101,334,117,406,144,517,184,648,210,714,240,777,275,831,313,879,308,878,271,834,235,779,205,716,179,649,139,518,112,407,101,339"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c" title="Приватный конструктор" alt="" coords="495,5,714,31"/>
+<area shape="poly" title=" " alt="" coords="446,18,482,19,477,22,449,23"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#ab16a211144282895701d2b0a64a66145" title="Приватный конструктор" alt="" coords="499,55,710,80"/>
+<area shape="poly" title=" " alt="" coords="440,72,485,71,481,74,442,76"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#a5ad71057028d829235d9ca3519feae2d" title="Загружает все звуки приложения" alt="" coords="762,55,959,80"/>
+<area shape="poly" title=" " alt="" coords="710,65,749,66,744,69,712,70"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ab66a02b22de6d12575196237192dbc81" title="Создает снежинки для всего окна" alt="" coords="518,104,691,145"/>
+<area shape="poly" title=" " alt="" coords="418,139,505,132,500,135,421,143"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a2a80078f88c932a5ab230d4775c2391d" title="Загружает все задачи из JSON файла" alt="" coords="528,169,681,195"/>
+<area shape="poly" title=" " alt="" coords="422,218,527,197,523,200,425,222"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6c51614865ef9a13038357431ad8ee7c" title="Обновляет содержимое таблицы задач" alt="" coords="516,219,693,260"/>
+<area shape="poly" title=" " alt="" coords="422,235,503,237,498,240,425,240"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a92865a18b3e9681f516419fd55bfb27a" title="Парсит JSON строку в список задач" alt="" coords="780,154,941,194"/>
+<area shape="poly" title=" " alt="" coords="681,177,766,176,762,178,683,182"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a428f650826f08a9ee580d87bb60a1443" title="Парсит один JSON объект задачи" alt="" coords="1012,165,1202,191"/>
+<area shape="poly" title=" " alt="" coords="941,173,999,175,994,177,943,178"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a53c77a1cd244ad8e37075b9a6c44da32" title="Разделяет JSON массив на отдельные объекты" alt="" coords="1012,116,1203,142"/>
+<area shape="poly" title=" " alt="" coords="941,157,1021,144,1016,146,943,162"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4bfffd15238c2895e76c565921cd3441" title="Сортирует задачи по приоритету" alt="" coords="781,219,940,260"/>
+<area shape="poly" title=" " alt="" coords="693,237,768,238,763,241,695,242"/>
+<area shape="rect" href="classviewmodel_1_1_task_view_model.html#aa34a9517a43daff6eef84dc13e1cd0a9" title="Возвращает время окончания (дедлайн) задачи" alt="" coords="1007,284,1208,325"/>
+<area shape="poly" title=" " alt="" coords="940,258,1016,279,1010,281,941,263"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a5032b7916281cf67edeec56fdc65cfad" title="Показывает информационное диалоговое окно" alt="" coords="1023,219,1192,260"/>
+<area shape="poly" title=" " alt="" coords="940,237,1010,239,1005,240,942,242"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae4fb9b136c72c5affdf42b517c5e6e91" title="Настраивает слушатели изменения размеров окна" alt="" coords="520,372,689,413"/>
+<area shape="poly" title=" " alt="" coords="426,407,507,401,502,403,429,411"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ab0783c7504d7a4fe9637653fbbdeff9a" title="Настраивает ширины колонок таблицы" alt="" coords="774,350,947,390"/>
+<area shape="poly" title=" " alt="" coords="689,383,761,378,756,380,691,388"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af4f451efaddaf24ec9e252f9d1f7bbc1" title="Настраивает высоту таблицы" alt="" coords="774,415,947,456"/>
+<area shape="poly" title=" " alt="" coords="689,404,761,418,756,419,691,410"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae7c0b0165f6acc4f9b614e26c5f52925" title="Обновляет снежинки при изменении размера окна" alt="" coords="772,480,949,521"/>
+<area shape="poly" title=" " alt="" coords="687,411,716,424,731,434,740,445,750,455,764,465,777,473,771,474,761,470,746,459,736,448,727,438,713,428,688,416"/>
+<area shape="poly" title=" " alt="" coords="686,282,768,262,763,265,688,286"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afefa6c872fcfd41bdbae5d6aa1078b21" title="Сортирует задачи по дате выполнения" alt="" coords="781,284,940,325"/>
+<area shape="poly" title=" " alt="" coords="689,302,768,304,763,306,691,307"/>
+<area shape="poly" title=" " alt="" coords="940,302,994,304,989,306,942,307"/>
+<area shape="poly" title=" " alt="" coords="939,281,1015,263,1011,266,941,286"/>
+<area shape="rect" href="enummodel_1_1_priority.html#ac87523bbf2e804984e1754dacf2661ce" title="Возвращает цвет приоритета" alt="" coords="528,617,681,643"/>
+<area shape="poly" title=" " alt="" coords="427,645,515,638,511,640,428,650"/>
+<area shape="rect" href="enummodel_1_1_priority.html#a3cf5e815f238abd0cf21096783fea607" title="Возвращает читаемое имя приоритета" alt="" coords="504,667,705,692"/>
+<area shape="poly" title=" " alt="" coords="427,661,492,668,487,670,428,666"/>
+<area shape="rect" href="classviewmodel_1_1_task_view_model.html#a5f2424316f62a7ed7067602067535809" title=" " alt="" coords="504,716,705,757"/>
+<area shape="poly" title=" " alt="" coords="406,674,496,702,520,711,515,712,494,707,407,679"/>
+<area shape="rect" href="classviewmodel_1_1_task_view_model.html#ac50f2e97f44fd66fc50fa959730eb78f" title="Возвращает идентификатор задачи" alt="" coords="498,781,711,807"/>
+<area shape="poly" title=" " alt="" coords="369,674,437,727,496,766,516,776,511,776,494,771,434,731,368,679"/>
+<area shape="rect" href="classviewmodel_1_1_task_view_model.html#a6b568ef75542da4868a533844bbbe3a1" title="Проверяет, выполнена ли задача" alt="" coords="508,831,701,872"/>
+<area shape="poly" title=" " alt="" coords="374,674,412,703,449,739,464,761,471,781,480,800,497,817,503,824,498,823,493,822,475,803,466,783,459,764,445,743,409,707,374,679"/>
+<area shape="rect" href="classviewmodel_1_1_task_view_model.html#a81effd078fee106eea52436907468ed9" title="Проверяет, просрочена ли задача" alt="" coords="508,438,701,478"/>
+<area shape="poly" title=" " alt="" coords="355,633,409,562,449,522,494,488,505,484,501,487,496,492,452,526,414,566,359,637"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421" title="Сохраняет все задачи в JSON файл" alt="" coords="526,503,683,528"/>
+<area shape="poly" title=" " alt="" coords="363,633,419,585,455,560,494,538,515,532,511,535,496,543,458,564,423,589,367,637"/>
+<area shape="rect" href="classviewmodel_1_1_task_view_model.html#a1a2e539e816467e5df6588744541071b" title="Устанавливает статус выполнения задачи" alt="" coords="504,552,705,593"/>
+<area shape="poly" title=" " alt="" coords="403,632,494,602,519,597,514,599,496,607,406,637"/>
+<area shape="poly" title=" " alt="" coords="378,674,416,702,449,739,460,760,466,779,470,815,475,848,483,865,497,882,506,891,501,890,493,885,478,868,470,850,465,816,461,780,456,762,445,742,412,706,378,679"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="774,546,947,586"/>
+<area shape="poly" title=" " alt="" coords="673,526,762,545,757,547,674,532"/>
+<area shape="rect" href="classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="1025,553,1190,579"/>
+<area shape="poly" title=" " alt="" coords="947,564,1012,566,1007,567,948,569"/>
+<area shape="rect" href="classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="1256,553,1418,579"/>
+<area shape="poly" title=" " alt="" coords="1190,564,1243,566,1238,567,1190,569"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7747886ba8b07db62a5639a71af582d1" title="Обновляет анимацию снежинок" alt="" coords="516,962,693,1002"/>
+<area shape="poly" title=" " alt="" coords="419,928,516,957,510,957,419,934"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a176bf2a7ba00056ac7a14652c6650c2d" name="a176bf2a7ba00056ac7a14652c6650c2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a176bf2a7ba00056ac7a14652c6650c2d">&#9670;&#160;</a></span>initSnowflakes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.MainController.initSnowflakes </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Инициализирует снежинки для всего окна </p>
+<p>Очищает предыдущие снежинки и создает новые на основе текущих размеров окна. Используется при запуске приложения и при значительном изменении размеров окна.</p>
+<dl class="section note"><dt>Заметки</dt><dd>Создает фиксированное количество снежинок (120) </dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="#ab66a02b22de6d12575196237192dbc81" title="Создает снежинки для всего окна">createSnowflakesForWindow(double, double)</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00666">666</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_controller_8java_source.html#l00692">createSnowflakesForWindow()</a>, <a class="el" href="_main_controller_8java_source.html#l00138">snowflakes</a> и <a class="el" href="_main_controller_8java_source.html#l00116">snowPane</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00190">initialize()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_a176bf2a7ba00056ac7a14652c6650c2d_cgraph.png" border="0" usemap="#aclassview_1_1_main_controller_a176bf2a7ba00056ac7a14652c6650c2d_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_a176bf2a7ba00056ac7a14652c6650c2d_cgraph" id="aclassview_1_1_main_controller_a176bf2a7ba00056ac7a14652c6650c2d_cgraph">
+<area shape="rect" title="Инициализирует снежинки для всего окна" alt="" coords="5,5,160,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ab66a02b22de6d12575196237192dbc81" title="Создает снежинки для всего окна" alt="" coords="208,5,381,46"/>
+<area shape="poly" title=" " alt="" coords="160,23,195,25,189,26,160,28"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_a176bf2a7ba00056ac7a14652c6650c2d_icgraph.png" border="0" usemap="#aclassview_1_1_main_controller_a176bf2a7ba00056ac7a14652c6650c2d_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_a176bf2a7ba00056ac7a14652c6650c2d_icgraph" id="aclassview_1_1_main_controller_a176bf2a7ba00056ac7a14652c6650c2d_icgraph">
+<area shape="rect" title="Инициализирует снежинки для всего окна" alt="" coords="238,5,392,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,13,190,38"/>
+<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,225,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af03ff4fe034cfc97fd82327d0e618e59" name="af03ff4fe034cfc97fd82327d0e618e59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af03ff4fe034cfc97fd82327d0e618e59">&#9670;&#160;</a></span>loadTasks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.MainController.loadTasks </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Загружает задачи из файла и отображает их в таблице </p>
+<p>Загружает список задач из JSON файла с помощью <a class="el" href="classutil_1_1_json_util.html" title="Утилита для работы с JSON файлами задач">JsonUtil</a>, передает их в <a class="el" href="classmodel_1_1_task_manager.html" title="Менеджер задач - центральный класс для управления задачами">TaskManager</a> и обновляет таблицу отображения.</p>
+<dl class="section note"><dt>Заметки</dt><dd>Использует <a class="el" href="classutil_1_1_json_util.html" title="Утилита для работы с JSON файлами задач">JsonUtil</a> для сериализации/десериализации данных </dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classutil_1_1_json_util.html" title="Утилита для работы с JSON файлами задач">JsonUtil</a> </dd>
+<dd>
+<a class="el" href="classmodel_1_1_task_manager.html" title="Менеджер задач - центральный класс для управления задачами">TaskManager</a> </dd>
+<dd>
+<a class="el" href="#a6c51614865ef9a13038357431ad8ee7c" title="Обновляет содержимое таблицы задач">refreshTable()</a> </dd>
+<dd>
+<a class="el" href="#a073ccddeb707b28c89c4f0c69065fcfb" title="Обновляет статусную строку с информацией о задачах">updateStatusLabel()</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00883">883</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_json_util_8java_source.html#l00081">util.JsonUtil.loadTasks()</a>, <a class="el" href="_main_controller_8java_source.html#l00899">refreshTable()</a> и <a class="el" href="_main_controller_8java_source.html#l00126">taskManager</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00190">initialize()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_af03ff4fe034cfc97fd82327d0e618e59_cgraph.png" border="0" usemap="#aclassview_1_1_main_controller_af03ff4fe034cfc97fd82327d0e618e59_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_af03ff4fe034cfc97fd82327d0e618e59_cgraph" id="aclassview_1_1_main_controller_af03ff4fe034cfc97fd82327d0e618e59_cgraph">
+<area shape="rect" title="Загружает задачи из файла и отображает их в таблице" alt="" coords="5,79,167,120"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a2a80078f88c932a5ab230d4775c2391d" title="Загружает все задачи из JSON файла" alt="" coords="227,56,380,82"/>
+<area shape="poly" title=" " alt="" coords="166,86,214,81,209,83,168,91"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6c51614865ef9a13038357431ad8ee7c" title="Обновляет содержимое таблицы задач" alt="" coords="215,107,392,148"/>
+<area shape="poly" title=" " alt="" coords="167,107,202,113,196,115,168,113"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a92865a18b3e9681f516419fd55bfb27a" title="Парсит JSON строку в список задач" alt="" coords="440,46,601,86"/>
+<area shape="poly" title=" " alt="" coords="380,65,427,67,422,68,381,71"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a428f650826f08a9ee580d87bb60a1443" title="Парсит один JSON объект задачи" alt="" coords="655,5,845,31"/>
+<area shape="poly" title=" " alt="" coords="601,47,673,34,668,35,603,52"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a53c77a1cd244ad8e37075b9a6c44da32" title="Разделяет JSON массив на отдельные объекты" alt="" coords="654,55,846,80"/>
+<area shape="poly" title=" " alt="" coords="602,64,641,67,636,67,602,69"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4bfffd15238c2895e76c565921cd3441" title="Сортирует задачи по приоритету" alt="" coords="441,111,600,152"/>
+<area shape="poly" title=" " alt="" coords="392,126,428,129,423,130,393,132"/>
+<area shape="rect" href="classviewmodel_1_1_task_view_model.html#aa34a9517a43daff6eef84dc13e1cd0a9" title="Возвращает время окончания (дедлайн) задачи" alt="" coords="649,108,851,149"/>
+<area shape="poly" title=" " alt="" coords="600,128,636,130,631,130,601,133"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a5032b7916281cf67edeec56fdc65cfad" title="Показывает информационное диалоговое окно" alt="" coords="666,174,834,214"/>
+<area shape="poly" title=" " alt="" coords="598,150,661,169,656,169,597,155"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_af03ff4fe034cfc97fd82327d0e618e59_icgraph.png" border="0" usemap="#aclassview_1_1_main_controller_af03ff4fe034cfc97fd82327d0e618e59_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_af03ff4fe034cfc97fd82327d0e618e59_icgraph" id="aclassview_1_1_main_controller_af03ff4fe034cfc97fd82327d0e618e59_icgraph">
+<area shape="rect" title="Загружает задачи из файла и отображает их в таблице" alt="" coords="238,5,399,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,13,190,38"/>
+<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6c51614865ef9a13038357431ad8ee7c" name="a6c51614865ef9a13038357431ad8ee7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c51614865ef9a13038357431ad8ee7c">&#9670;&#160;</a></span>refreshTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.MainController.refreshTable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обновляет содержимое таблицы задач </p>
+<p>Очищает текущий список задач, загружает все задачи из <a class="el" href="classmodel_1_1_task_manager.html" title="Менеджер задач - центральный класс для управления задачами">TaskManager</a>, преобразует их в <a class="el" href="classviewmodel_1_1_task_view_model.html" title="ViewModel для отображения задачи в пользовательском интерфейсе">TaskViewModel</a> и устанавливает обновленный список в таблицу. Затем применяет сортировку по умолчанию.</p>
+<dl class="section note"><dt>Заметки</dt><dd>Автоматически вызывается после изменений в списке задач </dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classviewmodel_1_1_task_view_model.html" title="ViewModel для отображения задачи в пользовательском интерфейсе">TaskViewModel</a> </dd>
+<dd>
+<a class="el" href="#a4bfffd15238c2895e76c565921cd3441" title="Сортирует задачи по приоритету">sortByPriority()</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00899">899</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_controller_8java_source.html#l00614">sortByPriority()</a>, <a class="el" href="_main_controller_8java_source.html#l00150">sortByPriorityAscending</a>, <a class="el" href="_main_controller_8java_source.html#l00141">taskList</a>, <a class="el" href="_main_controller_8java_source.html#l00126">taskManager</a> и <a class="el" href="_main_controller_8java_source.html#l00066">taskTable</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00953">handleAddTask()</a>, <a class="el" href="_main_controller_8java_source.html#l01004">handleDeleteTask()</a> и <a class="el" href="_main_controller_8java_source.html#l00883">loadTasks()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_a6c51614865ef9a13038357431ad8ee7c_cgraph.png" border="0" usemap="#aclassview_1_1_main_controller_a6c51614865ef9a13038357431ad8ee7c_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_a6c51614865ef9a13038357431ad8ee7c_cgraph" id="aclassview_1_1_main_controller_a6c51614865ef9a13038357431ad8ee7c_cgraph">
+<area shape="rect" title="Обновляет содержимое таблицы задач" alt="" coords="5,39,183,79"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4bfffd15238c2895e76c565921cd3441" title="Сортирует задачи по приоритету" alt="" coords="231,39,390,79"/>
+<area shape="poly" title=" " alt="" coords="183,56,218,59,213,59,183,62"/>
+<area shape="rect" href="classviewmodel_1_1_task_view_model.html#aa34a9517a43daff6eef84dc13e1cd0a9" title="Возвращает время окончания (дедлайн) задачи" alt="" coords="438,5,639,46"/>
+<area shape="poly" title=" " alt="" coords="390,45,425,42,420,43,391,50"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a5032b7916281cf67edeec56fdc65cfad" title="Показывает информационное диалоговое окно" alt="" coords="454,71,623,111"/>
+<area shape="poly" title=" " alt="" coords="391,68,442,77,436,77,390,73"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_a6c51614865ef9a13038357431ad8ee7c_icgraph.png" border="0" usemap="#aclassview_1_1_main_controller_a6c51614865ef9a13038357431ad8ee7c_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_a6c51614865ef9a13038357431ad8ee7c_icgraph" id="aclassview_1_1_main_controller_a6c51614865ef9a13038357431ad8ee7c_icgraph">
+<area shape="rect" title="Обновляет содержимое таблицы задач" alt="" coords="461,71,638,111"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title="Обработчик кнопки добавления новой задачи" alt="" coords="238,5,413,46"/>
+<area shape="poly" title=" " alt="" coords="460,66,398,49,398,44,466,66"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title="Обработчик кнопки удаления задачи" alt="" coords="238,71,413,111"/>
+<area shape="poly" title=" " alt="" coords="443,91,414,94,413,88,448,91"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af03ff4fe034cfc97fd82327d0e618e59" title="Загружает задачи из файла и отображает их в таблице" alt="" coords="245,136,406,177"/>
+<area shape="poly" title=" " alt="" coords="466,116,398,138,397,133,460,117"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,144,190,169"/>
+<area shape="poly" title=" " alt="" coords="227,157,190,159,190,154,232,156"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab0a0b6174538107b445044eb3139e87c" name="ab0a0b6174538107b445044eb3139e87c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0a0b6174538107b445044eb3139e87c">&#9670;&#160;</a></span>searchTasks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.MainController.searchTasks </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Выполняет поиск задач по текстовому запросу </p>
+<p>Фильтрует список задач на основе текстового запроса из поля поиска. Поиск выполняется в реальном времени по мере ввода текста. Обновляет таблицу, отображая только задачи, соответствующие запросу.</p>
+<dl class="section note"><dt>Заметки</dt><dd>Вызывается слушателем изменения текста в поле поиска </dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classmodel_1_1_task_manager.html#aeeb1bbd577dfd42c694e1120de83f476" title="Выполняет поиск задач по тексту">TaskManager.searchTasks(String)</a> </dd>
+<dd>
+<a class="el" href="classviewmodel_1_1_task_view_model.html" title="ViewModel для отображения задачи в пользовательском интерфейсе">TaskViewModel</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l01042">1042</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_controller_8java_source.html#l00091">searchField</a>, <a class="el" href="_main_controller_8java_source.html#l00141">taskList</a> и <a class="el" href="_main_controller_8java_source.html#l00126">taskManager</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00190">initialize()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_ab0a0b6174538107b445044eb3139e87c_icgraph.png" border="0" usemap="#aclassview_1_1_main_controller_ab0a0b6174538107b445044eb3139e87c_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_ab0a0b6174538107b445044eb3139e87c_icgraph" id="aclassview_1_1_main_controller_ab0a0b6174538107b445044eb3139e87c_icgraph">
+<area shape="rect" title="Выполняет поиск задач по текстовому запросу" alt="" coords="238,5,414,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,13,190,38"/>
+<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,225,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a18f9d437b1015bdbe51340d0275c2a43" name="a18f9d437b1015bdbe51340d0275c2a43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18f9d437b1015bdbe51340d0275c2a43">&#9670;&#160;</a></span>setupAdaptiveLayout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.MainController.setupAdaptiveLayout </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Настраивает адаптивный layout интерфейса </p>
+<p>Конфигурирует поведение интерфейса при изменении размеров окна. Устанавливает политику изменения размеров таблицы и слушатели для отслеживания изменений размеров окна.</p>
+<dl class="section note"><dt>Заметки</dt><dd>Таблица использует CONSTRAINED_RESIZE_POLICY для автоматического изменения ширины колонок </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00429">429</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_controller_8java_source.html#l00453">setupResizeListeners()</a> и <a class="el" href="_main_controller_8java_source.html#l00066">taskTable</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00190">initialize()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_a18f9d437b1015bdbe51340d0275c2a43_cgraph.png" border="0" usemap="#aclassview_1_1_main_controller_a18f9d437b1015bdbe51340d0275c2a43_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_a18f9d437b1015bdbe51340d0275c2a43_cgraph" id="aclassview_1_1_main_controller_a18f9d437b1015bdbe51340d0275c2a43_cgraph">
+<area shape="rect" title="Настраивает адаптивный layout интерфейса" alt="" coords="5,71,175,111"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae4fb9b136c72c5affdf42b517c5e6e91" title="Настраивает слушатели изменения размеров окна" alt="" coords="223,71,392,111"/>
+<area shape="poly" title=" " alt="" coords="174,88,210,90,205,92,175,94"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ab0783c7504d7a4fe9637653fbbdeff9a" title="Настраивает ширины колонок таблицы" alt="" coords="442,5,614,46"/>
+<area shape="poly" title=" " alt="" coords="378,68,440,52,445,50,379,73"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af4f451efaddaf24ec9e252f9d1f7bbc1" title="Настраивает высоту таблицы" alt="" coords="442,71,614,111"/>
+<area shape="poly" title=" " alt="" coords="392,88,429,91,424,91,393,94"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae7c0b0165f6acc4f9b614e26c5f52925" title="Обновляет снежинки при изменении размера окна" alt="" coords="440,136,616,177"/>
+<area shape="poly" title=" " alt="" coords="379,109,445,131,440,131,378,114"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_a18f9d437b1015bdbe51340d0275c2a43_icgraph.png" border="0" usemap="#aclassview_1_1_main_controller_a18f9d437b1015bdbe51340d0275c2a43_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_a18f9d437b1015bdbe51340d0275c2a43_icgraph" id="aclassview_1_1_main_controller_a18f9d437b1015bdbe51340d0275c2a43_icgraph">
+<area shape="rect" title="Настраивает адаптивный layout интерфейса" alt="" coords="238,5,407,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,13,190,38"/>
+<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa87f060a3d3e1f5747310cdf4945a256" name="aa87f060a3d3e1f5747310cdf4945a256"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa87f060a3d3e1f5747310cdf4945a256">&#9670;&#160;</a></span>setupButtons()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.MainController.setupButtons </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Настраивает кнопки интерфейса </p>
+<p>Загружает иконки для кнопок, устанавливает тексты, стили и обработчики событий для всех кнопок управления.</p>
+<dl class="section note"><dt>Заметки</dt><dd>Если иконки не могут быть загружены, используются текстовые эмодзи </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Обработчики событий привязаны к методам <a class="el" href="#afefa6c872fcfd41bdbae5d6aa1078b21" title="Сортирует задачи по дате выполнения">sortByDate()</a> и <a class="el" href="#a4bfffd15238c2895e76c565921cd3441" title="Сортирует задачи по приоритету">sortByPriority()</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00524">524</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_controller_8java_source.html#l00094">addButton</a>, <a class="el" href="_main_controller_8java_source.html#l00097">deleteButton</a>, <a class="el" href="_main_controller_8java_source.html#l00573">sortByDate()</a>, <a class="el" href="_main_controller_8java_source.html#l00100">sortByDateButton</a>, <a class="el" href="_main_controller_8java_source.html#l00614">sortByPriority()</a> и <a class="el" href="_main_controller_8java_source.html#l00103">sortByPriorityButton</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00190">initialize()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_aa87f060a3d3e1f5747310cdf4945a256_cgraph.png" border="0" usemap="#aclassview_1_1_main_controller_aa87f060a3d3e1f5747310cdf4945a256_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_aa87f060a3d3e1f5747310cdf4945a256_cgraph" id="aclassview_1_1_main_controller_aa87f060a3d3e1f5747310cdf4945a256_cgraph">
+<area shape="rect" title="Настраивает кнопки интерфейса" alt="" coords="5,39,175,79"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afefa6c872fcfd41bdbae5d6aa1078b21" title="Сортирует задачи по дате выполнения" alt="" coords="223,5,382,46"/>
+<area shape="poly" title=" " alt="" coords="174,43,210,40,205,41,175,48"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4bfffd15238c2895e76c565921cd3441" title="Сортирует задачи по приоритету" alt="" coords="223,71,382,111"/>
+<area shape="poly" title=" " alt="" coords="175,69,210,76,205,77,175,74"/>
+<area shape="rect" href="classviewmodel_1_1_task_view_model.html#aa34a9517a43daff6eef84dc13e1cd0a9" title="Возвращает время окончания (дедлайн) задачи" alt="" coords="430,5,631,46"/>
+<area shape="poly" title=" " alt="" coords="382,23,417,25,412,26,383,28"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a5032b7916281cf67edeec56fdc65cfad" title="Показывает информационное диалоговое окно" alt="" coords="446,71,615,111"/>
+<area shape="poly" title=" " alt="" coords="376,44,445,66,440,66,375,49"/>
+<area shape="poly" title=" " alt="" coords="375,68,440,51,445,50,376,73"/>
+<area shape="poly" title=" " alt="" coords="383,88,433,91,428,91,383,94"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_aa87f060a3d3e1f5747310cdf4945a256_icgraph.png" border="0" usemap="#aclassview_1_1_main_controller_aa87f060a3d3e1f5747310cdf4945a256_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_aa87f060a3d3e1f5747310cdf4945a256_icgraph" id="aclassview_1_1_main_controller_aa87f060a3d3e1f5747310cdf4945a256_icgraph">
+<area shape="rect" title="Настраивает кнопки интерфейса" alt="" coords="238,5,407,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,13,190,38"/>
+<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae4fb9b136c72c5affdf42b517c5e6e91" name="ae4fb9b136c72c5affdf42b517c5e6e91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4fb9b136c72c5affdf42b517c5e6e91">&#9670;&#160;</a></span>setupResizeListeners()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.MainController.setupResizeListeners </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Настраивает слушатели изменения размеров окна </p>
+<p>Добавляет слушатели к свойствам ширины и высоты окна для адаптации интерфейса при изменении размеров.</p>
+<dl class="section note"><dt>Заметки</dt><dd>Слушатели вызывают методы <a class="el" href="#ab0783c7504d7a4fe9637653fbbdeff9a" title="Настраивает ширины колонок таблицы">adjustTableColumns()</a> и <a class="el" href="#af4f451efaddaf24ec9e252f9d1f7bbc1" title="Настраивает высоту таблицы">adjustTableHeight()</a> при каждом изменении размеров окна </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00453">453</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_controller_8java_source.html#l00482">adjustTableColumns()</a>, <a class="el" href="_main_controller_8java_source.html#l00508">adjustTableHeight()</a>, <a class="el" href="_main_controller_8java_source.html#l00066">taskTable</a> и <a class="el" href="_main_controller_8java_source.html#l00737">updateSnowflakesForWindow()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00429">setupAdaptiveLayout()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_ae4fb9b136c72c5affdf42b517c5e6e91_cgraph.png" border="0" usemap="#aclassview_1_1_main_controller_ae4fb9b136c72c5affdf42b517c5e6e91_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_ae4fb9b136c72c5affdf42b517c5e6e91_cgraph" id="aclassview_1_1_main_controller_ae4fb9b136c72c5affdf42b517c5e6e91_cgraph">
+<area shape="rect" title="Настраивает слушатели изменения размеров окна" alt="" coords="5,71,175,111"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ab0783c7504d7a4fe9637653fbbdeff9a" title="Настраивает ширины колонок таблицы" alt="" coords="225,5,397,46"/>
+<area shape="poly" title=" " alt="" coords="160,68,227,50,223,52,162,73"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af4f451efaddaf24ec9e252f9d1f7bbc1" title="Настраивает высоту таблицы" alt="" coords="225,71,397,111"/>
+<area shape="poly" title=" " alt="" coords="175,88,211,90,206,92,176,94"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae7c0b0165f6acc4f9b614e26c5f52925" title="Обновляет снежинки при изменении размера окна" alt="" coords="223,136,399,177"/>
+<area shape="poly" title=" " alt="" coords="161,109,228,130,222,132,161,115"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_ae4fb9b136c72c5affdf42b517c5e6e91_icgraph.png" border="0" usemap="#aclassview_1_1_main_controller_ae4fb9b136c72c5affdf42b517c5e6e91_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_ae4fb9b136c72c5affdf42b517c5e6e91_icgraph" id="aclassview_1_1_main_controller_ae4fb9b136c72c5affdf42b517c5e6e91_icgraph">
+<area shape="rect" title="Настраивает слушатели изменения размеров окна" alt="" coords="455,5,624,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a18f9d437b1015bdbe51340d0275c2a43" title="Настраивает адаптивный layout интерфейса" alt="" coords="238,5,407,46"/>
+<area shape="poly" title=" " alt="" coords="437,26,407,28,407,23,442,26"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,13,190,38"/>
+<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae16c7e665a88192e87fb07fff3dd7ad5" name="ae16c7e665a88192e87fb07fff3dd7ad5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae16c7e665a88192e87fb07fff3dd7ad5">&#9670;&#160;</a></span>setupTableColumns()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.MainController.setupTableColumns </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Настраивает колонки таблицы задач </p>
+<p>Конфигурирует все колонки таблицы: устанавливает фабрики значений, создает кастомные ячейки для отображения с цветовым кодированием и специальными иконками.</p>
+<dl class="section note"><dt>Заметки</dt><dd>Использует PropertyValueFactory для привязки данных из <a class="el" href="classviewmodel_1_1_task_view_model.html" title="ViewModel для отображения задачи в пользовательском интерфейсе">TaskViewModel</a> </dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classviewmodel_1_1_task_view_model.html" title="ViewModel для отображения задачи в пользовательском интерфейсе">TaskViewModel</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00246">246</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_controller_8java_source.html#l00081">categoryColumn</a>, <a class="el" href="_main_controller_8java_source.html#l00075">deadlineColumn</a>, <a class="el" href="_main_controller_8java_source.html#l00072">descriptionColumn</a>, <a class="el" href="_priority_8java_source.html#l00130">model.Priority.getColor()</a>, <a class="el" href="_priority_8java_source.html#l00117">model.Priority.getDisplayName()</a>, <a class="el" href="_task_view_model_8java_source.html#l00424">viewmodel.TaskViewModel.getFormattedEndTime()</a>, <a class="el" href="_task_view_model_8java_source.html#l00188">viewmodel.TaskViewModel.getId()</a>, <a class="el" href="_task_view_model_8java_source.html#l00348">viewmodel.TaskViewModel.isCompleted()</a>, <a class="el" href="_task_view_model_8java_source.html#l00374">viewmodel.TaskViewModel.isOverdue()</a>, <a class="el" href="_main_controller_8java_source.html#l00078">priorityColumn</a>, <a class="el" href="_json_util_8java_source.html#l00139">util.JsonUtil.saveTasks()</a>, <a class="el" href="_task_view_model_8java_source.html#l00366">viewmodel.TaskViewModel.setCompleted()</a>, <a class="el" href="_main_controller_8java_source.html#l00084">statusColumn</a>, <a class="el" href="_main_controller_8java_source.html#l00126">taskManager</a>, <a class="el" href="_main_controller_8java_source.html#l00069">titleColumn</a> и <a class="el" href="_main_controller_8java_source.html#l00926">updateStatusLabel()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00190">initialize()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_ae16c7e665a88192e87fb07fff3dd7ad5_cgraph.png" border="0" usemap="#aclassview_1_1_main_controller_ae16c7e665a88192e87fb07fff3dd7ad5_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_ae16c7e665a88192e87fb07fff3dd7ad5_cgraph" id="aclassview_1_1_main_controller_ae16c7e665a88192e87fb07fff3dd7ad5_cgraph">
+<area shape="rect" title="Настраивает колонки таблицы задач" alt="" coords="5,219,175,260"/>
+<area shape="rect" href="enummodel_1_1_priority.html#ac87523bbf2e804984e1754dacf2661ce" title="Возвращает цвет приоритета" alt="" coords="253,5,405,31"/>
+<area shape="poly" title=" " alt="" coords="96,218,113,179,140,131,176,82,197,59,221,40,240,31,237,35,224,44,201,63,180,85,144,134,118,182,101,220"/>
+<area shape="rect" href="enummodel_1_1_priority.html#a3cf5e815f238abd0cf21096783fea607" title="Возвращает читаемое имя приоритета" alt="" coords="229,55,429,80"/>
+<area shape="poly" title=" " alt="" coords="102,218,149,154,182,120,221,91,236,85,233,89,224,95,186,124,153,158,106,220"/>
+<area shape="rect" href="classviewmodel_1_1_task_view_model.html#a5f2424316f62a7ed7067602067535809" title=" " alt="" coords="228,104,430,145"/>
+<area shape="poly" title=" " alt="" coords="117,217,165,185,222,154,238,149,234,153,224,159,168,190,121,221"/>
+<area shape="rect" href="classviewmodel_1_1_task_view_model.html#ac50f2e97f44fd66fc50fa959730eb78f" title="Возвращает идентификатор задачи" alt="" coords="223,169,435,195"/>
+<area shape="poly" title=" " alt="" coords="174,217,222,205,259,198,255,201,223,210,176,221"/>
+<area shape="rect" href="classviewmodel_1_1_task_view_model.html#a6b568ef75542da4868a533844bbbe3a1" title="Проверяет, выполнена ли задача" alt="" coords="232,219,426,260"/>
+<area shape="poly" title=" " alt="" coords="174,237,219,238,214,241,176,242"/>
+<area shape="rect" href="classviewmodel_1_1_task_view_model.html#a81effd078fee106eea52436907468ed9" title="Проверяет, просрочена ли задача" alt="" coords="232,284,426,325"/>
+<area shape="poly" title=" " alt="" coords="166,258,240,279,235,281,167,263"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421" title="Сохраняет все задачи в JSON файл" alt="" coords="250,349,408,375"/>
+<area shape="poly" title=" " alt="" coords="113,257,163,297,224,334,243,344,238,345,221,339,160,302,113,263"/>
+<area shape="rect" href="classviewmodel_1_1_task_view_model.html#a1a2e539e816467e5df6588744541071b" title="Устанавливает статус выполнения задачи" alt="" coords="228,399,430,440"/>
+<area shape="poly" title=" " alt="" coords="105,258,154,322,187,356,224,385,233,392,228,392,221,390,183,360,150,325,104,263"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a073ccddeb707b28c89c4f0c69065fcfb" title="Обновляет статусную строку с информацией о задачах" alt="" coords="241,464,417,505"/>
+<area shape="poly" title=" " alt="" coords="99,258,118,300,144,351,179,404,201,428,224,449,233,457,227,456,221,454,197,432,175,407,139,354,113,302,98,263"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="483,342,655,382"/>
+<area shape="poly" title=" " alt="" coords="408,360,470,362,465,363,408,365"/>
+<area shape="rect" href="classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="703,349,869,375"/>
+<area shape="poly" title=" " alt="" coords="655,360,690,362,685,362,656,365"/>
+<area shape="rect" href="classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="917,349,1079,375"/>
+<area shape="poly" title=" " alt="" coords="869,360,904,362,898,362,869,365"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_ae16c7e665a88192e87fb07fff3dd7ad5_icgraph.png" border="0" usemap="#aclassview_1_1_main_controller_ae16c7e665a88192e87fb07fff3dd7ad5_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_ae16c7e665a88192e87fb07fff3dd7ad5_icgraph" id="aclassview_1_1_main_controller_ae16c7e665a88192e87fb07fff3dd7ad5_icgraph">
+<area shape="rect" title="Настраивает колонки таблицы задач" alt="" coords="238,5,407,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,13,190,38"/>
+<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5032b7916281cf67edeec56fdc65cfad" name="a5032b7916281cf67edeec56fdc65cfad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5032b7916281cf67edeec56fdc65cfad">&#9670;&#160;</a></span>showAlert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.MainController.showAlert </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>title</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>header</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>content</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Показывает информационное диалоговое окно </p>
+<p>Создает и отображает стандартное диалоговое окно с заданными заголовком, заголовочным текстом и содержанием. Используется для уведомлений, предупреждений и сообщений об ошибках.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>Заголовок диалогового окна </td></tr>
+    <tr><td class="paramname">header</td><td>Заголовочный текст диалога (может быть null) </td></tr>
+    <tr><td class="paramname">content</td><td>Основное текстовое содержание сообщения</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Использует AlertType.INFORMATION для информационных сообщений </dd></dl>
+<dl class="section see"><dt>См. также</dt><dd>Alert </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l01065">1065</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00953">handleAddTask()</a>, <a class="el" href="_main_controller_8java_source.html#l01004">handleDeleteTask()</a>, <a class="el" href="_main_controller_8java_source.html#l00573">sortByDate()</a> и <a class="el" href="_main_controller_8java_source.html#l00614">sortByPriority()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_a5032b7916281cf67edeec56fdc65cfad_icgraph.png" border="0" usemap="#aclassview_1_1_main_controller_a5032b7916281cf67edeec56fdc65cfad_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_a5032b7916281cf67edeec56fdc65cfad_icgraph" id="aclassview_1_1_main_controller_a5032b7916281cf67edeec56fdc65cfad_icgraph">
+<area shape="rect" title="Показывает информационное диалоговое окно" alt="" coords="894,107,1062,147"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title="Обработчик кнопки добавления новой задачи" alt="" coords="238,5,413,46"/>
+<area shape="poly" title=" " alt="" coords="925,99,887,83,845,68,730,45,613,32,504,26,414,26,413,20,504,21,613,27,731,40,846,63,889,78,930,99"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title="Обработчик кнопки удаления задачи" alt="" coords="238,136,413,177"/>
+<area shape="poly" title=" " alt="" coords="878,134,413,155,413,150,880,129"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afefa6c872fcfd41bdbae5d6aa1078b21" title="Сортирует задачи по дате выполнения" alt="" coords="686,192,846,233"/>
+<area shape="poly" title=" " alt="" coords="914,153,819,194,818,189,909,154"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4bfffd15238c2895e76c565921cd3441" title="Сортирует задачи по приоритету" alt="" coords="686,77,846,118"/>
+<area shape="poly" title=" " alt="" coords="876,113,846,111,846,106,881,113"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aa87f060a3d3e1f5747310cdf4945a256" title="Настраивает кнопки интерфейса" alt="" coords="465,192,634,233"/>
+<area shape="poly" title=" " alt="" coords="668,212,635,215,635,210,673,212"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,140,190,165"/>
+<area shape="poly" title=" " alt="" coords="447,209,347,205,237,191,142,168,142,163,238,186,347,199,452,209"/>
+<area shape="poly" title=" " alt="" coords="715,125,591,194,589,189,710,126"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6c51614865ef9a13038357431ad8ee7c" title="Обновляет содержимое таблицы задач" alt="" coords="461,73,638,114"/>
+<area shape="poly" title=" " alt="" coords="668,96,639,98,639,93,673,96"/>
+<area shape="poly" title=" " alt="" coords="463,69,395,49,395,44,468,68"/>
+<area shape="poly" title=" " alt="" coords="462,118,402,138,400,133,457,119"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af03ff4fe034cfc97fd82327d0e618e59" title="Загружает задачи из файла и отображает их в таблице" alt="" coords="245,71,406,111"/>
+<area shape="poly" title=" " alt="" coords="443,93,407,95,406,89,448,92"/>
+<area shape="poly" title=" " alt="" coords="230,117,149,141,147,136,235,114"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afefa6c872fcfd41bdbae5d6aa1078b21" name="afefa6c872fcfd41bdbae5d6aa1078b21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afefa6c872fcfd41bdbae5d6aa1078b21">&#9670;&#160;</a></span>sortByDate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.MainController.sortByDate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Сортирует задачи по дате выполнения </p>
+<p>Сортирует список задач по дате окончания (дедлайну). При повторном нажатии меняет направление сортировки. Обновляет текст кнопки для отображения текущего направления.</p>
+<p>@event OnAction кнопки "По дате"</p>
+<dl class="section note"><dt>Заметки</dt><dd>По умолчанию сортировка в возрастающем порядке (старые сверху) </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Отменяет предыдущую сортировку по приоритету </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00573">573</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00276">viewmodel.TaskViewModel.getEndTime()</a>, <a class="el" href="_main_controller_8java_source.html#l01065">showAlert()</a>, <a class="el" href="_main_controller_8java_source.html#l00144">sortByDateAscending</a>, <a class="el" href="_main_controller_8java_source.html#l00100">sortByDateButton</a> и <a class="el" href="_main_controller_8java_source.html#l00141">taskList</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00524">setupButtons()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_afefa6c872fcfd41bdbae5d6aa1078b21_cgraph.png" border="0" usemap="#aclassview_1_1_main_controller_afefa6c872fcfd41bdbae5d6aa1078b21_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_afefa6c872fcfd41bdbae5d6aa1078b21_cgraph" id="aclassview_1_1_main_controller_afefa6c872fcfd41bdbae5d6aa1078b21_cgraph">
+<area shape="rect" title="Сортирует задачи по дате выполнения" alt="" coords="5,39,165,79"/>
+<area shape="rect" href="classviewmodel_1_1_task_view_model.html#aa34a9517a43daff6eef84dc13e1cd0a9" title="Возвращает время окончания (дедлайн) задачи" alt="" coords="213,5,414,46"/>
+<area shape="poly" title=" " alt="" coords="165,45,200,42,194,43,166,50"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a5032b7916281cf67edeec56fdc65cfad" title="Показывает информационное диалоговое окно" alt="" coords="229,71,398,111"/>
+<area shape="poly" title=" " alt="" coords="165,68,216,77,211,77,165,73"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_afefa6c872fcfd41bdbae5d6aa1078b21_icgraph.png" border="0" usemap="#aclassview_1_1_main_controller_afefa6c872fcfd41bdbae5d6aa1078b21_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_afefa6c872fcfd41bdbae5d6aa1078b21_icgraph" id="aclassview_1_1_main_controller_afefa6c872fcfd41bdbae5d6aa1078b21_icgraph">
+<area shape="rect" title="Сортирует задачи по дате выполнения" alt="" coords="455,5,614,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aa87f060a3d3e1f5747310cdf4945a256" title="Настраивает кнопки интерфейса" alt="" coords="238,5,407,46"/>
+<area shape="poly" title=" " alt="" coords="437,26,407,28,407,23,442,26"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,13,190,38"/>
+<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4bfffd15238c2895e76c565921cd3441" name="a4bfffd15238c2895e76c565921cd3441"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bfffd15238c2895e76c565921cd3441">&#9670;&#160;</a></span>sortByPriority()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.MainController.sortByPriority </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Сортирует задачи по приоритету </p>
+<p>Сортирует список задач по приоритету: URGENT → IMPORTANT → NORMAL. При повторном нажатии меняет направление сортировки. Внутри одинаковых приоритетов задачи сортируются по дате.</p>
+<p>@event OnAction кнопки "По приоритету"</p>
+<dl class="section note"><dt>Заметки</dt><dd>По умолчанию сортировка в порядке важности (важные сверху) </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Отменяет предыдущую сортировку по дате</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="enummodel_1_1_priority.html">Priority</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00614">614</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00276">viewmodel.TaskViewModel.getEndTime()</a>, <a class="el" href="_main_controller_8java_source.html#l01065">showAlert()</a>, <a class="el" href="_main_controller_8java_source.html#l00150">sortByPriorityAscending</a>, <a class="el" href="_main_controller_8java_source.html#l00103">sortByPriorityButton</a> и <a class="el" href="_main_controller_8java_source.html#l00141">taskList</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00899">refreshTable()</a> и <a class="el" href="_main_controller_8java_source.html#l00524">setupButtons()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_a4bfffd15238c2895e76c565921cd3441_cgraph.png" border="0" usemap="#aclassview_1_1_main_controller_a4bfffd15238c2895e76c565921cd3441_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_a4bfffd15238c2895e76c565921cd3441_cgraph" id="aclassview_1_1_main_controller_a4bfffd15238c2895e76c565921cd3441_cgraph">
+<area shape="rect" title="Сортирует задачи по приоритету" alt="" coords="5,39,165,79"/>
+<area shape="rect" href="classviewmodel_1_1_task_view_model.html#aa34a9517a43daff6eef84dc13e1cd0a9" title="Возвращает время окончания (дедлайн) задачи" alt="" coords="213,5,414,46"/>
+<area shape="poly" title=" " alt="" coords="165,45,200,42,194,43,166,50"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a5032b7916281cf67edeec56fdc65cfad" title="Показывает информационное диалоговое окно" alt="" coords="229,71,398,111"/>
+<area shape="poly" title=" " alt="" coords="165,68,216,77,211,77,165,73"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_a4bfffd15238c2895e76c565921cd3441_icgraph.png" border="0" usemap="#aclassview_1_1_main_controller_a4bfffd15238c2895e76c565921cd3441_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_a4bfffd15238c2895e76c565921cd3441_icgraph" id="aclassview_1_1_main_controller_a4bfffd15238c2895e76c565921cd3441_icgraph">
+<area shape="rect" title="Сортирует задачи по приоритету" alt="" coords="686,133,846,174"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6c51614865ef9a13038357431ad8ee7c" title="Обновляет содержимое таблицы задач" alt="" coords="461,85,638,126"/>
+<area shape="poly" title=" " alt="" coords="668,132,639,128,639,123,674,133"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aa87f060a3d3e1f5747310cdf4945a256" title="Настраивает кнопки интерфейса" alt="" coords="465,165,634,206"/>
+<area shape="poly" title=" " alt="" coords="673,167,635,176,634,170,668,168"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title="Обработчик кнопки добавления новой задачи" alt="" coords="238,5,413,46"/>
+<area shape="poly" title=" " alt="" coords="474,80,385,49,385,44,479,79"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title="Обработчик кнопки удаления задачи" alt="" coords="238,71,413,111"/>
+<area shape="poly" title=" " alt="" coords="443,99,414,99,413,94,448,99"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af03ff4fe034cfc97fd82327d0e618e59" title="Загружает задачи из файла и отображает их в таблице" alt="" coords="245,136,406,177"/>
+<area shape="poly" title=" " alt="" coords="449,129,407,141,406,135,443,130"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,173,190,198"/>
+<area shape="poly" title=" " alt="" coords="227,169,191,176,190,171,232,168"/>
+<area shape="poly" title=" " alt="" coords="447,188,413,191,238,191,190,190,190,185,238,186,413,186,452,188"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad174cb4a233843c3a918f44f8c04df3d" name="ad174cb4a233843c3a918f44f8c04df3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad174cb4a233843c3a918f44f8c04df3d">&#9670;&#160;</a></span>startSnowAnimation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.MainController.startSnowAnimation </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Запускает анимацию снежинок </p>
+<p>Создает и запускает AnimationTimer, который обновляет позиции снежинок каждый кадр анимации. Обеспечивает плавное падение снежинок с эффектами покачивания и мерцания.</p>
+<dl class="section note"><dt>Заметки</dt><dd>Использует дельта-время для независимой от частоты кадров анимации </dd></dl>
+<dl class="section see"><dt>См. также</dt><dd>AnimationTimer </dd>
+<dd>
+<a class="el" href="#a7747886ba8b07db62a5639a71af582d1" title="Обновляет анимацию снежинок">updateSnowflakesAnimation(double)</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00799">799</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_controller_8java_source.html#l00132">snowTimer</a> и <a class="el" href="_main_controller_8java_source.html#l00833">updateSnowflakesAnimation()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00190">initialize()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_ad174cb4a233843c3a918f44f8c04df3d_cgraph.png" border="0" usemap="#aclassview_1_1_main_controller_ad174cb4a233843c3a918f44f8c04df3d_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_ad174cb4a233843c3a918f44f8c04df3d_cgraph" id="aclassview_1_1_main_controller_ad174cb4a233843c3a918f44f8c04df3d_cgraph">
+<area shape="rect" title="Запускает анимацию снежинок" alt="" coords="5,5,169,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7747886ba8b07db62a5639a71af582d1" title="Обновляет анимацию снежинок" alt="" coords="217,5,393,46"/>
+<area shape="poly" title=" " alt="" coords="169,23,204,25,198,26,169,28"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_ad174cb4a233843c3a918f44f8c04df3d_icgraph.png" border="0" usemap="#aclassview_1_1_main_controller_ad174cb4a233843c3a918f44f8c04df3d_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_ad174cb4a233843c3a918f44f8c04df3d_icgraph" id="aclassview_1_1_main_controller_ad174cb4a233843c3a918f44f8c04df3d_icgraph">
+<area shape="rect" title="Запускает анимацию снежинок" alt="" coords="238,5,401,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,13,190,38"/>
+<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7747886ba8b07db62a5639a71af582d1" name="a7747886ba8b07db62a5639a71af582d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7747886ba8b07db62a5639a71af582d1">&#9670;&#160;</a></span>updateSnowflakesAnimation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.MainController.updateSnowflakesAnimation </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>deltaTime</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обновляет анимацию снежинок </p>
+<p>Вычисляет новые позиции для каждой снежинки на основе прошедшего времени, скорости падения и эффектов анимации. Обеспечивает циклическое движение снежинок (при выходе за нижнюю границу они появляются сверху).</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">deltaTime</td><td>Время, прошедшее с предыдущего обновления (в секундах)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Включает эффекты: падение, покачивание, мерцание </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00833">833</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_controller_8java_source.html#l00135">random</a>, <a class="el" href="_main_controller_8java_source.html#l00138">snowflakes</a> и <a class="el" href="_main_controller_8java_source.html#l00116">snowPane</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00799">startSnowAnimation()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_a7747886ba8b07db62a5639a71af582d1_icgraph.png" border="0" usemap="#aclassview_1_1_main_controller_a7747886ba8b07db62a5639a71af582d1_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_a7747886ba8b07db62a5639a71af582d1_icgraph" id="aclassview_1_1_main_controller_a7747886ba8b07db62a5639a71af582d1_icgraph">
+<area shape="rect" title="Обновляет анимацию снежинок" alt="" coords="449,5,625,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ad174cb4a233843c3a918f44f8c04df3d" title="Запускает анимацию снежинок" alt="" coords="238,5,401,46"/>
+<area shape="poly" title=" " alt="" coords="431,26,402,28,402,23,436,26"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,13,190,38"/>
+<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae7c0b0165f6acc4f9b614e26c5f52925" name="ae7c0b0165f6acc4f9b614e26c5f52925"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7c0b0165f6acc4f9b614e26c5f52925">&#9670;&#160;</a></span>updateSnowflakesForWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.MainController.updateSnowflakesForWindow </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обновляет снежинки при изменении размера окна </p>
+<p>Проверяет положение существующих снежинок относительно новых границ окна и при необходимости корректирует их позиции. Также добавляет новые снежинки если окно увеличилось.</p>
+<dl class="section note"><dt>Заметки</dt><dd>Количество снежинок адаптируется к площади окна </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Вызывается при каждом изменении размеров окна </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00737">737</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_controller_8java_source.html#l00135">random</a>, <a class="el" href="_main_controller_8java_source.html#l00138">snowflakes</a> и <a class="el" href="_main_controller_8java_source.html#l00116">snowPane</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00453">setupResizeListeners()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_ae7c0b0165f6acc4f9b614e26c5f52925_icgraph.png" border="0" usemap="#aclassview_1_1_main_controller_ae7c0b0165f6acc4f9b614e26c5f52925_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_ae7c0b0165f6acc4f9b614e26c5f52925_icgraph" id="aclassview_1_1_main_controller_ae7c0b0165f6acc4f9b614e26c5f52925_icgraph">
+<area shape="rect" title="Обновляет снежинки при изменении размера окна" alt="" coords="672,5,849,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae4fb9b136c72c5affdf42b517c5e6e91" title="Настраивает слушатели изменения размеров окна" alt="" coords="455,5,624,46"/>
+<area shape="poly" title=" " alt="" coords="654,26,625,28,625,23,659,26"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a18f9d437b1015bdbe51340d0275c2a43" title="Настраивает адаптивный layout интерфейса" alt="" coords="238,5,407,46"/>
+<area shape="poly" title=" " alt="" coords="437,26,407,28,407,23,442,26"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,13,190,38"/>
+<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a073ccddeb707b28c89c4f0c69065fcfb" name="a073ccddeb707b28c89c4f0c69065fcfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a073ccddeb707b28c89c4f0c69065fcfb">&#9670;&#160;</a></span>updateStatusLabel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.MainController.updateStatusLabel </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обновляет статусную строку с информацией о задачах </p>
+<p>Рассчитывает и отображает статистику по задачам: общее количество, количество выполненных и просроченных задач. Используется для предоставления пользователю сводной информации.</p>
+<dl class="section note"><dt>Заметки</dt><dd>Вызывается после каждого изменения состояния задач </dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classmodel_1_1_task_manager.html#abc809a0b2d184494368cc5cc6dae6346" title="Возвращает копию списка всех задач">TaskManager.getAllTasks()</a> </dd>
+<dd>
+<a class="el" href="classmodel_1_1_task_manager.html#a83be2e7272a4f79d69be72380893f0f6" title="Подсчитывает количество задач по статусу выполнения">TaskManager.getTaskCount(boolean)</a> </dd>
+<dd>
+<a class="el" href="classmodel_1_1_task_manager.html#a593c44bb00c7932604aefff2aed3713f" title="Подсчитывает количество просроченных задач">TaskManager.getOverdueTaskCount()</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00926">926</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_controller_8java_source.html#l00109">statusLabel</a> и <a class="el" href="_main_controller_8java_source.html#l00126">taskManager</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00953">handleAddTask()</a>, <a class="el" href="_main_controller_8java_source.html#l01004">handleDeleteTask()</a>, <a class="el" href="_main_controller_8java_source.html#l00190">initialize()</a> и <a class="el" href="_main_controller_8java_source.html#l00246">setupTableColumns()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_main_controller_a073ccddeb707b28c89c4f0c69065fcfb_icgraph.png" border="0" usemap="#aclassview_1_1_main_controller_a073ccddeb707b28c89c4f0c69065fcfb_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_main_controller_a073ccddeb707b28c89c4f0c69065fcfb_icgraph" id="aclassview_1_1_main_controller_a073ccddeb707b28c89c4f0c69065fcfb_icgraph">
+<area shape="rect" title="Обновляет статусную строку с информацией о задачах" alt="" coords="461,100,637,141"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title="Обработчик кнопки добавления новой задачи" alt="" coords="238,5,413,46"/>
+<area shape="poly" title=" " alt="" coords="487,93,412,61,382,49,382,44,414,57,493,93"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title="Обработчик кнопки удаления задачи" alt="" coords="238,71,413,111"/>
+<area shape="poly" title=" " alt="" coords="443,107,414,105,413,100,448,106"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,165,190,190"/>
+<area shape="poly" title=" " alt="" coords="445,136,191,169,190,163,446,131"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title="Настраивает колонки таблицы задач" alt="" coords="241,185,410,226"/>
+<area shape="poly" title=" " alt="" coords="482,146,382,187,380,182,477,147"/>
+<area shape="poly" title=" " alt="" coords="222,194,190,192,190,186,228,193"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="a22521069c59ba2b0bdbc22a47f159223" name="a22521069c59ba2b0bdbc22a47f159223"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22521069c59ba2b0bdbc22a47f159223">&#9670;&#160;</a></span>addButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Button view.MainController.addButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Кнопка для добавления новой задачи </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00094">94</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00953">handleAddTask()</a> и <a class="el" href="_main_controller_8java_source.html#l00524">setupButtons()</a>.</p>
+
+</div>
+</div>
+<a id="a28672b48fd401684108b52a3806de7cb" name="a28672b48fd401684108b52a3806de7cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28672b48fd401684108b52a3806de7cb">&#9670;&#160;</a></span>appTitleLabel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Label view.MainController.appTitleLabel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Метка с заголовком приложения </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00119">119</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00190">initialize()</a>.</p>
+
+</div>
+</div>
+<a id="adf49d42c90d8876b46d204cdc35b08c5" name="adf49d42c90d8876b46d204cdc35b08c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf49d42c90d8876b46d204cdc35b08c5">&#9670;&#160;</a></span>audioManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutil_1_1_audio_manager.html">AudioManager</a> view.MainController.audioManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Менеджер аудио для воспроизведения звуковых эффектов </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00129">129</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00190">initialize()</a>.</p>
+
+</div>
+</div>
+<a id="a9650b688c33a565ff303aad7a0a0364e" name="a9650b688c33a565ff303aad7a0a0364e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9650b688c33a565ff303aad7a0a0364e">&#9670;&#160;</a></span>categoryColumn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TableColumn&lt;<a class="el" href="classviewmodel_1_1_task_view_model.html">TaskViewModel</a>, String&gt; view.MainController.categoryColumn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Колонка таблицы для категории задачи </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00081">81</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00482">adjustTableColumns()</a> и <a class="el" href="_main_controller_8java_source.html#l00246">setupTableColumns()</a>.</p>
+
+</div>
+</div>
+<a id="aa47a876a0d7c38aedf2f248d8cffe05a" name="aa47a876a0d7c38aedf2f248d8cffe05a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa47a876a0d7c38aedf2f248d8cffe05a">&#9670;&#160;</a></span>deadlineColumn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TableColumn&lt;<a class="el" href="classviewmodel_1_1_task_view_model.html">TaskViewModel</a>, LocalDateTime&gt; view.MainController.deadlineColumn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Колонка таблицы для срока выполнения задачи </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00075">75</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00482">adjustTableColumns()</a> и <a class="el" href="_main_controller_8java_source.html#l00246">setupTableColumns()</a>.</p>
+
+</div>
+</div>
+<a id="abb8e4227b9fa0499cd8fd28edd45695c" name="abb8e4227b9fa0499cd8fd28edd45695c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb8e4227b9fa0499cd8fd28edd45695c">&#9670;&#160;</a></span>deleteButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Button view.MainController.deleteButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Кнопка для удаления выбранной задачи </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00097">97</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00524">setupButtons()</a>.</p>
+
+</div>
+</div>
+<a id="a968cc913497e5ab12be4d432e8a28eb2" name="a968cc913497e5ab12be4d432e8a28eb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a968cc913497e5ab12be4d432e8a28eb2">&#9670;&#160;</a></span>descriptionColumn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TableColumn&lt;<a class="el" href="classviewmodel_1_1_task_view_model.html">TaskViewModel</a>, String&gt; view.MainController.descriptionColumn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Колонка таблицы для описания задачи </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00072">72</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00482">adjustTableColumns()</a> и <a class="el" href="_main_controller_8java_source.html#l00246">setupTableColumns()</a>.</p>
+
+</div>
+</div>
+<a id="a3bea8aa103232816bfd84a1da6f70dd9" name="a3bea8aa103232816bfd84a1da6f70dd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bea8aa103232816bfd84a1da6f70dd9">&#9670;&#160;</a></span>mainContainer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Pane view.MainController.mainContainer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Главный контейнер интерфейса </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00122">122</a></p>
+
+</div>
+</div>
+<a id="a990ea6d6440ed941c68f1f51bd10f5dd" name="a990ea6d6440ed941c68f1f51bd10f5dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a990ea6d6440ed941c68f1f51bd10f5dd">&#9670;&#160;</a></span>priorityColumn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TableColumn&lt;<a class="el" href="classviewmodel_1_1_task_view_model.html">TaskViewModel</a>, <a class="el" href="enummodel_1_1_priority.html">Priority</a>&gt; view.MainController.priorityColumn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Колонка таблицы для приоритета задачи </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00078">78</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00482">adjustTableColumns()</a> и <a class="el" href="_main_controller_8java_source.html#l00246">setupTableColumns()</a>.</p>
+
+</div>
+</div>
+<a id="ad92a8438dd70b5ed4ea5e6a259ca61e3" name="ad92a8438dd70b5ed4ea5e6a259ca61e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad92a8438dd70b5ed4ea5e6a259ca61e3">&#9670;&#160;</a></span>random</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Random view.MainController.random</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Генератор случайных чисел для создания снежинок </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00135">135</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00692">createSnowflakesForWindow()</a>, <a class="el" href="_main_controller_8java_source.html#l00190">initialize()</a>, <a class="el" href="_main_controller_8java_source.html#l00833">updateSnowflakesAnimation()</a> и <a class="el" href="_main_controller_8java_source.html#l00737">updateSnowflakesForWindow()</a>.</p>
+
+</div>
+</div>
+<a id="a4f8d5b8214e956d51dab2d44a760aeb1" name="a4f8d5b8214e956d51dab2d44a760aeb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f8d5b8214e956d51dab2d44a760aeb1">&#9670;&#160;</a></span>searchField</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TextField view.MainController.searchField</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Поле для поиска задач </p>
+<p>Позволяет пользователю искать задачи по тексту в заголовке или описании. Поиск происходит в реальном времени по мере ввода текста. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00091">91</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00190">initialize()</a> и <a class="el" href="_main_controller_8java_source.html#l01042">searchTasks()</a>.</p>
+
+</div>
+</div>
+<a id="ae84a525bfb7679121df719060ae5785c" name="ae84a525bfb7679121df719060ae5785c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae84a525bfb7679121df719060ae5785c">&#9670;&#160;</a></span>snowflakes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;<a class="el" href="classview_1_1_main_controller_1_1_snowflake_data.html">SnowflakeData</a>&gt; view.MainController.snowflakes</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Список данных снежинок для анимации </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00138">138</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00692">createSnowflakesForWindow()</a>, <a class="el" href="_main_controller_8java_source.html#l00190">initialize()</a>, <a class="el" href="_main_controller_8java_source.html#l00666">initSnowflakes()</a>, <a class="el" href="_main_controller_8java_source.html#l00833">updateSnowflakesAnimation()</a> и <a class="el" href="_main_controller_8java_source.html#l00737">updateSnowflakesForWindow()</a>.</p>
+
+</div>
+</div>
+<a id="aabbc255cb401c48a4ea3f64c1a7292a9" name="aabbc255cb401c48a4ea3f64c1a7292a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabbc255cb401c48a4ea3f64c1a7292a9">&#9670;&#160;</a></span>snowPane</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Pane view.MainController.snowPane</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Панель для анимации снежинок </p>
+<p>Контейнер JavaFX, на котором отрисовываются анимированные снежинки. Используется для создания фоновой новогодней анимации. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00116">116</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00692">createSnowflakesForWindow()</a>, <a class="el" href="_main_controller_8java_source.html#l00190">initialize()</a>, <a class="el" href="_main_controller_8java_source.html#l00666">initSnowflakes()</a>, <a class="el" href="_main_controller_8java_source.html#l00833">updateSnowflakesAnimation()</a> и <a class="el" href="_main_controller_8java_source.html#l00737">updateSnowflakesForWindow()</a>.</p>
+
+</div>
+</div>
+<a id="afd63b350c4b30bb4072ac6bd9d3d7da6" name="afd63b350c4b30bb4072ac6bd9d3d7da6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd63b350c4b30bb4072ac6bd9d3d7da6">&#9670;&#160;</a></span>snowTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AnimationTimer view.MainController.snowTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Таймер для анимации снежинок </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00132">132</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l01084">handleExit()</a> и <a class="el" href="_main_controller_8java_source.html#l00799">startSnowAnimation()</a>.</p>
+
+</div>
+</div>
+<a id="aef8f3aaf553a94a2d7fc3e662309ef79" name="aef8f3aaf553a94a2d7fc3e662309ef79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef8f3aaf553a94a2d7fc3e662309ef79">&#9670;&#160;</a></span>sortByDateAscending</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean view.MainController.sortByDateAscending = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Флаг направления сортировки по дате (true - возрастание, false - убывание). </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00144">144</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00573">sortByDate()</a>.</p>
+
+</div>
+</div>
+<a id="a08c6fc68b23fdbadd9bbdbc1b44e5c7a" name="a08c6fc68b23fdbadd9bbdbc1b44e5c7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08c6fc68b23fdbadd9bbdbc1b44e5c7a">&#9670;&#160;</a></span>sortByDateButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Button view.MainController.sortByDateButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Кнопка для сортировки задач по дате </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00100">100</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00524">setupButtons()</a> и <a class="el" href="_main_controller_8java_source.html#l00573">sortByDate()</a>.</p>
+
+</div>
+</div>
+<a id="a23a0e446693c2e65459640e0bb6a4ac1" name="a23a0e446693c2e65459640e0bb6a4ac1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23a0e446693c2e65459640e0bb6a4ac1">&#9670;&#160;</a></span>sortByPriorityAscending</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean view.MainController.sortByPriorityAscending = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Флаг направления сортировки по приоритету </p>
+<p>true - неважные сверху, false - важные сверху (по умолчанию) </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00150">150</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00899">refreshTable()</a> и <a class="el" href="_main_controller_8java_source.html#l00614">sortByPriority()</a>.</p>
+
+</div>
+</div>
+<a id="abcf16b7820504772707b5b011ff56898" name="abcf16b7820504772707b5b011ff56898"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcf16b7820504772707b5b011ff56898">&#9670;&#160;</a></span>sortByPriorityButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Button view.MainController.sortByPriorityButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Кнопка для сортировки задач по приоритету </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00103">103</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00524">setupButtons()</a> и <a class="el" href="_main_controller_8java_source.html#l00614">sortByPriority()</a>.</p>
+
+</div>
+</div>
+<a id="a0859893b8b9dc5032b836774a2e07229" name="a0859893b8b9dc5032b836774a2e07229"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0859893b8b9dc5032b836774a2e07229">&#9670;&#160;</a></span>statusColumn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TableColumn&lt;<a class="el" href="classviewmodel_1_1_task_view_model.html">TaskViewModel</a>, Boolean&gt; view.MainController.statusColumn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Колонка таблицы для статуса выполнения задачи </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00084">84</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00482">adjustTableColumns()</a> и <a class="el" href="_main_controller_8java_source.html#l00246">setupTableColumns()</a>.</p>
+
+</div>
+</div>
+<a id="a229f68a68979f67428e5ecf5523131f6" name="a229f68a68979f67428e5ecf5523131f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a229f68a68979f67428e5ecf5523131f6">&#9670;&#160;</a></span>statusLabel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Label view.MainController.statusLabel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Метка для отображения статистики задач </p>
+<p>Показывает общее количество задач, количество выполненных и просроченных задач. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00109">109</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00926">updateStatusLabel()</a>.</p>
+
+</div>
+</div>
+<a id="ae06ddcbecf646568c4570a8d5b5e1c96" name="ae06ddcbecf646568c4570a8d5b5e1c96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae06ddcbecf646568c4570a8d5b5e1c96">&#9670;&#160;</a></span>taskList</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ObservableList&lt;<a class="el" href="classviewmodel_1_1_task_view_model.html">TaskViewModel</a>&gt; view.MainController.taskList</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Наблюдаемый список задач для отображения в таблице </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00141">141</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00190">initialize()</a>, <a class="el" href="_main_controller_8java_source.html#l00899">refreshTable()</a>, <a class="el" href="_main_controller_8java_source.html#l01042">searchTasks()</a>, <a class="el" href="_main_controller_8java_source.html#l00573">sortByDate()</a> и <a class="el" href="_main_controller_8java_source.html#l00614">sortByPriority()</a>.</p>
+
+</div>
+</div>
+<a id="a98518138e35ef80460fb346d3e2b8e4f" name="a98518138e35ef80460fb346d3e2b8e4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98518138e35ef80460fb346d3e2b8e4f">&#9670;&#160;</a></span>taskManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmodel_1_1_task_manager.html">TaskManager</a> view.MainController.taskManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Менеджер задач для работы с бизнес-логикой </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00126">126</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00953">handleAddTask()</a>, <a class="el" href="_main_controller_8java_source.html#l01004">handleDeleteTask()</a>, <a class="el" href="_main_controller_8java_source.html#l00190">initialize()</a>, <a class="el" href="_main_controller_8java_source.html#l00883">loadTasks()</a>, <a class="el" href="_main_controller_8java_source.html#l00899">refreshTable()</a>, <a class="el" href="_main_controller_8java_source.html#l01042">searchTasks()</a>, <a class="el" href="_main_controller_8java_source.html#l00246">setupTableColumns()</a> и <a class="el" href="_main_controller_8java_source.html#l00926">updateStatusLabel()</a>.</p>
+
+</div>
+</div>
+<a id="a913d44ac87626a10112f0dfce47d4779" name="a913d44ac87626a10112f0dfce47d4779"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a913d44ac87626a10112f0dfce47d4779">&#9670;&#160;</a></span>taskTable</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TableView&lt;<a class="el" href="classviewmodel_1_1_task_view_model.html">TaskViewModel</a>&gt; view.MainController.taskTable</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Таблица для отображения задач </p>
+<p>JavaFX TableView, которая отображает список задач в виде таблицы. Связана с <a class="el" href="classviewmodel_1_1_task_view_model.html" title="ViewModel для отображения задачи в пользовательском интерфейсе">TaskViewModel</a> для двусторонней привязки данных. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00066">66</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00482">adjustTableColumns()</a>, <a class="el" href="_main_controller_8java_source.html#l00508">adjustTableHeight()</a>, <a class="el" href="_main_controller_8java_source.html#l01004">handleDeleteTask()</a>, <a class="el" href="_main_controller_8java_source.html#l01084">handleExit()</a>, <a class="el" href="_main_controller_8java_source.html#l00899">refreshTable()</a>, <a class="el" href="_main_controller_8java_source.html#l00429">setupAdaptiveLayout()</a> и <a class="el" href="_main_controller_8java_source.html#l00453">setupResizeListeners()</a>.</p>
+
+</div>
+</div>
+<a id="a024755eb2f6747771ff804d5fc9f89d1" name="a024755eb2f6747771ff804d5fc9f89d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a024755eb2f6747771ff804d5fc9f89d1">&#9670;&#160;</a></span>titleColumn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TableColumn&lt;<a class="el" href="classviewmodel_1_1_task_view_model.html">TaskViewModel</a>, String&gt; view.MainController.titleColumn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Колонка таблицы для заголовка задачи </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_main_controller_8java_source.html">MainController.java</a> строка <a class="el" href="_main_controller_8java_source.html#l00069">69</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00482">adjustTableColumns()</a> и <a class="el" href="_main_controller_8java_source.html#l00246">setupTableColumns()</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>src/view/<a class="el" href="_main_controller_8java_source.html">MainController.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespaceview.html">view</a></li><li class="navelem"><a href="classview_1_1_main_controller.html">MainController</a></li>
+    <li class="footer">Документация по Умный планировщик задач (To-Do List). Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+<map id="view.MainController.startSnowAnimation" name="view.MainController.startSnowAnimation">
+<area shape="rect" id="Node000001" title="Запускает анимацию снежинок" alt="" coords="5,5,169,46"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_main_controller.html#a7747886ba8b07db62a5639a71af582d1" title="Обновляет анимацию снежинок" alt="" coords="217,5,393,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,23,204,25,198,26,169,28"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="model.Task.getId" name="model.Task.getId">
+<area shape="rect" id="Node000001" title="Возвращает уникальный идентификатор задачи" alt="" coords="215,5,336,31"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_json_util.html#a48c5f07142384cff793469f5aec70968" title="Обновляет существующую задачу" alt="" coords="5,5,167,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,18,167,21,167,16,202,18"/>
+</map>

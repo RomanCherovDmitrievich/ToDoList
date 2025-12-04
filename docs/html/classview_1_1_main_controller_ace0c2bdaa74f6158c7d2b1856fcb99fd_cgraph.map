@@ -1,0 +1,85 @@
+<map id="view.MainController.initialize" name="view.MainController.initialize">
+<area shape="rect" id="Node000001" title="Инициализация контроллера" alt="" coords="5,311,190,336"/>
+<area shape="rect" id="Node000002" href="$classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea" title="Возвращает единственный экземпляр TaskManager." alt="" coords="238,9,447,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,310,112,261,138,191,157,153,179,116,205,81,236,51,256,40,253,44,239,55,209,85,183,119,161,156,143,194,117,263,104,311"/>
+<area shape="rect" id="Node000004" href="$classutil_1_1_audio_manager.html#aaf7ec801730bf60f659b843ace062d86" title="Получает единственный экземпляр AudioManager." alt="" coords="244,65,440,91"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="102,309,119,271,148,219,187,163,210,136,236,113,272,95,268,99,239,118,214,140,191,166,152,221,124,273,107,311"/>
+<area shape="rect" id="Node000007" href="$classview_1_1_main_controller.html#a176bf2a7ba00056ac7a14652c6650c2d" title="Инициализирует снежинки для всего окна" alt="" coords="265,127,420,168"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="110,309,164,259,236,203,288,173,284,177,239,207,168,264,115,311"/>
+<area shape="rect" id="Node000009" href="$classview_1_1_main_controller.html#af03ff4fe034cfc97fd82327d0e618e59" title="Загружает задачи из файла и отображает их в таблице" alt="" coords="262,216,423,257"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="134,308,270,261,267,265,138,312"/>
+<area shape="rect" id="Node000018" href="$classview_1_1_main_controller.html#ab0a0b6174538107b445044eb3139e87c" title="Выполняет поиск задач по текстовому запросу" alt="" coords="254,331,430,372"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="189,332,241,338,237,341,191,336"/>
+<area shape="rect" id="Node000019" href="$classview_1_1_main_controller.html#a18f9d437b1015bdbe51340d0275c2a43" title="Настраивает адаптивный layout интерфейса" alt="" coords="258,396,427,437"/>
+<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="127,334,239,381,261,390,256,392,237,386,129,339"/>
+<area shape="rect" id="Node000024" href="$classview_1_1_main_controller.html#aa87f060a3d3e1f5747310cdf4945a256" title="Настраивает кнопки интерфейса" alt="" coords="520,284,689,325"/>
+<area shape="poly" id="edge23_Node000001_Node000024" title=" " alt="" coords="189,318,506,306,503,311,191,323"/>
+<area shape="rect" id="Node000026" href="$classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title="Настраивает колонки таблицы задач" alt="" coords="258,635,427,676"/>
+<area shape="poly" id="edge28_Node000001_Node000026" title=" " alt="" coords="110,334,319,621,314,623,108,339"/>
+<area shape="rect" id="Node000038" href="$classview_1_1_main_controller.html#a073ccddeb707b28c89c4f0c69065fcfb" title="Обновляет статусную строку с информацией о задачах" alt="" coords="516,896,693,937"/>
+<area shape="poly" id="edge43_Node000001_Node000038" title=" " alt="" coords="101,334,116,395,142,486,183,589,209,639,240,686,298,756,352,802,414,839,496,881,513,891,507,890,494,886,412,844,349,806,294,759,236,689,204,642,178,591,137,487,111,397,101,339"/>
+<area shape="rect" id="Node000039" href="$classview_1_1_main_controller.html#ad174cb4a233843c3a918f44f8c04df3d" title="Запускает анимацию снежинок" alt="" coords="261,890,424,930"/>
+<area shape="poly" id="edge41_Node000001_Node000039" title=" " alt="" coords="101,334,117,406,144,517,184,648,210,714,240,777,275,831,313,879,308,878,271,834,235,779,205,716,179,649,139,518,112,407,101,339"/>
+<area shape="rect" id="Node000003" href="$classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c" title="Приватный конструктор" alt="" coords="495,5,714,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="446,18,482,19,477,22,449,23"/>
+<area shape="rect" id="Node000005" href="$classutil_1_1_audio_manager.html#ab16a211144282895701d2b0a64a66145" title="Приватный конструктор" alt="" coords="499,55,710,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="440,72,485,71,481,74,442,76"/>
+<area shape="rect" id="Node000006" href="$classutil_1_1_audio_manager.html#a5ad71057028d829235d9ca3519feae2d" title="Загружает все звуки приложения" alt="" coords="762,55,959,80"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="710,65,749,66,744,69,712,70"/>
+<area shape="rect" id="Node000008" href="$classview_1_1_main_controller.html#ab66a02b22de6d12575196237192dbc81" title="Создает снежинки для всего окна" alt="" coords="518,104,691,145"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="418,139,505,132,500,135,421,143"/>
+<area shape="rect" id="Node000010" href="$classutil_1_1_json_util.html#a2a80078f88c932a5ab230d4775c2391d" title="Загружает все задачи из JSON файла" alt="" coords="528,169,681,195"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="422,218,527,197,523,200,425,222"/>
+<area shape="rect" id="Node000014" href="$classview_1_1_main_controller.html#a6c51614865ef9a13038357431ad8ee7c" title="Обновляет содержимое таблицы задач" alt="" coords="516,219,693,260"/>
+<area shape="poly" id="edge13_Node000009_Node000014" title=" " alt="" coords="422,235,503,237,498,240,425,240"/>
+<area shape="rect" id="Node000011" href="$classutil_1_1_json_util.html#a92865a18b3e9681f516419fd55bfb27a" title="Парсит JSON строку в список задач" alt="" coords="780,154,941,194"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="681,177,766,176,762,178,683,182"/>
+<area shape="rect" id="Node000012" href="$classutil_1_1_json_util.html#a428f650826f08a9ee580d87bb60a1443" title="Парсит один JSON объект задачи" alt="" coords="1012,165,1202,191"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="941,173,999,175,994,177,943,178"/>
+<area shape="rect" id="Node000013" href="$classutil_1_1_json_util.html#a53c77a1cd244ad8e37075b9a6c44da32" title="Разделяет JSON массив на отдельные объекты" alt="" coords="1012,116,1203,142"/>
+<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="941,157,1021,144,1016,146,943,162"/>
+<area shape="rect" id="Node000015" href="$classview_1_1_main_controller.html#a4bfffd15238c2895e76c565921cd3441" title="Сортирует задачи по приоритету" alt="" coords="781,219,940,260"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="693,237,768,238,763,241,695,242"/>
+<area shape="rect" id="Node000016" href="$classviewmodel_1_1_task_view_model.html#aa34a9517a43daff6eef84dc13e1cd0a9" title="Возвращает время окончания (дедлайн) задачи" alt="" coords="1007,284,1208,325"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="940,258,1016,279,1010,281,941,263"/>
+<area shape="rect" id="Node000017" href="$classview_1_1_main_controller.html#a5032b7916281cf67edeec56fdc65cfad" title="Показывает информационное диалоговое окно" alt="" coords="1023,219,1192,260"/>
+<area shape="poly" id="edge16_Node000015_Node000017" title=" " alt="" coords="940,237,1010,239,1005,240,942,242"/>
+<area shape="rect" id="Node000020" href="$classview_1_1_main_controller.html#ae4fb9b136c72c5affdf42b517c5e6e91" title="Настраивает слушатели изменения размеров окна" alt="" coords="520,372,689,413"/>
+<area shape="poly" id="edge19_Node000019_Node000020" title=" " alt="" coords="426,407,507,401,502,403,429,411"/>
+<area shape="rect" id="Node000021" href="$classview_1_1_main_controller.html#ab0783c7504d7a4fe9637653fbbdeff9a" title="Настраивает ширины колонок таблицы" alt="" coords="774,350,947,390"/>
+<area shape="poly" id="edge20_Node000020_Node000021" title=" " alt="" coords="689,383,761,378,756,380,691,388"/>
+<area shape="rect" id="Node000022" href="$classview_1_1_main_controller.html#af4f451efaddaf24ec9e252f9d1f7bbc1" title="Настраивает высоту таблицы" alt="" coords="774,415,947,456"/>
+<area shape="poly" id="edge21_Node000020_Node000022" title=" " alt="" coords="689,404,761,418,756,419,691,410"/>
+<area shape="rect" id="Node000023" href="$classview_1_1_main_controller.html#ae7c0b0165f6acc4f9b614e26c5f52925" title="Обновляет снежинки при изменении размера окна" alt="" coords="772,480,949,521"/>
+<area shape="poly" id="edge22_Node000020_Node000023" title=" " alt="" coords="687,411,716,424,731,434,740,445,750,455,764,465,777,473,771,474,761,470,746,459,736,448,727,438,713,428,688,416"/>
+<area shape="poly" id="edge27_Node000024_Node000015" title=" " alt="" coords="686,282,768,262,763,265,688,286"/>
+<area shape="rect" id="Node000025" href="$classview_1_1_main_controller.html#afefa6c872fcfd41bdbae5d6aa1078b21" title="Сортирует задачи по дате выполнения" alt="" coords="781,284,940,325"/>
+<area shape="poly" id="edge24_Node000024_Node000025" title=" " alt="" coords="689,302,768,304,763,306,691,307"/>
+<area shape="poly" id="edge25_Node000025_Node000016" title=" " alt="" coords="940,302,994,304,989,306,942,307"/>
+<area shape="poly" id="edge26_Node000025_Node000017" title=" " alt="" coords="939,281,1015,263,1011,266,941,286"/>
+<area shape="rect" id="Node000027" href="$enummodel_1_1_priority.html#ac87523bbf2e804984e1754dacf2661ce" title="Возвращает цвет приоритета" alt="" coords="528,617,681,643"/>
+<area shape="poly" id="edge29_Node000026_Node000027" title=" " alt="" coords="427,645,515,638,511,640,428,650"/>
+<area shape="rect" id="Node000028" href="$enummodel_1_1_priority.html#a3cf5e815f238abd0cf21096783fea607" title="Возвращает читаемое имя приоритета" alt="" coords="504,667,705,692"/>
+<area shape="poly" id="edge30_Node000026_Node000028" title=" " alt="" coords="427,661,492,668,487,670,428,666"/>
+<area shape="rect" id="Node000029" href="$classviewmodel_1_1_task_view_model.html#a5f2424316f62a7ed7067602067535809" title=" " alt="" coords="504,716,705,757"/>
+<area shape="poly" id="edge31_Node000026_Node000029" title=" " alt="" coords="406,674,496,702,520,711,515,712,494,707,407,679"/>
+<area shape="rect" id="Node000030" href="$classviewmodel_1_1_task_view_model.html#ac50f2e97f44fd66fc50fa959730eb78f" title="Возвращает идентификатор задачи" alt="" coords="498,781,711,807"/>
+<area shape="poly" id="edge32_Node000026_Node000030" title=" " alt="" coords="369,674,437,727,496,766,516,776,511,776,494,771,434,731,368,679"/>
+<area shape="rect" id="Node000031" href="$classviewmodel_1_1_task_view_model.html#a6b568ef75542da4868a533844bbbe3a1" title="Проверяет, выполнена ли задача" alt="" coords="508,831,701,872"/>
+<area shape="poly" id="edge33_Node000026_Node000031" title=" " alt="" coords="374,674,412,703,449,739,464,761,471,781,480,800,497,817,503,824,498,823,493,822,475,803,466,783,459,764,445,743,409,707,374,679"/>
+<area shape="rect" id="Node000032" href="$classviewmodel_1_1_task_view_model.html#a81effd078fee106eea52436907468ed9" title="Проверяет, просрочена ли задача" alt="" coords="508,438,701,478"/>
+<area shape="poly" id="edge34_Node000026_Node000032" title=" " alt="" coords="355,633,409,562,449,522,494,488,505,484,501,487,496,492,452,526,414,566,359,637"/>
+<area shape="rect" id="Node000033" href="$classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421" title="Сохраняет все задачи в JSON файл" alt="" coords="526,503,683,528"/>
+<area shape="poly" id="edge35_Node000026_Node000033" title=" " alt="" coords="363,633,419,585,455,560,494,538,515,532,511,535,496,543,458,564,423,589,367,637"/>
+<area shape="rect" id="Node000037" href="$classviewmodel_1_1_task_view_model.html#a1a2e539e816467e5df6588744541071b" title="Устанавливает статус выполнения задачи" alt="" coords="504,552,705,593"/>
+<area shape="poly" id="edge39_Node000026_Node000037" title=" " alt="" coords="403,632,494,602,519,597,514,599,496,607,406,637"/>
+<area shape="poly" id="edge40_Node000026_Node000038" title=" " alt="" coords="378,674,416,702,449,739,460,760,466,779,470,815,475,848,483,865,497,882,506,891,501,890,493,885,478,868,470,850,465,816,461,780,456,762,445,742,412,706,378,679"/>
+<area shape="rect" id="Node000034" href="$classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="774,546,947,586"/>
+<area shape="poly" id="edge36_Node000033_Node000034" title=" " alt="" coords="673,526,762,545,757,547,674,532"/>
+<area shape="rect" id="Node000035" href="$classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="1025,553,1190,579"/>
+<area shape="poly" id="edge37_Node000034_Node000035" title=" " alt="" coords="947,564,1012,566,1007,567,948,569"/>
+<area shape="rect" id="Node000036" href="$classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="1256,553,1418,579"/>
+<area shape="poly" id="edge38_Node000035_Node000036" title=" " alt="" coords="1190,564,1243,566,1238,567,1190,569"/>
+<area shape="rect" id="Node000040" href="$classview_1_1_main_controller.html#a7747886ba8b07db62a5639a71af582d1" title="Обновляет анимацию снежинок" alt="" coords="516,962,693,1002"/>
+<area shape="poly" id="edge42_Node000039_Node000040" title=" " alt="" coords="419,928,516,957,510,957,419,934"/>
+</map>

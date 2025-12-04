@@ -1,0 +1,5 @@
+<map id="view.NewTaskController.getCreatedTask" name="view.NewTaskController.getCreatedTask">
+<area shape="rect" id="Node000001" title="Возвращает созданную задачу" alt="" coords="229,5,411,46"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title="Обработчик кнопки добавления новой задачи" alt="" coords="5,5,181,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,26,181,28,181,23,216,25"/>
+</map>

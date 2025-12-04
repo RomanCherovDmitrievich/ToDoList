@@ -1,0 +1,11 @@
+<map id="view.MainController.setupAdaptiveLayout" name="view.MainController.setupAdaptiveLayout">
+<area shape="rect" id="Node000001" title="Настраивает адаптивный layout интерфейса" alt="" coords="5,71,175,111"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_main_controller.html#ae4fb9b136c72c5affdf42b517c5e6e91" title="Настраивает слушатели изменения размеров окна" alt="" coords="223,71,392,111"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,88,210,90,205,92,175,94"/>
+<area shape="rect" id="Node000003" href="$classview_1_1_main_controller.html#ab0783c7504d7a4fe9637653fbbdeff9a" title="Настраивает ширины колонок таблицы" alt="" coords="442,5,614,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="378,68,440,52,445,50,379,73"/>
+<area shape="rect" id="Node000004" href="$classview_1_1_main_controller.html#af4f451efaddaf24ec9e252f9d1f7bbc1" title="Настраивает высоту таблицы" alt="" coords="442,71,614,111"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="392,88,429,91,424,91,393,94"/>
+<area shape="rect" id="Node000005" href="$classview_1_1_main_controller.html#ae7c0b0165f6acc4f9b614e26c5f52925" title="Обновляет снежинки при изменении размера окна" alt="" coords="440,136,616,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="379,109,445,131,440,131,378,114"/>
+</map>

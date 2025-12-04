@@ -1,0 +1,7 @@
+<map id="model.Priority.getDefault" name="model.Priority.getDefault">
+<area shape="rect" id="Node000001" title="Возвращает приоритет по умолчанию" alt="" coords="265,31,428,56"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_new_task_controller.html#a9dcf704ac7b311d8bfe516eff8643ad1" title="Инициализация контроллера" alt="" coords="5,5,217,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="246,33,217,32,217,27,252,33"/>
+<area shape="rect" id="Node000003" href="$classmodel_1_1_task.html#ac875313dc638186c0d5cab57f83e7a5c" title="Конструктор для создания новой задачи" alt="" coords="51,55,171,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="246,54,172,64,171,59,252,53"/>
+</map>

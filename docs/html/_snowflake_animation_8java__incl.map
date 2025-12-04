@@ -1,0 +1,15 @@
+<map id="src/view/SnowflakeAnimation.java" name="src/view/SnowflakeAnimation.java">
+<area shape="rect" id="Node000001" title=" " alt="" coords="461,5,682,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,184,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="491,34,199,81,198,76,490,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="208,86,376,112"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="531,31,350,84,349,79,526,32"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="400,86,573,112"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="561,30,512,78,509,73,556,32"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="597,86,720,112"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="586,29,637,77,631,75,584,34"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="744,86,835,112"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="606,29,744,81,739,81,605,34"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="859,86,978,112"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="632,29,847,76,862,82,857,82,846,82,631,34"/>
+</map>

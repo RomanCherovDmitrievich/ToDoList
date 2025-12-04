@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Умный планировщик задач (To-Do List): Файл src/view/MainController.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">JavaFX приложение для управления задачами с новогодней темой</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_main_controller_8java.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Файл MainController.java</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>import javafx.fxml.FXML;</code><br />
+<code>import javafx.fxml.FXMLLoader;</code><br />
+<code>import javafx.scene.Parent;</code><br />
+<code>import javafx.scene.Scene;</code><br />
+<code>import javafx.scene.control.*;</code><br />
+<code>import javafx.scene.control.cell.PropertyValueFactory;</code><br />
+<code>import javafx.scene.image.Image;</code><br />
+<code>import javafx.scene.image.ImageView;</code><br />
+<code>import javafx.scene.layout.HBox;</code><br />
+<code>import javafx.scene.layout.Pane;</code><br />
+<code>import javafx.scene.layout.VBox;</code><br />
+<code>import javafx.scene.paint.Color;</code><br />
+<code>import javafx.stage.Modality;</code><br />
+<code>import javafx.stage.Stage;</code><br />
+<code>import javafx.util.Callback;</code><br />
+<code>import javafx.animation.AnimationTimer;</code><br />
+<code>import javafx.collections.transformation.SortedList;</code><br />
+<code>import javafx.collections.FXCollections;</code><br />
+<code>import javafx.collections.ObservableList;</code><br />
+<code>import javafx.beans.property.SimpleObjectProperty;</code><br />
+<code>import model.Task;</code><br />
+<code>import model.Priority;</code><br />
+<code>import model.TaskManager;</code><br />
+<code>import viewmodel.TaskViewModel;</code><br />
+<code>import util.JsonUtil;</code><br />
+<code>import util.AudioManager;</code><br />
+<code>import java.io.IOException;</code><br />
+<code>import java.time.LocalDateTime;</code><br />
+<code>import java.util.ArrayList;</code><br />
+<code>import java.util.Comparator;</code><br />
+<code>import java.util.List;</code><br />
+<code>import java.util.Optional;</code><br />
+<code>import java.util.Random;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для MainController.java:</div>
+<div class="dyncontent">
+<div class="center"><img src="_main_controller_8java__incl.png" border="0" usemap="#asrc_2view_2_main_controller_8java" loading="lazy" alt=""/></div>
+<map name="asrc_2view_2_main_controller_8java" id="asrc_2view_2_main_controller_8java">
+<area shape="rect" title=" " alt="" coords="2918,5,3103,31"/>
+<area shape="rect" title=" " alt="" coords="5,86,130,112"/>
+<area shape="poly" title=" " alt="" coords="2914,20,2328,28,1461,39,629,57,323,68,142,82,124,85,122,80,142,76,323,63,629,52,1461,34,2328,23,2920,20"/>
+<area shape="rect" title=" " alt="" coords="154,86,317,112"/>
+<area shape="poly" title=" " alt="" coords="2914,19,2411,23,1662,30,1266,37,894,48,572,62,329,82,302,86,301,80,329,76,571,57,893,43,1266,32,1662,25,2411,18,2920,19"/>
+<area shape="rect" title=" " alt="" coords="342,86,479,112"/>
+<area shape="poly" title=" " alt="" coords="2914,19,2439,22,1737,28,1367,35,1018,46,718,61,492,82,470,85,469,80,491,76,718,56,1018,41,1366,30,1737,23,2439,17,2920,19"/>
+<area shape="rect" title=" " alt="" coords="503,86,640,112"/>
+<area shape="poly" title=" " alt="" coords="2914,19,2466,23,1810,30,1466,37,1142,48,863,62,652,82,630,85,630,80,651,76,862,57,1142,42,1466,32,1810,24,2466,17,2920,19"/>
+<area shape="rect" title=" " alt="" coords="663,86,810,112"/>
+<area shape="poly" title=" " alt="" coords="2915,20,2496,25,1890,33,1275,51,1018,65,824,82,799,86,799,80,823,76,1017,59,1275,46,1890,28,2496,20,2920,20"/>
+<area shape="rect" title=" " alt="" coords="835,79,1001,120"/>
+<area shape="poly" title=" " alt="" coords="2915,20,2535,27,1992,37,1437,55,1201,67,1017,82,1017,76,1200,62,1436,49,1992,32,2535,22,2920,20"/>
+<area shape="rect" title=" " alt="" coords="1026,86,1200,112"/>
+<area shape="poly" title=" " alt="" coords="2915,21,2071,40,1576,57,1369,69,1213,82,1183,86,1183,81,1213,76,1369,63,1576,52,2071,35,2920,21"/>
+<area shape="rect" title=" " alt="" coords="1224,86,1428,112"/>
+<area shape="poly" title=" " alt="" coords="2914,19,2662,23,2297,30,1873,48,1655,63,1441,82,1405,86,1405,81,1441,76,1654,57,1873,43,2297,25,2662,17,2920,19"/>
+<area shape="rect" title=" " alt="" coords="1452,86,1624,112"/>
+<area shape="poly" title=" " alt="" coords="2914,19,2690,23,2373,30,2007,48,1819,63,1636,82,1608,86,1607,80,1635,76,1819,57,2007,43,2372,25,2690,17,2920,19"/>
+<area shape="rect" title=" " alt="" coords="1647,86,1816,112"/>
+<area shape="poly" title=" " alt="" coords="2914,20,2719,25,2449,34,2140,52,1982,65,1828,82,1801,86,1800,80,1827,76,1982,60,2140,46,2448,28,2719,20,2920,20"/>
+<area shape="rect" title=" " alt="" coords="1840,86,2010,112"/>
+<area shape="poly" title=" " alt="" coords="2914,21,2749,28,2527,38,2276,56,2023,82,1995,86,1995,80,2022,76,2275,50,2526,33,2749,23,2920,21"/>
+<area shape="rect" title=" " alt="" coords="2034,86,2197,112"/>
+<area shape="poly" title=" " alt="" coords="2920,22,2602,42,2405,59,2208,82,2183,86,2183,80,2207,76,2405,53,2602,37,2914,23"/>
+<area shape="rect" title=" " alt="" coords="2220,86,2366,112"/>
+<area shape="poly" title=" " alt="" coords="2920,24,2672,46,2525,61,2377,82,2357,85,2356,80,2376,76,2524,56,2672,41,2914,25"/>
+<area shape="rect" title=" " alt="" coords="2389,86,2519,112"/>
+<area shape="poly" title=" " alt="" coords="2920,28,2738,50,2532,82,2515,85,2514,80,2531,76,2737,45,2914,28"/>
+<area shape="rect" title=" " alt="" coords="2544,86,2676,112"/>
+<area shape="poly" title=" " alt="" coords="2941,31,2689,82,2673,85,2673,80,2688,76,2936,32"/>
+<area shape="rect" title=" " alt="" coords="2701,79,2879,120"/>
+<area shape="poly" title=" " alt="" coords="2979,31,2860,76,2859,71,2974,32"/>
+<area shape="rect" title=" " alt="" coords="2904,79,3117,120"/>
+<area shape="poly" title=" " alt="" coords="3012,30,3012,65,3008,62,3008,33"/>
+<area shape="rect" title=" " alt="" coords="3141,86,3349,112"/>
+<area shape="poly" title=" " alt="" coords="3047,29,3197,81,3192,81,3046,34"/>
+<area shape="rect" title=" " alt="" coords="3373,86,3586,112"/>
+<area shape="poly" title=" " alt="" coords="3083,29,3395,84,3389,83,3082,34"/>
+<area shape="rect" title=" " alt="" coords="3611,79,3799,120"/>
+<area shape="poly" title=" " alt="" coords="3103,24,3324,44,3598,79,3593,79,3323,49,3103,29"/>
+<area shape="rect" title=" " alt="" coords="3823,86,3912,112"/>
+<area shape="poly" title=" " alt="" coords="3103,16,3242,19,3419,27,3616,45,3715,59,3812,76,3825,82,3819,81,3811,82,3714,64,3615,51,3419,33,3242,24,3103,21"/>
+<area shape="rect" title=" " alt="" coords="3936,86,4037,112"/>
+<area shape="poly" title=" " alt="" coords="3103,16,3260,18,3465,26,3694,44,3810,58,3924,76,3939,82,3934,82,3923,82,3810,64,3693,49,3464,31,3260,23,3103,21"/>
+<area shape="rect" title=" " alt="" coords="4061,86,4199,112"/>
+<area shape="poly" title=" " alt="" coords="3103,17,3280,20,3515,28,3781,46,3917,59,4049,76,4072,83,4067,82,4048,82,3916,65,3781,51,3515,34,3279,25,3103,22"/>
+<area shape="rect" title=" " alt="" coords="4223,86,4402,112"/>
+<area shape="poly" title=" " alt="" coords="3103,17,3304,20,3579,29,3894,47,4212,76,4243,83,4238,83,4211,82,3893,52,3579,34,3304,26,3103,22"/>
+<area shape="rect" title=" " alt="" coords="4426,86,4517,112"/>
+<area shape="poly" title=" " alt="" coords="3103,17,3387,21,3766,30,4141,48,4297,61,4415,76,4428,82,4423,81,4414,82,4296,66,4141,53,3765,36,3387,26,3103,23"/>
+<area shape="rect" title=" " alt="" coords="4541,86,4666,112"/>
+<area shape="poly" title=" " alt="" coords="3103,18,3408,23,3819,33,4229,51,4400,62,4529,76,4550,83,4545,82,4528,82,4399,68,4229,56,3819,39,3408,28,3103,23"/>
+<area shape="rect" title=" " alt="" coords="4690,86,4826,112"/>
+<area shape="poly" title=" " alt="" coords="3103,18,3434,22,3889,33,4345,50,4535,62,4679,76,4702,83,4697,82,4678,82,4534,67,4345,55,3889,38,3434,28,3103,23"/>
+<area shape="rect" title=" " alt="" coords="4850,86,5016,112"/>
+<area shape="poly" title=" " alt="" coords="3103,18,3463,23,3964,34,4469,51,4679,63,4838,76,4868,83,4863,83,4838,82,4679,68,4468,56,3964,39,3463,28,3103,23"/>
+<area shape="rect" title=" " alt="" coords="5040,86,5162,112"/>
+<area shape="poly" title=" " alt="" coords="3103,17,3495,19,4052,26,4615,44,4850,58,5028,76,5049,83,5044,82,5027,82,4850,64,4615,50,4052,32,3495,24,3103,22"/>
+<area shape="rect" title=" " alt="" coords="5186,86,5325,112"/>
+<area shape="poly" title=" " alt="" coords="3103,17,3521,19,4120,27,4729,45,4983,59,5175,76,5199,83,5194,82,5174,82,4982,64,4728,50,4120,32,3521,24,3103,22"/>
+<area shape="rect" title=" " alt="" coords="5348,86,5440,112"/>
+<area shape="poly" title=" " alt="" coords="3103,18,3593,23,4289,34,4951,51,5194,63,5337,76,5351,82,5346,81,5336,82,5194,68,4951,57,4289,39,3592,28,3103,23"/>
+<area shape="rect" title=" " alt="" coords="5464,86,5583,112"/>
+<area shape="poly" title=" " alt="" coords="3103,18,4346,36,5044,54,5300,64,5452,76,5472,83,5467,82,5451,82,5300,70,5044,59,4346,42,3103,23"/>
+<area shape="rect" title=" " alt="" coords="5606,86,5726,112"/>
+<area shape="poly" title=" " alt="" coords="3103,18,4418,35,5161,53,5433,64,5595,76,5615,83,5610,82,5594,82,5433,69,5160,58,4417,41,3103,23"/>
+</map>
+</div>
+</div>
+<p><a href="_main_controller_8java_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:view_2EMainController" id="r_view_2EMainController"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classview_1_1_main_controller.html">view.MainController</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Контроллер главного окна приложения To-Do List.  <a href="classview_1_1_main_controller.html#details">Подробнее...</a><br /></td></tr>
+<tr class="memitem:view_2EMainController_2ESnowflakeData" id="r_view_2EMainController_2ESnowflakeData"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classview_1_1_main_controller_1_1_snowflake_data.html">view.MainController.SnowflakeData</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Внутренний класс для хранения данных одной снежинки  <a href="classview_1_1_main_controller_1_1_snowflake_data.html#details">Подробнее...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Пакеты</h2></td></tr>
+<tr class="memitem:view" id="r_view"><td class="memItemLeft" align="right" valign="top">package &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceview.html">view</a></td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_b39b5091e8d1d2be4b7fc59d57749634.html">view</a></li><li class="navelem"><a href="_main_controller_8java.html">MainController.java</a></li>
+    <li class="footer">Документация по Умный планировщик задач (To-Do List). Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+<map id="model.TaskManager.loadTasks" name="model.TaskManager.loadTasks">
+<area shape="rect" id="Node000001" title="Загружает задачи из внешнего списка" alt="" coords="5,13,206,38"/>
+<area shape="rect" id="Node000002" href="$classmodel_1_1_task_manager.html#a6ff214cd422dcd5f0d8c5d573cd251b6" title="Проверяет все задачи на просроченность" alt="" coords="254,5,445,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,23,240,26,235,26,206,28"/>
+</map>

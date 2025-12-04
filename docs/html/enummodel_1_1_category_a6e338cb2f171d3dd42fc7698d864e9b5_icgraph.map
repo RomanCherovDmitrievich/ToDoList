@@ -1,0 +1,9 @@
+<map id="model.Category.Category" name="model.Category.Category">
+<area shape="rect" id="Node000001" title="Конструктор категории" alt="" coords="524,42,692,68"/>
+<area shape="rect" id="Node000002" href="$enummodel_1_1_category.html#a11040a27e212101e733b8b7f7c478034" title="Статический инициализатор" alt="" coords="290,5,442,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="506,43,442,37,442,32,511,43"/>
+<area shape="rect" id="Node000003" href="$enummodel_1_1_category.html#a8a5c20cba2237009b02d6b351785e64e" title=" " alt="" coords="256,70,476,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="511,66,477,73,476,68,506,67"/>
+<area shape="rect" id="Node000004" href="$classview_1_1_new_task_controller.html#a337be480aeacacd900c710627a27a63e" title="Обработчик кнопки создания задачи" alt="" coords="5,63,208,103"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="237,83,208,86,208,80,243,83"/>
+</map>

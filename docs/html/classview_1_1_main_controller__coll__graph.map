@@ -1,0 +1,9 @@
+<map id="view.MainController" name="view.MainController">
+<area shape="rect" id="Node000001" title="Контроллер главного окна приложения To&#45;Do List." alt="" coords="125,102,259,128"/>
+<area shape="rect" id="Node000002" href="$classmodel_1_1_task_manager.html" title="Менеджер задач &#45; центральный класс для управления задачами" alt="" coords="5,5,144,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,38,179,100,174,102,100,43"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="159,9,170,18,162,26,145,29,143,24,160,22,165,18,159,14"/>
+<area shape="rect" id="Node000003" href="$classutil_1_1_audio_manager.html" title="Менеджер для работы с аудио в приложении" alt="" coords="249,5,374,31"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="288,40,209,104,206,99,283,41"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="390,9,401,18,393,27,375,30,374,24,391,22,396,18,389,14"/>
+</map>

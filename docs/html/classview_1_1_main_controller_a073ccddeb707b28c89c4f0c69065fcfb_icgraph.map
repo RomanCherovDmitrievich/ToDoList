@@ -1,0 +1,12 @@
+<map id="view.MainController.updateStatusLabel" name="view.MainController.updateStatusLabel">
+<area shape="rect" id="Node000001" title="Обновляет статусную строку с информацией о задачах" alt="" coords="461,100,637,141"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title="Обработчик кнопки добавления новой задачи" alt="" coords="238,5,413,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="487,93,412,61,382,49,382,44,414,57,493,93"/>
+<area shape="rect" id="Node000003" href="$classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title="Обработчик кнопки удаления задачи" alt="" coords="238,71,413,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="443,107,414,105,413,100,448,106"/>
+<area shape="rect" id="Node000004" href="$classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,165,190,190"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="445,136,191,169,190,163,446,131"/>
+<area shape="rect" id="Node000005" href="$classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title="Настраивает колонки таблицы задач" alt="" coords="241,185,410,226"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="482,146,382,187,380,182,477,147"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="222,194,190,192,190,186,228,193"/>
+</map>

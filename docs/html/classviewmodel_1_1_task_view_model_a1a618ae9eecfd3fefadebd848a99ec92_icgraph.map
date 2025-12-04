@@ -1,0 +1,5 @@
+<map id="viewmodel.TaskViewModel.getTitle" name="viewmodel.TaskViewModel.getTitle">
+<area shape="rect" id="Node000001" title="Возвращает заголовок задачи" alt="" coords="229,5,430,46"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title="Обработчик кнопки удаления задачи" alt="" coords="5,5,181,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,26,181,28,181,23,216,25"/>
+</map>

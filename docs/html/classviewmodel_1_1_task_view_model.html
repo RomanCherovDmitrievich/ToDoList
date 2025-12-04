@@ -1,0 +1,1973 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Умный планировщик задач (To-Do List): Класс viewmodel.TaskViewModel</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">JavaFX приложение для управления задачами с новогодней темой</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classviewmodel_1_1_task_view_model.html','','classviewmodel_1_1_task_view_model-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс viewmodel.TaskViewModel</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>ViewModel для отображения задачи в пользовательском интерфейсе  
+ <a href="#details">Подробнее...</a></p>
+<div class="dynheader">
+Граф связей класса viewmodel.TaskViewModel:</div>
+<div class="dyncontent">
+<div class="center"><img src="classviewmodel_1_1_task_view_model__coll__graph.png" border="0" usemap="#aviewmodel_8_task_view_model_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="aviewmodel_8_task_view_model_coll__map" id="aviewmodel_8_task_view_model_coll__map">
+<area shape="rect" title="ViewModel для отображения задачи в пользовательском интерфейсе" alt="" coords="32,199,211,224"/>
+<area shape="rect" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении" alt="" coords="77,102,166,128"/>
+<area shape="poly" title=" " alt="" coords="123,141,124,199,119,197,119,145"/>
+<area shape="rect" href="enummodel_1_1_priority.html" title=" " alt="" coords="5,5,107,31"/>
+<area shape="poly" title=" " alt="" coords="73,41,116,101,110,102,72,46"/>
+<area shape="rect" href="enummodel_1_1_category.html" title=" " alt="" coords="131,5,245,31"/>
+<area shape="poly" title=" " alt="" coords="174,42,151,80,133,104,129,100,147,76,171,46"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a97b1077049d5d441d305aa75b0ca41a6" id="r_a97b1077049d5d441d305aa75b0ca41a6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97b1077049d5d441d305aa75b0ca41a6">TaskViewModel</a> (<a class="el" href="classmodel_1_1_task.html">Task</a> <a class="el" href="#a97f13543b8cfec1764e1ccc0241b0309">task</a>)</td></tr>
+<tr class="memdesc:a97b1077049d5d441d305aa75b0ca41a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор на основе модели <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a>.  <br /></td></tr>
+<tr class="memitem:ac50f2e97f44fd66fc50fa959730eb78f" id="r_ac50f2e97f44fd66fc50fa959730eb78f"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac50f2e97f44fd66fc50fa959730eb78f">getId</a> ()</td></tr>
+<tr class="memdesc:ac50f2e97f44fd66fc50fa959730eb78f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает идентификатор задачи  <br /></td></tr>
+<tr class="memitem:a78bbc21be4a7366ff977474cb547ca0e" id="r_a78bbc21be4a7366ff977474cb547ca0e"><td class="memItemLeft" align="right" valign="top">StringProperty&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78bbc21be4a7366ff977474cb547ca0e">idProperty</a> ()</td></tr>
+<tr class="memdesc:a78bbc21be4a7366ff977474cb547ca0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает свойство идентификатора задачи  <br /></td></tr>
+<tr class="memitem:a1a618ae9eecfd3fefadebd848a99ec92" id="r_a1a618ae9eecfd3fefadebd848a99ec92"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a618ae9eecfd3fefadebd848a99ec92">getTitle</a> ()</td></tr>
+<tr class="memdesc:a1a618ae9eecfd3fefadebd848a99ec92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает заголовок задачи  <br /></td></tr>
+<tr class="memitem:acae67880baf2c3c2f7b47810b572edd6" id="r_acae67880baf2c3c2f7b47810b572edd6"><td class="memItemLeft" align="right" valign="top">StringProperty&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acae67880baf2c3c2f7b47810b572edd6">titleProperty</a> ()</td></tr>
+<tr class="memdesc:acae67880baf2c3c2f7b47810b572edd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает свойство заголовка задачи  <br /></td></tr>
+<tr class="memitem:ac18ff6fe31191a83d34a265bfaa1cb01" id="r_ac18ff6fe31191a83d34a265bfaa1cb01"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac18ff6fe31191a83d34a265bfaa1cb01">setTitle</a> (String <a class="el" href="#a5985ed58b0e977027b51e79a3f17a205">title</a>)</td></tr>
+<tr class="memdesc:ac18ff6fe31191a83d34a265bfaa1cb01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает новый заголовок задачи  <br /></td></tr>
+<tr class="memitem:a046488b4a90fb611ff40402bada134b0" id="r_a046488b4a90fb611ff40402bada134b0"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a046488b4a90fb611ff40402bada134b0">getDescription</a> ()</td></tr>
+<tr class="memdesc:a046488b4a90fb611ff40402bada134b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает описание задачи  <br /></td></tr>
+<tr class="memitem:a5db03d493b6825913f27ec6c286821ab" id="r_a5db03d493b6825913f27ec6c286821ab"><td class="memItemLeft" align="right" valign="top">StringProperty&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5db03d493b6825913f27ec6c286821ab">descriptionProperty</a> ()</td></tr>
+<tr class="memdesc:a5db03d493b6825913f27ec6c286821ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает свойство описания задачи  <br /></td></tr>
+<tr class="memitem:a691a9b9777b75eaac085a7f19e062f20" id="r_a691a9b9777b75eaac085a7f19e062f20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a691a9b9777b75eaac085a7f19e062f20">setDescription</a> (String <a class="el" href="#a627b02d9ff5b7b4d83df0ac7399fca44">description</a>)</td></tr>
+<tr class="memdesc:a691a9b9777b75eaac085a7f19e062f20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает новое описание задачи  <br /></td></tr>
+<tr class="memitem:ad274b2e6ae4bfa67e9e4877d1f0d3104" id="r_ad274b2e6ae4bfa67e9e4877d1f0d3104"><td class="memItemLeft" align="right" valign="top">LocalDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad274b2e6ae4bfa67e9e4877d1f0d3104">getStartTime</a> ()</td></tr>
+<tr class="memdesc:ad274b2e6ae4bfa67e9e4877d1f0d3104"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает время начала задачи  <br /></td></tr>
+<tr class="memitem:a0697007e0ca7f6b9ebb9c66ff339c27c" id="r_a0697007e0ca7f6b9ebb9c66ff339c27c"><td class="memItemLeft" align="right" valign="top">ObjectProperty&lt; LocalDateTime &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0697007e0ca7f6b9ebb9c66ff339c27c">startTimeProperty</a> ()</td></tr>
+<tr class="memdesc:a0697007e0ca7f6b9ebb9c66ff339c27c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает свойство времени начала задачи  <br /></td></tr>
+<tr class="memitem:a163f018285b5cba883b0f4adabefa77d" id="r_a163f018285b5cba883b0f4adabefa77d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a163f018285b5cba883b0f4adabefa77d">setStartTime</a> (LocalDateTime <a class="el" href="#a6803f8e2e1d27bf672e331486aff9934">startTime</a>)</td></tr>
+<tr class="memdesc:a163f018285b5cba883b0f4adabefa77d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает новое время начала задачи  <br /></td></tr>
+<tr class="memitem:aa34a9517a43daff6eef84dc13e1cd0a9" id="r_aa34a9517a43daff6eef84dc13e1cd0a9"><td class="memItemLeft" align="right" valign="top">LocalDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa34a9517a43daff6eef84dc13e1cd0a9">getEndTime</a> ()</td></tr>
+<tr class="memdesc:aa34a9517a43daff6eef84dc13e1cd0a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает время окончания (дедлайн) задачи  <br /></td></tr>
+<tr class="memitem:ab340fded3c0f9487bcf0c86486adc7da" id="r_ab340fded3c0f9487bcf0c86486adc7da"><td class="memItemLeft" align="right" valign="top">ObjectProperty&lt; LocalDateTime &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab340fded3c0f9487bcf0c86486adc7da">endTimeProperty</a> ()</td></tr>
+<tr class="memdesc:ab340fded3c0f9487bcf0c86486adc7da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает свойство времени окончания задачи  <br /></td></tr>
+<tr class="memitem:a9386fe9a79e7326ff41793f4973b518b" id="r_a9386fe9a79e7326ff41793f4973b518b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9386fe9a79e7326ff41793f4973b518b">setEndTime</a> (LocalDateTime <a class="el" href="#a1406520ea09048f9fdbeeaa66056ff84">endTime</a>)</td></tr>
+<tr class="memdesc:a9386fe9a79e7326ff41793f4973b518b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает новое время окончания задачи  <br /></td></tr>
+<tr class="memitem:a2d17f86b46ef153a4dc499a194d5e885" id="r_a2d17f86b46ef153a4dc499a194d5e885"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enummodel_1_1_priority.html">Priority</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d17f86b46ef153a4dc499a194d5e885">getPriority</a> ()</td></tr>
+<tr class="memdesc:a2d17f86b46ef153a4dc499a194d5e885"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает приоритет задачи  <br /></td></tr>
+<tr class="memitem:ac8555eb492fedda8c9303d75a33f626f" id="r_ac8555eb492fedda8c9303d75a33f626f"><td class="memItemLeft" align="right" valign="top">ObjectProperty&lt; <a class="el" href="enummodel_1_1_priority.html">Priority</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8555eb492fedda8c9303d75a33f626f">priorityProperty</a> ()</td></tr>
+<tr class="memdesc:ac8555eb492fedda8c9303d75a33f626f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает свойство приоритета задачи  <br /></td></tr>
+<tr class="memitem:a431f716cf65f5afcb54f969b44b4d380" id="r_a431f716cf65f5afcb54f969b44b4d380"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a431f716cf65f5afcb54f969b44b4d380">setPriority</a> (<a class="el" href="enummodel_1_1_priority.html">Priority</a> <a class="el" href="#aceccd89ccf126f89b7235548b8586a5b">priority</a>)</td></tr>
+<tr class="memdesc:a431f716cf65f5afcb54f969b44b4d380"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает новый приоритет задачи  <br /></td></tr>
+<tr class="memitem:aee7644b03c0ca5faa3aee9e691d658a3" id="r_aee7644b03c0ca5faa3aee9e691d658a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enummodel_1_1_category.html">Category</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee7644b03c0ca5faa3aee9e691d658a3">getCategory</a> ()</td></tr>
+<tr class="memdesc:aee7644b03c0ca5faa3aee9e691d658a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает категорию задачи  <br /></td></tr>
+<tr class="memitem:af4b66ae3828898e18e44ba926a565cbe" id="r_af4b66ae3828898e18e44ba926a565cbe"><td class="memItemLeft" align="right" valign="top">ObjectProperty&lt; <a class="el" href="enummodel_1_1_category.html">Category</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4b66ae3828898e18e44ba926a565cbe">categoryProperty</a> ()</td></tr>
+<tr class="memdesc:af4b66ae3828898e18e44ba926a565cbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает свойство категории задачи  <br /></td></tr>
+<tr class="memitem:a9ba1b0aebba5b80c88b67bec21710689" id="r_a9ba1b0aebba5b80c88b67bec21710689"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ba1b0aebba5b80c88b67bec21710689">setCategory</a> (<a class="el" href="enummodel_1_1_category.html">Category</a> <a class="el" href="#a7fe0ba6c6faa0f7cfe0ff14c3dc88f02">category</a>)</td></tr>
+<tr class="memdesc:a9ba1b0aebba5b80c88b67bec21710689"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает новую категорию задачи  <br /></td></tr>
+<tr class="memitem:a6b568ef75542da4868a533844bbbe3a1" id="r_a6b568ef75542da4868a533844bbbe3a1"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b568ef75542da4868a533844bbbe3a1">isCompleted</a> ()</td></tr>
+<tr class="memdesc:a6b568ef75542da4868a533844bbbe3a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, выполнена ли задача  <br /></td></tr>
+<tr class="memitem:a99d8237ca04d46fdcc2f00c04ee064f4" id="r_a99d8237ca04d46fdcc2f00c04ee064f4"><td class="memItemLeft" align="right" valign="top">BooleanProperty&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99d8237ca04d46fdcc2f00c04ee064f4">completedProperty</a> ()</td></tr>
+<tr class="memdesc:a99d8237ca04d46fdcc2f00c04ee064f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает свойство статуса выполнения задачи  <br /></td></tr>
+<tr class="memitem:a1a2e539e816467e5df6588744541071b" id="r_a1a2e539e816467e5df6588744541071b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a2e539e816467e5df6588744541071b">setCompleted</a> (boolean <a class="el" href="#abac2ca51dc0b6b90ff866c71c3371930">completed</a>)</td></tr>
+<tr class="memdesc:a1a2e539e816467e5df6588744541071b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает статус выполнения задачи  <br /></td></tr>
+<tr class="memitem:a81effd078fee106eea52436907468ed9" id="r_a81effd078fee106eea52436907468ed9"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81effd078fee106eea52436907468ed9">isOverdue</a> ()</td></tr>
+<tr class="memdesc:a81effd078fee106eea52436907468ed9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, просрочена ли задача  <br /></td></tr>
+<tr class="memitem:a2ce50df11a5d6a9ed8511aafc878c02a" id="r_a2ce50df11a5d6a9ed8511aafc878c02a"><td class="memItemLeft" align="right" valign="top">BooleanProperty&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ce50df11a5d6a9ed8511aafc878c02a">overdueProperty</a> ()</td></tr>
+<tr class="memdesc:a2ce50df11a5d6a9ed8511aafc878c02a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает свойство просроченности задачи  <br /></td></tr>
+<tr class="memitem:a78e914dde721b09b9b4f6fef691aef02" id="r_a78e914dde721b09b9b4f6fef691aef02"><td class="memItemLeft" align="right" valign="top">LocalDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78e914dde721b09b9b4f6fef691aef02">getCreatedAt</a> ()</td></tr>
+<tr class="memdesc:a78e914dde721b09b9b4f6fef691aef02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает дату и время создания задачи  <br /></td></tr>
+<tr class="memitem:a46792a8fe06ca7f494a3253118f72da7" id="r_a46792a8fe06ca7f494a3253118f72da7"><td class="memItemLeft" align="right" valign="top">ObjectProperty&lt; LocalDateTime &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46792a8fe06ca7f494a3253118f72da7">createdAtProperty</a> ()</td></tr>
+<tr class="memdesc:a46792a8fe06ca7f494a3253118f72da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает свойство даты создания задачи  <br /></td></tr>
+<tr class="memitem:a5b507f08d5d17134eb0051f9198026ef" id="r_a5b507f08d5d17134eb0051f9198026ef"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b507f08d5d17134eb0051f9198026ef">getFormattedStartTime</a> ()</td></tr>
+<tr class="memitem:a5f2424316f62a7ed7067602067535809" id="r_a5f2424316f62a7ed7067602067535809"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f2424316f62a7ed7067602067535809">getFormattedEndTime</a> ()</td></tr>
+<tr class="memitem:a7c7c15b784f5c86b74d58943dd897cc6" id="r_a7c7c15b784f5c86b74d58943dd897cc6"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c7c15b784f5c86b74d58943dd897cc6">getFormattedEndDate</a> ()</td></tr>
+<tr class="memitem:a5be935664988b6d0a49931df9beed5cc" id="r_a5be935664988b6d0a49931df9beed5cc"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5be935664988b6d0a49931df9beed5cc">getFormattedEndTimeOnly</a> ()</td></tr>
+<tr class="memitem:abd84bdfcc6b71fd286231b1b4e19e4a0" id="r_abd84bdfcc6b71fd286231b1b4e19e4a0"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd84bdfcc6b71fd286231b1b4e19e4a0">getPriorityDisplay</a> ()</td></tr>
+<tr class="memdesc:abd84bdfcc6b71fd286231b1b4e19e4a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает отображаемое имя приоритета  <br /></td></tr>
+<tr class="memitem:ad9bc7c38357c8e5fd8ca4b399b5e5567" id="r_ad9bc7c38357c8e5fd8ca4b399b5e5567"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9bc7c38357c8e5fd8ca4b399b5e5567">getPriorityColor</a> ()</td></tr>
+<tr class="memitem:a5065f6eaa5f6039f4eee54f3376525ff" id="r_a5065f6eaa5f6039f4eee54f3376525ff"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5065f6eaa5f6039f4eee54f3376525ff">getPriorityIconName</a> ()</td></tr>
+<tr class="memitem:ad9417fde49996b27e6554ff9c72582a3" id="r_ad9417fde49996b27e6554ff9c72582a3"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9417fde49996b27e6554ff9c72582a3">getCategoryDisplay</a> ()</td></tr>
+<tr class="memdesc:ad9417fde49996b27e6554ff9c72582a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает отображаемое имя категории  <br /></td></tr>
+<tr class="memitem:a5db1325cc03d4923c411bbaedb74051c" id="r_a5db1325cc03d4923c411bbaedb74051c"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5db1325cc03d4923c411bbaedb74051c">getCategoryColor</a> ()</td></tr>
+<tr class="memitem:a53215ef77e237ab827e3e3156860d2f5" id="r_a53215ef77e237ab827e3e3156860d2f5"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53215ef77e237ab827e3e3156860d2f5">getTimeRemaining</a> ()</td></tr>
+<tr class="memitem:acac81fa6ee313ed5801a06dfece854f7" id="r_acac81fa6ee313ed5801a06dfece854f7"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acac81fa6ee313ed5801a06dfece854f7">getStatusText</a> ()</td></tr>
+<tr class="memdesc:acac81fa6ee313ed5801a06dfece854f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает статус задачи в виде строки  <br /></td></tr>
+<tr class="memitem:aa0b4460345353c790c23679ca9cb37c6" id="r_aa0b4460345353c790c23679ca9cb37c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmodel_1_1_task.html">Task</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0b4460345353c790c23679ca9cb37c6">getTask</a> ()</td></tr>
+<tr class="memdesc:aa0b4460345353c790c23679ca9cb37c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает базовую модель задачи  <br /></td></tr>
+<tr class="memitem:a61d0e437b7d85c8ec2462d15b7ef58e1" id="r_a61d0e437b7d85c8ec2462d15b7ef58e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61d0e437b7d85c8ec2462d15b7ef58e1">updateFromModel</a> ()</td></tr>
+<tr class="memdesc:a61d0e437b7d85c8ec2462d15b7ef58e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновляет ViewModel на основе изменений в модели  <br /></td></tr>
+<tr class="memitem:ad99556d90305e5cf07b1188055ee8477" id="r_ad99556d90305e5cf07b1188055ee8477"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad99556d90305e5cf07b1188055ee8477">toString</a> ()</td></tr>
+<tr class="memdesc:ad99556d90305e5cf07b1188055ee8477"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает строковое представление ViewModel.  <br /></td></tr>
+<tr class="memitem:abd590a45fda140d14ba745db51c46490" id="r_abd590a45fda140d14ba745db51c46490"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd590a45fda140d14ba745db51c46490">equals</a> (Object obj)</td></tr>
+<tr class="memdesc:abd590a45fda140d14ba745db51c46490"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сравнивает два объекта <a class="el" href="classviewmodel_1_1_task_view_model.html" title="ViewModel для отображения задачи в пользовательском интерфейсе">TaskViewModel</a> на равенство  <br /></td></tr>
+<tr class="memitem:ad70dc62dc109b6038a4504708d3ed961" id="r_ad70dc62dc109b6038a4504708d3ed961"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad70dc62dc109b6038a4504708d3ed961">hashCode</a> ()</td></tr>
+<tr class="memdesc:ad70dc62dc109b6038a4504708d3ed961"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает хэш-код объекта  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:a7e8946bef2493f00c0582c432330b56b" id="r_a7e8946bef2493f00c0582c432330b56b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e8946bef2493f00c0582c432330b56b">setupBindings</a> ()</td></tr>
+<tr class="memdesc:a7e8946bef2493f00c0582c432330b56b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Настраивает двусторонние привязки между ViewModel и Model.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:a81c1f7c14ffd517a4224b527dae12b4a" id="r_a81c1f7c14ffd517a4224b527dae12b4a"><td class="memItemLeft" align="right" valign="top">final StringProperty&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81c1f7c14ffd517a4224b527dae12b4a">id</a></td></tr>
+<tr class="memdesc:a81c1f7c14ffd517a4224b527dae12b4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Уникальный идентификатор задачи (неизменяемый).  <br /></td></tr>
+<tr class="memitem:a5985ed58b0e977027b51e79a3f17a205" id="r_a5985ed58b0e977027b51e79a3f17a205"><td class="memItemLeft" align="right" valign="top">final StringProperty&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5985ed58b0e977027b51e79a3f17a205">title</a></td></tr>
+<tr class="memdesc:a5985ed58b0e977027b51e79a3f17a205"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заголовок задачи  <br /></td></tr>
+<tr class="memitem:a627b02d9ff5b7b4d83df0ac7399fca44" id="r_a627b02d9ff5b7b4d83df0ac7399fca44"><td class="memItemLeft" align="right" valign="top">final StringProperty&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a627b02d9ff5b7b4d83df0ac7399fca44">description</a></td></tr>
+<tr class="memdesc:a627b02d9ff5b7b4d83df0ac7399fca44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Описание задачи  <br /></td></tr>
+<tr class="memitem:a6803f8e2e1d27bf672e331486aff9934" id="r_a6803f8e2e1d27bf672e331486aff9934"><td class="memItemLeft" align="right" valign="top">final ObjectProperty&lt; LocalDateTime &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6803f8e2e1d27bf672e331486aff9934">startTime</a></td></tr>
+<tr class="memdesc:a6803f8e2e1d27bf672e331486aff9934"><td class="mdescLeft">&#160;</td><td class="mdescRight">Время начала выполнения задачи  <br /></td></tr>
+<tr class="memitem:a1406520ea09048f9fdbeeaa66056ff84" id="r_a1406520ea09048f9fdbeeaa66056ff84"><td class="memItemLeft" align="right" valign="top">final ObjectProperty&lt; LocalDateTime &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1406520ea09048f9fdbeeaa66056ff84">endTime</a></td></tr>
+<tr class="memdesc:a1406520ea09048f9fdbeeaa66056ff84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Время окончания (дедлайн) задачи  <br /></td></tr>
+<tr class="memitem:aceccd89ccf126f89b7235548b8586a5b" id="r_aceccd89ccf126f89b7235548b8586a5b"><td class="memItemLeft" align="right" valign="top">final ObjectProperty&lt; <a class="el" href="enummodel_1_1_priority.html">Priority</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aceccd89ccf126f89b7235548b8586a5b">priority</a></td></tr>
+<tr class="memdesc:aceccd89ccf126f89b7235548b8586a5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Приоритет задачи (URGENT, IMPORTANT, NORMAL).  <br /></td></tr>
+<tr class="memitem:a7fe0ba6c6faa0f7cfe0ff14c3dc88f02" id="r_a7fe0ba6c6faa0f7cfe0ff14c3dc88f02"><td class="memItemLeft" align="right" valign="top">final ObjectProperty&lt; <a class="el" href="enummodel_1_1_category.html">Category</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7fe0ba6c6faa0f7cfe0ff14c3dc88f02">category</a></td></tr>
+<tr class="memdesc:a7fe0ba6c6faa0f7cfe0ff14c3dc88f02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Категория задачи (WORK, HOME, STUDY, OTHER).  <br /></td></tr>
+<tr class="memitem:abac2ca51dc0b6b90ff866c71c3371930" id="r_abac2ca51dc0b6b90ff866c71c3371930"><td class="memItemLeft" align="right" valign="top">final BooleanProperty&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abac2ca51dc0b6b90ff866c71c3371930">completed</a></td></tr>
+<tr class="memdesc:abac2ca51dc0b6b90ff866c71c3371930"><td class="mdescLeft">&#160;</td><td class="mdescRight">Флаг выполнения задачи  <br /></td></tr>
+<tr class="memitem:a24805572ae9b3de96a4dc520c0496f43" id="r_a24805572ae9b3de96a4dc520c0496f43"><td class="memItemLeft" align="right" valign="top">final BooleanProperty&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24805572ae9b3de96a4dc520c0496f43">overdue</a></td></tr>
+<tr class="memdesc:a24805572ae9b3de96a4dc520c0496f43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Флаг просроченности задачи  <br /></td></tr>
+<tr class="memitem:ae66ade7b1fc8d06fd1dfba6560f94ad3" id="r_ae66ade7b1fc8d06fd1dfba6560f94ad3"><td class="memItemLeft" align="right" valign="top">final ObjectProperty&lt; LocalDateTime &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66ade7b1fc8d06fd1dfba6560f94ad3">createdAt</a></td></tr>
+<tr class="memdesc:ae66ade7b1fc8d06fd1dfba6560f94ad3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Дата и время создания задачи  <br /></td></tr>
+<tr class="memitem:a97f13543b8cfec1764e1ccc0241b0309" id="r_a97f13543b8cfec1764e1ccc0241b0309"><td class="memItemLeft" align="right" valign="top">final <a class="el" href="classmodel_1_1_task.html">Task</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97f13543b8cfec1764e1ccc0241b0309">task</a></td></tr>
+<tr class="memdesc:a97f13543b8cfec1764e1ccc0241b0309"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ссылка на исходную модель данных <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a>.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Закрытые статические данные</h2></td></tr>
+<tr class="memitem:a02530490b1fbaf28814ffa30e70f3bef" id="r_a02530490b1fbaf28814ffa30e70f3bef"><td class="memItemLeft" align="right" valign="top">static final DateTimeFormatter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02530490b1fbaf28814ffa30e70f3bef">DATE_TIME_FORMATTER</a></td></tr>
+<tr class="memdesc:a02530490b1fbaf28814ffa30e70f3bef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Форматер для полного отображения даты и времени @value "dd.MM.yyyy HH:mm" (пример: "31.12.2025 23:59").  <br /></td></tr>
+<tr class="memitem:a3d6f42acec8f9aa4fe9edca2b5d9e664" id="r_a3d6f42acec8f9aa4fe9edca2b5d9e664"><td class="memItemLeft" align="right" valign="top">static final DateTimeFormatter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d6f42acec8f9aa4fe9edca2b5d9e664">DATE_FORMATTER</a></td></tr>
+<tr class="memdesc:a3d6f42acec8f9aa4fe9edca2b5d9e664"><td class="mdescLeft">&#160;</td><td class="mdescRight">Форматер для отображения только даты @value "dd.MM.yyyy" (пример: "31.12.2025").  <br /></td></tr>
+<tr class="memitem:ad7df044a5e274feaa87e002eafdd3afa" id="r_ad7df044a5e274feaa87e002eafdd3afa"><td class="memItemLeft" align="right" valign="top">static final DateTimeFormatter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7df044a5e274feaa87e002eafdd3afa">TIME_FORMATTER</a></td></tr>
+<tr class="memdesc:ad7df044a5e274feaa87e002eafdd3afa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Форматер для отображения только времени @value "HH:mm" (пример: "23:59").  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>ViewModel для отображения задачи в пользовательском интерфейсе </p>
+<p>Реализует паттерн ViewModel в архитектуре MVVM. Служит промежуточным слоем между моделью данных (<a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a>) и представлением (JavaFX UI). Предоставляет JavaFX свойства для двусторонней привязки данных и форматирует данные для удобного отображения в таблице.</p>
+<dl class="section note"><dt>Заметки</dt><dd>Все свойства являются Observable, что позволяет автоматически обновлять UI при изменении данных и наоборот.</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a> </dd>
+<dd>
+<a class="el" href="enummodel_1_1_priority.html">Priority</a> </dd>
+<dd>
+<a class="el" href="enummodel_1_1_category.html">Category</a> </dd>
+<dd>
+javafx.beans.property </dd></dl>
+<dl class="section since"><dt>Начиная с</dt><dd>Версия 1.0 </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00034">34</a></p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="a97b1077049d5d441d305aa75b0ca41a6" name="a97b1077049d5d441d305aa75b0ca41a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97b1077049d5d441d305aa75b0ca41a6">&#9670;&#160;</a></span>TaskViewModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">viewmodel.TaskViewModel.TaskViewModel </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmodel_1_1_task.html">Task</a></td>          <td class="paramname"><span class="paramname"><em>task</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор на основе модели <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a>. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">task</td><td>Исходный объект задачи</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Создает ViewModel, инициализируя все JavaFX свойства значениями из переданного объекта <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a>. Устанавливает двусторонние привязки между свойствами ViewModel и полями модели.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">task</td><td>Объект модели <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a>, не может быть null </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">NullPointerException</td><td>если task равен null</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>После создания ViewModel изменения в свойствах автоматически синхронизируются с исходной моделью <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a>.</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="#a7e8946bef2493f00c0582c432330b56b" title="Настраивает двусторонние привязки между ViewModel и Model.">setupBindings()</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00105">105</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00139">setupBindings()</a> и <a class="el" href="_task_view_model_8java_source.html#l00066">task</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00617">equals()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classviewmodel_1_1_task_view_model_a97b1077049d5d441d305aa75b0ca41a6_cgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_a97b1077049d5d441d305aa75b0ca41a6_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassviewmodel_1_1_task_view_model_a97b1077049d5d441d305aa75b0ca41a6_cgraph" id="aclassviewmodel_1_1_task_view_model_a97b1077049d5d441d305aa75b0ca41a6_cgraph">
+<area shape="rect" title="Конструктор на основе модели Task." alt="" coords="5,5,189,46"/>
+<area shape="rect" href="classviewmodel_1_1_task_view_model.html#a7e8946bef2493f00c0582c432330b56b" title="Настраивает двусторонние привязки между ViewModel и Model." alt="" coords="237,5,452,46"/>
+<area shape="poly" title=" " alt="" coords="189,23,224,25,218,26,189,28"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classviewmodel_1_1_task_view_model_a97b1077049d5d441d305aa75b0ca41a6_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_a97b1077049d5d441d305aa75b0ca41a6_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassviewmodel_1_1_task_view_model_a97b1077049d5d441d305aa75b0ca41a6_icgraph" id="aclassviewmodel_1_1_task_view_model_a97b1077049d5d441d305aa75b0ca41a6_icgraph">
+<area shape="rect" title="Конструктор на основе модели Task." alt="" coords="275,5,458,46"/>
+<area shape="rect" href="classviewmodel_1_1_task_view_model.html#abd590a45fda140d14ba745db51c46490" title="Сравнивает два объекта TaskViewModel на равенство" alt="" coords="5,13,227,38"/>
+<area shape="poly" title=" " alt="" coords="256,26,227,28,227,23,262,26"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="af4b66ae3828898e18e44ba926a565cbe" name="af4b66ae3828898e18e44ba926a565cbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4b66ae3828898e18e44ba926a565cbe">&#9670;&#160;</a></span>categoryProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ObjectProperty&lt; <a class="el" href="enummodel_1_1_category.html">Category</a> &gt; viewmodel.TaskViewModel.categoryProperty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает свойство категории задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd>ObjectProperty&lt;Category&gt; для привязки в FXML </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00332">332</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00054">category</a>.</p>
+
+</div>
+</div>
+<a id="a99d8237ca04d46fdcc2f00c04ee064f4" name="a99d8237ca04d46fdcc2f00c04ee064f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99d8237ca04d46fdcc2f00c04ee064f4">&#9670;&#160;</a></span>completedProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BooleanProperty viewmodel.TaskViewModel.completedProperty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает свойство статуса выполнения задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd>BooleanProperty для привязки в FXML (например, к CheckBox) </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00356">356</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00057">completed</a>.</p>
+
+</div>
+</div>
+<a id="a46792a8fe06ca7f494a3253118f72da7" name="a46792a8fe06ca7f494a3253118f72da7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46792a8fe06ca7f494a3253118f72da7">&#9670;&#160;</a></span>createdAtProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ObjectProperty&lt; LocalDateTime &gt; viewmodel.TaskViewModel.createdAtProperty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает свойство даты создания задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd>ObjectProperty&lt;LocalDateTime&gt; для привязки в FXML </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00398">398</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00063">createdAt</a>.</p>
+
+</div>
+</div>
+<a id="a5db03d493b6825913f27ec6c286821ab" name="a5db03d493b6825913f27ec6c286821ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5db03d493b6825913f27ec6c286821ab">&#9670;&#160;</a></span>descriptionProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">StringProperty viewmodel.TaskViewModel.descriptionProperty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает свойство описания задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd>StringProperty для привязки в FXML </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00236">236</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00042">description</a>.</p>
+
+</div>
+</div>
+<a id="ab340fded3c0f9487bcf0c86486adc7da" name="ab340fded3c0f9487bcf0c86486adc7da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab340fded3c0f9487bcf0c86486adc7da">&#9670;&#160;</a></span>endTimeProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ObjectProperty&lt; LocalDateTime &gt; viewmodel.TaskViewModel.endTimeProperty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает свойство времени окончания задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd>ObjectProperty&lt;LocalDateTime&gt; для привязки в FXML </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00284">284</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00048">endTime</a>.</p>
+
+</div>
+</div>
+<a id="abd590a45fda140d14ba745db51c46490" name="abd590a45fda140d14ba745db51c46490"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd590a45fda140d14ba745db51c46490">&#9670;&#160;</a></span>equals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean viewmodel.TaskViewModel.equals </td>
+          <td>(</td>
+          <td class="paramtype">Object</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Сравнивает два объекта <a class="el" href="classviewmodel_1_1_task_view_model.html" title="ViewModel для отображения задачи в пользовательском интерфейсе">TaskViewModel</a> на равенство </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>Объект для сравнения </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true если объекты равны, false в противном случае</dd></dl>
+<p>Два <a class="el" href="classviewmodel_1_1_task_view_model.html" title="ViewModel для отображения задачи в пользовательском интерфейсе">TaskViewModel</a> считаются равными, если их идентификаторы (id) равны.</p>
+<p>@overrides Object.equals(Object) </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00617">617</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00036">id</a> и <a class="el" href="_task_view_model_8java_source.html#l00105">TaskViewModel()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classviewmodel_1_1_task_view_model_abd590a45fda140d14ba745db51c46490_cgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_abd590a45fda140d14ba745db51c46490_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassviewmodel_1_1_task_view_model_abd590a45fda140d14ba745db51c46490_cgraph" id="aclassviewmodel_1_1_task_view_model_abd590a45fda140d14ba745db51c46490_cgraph">
+<area shape="rect" title="Сравнивает два объекта TaskViewModel на равенство" alt="" coords="5,13,227,38"/>
+<area shape="rect" href="classviewmodel_1_1_task_view_model.html#a97b1077049d5d441d305aa75b0ca41a6" title="Конструктор на основе модели Task." alt="" coords="275,5,458,46"/>
+<area shape="poly" title=" " alt="" coords="227,23,262,26,256,26,227,28"/>
+<area shape="rect" href="classviewmodel_1_1_task_view_model.html#a7e8946bef2493f00c0582c432330b56b" title="Настраивает двусторонние привязки между ViewModel и Model." alt="" coords="506,5,721,46"/>
+<area shape="poly" title=" " alt="" coords="458,23,493,26,488,26,458,28"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aee7644b03c0ca5faa3aee9e691d658a3" name="aee7644b03c0ca5faa3aee9e691d658a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee7644b03c0ca5faa3aee9e691d658a3">&#9670;&#160;</a></span>getCategory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enummodel_1_1_category.html">Category</a> viewmodel.TaskViewModel.getCategory </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает категорию задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Категория задачи (enum <a class="el" href="enummodel_1_1_category.html">Category</a>) </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00324">324</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00054">category</a>.</p>
+
+</div>
+</div>
+<a id="a5db1325cc03d4923c411bbaedb74051c" name="a5db1325cc03d4923c411bbaedb74051c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5db1325cc03d4923c411bbaedb74051c">&#9670;&#160;</a></span>getCategoryColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String viewmodel.TaskViewModel.getCategoryColor </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00499">499</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00054">category</a>.</p>
+
+</div>
+</div>
+<a id="ad9417fde49996b27e6554ff9c72582a3" name="ad9417fde49996b27e6554ff9c72582a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9417fde49996b27e6554ff9c72582a3">&#9670;&#160;</a></span>getCategoryDisplay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String viewmodel.TaskViewModel.getCategoryDisplay </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает отображаемое имя категории </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Локализованное имя категории ("Работа", "Дом", "Учёба", "Другое")</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="enummodel_1_1_category.html#a7b617d5f06ca4cb136d681b1bd2e8d7d" title="Возвращает читаемое имя категории">Category.getDisplayName()</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00488">488</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00054">category</a>.</p>
+
+</div>
+</div>
+<a id="a78e914dde721b09b9b4f6fef691aef02" name="a78e914dde721b09b9b4f6fef691aef02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78e914dde721b09b9b4f6fef691aef02">&#9670;&#160;</a></span>getCreatedAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LocalDateTime viewmodel.TaskViewModel.getCreatedAt </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает дату и время создания задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd>LocalDateTime создания задачи </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00390">390</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00063">createdAt</a>.</p>
+
+</div>
+</div>
+<a id="a046488b4a90fb611ff40402bada134b0" name="a046488b4a90fb611ff40402bada134b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a046488b4a90fb611ff40402bada134b0">&#9670;&#160;</a></span>getDescription()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String viewmodel.TaskViewModel.getDescription </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает описание задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Описание задачи </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00228">228</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00042">description</a>.</p>
+
+</div>
+</div>
+<a id="aa34a9517a43daff6eef84dc13e1cd0a9" name="aa34a9517a43daff6eef84dc13e1cd0a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa34a9517a43daff6eef84dc13e1cd0a9">&#9670;&#160;</a></span>getEndTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LocalDateTime viewmodel.TaskViewModel.getEndTime </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает время окончания (дедлайн) задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd>LocalDateTime время окончания </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00276">276</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00048">endTime</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00573">view.MainController.sortByDate()</a> и <a class="el" href="_main_controller_8java_source.html#l00614">view.MainController.sortByPriority()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classviewmodel_1_1_task_view_model_aa34a9517a43daff6eef84dc13e1cd0a9_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_aa34a9517a43daff6eef84dc13e1cd0a9_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassviewmodel_1_1_task_view_model_aa34a9517a43daff6eef84dc13e1cd0a9_icgraph" id="aclassviewmodel_1_1_task_view_model_aa34a9517a43daff6eef84dc13e1cd0a9_icgraph">
+<area shape="rect" title="Возвращает время окончания (дедлайн) задачи" alt="" coords="894,39,1095,79"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afefa6c872fcfd41bdbae5d6aa1078b21" title="Сортирует задачи по дате выполнения" alt="" coords="686,5,846,46"/>
+<area shape="poly" title=" " alt="" coords="876,42,846,40,846,35,881,42"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4bfffd15238c2895e76c565921cd3441" title="Сортирует задачи по приоритету" alt="" coords="686,71,846,111"/>
+<area shape="poly" title=" " alt="" coords="876,76,847,82,846,77,881,75"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aa87f060a3d3e1f5747310cdf4945a256" title="Настраивает кнопки интерфейса" alt="" coords="465,5,634,46"/>
+<area shape="poly" title=" " alt="" coords="668,26,635,28,634,23,673,25"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,93,190,118"/>
+<area shape="poly" title=" " alt="" coords="447,19,346,23,292,28,238,39,204,50,172,65,120,95,117,90,170,60,203,45,237,34,291,23,346,17,452,17"/>
+<area shape="poly" title=" " alt="" coords="680,66,619,49,620,44,685,66"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6c51614865ef9a13038357431ad8ee7c" title="Обновляет содержимое таблицы задач" alt="" coords="461,85,638,126"/>
+<area shape="poly" title=" " alt="" coords="668,98,639,102,639,97,673,97"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title="Обработчик кнопки добавления новой задачи" alt="" coords="238,48,413,89"/>
+<area shape="poly" title=" " alt="" coords="443,89,414,86,414,80,448,88"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title="Обработчик кнопки удаления задачи" alt="" coords="238,113,413,154"/>
+<area shape="poly" title=" " alt="" coords="443,119,414,125,413,120,448,118"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af03ff4fe034cfc97fd82327d0e618e59" title="Загружает задачи из файла и отображает их в таблице" alt="" coords="245,179,406,219"/>
+<area shape="poly" title=" " alt="" coords="492,132,414,168,383,181,381,175,412,163,487,133"/>
+<area shape="poly" title=" " alt="" coords="253,173,237,168,129,122,130,117,239,163,258,173"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7c7c15b784f5c86b74d58943dd897cc6" name="a7c7c15b784f5c86b74d58943dd897cc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c7c15b784f5c86b74d58943dd897cc6">&#9670;&#160;</a></span>getFormattedEndDate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String viewmodel.TaskViewModel.getFormattedEndDate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00435">435</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00079">DATE_FORMATTER</a> и <a class="el" href="_task_view_model_8java_source.html#l00048">endTime</a>.</p>
+
+</div>
+</div>
+<a id="a5f2424316f62a7ed7067602067535809" name="a5f2424316f62a7ed7067602067535809"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f2424316f62a7ed7067602067535809">&#9670;&#160;</a></span>getFormattedEndTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String viewmodel.TaskViewModel.getFormattedEndTime </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00424">424</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00072">DATE_TIME_FORMATTER</a> и <a class="el" href="_task_view_model_8java_source.html#l00048">endTime</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00246">view.MainController.setupTableColumns()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classviewmodel_1_1_task_view_model_a5f2424316f62a7ed7067602067535809_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_a5f2424316f62a7ed7067602067535809_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassviewmodel_1_1_task_view_model_a5f2424316f62a7ed7067602067535809_icgraph" id="aclassviewmodel_1_1_task_view_model_a5f2424316f62a7ed7067602067535809_icgraph">
+<area shape="rect" title=" " alt="" coords="455,5,656,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title="Настраивает колонки таблицы задач" alt="" coords="238,5,407,46"/>
+<area shape="poly" title=" " alt="" coords="437,26,407,28,407,23,442,26"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,13,190,38"/>
+<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5be935664988b6d0a49931df9beed5cc" name="a5be935664988b6d0a49931df9beed5cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5be935664988b6d0a49931df9beed5cc">&#9670;&#160;</a></span>getFormattedEndTimeOnly()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String viewmodel.TaskViewModel.getFormattedEndTimeOnly </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00446">446</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00048">endTime</a> и <a class="el" href="_task_view_model_8java_source.html#l00086">TIME_FORMATTER</a>.</p>
+
+</div>
+</div>
+<a id="a5b507f08d5d17134eb0051f9198026ef" name="a5b507f08d5d17134eb0051f9198026ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b507f08d5d17134eb0051f9198026ef">&#9670;&#160;</a></span>getFormattedStartTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String viewmodel.TaskViewModel.getFormattedStartTime </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00413">413</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00072">DATE_TIME_FORMATTER</a> и <a class="el" href="_task_view_model_8java_source.html#l00045">startTime</a>.</p>
+
+</div>
+</div>
+<a id="ac50f2e97f44fd66fc50fa959730eb78f" name="ac50f2e97f44fd66fc50fa959730eb78f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac50f2e97f44fd66fc50fa959730eb78f">&#9670;&#160;</a></span>getId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String viewmodel.TaskViewModel.getId </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает идентификатор задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Уникальный идентификатор задачи (String) </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00188">188</a></p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l01004">view.MainController.handleDeleteTask()</a> и <a class="el" href="_main_controller_8java_source.html#l00246">view.MainController.setupTableColumns()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classviewmodel_1_1_task_view_model_ac50f2e97f44fd66fc50fa959730eb78f_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_ac50f2e97f44fd66fc50fa959730eb78f_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassviewmodel_1_1_task_view_model_ac50f2e97f44fd66fc50fa959730eb78f_icgraph" id="aclassviewmodel_1_1_task_view_model_ac50f2e97f44fd66fc50fa959730eb78f_icgraph">
+<area shape="rect" title="Возвращает идентификатор задачи" alt="" coords="461,46,673,72"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title="Обработчик кнопки удаления задачи" alt="" coords="238,5,413,46"/>
+<area shape="poly" title=" " alt="" coords="452,44,414,40,414,35,457,43"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title="Настраивает колонки таблицы задач" alt="" coords="241,71,410,111"/>
+<area shape="poly" title=" " alt="" coords="453,74,411,82,410,77,447,75"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,78,190,104"/>
+<area shape="poly" title=" " alt="" coords="222,91,190,94,190,88,228,91"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2d17f86b46ef153a4dc499a194d5e885" name="a2d17f86b46ef153a4dc499a194d5e885"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d17f86b46ef153a4dc499a194d5e885">&#9670;&#160;</a></span>getPriority()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enummodel_1_1_priority.html">Priority</a> viewmodel.TaskViewModel.getPriority </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает приоритет задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Приоритет задачи (enum <a class="el" href="enummodel_1_1_priority.html">Priority</a>) </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00300">300</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00051">priority</a>.</p>
+
+</div>
+</div>
+<a id="ad9bc7c38357c8e5fd8ca4b399b5e5567" name="ad9bc7c38357c8e5fd8ca4b399b5e5567"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9bc7c38357c8e5fd8ca4b399b5e5567">&#9670;&#160;</a></span>getPriorityColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String viewmodel.TaskViewModel.getPriorityColor </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00467">467</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00051">priority</a>.</p>
+
+</div>
+</div>
+<a id="abd84bdfcc6b71fd286231b1b4e19e4a0" name="abd84bdfcc6b71fd286231b1b4e19e4a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd84bdfcc6b71fd286231b1b4e19e4a0">&#9670;&#160;</a></span>getPriorityDisplay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String viewmodel.TaskViewModel.getPriorityDisplay </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает отображаемое имя приоритета </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Локализованное имя приоритета ("Срочно", "Важно", "Желательно")</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="enummodel_1_1_priority.html#a3cf5e815f238abd0cf21096783fea607" title="Возвращает читаемое имя приоритета">Priority.getDisplayName()</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00456">456</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00051">priority</a>.</p>
+
+</div>
+</div>
+<a id="a5065f6eaa5f6039f4eee54f3376525ff" name="a5065f6eaa5f6039f4eee54f3376525ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5065f6eaa5f6039f4eee54f3376525ff">&#9670;&#160;</a></span>getPriorityIconName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String viewmodel.TaskViewModel.getPriorityIconName </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00478">478</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00051">priority</a>.</p>
+
+</div>
+</div>
+<a id="ad274b2e6ae4bfa67e9e4877d1f0d3104" name="ad274b2e6ae4bfa67e9e4877d1f0d3104"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad274b2e6ae4bfa67e9e4877d1f0d3104">&#9670;&#160;</a></span>getStartTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LocalDateTime viewmodel.TaskViewModel.getStartTime </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает время начала задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd>LocalDateTime время начала </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00252">252</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00045">startTime</a>.</p>
+
+</div>
+</div>
+<a id="acac81fa6ee313ed5801a06dfece854f7" name="acac81fa6ee313ed5801a06dfece854f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acac81fa6ee313ed5801a06dfece854f7">&#9670;&#160;</a></span>getStatusText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String viewmodel.TaskViewModel.getStatusText </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает статус задачи в виде строки </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Текстовое описание статуса задачи</dd></dl>
+<p>Возвращает один из трех статусов:</p><ul>
+<li>"Выполнено" если задача завершена</li>
+<li>"Просрочено" если задача просрочена и не выполнена</li>
+<li>"Активно" в остальных случаях</li>
+</ul>
+<dl class="section return"><dt>Возвращает</dt><dd>"Выполнено" | "Просрочено" | "Активно" </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00551">551</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00057">completed</a> и <a class="el" href="_task_view_model_8java_source.html#l00060">overdue</a>.</p>
+
+</div>
+</div>
+<a id="aa0b4460345353c790c23679ca9cb37c6" name="aa0b4460345353c790c23679ca9cb37c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0b4460345353c790c23679ca9cb37c6">&#9670;&#160;</a></span>getTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmodel_1_1_task.html">Task</a> viewmodel.TaskViewModel.getTask </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает базовую модель задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Исходный объект <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a>, связанный с этим ViewModel</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Может использоваться для операций, требующих прямой работы с моделью, например, сохранение в JSON или сложные вычисления. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00568">568</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00066">task</a>.</p>
+
+</div>
+</div>
+<a id="a53215ef77e237ab827e3e3156860d2f5" name="a53215ef77e237ab827e3e3156860d2f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53215ef77e237ab827e3e3156860d2f5">&#9670;&#160;</a></span>getTimeRemaining()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String viewmodel.TaskViewModel.getTimeRemaining </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00513">513</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00048">endTime</a>.</p>
+
+</div>
+</div>
+<a id="a1a618ae9eecfd3fefadebd848a99ec92" name="a1a618ae9eecfd3fefadebd848a99ec92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a618ae9eecfd3fefadebd848a99ec92">&#9670;&#160;</a></span>getTitle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String viewmodel.TaskViewModel.getTitle </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает заголовок задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Заголовок задачи </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00204">204</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00039">title</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l01004">view.MainController.handleDeleteTask()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classviewmodel_1_1_task_view_model_a1a618ae9eecfd3fefadebd848a99ec92_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_a1a618ae9eecfd3fefadebd848a99ec92_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassviewmodel_1_1_task_view_model_a1a618ae9eecfd3fefadebd848a99ec92_icgraph" id="aclassviewmodel_1_1_task_view_model_a1a618ae9eecfd3fefadebd848a99ec92_icgraph">
+<area shape="rect" title="Возвращает заголовок задачи" alt="" coords="229,5,430,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title="Обработчик кнопки удаления задачи" alt="" coords="5,5,181,46"/>
+<area shape="poly" title=" " alt="" coords="210,26,181,28,181,23,216,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad70dc62dc109b6038a4504708d3ed961" name="ad70dc62dc109b6038a4504708d3ed961"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad70dc62dc109b6038a4504708d3ed961">&#9670;&#160;</a></span>hashCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int viewmodel.TaskViewModel.hashCode </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает хэш-код объекта </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Хэш-код, основанный на идентификаторе задачи</dd></dl>
+<p>@overrides Object.hashCode() </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00631">631</a></p>
+
+</div>
+</div>
+<a id="a78bbc21be4a7366ff977474cb547ca0e" name="a78bbc21be4a7366ff977474cb547ca0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78bbc21be4a7366ff977474cb547ca0e">&#9670;&#160;</a></span>idProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">StringProperty viewmodel.TaskViewModel.idProperty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает свойство идентификатора задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd>StringProperty для привязки в FXML </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00196">196</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00036">id</a>.</p>
+
+</div>
+</div>
+<a id="a6b568ef75542da4868a533844bbbe3a1" name="a6b568ef75542da4868a533844bbbe3a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b568ef75542da4868a533844bbbe3a1">&#9670;&#160;</a></span>isCompleted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean viewmodel.TaskViewModel.isCompleted </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Проверяет, выполнена ли задача </p>
+<dl class="section return"><dt>Возвращает</dt><dd>true если задача выполнена, false в противном случае </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00348">348</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00057">completed</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00246">view.MainController.setupTableColumns()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classviewmodel_1_1_task_view_model_a6b568ef75542da4868a533844bbbe3a1_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_a6b568ef75542da4868a533844bbbe3a1_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassviewmodel_1_1_task_view_model_a6b568ef75542da4868a533844bbbe3a1_icgraph" id="aclassviewmodel_1_1_task_view_model_a6b568ef75542da4868a533844bbbe3a1_icgraph">
+<area shape="rect" title="Проверяет, выполнена ли задача" alt="" coords="455,5,648,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title="Настраивает колонки таблицы задач" alt="" coords="238,5,407,46"/>
+<area shape="poly" title=" " alt="" coords="437,26,408,28,407,23,442,26"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,13,190,38"/>
+<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a81effd078fee106eea52436907468ed9" name="a81effd078fee106eea52436907468ed9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81effd078fee106eea52436907468ed9">&#9670;&#160;</a></span>isOverdue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean viewmodel.TaskViewModel.isOverdue </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Проверяет, просрочена ли задача </p>
+<dl class="section return"><dt>Возвращает</dt><dd>true если задача просрочена, false в противном случае </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00374">374</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00060">overdue</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00246">view.MainController.setupTableColumns()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classviewmodel_1_1_task_view_model_a81effd078fee106eea52436907468ed9_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_a81effd078fee106eea52436907468ed9_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassviewmodel_1_1_task_view_model_a81effd078fee106eea52436907468ed9_icgraph" id="aclassviewmodel_1_1_task_view_model_a81effd078fee106eea52436907468ed9_icgraph">
+<area shape="rect" title="Проверяет, просрочена ли задача" alt="" coords="455,5,648,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title="Настраивает колонки таблицы задач" alt="" coords="238,5,407,46"/>
+<area shape="poly" title=" " alt="" coords="437,26,408,28,407,23,442,26"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,13,190,38"/>
+<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2ce50df11a5d6a9ed8511aafc878c02a" name="a2ce50df11a5d6a9ed8511aafc878c02a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ce50df11a5d6a9ed8511aafc878c02a">&#9670;&#160;</a></span>overdueProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BooleanProperty viewmodel.TaskViewModel.overdueProperty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает свойство просроченности задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd>BooleanProperty для привязки в FXML </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00382">382</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00060">overdue</a>.</p>
+
+</div>
+</div>
+<a id="ac8555eb492fedda8c9303d75a33f626f" name="ac8555eb492fedda8c9303d75a33f626f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8555eb492fedda8c9303d75a33f626f">&#9670;&#160;</a></span>priorityProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ObjectProperty&lt; <a class="el" href="enummodel_1_1_priority.html">Priority</a> &gt; viewmodel.TaskViewModel.priorityProperty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает свойство приоритета задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd>ObjectProperty&lt;Priority&gt; для привязки в FXML </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00308">308</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00051">priority</a>.</p>
+
+</div>
+</div>
+<a id="a9ba1b0aebba5b80c88b67bec21710689" name="a9ba1b0aebba5b80c88b67bec21710689"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ba1b0aebba5b80c88b67bec21710689">&#9670;&#160;</a></span>setCategory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void viewmodel.TaskViewModel.setCategory </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enummodel_1_1_category.html">Category</a></td>          <td class="paramname"><span class="paramname"><em>category</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Устанавливает новую категорию задачи </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">category</td><td>Новая категория </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00340">340</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00054">category</a>.</p>
+
+</div>
+</div>
+<a id="a1a2e539e816467e5df6588744541071b" name="a1a2e539e816467e5df6588744541071b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a2e539e816467e5df6588744541071b">&#9670;&#160;</a></span>setCompleted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void viewmodel.TaskViewModel.setCompleted </td>
+          <td>(</td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>completed</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Устанавливает статус выполнения задачи </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">completed</td><td>Новый статус выполнения</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>При установке completed в true автоматически сбрасывается флаг overdue </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00366">366</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00057">completed</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00246">view.MainController.setupTableColumns()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classviewmodel_1_1_task_view_model_a1a2e539e816467e5df6588744541071b_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_a1a2e539e816467e5df6588744541071b_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassviewmodel_1_1_task_view_model_a1a2e539e816467e5df6588744541071b_icgraph" id="aclassviewmodel_1_1_task_view_model_a1a2e539e816467e5df6588744541071b_icgraph">
+<area shape="rect" title="Устанавливает статус выполнения задачи" alt="" coords="455,5,656,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title="Настраивает колонки таблицы задач" alt="" coords="238,5,407,46"/>
+<area shape="poly" title=" " alt="" coords="437,26,407,28,407,23,442,26"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,13,190,38"/>
+<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a691a9b9777b75eaac085a7f19e062f20" name="a691a9b9777b75eaac085a7f19e062f20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a691a9b9777b75eaac085a7f19e062f20">&#9670;&#160;</a></span>setDescription()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void viewmodel.TaskViewModel.setDescription </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>description</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Устанавливает новое описание задачи </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">description</td><td>Новое описание задачи </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00244">244</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00042">description</a>.</p>
+
+</div>
+</div>
+<a id="a9386fe9a79e7326ff41793f4973b518b" name="a9386fe9a79e7326ff41793f4973b518b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9386fe9a79e7326ff41793f4973b518b">&#9670;&#160;</a></span>setEndTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void viewmodel.TaskViewModel.setEndTime </td>
+          <td>(</td>
+          <td class="paramtype">LocalDateTime</td>          <td class="paramname"><span class="paramname"><em>endTime</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Устанавливает новое время окончания задачи </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">endTime</td><td>Новое время окончания </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00292">292</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00048">endTime</a>.</p>
+
+</div>
+</div>
+<a id="a431f716cf65f5afcb54f969b44b4d380" name="a431f716cf65f5afcb54f969b44b4d380"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a431f716cf65f5afcb54f969b44b4d380">&#9670;&#160;</a></span>setPriority()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void viewmodel.TaskViewModel.setPriority </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enummodel_1_1_priority.html">Priority</a></td>          <td class="paramname"><span class="paramname"><em>priority</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Устанавливает новый приоритет задачи </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">priority</td><td>Новый приоритет </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00316">316</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00051">priority</a>.</p>
+
+</div>
+</div>
+<a id="a163f018285b5cba883b0f4adabefa77d" name="a163f018285b5cba883b0f4adabefa77d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a163f018285b5cba883b0f4adabefa77d">&#9670;&#160;</a></span>setStartTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void viewmodel.TaskViewModel.setStartTime </td>
+          <td>(</td>
+          <td class="paramtype">LocalDateTime</td>          <td class="paramname"><span class="paramname"><em>startTime</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Устанавливает новое время начала задачи </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">startTime</td><td>Новое время начала </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00268">268</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00045">startTime</a>.</p>
+
+</div>
+</div>
+<a id="ac18ff6fe31191a83d34a265bfaa1cb01" name="ac18ff6fe31191a83d34a265bfaa1cb01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac18ff6fe31191a83d34a265bfaa1cb01">&#9670;&#160;</a></span>setTitle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void viewmodel.TaskViewModel.setTitle </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>title</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Устанавливает новый заголовок задачи </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>Новый заголовок задачи </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00220">220</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00039">title</a>.</p>
+
+</div>
+</div>
+<a id="a7e8946bef2493f00c0582c432330b56b" name="a7e8946bef2493f00c0582c432330b56b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e8946bef2493f00c0582c432330b56b">&#9670;&#160;</a></span>setupBindings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void viewmodel.TaskViewModel.setupBindings </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Настраивает двусторонние привязки между ViewModel и Model. </p>
+<p>Устанавливает слушатели изменений для всех свойств ViewModel. При изменении любого свойства в UI (например, редактирование в таблице) соответствующее изменение применяется к исходной модели <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a>.</p>
+<dl class="section note"><dt>Заметки</dt><dd>Привязки обеспечивают автоматическую синхронизацию данных между представлением и моделью без необходимости ручного обновления.</dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Изменение поля id не поддерживается, так как ID неизменяем</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd>javafx.beans.property.Property#addListener </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00139">139</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00054">category</a>, <a class="el" href="_task_view_model_8java_source.html#l00057">completed</a>, <a class="el" href="_task_view_model_8java_source.html#l00042">description</a>, <a class="el" href="_task_view_model_8java_source.html#l00048">endTime</a>, <a class="el" href="_task_view_model_8java_source.html#l00060">overdue</a>, <a class="el" href="_task_view_model_8java_source.html#l00051">priority</a>, <a class="el" href="_task_view_model_8java_source.html#l00045">startTime</a>, <a class="el" href="_task_view_model_8java_source.html#l00066">task</a> и <a class="el" href="_task_view_model_8java_source.html#l00039">title</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00105">TaskViewModel()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classviewmodel_1_1_task_view_model_a7e8946bef2493f00c0582c432330b56b_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_a7e8946bef2493f00c0582c432330b56b_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassviewmodel_1_1_task_view_model_a7e8946bef2493f00c0582c432330b56b_icgraph" id="aclassviewmodel_1_1_task_view_model_a7e8946bef2493f00c0582c432330b56b_icgraph">
+<area shape="rect" title="Настраивает двусторонние привязки между ViewModel и Model." alt="" coords="506,5,721,46"/>
+<area shape="rect" href="classviewmodel_1_1_task_view_model.html#a97b1077049d5d441d305aa75b0ca41a6" title="Конструктор на основе модели Task." alt="" coords="275,5,458,46"/>
+<area shape="poly" title=" " alt="" coords="488,26,458,28,458,23,493,26"/>
+<area shape="rect" href="classviewmodel_1_1_task_view_model.html#abd590a45fda140d14ba745db51c46490" title="Сравнивает два объекта TaskViewModel на равенство" alt="" coords="5,13,227,38"/>
+<area shape="poly" title=" " alt="" coords="256,26,227,28,227,23,262,26"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0697007e0ca7f6b9ebb9c66ff339c27c" name="a0697007e0ca7f6b9ebb9c66ff339c27c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0697007e0ca7f6b9ebb9c66ff339c27c">&#9670;&#160;</a></span>startTimeProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ObjectProperty&lt; LocalDateTime &gt; viewmodel.TaskViewModel.startTimeProperty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает свойство времени начала задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd>ObjectProperty&lt;LocalDateTime&gt; для привязки в FXML </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00260">260</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00045">startTime</a>.</p>
+
+</div>
+</div>
+<a id="acae67880baf2c3c2f7b47810b572edd6" name="acae67880baf2c3c2f7b47810b572edd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acae67880baf2c3c2f7b47810b572edd6">&#9670;&#160;</a></span>titleProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">StringProperty viewmodel.TaskViewModel.titleProperty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает свойство заголовка задачи </p>
+<dl class="section return"><dt>Возвращает</dt><dd>StringProperty для привязки в FXML </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00212">212</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00039">title</a>.</p>
+
+</div>
+</div>
+<a id="ad99556d90305e5cf07b1188055ee8477" name="ad99556d90305e5cf07b1188055ee8477"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad99556d90305e5cf07b1188055ee8477">&#9670;&#160;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String viewmodel.TaskViewModel.toString </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает строковое представление ViewModel. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка в формате "TaskViewModel{title='...', priority=..., completed=...}"</dd></dl>
+<p>@overrides Object.toString() </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00602">602</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00057">completed</a>, <a class="el" href="_task_view_model_8java_source.html#l00051">priority</a> и <a class="el" href="_task_view_model_8java_source.html#l00039">title</a>.</p>
+
+</div>
+</div>
+<a id="a61d0e437b7d85c8ec2462d15b7ef58e1" name="a61d0e437b7d85c8ec2462d15b7ef58e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61d0e437b7d85c8ec2462d15b7ef58e1">&#9670;&#160;</a></span>updateFromModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void viewmodel.TaskViewModel.updateFromModel </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Обновляет ViewModel на основе изменений в модели </p>
+<p>Синхронизирует все свойства ViewModel с текущими значениями из связанного объекта <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a>. Используется при внешних изменениях модели, которые не были инициированы через UI.</p>
+<dl class="section note"><dt>Заметки</dt><dd>Этот метод следует вызывать при изменении модели <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a> извне, например, при загрузке задач из файла или изменении через TaskManager.</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd>TaskManager </dd>
+<dd>
+<a class="el" href="classutil_1_1_json_util.html" title="Утилита для работы с JSON файлами задач">util.JsonUtil</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00584">584</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00054">category</a>, <a class="el" href="_task_view_model_8java_source.html#l00057">completed</a>, <a class="el" href="_task_view_model_8java_source.html#l00042">description</a>, <a class="el" href="_task_view_model_8java_source.html#l00048">endTime</a>, <a class="el" href="_task_view_model_8java_source.html#l00060">overdue</a>, <a class="el" href="_task_view_model_8java_source.html#l00051">priority</a>, <a class="el" href="_task_view_model_8java_source.html#l00045">startTime</a>, <a class="el" href="_task_view_model_8java_source.html#l00066">task</a> и <a class="el" href="_task_view_model_8java_source.html#l00039">title</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="a7fe0ba6c6faa0f7cfe0ff14c3dc88f02" name="a7fe0ba6c6faa0f7cfe0ff14c3dc88f02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fe0ba6c6faa0f7cfe0ff14c3dc88f02">&#9670;&#160;</a></span>category</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final ObjectProperty&lt;<a class="el" href="enummodel_1_1_category.html">Category</a>&gt; viewmodel.TaskViewModel.category</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Категория задачи (WORK, HOME, STUDY, OTHER). </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00054">54</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00332">categoryProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00324">getCategory()</a>, <a class="el" href="_task_view_model_8java_source.html#l00499">getCategoryColor()</a>, <a class="el" href="_task_view_model_8java_source.html#l00488">getCategoryDisplay()</a>, <a class="el" href="_task_view_model_8java_source.html#l00340">setCategory()</a>, <a class="el" href="_task_view_model_8java_source.html#l00139">setupBindings()</a> и <a class="el" href="_task_view_model_8java_source.html#l00584">updateFromModel()</a>.</p>
+
+</div>
+</div>
+<a id="abac2ca51dc0b6b90ff866c71c3371930" name="abac2ca51dc0b6b90ff866c71c3371930"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abac2ca51dc0b6b90ff866c71c3371930">&#9670;&#160;</a></span>completed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final BooleanProperty viewmodel.TaskViewModel.completed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Флаг выполнения задачи </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00057">57</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00356">completedProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00551">getStatusText()</a>, <a class="el" href="_task_view_model_8java_source.html#l00348">isCompleted()</a>, <a class="el" href="_task_view_model_8java_source.html#l00366">setCompleted()</a>, <a class="el" href="_task_view_model_8java_source.html#l00139">setupBindings()</a>, <a class="el" href="_task_view_model_8java_source.html#l00602">toString()</a> и <a class="el" href="_task_view_model_8java_source.html#l00584">updateFromModel()</a>.</p>
+
+</div>
+</div>
+<a id="ae66ade7b1fc8d06fd1dfba6560f94ad3" name="ae66ade7b1fc8d06fd1dfba6560f94ad3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66ade7b1fc8d06fd1dfba6560f94ad3">&#9670;&#160;</a></span>createdAt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final ObjectProperty&lt;LocalDateTime&gt; viewmodel.TaskViewModel.createdAt</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Дата и время создания задачи </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00063">63</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00398">createdAtProperty()</a> и <a class="el" href="_task_view_model_8java_source.html#l00390">getCreatedAt()</a>.</p>
+
+</div>
+</div>
+<a id="a3d6f42acec8f9aa4fe9edca2b5d9e664" name="a3d6f42acec8f9aa4fe9edca2b5d9e664"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d6f42acec8f9aa4fe9edca2b5d9e664">&#9670;&#160;</a></span>DATE_FORMATTER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final DateTimeFormatter viewmodel.TaskViewModel.DATE_FORMATTER</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= </div>
+<div class="line">        DateTimeFormatter.ofPattern(<span class="stringliteral">&quot;dd.MM.yyyy&quot;</span>)</div>
+</div><!-- fragment -->
+<p>Форматер для отображения только даты @value "dd.MM.yyyy" (пример: "31.12.2025"). </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00079">79</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00435">getFormattedEndDate()</a>.</p>
+
+</div>
+</div>
+<a id="a02530490b1fbaf28814ffa30e70f3bef" name="a02530490b1fbaf28814ffa30e70f3bef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02530490b1fbaf28814ffa30e70f3bef">&#9670;&#160;</a></span>DATE_TIME_FORMATTER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final DateTimeFormatter viewmodel.TaskViewModel.DATE_TIME_FORMATTER</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= </div>
+<div class="line">        DateTimeFormatter.ofPattern(<span class="stringliteral">&quot;dd.MM.yyyy HH:mm&quot;</span>)</div>
+</div><!-- fragment -->
+<p>Форматер для полного отображения даты и времени @value "dd.MM.yyyy HH:mm" (пример: "31.12.2025 23:59"). </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00072">72</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00424">getFormattedEndTime()</a> и <a class="el" href="_task_view_model_8java_source.html#l00413">getFormattedStartTime()</a>.</p>
+
+</div>
+</div>
+<a id="a627b02d9ff5b7b4d83df0ac7399fca44" name="a627b02d9ff5b7b4d83df0ac7399fca44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a627b02d9ff5b7b4d83df0ac7399fca44">&#9670;&#160;</a></span>description</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final StringProperty viewmodel.TaskViewModel.description</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Описание задачи </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00042">42</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00236">descriptionProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00228">getDescription()</a>, <a class="el" href="_task_view_model_8java_source.html#l00244">setDescription()</a>, <a class="el" href="_task_view_model_8java_source.html#l00139">setupBindings()</a> и <a class="el" href="_task_view_model_8java_source.html#l00584">updateFromModel()</a>.</p>
+
+</div>
+</div>
+<a id="a1406520ea09048f9fdbeeaa66056ff84" name="a1406520ea09048f9fdbeeaa66056ff84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1406520ea09048f9fdbeeaa66056ff84">&#9670;&#160;</a></span>endTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final ObjectProperty&lt;LocalDateTime&gt; viewmodel.TaskViewModel.endTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Время окончания (дедлайн) задачи </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00048">48</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00284">endTimeProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00276">getEndTime()</a>, <a class="el" href="_task_view_model_8java_source.html#l00435">getFormattedEndDate()</a>, <a class="el" href="_task_view_model_8java_source.html#l00424">getFormattedEndTime()</a>, <a class="el" href="_task_view_model_8java_source.html#l00446">getFormattedEndTimeOnly()</a>, <a class="el" href="_task_view_model_8java_source.html#l00513">getTimeRemaining()</a>, <a class="el" href="_task_view_model_8java_source.html#l00292">setEndTime()</a>, <a class="el" href="_task_view_model_8java_source.html#l00139">setupBindings()</a> и <a class="el" href="_task_view_model_8java_source.html#l00584">updateFromModel()</a>.</p>
+
+</div>
+</div>
+<a id="a81c1f7c14ffd517a4224b527dae12b4a" name="a81c1f7c14ffd517a4224b527dae12b4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81c1f7c14ffd517a4224b527dae12b4a">&#9670;&#160;</a></span>id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final StringProperty viewmodel.TaskViewModel.id</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Уникальный идентификатор задачи (неизменяемый). </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00036">36</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00617">equals()</a> и <a class="el" href="_task_view_model_8java_source.html#l00196">idProperty()</a>.</p>
+
+</div>
+</div>
+<a id="a24805572ae9b3de96a4dc520c0496f43" name="a24805572ae9b3de96a4dc520c0496f43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24805572ae9b3de96a4dc520c0496f43">&#9670;&#160;</a></span>overdue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final BooleanProperty viewmodel.TaskViewModel.overdue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Флаг просроченности задачи </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00060">60</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00551">getStatusText()</a>, <a class="el" href="_task_view_model_8java_source.html#l00374">isOverdue()</a>, <a class="el" href="_task_view_model_8java_source.html#l00382">overdueProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00139">setupBindings()</a> и <a class="el" href="_task_view_model_8java_source.html#l00584">updateFromModel()</a>.</p>
+
+</div>
+</div>
+<a id="aceccd89ccf126f89b7235548b8586a5b" name="aceccd89ccf126f89b7235548b8586a5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceccd89ccf126f89b7235548b8586a5b">&#9670;&#160;</a></span>priority</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final ObjectProperty&lt;<a class="el" href="enummodel_1_1_priority.html">Priority</a>&gt; viewmodel.TaskViewModel.priority</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Приоритет задачи (URGENT, IMPORTANT, NORMAL). </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00051">51</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00300">getPriority()</a>, <a class="el" href="_task_view_model_8java_source.html#l00467">getPriorityColor()</a>, <a class="el" href="_task_view_model_8java_source.html#l00456">getPriorityDisplay()</a>, <a class="el" href="_task_view_model_8java_source.html#l00478">getPriorityIconName()</a>, <a class="el" href="_task_view_model_8java_source.html#l00308">priorityProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00316">setPriority()</a>, <a class="el" href="_task_view_model_8java_source.html#l00139">setupBindings()</a>, <a class="el" href="_task_view_model_8java_source.html#l00602">toString()</a> и <a class="el" href="_task_view_model_8java_source.html#l00584">updateFromModel()</a>.</p>
+
+</div>
+</div>
+<a id="a6803f8e2e1d27bf672e331486aff9934" name="a6803f8e2e1d27bf672e331486aff9934"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6803f8e2e1d27bf672e331486aff9934">&#9670;&#160;</a></span>startTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final ObjectProperty&lt;LocalDateTime&gt; viewmodel.TaskViewModel.startTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Время начала выполнения задачи </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00045">45</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00413">getFormattedStartTime()</a>, <a class="el" href="_task_view_model_8java_source.html#l00252">getStartTime()</a>, <a class="el" href="_task_view_model_8java_source.html#l00268">setStartTime()</a>, <a class="el" href="_task_view_model_8java_source.html#l00139">setupBindings()</a>, <a class="el" href="_task_view_model_8java_source.html#l00260">startTimeProperty()</a> и <a class="el" href="_task_view_model_8java_source.html#l00584">updateFromModel()</a>.</p>
+
+</div>
+</div>
+<a id="a97f13543b8cfec1764e1ccc0241b0309" name="a97f13543b8cfec1764e1ccc0241b0309"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97f13543b8cfec1764e1ccc0241b0309">&#9670;&#160;</a></span>task</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="classmodel_1_1_task.html">Task</a> viewmodel.TaskViewModel.task</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ссылка на исходную модель данных <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a>. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00066">66</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00568">getTask()</a>, <a class="el" href="_task_view_model_8java_source.html#l00139">setupBindings()</a>, <a class="el" href="_task_view_model_8java_source.html#l00105">TaskViewModel()</a> и <a class="el" href="_task_view_model_8java_source.html#l00584">updateFromModel()</a>.</p>
+
+</div>
+</div>
+<a id="ad7df044a5e274feaa87e002eafdd3afa" name="ad7df044a5e274feaa87e002eafdd3afa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7df044a5e274feaa87e002eafdd3afa">&#9670;&#160;</a></span>TIME_FORMATTER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final DateTimeFormatter viewmodel.TaskViewModel.TIME_FORMATTER</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= </div>
+<div class="line">        DateTimeFormatter.ofPattern(<span class="stringliteral">&quot;HH:mm&quot;</span>)</div>
+</div><!-- fragment -->
+<p>Форматер для отображения только времени @value "HH:mm" (пример: "23:59"). </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00086">86</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00446">getFormattedEndTimeOnly()</a>.</p>
+
+</div>
+</div>
+<a id="a5985ed58b0e977027b51e79a3f17a205" name="a5985ed58b0e977027b51e79a3f17a205"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5985ed58b0e977027b51e79a3f17a205">&#9670;&#160;</a></span>title</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final StringProperty viewmodel.TaskViewModel.title</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Заголовок задачи </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00039">39</a></p>
+
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00204">getTitle()</a>, <a class="el" href="_task_view_model_8java_source.html#l00220">setTitle()</a>, <a class="el" href="_task_view_model_8java_source.html#l00139">setupBindings()</a>, <a class="el" href="_task_view_model_8java_source.html#l00212">titleProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00602">toString()</a> и <a class="el" href="_task_view_model_8java_source.html#l00584">updateFromModel()</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>src/viewmodel/<a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespaceviewmodel.html">viewmodel</a></li><li class="navelem"><a href="classviewmodel_1_1_task_view_model.html">TaskViewModel</a></li>
+    <li class="footer">Документация по Умный планировщик задач (To-Do List). Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

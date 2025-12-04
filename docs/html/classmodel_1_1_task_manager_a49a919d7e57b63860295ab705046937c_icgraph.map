@@ -1,0 +1,9 @@
+<map id="model.TaskManager.TaskManager" name="model.TaskManager.TaskManager">
+<area shape="rect" id="Node000001" title="Приватный конструктор" alt="" coords="495,31,714,56"/>
+<area shape="rect" id="Node000002" href="$classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea" title="Возвращает единственный экземпляр TaskManager." alt="" coords="238,31,447,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="477,44,447,46,447,41,482,43"/>
+<area shape="rect" id="Node000003" href="$classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,5,190,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="219,31,190,30,190,25,225,31"/>
+<area shape="rect" id="Node000004" href="$classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834" title="Метод остановки приложения" alt="" coords="34,55,161,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="220,56,161,64,161,59,225,55"/>
+</map>

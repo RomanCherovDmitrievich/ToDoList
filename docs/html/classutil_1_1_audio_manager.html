@@ -1,0 +1,799 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Умный планировщик задач (To-Do List): Класс util.AudioManager</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">JavaFX приложение для управления задачами с новогодней темой</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classutil_1_1_audio_manager.html','','classutil_1_1_audio_manager-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс util.AudioManager</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Менеджер для работы с аудио в приложении  
+ <a href="#details">Подробнее...</a></p>
+<div class="dynheader">
+Граф связей класса util.AudioManager:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_audio_manager__coll__graph.png" border="0" usemap="#autil_8_audio_manager_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="autil_8_audio_manager_coll__map" id="autil_8_audio_manager_coll__map">
+<area shape="rect" title="Менеджер для работы с аудио в приложении" alt="" coords="5,102,131,128"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html" title="Менеджер для работы с аудио в приложении" alt="" coords="5,5,131,31"/>
+<area shape="poly" title=" " alt="" coords="70,45,71,102,65,101,66,48"/>
+<area shape="poly" title=" " alt="" coords="146,9,157,18,149,27,132,29,130,24,147,22,152,18,146,14"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ad942a10cdb0c3255dce15b945b3b3ef7" id="r_ad942a10cdb0c3255dce15b945b3b3ef7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad942a10cdb0c3255dce15b945b3b3ef7">playStartupSound</a> ()</td></tr>
+<tr class="memdesc:ad942a10cdb0c3255dce15b945b3b3ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Воспроизводит стартовый звук  <br /></td></tr>
+<tr class="memitem:a0cd69361c7be8242bf320f3fc2e9b4c8" id="r_a0cd69361c7be8242bf320f3fc2e9b4c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0cd69361c7be8242bf320f3fc2e9b4c8">playAddSound</a> ()</td></tr>
+<tr class="memdesc:a0cd69361c7be8242bf320f3fc2e9b4c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Воспроизводит звук добавления  <br /></td></tr>
+<tr class="memitem:ad9d482e8685837c619116437b9df7bf4" id="r_ad9d482e8685837c619116437b9df7bf4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9d482e8685837c619116437b9df7bf4">playDeleteSound</a> ()</td></tr>
+<tr class="memdesc:ad9d482e8685837c619116437b9df7bf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Воспроизводит звук удаления  <br /></td></tr>
+<tr class="memitem:ac92dec84a3263aa3172e30a12bc9d3c8" id="r_ac92dec84a3263aa3172e30a12bc9d3c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac92dec84a3263aa3172e30a12bc9d3c8">playCompleteSound</a> ()</td></tr>
+<tr class="memdesc:ac92dec84a3263aa3172e30a12bc9d3c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Воспроизводит звук завершения  <br /></td></tr>
+<tr class="memitem:acf1983de023a80986e58e9ec35fdc9ba" id="r_acf1983de023a80986e58e9ec35fdc9ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf1983de023a80986e58e9ec35fdc9ba">setSoundsEnabled</a> (boolean enabled)</td></tr>
+<tr class="memdesc:acf1983de023a80986e58e9ec35fdc9ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Включает/выключает звуки  <br /></td></tr>
+<tr class="memitem:a62a0acbea9b3248bf06398f2dfdeda4c" id="r_a62a0acbea9b3248bf06398f2dfdeda4c"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62a0acbea9b3248bf06398f2dfdeda4c">isSoundsEnabled</a> ()</td></tr>
+<tr class="memdesc:a62a0acbea9b3248bf06398f2dfdeda4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, включены ли звуки  <br /></td></tr>
+<tr class="memitem:a4bd7828b5012fb5ecc3047e2fd9a62f2" id="r_a4bd7828b5012fb5ecc3047e2fd9a62f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4bd7828b5012fb5ecc3047e2fd9a62f2">stopAllSounds</a> ()</td></tr>
+<tr class="memdesc:a4bd7828b5012fb5ecc3047e2fd9a62f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Останавливает все звуки  <br /></td></tr>
+<tr class="memitem:ae9b5ff0d4f6422976af5a3c3ef67c106" id="r_ae9b5ff0d4f6422976af5a3c3ef67c106"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9b5ff0d4f6422976af5a3c3ef67c106">setMasterVolume</a> (double volume)</td></tr>
+<tr class="memdesc:ae9b5ff0d4f6422976af5a3c3ef67c106"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает громкость для всех звуков  <br /></td></tr>
+<tr class="memitem:a67ab556a4d2e6faff27ec5b80d97220c" id="r_a67ab556a4d2e6faff27ec5b80d97220c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67ab556a4d2e6faff27ec5b80d97220c">dispose</a> ()</td></tr>
+<tr class="memdesc:a67ab556a4d2e6faff27ec5b80d97220c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Освобождает ресурсы  <br /></td></tr>
+<tr class="memitem:a06fcaef8f4e9319e62f1b8394c146bc1" id="r_a06fcaef8f4e9319e62f1b8394c146bc1"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06fcaef8f4e9319e62f1b8394c146bc1">hasAudioFiles</a> ()</td></tr>
+<tr class="memdesc:a06fcaef8f4e9319e62f1b8394c146bc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет наличие аудио файлов  <br /></td></tr>
+<tr class="memitem:a7e6f303dee5ec6b835e850b493d01ac8" id="r_a7e6f303dee5ec6b835e850b493d01ac8"><td class="memItemLeft" align="right" valign="top">String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e6f303dee5ec6b835e850b493d01ac8">getAvailableSounds</a> ()</td></tr>
+<tr class="memdesc:a7e6f303dee5ec6b835e850b493d01ac8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получает список доступных звуков  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:aaf7ec801730bf60f659b843ace062d86" id="r_aaf7ec801730bf60f659b843ace062d86"><td class="memItemLeft" align="right" valign="top">static synchronized <a class="el" href="#ab16a211144282895701d2b0a64a66145">AudioManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf7ec801730bf60f659b843ace062d86">getInstance</a> ()</td></tr>
+<tr class="memdesc:aaf7ec801730bf60f659b843ace062d86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получает единственный экземпляр <a class="el" href="classutil_1_1_audio_manager.html" title="Менеджер для работы с аудио в приложении">AudioManager</a>.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:ab16a211144282895701d2b0a64a66145" id="r_ab16a211144282895701d2b0a64a66145"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab16a211144282895701d2b0a64a66145">AudioManager</a> ()</td></tr>
+<tr class="memdesc:ab16a211144282895701d2b0a64a66145"><td class="mdescLeft">&#160;</td><td class="mdescRight">Приватный конструктор  <br /></td></tr>
+<tr class="memitem:a5ad71057028d829235d9ca3519feae2d" id="r_a5ad71057028d829235d9ca3519feae2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ad71057028d829235d9ca3519feae2d">loadSounds</a> ()</td></tr>
+<tr class="memdesc:a5ad71057028d829235d9ca3519feae2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загружает все звуки приложения  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:ad821ccdc501aee02b922c7a780481422" id="r_ad821ccdc501aee02b922c7a780481422"><td class="memItemLeft" align="right" valign="top">Map&lt; String, MediaPlayer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad821ccdc501aee02b922c7a780481422">mediaPlayers</a></td></tr>
+<tr class="memdesc:ad821ccdc501aee02b922c7a780481422"><td class="mdescLeft">&#160;</td><td class="mdescRight">Коллекция медиа-плееров  <br /></td></tr>
+<tr class="memitem:a8d8ac1f3063b0865a6cf88f95dad1554" id="r_a8d8ac1f3063b0865a6cf88f95dad1554"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d8ac1f3063b0865a6cf88f95dad1554">soundsEnabled</a> = true</td></tr>
+<tr class="memdesc:a8d8ac1f3063b0865a6cf88f95dad1554"><td class="mdescLeft">&#160;</td><td class="mdescRight">Флаг включения звуков  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Закрытые статические данные</h2></td></tr>
+<tr class="memitem:a3fda3878e3ef5d2cba54657417d98670" id="r_a3fda3878e3ef5d2cba54657417d98670"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="#ab16a211144282895701d2b0a64a66145">AudioManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fda3878e3ef5d2cba54657417d98670">instance</a></td></tr>
+<tr class="memdesc:a3fda3878e3ef5d2cba54657417d98670"><td class="mdescLeft">&#160;</td><td class="mdescRight">Единственный экземпляр <a class="el" href="classutil_1_1_audio_manager.html" title="Менеджер для работы с аудио в приложении">AudioManager</a>.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Менеджер для работы с аудио в приложении </p>
+<p>Класс <a class="el" href="classutil_1_1_audio_manager.html" title="Менеджер для работы с аудио в приложении">AudioManager</a> реализует паттерн Singleton для управления звуковыми эффектами. Обеспечивает загрузку, воспроизведение и контроль аудио ресурсов приложения. Поддерживает включение/выключение звуков и регулировку громкости.</p>
+<dl class="section author"><dt>Автор</dt><dd>Разработчик </dd></dl>
+<dl class="section version"><dt>Версия</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Дата</dt><dd>2025-11-30</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Использует JavaFX Media API для воспроизведения звуков </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Звуки требуют наличия соответствующих файлов в resources/audio/ </dd></dl>
+<dl class="section see"><dt>См. также</dt><dd>Media </dd>
+<dd>
+MediaPlayer</dd></dl>
+<p>@singleton Гарантирует единственный экземпляр в приложении </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_audio_manager_8java_source.html">AudioManager.java</a> строка <a class="el" href="_audio_manager_8java_source.html#l00028">28</a></p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="ab16a211144282895701d2b0a64a66145" name="ab16a211144282895701d2b0a64a66145"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab16a211144282895701d2b0a64a66145">&#9670;&#160;</a></span>AudioManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">util.AudioManager.AudioManager </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Приватный конструктор </p>
+<p>Инициализирует коллекцию медиа-плееров и загружает звуки</p>
+<dl class="section note"><dt>Заметки</dt><dd>Конструктор приватный для реализации паттерна Singleton </dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="#a5ad71057028d829235d9ca3519feae2d" title="Загружает все звуки приложения">loadSounds()</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_audio_manager_8java_source.html">AudioManager.java</a> строка <a class="el" href="_audio_manager_8java_source.html#l00058">58</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_audio_manager_8java_source.html#l00091">loadSounds()</a> и <a class="el" href="_audio_manager_8java_source.html#l00043">mediaPlayers</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_audio_manager_8java_source.html#l00072">getInstance()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_audio_manager_ab16a211144282895701d2b0a64a66145_cgraph.png" border="0" usemap="#aclassutil_1_1_audio_manager_ab16a211144282895701d2b0a64a66145_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_audio_manager_ab16a211144282895701d2b0a64a66145_cgraph" id="aclassutil_1_1_audio_manager_ab16a211144282895701d2b0a64a66145_cgraph">
+<area shape="rect" title="Приватный конструктор" alt="" coords="5,5,217,31"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#a5ad71057028d829235d9ca3519feae2d" title="Загружает все звуки приложения" alt="" coords="265,5,461,31"/>
+<area shape="poly" title=" " alt="" coords="217,16,252,18,246,18,217,21"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_audio_manager_ab16a211144282895701d2b0a64a66145_icgraph.png" border="0" usemap="#aclassutil_1_1_audio_manager_ab16a211144282895701d2b0a64a66145_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_audio_manager_ab16a211144282895701d2b0a64a66145_icgraph" id="aclassutil_1_1_audio_manager_ab16a211144282895701d2b0a64a66145_icgraph">
+<area shape="rect" title="Приватный конструктор" alt="" coords="482,31,693,56"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#aaf7ec801730bf60f659b843ace062d86" title="Получает единственный экземпляр AudioManager." alt="" coords="238,31,434,56"/>
+<area shape="poly" title=" " alt="" coords="464,44,435,46,434,41,469,43"/>
+<area shape="rect" href="classapp_1_1_main_app.html#acbf781550cefac29e6c8ecbdd2b38904" title="Метод инициализации приложения" alt="" coords="38,5,157,31"/>
+<area shape="poly" title=" " alt="" coords="220,32,157,27,157,22,225,31"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,55,190,80"/>
+<area shape="poly" title=" " alt="" coords="220,55,190,61,190,56,225,55"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="a67ab556a4d2e6faff27ec5b80d97220c" name="a67ab556a4d2e6faff27ec5b80d97220c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67ab556a4d2e6faff27ec5b80d97220c">&#9670;&#160;</a></span>dispose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void util.AudioManager.dispose </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Освобождает ресурсы </p>
+<p>Останавливает все звуки, освобождает ресурсы медиа-плееров и очищает коллекцию</p>
+<dl class="section note"><dt>Заметки</dt><dd>Этот метод должен вызываться при завершении работы приложения </dd>
+<dd>
+После вызова <a class="el" href="#a67ab556a4d2e6faff27ec5b80d97220c" title="Освобождает ресурсы">dispose()</a> объект <a class="el" href="classutil_1_1_audio_manager.html" title="Менеджер для работы с аудио в приложении">AudioManager</a> можно продолжать использовать</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd>MediaPlayer#dispose() </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Повторный вызов <a class="el" href="#a5ad71057028d829235d9ca3519feae2d" title="Загружает все звуки приложения">loadSounds()</a> потребуется для восстановления функциональности </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_audio_manager_8java_source.html">AudioManager.java</a> строка <a class="el" href="_audio_manager_8java_source.html#l00254">254</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_audio_manager_8java_source.html#l00043">mediaPlayers</a> и <a class="el" href="_audio_manager_8java_source.html#l00216">stopAllSounds()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_audio_manager_a67ab556a4d2e6faff27ec5b80d97220c_cgraph.png" border="0" usemap="#aclassutil_1_1_audio_manager_a67ab556a4d2e6faff27ec5b80d97220c_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_audio_manager_a67ab556a4d2e6faff27ec5b80d97220c_cgraph" id="aclassutil_1_1_audio_manager_a67ab556a4d2e6faff27ec5b80d97220c_cgraph">
+<area shape="rect" title="Освобождает ресурсы" alt="" coords="5,13,179,38"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#a4bd7828b5012fb5ecc3047e2fd9a62f2" title="Останавливает все звуки" alt="" coords="227,5,395,46"/>
+<area shape="poly" title=" " alt="" coords="179,23,214,25,208,26,179,28"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7e6f303dee5ec6b835e850b493d01ac8" name="a7e6f303dee5ec6b835e850b493d01ac8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e6f303dee5ec6b835e850b493d01ac8">&#9670;&#160;</a></span>getAvailableSounds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String[] util.AudioManager.getAvailableSounds </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получает список доступных звуков </p>
+<p>Возвращает массив названий всех загруженных звуков</p>
+<dl class="section return"><dt>Возвращает</dt><dd>String[] Массив названий звуков</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Названия соответствуют ключам в коллекции mediaPlayers </dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="#ad821ccdc501aee02b922c7a780481422" title="Коллекция медиа-плееров">mediaPlayers</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_audio_manager_8java_source.html">AudioManager.java</a> строка <a class="el" href="_audio_manager_8java_source.html#l00285">285</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_audio_manager_8java_source.html#l00043">mediaPlayers</a>.</p>
+
+</div>
+</div>
+<a id="aaf7ec801730bf60f659b843ace062d86" name="aaf7ec801730bf60f659b843ace062d86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf7ec801730bf60f659b843ace062d86">&#9670;&#160;</a></span>getInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized <a class="el" href="#ab16a211144282895701d2b0a64a66145">AudioManager</a> util.AudioManager.getInstance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получает единственный экземпляр <a class="el" href="classutil_1_1_audio_manager.html" title="Менеджер для работы с аудио в приложении">AudioManager</a>. </p>
+<p>Реализация паттерна Singleton с синхронизацией для многопоточности</p>
+<dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="classutil_1_1_audio_manager.html" title="Менеджер для работы с аудио в приложении">AudioManager</a> единственный экземпляр класса</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Метод synchronized для безопасного использования в многопоточной среде </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>При первом вызове создает новый экземпляр и загружает звуки </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_audio_manager_8java_source.html">AudioManager.java</a> строка <a class="el" href="_audio_manager_8java_source.html#l00072">72</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_audio_manager_8java_source.html#l00058">AudioManager()</a> и <a class="el" href="_audio_manager_8java_source.html#l00034">instance</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00123">app.MainApp.init()</a> и <a class="el" href="_main_controller_8java_source.html#l00190">view.MainController.initialize()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_audio_manager_aaf7ec801730bf60f659b843ace062d86_cgraph.png" border="0" usemap="#aclassutil_1_1_audio_manager_aaf7ec801730bf60f659b843ace062d86_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_audio_manager_aaf7ec801730bf60f659b843ace062d86_cgraph" id="aclassutil_1_1_audio_manager_aaf7ec801730bf60f659b843ace062d86_cgraph">
+<area shape="rect" title="Получает единственный экземпляр AudioManager." alt="" coords="5,5,202,31"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#ab16a211144282895701d2b0a64a66145" title="Приватный конструктор" alt="" coords="250,5,461,31"/>
+<area shape="poly" title=" " alt="" coords="202,16,237,18,232,18,202,21"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#a5ad71057028d829235d9ca3519feae2d" title="Загружает все звуки приложения" alt="" coords="509,5,705,31"/>
+<area shape="poly" title=" " alt="" coords="462,16,496,18,491,18,462,21"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_audio_manager_aaf7ec801730bf60f659b843ace062d86_icgraph.png" border="0" usemap="#aclassutil_1_1_audio_manager_aaf7ec801730bf60f659b843ace062d86_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_audio_manager_aaf7ec801730bf60f659b843ace062d86_icgraph" id="aclassutil_1_1_audio_manager_aaf7ec801730bf60f659b843ace062d86_icgraph">
+<area shape="rect" title="Получает единственный экземпляр AudioManager." alt="" coords="238,31,434,56"/>
+<area shape="rect" href="classapp_1_1_main_app.html#acbf781550cefac29e6c8ecbdd2b38904" title="Метод инициализации приложения" alt="" coords="38,5,157,31"/>
+<area shape="poly" title=" " alt="" coords="220,32,157,27,157,22,225,31"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,55,190,80"/>
+<area shape="poly" title=" " alt="" coords="220,55,190,61,190,56,225,55"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a06fcaef8f4e9319e62f1b8394c146bc1" name="a06fcaef8f4e9319e62f1b8394c146bc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06fcaef8f4e9319e62f1b8394c146bc1">&#9670;&#160;</a></span>hasAudioFiles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean util.AudioManager.hasAudioFiles </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Проверяет наличие аудио файлов </p>
+<p>Определяет, были ли успешно загружены какие-либо звуки</p>
+<dl class="section return"><dt>Возвращает</dt><dd>true если есть хотя бы один загруженный звук, false если коллекция пуста</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="#ad821ccdc501aee02b922c7a780481422" title="Коллекция медиа-плееров">mediaPlayers</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_audio_manager_8java_source.html">AudioManager.java</a> строка <a class="el" href="_audio_manager_8java_source.html#l00272">272</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_audio_manager_8java_source.html#l00043">mediaPlayers</a>.</p>
+
+</div>
+</div>
+<a id="a62a0acbea9b3248bf06398f2dfdeda4c" name="a62a0acbea9b3248bf06398f2dfdeda4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62a0acbea9b3248bf06398f2dfdeda4c">&#9670;&#160;</a></span>isSoundsEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean util.AudioManager.isSoundsEnabled </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Проверяет, включены ли звуки </p>
+<p>Возвращает текущее состояние флага soundsEnabled</p>
+<dl class="section return"><dt>Возвращает</dt><dd>true если звуки включены, false если выключены</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="#a8d8ac1f3063b0865a6cf88f95dad1554" title="Флаг включения звуков">soundsEnabled</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_audio_manager_8java_source.html">AudioManager.java</a> строка <a class="el" href="_audio_manager_8java_source.html#l00205">205</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_audio_manager_8java_source.html#l00049">soundsEnabled</a>.</p>
+
+</div>
+</div>
+<a id="a5ad71057028d829235d9ca3519feae2d" name="a5ad71057028d829235d9ca3519feae2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ad71057028d829235d9ca3519feae2d">&#9670;&#160;</a></span>loadSounds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void util.AudioManager.loadSounds </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Загружает все звуки приложения </p>
+<p>Загружает аудио файлы из папки resources/audio/ и создает MediaPlayer для каждого</p>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Exception</td><td>если возникают ошибки при загрузке файлов</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>В случае ошибки отключает звуки и продолжает работу </dd>
+<dd>
+Текущая версия загружает только стартовый звук "startup3.mp3"</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd>Media </dd>
+<dd>
+MediaPlayer </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_audio_manager_8java_source.html">AudioManager.java</a> строка <a class="el" href="_audio_manager_8java_source.html#l00091">91</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_audio_manager_8java_source.html#l00043">mediaPlayers</a> и <a class="el" href="_audio_manager_8java_source.html#l00049">soundsEnabled</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_audio_manager_8java_source.html#l00058">AudioManager()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_audio_manager_a5ad71057028d829235d9ca3519feae2d_icgraph.png" border="0" usemap="#aclassutil_1_1_audio_manager_a5ad71057028d829235d9ca3519feae2d_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_audio_manager_a5ad71057028d829235d9ca3519feae2d_icgraph" id="aclassutil_1_1_audio_manager_a5ad71057028d829235d9ca3519feae2d_icgraph">
+<area shape="rect" title="Загружает все звуки приложения" alt="" coords="741,31,938,56"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#ab16a211144282895701d2b0a64a66145" title="Приватный конструктор" alt="" coords="482,31,693,56"/>
+<area shape="poly" title=" " alt="" coords="723,44,694,46,694,41,728,43"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#aaf7ec801730bf60f659b843ace062d86" title="Получает единственный экземпляр AudioManager." alt="" coords="238,31,434,56"/>
+<area shape="poly" title=" " alt="" coords="464,44,435,46,434,41,469,43"/>
+<area shape="rect" href="classapp_1_1_main_app.html#acbf781550cefac29e6c8ecbdd2b38904" title="Метод инициализации приложения" alt="" coords="38,5,157,31"/>
+<area shape="poly" title=" " alt="" coords="220,32,157,27,157,22,225,31"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,55,190,80"/>
+<area shape="poly" title=" " alt="" coords="220,55,190,61,190,56,225,55"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0cd69361c7be8242bf320f3fc2e9b4c8" name="a0cd69361c7be8242bf320f3fc2e9b4c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cd69361c7be8242bf320f3fc2e9b4c8">&#9670;&#160;</a></span>playAddSound()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void util.AudioManager.playAddSound </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Воспроизводит звук добавления </p>
+<p>Проигрывает звук при добавлении новой задачи</p>
+<dl class="section note"><dt>Заметки</dt><dd>В текущей реализации звук "add" не загружается </dd>
+<dd>
+Метод зарезервирован для будущего расширения функциональности </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_audio_manager_8java_source.html">AudioManager.java</a> строка <a class="el" href="_audio_manager_8java_source.html#l00140">140</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_audio_manager_8java_source.html#l00043">mediaPlayers</a> и <a class="el" href="_audio_manager_8java_source.html#l00049">soundsEnabled</a>.</p>
+
+</div>
+</div>
+<a id="ac92dec84a3263aa3172e30a12bc9d3c8" name="ac92dec84a3263aa3172e30a12bc9d3c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac92dec84a3263aa3172e30a12bc9d3c8">&#9670;&#160;</a></span>playCompleteSound()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void util.AudioManager.playCompleteSound </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Воспроизводит звук завершения </p>
+<p>Проигрывает звук при отметке задачи как выполненной</p>
+<dl class="section note"><dt>Заметки</dt><dd>В текущей реализации звук "complete" не загружается </dd>
+<dd>
+Метод зарезервирован для будущего расширения функциональности </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_audio_manager_8java_source.html">AudioManager.java</a> строка <a class="el" href="_audio_manager_8java_source.html#l00174">174</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_audio_manager_8java_source.html#l00043">mediaPlayers</a> и <a class="el" href="_audio_manager_8java_source.html#l00049">soundsEnabled</a>.</p>
+
+</div>
+</div>
+<a id="ad9d482e8685837c619116437b9df7bf4" name="ad9d482e8685837c619116437b9df7bf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9d482e8685837c619116437b9df7bf4">&#9670;&#160;</a></span>playDeleteSound()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void util.AudioManager.playDeleteSound </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Воспроизводит звук удаления </p>
+<p>Проигрывает звук при удалении задачи</p>
+<dl class="section note"><dt>Заметки</dt><dd>В текущей реализации звук "delete" не загружается </dd>
+<dd>
+Метод зарезервирован для будущего расширения функциональности </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_audio_manager_8java_source.html">AudioManager.java</a> строка <a class="el" href="_audio_manager_8java_source.html#l00157">157</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_audio_manager_8java_source.html#l00043">mediaPlayers</a> и <a class="el" href="_audio_manager_8java_source.html#l00049">soundsEnabled</a>.</p>
+
+</div>
+</div>
+<a id="ad942a10cdb0c3255dce15b945b3b3ef7" name="ad942a10cdb0c3255dce15b945b3b3ef7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad942a10cdb0c3255dce15b945b3b3ef7">&#9670;&#160;</a></span>playStartupSound()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void util.AudioManager.playStartupSound </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Воспроизводит стартовый звук </p>
+<p>Проигрывает звук запуска приложения с начала</p>
+<dl class="section note"><dt>Заметки</dt><dd>Звук воспроизводится только если soundsEnabled = true </dd>
+<dd>
+Если плеер не найден или звуки отключены, метод ничего не делает</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="#a8d8ac1f3063b0865a6cf88f95dad1554" title="Флаг включения звуков">soundsEnabled</a> </dd>
+<dd>
+MediaPlayer#seek(javafx.util.Duration) </dd>
+<dd>
+MediaPlayer#play() </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_audio_manager_8java_source.html">AudioManager.java</a> строка <a class="el" href="_audio_manager_8java_source.html#l00123">123</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_audio_manager_8java_source.html#l00043">mediaPlayers</a> и <a class="el" href="_audio_manager_8java_source.html#l00049">soundsEnabled</a>.</p>
+
+</div>
+</div>
+<a id="ae9b5ff0d4f6422976af5a3c3ef67c106" name="ae9b5ff0d4f6422976af5a3c3ef67c106"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9b5ff0d4f6422976af5a3c3ef67c106">&#9670;&#160;</a></span>setMasterVolume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void util.AudioManager.setMasterVolume </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>volume</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Устанавливает громкость для всех звуков </p>
+<p>Устанавливает уровень громкости для всех загруженных медиа-плееров</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">volume</td><td>Уровень громкости от 0.0 (тишина) до 1.0 (максимальная)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Значение автоматически ограничивается диапазоном [0.0, 1.0] </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Изменение громкости применяется ко всем последующим воспроизведениям </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_audio_manager_8java_source.html">AudioManager.java</a> строка <a class="el" href="_audio_manager_8java_source.html#l00233">233</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_audio_manager_8java_source.html#l00043">mediaPlayers</a>.</p>
+
+</div>
+</div>
+<a id="acf1983de023a80986e58e9ec35fdc9ba" name="acf1983de023a80986e58e9ec35fdc9ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf1983de023a80986e58e9ec35fdc9ba">&#9670;&#160;</a></span>setSoundsEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void util.AudioManager.setSoundsEnabled </td>
+          <td>(</td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>enabled</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Включает/выключает звуки </p>
+<p>Устанавливает флаг, определяющий будут ли воспроизводиться звуки</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enabled</td><td>true - включить звуки, false - выключить</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Изменение этого флага не останавливает уже играющие звуки </dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="#a4bd7828b5012fb5ecc3047e2fd9a62f2" title="Останавливает все звуки">stopAllSounds()</a> для остановки текущего воспроизведения </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_audio_manager_8java_source.html">AudioManager.java</a> строка <a class="el" href="_audio_manager_8java_source.html#l00193">193</a></p>
+
+</div>
+</div>
+<a id="a4bd7828b5012fb5ecc3047e2fd9a62f2" name="a4bd7828b5012fb5ecc3047e2fd9a62f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bd7828b5012fb5ecc3047e2fd9a62f2">&#9670;&#160;</a></span>stopAllSounds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void util.AudioManager.stopAllSounds </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Останавливает все звуки </p>
+<p>Останавливает воспроизведение на всех активных медиа-плеерах</p>
+<dl class="section note"><dt>Заметки</dt><dd>Метод не освобождает ресурсы плееров </dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="#a67ab556a4d2e6faff27ec5b80d97220c" title="Освобождает ресурсы">dispose()</a> для полного освобождения ресурсов </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_audio_manager_8java_source.html">AudioManager.java</a> строка <a class="el" href="_audio_manager_8java_source.html#l00216">216</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_audio_manager_8java_source.html#l00043">mediaPlayers</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_audio_manager_8java_source.html#l00254">dispose()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_audio_manager_a4bd7828b5012fb5ecc3047e2fd9a62f2_icgraph.png" border="0" usemap="#aclassutil_1_1_audio_manager_a4bd7828b5012fb5ecc3047e2fd9a62f2_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_audio_manager_a4bd7828b5012fb5ecc3047e2fd9a62f2_icgraph" id="aclassutil_1_1_audio_manager_a4bd7828b5012fb5ecc3047e2fd9a62f2_icgraph">
+<area shape="rect" title="Останавливает все звуки" alt="" coords="227,5,395,46"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#a67ab556a4d2e6faff27ec5b80d97220c" title="Освобождает ресурсы" alt="" coords="5,13,179,38"/>
+<area shape="poly" title=" " alt="" coords="209,26,179,28,179,23,214,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="a3fda3878e3ef5d2cba54657417d98670" name="a3fda3878e3ef5d2cba54657417d98670"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fda3878e3ef5d2cba54657417d98670">&#9670;&#160;</a></span>instance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ab16a211144282895701d2b0a64a66145">AudioManager</a> util.AudioManager.instance</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Единственный экземпляр <a class="el" href="classutil_1_1_audio_manager.html" title="Менеджер для работы с аудио в приложении">AudioManager</a>. </p>
+<p>Статическое поле для реализации паттерна Singleton </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_audio_manager_8java_source.html">AudioManager.java</a> строка <a class="el" href="_audio_manager_8java_source.html#l00034">34</a></p>
+
+<p class="reference">Используется в <a class="el" href="_audio_manager_8java_source.html#l00072">getInstance()</a>.</p>
+
+</div>
+</div>
+<a id="ad821ccdc501aee02b922c7a780481422" name="ad821ccdc501aee02b922c7a780481422"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad821ccdc501aee02b922c7a780481422">&#9670;&#160;</a></span>mediaPlayers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Map&lt;String, MediaPlayer&gt; util.AudioManager.mediaPlayers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Коллекция медиа-плееров </p>
+<p>Карта для хранения загруженных звуков по их именам</p>
+<p>@key String - название звука (например, "startup", "add", "delete") @value MediaPlayer - плеер для воспроизведения звука </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_audio_manager_8java_source.html">AudioManager.java</a> строка <a class="el" href="_audio_manager_8java_source.html#l00043">43</a></p>
+
+<p class="reference">Используется в <a class="el" href="_audio_manager_8java_source.html#l00058">AudioManager()</a>, <a class="el" href="_audio_manager_8java_source.html#l00254">dispose()</a>, <a class="el" href="_audio_manager_8java_source.html#l00285">getAvailableSounds()</a>, <a class="el" href="_audio_manager_8java_source.html#l00272">hasAudioFiles()</a>, <a class="el" href="_audio_manager_8java_source.html#l00091">loadSounds()</a>, <a class="el" href="_audio_manager_8java_source.html#l00140">playAddSound()</a>, <a class="el" href="_audio_manager_8java_source.html#l00174">playCompleteSound()</a>, <a class="el" href="_audio_manager_8java_source.html#l00157">playDeleteSound()</a>, <a class="el" href="_audio_manager_8java_source.html#l00123">playStartupSound()</a>, <a class="el" href="_audio_manager_8java_source.html#l00233">setMasterVolume()</a> и <a class="el" href="_audio_manager_8java_source.html#l00216">stopAllSounds()</a>.</p>
+
+</div>
+</div>
+<a id="a8d8ac1f3063b0865a6cf88f95dad1554" name="a8d8ac1f3063b0865a6cf88f95dad1554"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d8ac1f3063b0865a6cf88f95dad1554">&#9670;&#160;</a></span>soundsEnabled</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean util.AudioManager.soundsEnabled = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Флаг включения звуков </p>
+<p>Определяет, будут ли воспроизводиться звуки в приложении </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_audio_manager_8java_source.html">AudioManager.java</a> строка <a class="el" href="_audio_manager_8java_source.html#l00049">49</a></p>
+
+<p class="reference">Используется в <a class="el" href="_audio_manager_8java_source.html#l00205">isSoundsEnabled()</a>, <a class="el" href="_audio_manager_8java_source.html#l00091">loadSounds()</a>, <a class="el" href="_audio_manager_8java_source.html#l00140">playAddSound()</a>, <a class="el" href="_audio_manager_8java_source.html#l00174">playCompleteSound()</a>, <a class="el" href="_audio_manager_8java_source.html#l00157">playDeleteSound()</a> и <a class="el" href="_audio_manager_8java_source.html#l00123">playStartupSound()</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>src/util/<a class="el" href="_audio_manager_8java_source.html">AudioManager.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespaceutil.html">util</a></li><li class="navelem"><a href="classutil_1_1_audio_manager.html">AudioManager</a></li>
+    <li class="footer">Документация по Умный планировщик задач (To-Do List). Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>
