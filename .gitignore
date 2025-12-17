@@ -1,3 +1,64 @@
-/ bin /
-/ docs /
-/ javafx-sdk-25.0.1 /
+cat > .gitignore << 'EOF'
+# === JavaFX / Java ===
+*.class
+*.jar
+*.war
+*.ear
+bin/
+target/
+build/
+bin/
+dist/
+out/
+
+# === JavaFX SDK и нативные библиотеки ===
+javafx-sdk*/
+openjfx-*.zip
+*.dylib
+*.so
+*.dll
+*.jnilib
+libjfxwebkit*
+libprism*
+libglass*
+libdecora*
+libfontmanager*
+
+# === Сборки приложений ===
+*.app/
+*.exe
+*.msi
+ToDoListPlanner.zip
+ToDoListPlanner.app/
+
+# === Системные файлы ===
+.DS_Store
+Thumbs.db
+*.swp
+*~
+~*
+
+# === IDE ===
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+
+# === Данные и кэш ===
+data/tasks.json
+*.log
+*.cache
+
+# === Red OS / Linux специфичные ===
+*.rpm
+*.deb
+/package/
+/release/
+
+# === Git LFS (если используется) ===
+.git-lfs/
+EOF
