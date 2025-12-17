@@ -12,7 +12,7 @@
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="471,216,405,237,403,232,477,215"/>
 <area shape="rect" id="Node000008" href="$classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834" title="Метод остановки приложения" alt="" coords="262,300,388,326"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="514,220,469,257,414,290,383,302,382,297,412,285,466,253,509,222"/>
-<area shape="rect" id="Node000009" href="$classutil_1_1_json_util.html#a48c5f07142384cff793469f5aec70968" title="Обновляет существующую задачу" alt="" coords="245,349,406,375"/>
+<area shape="rect" id="Node000009" href="$classutil_1_1_json_util.html#a48c5f07142384cff793469f5aec70968" title="Обновляет задачу" alt="" coords="245,349,406,375"/>
 <area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="524,223,479,284,449,314,414,340,392,351,390,346,412,336,445,310,475,280,520,225"/>
 <area shape="rect" id="Node000007" href="$classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,243,190,268"/>
 <area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="223,256,191,258,190,253,228,255"/>

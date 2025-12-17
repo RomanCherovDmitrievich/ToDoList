@@ -2,9 +2,11 @@ package model;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @class TaskManager
@@ -15,9 +17,9 @@ import java.util.stream.Collectors;
  *          операции CRUD (Create, Read, Update, Delete) с задачами, поиск,
  *          фильтрацию и проверку статусов.
  * 
- * @author Разработчик
+ * @author Чернов
  * @version 2.0
- * @date 2025-12-01
+ * @date 2025-11-4
  * 
  * @implements Singleton паттерн
  * 

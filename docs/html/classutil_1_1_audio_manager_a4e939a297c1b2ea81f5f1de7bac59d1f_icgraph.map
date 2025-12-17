@@ -1,0 +1,9 @@
+<map id="util.AudioManager.playSoundEffect" name="util.AudioManager.playSoundEffect">
+<area shape="rect" id="Node000001" title="Воспроизводит звуковой эффект" alt="" coords="262,71,451,111"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_audio_manager.html#a0cd69361c7be8242bf320f3fc2e9b4c8" title="Воспроизводит звук добавления задачи" alt="" coords="22,5,197,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="259,67,189,49,189,44,265,65"/>
+<area shape="rect" id="Node000003" href="$classutil_1_1_audio_manager.html#ac92dec84a3263aa3172e30a12bc9d3c8" title="Воспроизводит звук завершения задачи" alt="" coords="5,71,214,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="244,92,214,94,214,88,249,90"/>
+<area shape="rect" id="Node000004" href="$classutil_1_1_audio_manager.html#ad9d482e8685837c619116437b9df7bf4" title="Воспроизводит звук удаления задачи" alt="" coords="14,136,205,177"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="265,115,190,138,188,133,259,116"/>
+</map>

@@ -1,5 +1,6 @@
 package model;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,9 +12,9 @@ import java.util.Map;
  * Используется для классификации задач по важности и срочности.
  * Обеспечивает единообразное отображение приоритетов во всем приложении.
  * 
- * @author Разработчик
+ * @author Чернов
  * @version 1.0
- * @date 2025-11-30
+ * @date 2025-11-4
  * 
  * @see Task
  * @see TaskManager
@@ -33,6 +34,7 @@ public enum Priority {
      * @note Имя иконки: "urgent"
      */
     URGENT("Срочно", "#FF4444", "urgent"),
+    // Это эквивалентно вызову:  new Priority("Срочно", "#FF4444", "urgent");
     
     /**
      * @brief Важный приоритет
@@ -43,6 +45,8 @@ public enum Priority {
      * @note Имя иконки: "important"
      */
     IMPORTANT("Важно", "#FFBB33", "important"),
+    
+
     
     /**
      * @brief Обычный приоритет
@@ -81,7 +85,7 @@ public enum Priority {
      * @brief Статический инициализатор
      * @details Заполняет карту BY_NAME значениями перечисления при загрузке класса
      * 
-     * @note Вызывается автоматически при первом обращении к классу Priority
+     * @note Вызывается автоматически при первом обращении к классу Priority, и больше никогда после. Нужен для инициализации статических данных
      */
     static {
         for (Priority p : values()) {

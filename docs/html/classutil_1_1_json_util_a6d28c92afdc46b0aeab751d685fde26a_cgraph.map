@@ -1,0 +1,11 @@
+<map id="util.JsonUtil.clearAllTasks" name="util.JsonUtil.clearAllTasks">
+<area shape="rect" id="Node000001" title="Очищает файл задач по указанному пути" alt="" coords="5,13,178,38"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_json_util.html#a67200ee9448e6b079ca9ea49200dec30" title="Сохраняет задачи в указанный путь" alt="" coords="226,13,424,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,23,213,25,208,26,178,28"/>
+<area shape="rect" id="Node000003" href="$classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="472,5,644,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="425,23,459,26,454,26,425,28"/>
+<area shape="rect" id="Node000004" href="$classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="692,13,858,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="645,23,680,26,674,26,645,28"/>
+<area shape="rect" id="Node000005" href="$classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="906,13,1068,38"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="858,23,893,26,887,26,858,28"/>
+</map>

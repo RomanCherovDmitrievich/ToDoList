@@ -2474,7 +2474,7 @@ details[open]>summary::before {
 
 
 html {
---timestamp: 'Чт 4 Дек 2025 05:39:01';
+--timestamp: 'Чт 11 Дек 2025 02:27:55';
 }
 span.timestamp { content: ' '; }
 span.timestamp:before { content: var(--timestamp); }

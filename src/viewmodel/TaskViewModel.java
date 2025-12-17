@@ -23,6 +23,10 @@ import java.time.format.DateTimeFormatter;
  *          JavaFX свойства для двусторонней привязки данных и форматирует данные
  *          для удобного отображения в таблице.
  * 
+ * @author Чернов
+ * @version 1.0
+ * @date 2025-11-4
+ * 
  * @note Все свойства являются Observable, что позволяет автоматически обновлять UI
  *       при изменении данных и наоборот.
  * 
@@ -30,7 +34,7 @@ import java.time.format.DateTimeFormatter;
  * @see Priority
  * @see Category
  * @see javafx.beans.property
- * @since Версия 1.0
+ * 
  */
 public class TaskViewModel {
     /** @brief Уникальный идентификатор задачи (неизменяемый) */
@@ -130,6 +134,15 @@ public class TaskViewModel {
      *          При изменении любого свойства в UI (например, редактирование в таблице)
      *          соответствующее изменение применяется к исходной модели Task.
      * 
+     *          Шаг 1: Пользователь дважды кликает на заголовок в таблице
+     *          Шаг 2: Редактирует "Купить молоко" → "Купить молоко и хлеб"
+     *          Шаг 3: Нажимает Enter
+     *          Автоматически происходит:
+     *              1. titleProperty в TaskViewModel меняется на "Купить молоко и хлеб"
+     *              2. Срабатывает слушатель из setupBindings(): title.addListener((obs, old, new) → task.setTitle(new))
+     *              3. Вызывается task.setTitle("Купить молоко и хлеб")
+     *              4. Модель Task обновлена!       
+     * 
      * @note Привязки обеспечивают автоматическую синхронизацию данных между
      *       представлением и моделью без необходимости ручного обновления.
      * 
@@ -137,7 +150,7 @@ public class TaskViewModel {
      * 
      * @see javafx.beans.property.Property#addListener
      */
-    private void setupBindings() {
+    private void setupBindings() { // Автоматическое обновление UI
         // Привязка заголовка: UI → Model
         title.addListener((observable, oldValue, newValue) -> {
             task.setTitle(newValue);

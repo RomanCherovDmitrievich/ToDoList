@@ -1,17 +1,19 @@
 <map id="util.JsonUtil.parseSingleTask" name="util.JsonUtil.parseSingleTask">
-<area shape="rect" id="Node000001" title="Парсит один JSON объект задачи" alt="" coords="862,92,1052,118"/>
-<area shape="rect" id="Node000002" href="$classutil_1_1_json_util.html#a92865a18b3e9681f516419fd55bfb27a" title="Парсит JSON строку в список задач" alt="" coords="652,84,814,125"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="843,105,814,107,814,102,849,105"/>
-<area shape="rect" id="Node000003" href="$classutil_1_1_json_util.html#a2a80078f88c932a5ab230d4775c2391d" title="Загружает все задачи из JSON файла" alt="" coords="451,92,604,118"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="634,105,605,107,605,102,640,105"/>
-<area shape="rect" id="Node000004" href="$classutil_1_1_json_util.html#ac6e9a870e12429cc80b4ddf8ba98af0d" title="Добавляет одну задачу в файл" alt="" coords="249,5,392,31"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="486,84,402,46,369,34,369,29,404,41,491,84"/>
-<area shape="rect" id="Node000005" href="$classview_1_1_main_controller.html#af03ff4fe034cfc97fd82327d0e618e59" title="Загружает задачи из файла и отображает их в таблице" alt="" coords="240,55,401,96"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="433,92,402,90,401,84,438,92"/>
-<area shape="rect" id="Node000007" href="$classutil_1_1_json_util.html#a9911e93dd04ddd5151397f9a50e2811f" title="Удаляет задачу по ID." alt="" coords="238,120,403,146"/>
-<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="433,118,404,124,403,119,438,117"/>
-<area shape="rect" id="Node000008" href="$classutil_1_1_json_util.html#a48c5f07142384cff793469f5aec70968" title="Обновляет существующую задачу" alt="" coords="240,169,401,195"/>
-<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="487,124,404,161,371,171,370,166,402,156,482,125"/>
-<area shape="rect" id="Node000006" href="$classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,63,190,88"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="222,76,191,78,190,73,227,75"/>
+<area shape="rect" id="Node000001" title="Парсит один JSON объект задачи" alt="" coords="1120,92,1310,118"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_json_util.html#a92865a18b3e9681f516419fd55bfb27a" title="Парсит JSON строку в список задач" alt="" coords="911,84,1072,125"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1102,105,1073,107,1072,102,1107,105"/>
+<area shape="rect" id="Node000003" href="$classutil_1_1_json_util.html#a6999d4de89d6d2f242f70822b6641672" title="Загружает задачи из указанного пути" alt="" coords="652,92,863,118"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="892,105,863,107,863,102,898,105"/>
+<area shape="rect" id="Node000004" href="$classutil_1_1_json_util.html#a2a80078f88c932a5ab230d4775c2391d" title="Загружает все задачи из JSON файла" alt="" coords="451,92,604,118"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="634,105,605,107,605,102,639,105"/>
+<area shape="rect" id="Node000005" href="$classutil_1_1_json_util.html#ac6e9a870e12429cc80b4ddf8ba98af0d" title="Добавляет одну задачу в файл" alt="" coords="249,5,392,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="486,84,402,46,369,34,369,29,404,41,491,84"/>
+<area shape="rect" id="Node000006" href="$classview_1_1_main_controller.html#af03ff4fe034cfc97fd82327d0e618e59" title="Загружает задачи из файла и отображает их в таблице" alt="" coords="240,55,401,96"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="433,92,402,90,401,84,438,92"/>
+<area shape="rect" id="Node000008" href="$classutil_1_1_json_util.html#a9911e93dd04ddd5151397f9a50e2811f" title="Удаляет задачу по ID." alt="" coords="238,120,403,146"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="433,118,404,124,403,119,438,117"/>
+<area shape="rect" id="Node000009" href="$classutil_1_1_json_util.html#a48c5f07142384cff793469f5aec70968" title="Обновляет задачу" alt="" coords="240,169,401,195"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="487,124,404,161,371,171,370,166,402,156,482,125"/>
+<area shape="rect" id="Node000007" href="$classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,63,190,88"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="222,76,191,78,190,73,227,75"/>
 </map>

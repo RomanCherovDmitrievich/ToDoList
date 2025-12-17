@@ -6,6 +6,7 @@ var classmodel_1_1_task_manager =
     [ "clearAllTasks", "classmodel_1_1_task_manager.html#adcdfb8fc100b092808161ba2a72d4ee5", null ],
     [ "getAllTasks", "classmodel_1_1_task_manager.html#abc809a0b2d184494368cc5cc6dae6346", null ],
     [ "getInstance", "classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea", null ],
+    [ "getMutableTasksCopy", "classmodel_1_1_task_manager.html#a0c081195a22aba964ca8c745a134e7c2", null ],
     [ "getOverdueTaskCount", "classmodel_1_1_task_manager.html#a593c44bb00c7932604aefff2aed3713f", null ],
     [ "getTaskCount", "classmodel_1_1_task_manager.html#a83be2e7272a4f79d69be72380893f0f6", null ],
     [ "getTasksByCompletion", "classmodel_1_1_task_manager.html#a7bb0de58bf371543965a953b7f2261b5", null ],

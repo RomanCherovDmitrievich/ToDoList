@@ -14,9 +14,9 @@ import java.util.UUID;
  *          Предоставляет методы для проверки просроченности, форматирования времени
  *          и сериализации в JSON формат для сохранения.
  * 
- * @author Разработчик
+ * @author Чернов
  * @version 1.0
- * @date 2025-11-30
+ * @date 2025-11-4
  * 
  * @see Priority
  * @see Category
@@ -94,11 +94,12 @@ public class Task {
     /**
      * @brief Форматер для даты и времени
      * @details Используется для сериализации и десериализации дат в JSON
+     * Сериализация — это преобразование данных в JSON, например, запись в файл.
+     * Десериализация — это обратное преобразование, например, преобразование строки JSON в структуру (или любой другой тип, который может быть записан в формат данных JSON).
      * 
      * @note Формат: "yyyy-MM-dd'T'HH:mm:ss" (ISO-like)
      */
-    private static final DateTimeFormatter FORMATTER = 
-        DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
+    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
     
     /**
      * @brief Конструктор для создания новой задачи
@@ -118,7 +119,7 @@ public class Task {
      */
     public Task(String title, String description, LocalDateTime startTime, 
                 LocalDateTime endTime, Priority priority, Category category) {
-        this.id = UUID.randomUUID().toString();
+        this.id = UUID.randomUUID().toString(); // UUID — 128-битное значение.
         this.title = title;
         this.description = description;
         this.startTime = startTime;
@@ -134,6 +135,11 @@ public class Task {
      * @brief Конструктор для загрузки из JSON
      * @details Создает задачу из данных, загруженных из JSON файла
      *          Проверяет просроченность при создании
+     * 
+     * @details Возможно, имелся в виду метод parse() класса LocalDateTime в Java, который позволяет преобразовать строку, представляющую дату и время с секундами, в объект LocalDateTime. 
+     *          Метод принимает два аргумента:
+     *          Первый аргумент — строка, представляющая дату.
+     *          Второй аргумент (опциональный) — экземпляр DateTimeFormatter, указывающий любой пользовательский шаблон.
      * 
      * @param id Уникальный идентификатор задачи
      * @param title Заголовок задачи
@@ -160,9 +166,9 @@ public class Task {
         this.id = id;
         this.title = title;
         this.description = description;
-        this.startTime = LocalDateTime.parse(startTime, FORMATTER);
+        this.startTime = LocalDateTime.parse(startTime, FORMATTER); // parse() - метод который парсит вводные данные в нужный формат(FORMATTER)
         this.endTime = LocalDateTime.parse(endTime, FORMATTER);
-        this.priority = Priority.valueOf(priority);
+        this.priority = Priority.valueOf(priority); // valueOf() — статический метод класса String в Java, который преобразует различные типы данных в их строковое представление.
         this.category = Category.valueOf(category);
         this.completed = completed;
         this.overdue = overdue;
@@ -189,9 +195,6 @@ public class Task {
         }
     }
     
-    // ====================================================
-    // Геттеры
-    // ====================================================
     
     /**
      * @brief Возвращает уникальный идентификатор задачи
@@ -252,10 +255,7 @@ public class Task {
      * @return LocalDateTime Дата и время создания задачи
      */
     public LocalDateTime getCreatedAt() { return createdAt; }
-    
-    // ====================================================
-    // Сеттеры
-    // ====================================================
+
     
     /**
      * @brief Устанавливает новый заголовок задачи
@@ -315,10 +315,6 @@ public class Task {
         }
     }
     
-    // ====================================================
-    // Методы форматирования
-    // ====================================================
-    
     /**
      * @brief Возвращает отформатированное время начала
      * @details Форматирует LocalDateTime в читаемую строку
@@ -343,10 +339,6 @@ public class Task {
     public String getFormattedEndTime() {
         return endTime.format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm"));
     }
-    
-    // ====================================================
-    // Методы сериализации
-    // ====================================================
     
     /**
      * @brief Преобразует задачу в JSON строку
@@ -406,10 +398,6 @@ public class Task {
               .replace("\b", "\\b")
               .replace("\f", "\\f");
     }
-    
-    // ====================================================
-    // Методы Object
-    // ====================================================
     
     /**
      * @brief Возвращает строковое представление задачи

@@ -20,9 +20,9 @@ import java.time.LocalTime;
  * @details Класс управляет интерфейсом создания новой задачи, обрабатывает ввод пользователя,
  *          валидирует данные и создает объект Task. Является частью View слоя архитектуры MVVM.
  * 
- * @author Разработчик
+ * @author Чернов
  * @version 1.0
- * @date 2025-11-30
+ * @date 2025-11-4
  * 
  * @see Task
  * @see Priority
@@ -148,6 +148,7 @@ public class NewTaskController {
      * @brief Инициализация контроллера
      * @details Вызывается автоматически JavaFX после загрузки FXML файла.
      *          Настраивает начальные значения полей формы и инициализирует валидацию.
+     *          Он вызывается автоматически JavaFX после того, как все UI-элементы (поля с @FXML) будут связаны с FXML-файлом.
      * 
      * @note Метод выполняет следующие действия:
      *       1. Устанавливает значения по умолчанию для дат
@@ -168,7 +169,7 @@ public class NewTaskController {
         
         // Заполняем ComboBox'ы для времени
         for (int i = 0; i < 24; i++) {
-            startHourCombo.getItems().add(String.format("%02d", i));
+            startHourCombo.getItems().add(String.format("%02d", i)); // форматирует число с ведущим нулем (01, 02, ... 23)
             endHourCombo.getItems().add(String.format("%02d", i));
         }
         for (int i = 0; i < 60; i += 5) {

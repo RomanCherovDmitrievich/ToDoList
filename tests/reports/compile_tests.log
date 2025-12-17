@@ -1,8 +1,0 @@
-/Users/sigm/Work/Institut/5semestr/OOP_Java/Project2/tests/unit/util/JsonUtilTest.java:338: error: no suitable constructor found for Task(String,String,String,LocalDateTime,LocalDateTime,Priority,Category)
-        Task task = new Task(
-                    ^
-    constructor Task.Task(String,String,LocalDateTime,LocalDateTime,Priority,Category) is not applicable
-      (actual and formal argument lists differ in length)
-    constructor Task.Task(String,String,String,String,String,String,String,boolean,boolean,String) is not applicable
-      (actual and formal argument lists differ in length)
-1 error

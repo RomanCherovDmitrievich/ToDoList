@@ -6,7 +6,7 @@
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="433,92,402,90,401,84,438,92"/>
 <area shape="rect" id="Node000005" href="$classutil_1_1_json_util.html#a9911e93dd04ddd5151397f9a50e2811f" title="Удаляет задачу по ID." alt="" coords="238,120,403,146"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="433,118,404,124,403,119,438,117"/>
-<area shape="rect" id="Node000006" href="$classutil_1_1_json_util.html#a48c5f07142384cff793469f5aec70968" title="Обновляет существующую задачу" alt="" coords="240,169,401,195"/>
+<area shape="rect" id="Node000006" href="$classutil_1_1_json_util.html#a48c5f07142384cff793469f5aec70968" title="Обновляет задачу" alt="" coords="240,169,401,195"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="487,124,404,161,371,171,370,166,402,156,482,125"/>
 <area shape="rect" id="Node000004" href="$classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,63,190,88"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="222,76,191,78,190,73,227,75"/>

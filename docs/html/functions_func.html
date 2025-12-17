@@ -114,6 +114,7 @@ $(function(){initNavTree('functions_func.html','',''); });
 <li>convertTasksToJson()&#160;:&#160;<a class="el" href="classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243">util.JsonUtil</a></li>
 <li>createBackup()&#160;:&#160;<a class="el" href="classutil_1_1_json_util.html#a3dd1f85ca03096b50444f662632f0e01">util.JsonUtil</a></li>
 <li>createdAtProperty()&#160;:&#160;<a class="el" href="classviewmodel_1_1_task_view_model.html#a46792a8fe06ca7f494a3253118f72da7">viewmodel.TaskViewModel</a></li>
+<li>createDummyPlaylist()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a81106e6d53cede222377cb7bed147423">util.AudioManager</a></li>
 <li>createSnowflake()&#160;:&#160;<a class="el" href="classview_1_1_snowflake_animation.html#a6d24131cdec8106f0705a107f30a538a">view.SnowflakeAnimation</a></li>
 <li>createSnowflakesForWindow()&#160;:&#160;<a class="el" href="classview_1_1_main_controller.html#ab66a02b22de6d12575196237192dbc81">view.MainController</a></li>
 </ul>
@@ -140,6 +141,7 @@ $(function(){initNavTree('functions_func.html','',''); });
 
 <h3 class="doxsection"><a id="index_g" name="index_g"></a>- g -</h3><ul>
 <li>getAllTasks()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#abc809a0b2d184494368cc5cc6dae6346">model.TaskManager</a></li>
+<li>getAudioFilesCount()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a00bb5a3b968b566c3c65b8f2d3fcf740">util.AudioManager</a></li>
 <li>getAvailableSounds()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a7e6f303dee5ec6b835e850b493d01ac8">util.AudioManager</a></li>
 <li>getCategory()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a79d344fdb9abdebc5978f3936f7782dd">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#aee7644b03c0ca5faa3aee9e691d658a3">viewmodel.TaskViewModel</a></li>
 <li>getCategoryColor()&#160;:&#160;<a class="el" href="classviewmodel_1_1_task_view_model.html#a5db1325cc03d4923c411bbaedb74051c">viewmodel.TaskViewModel</a></li>
@@ -147,17 +149,22 @@ $(function(){initNavTree('functions_func.html','',''); });
 <li>getColor()&#160;:&#160;<a class="el" href="enummodel_1_1_category.html#a18e40e08e0930aa1d73271a5b5cb4059">model.Category</a>, <a class="el" href="enummodel_1_1_priority.html#ac87523bbf2e804984e1754dacf2661ce">model.Priority</a></li>
 <li>getCreatedAt()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#ad6ec5cffb9609071d2f5161d6e4b045f">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#a78e914dde721b09b9b4f6fef691aef02">viewmodel.TaskViewModel</a></li>
 <li>getCreatedTask()&#160;:&#160;<a class="el" href="classview_1_1_new_task_controller.html#a2b0dc44b9437aa1e0548cbf6c51e5721">view.NewTaskController</a></li>
+<li>getCurrentTrackNumber()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a2e0baa11f554ca596a358b52b297d345">util.AudioManager</a></li>
 <li>getDefault()&#160;:&#160;<a class="el" href="enummodel_1_1_priority.html#a80b9836442ce641c8f1deeb10d9ef177">model.Priority</a></li>
 <li>getDescription()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a8dc5a073ec12dc2747bda501f29a0127">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#a046488b4a90fb611ff40402bada134b0">viewmodel.TaskViewModel</a></li>
 <li>getDisplayName()&#160;:&#160;<a class="el" href="enummodel_1_1_category.html#a7b617d5f06ca4cb136d681b1bd2e8d7d">model.Category</a>, <a class="el" href="enummodel_1_1_priority.html#a3cf5e815f238abd0cf21096783fea607">model.Priority</a></li>
+<li>getEffectsVolume()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#aa06031fb7fc7b0c8637895cea53bee33">util.AudioManager</a></li>
 <li>getEndTime()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a7a97e0aae6d6edf514a6b7442ce76232">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#aa34a9517a43daff6eef84dc13e1cd0a9">viewmodel.TaskViewModel</a></li>
 <li>getFormattedEndDate()&#160;:&#160;<a class="el" href="classviewmodel_1_1_task_view_model.html#a7c7c15b784f5c86b74d58943dd897cc6">viewmodel.TaskViewModel</a></li>
 <li>getFormattedEndTime()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a6fc04a059d729e6dcede486b3020e292">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#a5f2424316f62a7ed7067602067535809">viewmodel.TaskViewModel</a></li>
 <li>getFormattedEndTimeOnly()&#160;:&#160;<a class="el" href="classviewmodel_1_1_task_view_model.html#a5be935664988b6d0a49931df9beed5cc">viewmodel.TaskViewModel</a></li>
 <li>getFormattedStartTime()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#aaccdcedbfad9e320aac68c2c78da90be">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#a5b507f08d5d17134eb0051f9198026ef">viewmodel.TaskViewModel</a></li>
+<li>getFullPath()&#160;:&#160;<a class="el" href="classutil_1_1_json_util.html#a6acc14b51427ce85235d8981f801d734">util.JsonUtil</a></li>
 <li>getIconName()&#160;:&#160;<a class="el" href="enummodel_1_1_priority.html#afd6b22def31fc20e4d2f209d27faa2a4">model.Priority</a></li>
 <li>getId()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#ad8dccd120a6f3e607f46f0c3765de3a5">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#ac50f2e97f44fd66fc50fa959730eb78f">viewmodel.TaskViewModel</a></li>
 <li>getInstance()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea">model.TaskManager</a>, <a class="el" href="classutil_1_1_audio_manager.html#aaf7ec801730bf60f659b843ace062d86">util.AudioManager</a></li>
+<li>getMusicVolume()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a08278e504c56bf8ac372152d8f0e5c4e">util.AudioManager</a></li>
+<li>getMutableTasksCopy()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#a0c081195a22aba964ca8c745a134e7c2">model.TaskManager</a></li>
 <li>getOverdueTaskCount()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#a593c44bb00c7932604aefff2aed3713f">model.TaskManager</a></li>
 <li>getPrimaryStage()&#160;:&#160;<a class="el" href="classapp_1_1_main_app.html#a58283a36a2e01e38efa19edd9ba77d59">app.MainApp</a></li>
 <li>getPriority()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a84dce864c8b8cc246e25e11d9cf200ca">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#a2d17f86b46ef153a4dc499a194d5e885">viewmodel.TaskViewModel</a></li>
@@ -171,6 +178,7 @@ $(function(){initNavTree('functions_func.html','',''); });
 <li>getTasksByCompletion()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#a7bb0de58bf371543965a953b7f2261b5">model.TaskManager</a></li>
 <li>getTimeRemaining()&#160;:&#160;<a class="el" href="classviewmodel_1_1_task_view_model.html#a53215ef77e237ab827e3e3156860d2f5">viewmodel.TaskViewModel</a></li>
 <li>getTitle()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a3016babcf59132145ef35906075ea109">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#a1a618ae9eecfd3fefadebd848a99ec92">viewmodel.TaskViewModel</a></li>
+<li>getTrackCount()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a1aeda29a8ec25b65e38d24c973eca7d3">util.AudioManager</a></li>
 </ul>
 
 
@@ -191,15 +199,22 @@ $(function(){initNavTree('functions_func.html','',''); });
 <li>initialize()&#160;:&#160;<a class="el" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd">view.MainController</a>, <a class="el" href="classview_1_1_new_task_controller.html#a9dcf704ac7b311d8bfe516eff8643ad1">view.NewTaskController</a></li>
 <li>initSnowflakes()&#160;:&#160;<a class="el" href="classview_1_1_main_controller.html#a176bf2a7ba00056ac7a14652c6650c2d">view.MainController</a></li>
 <li>isCompleted()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a9e92e43dca03f30943efdb87b476e71c">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#a6b568ef75542da4868a533844bbbe3a1">viewmodel.TaskViewModel</a></li>
+<li>isMusicEnabled()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a738ae5fbd5b6f5e43fec1e5aa1c971b5">util.AudioManager</a></li>
+<li>isMusicPlaying()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#af18b0caf2246b7a9ca130310741c8f88">util.AudioManager</a></li>
 <li>isOverdue()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a6c49d13cb1e76676ef53876e9acc3ca4">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#a81effd078fee106eea52436907468ed9">viewmodel.TaskViewModel</a></li>
+<li>isRepeatMode()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a6f8304f84d369ecf9aeaa16c4af9a5a5">util.AudioManager</a></li>
+<li>isShuffleMode()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#aa79967e4316fe9d69ac6a87e28cc95dc">util.AudioManager</a></li>
 <li>isSoundsEnabled()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a62a0acbea9b3248bf06398f2dfdeda4c">util.AudioManager</a></li>
 <li>isTaskCreated()&#160;:&#160;<a class="el" href="classview_1_1_new_task_controller.html#ad985a55d5cf42453ff70863d8619713b">view.NewTaskController</a></li>
 </ul>
 
 
 <h3 class="doxsection"><a id="index_l" name="index_l"></a>- l -</h3><ul>
-<li>loadSounds()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a5ad71057028d829235d9ca3519feae2d">util.AudioManager</a></li>
+<li>loadMusicPlaylist()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a79997fcc03fd3b682f0a52b1d71eb91a">util.AudioManager</a></li>
+<li>loadSoundEffect()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a1ff1493847fdadf19564ecb4b33442d1">util.AudioManager</a></li>
+<li>loadSoundEffects()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a4197394f4db4c59183c41d3bd22addbe">util.AudioManager</a></li>
 <li>loadTasks()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#a34ef794553cd1ac2b4603298b564dafb">model.TaskManager</a>, <a class="el" href="classutil_1_1_json_util.html#a2a80078f88c932a5ab230d4775c2391d">util.JsonUtil</a>, <a class="el" href="classview_1_1_main_controller.html#af03ff4fe034cfc97fd82327d0e618e59">view.MainController</a></li>
+<li>loadTasksFromPath()&#160;:&#160;<a class="el" href="classutil_1_1_json_util.html#a6999d4de89d6d2f242f70822b6641672">util.JsonUtil</a></li>
 </ul>
 
 
@@ -215,11 +230,18 @@ $(function(){initNavTree('functions_func.html','',''); });
 
 
 <h3 class="doxsection"><a id="index_p" name="index_p"></a>- p -</h3><ul>
+<li>parseDateTime()&#160;:&#160;<a class="el" href="classutil_1_1_json_util.html#aee5a01fe4fd4d523b312591d077d3f13">util.JsonUtil</a></li>
+<li>parseJsonFields()&#160;:&#160;<a class="el" href="classutil_1_1_json_util.html#a45c51c188f965f7eafd39189c91ea0bd">util.JsonUtil</a></li>
 <li>parseSingleTask()&#160;:&#160;<a class="el" href="classutil_1_1_json_util.html#a428f650826f08a9ee580d87bb60a1443">util.JsonUtil</a></li>
 <li>parseTasksFromJson()&#160;:&#160;<a class="el" href="classutil_1_1_json_util.html#a92865a18b3e9681f516419fd55bfb27a">util.JsonUtil</a></li>
+<li>pauseMusic()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#aed63503550eb5073cfe623bf0119c66f">util.AudioManager</a></li>
 <li>playAddSound()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a0cd69361c7be8242bf320f3fc2e9b4c8">util.AudioManager</a></li>
 <li>playCompleteSound()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#ac92dec84a3263aa3172e30a12bc9d3c8">util.AudioManager</a></li>
+<li>playCurrentTrack()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a6670ef01882a42659760581b520eb8e5">util.AudioManager</a></li>
 <li>playDeleteSound()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#ad9d482e8685837c619116437b9df7bf4">util.AudioManager</a></li>
+<li>playNextTrack()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a5f95e22bec4696d1bebd9ca0d9e720a4">util.AudioManager</a></li>
+<li>playPreviousTrack()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a7a9b309e71740d8dad68ca904907d45d">util.AudioManager</a></li>
+<li>playSoundEffect()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a4e939a297c1b2ea81f5f1de7bac59d1f">util.AudioManager</a></li>
 <li>playStartupSound()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#ad942a10cdb0c3255dce15b945b3b3ef7">util.AudioManager</a></li>
 <li>Priority()&#160;:&#160;<a class="el" href="enummodel_1_1_priority.html#a6ea7a40e9195dbd8cc7aa9fa8cdb8c3d">model.Priority</a></li>
 <li>priorityProperty()&#160;:&#160;<a class="el" href="classviewmodel_1_1_task_view_model.html#ac8555eb492fedda8c9303d75a33f626f">viewmodel.TaskViewModel</a></li>
@@ -230,18 +252,26 @@ $(function(){initNavTree('functions_func.html','',''); });
 <li>refreshTable()&#160;:&#160;<a class="el" href="classview_1_1_main_controller.html#a6c51614865ef9a13038357431ad8ee7c">view.MainController</a></li>
 <li>reloadMainView()&#160;:&#160;<a class="el" href="classapp_1_1_main_app.html#a5546682bda948ba9513d649b6aaf33a8">app.MainApp</a></li>
 <li>removeTask()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#a46e1d00e8a9e4c37eaf71795c5d0b1b5">model.TaskManager</a>, <a class="el" href="classutil_1_1_json_util.html#a9911e93dd04ddd5151397f9a50e2811f">util.JsonUtil</a></li>
+<li>resetDataPath()&#160;:&#160;<a class="el" href="classutil_1_1_json_util.html#acc37e843c653d0a7ebe4843ef4d7f0a2">util.JsonUtil</a></li>
+<li>resumeMusic()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#ac84affff2d46d316b105c2004f71054d">util.AudioManager</a></li>
 </ul>
 
 
 <h3 class="doxsection"><a id="index_s" name="index_s"></a>- s -</h3><ul>
 <li>saveTasks()&#160;:&#160;<a class="el" href="classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421">util.JsonUtil</a></li>
+<li>saveTasksToPath()&#160;:&#160;<a class="el" href="classutil_1_1_json_util.html#a67200ee9448e6b079ca9ea49200dec30">util.JsonUtil</a></li>
 <li>searchTasks()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#aeeb1bbd577dfd42c694e1120de83f476">model.TaskManager</a>, <a class="el" href="classview_1_1_main_controller.html#ab0a0b6174538107b445044eb3139e87c">view.MainController</a></li>
 <li>setCategory()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a0f22c2e8a132499a19948f40cfffa47f">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#a9ba1b0aebba5b80c88b67bec21710689">viewmodel.TaskViewModel</a></li>
 <li>setCompleted()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a1f753adaaf4a456af6ecb36ae340c238">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#a1a2e539e816467e5df6588744541071b">viewmodel.TaskViewModel</a></li>
+<li>setDataPath()&#160;:&#160;<a class="el" href="classutil_1_1_json_util.html#ac7e40f1892f24ce1829de0ea93149634">util.JsonUtil</a></li>
 <li>setDescription()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a58431c5f948db73f7dc1c5f60692f0de">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#a691a9b9777b75eaac085a7f19e062f20">viewmodel.TaskViewModel</a></li>
+<li>setEffectsVolume()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#aeec35302013554bb511379f9a5a414e1">util.AudioManager</a></li>
 <li>setEndTime()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a34c594727dee7b4ef90ac2fada9ade86">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#a9386fe9a79e7326ff41793f4973b518b">viewmodel.TaskViewModel</a></li>
-<li>setMasterVolume()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#ae9b5ff0d4f6422976af5a3c3ef67c106">util.AudioManager</a></li>
+<li>setMusicEnabled()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a558439aa3ed6db6e98129f9752e516f6">util.AudioManager</a></li>
+<li>setMusicVolume()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#ab4d51ce72880ce4ed08ce0b10eac6044">util.AudioManager</a></li>
 <li>setPriority()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a36053c0c038c4c0b529c27fe4c6250d0">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#a431f716cf65f5afcb54f969b44b4d380">viewmodel.TaskViewModel</a></li>
+<li>setRepeatMode()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#ae7d6d37ea94f61c906b370316e826ac4">util.AudioManager</a></li>
+<li>setShuffleMode()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a67d3fae59483bd90caaec8bd19f13678">util.AudioManager</a></li>
 <li>setSnowflakeCount()&#160;:&#160;<a class="el" href="classview_1_1_snowflake_animation.html#ae74fca562da4c50024a5a00ba779de1e">view.SnowflakeAnimation</a></li>
 <li>setSoundsEnabled()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#acf1983de023a80986e58e9ec35fdc9ba">util.AudioManager</a></li>
 <li>setStartTime()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a503fd5efc13be8165437554e698574eb">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#a163f018285b5cba883b0f4adabefa77d">viewmodel.TaskViewModel</a></li>
@@ -264,6 +294,8 @@ $(function(){initNavTree('functions_func.html','',''); });
 <li>startTimeProperty()&#160;:&#160;<a class="el" href="classviewmodel_1_1_task_view_model.html#a0697007e0ca7f6b9ebb9c66ff339c27c">viewmodel.TaskViewModel</a></li>
 <li>stop()&#160;:&#160;<a class="el" href="classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834">app.MainApp</a>, <a class="el" href="classview_1_1_snowflake_animation.html#a76189620e00d04df4876e9d7b1129918">view.SnowflakeAnimation</a></li>
 <li>stopAllSounds()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a4bd7828b5012fb5ecc3047e2fd9a62f2">util.AudioManager</a></li>
+<li>stopCurrentTrack()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#abea736c235499b083accbef0d9468489">util.AudioManager</a></li>
+<li>stopMusic()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a4d5463b1ffec50e238e1451800617124">util.AudioManager</a></li>
 </ul>
 
 
@@ -289,6 +321,8 @@ $(function(){initNavTree('functions_func.html','',''); });
 
 <h3 class="doxsection"><a id="index_v" name="index_v"></a>- v -</h3><ul>
 <li>validateForm()&#160;:&#160;<a class="el" href="classview_1_1_new_task_controller.html#a66c1573253964fcde19808f4d57ba3e3">view.NewTaskController</a></li>
+<li>volumeDown()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a0abb2f1cd8059ef46209ada2715d0a70">util.AudioManager</a></li>
+<li>volumeUp()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#ad08684550d1dfcd98ee04d766f351a77">util.AudioManager</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

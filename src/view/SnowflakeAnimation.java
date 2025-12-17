@@ -15,12 +15,16 @@ import java.util.Random;
  *          Создает множество снежинок с различными параметрами (размер, скорость,
  *          прозрачность) и анимирует их движение по экрану.
  * 
+ * @author Чернов
+ * @version 1.0
+ * @date 2025-11-4
+ * 
  * @note Используется в MainController для создания новогодней атмосферы
  * @warning Для корректной работы требуется JavaFX AnimationTimer
  * 
  * @see MainController
  * @see javafx.animation.AnimationTimer
- * @since Версия 1.0
+ * 
  */
 public class SnowflakeAnimation {
     /** @brief Панель, на которой отображаются снежинки */

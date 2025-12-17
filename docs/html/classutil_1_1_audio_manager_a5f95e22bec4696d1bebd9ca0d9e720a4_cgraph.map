@@ -1,0 +1,7 @@
+<map id="util.AudioManager.playNextTrack" name="util.AudioManager.playNextTrack">
+<area shape="rect" id="Node000001" title="Воспроизводит следующий трек в плейлисте" alt="" coords="5,39,186,79"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_audio_manager.html#a6670ef01882a42659760581b520eb8e5" title="Воспроизводит текущий трек" alt="" coords="234,5,430,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,44,221,41,216,42,186,49"/>
+<area shape="rect" id="Node000003" href="$classutil_1_1_audio_manager.html#abea736c235499b083accbef0d9468489" title="Останавливает текущий трек" alt="" coords="234,71,430,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,69,221,75,215,76,186,74"/>
+</map>

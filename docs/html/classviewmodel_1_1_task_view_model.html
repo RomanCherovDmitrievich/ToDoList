@@ -235,6 +235,9 @@ $(function(){initNavTree('classviewmodel_1_1_task_view_model.html','','classview
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>ViewModel для отображения задачи в пользовательском интерфейсе </p>
 <p>Реализует паттерн ViewModel в архитектуре MVVM. Служит промежуточным слоем между моделью данных (<a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a>) и представлением (JavaFX UI). Предоставляет JavaFX свойства для двусторонней привязки данных и форматирует данные для удобного отображения в таблице.</p>
+<dl class="section author"><dt>Автор</dt><dd>Чернов </dd></dl>
+<dl class="section version"><dt>Версия</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Дата</dt><dd>2025-11-4</dd></dl>
 <dl class="section note"><dt>Заметки</dt><dd>Все свойства являются Observable, что позволяет автоматически обновлять UI при изменении данных и наоборот.</dd></dl>
 <dl class="section see"><dt>См. также</dt><dd><a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a> </dd>
 <dd>
@@ -243,9 +246,8 @@ $(function(){initNavTree('classviewmodel_1_1_task_view_model.html','','classview
 <a class="el" href="enummodel_1_1_category.html">Category</a> </dd>
 <dd>
 javafx.beans.property </dd></dl>
-<dl class="section since"><dt>Начиная с</dt><dd>Версия 1.0 </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00034">34</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00039">39</a></p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
 <a id="a97b1077049d5d441d305aa75b0ca41a6" name="a97b1077049d5d441d305aa75b0ca41a6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a97b1077049d5d441d305aa75b0ca41a6">&#9670;&#160;</a></span>TaskViewModel()</h2>
@@ -285,11 +287,11 @@ javafx.beans.property </dd></dl>
 <dl class="section note"><dt>Заметки</dt><dd>После создания ViewModel изменения в свойствах автоматически синхронизируются с исходной моделью <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a>.</dd></dl>
 <dl class="section see"><dt>См. также</dt><dd><a class="el" href="#a7e8946bef2493f00c0582c432330b56b" title="Настраивает двусторонние привязки между ViewModel и Model.">setupBindings()</a> </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00105">105</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00110">110</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00139">setupBindings()</a> и <a class="el" href="_task_view_model_8java_source.html#l00066">task</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00144">setupBindings()</a> и <a class="el" href="_task_view_model_8java_source.html#l00071">task</a>.</p>
 
-<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00617">equals()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00628">equals()</a>.</p>
 <div class="dynheader">
 Граф вызовов:</div>
 <div class="dyncontent">
@@ -332,9 +334,9 @@ javafx.beans.property </dd></dl>
 <p>Возвращает свойство категории задачи </p>
 <dl class="section return"><dt>Возвращает</dt><dd>ObjectProperty&lt;Category&gt; для привязки в FXML </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00332">332</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00337">337</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00054">category</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00059">category</a>.</p>
 
 </div>
 </div>
@@ -356,9 +358,9 @@ javafx.beans.property </dd></dl>
 <p>Возвращает свойство статуса выполнения задачи </p>
 <dl class="section return"><dt>Возвращает</dt><dd>BooleanProperty для привязки в FXML (например, к CheckBox) </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00356">356</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00361">361</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00057">completed</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00062">completed</a>.</p>
 
 </div>
 </div>
@@ -380,9 +382,9 @@ javafx.beans.property </dd></dl>
 <p>Возвращает свойство даты создания задачи </p>
 <dl class="section return"><dt>Возвращает</dt><dd>ObjectProperty&lt;LocalDateTime&gt; для привязки в FXML </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00398">398</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00403">403</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00063">createdAt</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00068">createdAt</a>.</p>
 
 </div>
 </div>
@@ -404,9 +406,9 @@ javafx.beans.property </dd></dl>
 <p>Возвращает свойство описания задачи </p>
 <dl class="section return"><dt>Возвращает</dt><dd>StringProperty для привязки в FXML </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00236">236</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00241">241</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00042">description</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00047">description</a>.</p>
 
 </div>
 </div>
@@ -428,9 +430,9 @@ javafx.beans.property </dd></dl>
 <p>Возвращает свойство времени окончания задачи </p>
 <dl class="section return"><dt>Возвращает</dt><dd>ObjectProperty&lt;LocalDateTime&gt; для привязки в FXML </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00284">284</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00289">289</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00048">endTime</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00053">endTime</a>.</p>
 
 </div>
 </div>
@@ -460,9 +462,9 @@ javafx.beans.property </dd></dl>
 <p>Два <a class="el" href="classviewmodel_1_1_task_view_model.html" title="ViewModel для отображения задачи в пользовательском интерфейсе">TaskViewModel</a> считаются равными, если их идентификаторы (id) равны.</p>
 <p>@overrides Object.equals(Object) </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00617">617</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00628">628</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00036">id</a> и <a class="el" href="_task_view_model_8java_source.html#l00105">TaskViewModel()</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00041">id</a> и <a class="el" href="_task_view_model_8java_source.html#l00110">TaskViewModel()</a>.</p>
 <div class="dynheader">
 Граф вызовов:</div>
 <div class="dyncontent">
@@ -496,9 +498,9 @@ javafx.beans.property </dd></dl>
 <p>Возвращает категорию задачи </p>
 <dl class="section return"><dt>Возвращает</dt><dd>Категория задачи (enum <a class="el" href="enummodel_1_1_category.html">Category</a>) </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00324">324</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00329">329</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00054">category</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00059">category</a>.</p>
 
 </div>
 </div>
@@ -517,9 +519,9 @@ javafx.beans.property </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00499">499</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00504">504</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00054">category</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00059">category</a>.</p>
 
 </div>
 </div>
@@ -542,9 +544,9 @@ javafx.beans.property </dd></dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Локализованное имя категории ("Работа", "Дом", "Учёба", "Другое")</dd></dl>
 <dl class="section see"><dt>См. также</dt><dd><a class="el" href="enummodel_1_1_category.html#a7b617d5f06ca4cb136d681b1bd2e8d7d" title="Возвращает читаемое имя категории">Category.getDisplayName()</a> </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00488">488</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00493">493</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00054">category</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00059">category</a>.</p>
 
 </div>
 </div>
@@ -566,9 +568,9 @@ javafx.beans.property </dd></dl>
 <p>Возвращает дату и время создания задачи </p>
 <dl class="section return"><dt>Возвращает</dt><dd>LocalDateTime создания задачи </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00390">390</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00395">395</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00063">createdAt</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00068">createdAt</a>.</p>
 
 </div>
 </div>
@@ -590,9 +592,9 @@ javafx.beans.property </dd></dl>
 <p>Возвращает описание задачи </p>
 <dl class="section return"><dt>Возвращает</dt><dd>Описание задачи </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00228">228</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00233">233</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00042">description</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00047">description</a>.</p>
 
 </div>
 </div>
@@ -614,9 +616,9 @@ javafx.beans.property </dd></dl>
 <p>Возвращает время окончания (дедлайн) задачи </p>
 <dl class="section return"><dt>Возвращает</dt><dd>LocalDateTime время окончания </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00276">276</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00281">281</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00048">endTime</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00053">endTime</a>.</p>
 
 <p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00573">view.MainController.sortByDate()</a> и <a class="el" href="_main_controller_8java_source.html#l00614">view.MainController.sortByPriority()</a>.</p>
 <div class="dynheader">
@@ -663,9 +665,9 @@ javafx.beans.property </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00435">435</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00440">440</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00079">DATE_FORMATTER</a> и <a class="el" href="_task_view_model_8java_source.html#l00048">endTime</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00084">DATE_FORMATTER</a> и <a class="el" href="_task_view_model_8java_source.html#l00053">endTime</a>.</p>
 
 </div>
 </div>
@@ -684,9 +686,9 @@ javafx.beans.property </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00424">424</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00429">429</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00072">DATE_TIME_FORMATTER</a> и <a class="el" href="_task_view_model_8java_source.html#l00048">endTime</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00077">DATE_TIME_FORMATTER</a> и <a class="el" href="_task_view_model_8java_source.html#l00053">endTime</a>.</p>
 
 <p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00246">view.MainController.setupTableColumns()</a>.</p>
 <div class="dynheader">
@@ -719,9 +721,9 @@ javafx.beans.property </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00446">446</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00451">451</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00048">endTime</a> и <a class="el" href="_task_view_model_8java_source.html#l00086">TIME_FORMATTER</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00053">endTime</a> и <a class="el" href="_task_view_model_8java_source.html#l00091">TIME_FORMATTER</a>.</p>
 
 </div>
 </div>
@@ -740,9 +742,9 @@ javafx.beans.property </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00413">413</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00418">418</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00072">DATE_TIME_FORMATTER</a> и <a class="el" href="_task_view_model_8java_source.html#l00045">startTime</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00077">DATE_TIME_FORMATTER</a> и <a class="el" href="_task_view_model_8java_source.html#l00050">startTime</a>.</p>
 
 </div>
 </div>
@@ -764,7 +766,7 @@ javafx.beans.property </dd></dl>
 <p>Возвращает идентификатор задачи </p>
 <dl class="section return"><dt>Возвращает</dt><dd>Уникальный идентификатор задачи (String) </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00188">188</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00193">193</a></p>
 
 <p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l01004">view.MainController.handleDeleteTask()</a> и <a class="el" href="_main_controller_8java_source.html#l00246">view.MainController.setupTableColumns()</a>.</p>
 <div class="dynheader">
@@ -802,9 +804,9 @@ javafx.beans.property </dd></dl>
 <p>Возвращает приоритет задачи </p>
 <dl class="section return"><dt>Возвращает</dt><dd>Приоритет задачи (enum <a class="el" href="enummodel_1_1_priority.html">Priority</a>) </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00300">300</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00305">305</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00051">priority</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00056">priority</a>.</p>
 
 </div>
 </div>
@@ -823,9 +825,9 @@ javafx.beans.property </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00467">467</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00472">472</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00051">priority</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00056">priority</a>.</p>
 
 </div>
 </div>
@@ -848,9 +850,9 @@ javafx.beans.property </dd></dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Локализованное имя приоритета ("Срочно", "Важно", "Желательно")</dd></dl>
 <dl class="section see"><dt>См. также</dt><dd><a class="el" href="enummodel_1_1_priority.html#a3cf5e815f238abd0cf21096783fea607" title="Возвращает читаемое имя приоритета">Priority.getDisplayName()</a> </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00456">456</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00461">461</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00051">priority</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00056">priority</a>.</p>
 
 </div>
 </div>
@@ -869,9 +871,9 @@ javafx.beans.property </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00478">478</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00483">483</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00051">priority</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00056">priority</a>.</p>
 
 </div>
 </div>
@@ -893,9 +895,9 @@ javafx.beans.property </dd></dl>
 <p>Возвращает время начала задачи </p>
 <dl class="section return"><dt>Возвращает</dt><dd>LocalDateTime время начала </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00252">252</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00257">257</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00045">startTime</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00050">startTime</a>.</p>
 
 </div>
 </div>
@@ -923,9 +925,9 @@ javafx.beans.property </dd></dl>
 </ul>
 <dl class="section return"><dt>Возвращает</dt><dd>"Выполнено" | "Просрочено" | "Активно" </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00551">551</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00556">556</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00057">completed</a> и <a class="el" href="_task_view_model_8java_source.html#l00060">overdue</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00062">completed</a>, <a class="el" href="_task_view_model_8java_source.html#l00053">endTime</a> и <a class="el" href="_task_view_model_8java_source.html#l00065">overdue</a>.</p>
 
 </div>
 </div>
@@ -948,9 +950,9 @@ javafx.beans.property </dd></dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Исходный объект <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a>, связанный с этим ViewModel</dd></dl>
 <dl class="section note"><dt>Заметки</dt><dd>Может использоваться для операций, требующих прямой работы с моделью, например, сохранение в JSON или сложные вычисления. </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00568">568</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00579">579</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00066">task</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00071">task</a>.</p>
 
 </div>
 </div>
@@ -969,9 +971,9 @@ javafx.beans.property </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00513">513</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00518">518</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00048">endTime</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00053">endTime</a>.</p>
 
 </div>
 </div>
@@ -993,9 +995,9 @@ javafx.beans.property </dd></dl>
 <p>Возвращает заголовок задачи </p>
 <dl class="section return"><dt>Возвращает</dt><dd>Заголовок задачи </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00204">204</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00209">209</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00039">title</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00044">title</a>.</p>
 
 <p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l01004">view.MainController.handleDeleteTask()</a>.</p>
 <div class="dynheader">
@@ -1030,7 +1032,7 @@ javafx.beans.property </dd></dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Хэш-код, основанный на идентификаторе задачи</dd></dl>
 <p>@overrides Object.hashCode() </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00631">631</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00642">642</a></p>
 
 </div>
 </div>
@@ -1052,9 +1054,9 @@ javafx.beans.property </dd></dl>
 <p>Возвращает свойство идентификатора задачи </p>
 <dl class="section return"><dt>Возвращает</dt><dd>StringProperty для привязки в FXML </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00196">196</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00201">201</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00036">id</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00041">id</a>.</p>
 
 </div>
 </div>
@@ -1076,9 +1078,9 @@ javafx.beans.property </dd></dl>
 <p>Проверяет, выполнена ли задача </p>
 <dl class="section return"><dt>Возвращает</dt><dd>true если задача выполнена, false в противном случае </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00348">348</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00353">353</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00057">completed</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00062">completed</a>.</p>
 
 <p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00246">view.MainController.setupTableColumns()</a>.</p>
 <div class="dynheader">
@@ -1114,9 +1116,9 @@ javafx.beans.property </dd></dl>
 <p>Проверяет, просрочена ли задача </p>
 <dl class="section return"><dt>Возвращает</dt><dd>true если задача просрочена, false в противном случае </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00374">374</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00379">379</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00060">overdue</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00065">overdue</a>.</p>
 
 <p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00246">view.MainController.setupTableColumns()</a>.</p>
 <div class="dynheader">
@@ -1152,9 +1154,9 @@ javafx.beans.property </dd></dl>
 <p>Возвращает свойство просроченности задачи </p>
 <dl class="section return"><dt>Возвращает</dt><dd>BooleanProperty для привязки в FXML </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00382">382</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00387">387</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00060">overdue</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00065">overdue</a>.</p>
 
 </div>
 </div>
@@ -1176,9 +1178,9 @@ javafx.beans.property </dd></dl>
 <p>Возвращает свойство приоритета задачи </p>
 <dl class="section return"><dt>Возвращает</dt><dd>ObjectProperty&lt;Priority&gt; для привязки в FXML </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00308">308</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00313">313</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00051">priority</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00056">priority</a>.</p>
 
 </div>
 </div>
@@ -1205,9 +1207,9 @@ javafx.beans.property </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00340">340</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00345">345</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00054">category</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00059">category</a>.</p>
 
 </div>
 </div>
@@ -1235,9 +1237,9 @@ javafx.beans.property </dd></dl>
 </dl>
 <dl class="section note"><dt>Заметки</dt><dd>При установке completed в true автоматически сбрасывается флаг overdue </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00366">366</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00371">371</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00057">completed</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00062">completed</a>.</p>
 
 <p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00246">view.MainController.setupTableColumns()</a>.</p>
 <div class="dynheader">
@@ -1278,9 +1280,9 @@ javafx.beans.property </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00244">244</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00249">249</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00042">description</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00047">description</a>.</p>
 
 </div>
 </div>
@@ -1307,9 +1309,9 @@ javafx.beans.property </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00292">292</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00297">297</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00048">endTime</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00053">endTime</a>.</p>
 
 </div>
 </div>
@@ -1336,9 +1338,9 @@ javafx.beans.property </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00316">316</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00321">321</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00051">priority</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00056">priority</a>.</p>
 
 </div>
 </div>
@@ -1365,9 +1367,9 @@ javafx.beans.property </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00268">268</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00273">273</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00045">startTime</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00050">startTime</a>.</p>
 
 </div>
 </div>
@@ -1394,9 +1396,9 @@ javafx.beans.property </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00220">220</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00225">225</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00039">title</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00044">title</a>.</p>
 
 </div>
 </div>
@@ -1429,11 +1431,11 @@ javafx.beans.property </dd></dl>
 <dl class="section warning"><dt>Предупреждения</dt><dd>Изменение поля id не поддерживается, так как ID неизменяем</dd></dl>
 <dl class="section see"><dt>См. также</dt><dd>javafx.beans.property.Property#addListener </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00139">139</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00144">144</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00054">category</a>, <a class="el" href="_task_view_model_8java_source.html#l00057">completed</a>, <a class="el" href="_task_view_model_8java_source.html#l00042">description</a>, <a class="el" href="_task_view_model_8java_source.html#l00048">endTime</a>, <a class="el" href="_task_view_model_8java_source.html#l00060">overdue</a>, <a class="el" href="_task_view_model_8java_source.html#l00051">priority</a>, <a class="el" href="_task_view_model_8java_source.html#l00045">startTime</a>, <a class="el" href="_task_view_model_8java_source.html#l00066">task</a> и <a class="el" href="_task_view_model_8java_source.html#l00039">title</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00059">category</a>, <a class="el" href="_task_view_model_8java_source.html#l00062">completed</a>, <a class="el" href="_task_view_model_8java_source.html#l00047">description</a>, <a class="el" href="_task_view_model_8java_source.html#l00053">endTime</a>, <a class="el" href="_task_view_model_8java_source.html#l00065">overdue</a>, <a class="el" href="_task_view_model_8java_source.html#l00056">priority</a>, <a class="el" href="_task_view_model_8java_source.html#l00050">startTime</a>, <a class="el" href="_task_view_model_8java_source.html#l00071">task</a> и <a class="el" href="_task_view_model_8java_source.html#l00044">title</a>.</p>
 
-<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00105">TaskViewModel()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00110">TaskViewModel()</a>.</p>
 <div class="dynheader">
 Граф вызова функции:</div>
 <div class="dyncontent">
@@ -1467,9 +1469,9 @@ javafx.beans.property </dd></dl>
 <p>Возвращает свойство времени начала задачи </p>
 <dl class="section return"><dt>Возвращает</dt><dd>ObjectProperty&lt;LocalDateTime&gt; для привязки в FXML </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00260">260</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00265">265</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00045">startTime</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00050">startTime</a>.</p>
 
 </div>
 </div>
@@ -1491,9 +1493,9 @@ javafx.beans.property </dd></dl>
 <p>Возвращает свойство заголовка задачи </p>
 <dl class="section return"><dt>Возвращает</dt><dd>StringProperty для привязки в FXML </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00212">212</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00217">217</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00039">title</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00044">title</a>.</p>
 
 </div>
 </div>
@@ -1516,9 +1518,9 @@ javafx.beans.property </dd></dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Строка в формате "TaskViewModel{title='...', priority=..., completed=...}"</dd></dl>
 <p>@overrides Object.toString() </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00602">602</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00613">613</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00057">completed</a>, <a class="el" href="_task_view_model_8java_source.html#l00051">priority</a> и <a class="el" href="_task_view_model_8java_source.html#l00039">title</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00062">completed</a>, <a class="el" href="_task_view_model_8java_source.html#l00056">priority</a> и <a class="el" href="_task_view_model_8java_source.html#l00044">title</a>.</p>
 
 </div>
 </div>
@@ -1539,14 +1541,14 @@ javafx.beans.property </dd></dl>
 
 <p>Обновляет ViewModel на основе изменений в модели </p>
 <p>Синхронизирует все свойства ViewModel с текущими значениями из связанного объекта <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a>. Используется при внешних изменениях модели, которые не были инициированы через UI.</p>
-<dl class="section note"><dt>Заметки</dt><dd>Этот метод следует вызывать при изменении модели <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a> извне, например, при загрузке задач из файла или изменении через TaskManager.</dd></dl>
-<dl class="section see"><dt>См. также</dt><dd>TaskManager </dd>
+<dl class="section note"><dt>Заметки</dt><dd>Этот метод следует вызывать при изменении модели <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a> извне, например, при загрузке задач из файла или изменении через <a class="el" href="classmodel_1_1_task_manager.html" title="Менеджер задач - центральный класс для управления задачами">TaskManager</a>.</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classmodel_1_1_task_manager.html" title="Менеджер задач - центральный класс для управления задачами">TaskManager</a> </dd>
 <dd>
-<a class="el" href="classutil_1_1_json_util.html" title="Утилита для работы с JSON файлами задач">util.JsonUtil</a> </dd></dl>
+<a class="el" href="classutil_1_1_json_util.html" title="Утилита для загрузки и сохранения задач в формате JSON.">util.JsonUtil</a> </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00584">584</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00595">595</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00054">category</a>, <a class="el" href="_task_view_model_8java_source.html#l00057">completed</a>, <a class="el" href="_task_view_model_8java_source.html#l00042">description</a>, <a class="el" href="_task_view_model_8java_source.html#l00048">endTime</a>, <a class="el" href="_task_view_model_8java_source.html#l00060">overdue</a>, <a class="el" href="_task_view_model_8java_source.html#l00051">priority</a>, <a class="el" href="_task_view_model_8java_source.html#l00045">startTime</a>, <a class="el" href="_task_view_model_8java_source.html#l00066">task</a> и <a class="el" href="_task_view_model_8java_source.html#l00039">title</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00059">category</a>, <a class="el" href="_task_view_model_8java_source.html#l00062">completed</a>, <a class="el" href="_task_view_model_8java_source.html#l00047">description</a>, <a class="el" href="_task_view_model_8java_source.html#l00053">endTime</a>, <a class="el" href="_task_view_model_8java_source.html#l00065">overdue</a>, <a class="el" href="_task_view_model_8java_source.html#l00056">priority</a>, <a class="el" href="_task_view_model_8java_source.html#l00050">startTime</a>, <a class="el" href="_task_view_model_8java_source.html#l00071">task</a> и <a class="el" href="_task_view_model_8java_source.html#l00044">title</a>.</p>
 
 </div>
 </div>
@@ -1573,9 +1575,9 @@ javafx.beans.property </dd></dl>
 
 <p>Категория задачи (WORK, HOME, STUDY, OTHER). </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00054">54</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00059">59</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00332">categoryProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00324">getCategory()</a>, <a class="el" href="_task_view_model_8java_source.html#l00499">getCategoryColor()</a>, <a class="el" href="_task_view_model_8java_source.html#l00488">getCategoryDisplay()</a>, <a class="el" href="_task_view_model_8java_source.html#l00340">setCategory()</a>, <a class="el" href="_task_view_model_8java_source.html#l00139">setupBindings()</a> и <a class="el" href="_task_view_model_8java_source.html#l00584">updateFromModel()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00337">categoryProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00329">getCategory()</a>, <a class="el" href="_task_view_model_8java_source.html#l00504">getCategoryColor()</a>, <a class="el" href="_task_view_model_8java_source.html#l00493">getCategoryDisplay()</a>, <a class="el" href="_task_view_model_8java_source.html#l00345">setCategory()</a>, <a class="el" href="_task_view_model_8java_source.html#l00144">setupBindings()</a> и <a class="el" href="_task_view_model_8java_source.html#l00595">updateFromModel()</a>.</p>
 
 </div>
 </div>
@@ -1601,9 +1603,9 @@ javafx.beans.property </dd></dl>
 
 <p>Флаг выполнения задачи </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00057">57</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00062">62</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00356">completedProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00551">getStatusText()</a>, <a class="el" href="_task_view_model_8java_source.html#l00348">isCompleted()</a>, <a class="el" href="_task_view_model_8java_source.html#l00366">setCompleted()</a>, <a class="el" href="_task_view_model_8java_source.html#l00139">setupBindings()</a>, <a class="el" href="_task_view_model_8java_source.html#l00602">toString()</a> и <a class="el" href="_task_view_model_8java_source.html#l00584">updateFromModel()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00361">completedProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00556">getStatusText()</a>, <a class="el" href="_task_view_model_8java_source.html#l00353">isCompleted()</a>, <a class="el" href="_task_view_model_8java_source.html#l00371">setCompleted()</a>, <a class="el" href="_task_view_model_8java_source.html#l00144">setupBindings()</a>, <a class="el" href="_task_view_model_8java_source.html#l00613">toString()</a> и <a class="el" href="_task_view_model_8java_source.html#l00595">updateFromModel()</a>.</p>
 
 </div>
 </div>
@@ -1629,9 +1631,9 @@ javafx.beans.property </dd></dl>
 
 <p>Дата и время создания задачи </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00063">63</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00068">68</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00398">createdAtProperty()</a> и <a class="el" href="_task_view_model_8java_source.html#l00390">getCreatedAt()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00403">createdAtProperty()</a> и <a class="el" href="_task_view_model_8java_source.html#l00395">getCreatedAt()</a>.</p>
 
 </div>
 </div>
@@ -1659,9 +1661,9 @@ javafx.beans.property </dd></dl>
 </div><!-- fragment -->
 <p>Форматер для отображения только даты @value "dd.MM.yyyy" (пример: "31.12.2025"). </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00079">79</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00084">84</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00435">getFormattedEndDate()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00440">getFormattedEndDate()</a>.</p>
 
 </div>
 </div>
@@ -1689,9 +1691,9 @@ javafx.beans.property </dd></dl>
 </div><!-- fragment -->
 <p>Форматер для полного отображения даты и времени @value "dd.MM.yyyy HH:mm" (пример: "31.12.2025 23:59"). </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00072">72</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00077">77</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00424">getFormattedEndTime()</a> и <a class="el" href="_task_view_model_8java_source.html#l00413">getFormattedStartTime()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00429">getFormattedEndTime()</a> и <a class="el" href="_task_view_model_8java_source.html#l00418">getFormattedStartTime()</a>.</p>
 
 </div>
 </div>
@@ -1717,9 +1719,9 @@ javafx.beans.property </dd></dl>
 
 <p>Описание задачи </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00042">42</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00047">47</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00236">descriptionProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00228">getDescription()</a>, <a class="el" href="_task_view_model_8java_source.html#l00244">setDescription()</a>, <a class="el" href="_task_view_model_8java_source.html#l00139">setupBindings()</a> и <a class="el" href="_task_view_model_8java_source.html#l00584">updateFromModel()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00241">descriptionProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00233">getDescription()</a>, <a class="el" href="_task_view_model_8java_source.html#l00249">setDescription()</a>, <a class="el" href="_task_view_model_8java_source.html#l00144">setupBindings()</a> и <a class="el" href="_task_view_model_8java_source.html#l00595">updateFromModel()</a>.</p>
 
 </div>
 </div>
@@ -1745,9 +1747,9 @@ javafx.beans.property </dd></dl>
 
 <p>Время окончания (дедлайн) задачи </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00048">48</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00053">53</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00284">endTimeProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00276">getEndTime()</a>, <a class="el" href="_task_view_model_8java_source.html#l00435">getFormattedEndDate()</a>, <a class="el" href="_task_view_model_8java_source.html#l00424">getFormattedEndTime()</a>, <a class="el" href="_task_view_model_8java_source.html#l00446">getFormattedEndTimeOnly()</a>, <a class="el" href="_task_view_model_8java_source.html#l00513">getTimeRemaining()</a>, <a class="el" href="_task_view_model_8java_source.html#l00292">setEndTime()</a>, <a class="el" href="_task_view_model_8java_source.html#l00139">setupBindings()</a> и <a class="el" href="_task_view_model_8java_source.html#l00584">updateFromModel()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00289">endTimeProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00281">getEndTime()</a>, <a class="el" href="_task_view_model_8java_source.html#l00440">getFormattedEndDate()</a>, <a class="el" href="_task_view_model_8java_source.html#l00429">getFormattedEndTime()</a>, <a class="el" href="_task_view_model_8java_source.html#l00451">getFormattedEndTimeOnly()</a>, <a class="el" href="_task_view_model_8java_source.html#l00556">getStatusText()</a>, <a class="el" href="_task_view_model_8java_source.html#l00518">getTimeRemaining()</a>, <a class="el" href="_task_view_model_8java_source.html#l00297">setEndTime()</a>, <a class="el" href="_task_view_model_8java_source.html#l00144">setupBindings()</a> и <a class="el" href="_task_view_model_8java_source.html#l00595">updateFromModel()</a>.</p>
 
 </div>
 </div>
@@ -1773,9 +1775,9 @@ javafx.beans.property </dd></dl>
 
 <p>Уникальный идентификатор задачи (неизменяемый). </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00036">36</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00041">41</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00617">equals()</a> и <a class="el" href="_task_view_model_8java_source.html#l00196">idProperty()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00628">equals()</a> и <a class="el" href="_task_view_model_8java_source.html#l00201">idProperty()</a>.</p>
 
 </div>
 </div>
@@ -1801,9 +1803,9 @@ javafx.beans.property </dd></dl>
 
 <p>Флаг просроченности задачи </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00060">60</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00065">65</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00551">getStatusText()</a>, <a class="el" href="_task_view_model_8java_source.html#l00374">isOverdue()</a>, <a class="el" href="_task_view_model_8java_source.html#l00382">overdueProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00139">setupBindings()</a> и <a class="el" href="_task_view_model_8java_source.html#l00584">updateFromModel()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00556">getStatusText()</a>, <a class="el" href="_task_view_model_8java_source.html#l00379">isOverdue()</a>, <a class="el" href="_task_view_model_8java_source.html#l00387">overdueProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00144">setupBindings()</a> и <a class="el" href="_task_view_model_8java_source.html#l00595">updateFromModel()</a>.</p>
 
 </div>
 </div>
@@ -1829,9 +1831,9 @@ javafx.beans.property </dd></dl>
 
 <p>Приоритет задачи (URGENT, IMPORTANT, NORMAL). </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00051">51</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00056">56</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00300">getPriority()</a>, <a class="el" href="_task_view_model_8java_source.html#l00467">getPriorityColor()</a>, <a class="el" href="_task_view_model_8java_source.html#l00456">getPriorityDisplay()</a>, <a class="el" href="_task_view_model_8java_source.html#l00478">getPriorityIconName()</a>, <a class="el" href="_task_view_model_8java_source.html#l00308">priorityProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00316">setPriority()</a>, <a class="el" href="_task_view_model_8java_source.html#l00139">setupBindings()</a>, <a class="el" href="_task_view_model_8java_source.html#l00602">toString()</a> и <a class="el" href="_task_view_model_8java_source.html#l00584">updateFromModel()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00305">getPriority()</a>, <a class="el" href="_task_view_model_8java_source.html#l00472">getPriorityColor()</a>, <a class="el" href="_task_view_model_8java_source.html#l00461">getPriorityDisplay()</a>, <a class="el" href="_task_view_model_8java_source.html#l00483">getPriorityIconName()</a>, <a class="el" href="_task_view_model_8java_source.html#l00313">priorityProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00321">setPriority()</a>, <a class="el" href="_task_view_model_8java_source.html#l00144">setupBindings()</a>, <a class="el" href="_task_view_model_8java_source.html#l00613">toString()</a> и <a class="el" href="_task_view_model_8java_source.html#l00595">updateFromModel()</a>.</p>
 
 </div>
 </div>
@@ -1857,9 +1859,9 @@ javafx.beans.property </dd></dl>
 
 <p>Время начала выполнения задачи </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00045">45</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00050">50</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00413">getFormattedStartTime()</a>, <a class="el" href="_task_view_model_8java_source.html#l00252">getStartTime()</a>, <a class="el" href="_task_view_model_8java_source.html#l00268">setStartTime()</a>, <a class="el" href="_task_view_model_8java_source.html#l00139">setupBindings()</a>, <a class="el" href="_task_view_model_8java_source.html#l00260">startTimeProperty()</a> и <a class="el" href="_task_view_model_8java_source.html#l00584">updateFromModel()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00418">getFormattedStartTime()</a>, <a class="el" href="_task_view_model_8java_source.html#l00257">getStartTime()</a>, <a class="el" href="_task_view_model_8java_source.html#l00273">setStartTime()</a>, <a class="el" href="_task_view_model_8java_source.html#l00144">setupBindings()</a>, <a class="el" href="_task_view_model_8java_source.html#l00265">startTimeProperty()</a> и <a class="el" href="_task_view_model_8java_source.html#l00595">updateFromModel()</a>.</p>
 
 </div>
 </div>
@@ -1885,9 +1887,9 @@ javafx.beans.property </dd></dl>
 
 <p>Ссылка на исходную модель данных <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a>. </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00066">66</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00071">71</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00568">getTask()</a>, <a class="el" href="_task_view_model_8java_source.html#l00139">setupBindings()</a>, <a class="el" href="_task_view_model_8java_source.html#l00105">TaskViewModel()</a> и <a class="el" href="_task_view_model_8java_source.html#l00584">updateFromModel()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00579">getTask()</a>, <a class="el" href="_task_view_model_8java_source.html#l00144">setupBindings()</a>, <a class="el" href="_task_view_model_8java_source.html#l00110">TaskViewModel()</a> и <a class="el" href="_task_view_model_8java_source.html#l00595">updateFromModel()</a>.</p>
 
 </div>
 </div>
@@ -1915,9 +1917,9 @@ javafx.beans.property </dd></dl>
 </div><!-- fragment -->
 <p>Форматер для отображения только времени @value "HH:mm" (пример: "23:59"). </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00086">86</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00091">91</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00446">getFormattedEndTimeOnly()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00451">getFormattedEndTimeOnly()</a>.</p>
 
 </div>
 </div>
@@ -1943,9 +1945,9 @@ javafx.beans.property </dd></dl>
 
 <p>Заголовок задачи </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00039">39</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00044">44</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00204">getTitle()</a>, <a class="el" href="_task_view_model_8java_source.html#l00220">setTitle()</a>, <a class="el" href="_task_view_model_8java_source.html#l00139">setupBindings()</a>, <a class="el" href="_task_view_model_8java_source.html#l00212">titleProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00602">toString()</a> и <a class="el" href="_task_view_model_8java_source.html#l00584">updateFromModel()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00209">getTitle()</a>, <a class="el" href="_task_view_model_8java_source.html#l00225">setTitle()</a>, <a class="el" href="_task_view_model_8java_source.html#l00144">setupBindings()</a>, <a class="el" href="_task_view_model_8java_source.html#l00217">titleProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00613">toString()</a> и <a class="el" href="_task_view_model_8java_source.html#l00595">updateFromModel()</a>.</p>
 
 </div>
 </div>

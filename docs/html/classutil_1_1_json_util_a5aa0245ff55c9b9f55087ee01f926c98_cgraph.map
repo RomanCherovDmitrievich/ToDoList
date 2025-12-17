@@ -1,9 +1,11 @@
 <map id="util.JsonUtil.exportTasks" name="util.JsonUtil.exportTasks">
-<area shape="rect" id="Node000001" title="Экспортирует задачи в указанный файл" alt="" coords="5,13,171,38"/>
-<area shape="rect" id="Node000002" href="$classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="219,5,391,46"/>
+<area shape="rect" id="Node000001" title="Экспортирует задачи в файл" alt="" coords="5,13,171,38"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_json_util.html#a67200ee9448e6b079ca9ea49200dec30" title="Сохраняет задачи в указанный путь" alt="" coords="219,13,417,38"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,23,206,25,200,26,171,28"/>
-<area shape="rect" id="Node000003" href="$classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="439,13,604,38"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="391,23,426,26,421,26,391,28"/>
-<area shape="rect" id="Node000004" href="$classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="652,13,815,38"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="604,23,639,26,634,26,605,28"/>
+<area shape="rect" id="Node000003" href="$classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="465,5,637,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="418,23,452,26,447,26,418,28"/>
+<area shape="rect" id="Node000004" href="$classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="685,13,851,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="638,23,673,26,667,26,638,28"/>
+<area shape="rect" id="Node000005" href="$classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="899,13,1061,38"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="851,23,886,26,880,26,851,28"/>
 </map>

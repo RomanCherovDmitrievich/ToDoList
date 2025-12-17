@@ -4,12 +4,15 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-
+import model.TaskManager;
 import util.AudioManager;
+import util.JsonUtil;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -20,9 +23,9 @@ import java.util.Objects;
  * Отвечает за инициализацию, настройку и запуск главного окна приложения.
  * Управляет жизненным циклом приложения, загрузкой ресурсов и обработкой ошибок.
  * 
- * @author Разработчик
+ * @author Чернов
  * @version 1.0
- * @date 2025-11-30
+ * @date 2025-11-2
  * 
  * @extends Application (JavaFX)
  * 
@@ -168,7 +171,7 @@ public class MainApp extends Application {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainView.fxml"));
             Parent root = loader.load();
             
-            // Настраиваем сцену
+            // Настраиваем сцену 
             Scene scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT);
             
             // Загружаем CSS стили
@@ -182,7 +185,7 @@ public class MainApp extends Application {
             
             // Настраиваем иконку приложения
             try {
-                Image appIcon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/images/app_icon.png")));
+                Image appIcon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/resources/images/app_icon.png")));
                 primaryStage.getIcons().add(appIcon);
                 System.out.println("Иконка приложения загружена");
             } catch (Exception e) {

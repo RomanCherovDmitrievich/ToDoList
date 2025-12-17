@@ -1,0 +1,5 @@
+<map id="util.AudioManager.playAddSound" name="util.AudioManager.playAddSound">
+<area shape="rect" id="Node000001" title="Воспроизводит звук добавления задачи" alt="" coords="5,5,181,46"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_audio_manager.html#a4e939a297c1b2ea81f5f1de7bac59d1f" title="Воспроизводит звуковой эффект" alt="" coords="229,5,418,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,23,216,25,211,26,181,28"/>
+</map>

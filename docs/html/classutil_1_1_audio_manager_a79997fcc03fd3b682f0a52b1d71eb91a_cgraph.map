@@ -1,0 +1,11 @@
+<map id="util.AudioManager.loadMusicPlaylist" name="util.AudioManager.loadMusicPlaylist">
+<area shape="rect" id="Node000001" title="Загружает плейлист фоновой музыки" alt="" coords="5,39,193,79"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_audio_manager.html#a81106e6d53cede222377cb7bed147423" title="Создает заглушечный плейлист" alt="" coords="249,5,413,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,43,236,39,231,41,194,48"/>
+<area shape="rect" id="Node000003" href="$classutil_1_1_audio_manager.html#a5f95e22bec4696d1bebd9ca0d9e720a4" title="Воспроизводит следующий трек в плейлисте" alt="" coords="241,71,421,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="193,69,228,76,223,77,193,75"/>
+<area shape="rect" id="Node000004" href="$classutil_1_1_audio_manager.html#a6670ef01882a42659760581b520eb8e5" title="Воспроизводит текущий трек" alt="" coords="470,37,665,78"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="421,76,457,73,451,74,422,81"/>
+<area shape="rect" id="Node000005" href="$classutil_1_1_audio_manager.html#abea736c235499b083accbef0d9468489" title="Останавливает текущий трек" alt="" coords="469,103,665,143"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="421,101,456,108,451,108,421,106"/>
+</map>

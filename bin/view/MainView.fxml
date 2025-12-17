@@ -41,13 +41,13 @@
             <!-- Панель инструментов -->
             <HBox spacing="8" alignment="CENTER_LEFT" VBox.vgrow="NEVER">
                 <Button fx:id="addButton" 
-                        text="➕ Добавить" 
+                        text=" Добавить" 
                         onAction="#handleAddTask"
                         style="-fx-font-size: 12px; -fx-padding: 5 10; -fx-background-color: #00cc66;"
                         prefWidth="120"/>
                 
                 <Button fx:id="deleteButton" 
-                        text="🗑️ Удалить" 
+                        text=" Удалить" 
                         onAction="#handleDeleteTask"
                         style="-fx-font-size: 12px; -fx-padding: 5 10; -fx-background-color: #ff6600;"
                         prefWidth="120"/>

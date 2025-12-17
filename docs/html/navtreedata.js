@@ -50,8 +50,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "18_100-example.html",
-"classview_1_1_main_controller.html#a0859893b8b9dc5032b836774a2e07229",
-"classviewmodel_1_1_task_view_model.html#a99d8237ca04d46fdcc2f00c04ee064f4"
+"classutil_1_1_audio_manager.html#ab025a08bfe77322b40d9bbc53d52e9bb",
+"classview_1_1_snowflake_animation_1_1_snowflake.html#a38e9d8380212fecf26b2aa25aa1f1e2a"
 ];
 
 var SYNCONMSG = 'нажмите на выключить для синхронизации панелей';

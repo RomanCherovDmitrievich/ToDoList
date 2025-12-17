@@ -14,9 +14,9 @@ import java.util.Map;
  * Обеспечивает загрузку, воспроизведение и контроль аудио ресурсов приложения.
  * Поддерживает включение/выключение звуков и регулировку громкости.
  * 
- * @author Разработчик
+ * @author Чернов
  * @version 1.0
- * @date 2025-11-30
+ * @date 2025-11-2
  * 
  * @note Использует JavaFX Media API для воспроизведения звуков
  * @warning Звуки требуют наличия соответствующих файлов в resources/audio/
@@ -91,7 +91,7 @@ public class AudioManager {
     private void loadSounds() {
         try {
             // Загружаем стартовый звук
-            URL startupSoundUrl = getClass().getResource("/resources/audio/startup3.mp3");
+            URL startupSoundUrl = getClass().getResource("/resources/audio/startup.mp3");
             if (startupSoundUrl != null) {
                 Media startupMedia = new Media(startupSoundUrl.toString());
                 MediaPlayer startupPlayer = new MediaPlayer(startupMedia);

@@ -21,9 +21,9 @@ import java.util.stream.Collectors;
  * Поддерживает гибкую обработку форматов дат, тестирование через изменение путей,
  * и обработку ошибок с резервным копированием.
  * 
- * @author Разработчик
+ * @author Чернов
  * @version 2.0
- * @date 2025-12-01
+ * @date 2025-11-2
  * 
  * @see Task
  * @see Priority
@@ -173,7 +173,7 @@ public class JsonUtil {
      * @param tasks Список задач для сохранения
      * @return boolean true если сохранение успешно, false при ошибке
      * 
-     * @see #saveTasksToPath(List, String)
+     * @see #saveTasksToPath()
      */
     public static boolean saveTasks(List<Task> tasks) {
         return saveTasksToPath(tasks, getFullPath());
@@ -192,7 +192,7 @@ public class JsonUtil {
      * @note Создает директорию если её нет
      * @note Перезаписывает существующий файл
      * 
-     * @see #convertTasksToJson(List)
+     * @see #convertTasksToJson()
      */
     public static boolean saveTasksToPath(List<Task> tasks, String filePath) {
         try {
@@ -245,7 +245,7 @@ public class JsonUtil {
      * @warning Загружает и сохраняет весь файл для одной операции
      * 
      * @see #loadTasks()
-     * @see #saveTasks(List)
+     * @see #saveTasks()
      */
     public static boolean addTask(Task task) {
         List<Task> tasks = loadTasks();
@@ -264,7 +264,7 @@ public class JsonUtil {
      * @warning Загружает и сохраняет весь файл для одной операции
      * 
      * @see #loadTasks()
-     * @see #saveTasks(List)
+     * @see #saveTasks()
      */
     public static boolean removeTask(String taskId) {
         List<Task> tasks = loadTasks();
@@ -286,7 +286,7 @@ public class JsonUtil {
      * @warning Загружает и сохраняет весь файл для одной операции
      * 
      * @see #loadTasks()
-     * @see #saveTasks(List)
+     * @see #saveTasks()
      */
     public static boolean updateTask(Task updatedTask) {
         List<Task> tasks = loadTasks();
@@ -664,7 +664,7 @@ public class JsonUtil {
      * 
      * @note Псевдоним для saveTasksToPath
      * 
-     * @see #saveTasksToPath(List, String)
+     * @see #saveTasksToPath()
      */
     public static boolean exportTasks(String filePath, List<Task> tasks) {
         return saveTasksToPath(tasks, filePath);

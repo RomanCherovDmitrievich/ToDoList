@@ -165,9 +165,9 @@ $(function(){initNavTree('classapp_1_1_main_app.html','','classapp_1_1_main_app-
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Главный класс приложения To-Do List. </p>
 <p>Класс <a class="el" href="classapp_1_1_main_app.html" title="Главный класс приложения To-Do List.">MainApp</a> является точкой входа JavaFX приложения. Отвечает за инициализацию, настройку и запуск главного окна приложения. Управляет жизненным циклом приложения, загрузкой ресурсов и обработкой ошибок.</p>
-<dl class="section author"><dt>Автор</dt><dd>Разработчик </dd></dl>
+<dl class="section author"><dt>Автор</dt><dd>Чернов </dd></dl>
 <dl class="section version"><dt>Версия</dt><dd>1.0 </dd></dl>
-<dl class="section date"><dt>Дата</dt><dd>2025-11-30</dd></dl>
+<dl class="section date"><dt>Дата</dt><dd>2025-11-2</dd></dl>
 <p>(JavaFX)</p>
 <dl class="section see"><dt>См. также</dt><dd><a class="el" href="classview_1_1_main_controller.html" title="Контроллер главного окна приложения To-Do List.">view.MainController</a> </dd>
 <dd>
@@ -175,11 +175,11 @@ $(function(){initNavTree('classapp_1_1_main_app.html','','classapp_1_1_main_app-
 <dd>
 <a class="el" href="classmodel_1_1_task_manager.html" title="Менеджер задач - центральный класс для управления задачами">model.TaskManager</a> </dd>
 <dd>
-<a class="el" href="classutil_1_1_json_util.html" title="Утилита для работы с JSON файлами задач">util.JsonUtil</a></dd></dl>
-<dl class="section note"><dt>Заметки</dt><dd>Этот класс использует паттерн Singleton для <a class="el" href="classutil_1_1_audio_manager.html" title="Менеджер для работы с аудио в приложении">AudioManager</a> и TaskManager </dd></dl>
+<a class="el" href="classutil_1_1_json_util.html" title="Утилита для загрузки и сохранения задач в формате JSON.">util.JsonUtil</a></dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Этот класс использует паттерн Singleton для <a class="el" href="classutil_1_1_audio_manager.html" title="Менеджер для работы с аудио в приложении">AudioManager</a> и <a class="el" href="classmodel_1_1_task_manager.html" title="Менеджер задач - центральный класс для управления задачами">TaskManager</a> </dd></dl>
 <dl class="section warning"><dt>Предупреждения</dt><dd>Требует JavaFX SDK в classpath для работы </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00037">37</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00040">40</a></p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
 <a id="a58283a36a2e01e38efa19edd9ba77d59" name="a58283a36a2e01e38efa19edd9ba77d59"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a58283a36a2e01e38efa19edd9ba77d59">&#9670;&#160;</a></span>getPrimaryStage()</h2>
@@ -202,9 +202,9 @@ $(function(){initNavTree('classapp_1_1_main_app.html','','classapp_1_1_main_app-
 <dl class="section note"><dt>Заметки</dt><dd>Используется для модальных диалогов и управления окном</dd></dl>
 <dl class="section see"><dt>См. также</dt><dd>Stage </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00274">274</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00277">277</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_main_app_8java_source.html#l00073">primaryStage</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_app_8java_source.html#l00076">primaryStage</a>.</p>
 
 </div>
 </div>
@@ -234,21 +234,33 @@ $(function(){initNavTree('classapp_1_1_main_app.html','','classapp_1_1_main_app-
 <dl class="section warning"><dt>Предупреждения</dt><dd>Исключения в этом методе не прерывают запуск приложения</dd></dl>
 <dl class="section see"><dt>См. также</dt><dd><a class="el" href="classutil_1_1_audio_manager.html#aaf7ec801730bf60f659b843ace062d86" title="Получает единственный экземпляр AudioManager.">AudioManager.getInstance()</a> </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00123">123</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00126">126</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_main_app_8java_source.html#l00079">audioManager</a> и <a class="el" href="_audio_manager_8java_source.html#l00072">util.AudioManager.getInstance()</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_app_8java_source.html#l00082">audioManager</a> и <a class="el" href="_audio_manager_8java_source.html#l00138">util.AudioManager.getInstance()</a>.</p>
 <div class="dynheader">
 Граф вызовов:</div>
 <div class="dyncontent">
 <div class="center"><img src="classapp_1_1_main_app_acbf781550cefac29e6c8ecbdd2b38904_cgraph.png" border="0" usemap="#aclassapp_1_1_main_app_acbf781550cefac29e6c8ecbdd2b38904_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassapp_1_1_main_app_acbf781550cefac29e6c8ecbdd2b38904_cgraph" id="aclassapp_1_1_main_app_acbf781550cefac29e6c8ecbdd2b38904_cgraph">
-<area shape="rect" title="Метод инициализации приложения" alt="" coords="5,5,124,31"/>
-<area shape="rect" href="classutil_1_1_audio_manager.html#aaf7ec801730bf60f659b843ace062d86" title="Получает единственный экземпляр AudioManager." alt="" coords="172,5,368,31"/>
-<area shape="poly" title=" " alt="" coords="124,16,159,18,154,18,124,21"/>
-<area shape="rect" href="classutil_1_1_audio_manager.html#ab16a211144282895701d2b0a64a66145" title="Приватный конструктор" alt="" coords="416,5,627,31"/>
-<area shape="poly" title=" " alt="" coords="369,16,403,18,398,18,369,21"/>
-<area shape="rect" href="classutil_1_1_audio_manager.html#a5ad71057028d829235d9ca3519feae2d" title="Загружает все звуки приложения" alt="" coords="675,5,872,31"/>
-<area shape="poly" title=" " alt="" coords="628,16,662,18,657,18,628,21"/>
+<area shape="rect" title="Метод инициализации приложения" alt="" coords="5,112,124,137"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#aaf7ec801730bf60f659b843ace062d86" title="Получает единственный экземпляр AudioManager." alt="" coords="172,112,368,137"/>
+<area shape="poly" title=" " alt="" coords="124,122,159,124,154,125,124,127"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#ab16a211144282895701d2b0a64a66145" title="Приватный конструктор" alt="" coords="416,112,627,137"/>
+<area shape="poly" title=" " alt="" coords="368,122,403,124,398,125,369,127"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#a79997fcc03fd3b682f0a52b1d71eb91a" title="Загружает плейлист фоновой музыки" alt="" coords="676,71,864,111"/>
+<area shape="poly" title=" " alt="" coords="622,108,658,106,664,105,623,114"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#a4197394f4db4c59183c41d3bd22addbe" title="Загружает звуковые эффекты приложения" alt="" coords="675,136,865,177"/>
+<area shape="poly" title=" " alt="" coords="627,135,662,142,657,142,626,140"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#a81106e6d53cede222377cb7bed147423" title="Создает заглушечный плейлист" alt="" coords="925,5,1090,46"/>
+<area shape="poly" title=" " alt="" coords="846,68,914,51,919,50,847,73"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#a5f95e22bec4696d1bebd9ca0d9e720a4" title="Воспроизводит следующий трек в плейлисте" alt="" coords="917,71,1098,111"/>
+<area shape="poly" title=" " alt="" coords="864,88,904,91,899,91,864,94"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#a6670ef01882a42659760581b520eb8e5" title="Воспроизводит текущий трек" alt="" coords="1150,39,1346,79"/>
+<area shape="poly" title=" " alt="" coords="1098,76,1132,74,1138,74,1098,82"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#abea736c235499b083accbef0d9468489" title="Останавливает текущий трек" alt="" coords="1150,104,1346,145"/>
+<area shape="poly" title=" " alt="" coords="1098,101,1137,109,1132,109,1098,106"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#a1ff1493847fdadf19564ecb4b33442d1" title="Загружает отдельный звуковой эффект" alt="" coords="913,136,1102,177"/>
+<area shape="poly" title=" " alt="" coords="865,154,900,156,894,156,865,159"/>
 </map>
 </div>
 
@@ -296,7 +308,7 @@ $(function(){initNavTree('classapp_1_1_main_app.html','','classapp_1_1_main_app-
 <dl class="section warning"><dt>Предупреждения</dt><dd>Без JavaFX приложение не сможет запуститься</dd></dl>
 <dl class="section see"><dt>См. также</dt><dd>Application#launch(String...) </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00095">95</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00098">98</a></p>
 
 </div>
 </div>
@@ -331,9 +343,9 @@ $(function(){initNavTree('classapp_1_1_main_app.html','','classapp_1_1_main_app-
 Scene </dd></dl>
 <dl class="section warning"><dt>Предупреждения</dt><dd>Не сохраняет состояние таблицы и другие UI элементы </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00314">314</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00317">317</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_main_app_8java_source.html#l00073">primaryStage</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_app_8java_source.html#l00076">primaryStage</a>.</p>
 
 </div>
 </div>
@@ -386,9 +398,9 @@ Scene </dd></dl>
 <dd>
 Alert.AlertType#ERROR </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00292">292</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00295">295</a></p>
 
-<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00162">start()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00165">start()</a>.</p>
 <div class="dynheader">
 Граф вызова функции:</div>
 <div class="dyncontent">
@@ -450,9 +462,9 @@ Stage </dd>
 <dd>
 <a class="el" href="#a92cfa72f96cc381ef46d20c6fb1ae193" title="Показывает диалоговое окно с ошибкой">showErrorDialog(String, String, String)</a> </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00162">162</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00165">165</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_main_app_8java_source.html#l00043">APP_TITLE</a>, <a class="el" href="_main_app_8java_source.html#l00079">audioManager</a>, <a class="el" href="_main_app_8java_source.html#l00067">MIN_HEIGHT</a>, <a class="el" href="_main_app_8java_source.html#l00061">MIN_WIDTH</a>, <a class="el" href="_main_app_8java_source.html#l00073">primaryStage</a>, <a class="el" href="_main_app_8java_source.html#l00292">showErrorDialog()</a>, <a class="el" href="_main_app_8java_source.html#l00055">WINDOW_HEIGHT</a> и <a class="el" href="_main_app_8java_source.html#l00049">WINDOW_WIDTH</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_app_8java_source.html#l00046">APP_TITLE</a>, <a class="el" href="_main_app_8java_source.html#l00082">audioManager</a>, <a class="el" href="_main_app_8java_source.html#l00070">MIN_HEIGHT</a>, <a class="el" href="_main_app_8java_source.html#l00064">MIN_WIDTH</a>, <a class="el" href="_main_app_8java_source.html#l00076">primaryStage</a>, <a class="el" href="_main_app_8java_source.html#l00295">showErrorDialog()</a>, <a class="el" href="_main_app_8java_source.html#l00058">WINDOW_HEIGHT</a> и <a class="el" href="_main_app_8java_source.html#l00052">WINDOW_WIDTH</a>.</p>
 <div class="dynheader">
 Граф вызовов:</div>
 <div class="dyncontent">
@@ -490,37 +502,41 @@ Stage </dd>
 </ul>
 </dd></dl>
 <dl class="section warning"><dt>Предупреждения</dt><dd>Метод гарантированно вызывается при нормальном завершении приложения</dd></dl>
-<dl class="section see"><dt>См. также</dt><dd>TaskManager#getInstance() </dd>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea" title="Возвращает единственный экземпляр TaskManager.">TaskManager.getInstance()</a> </dd>
 <dd>
 JsonUtil#saveTasks(List) </dd>
 <dd>
 <a class="el" href="classutil_1_1_audio_manager.html#a67ab556a4d2e6faff27ec5b80d97220c" title="Освобождает ресурсы">AudioManager.dispose()</a> </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00243">243</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00246">246</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_main_app_8java_source.html#l00079">audioManager</a>, <a class="el" href="_task_manager_8java_source.html#l00124">model.TaskManager.getAllTasks()</a>, <a class="el" href="_task_manager_8java_source.html#l00073">model.TaskManager.getInstance()</a> и <a class="el" href="_json_util_8java_source.html#l00139">util.JsonUtil.saveTasks()</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_app_8java_source.html#l00082">audioManager</a>, <a class="el" href="_task_manager_8java_source.html#l00129">model.TaskManager.getAllTasks()</a>, <a class="el" href="_task_manager_8java_source.html#l00077">model.TaskManager.getInstance()</a> и <a class="el" href="_json_util_8java_source.html#l00178">util.JsonUtil.saveTasks()</a>.</p>
 <div class="dynheader">
 Граф вызовов:</div>
 <div class="dyncontent">
 <div class="center"><img src="classapp_1_1_main_app_a81713cb9b4148cc9775e965fc14a1834_cgraph.png" border="0" usemap="#aclassapp_1_1_main_app_a81713cb9b4148cc9775e965fc14a1834_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassapp_1_1_main_app_a81713cb9b4148cc9775e965fc14a1834_cgraph" id="aclassapp_1_1_main_app_a81713cb9b4148cc9775e965fc14a1834_cgraph">
 <area shape="rect" title="Метод остановки приложения" alt="" coords="5,70,132,96"/>
-<area shape="rect" href="classmodel_1_1_task_manager.html#abc809a0b2d184494368cc5cc6dae6346" title="Возвращает копию списка всех задач" alt="" coords="197,5,372,46"/>
-<area shape="poly" title=" " alt="" coords="119,67,193,49,188,52,121,72"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#abc809a0b2d184494368cc5cc6dae6346" title="Возвращает неизменяемую копию списка всех задач" alt="" coords="197,5,372,46"/>
+<area shape="poly" title=" " alt="" coords="119,67,192,49,188,52,121,72"/>
 <area shape="rect" href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea" title="Возвращает единственный экземпляр TaskManager." alt="" coords="180,70,389,96"/>
-<area shape="poly" title=" " alt="" coords="132,80,167,82,162,84,133,86"/>
-<area shape="rect" href="classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421" title="Сохраняет все задачи в JSON файл" alt="" coords="206,124,363,149"/>
-<area shape="poly" title=" " alt="" coords="124,94,217,118,212,121,123,99"/>
+<area shape="poly" title=" " alt="" coords="131,80,167,82,162,84,133,86"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421" title="Сохраняет все задачи в JSON файл" alt="" coords="206,120,363,145"/>
+<area shape="poly" title=" " alt="" coords="128,94,212,114,208,117,128,99"/>
 <area shape="rect" href="classmodel_1_1_task_manager.html#a6ff214cd422dcd5f0d8c5d573cd251b6" title="Проверяет все задачи на просроченность" alt="" coords="451,5,642,46"/>
-<area shape="poly" title=" " alt="" coords="372,23,438,25,433,26,372,28"/>
+<area shape="poly" title=" " alt="" coords="372,23,438,25,433,26,373,28"/>
 <area shape="rect" href="classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c" title="Приватный конструктор" alt="" coords="437,70,656,96"/>
 <area shape="poly" title=" " alt="" coords="389,80,424,83,419,83,390,86"/>
-<area shape="rect" href="classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="460,120,633,161"/>
-<area shape="poly" title=" " alt="" coords="364,135,448,139,442,139,364,140"/>
-<area shape="rect" href="classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="704,128,870,153"/>
-<area shape="poly" title=" " alt="" coords="633,138,691,140,686,140,634,143"/>
-<area shape="rect" href="classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="918,128,1080,153"/>
-<area shape="poly" title=" " alt="" coords="870,138,905,140,899,140,870,143"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a6acc14b51427ce85235d8981f801d734" title="Возвращает полный путь к файлу задач" alt="" coords="466,120,627,145"/>
+<area shape="poly" title=" " alt="" coords="363,130,454,132,448,133,364,135"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a67200ee9448e6b079ca9ea49200dec30" title="Сохраняет задачи в указанный путь" alt="" coords="448,169,646,194"/>
+<area shape="poly" title=" " alt="" coords="357,143,462,165,457,166,356,148"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="704,161,877,202"/>
+<area shape="poly" title=" " alt="" coords="646,179,691,182,686,182,646,184"/>
+<area shape="rect" href="classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="925,169,1090,194"/>
+<area shape="poly" title=" " alt="" coords="877,179,912,182,907,182,877,184"/>
+<area shape="rect" href="classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="1138,169,1300,194"/>
+<area shape="poly" title=" " alt="" coords="1090,179,1125,182,1120,182,1090,184"/>
 </map>
 </div>
 
@@ -550,9 +566,9 @@ JsonUtil#saveTasks(List) </dd>
 <p>Заголовок приложения </p>
 <p>Отображается в заголовке главного окна </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00043">43</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00046">46</a></p>
 
-<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00162">start()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00165">start()</a>.</p>
 
 </div>
 </div>
@@ -579,9 +595,9 @@ JsonUtil#saveTasks(List) </dd>
 <p>Менеджер аудио </p>
 <p>Управляет звуковыми эффектами приложения (Singleton) </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00079">79</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00082">82</a></p>
 
-<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00123">init()</a>, <a class="el" href="_main_app_8java_source.html#l00162">start()</a> и <a class="el" href="_main_app_8java_source.html#l00243">stop()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00126">init()</a>, <a class="el" href="_main_app_8java_source.html#l00165">start()</a> и <a class="el" href="_main_app_8java_source.html#l00246">stop()</a>.</p>
 
 </div>
 </div>
@@ -608,9 +624,9 @@ JsonUtil#saveTasks(List) </dd>
 <p>Минимальная высота окна </p>
 <p>Минимальная высота, до которой пользователь может уменьшить окно </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00067">67</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00070">70</a></p>
 
-<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00162">start()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00165">start()</a>.</p>
 
 </div>
 </div>
@@ -637,9 +653,9 @@ JsonUtil#saveTasks(List) </dd>
 <p>Минимальная ширина окна </p>
 <p>Минимальная ширина, до которой пользователь может уменьшить окно </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00061">61</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00064">64</a></p>
 
-<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00162">start()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00165">start()</a>.</p>
 
 </div>
 </div>
@@ -666,9 +682,9 @@ JsonUtil#saveTasks(List) </dd>
 <p>Главное окно приложения </p>
 <p>Ссылка на первичную Stage (окно) JavaFX приложения </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00073">73</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00076">76</a></p>
 
-<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00274">getPrimaryStage()</a>, <a class="el" href="_main_app_8java_source.html#l00314">reloadMainView()</a> и <a class="el" href="_main_app_8java_source.html#l00162">start()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00277">getPrimaryStage()</a>, <a class="el" href="_main_app_8java_source.html#l00317">reloadMainView()</a> и <a class="el" href="_main_app_8java_source.html#l00165">start()</a>.</p>
 
 </div>
 </div>
@@ -695,9 +711,9 @@ JsonUtil#saveTasks(List) </dd>
 <p>Начальная высота окна </p>
 <p>Высота главного окна при запуске приложения (в пикселях) </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00055">55</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00058">58</a></p>
 
-<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00162">start()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00165">start()</a>.</p>
 
 </div>
 </div>
@@ -724,9 +740,9 @@ JsonUtil#saveTasks(List) </dd>
 <p>Начальная ширина окна </p>
 <p>Ширина главного окна при запуске приложения (в пикселях) </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00049">49</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00052">52</a></p>
 
-<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00162">start()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00165">start()</a>.</p>
 
 </div>
 </div>

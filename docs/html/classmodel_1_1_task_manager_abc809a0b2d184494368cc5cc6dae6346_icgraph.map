@@ -1,7 +1,5 @@
 <map id="model.TaskManager.getAllTasks" name="model.TaskManager.getAllTasks">
-<area shape="rect" id="Node000001" title="Возвращает копию списка всех задач" alt="" coords="234,35,408,75"/>
-<area shape="rect" id="Node000002" href="$classmodel_1_1_task_manager.html#aeeb1bbd577dfd42c694e1120de83f476" title="Выполняет поиск задач по тексту" alt="" coords="5,5,186,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="216,42,186,40,186,35,221,41"/>
-<area shape="rect" id="Node000003" href="$classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834" title="Метод остановки приложения" alt="" coords="32,70,159,96"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="216,68,160,78,159,73,221,67"/>
+<area shape="rect" id="Node000001" title="Возвращает неизменяемую копию списка всех задач" alt="" coords="180,5,354,46"/>
+<area shape="rect" id="Node000002" href="$classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834" title="Метод остановки приложения" alt="" coords="5,13,132,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,26,132,28,132,23,167,25"/>
 </map>

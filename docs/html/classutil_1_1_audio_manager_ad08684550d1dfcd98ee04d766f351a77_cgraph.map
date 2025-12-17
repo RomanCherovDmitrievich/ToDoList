@@ -1,0 +1,5 @@
+<map id="util.AudioManager.volumeUp" name="util.AudioManager.volumeUp">
+<area shape="rect" id="Node000001" title="Увеличивает громкость фоновой музыки" alt="" coords="5,13,193,38"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_audio_manager.html#ab4d51ce72880ce4ed08ce0b10eac6044" title="Устанавливает громкость фоновой музыки" alt="" coords="241,5,422,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,23,228,25,223,26,193,28"/>
+</map>

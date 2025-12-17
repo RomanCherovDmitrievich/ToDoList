@@ -9,5 +9,6 @@ var searchData=
   ['completed_6',['completed',['../classmodel_1_1_task.html#a05c129aa054e0d7d98d701724f7956da',1,'model.Task.completed'],['../classviewmodel_1_1_task_view_model.html#abac2ca51dc0b6b90ff866c71c3371930',1,'viewmodel.TaskViewModel.completed']]],
   ['createbutton_7',['createButton',['../classview_1_1_new_task_controller.html#acb6273d4d43093cfca439fa7726ee94a',1,'view::NewTaskController']]],
   ['createdat_8',['createdAt',['../classmodel_1_1_task.html#a20967dcf39425b7ec0e2aecec7b6f9a4',1,'model.Task.createdAt'],['../classviewmodel_1_1_task_view_model.html#ae66ade7b1fc8d06fd1dfba6560f94ad3',1,'viewmodel.TaskViewModel.createdAt']]],
-  ['createdtask_9',['createdTask',['../classview_1_1_new_task_controller.html#ad986e4c590209dabc8ea088365828014',1,'view::NewTaskController']]]
+  ['createdtask_9',['createdTask',['../classview_1_1_new_task_controller.html#ad986e4c590209dabc8ea088365828014',1,'view::NewTaskController']]],
+  ['currenttrackindex_10',['currentTrackIndex',['../classutil_1_1_audio_manager.html#a4d147a5aa1c070faec91594ce67d141f',1,'util::AudioManager']]]
 ];

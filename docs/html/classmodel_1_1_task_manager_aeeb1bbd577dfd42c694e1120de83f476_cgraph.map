@@ -1,7 +1,0 @@
-<map id="model.TaskManager.searchTasks" name="model.TaskManager.searchTasks">
-<area shape="rect" id="Node000001" title="Выполняет поиск задач по тексту" alt="" coords="5,5,186,46"/>
-<area shape="rect" id="Node000002" href="$classmodel_1_1_task_manager.html#abc809a0b2d184494368cc5cc6dae6346" title="Возвращает копию списка всех задач" alt="" coords="234,5,408,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,23,220,25,215,26,186,28"/>
-<area shape="rect" id="Node000003" href="$classmodel_1_1_task_manager.html#a6ff214cd422dcd5f0d8c5d573cd251b6" title="Проверяет все задачи на просроченность" alt="" coords="456,5,647,46"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="408,23,443,26,438,26,408,28"/>
-</map>

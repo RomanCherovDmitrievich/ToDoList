@@ -1,0 +1,33 @@
+<map id="util.JsonUtil.getFullPath" name="util.JsonUtil.getFullPath">
+<area shape="rect" id="Node000001" title="Возвращает полный путь к файлу задач" alt="" coords="683,96,844,121"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_json_util.html#ae911700fb851d4f6e7a7e4283ab3f654" title="Очищает файл задач" alt="" coords="462,21,634,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="715,89,634,60,601,50,601,44,636,55,720,89"/>
+<area shape="rect" id="Node000003" href="$classutil_1_1_json_util.html#a3dd1f85ca03096b50444f662632f0e01" title="Резервное копирование файла задач" alt="" coords="461,70,635,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="665,98,636,96,635,91,671,97"/>
+<area shape="rect" id="Node000004" href="$classutil_1_1_json_util.html#a2a80078f88c932a5ab230d4775c2391d" title="Загружает все задачи из JSON файла" alt="" coords="472,120,625,145"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="666,120,626,126,625,121,671,118"/>
+<area shape="rect" id="Node000010" href="$classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421" title="Сохраняет все задачи в JSON файл" alt="" coords="470,197,627,222"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="723,127,579,199,576,194,718,129"/>
+<area shape="rect" id="Node000005" href="$classutil_1_1_json_util.html#ac6e9a870e12429cc80b4ddf8ba98af0d" title="Добавляет одну задачу в файл" alt="" coords="254,70,397,96"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="470,116,387,99,386,94,475,115"/>
+<area shape="rect" id="Node000006" href="$classview_1_1_main_controller.html#af03ff4fe034cfc97fd82327d0e618e59" title="Загружает задачи из файла и отображает их в таблице" alt="" coords="245,5,406,46"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="467,113,460,111,444,98,435,85,426,72,411,60,393,49,393,44,415,55,430,69,439,82,448,94,462,106,473,113"/>
+<area shape="rect" id="Node000008" href="$classutil_1_1_json_util.html#a9911e93dd04ddd5151397f9a50e2811f" title="Удаляет задачу по ID." alt="" coords="243,120,408,145"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="454,133,409,135,408,130,459,131"/>
+<area shape="rect" id="Node000009" href="$classutil_1_1_json_util.html#a48c5f07142384cff793469f5aec70968" title="Обновляет задачу" alt="" coords="245,169,406,194"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="470,150,388,171,386,166,474,148"/>
+<area shape="rect" id="Node000007" href="$classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,185,190,210"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="243,55,239,60,198,91,162,126,111,186,107,183,158,122,195,87,236,55,247,51"/>
+<area shape="poly" id="edge10_Node000010_Node000005" title=" " alt="" coords="505,189,459,160,445,146,436,133,426,121,412,109,391,99,390,94,414,105,430,117,440,129,449,142,463,156,510,189"/>
+<area shape="poly" id="edge13_Node000010_Node000008" title=" " alt="" coords="499,191,412,159,379,148,378,143,414,154,505,190"/>
+<area shape="poly" id="edge17_Node000010_Node000009" title=" " alt="" coords="452,199,407,194,406,189,457,197"/>
+<area shape="rect" id="Node000011" href="$classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title="Обработчик кнопки добавления новой задачи" alt="" coords="238,219,413,259"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="452,223,414,230,413,225,457,221"/>
+<area shape="rect" id="Node000012" href="$classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title="Обработчик кнопки удаления задачи" alt="" coords="238,284,413,325"/>
+<area shape="poly" id="edge12_Node000010_Node000012" title=" " alt="" coords="508,228,414,273,383,286,381,281,412,269,503,231"/>
+<area shape="rect" id="Node000013" href="$classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title="Настраивает колонки таблицы задач" alt="" coords="241,349,410,390"/>
+<area shape="poly" id="edge14_Node000010_Node000013" title=" " alt="" coords="528,233,479,287,448,314,414,339,390,351,388,346,412,334,445,310,475,283,524,236"/>
+<area shape="rect" id="Node000014" href="$classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834" title="Метод остановки приложения" alt="" coords="262,414,388,440"/>
+<area shape="poly" id="edge16_Node000010_Node000014" title=" " alt="" coords="537,235,519,275,492,320,457,365,415,404,390,417,388,412,411,399,453,362,487,317,514,273,533,238"/>
+<area shape="poly" id="edge15_Node000013_Node000007" title=" " alt="" coords="244,342,236,339,195,307,158,272,108,214,109,208,162,268,199,303,239,334,250,342"/>
+</map>

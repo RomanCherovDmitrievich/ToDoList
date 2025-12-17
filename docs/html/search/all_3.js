@@ -10,7 +10,7 @@ var searchData=
   ['checkalltasksoverdue_7',['checkAllTasksOverdue',['../classmodel_1_1_task_manager.html#a6ff214cd422dcd5f0d8c5d573cd251b6',1,'model::TaskManager']]],
   ['checkoverdue_8',['checkOverdue',['../classmodel_1_1_task.html#a51d5d85ac6843e7c4631f7ab9b24853e',1,'model::Task']]],
   ['circle_9',['circle',['../classview_1_1_main_controller_1_1_snowflake_data.html#a18f663947362a2ffbc1243cb8ce393c2',1,'view.MainController.SnowflakeData.circle'],['../classview_1_1_snowflake_animation_1_1_snowflake.html#a8d4537ce1fd08a8521160cf99f7d4ef4',1,'view.SnowflakeAnimation.Snowflake.circle']]],
-  ['clearalltasks_10',['clearAllTasks',['../classmodel_1_1_task_manager.html#adcdfb8fc100b092808161ba2a72d4ee5',1,'model.TaskManager.clearAllTasks()'],['../classutil_1_1_json_util.html#ae911700fb851d4f6e7a7e4283ab3f654',1,'util.JsonUtil.clearAllTasks()']]],
+  ['clearalltasks_10',['clearAllTasks',['../classmodel_1_1_task_manager.html#adcdfb8fc100b092808161ba2a72d4ee5',1,'model.TaskManager.clearAllTasks()'],['../classutil_1_1_json_util.html#ae911700fb851d4f6e7a7e4283ab3f654',1,'util.JsonUtil.clearAllTasks()'],['../classutil_1_1_json_util.html#a6d28c92afdc46b0aeab751d685fde26a',1,'util.JsonUtil.clearAllTasks(String filePath)']]],
   ['color_11',['color',['../enummodel_1_1_category.html#a7fd966ef14b6ec1099efa7f53d262f49',1,'model.Category.color'],['../enummodel_1_1_priority.html#aaa3e4c889a0937ed6ce37b26bf9cc2f1',1,'model.Priority.color']]],
   ['completed_12',['completed',['../classmodel_1_1_task.html#a05c129aa054e0d7d98d701724f7956da',1,'model.Task.completed'],['../classviewmodel_1_1_task_view_model.html#abac2ca51dc0b6b90ff866c71c3371930',1,'viewmodel.TaskViewModel.completed']]],
   ['completedproperty_13',['completedProperty',['../classviewmodel_1_1_task_view_model.html#a99d8237ca04d46fdcc2f00c04ee064f4',1,'viewmodel::TaskViewModel']]],
@@ -20,6 +20,8 @@ var searchData=
   ['createdat_17',['createdAt',['../classmodel_1_1_task.html#a20967dcf39425b7ec0e2aecec7b6f9a4',1,'model.Task.createdAt'],['../classviewmodel_1_1_task_view_model.html#ae66ade7b1fc8d06fd1dfba6560f94ad3',1,'viewmodel.TaskViewModel.createdAt']]],
   ['createdatproperty_18',['createdAtProperty',['../classviewmodel_1_1_task_view_model.html#a46792a8fe06ca7f494a3253118f72da7',1,'viewmodel::TaskViewModel']]],
   ['createdtask_19',['createdTask',['../classview_1_1_new_task_controller.html#ad986e4c590209dabc8ea088365828014',1,'view::NewTaskController']]],
-  ['createsnowflake_20',['createSnowflake',['../classview_1_1_snowflake_animation.html#a6d24131cdec8106f0705a107f30a538a',1,'view::SnowflakeAnimation']]],
-  ['createsnowflakesforwindow_21',['createSnowflakesForWindow',['../classview_1_1_main_controller.html#ab66a02b22de6d12575196237192dbc81',1,'view::MainController']]]
+  ['createdummyplaylist_20',['createDummyPlaylist',['../classutil_1_1_audio_manager.html#a81106e6d53cede222377cb7bed147423',1,'util::AudioManager']]],
+  ['createsnowflake_21',['createSnowflake',['../classview_1_1_snowflake_animation.html#a6d24131cdec8106f0705a107f30a538a',1,'view::SnowflakeAnimation']]],
+  ['createsnowflakesforwindow_22',['createSnowflakesForWindow',['../classview_1_1_main_controller.html#ab66a02b22de6d12575196237192dbc81',1,'view::MainController']]],
+  ['currenttrackindex_23',['currentTrackIndex',['../classutil_1_1_audio_manager.html#a4d147a5aa1c070faec91594ce67d141f',1,'util::AudioManager']]]
 ];

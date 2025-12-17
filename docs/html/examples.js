@@ -1,7 +1,7 @@
 var examples =
 [
-    [ "/Users/sigm/Work/Institut/5semestr/OOP_Java/Project2/src/model/Category.java", "_2_users_2sigm_2_work_2_institut_25semestr_2_o_o_p__java_2_project2_2src_2model_2_category_8java-example.html", null ],
-    [ "/Users/sigm/Work/Institut/5semestr/OOP_Java/Project2/src/model/Priority.java", "_2_users_2sigm_2_work_2_institut_25semestr_2_o_o_p__java_2_project2_2src_2model_2_priority_8java-example.html", null ],
+    [ "/Users/sigm/Work/Institut/5semestr/OOP_Java/Project/src/model/Category.java", "_2_users_2sigm_2_work_2_institut_25semestr_2_o_o_p__java_2_project_2src_2model_2_category_8java-example.html", null ],
+    [ "/Users/sigm/Work/Institut/5semestr/OOP_Java/Project/src/model/Priority.java", "_2_users_2sigm_2_work_2_institut_25semestr_2_o_o_p__java_2_project_2src_2model_2_priority_8java-example.html", null ],
     [ "31.12.2025 09:00", "31_812_82025_0109_100-example.html", null ],
     [ "31.12.2025 18:00", "31_812_82025_0118_100-example.html", null ],
     [ "31.12.2025", "31_812_82025-example.html", null ],

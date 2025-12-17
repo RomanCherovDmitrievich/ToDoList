@@ -1,0 +1,9 @@
+<map id="util.JsonUtil.saveTasksToPath" name="util.JsonUtil.saveTasksToPath">
+<area shape="rect" id="Node000001" title="Сохраняет задачи в указанный путь" alt="" coords="5,13,204,38"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="252,5,424,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,23,239,26,233,26,204,28"/>
+<area shape="rect" id="Node000003" href="$classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="472,13,637,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="424,23,459,26,454,26,424,28"/>
+<area shape="rect" id="Node000004" href="$classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="685,13,848,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="637,23,672,26,667,26,638,28"/>
+</map>
