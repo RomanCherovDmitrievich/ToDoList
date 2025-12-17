@@ -10,6 +10,7 @@ build/
 bin/
 dist/
 out/
+lib/
 
 # === JavaFX SDK и нативные библиотеки ===
 javafx-sdk*/
