@@ -9,11 +9,7 @@ var searchData=
   ['initsnowflakes_6',['initSnowflakes',['../classview_1_1_main_controller.html#a176bf2a7ba00056ac7a14652c6650c2d',1,'view::MainController']]],
   ['instance_7',['instance',['../classmodel_1_1_task_manager.html#aaa6f3dca38b29f6106f5f5c781caf626',1,'model.TaskManager.instance'],['../classutil_1_1_audio_manager.html#a3fda3878e3ef5d2cba54657417d98670',1,'util.AudioManager.instance']]],
   ['iscompleted_8',['isCompleted',['../classmodel_1_1_task.html#a9e92e43dca03f30943efdb87b476e71c',1,'model.Task.isCompleted()'],['../classviewmodel_1_1_task_view_model.html#a6b568ef75542da4868a533844bbbe3a1',1,'viewmodel.TaskViewModel.isCompleted()']]],
-  ['ismusicenabled_9',['isMusicEnabled',['../classutil_1_1_audio_manager.html#a738ae5fbd5b6f5e43fec1e5aa1c971b5',1,'util::AudioManager']]],
-  ['ismusicplaying_10',['isMusicPlaying',['../classutil_1_1_audio_manager.html#af18b0caf2246b7a9ca130310741c8f88',1,'util::AudioManager']]],
-  ['isoverdue_11',['isOverdue',['../classmodel_1_1_task.html#a6c49d13cb1e76676ef53876e9acc3ca4',1,'model.Task.isOverdue()'],['../classviewmodel_1_1_task_view_model.html#a81effd078fee106eea52436907468ed9',1,'viewmodel.TaskViewModel.isOverdue()']]],
-  ['isrepeatmode_12',['isRepeatMode',['../classutil_1_1_audio_manager.html#a6f8304f84d369ecf9aeaa16c4af9a5a5',1,'util::AudioManager']]],
-  ['isshufflemode_13',['isShuffleMode',['../classutil_1_1_audio_manager.html#aa79967e4316fe9d69ac6a87e28cc95dc',1,'util::AudioManager']]],
-  ['issoundsenabled_14',['isSoundsEnabled',['../classutil_1_1_audio_manager.html#a62a0acbea9b3248bf06398f2dfdeda4c',1,'util::AudioManager']]],
-  ['istaskcreated_15',['isTaskCreated',['../classview_1_1_new_task_controller.html#ad985a55d5cf42453ff70863d8619713b',1,'view::NewTaskController']]]
+  ['isoverdue_9',['isOverdue',['../classmodel_1_1_task.html#a6c49d13cb1e76676ef53876e9acc3ca4',1,'model.Task.isOverdue()'],['../classviewmodel_1_1_task_view_model.html#a81effd078fee106eea52436907468ed9',1,'viewmodel.TaskViewModel.isOverdue()']]],
+  ['issoundsenabled_10',['isSoundsEnabled',['../classutil_1_1_audio_manager.html#a62a0acbea9b3248bf06398f2dfdeda4c',1,'util::AudioManager']]],
+  ['istaskcreated_11',['isTaskCreated',['../classview_1_1_new_task_controller.html#ad985a55d5cf42453ff70863d8619713b',1,'view::NewTaskController']]]
 ];

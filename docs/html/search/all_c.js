@@ -9,10 +9,8 @@ var searchData=
   ['mainpage_2edox_6',['mainpage.dox',['../mainpage_8dox.html',1,'']]],
   ['mainview_2efxml_7',['MainView.fxml',['../_main_view_8fxml.html',1,'']]],
   ['markascompleted_8',['markAsCompleted',['../classmodel_1_1_task_manager.html#a3be20318c826cf81cdd44962c31bbf86',1,'model::TaskManager']]],
-  ['min_5fheight_9',['MIN_HEIGHT',['../classapp_1_1_main_app.html#adb5ea69d0160842c8866b1482238712b',1,'app::MainApp']]],
-  ['min_5fwidth_10',['MIN_WIDTH',['../classapp_1_1_main_app.html#a37ee9c5df8c0291fa0a35f78cbd54e0d',1,'app::MainApp']]],
-  ['model_11',['model',['../namespacemodel.html',1,'']]],
-  ['musicenabled_12',['musicEnabled',['../classutil_1_1_audio_manager.html#a95412a4c27fa4ea15b4ec884b2c20a8d',1,'util::AudioManager']]],
-  ['musicplaylist_13',['musicPlaylist',['../classutil_1_1_audio_manager.html#a237dca2ac01c0228cd38f022e3e1a2fa',1,'util::AudioManager']]],
-  ['musicvolume_14',['musicVolume',['../classutil_1_1_audio_manager.html#ab025a08bfe77322b40d9bbc53d52e9bb',1,'util::AudioManager']]]
+  ['mediaplayers_9',['mediaPlayers',['../classutil_1_1_audio_manager.html#ad821ccdc501aee02b922c7a780481422',1,'util::AudioManager']]],
+  ['min_5fheight_10',['MIN_HEIGHT',['../classapp_1_1_main_app.html#adb5ea69d0160842c8866b1482238712b',1,'app::MainApp']]],
+  ['min_5fwidth_11',['MIN_WIDTH',['../classapp_1_1_main_app.html#a37ee9c5df8c0291fa0a35f78cbd54e0d',1,'app::MainApp']]],
+  ['model_12',['model',['../namespacemodel.html',1,'']]]
 ];

@@ -1,9 +1,0 @@
-<map id="util.AudioManager.stopMusic" name="util.AudioManager.stopMusic">
-<area shape="rect" id="Node000001" title="Полностью останавливает фоновую музыку" alt="" coords="456,46,644,72"/>
-<area shape="rect" id="Node000002" href="$classutil_1_1_audio_manager.html#a558439aa3ed6db6e98129f9752e516f6" title="Включает/выключает фоновую музыку" alt="" coords="227,5,408,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="438,43,409,41,409,36,443,43"/>
-<area shape="rect" id="Node000003" href="$classutil_1_1_audio_manager.html#a4bd7828b5012fb5ecc3047e2fd9a62f2" title="Останавливает все звуки" alt="" coords="233,71,402,111"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="443,74,402,82,402,77,438,74"/>
-<area shape="rect" id="Node000004" href="$classutil_1_1_audio_manager.html#a67ab556a4d2e6faff27ec5b80d97220c" title="Освобождает ресурсы" alt="" coords="5,78,179,104"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="215,91,179,94,179,88,221,91"/>
-</map>

@@ -189,7 +189,7 @@ $(function(){initNavTree('classmodel_1_1_task.html','','classmodel_1_1_task-memb
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Закрытые статические данные</h2></td></tr>
-<tr class="memitem:a4976fbdff14534c011de338c8d8d75ce" id="r_a4976fbdff14534c011de338c8d8d75ce"><td class="memItemLeft" align="right" valign="top">static final DateTimeFormatter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4976fbdff14534c011de338c8d8d75ce">FORMATTER</a></td></tr>
+<tr class="memitem:a4976fbdff14534c011de338c8d8d75ce" id="r_a4976fbdff14534c011de338c8d8d75ce"><td class="memItemLeft" align="right" valign="top">static final DateTimeFormatter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4976fbdff14534c011de338c8d8d75ce">FORMATTER</a> = DateTimeFormatter.ISO_LOCAL_DATE_TIME</td></tr>
 <tr class="memdesc:a4976fbdff14534c011de338c8d8d75ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Форматер для даты и времени  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
@@ -273,7 +273,7 @@ ID задачи генерируется автоматически при со�
 <dd>
 ID генерируется с помощью UUID.randomUUID() </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00121">121</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00120">120</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00073">category</a>, <a class="el" href="_task_8java_source.html#l00048">description</a>, <a class="el" href="_task_8java_source.html#l00061">endTime</a>, <a class="el" href="_priority_8java_source.html#l00184">model.Priority.getDefault()</a>, <a class="el" href="_category_8java_source.html#l00051">model.Category.OTHER</a>, <a class="el" href="_task_8java_source.html#l00067">priority</a>, <a class="el" href="_task_8java_source.html#l00054">startTime</a> и <a class="el" href="_task_8java_source.html#l00042">title</a>.</p>
 <div class="dynheader">
@@ -380,9 +380,9 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 Автоматически вызывает <a class="el" href="#a51d5d85ac6843e7c4631f7ab9b24853e" title="Проверяет, не просрочена ли задача">checkOverdue()</a> после создания</dd></dl>
 <dl class="section see"><dt>См. также</dt><dd><a class="el" href="classutil_1_1_json_util.html" title="Утилита для загрузки и сохранения задач в формате JSON.">util.JsonUtil</a> </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00164">164</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00163">163</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00073">category</a>, <a class="el" href="_task_8java_source.html#l00193">checkOverdue()</a>, <a class="el" href="_task_8java_source.html#l00079">completed</a>, <a class="el" href="_task_8java_source.html#l00092">createdAt</a>, <a class="el" href="_task_8java_source.html#l00048">description</a>, <a class="el" href="_task_8java_source.html#l00061">endTime</a>, <a class="el" href="_task_8java_source.html#l00102">FORMATTER</a>, <a class="el" href="_task_8java_source.html#l00036">id</a>, <a class="el" href="_task_8java_source.html#l00086">overdue</a>, <a class="el" href="_task_8java_source.html#l00067">priority</a>, <a class="el" href="_task_8java_source.html#l00054">startTime</a> и <a class="el" href="_task_8java_source.html#l00042">title</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00073">category</a>, <a class="el" href="_task_8java_source.html#l00192">checkOverdue()</a>, <a class="el" href="_task_8java_source.html#l00079">completed</a>, <a class="el" href="_task_8java_source.html#l00092">createdAt</a>, <a class="el" href="_task_8java_source.html#l00048">description</a>, <a class="el" href="_task_8java_source.html#l00061">endTime</a>, <a class="el" href="_task_8java_source.html#l00102">FORMATTER</a>, <a class="el" href="_task_8java_source.html#l00036">id</a>, <a class="el" href="_task_8java_source.html#l00086">overdue</a>, <a class="el" href="_task_8java_source.html#l00067">priority</a>, <a class="el" href="_task_8java_source.html#l00054">startTime</a> и <a class="el" href="_task_8java_source.html#l00042">title</a>.</p>
 <div class="dynheader">
 Граф вызовов:</div>
 <div class="dyncontent">
@@ -421,11 +421,11 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 <dd>
 <a class="el" href="#a1f753adaaf4a456af6ecb36ae340c238" title="Устанавливает статус выполнения задачи">setCompleted(boolean)</a> </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00193">193</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00192">192</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00079">completed</a> и <a class="el" href="_task_8java_source.html#l00061">endTime</a>.</p>
 
-<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00287">setEndTime()</a> и <a class="el" href="_task_8java_source.html#l00164">Task()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00286">setEndTime()</a> и <a class="el" href="_task_8java_source.html#l00163">Task()</a>.</p>
 <div class="dynheader">
 Граф вызова функции:</div>
 <div class="dyncontent">
@@ -475,9 +475,9 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 <dl class="section return"><dt>Возвращает</dt><dd>String Строка с экранированными символами</dd></dl>
 <dl class="section note"><dt>Заметки</dt><dd>Экранирует: кавычки, переносы строк, возвраты каретки, табуляции </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00392">392</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00391">391</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00355">toJsonString()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00354">toJsonString()</a>.</p>
 <div class="dynheader">
 Граф вызова функции:</div>
 <div class="dyncontent">
@@ -537,7 +537,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 <p>Возвращает категорию задачи </p>
 <dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="enummodel_1_1_category.html">Category</a> Категория задачи </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00240">240</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00239">239</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00073">category</a>.</p>
 
@@ -561,7 +561,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 <p>Возвращает дату создания задачи </p>
 <dl class="section return"><dt>Возвращает</dt><dd>LocalDateTime Дата и время создания задачи </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00258">258</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00257">257</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00092">createdAt</a>.</p>
 
@@ -585,7 +585,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 <p>Возвращает описание задачи </p>
 <dl class="section return"><dt>Возвращает</dt><dd>String Описание задачи </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00216">216</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00215">215</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00048">description</a>.</p>
 
@@ -609,7 +609,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 <p>Возвращает время окончания задачи </p>
 <dl class="section return"><dt>Возвращает</dt><dd>LocalDateTime Время окончания (дедлайн) </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00228">228</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00227">227</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00061">endTime</a>.</p>
 
@@ -637,7 +637,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 <dd>
 Отображается в TableView и диалоговых окнах </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00340">340</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00339">339</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00061">endTime</a>.</p>
 
@@ -663,7 +663,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 <dl class="section return"><dt>Возвращает</dt><dd>String Время начала в формате "dd.MM.yyyy HH:mm"</dd></dl>
 <dl class="section note"><dt>Заметки</dt><dd>Используется для отображения в пользовательском интерфейсе </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00327">327</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00326">326</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00054">startTime</a>.</p>
 
@@ -687,7 +687,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 <p>Возвращает уникальный идентификатор задачи </p>
 <dl class="section return"><dt>Возвращает</dt><dd>String Уникальный ID задачи </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00204">204</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00203">203</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00036">id</a>.</p>
 
@@ -723,7 +723,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 <p>Возвращает приоритет задачи </p>
 <dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="enummodel_1_1_priority.html">Priority</a> Приоритет задачи </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00234">234</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00233">233</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00067">priority</a>.</p>
 
@@ -747,7 +747,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 <p>Возвращает время начала задачи </p>
 <dl class="section return"><dt>Возвращает</dt><dd>LocalDateTime Время начала </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00222">222</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00221">221</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00054">startTime</a>.</p>
 
@@ -771,7 +771,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 <p>Возвращает заголовок задачи </p>
 <dl class="section return"><dt>Возвращает</dt><dd>String Заголовок задачи </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00210">210</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00209">209</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00042">title</a>.</p>
 
@@ -795,7 +795,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 <p>Проверяет, выполнена ли задача </p>
 <dl class="section return"><dt>Возвращает</dt><dd>boolean true если задача выполнена, иначе false </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00246">246</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00245">245</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00079">completed</a>.</p>
 
@@ -819,7 +819,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 <p>Проверяет, просрочена ли задача </p>
 <dl class="section return"><dt>Возвращает</dt><dd>boolean true если задача просрочена, иначе false </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00252">252</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00251">251</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00086">overdue</a>.</p>
 
@@ -848,7 +848,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00302">302</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00301">301</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00073">category</a>.</p>
 
@@ -879,7 +879,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 </dl>
 <dl class="section note"><dt>Заметки</dt><dd>Если задача помечается как выполненная, она не может быть просроченной </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00312">312</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00311">311</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00079">completed</a>.</p>
 
@@ -908,7 +908,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00271">271</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00270">270</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00048">description</a>.</p>
 
@@ -939,9 +939,9 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 </dl>
 <dl class="section see"><dt>См. также</dt><dd><a class="el" href="#a51d5d85ac6843e7c4631f7ab9b24853e" title="Проверяет, не просрочена ли задача">checkOverdue()</a> </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00287">287</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00286">286</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00193">checkOverdue()</a> и <a class="el" href="_task_8java_source.html#l00061">endTime</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00192">checkOverdue()</a> и <a class="el" href="_task_8java_source.html#l00061">endTime</a>.</p>
 <div class="dynheader">
 Граф вызовов:</div>
 <div class="dyncontent">
@@ -978,7 +978,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00296">296</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00295">295</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00067">priority</a>.</p>
 
@@ -1007,7 +1007,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00277">277</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00276">276</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00054">startTime</a>.</p>
 
@@ -1036,7 +1036,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00265">265</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00264">264</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00042">title</a>.</p>
 
@@ -1064,9 +1064,9 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 <dl class="section warning"><dt>Предупреждения</dt><dd>Не использовать для отображения пользователю</dd></dl>
 <dl class="section see"><dt>См. также</dt><dd>util.JsonUtil#saveTasks(List) </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00355">355</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00354">354</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00073">category</a>, <a class="el" href="_task_8java_source.html#l00079">completed</a>, <a class="el" href="_task_8java_source.html#l00092">createdAt</a>, <a class="el" href="_task_8java_source.html#l00048">description</a>, <a class="el" href="_task_8java_source.html#l00061">endTime</a>, <a class="el" href="_task_8java_source.html#l00392">escapeJson()</a>, <a class="el" href="_task_8java_source.html#l00086">overdue</a>, <a class="el" href="_task_8java_source.html#l00067">priority</a>, <a class="el" href="_task_8java_source.html#l00054">startTime</a> и <a class="el" href="_task_8java_source.html#l00042">title</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00073">category</a>, <a class="el" href="_task_8java_source.html#l00079">completed</a>, <a class="el" href="_task_8java_source.html#l00092">createdAt</a>, <a class="el" href="_task_8java_source.html#l00048">description</a>, <a class="el" href="_task_8java_source.html#l00061">endTime</a>, <a class="el" href="_task_8java_source.html#l00391">escapeJson()</a>, <a class="el" href="_task_8java_source.html#l00086">overdue</a>, <a class="el" href="_task_8java_source.html#l00067">priority</a>, <a class="el" href="_task_8java_source.html#l00054">startTime</a> и <a class="el" href="_task_8java_source.html#l00042">title</a>.</p>
 
 <p class="reference">Используется в <a class="el" href="_json_util_8java_source.html#l00319">util.JsonUtil.convertTasksToJson()</a>.</p>
 <div class="dynheader">
@@ -1138,7 +1138,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 <dl class="section return"><dt>Возвращает</dt><dd>String Строковое представление задачи</dd></dl>
 <dl class="section note"><dt>Заметки</dt><dd>Используется для отладки и логгирования </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00412">412</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00411">411</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_8java_source.html#l00067">priority</a> и <a class="el" href="_task_8java_source.html#l00042">title</a>.</p>
 
@@ -1170,7 +1170,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 
 <p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00073">73</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00240">getCategory()</a>, <a class="el" href="_task_8java_source.html#l00302">setCategory()</a>, <a class="el" href="_task_8java_source.html#l00164">Task()</a>, <a class="el" href="_task_8java_source.html#l00121">Task()</a> и <a class="el" href="_task_8java_source.html#l00355">toJsonString()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00239">getCategory()</a>, <a class="el" href="_task_8java_source.html#l00301">setCategory()</a>, <a class="el" href="_task_8java_source.html#l00163">Task()</a>, <a class="el" href="_task_8java_source.html#l00120">Task()</a> и <a class="el" href="_task_8java_source.html#l00354">toJsonString()</a>.</p>
 
 </div>
 </div>
@@ -1199,7 +1199,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 
 <p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00079">79</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00193">checkOverdue()</a>, <a class="el" href="_task_8java_source.html#l00246">isCompleted()</a>, <a class="el" href="_task_8java_source.html#l00312">setCompleted()</a>, <a class="el" href="_task_8java_source.html#l00164">Task()</a> и <a class="el" href="_task_8java_source.html#l00355">toJsonString()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00192">checkOverdue()</a>, <a class="el" href="_task_8java_source.html#l00245">isCompleted()</a>, <a class="el" href="_task_8java_source.html#l00311">setCompleted()</a>, <a class="el" href="_task_8java_source.html#l00163">Task()</a> и <a class="el" href="_task_8java_source.html#l00354">toJsonString()</a>.</p>
 
 </div>
 </div>
@@ -1228,7 +1228,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 
 <p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00092">92</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00258">getCreatedAt()</a>, <a class="el" href="_task_8java_source.html#l00164">Task()</a> и <a class="el" href="_task_8java_source.html#l00355">toJsonString()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00257">getCreatedAt()</a>, <a class="el" href="_task_8java_source.html#l00163">Task()</a> и <a class="el" href="_task_8java_source.html#l00354">toJsonString()</a>.</p>
 
 </div>
 </div>
@@ -1257,7 +1257,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 
 <p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00048">48</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00216">getDescription()</a>, <a class="el" href="_task_8java_source.html#l00271">setDescription()</a>, <a class="el" href="_task_8java_source.html#l00164">Task()</a>, <a class="el" href="_task_8java_source.html#l00121">Task()</a> и <a class="el" href="_task_8java_source.html#l00355">toJsonString()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00215">getDescription()</a>, <a class="el" href="_task_8java_source.html#l00270">setDescription()</a>, <a class="el" href="_task_8java_source.html#l00163">Task()</a>, <a class="el" href="_task_8java_source.html#l00120">Task()</a> и <a class="el" href="_task_8java_source.html#l00354">toJsonString()</a>.</p>
 
 </div>
 </div>
@@ -1286,7 +1286,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 
 <p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00061">61</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00193">checkOverdue()</a>, <a class="el" href="_task_8java_source.html#l00228">getEndTime()</a>, <a class="el" href="_task_8java_source.html#l00340">getFormattedEndTime()</a>, <a class="el" href="_task_8java_source.html#l00287">setEndTime()</a>, <a class="el" href="_task_8java_source.html#l00164">Task()</a>, <a class="el" href="_task_8java_source.html#l00121">Task()</a> и <a class="el" href="_task_8java_source.html#l00355">toJsonString()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00192">checkOverdue()</a>, <a class="el" href="_task_8java_source.html#l00227">getEndTime()</a>, <a class="el" href="_task_8java_source.html#l00339">getFormattedEndTime()</a>, <a class="el" href="_task_8java_source.html#l00286">setEndTime()</a>, <a class="el" href="_task_8java_source.html#l00163">Task()</a>, <a class="el" href="_task_8java_source.html#l00120">Task()</a> и <a class="el" href="_task_8java_source.html#l00354">toJsonString()</a>.</p>
 
 </div>
 </div>
@@ -1300,7 +1300,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">final DateTimeFormatter model.Task.FORMATTER</td>
+          <td class="memname">final DateTimeFormatter model.Task.FORMATTER = DateTimeFormatter.ISO_LOCAL_DATE_TIME</td>
         </tr>
       </table>
   </td>
@@ -1309,16 +1309,14 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Инициализатор</b><div class="fragment"><div class="line">= </div>
-<div class="line">        DateTimeFormatter.ofPattern(<span class="stringliteral">&quot;yyyy-MM-dd&#39;T&#39;HH:mm:ss&quot;</span>)</div>
-</div><!-- fragment -->
+
 <p>Форматер для даты и времени </p>
 <p>Используется для сериализации и десериализации дат в JSON Сериализация — это преобразование данных в JSON, например, запись в файл. Десериализация — это обратное преобразование, например, преобразование строки JSON в структуру (или любой другой тип, который может быть записан в формат данных JSON).</p>
 <dl class="section note"><dt>Заметки</dt><dd>Формат: "yyyy-MM-dd'T'HH:mm:ss" (ISO-like) </dd></dl>
 
 <p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00102">102</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00164">Task()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00163">Task()</a>.</p>
 
 </div>
 </div>
@@ -1347,7 +1345,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 
 <p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00036">36</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00204">getId()</a> и <a class="el" href="_task_8java_source.html#l00164">Task()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00203">getId()</a> и <a class="el" href="_task_8java_source.html#l00163">Task()</a>.</p>
 
 </div>
 </div>
@@ -1376,7 +1374,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 
 <p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00086">86</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00252">isOverdue()</a>, <a class="el" href="_task_8java_source.html#l00164">Task()</a> и <a class="el" href="_task_8java_source.html#l00355">toJsonString()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00251">isOverdue()</a>, <a class="el" href="_task_8java_source.html#l00163">Task()</a> и <a class="el" href="_task_8java_source.html#l00354">toJsonString()</a>.</p>
 
 </div>
 </div>
@@ -1405,7 +1403,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 
 <p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00067">67</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00234">getPriority()</a>, <a class="el" href="_task_8java_source.html#l00296">setPriority()</a>, <a class="el" href="_task_8java_source.html#l00164">Task()</a>, <a class="el" href="_task_8java_source.html#l00121">Task()</a>, <a class="el" href="_task_8java_source.html#l00355">toJsonString()</a> и <a class="el" href="_task_8java_source.html#l00412">toString()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00233">getPriority()</a>, <a class="el" href="_task_8java_source.html#l00295">setPriority()</a>, <a class="el" href="_task_8java_source.html#l00163">Task()</a>, <a class="el" href="_task_8java_source.html#l00120">Task()</a>, <a class="el" href="_task_8java_source.html#l00354">toJsonString()</a> и <a class="el" href="_task_8java_source.html#l00411">toString()</a>.</p>
 
 </div>
 </div>
@@ -1434,7 +1432,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 
 <p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00054">54</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00327">getFormattedStartTime()</a>, <a class="el" href="_task_8java_source.html#l00222">getStartTime()</a>, <a class="el" href="_task_8java_source.html#l00277">setStartTime()</a>, <a class="el" href="_task_8java_source.html#l00164">Task()</a>, <a class="el" href="_task_8java_source.html#l00121">Task()</a> и <a class="el" href="_task_8java_source.html#l00355">toJsonString()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00326">getFormattedStartTime()</a>, <a class="el" href="_task_8java_source.html#l00221">getStartTime()</a>, <a class="el" href="_task_8java_source.html#l00276">setStartTime()</a>, <a class="el" href="_task_8java_source.html#l00163">Task()</a>, <a class="el" href="_task_8java_source.html#l00120">Task()</a> и <a class="el" href="_task_8java_source.html#l00354">toJsonString()</a>.</p>
 
 </div>
 </div>
@@ -1463,7 +1461,7 @@ ID генерируется с помощью UUID.randomUUID() </dd></dl>
 
 <p class="definition">См. определение в файле <a class="el" href="_task_8java_source.html">Task.java</a> строка <a class="el" href="_task_8java_source.html#l00042">42</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00210">getTitle()</a>, <a class="el" href="_task_8java_source.html#l00265">setTitle()</a>, <a class="el" href="_task_8java_source.html#l00164">Task()</a>, <a class="el" href="_task_8java_source.html#l00121">Task()</a>, <a class="el" href="_task_8java_source.html#l00355">toJsonString()</a> и <a class="el" href="_task_8java_source.html#l00412">toString()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_8java_source.html#l00209">getTitle()</a>, <a class="el" href="_task_8java_source.html#l00264">setTitle()</a>, <a class="el" href="_task_8java_source.html#l00163">Task()</a>, <a class="el" href="_task_8java_source.html#l00120">Task()</a>, <a class="el" href="_task_8java_source.html#l00354">toJsonString()</a> и <a class="el" href="_task_8java_source.html#l00411">toString()</a>.</p>
 
 </div>
 </div>

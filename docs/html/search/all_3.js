@@ -20,8 +20,6 @@ var searchData=
   ['createdat_17',['createdAt',['../classmodel_1_1_task.html#a20967dcf39425b7ec0e2aecec7b6f9a4',1,'model.Task.createdAt'],['../classviewmodel_1_1_task_view_model.html#ae66ade7b1fc8d06fd1dfba6560f94ad3',1,'viewmodel.TaskViewModel.createdAt']]],
   ['createdatproperty_18',['createdAtProperty',['../classviewmodel_1_1_task_view_model.html#a46792a8fe06ca7f494a3253118f72da7',1,'viewmodel::TaskViewModel']]],
   ['createdtask_19',['createdTask',['../classview_1_1_new_task_controller.html#ad986e4c590209dabc8ea088365828014',1,'view::NewTaskController']]],
-  ['createdummyplaylist_20',['createDummyPlaylist',['../classutil_1_1_audio_manager.html#a81106e6d53cede222377cb7bed147423',1,'util::AudioManager']]],
-  ['createsnowflake_21',['createSnowflake',['../classview_1_1_snowflake_animation.html#a6d24131cdec8106f0705a107f30a538a',1,'view::SnowflakeAnimation']]],
-  ['createsnowflakesforwindow_22',['createSnowflakesForWindow',['../classview_1_1_main_controller.html#ab66a02b22de6d12575196237192dbc81',1,'view::MainController']]],
-  ['currenttrackindex_23',['currentTrackIndex',['../classutil_1_1_audio_manager.html#a4d147a5aa1c070faec91594ce67d141f',1,'util::AudioManager']]]
+  ['createsnowflake_20',['createSnowflake',['../classview_1_1_snowflake_animation.html#a6d24131cdec8106f0705a107f30a538a',1,'view::SnowflakeAnimation']]],
+  ['createsnowflakesforwindow_21',['createSnowflakesForWindow',['../classview_1_1_main_controller.html#ab66a02b22de6d12575196237192dbc81',1,'view::MainController']]]
 ];

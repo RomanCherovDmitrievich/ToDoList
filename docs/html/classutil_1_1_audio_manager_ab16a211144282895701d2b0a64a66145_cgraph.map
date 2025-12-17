@@ -1,17 +1,5 @@
 <map id="util.AudioManager.AudioManager" name="util.AudioManager.AudioManager">
-<area shape="rect" id="Node000001" title="Приватный конструктор" alt="" coords="5,112,217,137"/>
-<area shape="rect" id="Node000002" href="$classutil_1_1_audio_manager.html#a79997fcc03fd3b682f0a52b1d71eb91a" title="Загружает плейлист фоновой музыки" alt="" coords="266,71,453,111"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,108,253,105,248,106,212,113"/>
-<area shape="rect" id="Node000007" href="$classutil_1_1_audio_manager.html#a4197394f4db4c59183c41d3bd22addbe" title="Загружает звуковые эффекты приложения" alt="" coords="265,136,454,177"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="216,135,252,142,246,142,216,140"/>
-<area shape="rect" id="Node000003" href="$classutil_1_1_audio_manager.html#a81106e6d53cede222377cb7bed147423" title="Создает заглушечный плейлист" alt="" coords="514,5,679,46"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="435,68,503,51,508,50,436,73"/>
-<area shape="rect" id="Node000004" href="$classutil_1_1_audio_manager.html#a5f95e22bec4696d1bebd9ca0d9e720a4" title="Воспроизводит следующий трек в плейлисте" alt="" coords="506,71,687,111"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="453,88,494,91,488,91,454,94"/>
-<area shape="rect" id="Node000005" href="$classutil_1_1_audio_manager.html#a6670ef01882a42659760581b520eb8e5" title="Воспроизводит текущий трек" alt="" coords="740,39,935,79"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="687,76,727,74,722,74,688,82"/>
-<area shape="rect" id="Node000006" href="$classutil_1_1_audio_manager.html#abea736c235499b083accbef0d9468489" title="Останавливает текущий трек" alt="" coords="739,104,936,145"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="687,101,727,109,721,109,687,106"/>
-<area shape="rect" id="Node000008" href="$classutil_1_1_audio_manager.html#a1ff1493847fdadf19564ecb4b33442d1" title="Загружает отдельный звуковой эффект" alt="" coords="502,136,691,177"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="454,154,489,156,484,156,454,159"/>
+<area shape="rect" id="Node000001" title="Приватный конструктор" alt="" coords="5,5,217,31"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_audio_manager.html#a5ad71057028d829235d9ca3519feae2d" title="Загружает все звуки приложения" alt="" coords="265,5,461,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="217,16,252,18,246,18,217,21"/>
 </map>
