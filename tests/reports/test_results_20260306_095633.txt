@@ -1,0 +1,199 @@
+WARNING: A native method in com.sun.media.jfxmedia.logging.Logger has been bound
+WARNING: com.sun.media.jfxmedia.logging.Logger::nativeSetNativeLevel is declared in module javafx.media (file:/Users/sigm/Study/Institut/6semestr/OOP_Java/Project/.javafx/lib/javafx.media.jar)
+WARNING: Use --enable-native-access=javafx.media to avoid a warning for native methods declared in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.sqlite.SQLiteJDBCLoader in an unnamed module (file:/Users/sigm/Study/Institut/6semestr/OOP_Java/Project/lib/sqlite-jdbc-3.45.1.0.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+SQLite database ready: /Users/sigm/Study/Institut/6semestr/OOP_Java/Project/data/todolist.db
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+logTaskOperation error: [SQLITE_CONSTRAINT_FOREIGNKEY] A foreign key constraint failed (FOREIGN KEY constraint failed)
+[36m╷[0m
+[36m├─[0m [36mJUnit Jupiter[0m [32m✔[0m
+[36m│  ├─[0m [36mJsonUtilTest[0m [32m✔[0m
+[36m│  │  ├─[0m [34mtestAddSingleTask()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mtestClearAllTasks()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mtestRemoveNonExistentTask()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mtestSaveAndLoadMultipleTasks()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mtestExportTasks()[0m [32m✔[0m
+[36m│  │  └─[0m [34mtestLoadEmptyList()[0m [32m✔[0m
+[36m│  ├─[0m [36mТестирование TaskViewModel[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение отображаемых имен приоритета и категории[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение имени иконки приоритета[0m [32m✔[0m
+[36m│  │  ├─[0m [34mТестирование toString()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mОбновление ViewModel при изменении статуса просроченности[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение базовой модели задачи[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение статуса задачи в виде строки[0m [32m✔[0m
+[36m│  │  ├─[0m [34mРасчет оставшегося времени[0m [32m✔[0m
+[36m│  │  ├─[0m [34mСоздание ViewModel из модели Task[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка свойств JavaFX[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение цветов приоритета и категории[0m [32m✔[0m
+[36m│  │  ├─[0m [34mФорматирование дат для отображения[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка equals() и hashCode()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mДвусторонняя привязка свойств - изменение Model[0m [32m✔[0m
+[36m│  │  └─[0m [34mДвусторонняя привязка свойств - изменение ViewModel[0m [32m✔[0m
+[36m│  ├─[0m [36mТестирование AudioManager[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение списка доступных звуков[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка паттерна Singleton[0m [32m✔[0m
+[36m│  │  ├─[0m [34mВоспроизведение звуков при включенных звуках[0m [32m✔[0m
+[36m│  │  ├─[0m [34mОстановка всех звуков[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка наличия аудио файлов[0m [32m✔[0m
+[36m│  │  ├─[0m [34mtestEnableDisableSounds()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mТестирование методов без реальных аудио файлов[0m [32m✔[0m
+[36m│  │  ├─[0m [34mВоспроизведение звуков при выключенных звуках[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка многократного вызова методов[0m [32m✔[0m
+[36m│  │  ├─[0m [34mОсвобождение ресурсов[0m [32m✔[0m
+[36m│  │  └─[0m [34mУстановка громкости[0m [32m✔[0m
+[36m│  ├─[0m [36mJsonIntegrationTest[0m [32m✔[0m
+[36m│  │  ├─[0m [34mУдаление задачи из файла[0m [32m✔[0m
+[36m│  │  ├─[0m [34mОбновление задачи в файле[0m [32m✔[0m
+[36m│  │  ├─[0m [34mСохранение пустого списка задач[0m [32m✔[0m
+[36m│  │  ├─[0m [34mЦелостность данных после нескольких операций[0m [32m✔[0m
+[36m│  │  ├─[0m [34mЗагрузка из файла с некорректным JSON[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка формата дат при сериализации/десериализации[0m [32m✔[0m
+[36m│  │  ├─[0m [34mЗагрузка из несуществующего файла[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолный цикл: создание → сохранение → загрузка → проверка[0m [32m✔[0m
+[36m│  │  └─[0m [34mДобавление задачи к существующим[0m [32m✔[0m
+[36m│  ├─[0m [36mТестирование Task[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПарсинг задачи из JSON строки[0m [32m✔[0m
+[36m│  │  ├─[0m [34mСоздание задачи с null приоритетом и категорией[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка toString()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mЭкранирование специальных символов в JSON[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка метода toJsonString()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mСоздание задачи с пустым заголовком[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка просроченности задачи[0m [32m✔[0m
+[36m│  │  ├─[0m [34mАвтоматическая генерация ID[0m [32m✔[0m
+[36m│  │  ├─[0m [36mПроверка статуса выполнения[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[1] true[0m [32m✔[0m
+[36m│  │  │  └─[0m [34m[2] false[0m [32m✔[0m
+[36m│  │  ├─[0m [34mСоздание задачи с валидными данными[0m [32m✔[0m
+[36m│  │  ├─[0m [34mФорматирование дат для отображения[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка equals() и hashCode()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка сеттеров[0m [32m✔[0m
+[36m│  │  └─[0m [34mПроверка обновления просроченности при изменении времени[0m [32m✔[0m
+[36m│  ├─[0m [36mТестирование TaskManager[0m [32m✔[0m
+[36m│  │  ├─[0m [34mДобавление нескольких задач[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение задач по статусу выполнения[0m [32m✔[0m
+[36m│  │  ├─[0m [34mДобавление задачи в менеджер[0m [32m✔[0m
+[36m│  │  ├─[0m [34mОчистка всех задач[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПоиск задач по тексту (регистронезависимый)[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка неизменяемости возвращаемых списков[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение количества просроченных задач[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПоиск по пустому запросу[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка паттерна Singleton[0m [32m✔[0m
+[36m│  │  ├─[0m [34mОтметка задачи как выполненной[0m [32m✔[0m
+[36m│  │  ├─[0m [34mОтметка несуществующей задачи как выполненной[0m [32m✔[0m
+[36m│  │  ├─[0m [34mУдаление несуществующей задачи[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка обновления просроченности при изменении статуса[0m [32m✔[0m
+[36m│  │  ├─[0m [34mУдаление задачи по ID[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение количества задач[0m [32m✔[0m
+[36m│  │  ├─[0m [34mАвтоматическая проверка просроченности[0m [32m✔[0m
+[36m│  │  └─[0m [34mЗагрузка списка задач[0m [32m✔[0m
+[36m│  ├─[0m [36mТестирование Priority[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка сравнения приоритетов[0m [32m✔[0m
+[36m│  │  ├─[0m [36mПреобразование строки в Priority (регистронезависимое)[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[1] Срочно[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[2] срочно[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[3] СРОЧНО[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[4] Важно[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[5] важно[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[6] Желательно[0m [32m✔[0m
+[36m│  │  │  └─[0m [34m[7] желательно[0m [32m✔[0m
+[36m│  │  ├─[0m [36mПроверка цветов для всех приоритетов[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[1] URGENT[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[2] IMPORTANT[0m [32m✔[0m
+[36m│  │  │  └─[0m [34m[3] NORMAL[0m [32m✔[0m
+[36m│  │  ├─[0m [36mПроверка отображаемых имен для всех приоритетов[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[1] URGENT[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[2] IMPORTANT[0m [32m✔[0m
+[36m│  │  │  └─[0m [34m[3] NORMAL[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка имени иконки[0m [32m✔[0m
+[36m│  │  ├─[0m [36mПреобразование некорректной строки в Priority[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[1] [0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[2] неизвестно[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[3] high[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[4] low[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[5] 123[0m [32m✔[0m
+[36m│  │  │  └─[0m [34m[6] приоритет[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка всех значений перечисления[0m [32m✔[0m
+[36m│  │  └─[0m [34mПроверка приоритета по умолчанию[0m [32m✔[0m
+[36m│  └─[0m [36mТестирование Category[0m [32m✔[0m
+[36m│     ├─[0m [36mПреобразование строки в Category (регистронезависимое)[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[1] Работа[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[2] работа[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[3] РАБОТА[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[4] Дом[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[5] дом[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[6] Учёба[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[7] учёба[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[8] Другое[0m [32m✔[0m
+[36m│     │  └─[0m [34m[9] другое[0m [32m✔[0m
+[36m│     ├─[0m [36mПроверка цветов для всех категорий[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[1] WORK[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[2] HOME[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[3] STUDY[0m [32m✔[0m
+[36m│     │  └─[0m [34m[4] OTHER[0m [32m✔[0m
+[36m│     ├─[0m [36mПроверка отображаемых имен для всех категорий[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[1] WORK[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[2] HOME[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[3] STUDY[0m [32m✔[0m
+[36m│     │  └─[0m [34m[4] OTHER[0m [32m✔[0m
+[36m│     ├─[0m [34mПроверка уникальности отображаемых имен[0m [32m✔[0m
+[36m│     ├─[0m [34mПроверка сравнения категорий[0m [32m✔[0m
+[36m│     ├─[0m [36mПреобразование некорректной строки в Category[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[1] [0m [32m✔[0m
+[36m│     │  ├─[0m [34m[2] неизвестно[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[3] категория[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[4] 123[0m [32m✔[0m
+[36m│     │  └─[0m [34m[5] test[0m [32m✔[0m
+[36m│     └─[0m [34mПроверка всех значений перечисления[0m [32m✔[0m
+[36m├─[0m [36mJUnit Vintage[0m [32m✔[0m
+[36m└─[0m [36mJUnit Platform Suite[0m [32m✔[0m
+
+Test run finished after 1139 ms
+[        20 containers found      ]
+[         0 containers skipped    ]
+[        20 containers started    ]
+[         0 containers aborted    ]
+[        20 containers successful ]
+[         0 containers failed     ]
+[       120 tests found           ]
+[         0 tests skipped         ]
+[       120 tests started         ]
+[         0 tests aborted         ]
+[       120 tests successful      ]
+[         0 tests failed          ]
+

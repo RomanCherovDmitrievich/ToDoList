@@ -1,388 +1,292 @@
 package view;
 
+import javafx.application.Platform;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.PieChart;
+import javafx.scene.chart.XYChart;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ColorPicker;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.SelectionMode;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
+import javafx.scene.control.TabPane;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.TextInputDialog;
+import javafx.scene.control.cell.ComboBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
+import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.Dragboard;
+import javafx.scene.input.TransferMode;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Callback;
-import javafx.animation.AnimationTimer;
-import javafx.collections.transformation.SortedList;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.beans.property.SimpleObjectProperty;
+import javafx.util.StringConverter;
 
-import model.Task;
+import model.Category;
 import model.Priority;
+import model.Task;
 import model.TaskManager;
-import viewmodel.TaskViewModel;
-import util.JsonUtil;
+import repository.DatabaseManager;
 import util.AudioManager;
+import util.NotificationSettings;
+import util.PathResolver;
+import util.TaskReminderService;
+import util.ThemeManager;
+import viewmodel.TaskViewModel;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
-import java.util.Random;
+import java.util.stream.Collectors;
 
 /**
- * @class MainController
- * @brief Контроллер главного окна приложения To-Do List
- * 
- * @details Управляет пользовательским интерфейсом главного окна, обрабатывает все пользовательские взаимодействия,
- *          координирует работу между моделью данных и представлением. Отвечает за отображение задач,
- *          обработку действий пользователя, сортировку, поиск и анимацию снежинок.
- * 
- * @author Чернов
- * @version 1.0
- * @date 2025-11-4
- * 
- * @see TaskManager
- * @see TaskViewModel
- * @see NewTaskController
- * @see JsonUtil
- * @see AudioManager
- * 
- * @note Реализует паттерн MVC/MVVM для разделения ответственности
- * @warning Все методы, помеченные @FXML, вызываются автоматически JavaFX
+ * Контроллер главного окна.
  */
 public class MainController {
-    /** 
-     * @brief Таблица для отображения задач
-     * @details JavaFX TableView, которая отображает список задач в виде таблицы.
-     *          Связана с TaskViewModel для двусторонней привязки данных.
-     */
-    @FXML private TableView<TaskViewModel> taskTable;
-
-    /** @brief Колонка таблицы для заголовка задачи */
-    @FXML private TableColumn<TaskViewModel, String> titleColumn;
-
-    /** @brief Колонка таблицы для описания задачи */
-    @FXML private TableColumn<TaskViewModel, String> descriptionColumn;
-
-    /** @brief Колонка таблицы для срока выполнения задачи */
-    @FXML private TableColumn<TaskViewModel, LocalDateTime> deadlineColumn;
-    
-    /** @brief Колонка таблицы для приоритета задачи */
-    @FXML private TableColumn<TaskViewModel, Priority> priorityColumn;
-    
-    /** @brief Колонка таблицы для категории задачи */
-    @FXML private TableColumn<TaskViewModel, String> categoryColumn;
-    
-    /** @brief Колонка таблицы для статуса выполнения задачи */
-    @FXML private TableColumn<TaskViewModel, Boolean> statusColumn;
-    
-    /** 
-     * @brief Поле для поиска задач
-     * @details Позволяет пользователю искать задачи по тексту в заголовке или описании.
-     *          Поиск происходит в реальном времени по мере ввода текста.
-     */
-    @FXML private TextField searchField;
-
-    /** @brief Кнопка для добавления новой задачи */
-    @FXML private Button addButton;
-
-    /** @brief Кнопка для удаления выбранной задачи */
-    @FXML private Button deleteButton;
-
-    /** @brief Кнопка для сортировки задач по дате */
-    @FXML private Button sortByDateButton;
-
-    /** @brief Кнопка для сортировки задач по приоритету */
-    @FXML private Button sortByPriorityButton;
-
-    /** 
-     * @brief Метка для отображения статистики задач
-     * @details Показывает общее количество задач, количество выполненных и просроченных задач.
-     */
-    @FXML private Label statusLabel;
-
-    /** 
-     * @brief Панель для анимации снежинок
-     * @details Контейнер JavaFX, на котором отрисовываются анимированные снежинки.
-     *          Используется для создания фоновой новогодней анимации.
-     */
-    @FXML private Pane snowPane; // Панель для снежинок
-
-    /** @brief Метка с заголовком приложения */
-    @FXML private Label appTitleLabel;
-
-    /** @brief Главный контейнер интерфейса */
-    @FXML private Pane mainContainer;
-    
-
-    /** @brief Менеджер задач для работы с бизнес-логикой */
-    private TaskManager taskManager;
-    
-    /** @brief Менеджер аудио для воспроизведения звуковых эффектов */
-    private AudioManager audioManager;
-    
-    /** @brief Таймер для анимации снежинок */
-    private AnimationTimer snowTimer;
-    
-    /** @brief Генератор случайных чисел для создания снежинок */
-    private Random random;
-    
-    /** @brief Список данных снежинок для анимации */
-    private List<SnowflakeData> snowflakes;
-    
-    /** @brief Наблюдаемый список задач для отображения в таблице */
-    private ObservableList<TaskViewModel> taskList;
-
-    /** @brief Флаг направления сортировки по дате (true - возрастание, false - убывание) */
-    private boolean sortByDateAscending = true;
-
-    /** 
-     * @brief Флаг направления сортировки по приоритету
-     * @details true - неважные сверху, false - важные сверху (по умолчанию)
-     */
-    private boolean sortByPriorityAscending = false; // По умолчанию: важные сверху
-    
-    /**
-     * @class SnowflakeData
-     * @brief Внутренний класс для хранения данных одной снежинки
-     * @details Содержит графический элемент снежинки и параметры её анимации.
-     */
-    private class SnowflakeData {
-        /** @brief Графический элемент снежинки (круг) */
-        javafx.scene.shape.Circle circle;
-        
-        /** @brief Скорость падения снежинки (пикселей в секунду) */
-        double speed;
-        
-        /** @brief Параметр для эффекта покачивания снежинки */
-        double sway;
-
-        /**
-         * @brief Конструктор для создания данных снежинки
-         * @param circle Графический элемент снежинки
-         * @param speed Скорость падения
-         * @param sway Параметр покачивания
-         */
-        SnowflakeData(javafx.scene.shape.Circle circle, double speed, double sway) {
-            this.circle = circle;
-            this.speed = speed;
-            this.sway = sway;
-        }
+    private enum SortMode {
+        MANUAL,
+        DATE,
+        PRIORITY
     }
-    
-    /**
-     * @brief Инициализация контроллера
-     * @details Вызывается автоматически JavaFX после загрузки FXML файла.
-     *          Инициализирует все компоненты интерфейса, загружает задачи,
-     *          настраивает слушатели событий и запускает анимацию.
-     * 
-     * @note Этот метод является точкой входа для инициализации контроллера
-     * @warning Не вызывайте этот метод напрямую, он вызывается JavaFX Framework
-     */
+
+    @FXML private TabPane mainTabPane;
+
+    @FXML private TableView<TaskViewModel> taskTable;
+    @FXML private TableColumn<TaskViewModel, String> titleColumn;
+    @FXML private TableColumn<TaskViewModel, String> descriptionColumn;
+    @FXML private TableColumn<TaskViewModel, LocalDateTime> deadlineColumn;
+    @FXML private TableColumn<TaskViewModel, Priority> priorityColumn;
+    @FXML private TableColumn<TaskViewModel, Category> categoryColumn;
+    @FXML private TableColumn<TaskViewModel, Boolean> statusColumn;
+
+    @FXML private TextField searchField;
+    @FXML private Button addButton;
+    @FXML private Button editButton;
+    @FXML private Button deleteButton;
+    @FXML private Button sortByDateButton;
+    @FXML private Button sortByPriorityButton;
+    @FXML private Button focusButton;
+    @FXML private MenuButton bulkMenuButton;
+    @FXML private MenuItem bulkCompleteItem;
+    @FXML private MenuItem bulkPriorityItem;
+    @FXML private MenuItem bulkCategoryItem;
+    @FXML private MenuItem bulkDeleteItem;
+
+    @FXML private Label appTitleLabel;
+    @FXML private Label statusLabel;
+    @FXML private Label insightLabel;
+
+    @FXML private DatePicker calendarPicker;
+    @FXML private Button calendarAddButton;
+    @FXML private Button calendarExportButton;
+    @FXML private ListView<TaskViewModel> calendarTaskList;
+    @FXML private Label calendarSummaryLabel;
+
+    @FXML private PieChart completionChart;
+    @FXML private PieChart categoryChart;
+    @FXML private BarChart<String, Number> priorityChart;
+    @FXML private LineChart<String, Number> timelineChart;
+
+    @FXML private ComboBox<String> themeCombo;
+    @FXML private ColorPicker customBgColorPicker;
+    @FXML private ColorPicker customAccentColorPicker;
+    @FXML private Button saveCustomThemeButton;
+
+    @FXML private CheckBox notifyPopupCheck;
+    @FXML private CheckBox notifySoundCheck;
+    @FXML private CheckBox notifyEmailCheck;
+    @FXML private Spinner<Integer> reminderValueSpinner;
+    @FXML private ChoiceBox<String> reminderUnitChoice;
+    @FXML private TextField notifyEmailField;
+    @FXML private Button saveNotificationButton;
+
+    @FXML private CheckBox musicEnabledCheck;
+    @FXML private javafx.scene.control.Slider volumeSlider;
+    @FXML private Label audioCountLabel;
+
+    @FXML private CheckBox widgetEnabledCheck;
+    @FXML private Button widgetRefreshButton;
+
+    private final TaskManager taskManager = TaskManager.getInstance();
+    private final AudioManager audioManager = AudioManager.getInstance();
+    private final TaskReminderService reminderService = TaskReminderService.getInstance();
+    private final DatabaseManager dbManager = DatabaseManager.getInstance();
+
+    private final ObservableList<TaskViewModel> taskList = FXCollections.observableArrayList();
+    private FilteredList<TaskViewModel> filteredTasks;
+
+    private SortMode sortMode = SortMode.MANUAL;
+    private boolean sortByDateAscending = true;
+    private boolean sortByPriorityAscending = false;
+
+    private TaskViewModel draggedTask;
+
+    private Stage widgetStage;
+    private ListView<String> widgetListView;
+    private final ObservableList<String> widgetItems = FXCollections.observableArrayList();
+
     @FXML
     public void initialize() {
-        taskManager = TaskManager.getInstance();
-        audioManager = AudioManager.getInstance();
-        random = new Random();
-        snowflakes = new ArrayList<>();
-        
-        // Инициализируем список задач
-        taskList = FXCollections.observableArrayList();
-        
-        // Настраиваем заголовок
-        appTitleLabel.setText("🎄 Умный планировщик задач 🎅");
-        
-        // Настраиваем колонки таблицы
+        appTitleLabel.setText("ToDoList");
+
         setupTableColumns();
-        
-        // Настраиваем адаптивную политику изменения размеров
-        setupAdaptiveLayout();
-        
-        // Настраиваем иконки для кнопок
+        setupTableDataFlow();
+        setupSearch();
         setupButtons();
-        
-        // Загружаем задачи из файла
+        setupTableInteractions();
+        setupCalendarTab();
+        setupStatsTab();
+        setupThemeSettings();
+        setupNotificationSettings();
+        setupMusicSettings();
+        setupWidgetSettings();
+
         loadTasks();
-        updateStatusLabel();
-        
-        // Настраиваем поиск
-        searchField.textProperty().addListener((observable, oldValue, newValue) -> {
-            searchTasks();
-        });
-        
-        // Воспроизводим стартовую музыку
-        audioManager.playStartupSound();
-        
-        // Инициализируем снежинки после загрузки интерфейса
-        if (snowPane != null) {
-            snowPane.sceneProperty().addListener((observable, oldScene, newScene) -> {
-                if (newScene != null) {
-                    // Ждем немного для полной инициализации
-                    javafx.application.Platform.runLater(() -> {
-                        initSnowflakes();
-                        startSnowAnimation();
-                    });
-                }
-            });
+        refreshAllViews();
+
+        audioManager.refreshPlaylist();
+        audioCountLabel.setText("Треков: " + audioManager.getAudioFilesCount());
+        if (musicEnabledCheck.isSelected()) {
+            audioManager.startPlaylist();
         }
+        reminderService.start();
     }
-    
-    /**
-     * @brief Настраивает колонки таблицы задач
-     * @details Конфигурирует все колонки таблицы: устанавливает фабрики значений,
-     *          создает кастомные ячейки для отображения с цветовым кодированием
-     *          и специальными иконками.
-     * 
-     * @note Использует PropertyValueFactory для привязки данных из TaskViewModel
-     * @see TaskViewModel
-     */
+
     private void setupTableColumns() {
-        // Колонка заголовка
+        taskTable.setEditable(true);
+
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
-        
-        // Колонка описания
         descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
-        
-        // Колонка срока выполнения (используем LocalDateTime для сортировки)
-        deadlineColumn.setCellValueFactory(cellData -> 
-            new SimpleObjectProperty<>(cellData.getValue().getEndTime()));
-        
-        // Колонка приоритета (используем Priority для сортировки)
-        priorityColumn.setCellValueFactory(cellData -> 
-            new SimpleObjectProperty<>(cellData.getValue().getPriority()));
-        
-        // Колонка категории
-        categoryColumn.setCellValueFactory(new PropertyValueFactory<>("categoryDisplay"));
-        
-        // Колонка статуса
+        deadlineColumn.setCellValueFactory(cell -> new SimpleObjectProperty<>(cell.getValue().getEndTime()));
+        priorityColumn.setCellValueFactory(cell -> new SimpleObjectProperty<>(cell.getValue().getPriority()));
+        categoryColumn.setCellValueFactory(cell -> new SimpleObjectProperty<>(cell.getValue().getCategory()));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("completed"));
-        
-        // Кастомная ячейка для приоритета с цветом
-        priorityColumn.setCellFactory(new Callback<>() {
+
+        setupTitleColumn();
+        setupDescriptionColumn();
+        setupDeadlineColumn();
+        setupPriorityColumn();
+        setupCategoryColumn();
+        setupStatusColumn();
+    }
+
+    private void setupTableDataFlow() {
+        filteredTasks = new FilteredList<>(taskList, task -> true);
+        taskTable.setItems(filteredTasks);
+        taskTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY_FLEX_LAST_COLUMN);
+        taskTable.setPlaceholder(new Label("Задач пока нет. Добавьте первую задачу."));
+        taskTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+    }
+
+    private void setupTitleColumn() {
+        titleColumn.setCellFactory(col -> new TextFieldTableCell<>(new StringConverter<>() {
             @Override
-            public TableCell<TaskViewModel, Priority> call(TableColumn<TaskViewModel, Priority> param) {
-                return new TableCell<>() {
-                    @Override
-                    protected void updateItem(Priority item, boolean empty) {
-                        super.updateItem(item, empty);
-                        if (empty || item == null) {
-                            setText(null);
-                            setStyle("");
-                        } else {
-                            setText(item.getDisplayName());
-                            String color = item.getColor();
-                            setStyle("-fx-text-fill: white; -fx-background-color: " + color + 
-                                    "; -fx-background-radius: 5; -fx-padding: 3 6 3 6;");
-                        }
-                    }
-                };
+            public String toString(String value) {
+                return value == null ? "" : value;
+            }
+
+            @Override
+            public String fromString(String value) {
+                return value == null ? "" : value.trim();
+            }
+        }) {
+            @Override
+            public void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                    setStyle("");
+                    return;
+                }
+                TaskViewModel task = getRowTask(this);
+                String prefix = task != null && task.isOverdue() && !task.isCompleted() ? "⚠ " : "";
+                if (!isEditing()) {
+                    setText(prefix + item);
+                }
+                if (task != null && task.isCompleted()) {
+                    setStyle("-fx-text-fill: #7f8c8d; -fx-font-style: italic;");
+                } else if (task != null && task.isOverdue()) {
+                    setStyle("-fx-text-fill: #c0392b; -fx-font-weight: bold;");
+                } else {
+                    setStyle("");
+                }
             }
         });
-        
-        // Кастомная ячейка для статуса (чекбокс)
-        statusColumn.setCellFactory(new Callback<>() {
-            @Override
-            public TableCell<TaskViewModel, Boolean> call(TableColumn<TaskViewModel, Boolean> param) {
-                return new TableCell<>() {
-                    private final CheckBox checkBox = new CheckBox();
-                    
-                    {
-                        checkBox.setOnAction(event -> {
-                            TaskViewModel task = getTableView().getItems().get(getIndex());
-                            if (task != null) {
-                                task.setCompleted(checkBox.isSelected());
-                                taskManager.markAsCompleted(task.getId(), checkBox.isSelected());
-                                updateStatusLabel();
-                                JsonUtil.saveTasks(taskManager.getAllTasks());
-                            }
-                        });
-                    }
-                    
-                    @Override
-                    protected void updateItem(Boolean item, boolean empty) {
-                        super.updateItem(item, empty);
-                        if (empty) {
-                            setGraphic(null);
-                        } else {
-                            TaskViewModel task = getTableView().getItems().get(getIndex());
-                            if (task != null) {
-                                checkBox.setSelected(item != null && item);
-                                checkBox.setText("");
-                                setGraphic(checkBox);
-                            }
-                        }
-                    }
-                };
+
+        titleColumn.setOnEditCommit(event -> {
+            TaskViewModel task = event.getRowValue();
+            if (task == null) {
+                return;
             }
-        });
-        
-        // Кастомная ячейка для заголовка с иконкой просроченности
-        titleColumn.setCellFactory(new Callback<>() {
-            @Override
-            public TableCell<TaskViewModel, String> call(TableColumn<TaskViewModel, String> param) {
-                return new TableCell<>() {
-                    private final HBox hbox = new HBox(5);
-                    private final ImageView warningIcon = new ImageView();
-                    private final Label titleLabel = new Label();
-                    
-                    {
-                        hbox.getChildren().addAll(warningIcon, titleLabel);
-                        HBox.setHgrow(titleLabel, javafx.scene.layout.Priority.ALWAYS);
-                        warningIcon.setFitHeight(16);
-                        warningIcon.setFitWidth(16);
-                        
-                        // Загружаем иконку предупреждения (будет в ресурсах)
-                        try {
-                            Image warningImage = new Image(getClass().getResourceAsStream("/images/warning_icon.png"));
-                            warningIcon.setImage(warningImage);
-                        } catch (Exception e) {
-                            // Если иконка не найдена, просто не показываем
-                            warningIcon.setVisible(false);
-                        }
-                    }
-                    
-                    @Override
-                    protected void updateItem(String item, boolean empty) {
-                        super.updateItem(item, empty);
-                        if (empty || item == null) {
-                            setGraphic(null);
-                            setText(null);
-                        } else {
-                            TaskViewModel task = getTableView().getItems().get(getIndex());
-                            if (task != null) {
-                                titleLabel.setText(item);
-                                
-                                // Показываем иконку предупреждения для просроченных задач
-                                if (task.isOverdue() && !task.isCompleted()) {
-                                    warningIcon.setVisible(true);
-                                    titleLabel.setTextFill(Color.RED);
-                                    titleLabel.setStyle("-fx-font-weight: bold;");
-                                } else if (task.isCompleted()) {
-                                    warningIcon.setVisible(false);
-                                    titleLabel.setTextFill(Color.GRAY);
-                                    titleLabel.setStyle("-fx-font-style: italic; text-decoration: line-through;");
-                                } else {
-                                    warningIcon.setVisible(false);
-                                    titleLabel.setTextFill(Color.BLACK);
-                                    titleLabel.setStyle("");
-                                }
-                                
-                                setGraphic(hbox);
-                            }
-                        }
-                    }
-                };
+            String value = event.getNewValue();
+            if (value == null || value.trim().isEmpty()) {
+                showAlert(Alert.AlertType.WARNING, "Ошибка", "Пустой заголовок", "Задача должна иметь название.");
+                taskTable.refresh();
+                return;
             }
+            task.setTitle(value.trim());
+            persistTask(task);
         });
-        
-        // Кастомная ячейка для даты (форматированное отображение)
+    }
+
+    private void setupDescriptionColumn() {
+        descriptionColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+        descriptionColumn.setOnEditCommit(event -> {
+            TaskViewModel task = event.getRowValue();
+            if (task == null) {
+                return;
+            }
+            String value = event.getNewValue();
+            task.setDescription(value == null ? "" : value.trim());
+            persistTask(task);
+        });
+    }
+
+    private void setupDeadlineColumn() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
+
         deadlineColumn.setCellFactory(new Callback<>() {
             @Override
             public TableCell<TaskViewModel, LocalDateTime> call(TableColumn<TaskViewModel, LocalDateTime> param) {
@@ -393,699 +297,1108 @@ public class MainController {
                         if (empty || item == null) {
                             setText(null);
                             setStyle("");
+                            return;
+                        }
+
+                        TaskViewModel task = getRowTask(this);
+                        setText(item.format(formatter));
+
+                        if (task != null && task.isCompleted()) {
+                            setStyle("-fx-text-fill: #7f8c8d;");
+                        } else if (task != null && task.isOverdue()) {
+                            setStyle("-fx-text-fill: #c0392b; -fx-font-weight: bold;");
                         } else {
-                            TaskViewModel task = getTableView().getItems().get(getIndex());
-                            if (task != null) {
-                                setText(task.getFormattedEndTime());
-                                
-                                // Подсвечиваем просроченные задачи
-                                if (task.isOverdue() && !task.isCompleted()) {
-                                    setTextFill(Color.RED);
-                                    setStyle("-fx-font-weight: bold;");
-                                } else if (task.isCompleted()) {
-                                    setTextFill(Color.GRAY);
-                                    setStyle("-fx-font-style: italic;");
-                                } else {
-                                    setTextFill(Color.BLACK);
-                                    setStyle("");
-                                }
-                            }
+                            setStyle("");
                         }
                     }
                 };
             }
         });
     }
-    
-    /**
-     * @brief Настраивает адаптивный layout интерфейса
-     * @details Конфигурирует поведение интерфейса при изменении размеров окна.
-     *          Устанавливает политику изменения размеров таблицы и слушатели
-     *          для отслеживания изменений размеров окна.
-     * 
-     * @note Таблица использует CONSTRAINED_RESIZE_POLICY для автоматического
-     *       изменения ширины колонок
-     */
-    private void setupAdaptiveLayout() {
-        // Таблица будет адаптироваться к размеру окна
-        taskTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-        
-        // Устанавливаем слушатели изменения размеров
-        if (taskTable.getScene() != null) {
-            setupResizeListeners();
-        } else {
-            taskTable.sceneProperty().addListener((obs, oldScene, newScene) -> {
-                if (newScene != null) {
-                    setupResizeListeners();
-                }
-            });
-        }
-    }
-    
-    /**
-     * @brief Настраивает слушатели изменения размеров окна
-     * @details Добавляет слушатели к свойствам ширины и высоты окна для
-     *          адаптации интерфейса при изменении размеров.
-     * 
-     * @note Слушатели вызывают методы adjustTableColumns() и adjustTableHeight()
-     *       при каждом изменении размеров окна
-     */
-    private void setupResizeListeners() {
-        Stage stage = (Stage) taskTable.getScene().getWindow();
-        
-        // При изменении ширины окна - адаптируем таблицу
-        stage.widthProperty().addListener((obs, oldVal, newVal) -> {
-            adjustTableColumns();
-            updateSnowflakesForWindow();
-        });
-        
-        // При изменении высоты окна - показываем больше/меньше строк
-        stage.heightProperty().addListener((obs, oldVal, newVal) -> {
-            adjustTableHeight();
-            updateSnowflakesForWindow();
-        });
-    }
-    
-    /**
-     * @brief Настраивает ширины колонок таблицы
-     * @details Вычисляет оптимальные ширины колонок таблицы на основе
-     *          текущей ширины таблицы и предопределенных процентных соотношений.
-     * 
-     * @note Процентные соотношения колонок:
-     *       - Заголовок: 20%
-     *       - Описание: 30%
-     *       - Срок выполнения: 15%
-     *       - Приоритет: 10%
-     *       - Категория: 10%
-     *       - Статус: 8%
-     */
-    private void adjustTableColumns() {
-        if (taskTable.getScene() == null) return;
-        
-        double tableWidth = taskTable.getWidth();
-        if (tableWidth <= 0) return;
-        
-        // Процентные ширины для колонок
-        double[] columnPercentages = {0.20, 0.30, 0.15, 0.10, 0.10, 0.08};
-        
-        // Устанавливаем ширины
-        titleColumn.setPrefWidth(tableWidth * columnPercentages[0]);
-        descriptionColumn.setPrefWidth(tableWidth * columnPercentages[1]);
-        deadlineColumn.setPrefWidth(tableWidth * columnPercentages[2]);
-        priorityColumn.setPrefWidth(tableWidth * columnPercentages[3]);
-        categoryColumn.setPrefWidth(tableWidth * columnPercentages[4]);
-        statusColumn.setPrefWidth(tableWidth * columnPercentages[5]);
-    }
-    
-    /**
-     * @brief Настраивает высоту таблицы
-     * @details Устанавливает предпочтительную высоту таблицы как процент от
-     *          высоты окна, чтобы таблица занимала фиксированную часть интерфейса.
-     * 
-     * @note Таблица занимает 60% от доступной высоты окна,
-     *       остальное пространство отводится под другие элементы интерфейса
-     */
-    private void adjustTableHeight() {
-        if (taskTable.getScene() == null) return;
-        
-        double sceneHeight = taskTable.getScene().getHeight();
-        // Таблица занимает 60% от доступной высоты
-        taskTable.setPrefHeight(sceneHeight * 0.60);
-    }
-    
-    /**
-     * @brief Настраивает кнопки интерфейса
-     * @details Загружает иконки для кнопок, устанавливает тексты, стили
-     *          и обработчики событий для всех кнопок управления.
-     * 
-     * @note Если иконки не могут быть загружены, используются текстовые эмодзи
-     * @warning Обработчики событий привязаны к методам sortByDate() и sortByPriority()
-     */
-    private void setupButtons() {
-        // Настраиваем иконки для кнопок
-        try {
-            Image addImage = new Image(getClass().getResourceAsStream("/resources/images/add_icon.png"));
-            addButton.setGraphic(new ImageView(addImage));
-            addButton.setText(" Добавить");
-            
-            Image deleteImage = new Image(getClass().getResourceAsStream("/resources/images/delete_icon.png"));
-            deleteButton.setGraphic(new ImageView(deleteImage));
-            deleteButton.setText(" Удалить");
-            
-            Image sortDateImage = new Image(getClass().getResourceAsStream("/resources/images/sort_date.png"));
-            sortByDateButton.setGraphic(new ImageView(sortDateImage));
-            sortByDateButton.setText(" По дате");
-            
-            Image sortPriorityImage = new Image(getClass().getResourceAsStream("/resources/images/sort_priority.png"));
-            sortByPriorityButton.setGraphic(new ImageView(sortPriorityImage));
-            sortByPriorityButton.setText(" По приоритету");
-            
-        } catch (Exception e) {
-            System.err.println("Не удалось загрузить иконки кнопок: " + e.getMessage());
-            // Используем текст если иконки не загрузились
-            addButton.setText("➕ Добавить");
-            deleteButton.setText("🗑️ Удалить");
-            sortByDateButton.setText("📅 По дате");
-            sortByPriorityButton.setText("⚠️ По приоритету");
-        }
-        
-        // Стили для кнопок сортировки
-        sortByDateButton.setStyle("-fx-font-size: 12px; -fx-padding: 5 10; -fx-background-color: #3498db; -fx-text-fill: white;");
-        sortByPriorityButton.setStyle("-fx-font-size: 12px; -fx-padding: 5 10; -fx-background-color: #9b59b6; -fx-text-fill: white;");
-        
-        // Обработчики для кнопок сортировки
-        sortByDateButton.setOnAction(e -> sortByDate());
-        sortByPriorityButton.setOnAction(e -> sortByPriority());
-    }
-    
-    /**
-     * @brief Сортирует задачи по дате выполнения
-     * @details Сортирует список задач по дате окончания (дедлайну).
-     *          При повторном нажатии меняет направление сортировки.
-     *          Обновляет текст кнопки для отображения текущего направления.
-     * 
-     * @event OnAction кнопки "По дате"
-     * 
-     * @note По умолчанию сортировка в возрастающем порядке (старые сверху)
-     * @warning Отменяет предыдущую сортировку по приоритету
-     */
-    @FXML
-    private void sortByDate() {
-        if (taskList.isEmpty()) return;
-        
-        // Меняем направление сортировки
-        sortByDateAscending = !sortByDateAscending;
-        
-        // Обновляем текст кнопки
-        String arrow = sortByDateAscending ? " ↑" : " ↓";
-        sortByDateButton.setText("По дате" + arrow);
-        
-        // Создаем компаратор для сортировки по дате
-        Comparator<TaskViewModel> dateComparator = Comparator.comparing(TaskViewModel::getEndTime);
-        
-        // Если сортировка по убыванию (новые сверху), инвертируем
-        if (!sortByDateAscending) {
-            dateComparator = dateComparator.reversed();
-        }
-        
-        // Применяем сортировку
-        FXCollections.sort(taskList, dateComparator);
-        
-        // Показываем сообщение о сортировке
-        String direction = sortByDateAscending ? "старые сверху" : "новые сверху";
-        showAlert("Сортировка", "Задачи отсортированы по дате", 
-                 "Задачи отсортированы по сроку выполнения (" + direction + ")");
-    }
-    
-    /**
-     * @brief Сортирует задачи по приоритету
-     * @details Сортирует список задач по приоритету: URGENT → IMPORTANT → NORMAL.
-     *          При повторном нажатии меняет направление сортировки.
-     *          Внутри одинаковых приоритетов задачи сортируются по дате.
-     * 
-     * @event OnAction кнопки "По приоритету"
-     * 
-     * @note По умолчанию сортировка в порядке важности (важные сверху)
-     * @warning Отменяет предыдущую сортировку по дате
-     * 
-     * @see Priority
-     */
-    @FXML
-    private void sortByPriority() {
-        if (taskList.isEmpty()) return;
-        
-        // Меняем направление сортировки
-        sortByPriorityAscending = !sortByPriorityAscending;
-        
-        // Обновляем текст кнопки
-        String arrow = sortByPriorityAscending ? " ↑" : " ↓";
-        sortByPriorityButton.setText("По приоритету" + arrow);
-        
-        // Создаем компаратор для сортировки по приоритету
-        Comparator<TaskViewModel> priorityComparator = Comparator.comparing(task -> {
-            Priority p = task.getPriority();
-            // Приоритеты: URGENT -> IMPORTANT -> NORMAL
-            switch (p) {
-                case URGENT: return 1;
-                case IMPORTANT: return 2;
-                case NORMAL: return 3;
-                default: return 4;
-            }
-        });
-        
-        // Если сортировка по убыванию (важные сверху), это наше состояние по умолчанию
-        if (!sortByPriorityAscending) {
-            // Важные сверху (URGENT -> IMPORTANT -> NORMAL)
-            // Это уже наше состояние по умолчанию для компаратора
-        } else {
-            // Неважные сверху (NORMAL -> IMPORTANT -> URGENT)
-            priorityComparator = priorityComparator.reversed();
-        }
-        
-        // Дополнительная сортировка по дате внутри одинаковых приоритетов
-        priorityComparator = priorityComparator.thenComparing(TaskViewModel::getEndTime);
-        
-        // Применяем сортировку
-        FXCollections.sort(taskList, priorityComparator);
-        
-        // Показываем сообщение о сортировке
-        String direction = sortByPriorityAscending ? "неважные сверху" : "важные сверху";
-        showAlert("Сортировка", "Задачи отсортированы по приоритету", 
-                 "Задачи отсортированы по приоритету (" + direction + ")");
-    }
-    
-    /**
-     * @brief Инициализирует снежинки для всего окна
-     * @details Очищает предыдущие снежинки и создает новые на основе
-     *          текущих размеров окна. Используется при запуске приложения
-     *          и при значительном изменении размеров окна.
-     * 
-     * @note Создает фиксированное количество снежинок (120)
-     * @see #createSnowflakesForWindow(double, double)
-     */
-    private void initSnowflakes() {
-        if (snowPane == null) return;
-        
-        // Очищаем старые снежинки
-        snowflakes.clear();
-        snowPane.getChildren().clear();
-        
-        // Получаем размеры всего окна, а не только snowPane
-        Stage stage = (Stage) snowPane.getScene().getWindow();
-        double windowWidth = stage.getWidth();
-        double windowHeight = stage.getHeight();
-        
-        // Создаем много снежинок для всего окна
-        createSnowflakesForWindow(windowWidth, windowHeight);
-    }
-    
-    /**
-     * @brief Создает снежинки для всего окна
-     * @details Создает указанное количество снежинок со случайными параметрами:
-     *          размером, позицией, прозрачностью, скоростью и амплитудой покачивания.
-     * 
-     * @param windowWidth Ширина окна для распределения снежинок
-     * @param windowHeight Высота окна для распределения снежинок
-     * 
-     * @note Каждая снежинка имеет уникальные параметры для естественного вида
-     */
-    private void createSnowflakesForWindow(double windowWidth, double windowHeight) {
-        // Много снежинок для всего окна (100-150)
-        int snowflakeCount = 120;
-        
-        for (int i = 0; i < snowflakeCount; i++) {
-            javafx.scene.shape.Circle snowflake = new javafx.scene.shape.Circle();
-            
-            // Очень маленькие снежинки (1-3 пикселя)
-            double size = 1 + random.nextDouble() * 2;
-            snowflake.setRadius(size);
-            
-            // Начальная позиция (случайная по всему окну)
-            double x = random.nextDouble() * windowWidth;
-            double y = random.nextDouble() * windowHeight;
-            
-            snowflake.setTranslateX(x);
-            snowflake.setTranslateY(y);
-            
-            // Прозрачность
-            snowflake.setOpacity(0.1 + random.nextDouble() * 0.6);
-            
-            // Белый цвет
-            snowflake.setFill(Color.WHITE);
-            
-            // Добавляем легкое свечение
-            snowflake.setEffect(new javafx.scene.effect.Glow(0.2));
-            
-            // Разная скорость падения
-            double speed = 20 + random.nextDouble() * 40;
-            double sway = random.nextDouble() * 2 - 1;
-            
-            snowflakes.add(new SnowflakeData(snowflake, speed, sway));
-            snowPane.getChildren().add(snowflake);
-        }
-    }
-    
-    /**
-     * @brief Обновляет снежинки при изменении размера окна
-     * @details Проверяет положение существующих снежинок относительно новых границ окна
-     *          и при необходимости корректирует их позиции. Также добавляет новые
-     *          снежинки если окно увеличилось.
-     * 
-     * @note Количество снежинок адаптируется к площади окна
-     * @warning Вызывается при каждом изменении размеров окна
-     */
-    private void updateSnowflakesForWindow() {
-        if (snowPane == null || snowflakes.isEmpty()) return;
-        
-        Stage stage = (Stage) snowPane.getScene().getWindow();
-        double windowWidth = stage.getWidth();
-        double windowHeight = stage.getHeight();
-        
-        // Обновляем позиции существующих снежинок
-        for (SnowflakeData snowflake : snowflakes) {
-            javafx.scene.shape.Circle circle = snowflake.circle;
-            
-            // Если снежинка за пределами новой ширины
-            if (circle.getTranslateX() > windowWidth) {
-                circle.setTranslateX(random.nextDouble() * windowWidth);
-            }
-            
-            // Если снежинка за пределами новой высоты
-            if (circle.getTranslateY() > windowHeight) {
-                circle.setTranslateY(random.nextDouble() * windowHeight);
-            }
-        }
-        
-        // Добавляем новые снежинки если окно увеличилось
-        int currentCount = snowflakes.size();
-        int desiredCount = (int)(windowWidth * windowHeight / 4000);
-        desiredCount = Math.min(Math.max(desiredCount, 80), 150);
-        
-        if (currentCount < desiredCount) {
-            for (int i = currentCount; i < desiredCount; i++) {
-                javafx.scene.shape.Circle snowflake = new javafx.scene.shape.Circle();
-                
-                double size = 1 + random.nextDouble() * 2;
-                snowflake.setRadius(size);
-                
-                double x = random.nextDouble() * windowWidth;
-                double y = random.nextDouble() * windowHeight;
-                
-                snowflake.setTranslateX(x);
-                snowflake.setTranslateY(y);
-                snowflake.setOpacity(0.1 + random.nextDouble() * 0.6);
-                snowflake.setFill(Color.WHITE);
-                snowflake.setEffect(new javafx.scene.effect.Glow(0.2));
-                
-                double speed = 20 + random.nextDouble() * 40;
-                double sway = random.nextDouble() * 2 - 1;
-                
-                snowflakes.add(new SnowflakeData(snowflake, speed, sway));
-                snowPane.getChildren().add(snowflake);
-            }
-        }
-    }
-    
-    /**
-     * @brief Запускает анимацию снежинок
-     * @details Создает и запускает AnimationTimer, который обновляет позиции
-     *          снежинок каждый кадр анимации. Обеспечивает плавное падение
-     *          снежинок с эффектами покачивания и мерцания.
-     * 
-     * @note Использует дельта-время для независимой от частоты кадров анимации
-     * @see AnimationTimer
-     * @see #updateSnowflakesAnimation(double)
-     */
-    private void startSnowAnimation() {
-        if (snowTimer != null) {
-            snowTimer.stop();
-        }
-        
-        snowTimer = new AnimationTimer() {
-            private long lastUpdate = 0;
-            
+
+    private void setupPriorityColumn() {
+        StringConverter<Priority> converter = new StringConverter<>() {
             @Override
-            public void handle(long now) {
-                if (lastUpdate == 0) {
-                    lastUpdate = now;
-                    return;
-                }
-                
-                double elapsedSeconds = (now - lastUpdate) / 1_000_000_000.0;
-                updateSnowflakesAnimation(elapsedSeconds);
-                lastUpdate = now;
+            public String toString(Priority priority) {
+                return priority == null ? "" : priority.getDisplayName();
+            }
+
+            @Override
+            public Priority fromString(String string) {
+                return Priority.fromDisplayName(string);
             }
         };
-        snowTimer.start();
-    }
-    
-    /**
-     * @brief Обновляет анимацию снежинок
-     * @details Вычисляет новые позиции для каждой снежинки на основе
-     *          прошедшего времени, скорости падения и эффектов анимации.
-     *          Обеспечивает циклическое движение снежинок (при выходе за
-     *          нижнюю границу они появляются сверху).
-     * 
-     * @param deltaTime Время, прошедшее с предыдущего обновления (в секундах)
-     * 
-     * @note Включает эффекты: падение, покачивание, мерцание
-     */
-    private void updateSnowflakesAnimation(double deltaTime) {
-        if (snowPane == null) return;
-        
-        // Получаем размеры всего окна
-        Stage stage = (Stage) snowPane.getScene().getWindow();
-        double windowWidth = stage.getWidth();
-        double windowHeight = stage.getHeight();
-        long time = System.currentTimeMillis();
-        
-        for (SnowflakeData snowflake : snowflakes) {
-            javafx.scene.shape.Circle circle = snowflake.circle;
-            
-            // Двигаем снежинку вниз
-            double newY = circle.getTranslateY() + snowflake.speed * deltaTime;
-            
-            // Покачивание из стороны в сторону
-            double currentX = circle.getTranslateX();
-            double swayOffset = Math.sin(time * 0.001 + snowflake.sway) * snowflake.circle.getRadius() * 3;
-            double newX = currentX + swayOffset * deltaTime * 10;
-            
-            // Если снежинка упала за нижнюю границу окна
-            if (newY > windowHeight) {
-                newY = 0;
-                newX = random.nextDouble() * windowWidth;
+
+        priorityColumn.setCellFactory(col -> new ComboBoxTableCell<>(converter, Priority.values()) {
+            @Override
+            public void updateItem(Priority item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                    setStyle("");
+                    return;
+                }
+                setText(item.getDisplayName());
+                setStyle(
+                    "-fx-text-fill: white;" +
+                    "-fx-background-color: " + item.getColor() + ";" +
+                    "-fx-background-radius: 8;" +
+                    "-fx-padding: 3 8;"
+                );
             }
-            
-            // Если снежинка вышла за боковые границы окна
-            if (newX < 0) newX = windowWidth;
-            if (newX > windowWidth) newX = 0;
-            
-            circle.setTranslateX(newX);
-            circle.setTranslateY(newY);
-            
-            // Легкое мерцание
-            double flicker = 0.5 + 0.5 * Math.sin(time * 0.003 + currentX);
-            circle.setOpacity(flicker * (0.1 + random.nextDouble() * 0.5));
+        });
+
+        priorityColumn.setOnEditCommit(event -> {
+            TaskViewModel task = event.getRowValue();
+            if (task == null || event.getNewValue() == null) {
+                return;
+            }
+            task.setPriority(event.getNewValue());
+            persistTask(task);
+        });
+    }
+
+    private void setupCategoryColumn() {
+        StringConverter<Category> converter = new StringConverter<>() {
+            @Override
+            public String toString(Category category) {
+                return category == null ? "" : category.getDisplayName();
+            }
+
+            @Override
+            public Category fromString(String string) {
+                return Category.fromDisplayName(string);
+            }
+        };
+
+        categoryColumn.setCellFactory(ComboBoxTableCell.forTableColumn(converter, Category.values()));
+        categoryColumn.setOnEditCommit(event -> {
+            TaskViewModel task = event.getRowValue();
+            if (task == null || event.getNewValue() == null) {
+                return;
+            }
+            task.setCategory(event.getNewValue());
+            persistTask(task);
+        });
+    }
+
+    private void setupStatusColumn() {
+        statusColumn.setCellFactory(new Callback<>() {
+            @Override
+            public TableCell<TaskViewModel, Boolean> call(TableColumn<TaskViewModel, Boolean> param) {
+                return new TableCell<>() {
+                    private final CheckBox checkBox = new CheckBox();
+
+                    {
+                        checkBox.setOnAction(event -> {
+                            TaskViewModel task = getRowTask(this);
+                            if (task == null) {
+                                return;
+                            }
+                            boolean completed = checkBox.isSelected();
+                            task.setCompleted(completed);
+                            taskManager.markAsCompleted(task.getId(), completed);
+                            reloadTasksFromManager();
+                        });
+                    }
+
+                    @Override
+                    protected void updateItem(Boolean item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty) {
+                            setGraphic(null);
+                            return;
+                        }
+                        TaskViewModel task = getRowTask(this);
+                        if (task == null) {
+                            setGraphic(null);
+                            return;
+                        }
+                        checkBox.setSelected(Boolean.TRUE.equals(task.completedProperty().get()));
+                        setGraphic(checkBox);
+                    }
+                };
+            }
+        });
+    }
+
+    private void setupSearch() {
+        searchField.textProperty().addListener((obs, oldVal, newVal) -> {
+            String query = newVal == null ? "" : newVal.trim().toLowerCase();
+            filteredTasks.setPredicate(task -> {
+                if (query.isEmpty()) {
+                    return true;
+                }
+                return task.getTitle().toLowerCase().contains(query)
+                    || task.getDescription().toLowerCase().contains(query)
+                    || task.getCategoryDisplay().toLowerCase().contains(query);
+            });
+        });
+    }
+
+    private void setupButtons() {
+        sortByDateButton.setText("По дате ↓");
+        sortByPriorityButton.setText("По приоритету ↑");
+        editButton.setDisable(true);
+        deleteButton.setDisable(true);
+        bulkMenuButton.setDisable(true);
+
+        taskTable.getSelectionModel().getSelectedItems().addListener(
+            (ListChangeListener<TaskViewModel>) change -> {
+                boolean hasSelection = !taskTable.getSelectionModel().getSelectedItems().isEmpty();
+                editButton.setDisable(!hasSelection);
+                deleteButton.setDisable(!hasSelection);
+                bulkMenuButton.setDisable(!hasSelection);
+            }
+        );
+    }
+
+    private void setupTableInteractions() {
+        taskTable.setRowFactory(tv -> {
+            TableRow<TaskViewModel> row = new TableRow<>();
+
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && !row.isEmpty()) {
+                    openEditDialog(row.getItem());
+                }
+            });
+
+            row.setOnDragDetected(event -> {
+                if (row.isEmpty()) {
+                    return;
+                }
+                if (!isManualOrderAllowed()) {
+                    showAlert(Alert.AlertType.INFORMATION, "Порядок", "Перетаскивание временно отключено",
+                        "Сначала очистите поиск, чтобы вручную менять порядок задач.");
+                    return;
+                }
+                draggedTask = row.getItem();
+                Dragboard db = row.startDragAndDrop(TransferMode.MOVE);
+                ClipboardContent content = new ClipboardContent();
+                content.putString(draggedTask.getId());
+                db.setContent(content);
+                event.consume();
+            });
+
+            row.setOnDragOver(event -> {
+                if (draggedTask == null || row.isEmpty()) {
+                    return;
+                }
+                if (row.getItem() != draggedTask) {
+                    event.acceptTransferModes(TransferMode.MOVE);
+                }
+                event.consume();
+            });
+
+            row.setOnDragDropped(event -> {
+                if (draggedTask == null || row.isEmpty()) {
+                    return;
+                }
+                TaskViewModel target = row.getItem();
+                int draggedIdx = taskList.indexOf(draggedTask);
+                int targetIdx = taskList.indexOf(target);
+                if (draggedIdx < 0 || targetIdx < 0) {
+                    return;
+                }
+                if (draggedIdx != targetIdx) {
+                    taskList.remove(draggedIdx);
+                    int insertIndex = targetIdx;
+                    if (insertIndex > taskList.size()) {
+                        insertIndex = taskList.size();
+                    }
+                    taskList.add(insertIndex, draggedTask);
+                    persistOrder();
+                }
+                draggedTask = null;
+                event.setDropCompleted(true);
+                refreshAllViews();
+            });
+
+            row.setOnDragDone(event -> draggedTask = null);
+
+            ContextMenu menu = buildContextMenu(row);
+            row.contextMenuProperty().bind(javafx.beans.binding.Bindings
+                .when(row.emptyProperty())
+                .then((ContextMenu) null)
+                .otherwise(menu));
+
+            return row;
+        });
+    }
+
+    private ContextMenu buildContextMenu(TableRow<TaskViewModel> row) {
+        MenuItem edit = new MenuItem("Редактировать");
+        edit.setOnAction(event -> openEditDialog(row.getItem()));
+
+        MenuItem duplicate = new MenuItem("Копировать");
+        duplicate.setOnAction(event -> duplicateTask(row.getItem()));
+
+        MenuItem reminder = new MenuItem("Настроить напоминание");
+        reminder.setOnAction(event -> adjustReminder(row.getItem()));
+
+        MenuItem delete = new MenuItem("Удалить");
+        delete.setOnAction(event -> deleteTasks(List.of(row.getItem())));
+
+        return new ContextMenu(edit, duplicate, reminder, delete);
+    }
+
+    private void setupCalendarTab() {
+        calendarPicker.setValue(LocalDate.now());
+        calendarTaskList.setCellFactory(list -> new ListCell<>() {
+            @Override
+            protected void updateItem(TaskViewModel item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                    return;
+                }
+                String text = String.format("%s — %s (%s)",
+                    item.getFormattedStartTime(),
+                    item.getTitle(),
+                    item.getPriorityDisplay());
+                setText(text);
+            }
+        });
+        updateCalendarView();
+    }
+
+    private void setupStatsTab() {
+        completionChart.setAnimated(false);
+        categoryChart.setAnimated(false);
+        priorityChart.setAnimated(false);
+        timelineChart.setAnimated(false);
+    }
+
+    private void setupThemeSettings() {
+        themeCombo.getItems().setAll(ThemeManager.getAvailableThemes());
+        themeCombo.setValue(ThemeManager.getCurrentTheme());
+
+        customBgColorPicker.setValue(Color.web("#8fd3ff"));
+        customAccentColorPicker.setValue(Color.web("#ffb84e"));
+
+        themeCombo.setOnAction(event -> applySelectedTheme());
+        saveCustomThemeButton.setOnAction(event -> handleSaveCustomTheme());
+
+        taskTable.sceneProperty().addListener((obs, oldScene, newScene) -> {
+            if (newScene != null) {
+                applySelectedTheme();
+            }
+        });
+    }
+
+    private void setupNotificationSettings() {
+        NotificationSettings settings = NotificationSettings.load();
+        notifyPopupCheck.setSelected(settings.isPopupEnabled());
+        notifySoundCheck.setSelected(settings.isSoundEnabled());
+        notifyEmailCheck.setSelected(settings.isEmailEnabled());
+        notifyEmailField.setText(settings.getEmailTo());
+
+        reminderUnitChoice.getItems().addAll("мин", "час", "день");
+        reminderValueSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10080, 15));
+        setReminderSpinner(settings.getReminderOffsetMinutes());
+
+        notifyEmailField.setDisable(!notifyEmailCheck.isSelected());
+        notifyEmailCheck.selectedProperty().addListener((obs, oldVal, newVal) -> notifyEmailField.setDisable(!newVal));
+    }
+
+    private void setupMusicSettings() {
+        boolean enabled = Boolean.parseBoolean(dbManager.getSetting("music_enabled", "true"));
+        double volume = parseDouble(dbManager.getSetting("music_volume", "0.35"), 0.35);
+
+        musicEnabledCheck.setSelected(enabled);
+        volumeSlider.setValue(volume);
+        audioManager.setMasterVolume(volume);
+        audioManager.setSoundsEnabled(enabled);
+
+        audioCountLabel.setText("Треков: " + audioManager.getAudioFilesCount());
+
+        musicEnabledCheck.selectedProperty().addListener((obs, oldVal, newVal) -> {
+            audioManager.setSoundsEnabled(newVal);
+            dbManager.saveSetting("music_enabled", String.valueOf(newVal));
+            if (newVal) {
+                audioManager.startPlaylist();
+            } else {
+                audioManager.stopAllSounds();
+            }
+        });
+
+        volumeSlider.valueProperty().addListener((obs, oldVal, newVal) -> {
+            double vol = newVal == null ? 0.35 : newVal.doubleValue();
+            audioManager.setMasterVolume(vol);
+            dbManager.saveSetting("music_volume", String.format(Locale.US, "%.2f", vol));
+        });
+    }
+
+    private void setupWidgetSettings() {
+        boolean enabled = Boolean.parseBoolean(dbManager.getSetting("widget_enabled", "false"));
+        widgetEnabledCheck.setSelected(enabled);
+        widgetRefreshButton.setDisable(!enabled);
+
+        widgetEnabledCheck.selectedProperty().addListener((obs, oldVal, newVal) -> {
+            dbManager.saveSetting("widget_enabled", String.valueOf(newVal));
+            widgetRefreshButton.setDisable(!newVal);
+            if (newVal) {
+                showWidget();
+            } else {
+                hideWidget();
+            }
+        });
+
+        widgetRefreshButton.setOnAction(event -> updateWidget());
+
+        if (enabled) {
+            Platform.runLater(this::showWidget);
         }
     }
 
-    /**
-     * @brief Загружает задачи из файла и отображает их в таблице
-     * @details Загружает список задач из JSON файла с помощью JsonUtil,
-     *          передает их в TaskManager и обновляет таблицу отображения.
-     * 
-     * @note Использует JsonUtil для сериализации/десериализации данных
-     * @see JsonUtil
-     * @see TaskManager
-     * @see #refreshTable()
-     * @see #updateStatusLabel()
-     */
     private void loadTasks() {
-        List<Task> tasks = JsonUtil.loadTasks();
-        taskManager.loadTasks(tasks);
-        refreshTable();
-    }
-    
-    /**
-     * @brief Обновляет содержимое таблицы задач
-     * @details Очищает текущий список задач, загружает все задачи из TaskManager,
-     *          преобразует их в TaskViewModel и устанавливает обновленный список
-     *          в таблицу. Затем применяет сортировку по умолчанию.
-     * 
-     * @note Автоматически вызывается после изменений в списке задач
-     * @see TaskViewModel
-     * @see #sortByPriority()
-     */
-    private void refreshTable() {
         taskList.clear();
-        List<Task> tasks = taskManager.getAllTasks();
-        
-        for (Task task : tasks) {
+        for (Task task : taskManager.getAllTasks()) {
             taskList.add(new TaskViewModel(task));
         }
-        
-        // Устанавливаем список в таблицу
-        taskTable.setItems(taskList);
-        
-        // Сортируем по умолчанию: сначала важные, потом по дате
-        sortByPriorityAscending = false; // Важные сверху
-        sortByPriority(); // Применяем сортировку
+        applySortMode();
     }
-    
-    /**
-     * @brief Обновляет статусную строку с информацией о задачах
-     * @details Рассчитывает и отображает статистику по задачам:
-     *          общее количество, количество выполненных и просроченных задач.
-     *          Используется для предоставления пользователю сводной информации.
-     * 
-     * @note Вызывается после каждого изменения состояния задач
-     * @see TaskManager#getAllTasks()
-     * @see TaskManager#getTaskCount(boolean)
-     * @see TaskManager#getOverdueTaskCount()
-     */
+
+    @FXML
+    private void sortByDate() {
+        if (taskList.isEmpty()) {
+            return;
+        }
+        sortMode = SortMode.DATE;
+        sortByDateAscending = !sortByDateAscending;
+        applySortMode();
+    }
+
+    @FXML
+    private void sortByPriority() {
+        if (taskList.isEmpty()) {
+            return;
+        }
+        sortMode = SortMode.PRIORITY;
+        sortByPriorityAscending = !sortByPriorityAscending;
+        applySortMode();
+    }
+
+    private void applySortMode() {
+        if (sortMode == SortMode.MANUAL) {
+            Comparator<TaskViewModel> comparator = Comparator
+                .comparingInt((TaskViewModel vm) -> vm.getTask().getSortIndex())
+                .thenComparing(TaskViewModel::getEndTime);
+            FXCollections.sort(taskList, comparator);
+            return;
+        }
+
+        if (sortMode == SortMode.DATE) {
+            Comparator<TaskViewModel> comparator = Comparator.comparing(TaskViewModel::getEndTime);
+            if (!sortByDateAscending) {
+                comparator = comparator.reversed();
+            }
+            FXCollections.sort(taskList, comparator);
+            sortByDateButton.setText(sortByDateAscending ? "По дате ↑" : "По дате ↓");
+            return;
+        }
+
+        Comparator<TaskViewModel> comparator = Comparator
+            .comparing((TaskViewModel vm) -> priorityRank(vm.getPriority()))
+            .thenComparing(TaskViewModel::getEndTime);
+        if (sortByPriorityAscending) {
+            comparator = comparator.reversed();
+        }
+        FXCollections.sort(taskList, comparator);
+        sortByPriorityButton.setText(sortByPriorityAscending ? "По приоритету ↓" : "По приоритету ↑");
+    }
+
+    @FXML
+    private void handleAddTask() {
+        Task created = showTaskDialog(null, null);
+        if (created == null) {
+            return;
+        }
+        taskManager.addTask(created);
+        taskList.add(new TaskViewModel(created));
+        applySortMode();
+        refreshAllViews();
+    }
+
+    @FXML
+    private void handleAddTaskForDate() {
+        LocalDate selected = calendarPicker.getValue();
+        Task created = showTaskDialog(null, selected);
+        if (created == null) {
+            return;
+        }
+        taskManager.addTask(created);
+        taskList.add(new TaskViewModel(created));
+        applySortMode();
+        refreshAllViews();
+    }
+
+    @FXML
+    private void handleEditTask() {
+        TaskViewModel selected = taskTable.getSelectionModel().getSelectedItem();
+        if (selected == null) {
+            showAlert(Alert.AlertType.WARNING, "Редактирование", "Задача не выбрана",
+                "Выберите задачу в таблице перед редактированием.");
+            return;
+        }
+        openEditDialog(selected);
+    }
+
+    private void openEditDialog(TaskViewModel selected) {
+        if (selected == null) {
+            return;
+        }
+        Task updated = showTaskDialog(selected.getTask(), null);
+        if (updated == null) {
+            return;
+        }
+        taskManager.updateTask(updated);
+        selected.updateFromModel();
+        applySortMode();
+        refreshAllViews();
+        taskTable.refresh();
+    }
+
+    @FXML
+    private void handleDeleteTask() {
+        List<TaskViewModel> selected = new ArrayList<>(taskTable.getSelectionModel().getSelectedItems());
+        if (selected.isEmpty()) {
+            showAlert(Alert.AlertType.WARNING, "Удаление", "Задача не выбрана",
+                "Выберите задачу в таблице перед удалением.");
+            return;
+        }
+        deleteTasks(selected);
+    }
+
+    @FXML
+    private void handleBulkComplete() {
+        List<TaskViewModel> selected = new ArrayList<>(taskTable.getSelectionModel().getSelectedItems());
+        if (selected.isEmpty()) {
+            return;
+        }
+        for (TaskViewModel task : selected) {
+            task.setCompleted(true);
+            taskManager.markAsCompleted(task.getId(), true);
+        }
+        reloadTasksFromManager();
+    }
+
+    @FXML
+    private void handleBulkPriority() {
+        List<TaskViewModel> selected = new ArrayList<>(taskTable.getSelectionModel().getSelectedItems());
+        if (selected.isEmpty()) {
+            return;
+        }
+        Priority chosen = showPriorityDialog();
+        if (chosen == null) {
+            return;
+        }
+        for (TaskViewModel task : selected) {
+            task.setPriority(chosen);
+            taskManager.updateTask(task.getTask());
+        }
+        refreshAllViews();
+        taskTable.refresh();
+    }
+
+    @FXML
+    private void handleBulkCategory() {
+        List<TaskViewModel> selected = new ArrayList<>(taskTable.getSelectionModel().getSelectedItems());
+        if (selected.isEmpty()) {
+            return;
+        }
+        Category chosen = showCategoryDialog();
+        if (chosen == null) {
+            return;
+        }
+        for (TaskViewModel task : selected) {
+            task.setCategory(chosen);
+            taskManager.updateTask(task.getTask());
+        }
+        refreshAllViews();
+        taskTable.refresh();
+    }
+
+    @FXML
+    private void handleBulkDelete() {
+        List<TaskViewModel> selected = new ArrayList<>(taskTable.getSelectionModel().getSelectedItems());
+        if (selected.isEmpty()) {
+            return;
+        }
+        deleteTasks(selected);
+    }
+
+    @FXML
+    private void handleFocusMode() {
+        List<Task> focusTasks = taskManager.getFocusTasks(3);
+        if (focusTasks.isEmpty()) {
+            showAlert(Alert.AlertType.INFORMATION, "Фокус дня", "Все задачи выполнены",
+                "Можно отдыхать или добавить новые цели.");
+            return;
+        }
+
+        String content = focusTasks.stream()
+            .map(task -> String.format("• %s (%s, до %s)",
+                task.getTitle(),
+                task.getPriority().getDisplayName(),
+                task.getFormattedEndTime()))
+            .collect(Collectors.joining("\n"));
+
+        showAlert(Alert.AlertType.INFORMATION, "Фокус дня", "Топ-3 задачи на ближайшее время", content);
+    }
+
+    @FXML
+    private void handleExportCalendar() {
+        Path exportPath = PathResolver.getDataDir().resolve("todolist_calendar.ics");
+        try {
+            Files.createDirectories(exportPath.getParent());
+            Files.writeString(exportPath, buildIcs());
+            showAlert(Alert.AlertType.INFORMATION, "Экспорт календаря", "Файл создан",
+                "Сохранено в: " + exportPath.toAbsolutePath());
+        } catch (IOException e) {
+            showAlert(Alert.AlertType.ERROR, "Экспорт календаря", "Не удалось создать файл", e.getMessage());
+        }
+    }
+
+    @FXML
+    private void handleCalendarDateChange() {
+        updateCalendarView();
+    }
+
+    @FXML
+    private void handleSaveNotificationSettings() {
+        if (notifyEmailCheck.isSelected() && notifyEmailField.getText().trim().isEmpty()) {
+            showAlert(Alert.AlertType.WARNING, "Уведомления", "Email не заполнен",
+                "Укажите email или отключите уведомления по email.");
+            return;
+        }
+        int minutes = toMinutes(reminderValueSpinner.getValue(), reminderUnitChoice.getValue());
+
+        dbManager.saveSetting("notify_popup", String.valueOf(notifyPopupCheck.isSelected()));
+        dbManager.saveSetting("notify_sound", String.valueOf(notifySoundCheck.isSelected()));
+        dbManager.saveSetting("notify_email", String.valueOf(notifyEmailCheck.isSelected()));
+        dbManager.saveSetting("notify_email_to", notifyEmailField.getText().trim());
+        dbManager.saveSetting("reminder_minutes", String.valueOf(minutes));
+
+        showAlert(Alert.AlertType.INFORMATION, "Уведомления", "Настройки сохранены",
+            "Напоминания будут обновлены автоматически.");
+    }
+
+    @FXML
+    private void handleSaveCustomTheme() {
+        Color bg = customBgColorPicker.getValue() == null ? Color.web("#8fd3ff") : customBgColorPicker.getValue();
+        Color accent = customAccentColorPicker.getValue() == null ? Color.web("#ffb84e") : customAccentColorPicker.getValue();
+
+        String css = buildCustomThemeCss(bg, accent);
+        Path customFile = ThemeManager.getCustomThemePath();
+        try {
+            Files.createDirectories(customFile.getParent());
+            Files.writeString(customFile, css);
+            ThemeManager.setTheme("Custom");
+            themeCombo.setValue("Custom");
+            applySelectedTheme();
+            showAlert(Alert.AlertType.INFORMATION, "Тема", "Кастомная тема сохранена",
+                "Файл: " + customFile.toAbsolutePath());
+        } catch (IOException e) {
+            showAlert(Alert.AlertType.ERROR, "Тема", "Не удалось сохранить тему", e.getMessage());
+        }
+    }
+
+    @FXML
+    private void handleToggleWidget() {
+        if (widgetEnabledCheck.isSelected()) {
+            showWidget();
+        } else {
+            hideWidget();
+        }
+    }
+
+    @FXML
+    private void handleRefreshWidget() {
+        updateWidget();
+    }
+
+    private void applySelectedTheme() {
+        String theme = themeCombo.getValue();
+        ThemeManager.setTheme(theme);
+        Scene scene = taskTable.getScene();
+        if (scene != null) {
+            ThemeManager.applyTheme(scene, theme);
+        }
+        if (widgetStage != null && widgetStage.getScene() != null) {
+            ThemeManager.applyTheme(widgetStage.getScene(), theme);
+        }
+    }
+
+    private void refreshAllViews() {
+        updateStatusLabel();
+        updateInsightLabel();
+        updateStatisticsCharts();
+        updateCalendarView();
+        updateWidget();
+    }
+
     private void updateStatusLabel() {
         int total = taskManager.getAllTasks().size();
         int completed = taskManager.getTaskCount(true);
         int overdue = taskManager.getOverdueTaskCount();
-        
-        statusLabel.setText(String.format(
-            "Всего задач: %d | Выполнено: %d | Просрочено: %d",
-            total, completed, overdue
-        ));
+        statusLabel.setText(String.format("Всего: %d | Выполнено: %d | Просрочено: %d", total, completed, overdue));
     }
-    
-    /**
-     * @brief Обработчик кнопки добавления новой задачи
-     * @details Открывает модальное диалоговое окно для создания новой задачи.
-     *          Загружает FXML файл диалога, инициализирует контроллер и отображает окно.
-     *          После закрытия диалога проверяет, была ли создана новая задача,
-     *          и если да, добавляет её в менеджер задач и сохраняет изменения.
-     * 
-     * @event OnAction кнопки "Добавить"
-     * 
-     * @exception IOException если не удается загрузить FXML файл диалога
-     * @see NewTaskController
-     * @see JsonUtil#saveTasks(List)
-     * @see #refreshTable()
-     * @see #updateStatusLabel()
-     */
-    @FXML
-    private void handleAddTask() {
+
+    private void updateInsightLabel() {
+        List<Task> next = taskManager.getUpcomingTasks(180);
+        if (next.isEmpty()) {
+            insightLabel.setText("Сегодня свободное окно: ближайших стартов нет.");
+            return;
+        }
+
+        Task nearest = next.get(0);
+        insightLabel.setText("Ближайший старт: " + nearest.getTitle() + " в " + nearest.getFormattedStartTime());
+    }
+
+    private void updateStatisticsCharts() {
+        List<Task> tasks = taskManager.getAllTasks();
+
+        long completed = tasks.stream().filter(Task::isCompleted).count();
+        long overdue = tasks.stream().filter(task -> !task.isCompleted() && task.isOverdue()).count();
+        long active = tasks.size() - completed - overdue;
+
+        completionChart.setData(FXCollections.observableArrayList(
+            new PieChart.Data("Выполнено", completed),
+            new PieChart.Data("Активные", active),
+            new PieChart.Data("Просрочено", overdue)
+        ));
+
+        List<PieChart.Data> categoryData = new ArrayList<>();
+        for (Category category : Category.values()) {
+            long count = tasks.stream().filter(task -> task.getCategory() == category).count();
+            if (count > 0) {
+                categoryData.add(new PieChart.Data(category.getDisplayName(), count));
+            }
+        }
+        categoryChart.setData(FXCollections.observableArrayList(categoryData));
+
+        XYChart.Series<String, Number> prioritySeries = new XYChart.Series<>();
+        for (Priority priority : Priority.values()) {
+            long count = tasks.stream().filter(task -> task.getPriority() == priority && !task.isCompleted()).count();
+            prioritySeries.getData().add(new XYChart.Data<>(priority.getDisplayName(), count));
+        }
+        priorityChart.getData().setAll(prioritySeries);
+
+        XYChart.Series<String, Number> timelineSeries = new XYChart.Series<>();
+        LocalDate today = LocalDate.now();
+        for (int i = 0; i < 7; i++) {
+            LocalDate date = today.plusDays(i);
+            long count = tasks.stream()
+                .filter(task -> task.getEndTime().toLocalDate().equals(date))
+                .count();
+            timelineSeries.getData().add(new XYChart.Data<>(date.format(DateTimeFormatter.ofPattern("dd.MM")), count));
+        }
+        timelineChart.getData().setAll(timelineSeries);
+    }
+
+    private void updateCalendarView() {
+        if (calendarPicker.getValue() == null) {
+            return;
+        }
+        LocalDate date = calendarPicker.getValue();
+        List<TaskViewModel> matches = taskList.stream()
+            .filter(task -> task.getStartTime().toLocalDate().equals(date)
+                || task.getEndTime().toLocalDate().equals(date))
+            .sorted(Comparator.comparing(TaskViewModel::getStartTime))
+            .collect(Collectors.toList());
+
+        calendarTaskList.setItems(FXCollections.observableArrayList(matches));
+        calendarSummaryLabel.setText("Задач: " + matches.size());
+    }
+
+    private void reloadTasksFromManager() {
+        taskList.clear();
+        for (Task task : taskManager.getAllTasks()) {
+            taskList.add(new TaskViewModel(task));
+        }
+        applySortMode();
+        refreshAllViews();
+        taskTable.refresh();
+    }
+
+    private void persistTask(TaskViewModel task) {
+        taskManager.updateTask(task.getTask());
+        refreshAllViews();
+    }
+
+    private void persistOrder() {
+        sortMode = SortMode.MANUAL;
+        List<Task> ordered = taskList.stream().map(TaskViewModel::getTask).collect(Collectors.toList());
+        taskManager.updateSortOrder(ordered);
+    }
+
+    private void duplicateTask(TaskViewModel original) {
+        if (original == null) {
+            return;
+        }
+        Task copy = new Task(
+            original.getTitle() + " (копия)",
+            original.getDescription(),
+            original.getStartTime(),
+            original.getEndTime(),
+            original.getPriority(),
+            original.getCategory()
+        );
+        copy.setRecurrenceRule(original.getTask().getRecurrenceRule());
+        copy.setReminderOffsetMinutes(original.getTask().getReminderOffsetMinutes());
+        copy.setRecurrenceEnd(original.getTask().getRecurrenceEnd());
+        taskManager.addTask(copy);
+        taskList.add(new TaskViewModel(copy));
+        applySortMode();
+        refreshAllViews();
+    }
+
+    private void adjustReminder(TaskViewModel task) {
+        if (task == null) {
+            return;
+        }
+        int current = task.getTask().getReminderOffsetMinutes();
+        Optional<Integer> result = showReminderDialog(current);
+        if (result.isEmpty()) {
+            return;
+        }
+        task.getTask().setReminderOffsetMinutes(result.get());
+        taskManager.updateTask(task.getTask());
+        refreshAllViews();
+    }
+
+    private Optional<Integer> showReminderDialog(int currentMinutes) {
+        javafx.scene.control.Dialog<Integer> dialog = new javafx.scene.control.Dialog<>();
+        dialog.setTitle("Напоминание");
+        dialog.setHeaderText("Укажите время напоминания (0 = по умолчанию)");
+
+        javafx.scene.control.ButtonType okButton = new javafx.scene.control.ButtonType("Сохранить", ButtonType.OK.getButtonData());
+        dialog.getDialogPane().getButtonTypes().addAll(okButton, ButtonType.CANCEL);
+
+        Spinner<Integer> spinner = new Spinner<>(0, 10080, 0);
+        ChoiceBox<String> unitChoice = new ChoiceBox<>(FXCollections.observableArrayList("мин", "час", "день"));
+
+        int value = currentMinutes;
+        String unit = "мин";
+        if (value > 0 && value % (24 * 60) == 0) {
+            value = value / (24 * 60);
+            unit = "день";
+        } else if (value > 0 && value % 60 == 0) {
+            value = value / 60;
+            unit = "час";
+        }
+
+        spinner.getValueFactory().setValue(value);
+        unitChoice.setValue(unit);
+
+        VBox content = new VBox(10,
+            new Label("Смещение:"),
+            new VBox(6, spinner, unitChoice)
+        );
+        dialog.getDialogPane().setContent(content);
+
+        dialog.setResultConverter(button -> {
+            if (button == okButton) {
+                return toMinutes(spinner.getValue(), unitChoice.getValue());
+            }
+            return null;
+        });
+
+        Optional<Integer> result = dialog.showAndWait();
+        return result.map(val -> Math.max(0, val));
+    }
+
+    private Priority showPriorityDialog() {
+        List<String> options = new ArrayList<>();
+        for (Priority priority : Priority.values()) {
+            options.add(priority.getDisplayName());
+        }
+        javafx.scene.control.ChoiceDialog<String> dialog = new javafx.scene.control.ChoiceDialog<>(options.get(0), options);
+        dialog.setTitle("Приоритет");
+        dialog.setHeaderText("Выберите приоритет");
+        Optional<String> choice = dialog.showAndWait();
+        if (choice.isEmpty()) {
+            return null;
+        }
+        return Priority.fromDisplayName(choice.get());
+    }
+
+    private Category showCategoryDialog() {
+        List<String> options = new ArrayList<>();
+        for (Category category : Category.values()) {
+            options.add(category.getDisplayName());
+        }
+        javafx.scene.control.ChoiceDialog<String> dialog = new javafx.scene.control.ChoiceDialog<>(options.get(0), options);
+        dialog.setTitle("Категория");
+        dialog.setHeaderText("Выберите категорию");
+        Optional<String> choice = dialog.showAndWait();
+        if (choice.isEmpty()) {
+            return null;
+        }
+        return Category.fromDisplayName(choice.get());
+    }
+
+    private void deleteTasks(List<TaskViewModel> selected) {
+        if (selected == null || selected.isEmpty()) {
+            return;
+        }
+        String header = selected.size() == 1 ? "Удалить задачу?" : "Удалить выбранные задачи?";
+        Alert confirmation = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmation.setTitle("Подтверждение");
+        confirmation.setHeaderText(header);
+        confirmation.setContentText(selected.size() == 1 ? selected.get(0).getTitle() : "Количество: " + selected.size());
+
+        Optional<ButtonType> result = confirmation.showAndWait();
+        if (result.isEmpty() || result.get() != ButtonType.OK) {
+            return;
+        }
+
+        for (TaskViewModel task : selected) {
+            taskManager.removeTask(task.getId());
+        }
+        taskList.removeAll(selected);
+        refreshAllViews();
+    }
+
+    private Task showTaskDialog(Task editingTask, LocalDate prefillDate) {
         try {
-            // Загружаем диалоговое окно
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("NewTaskDialog.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/NewTaskDialog.fxml"));
             Parent root = loader.load();
             NewTaskController controller = loader.getController();
-            
+            if (editingTask != null) {
+                controller.setEditingTask(editingTask);
+            }
+            if (prefillDate != null) {
+                controller.setPrefillDate(prefillDate);
+            }
+
             Stage dialogStage = new Stage();
-            dialogStage.setTitle("Новая задача");
+            dialogStage.setTitle(editingTask == null ? "Новая задача" : "Редактировать задачу");
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.initOwner(addButton.getScene().getWindow());
             dialogStage.setScene(new Scene(root));
             dialogStage.setResizable(false);
-            
-            // Устанавливаем обработчик закрытия окна
-            dialogStage.setOnHidden(event -> {
-                if (controller.isTaskCreated()) {
-                    Task newTask = controller.getCreatedTask();
-                    taskManager.addTask(newTask);
-                    JsonUtil.saveTasks(taskManager.getAllTasks());
-                    refreshTable();
-                    updateStatusLabel();
-                }
-            });
-            
+
             dialogStage.showAndWait();
-            
+
+            if (controller.isTaskCreated()) {
+                return controller.getCreatedTask();
+            }
         } catch (IOException e) {
-            showAlert("Ошибка", "Не удалось открыть окно создания задачи", e.getMessage());
+            showAlert(Alert.AlertType.ERROR, "Ошибка", "Не удалось открыть окно", e.getMessage());
         }
+        return null;
     }
-    
-    /**
-     * @brief Обработчик кнопки удаления задачи
-     * @details Удаляет выбранную в таблице задачу после подтверждения пользователем.
-     *          Показывает диалог подтверждения удаления. Если пользователь соглашается,
-     *          задача удаляется из менеджера задач, изменения сохраняются в файл,
-     *          а таблица и статусная строка обновляются.
-     * 
-     * @event OnAction кнопки "Удалить"
-     * 
-     * @note Требует предварительного выбора задачи в таблице
-     * @warning Безвозвратно удаляет задачу после подтверждения
-     * 
-     * @see TaskManager#removeTask(String)
-     * @see JsonUtil#saveTasks(List)
-     * @see #refreshTable()
-     * @see #updateStatusLabel()
-     * @see #showAlert(String, String, String)
-     */
-    @FXML
-    private void handleDeleteTask() {
-        TaskViewModel selectedTask = taskTable.getSelectionModel().getSelectedItem();
-        
-        if (selectedTask == null) {
-            showAlert("Предупреждение", "Не выбрана задача", 
-                     "Пожалуйста, выберите задачу для удаления из таблицы.");
+
+    private void showWidget() {
+        if (widgetStage != null && widgetStage.isShowing()) {
+            updateWidget();
             return;
         }
-        
-        // Подтверждение удаления
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Подтверждение удаления");
-        alert.setHeaderText("Удалить задачу?");
-        alert.setContentText("Вы действительно хотите удалить задачу: " + selectedTask.getTitle() + "?");
-        
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.isPresent() && result.get() == ButtonType.OK) {
-            boolean removed = taskManager.removeTask(selectedTask.getId());
-            if (removed) {
-                JsonUtil.saveTasks(taskManager.getAllTasks());
-                refreshTable();
-                updateStatusLabel();
-                showAlert("Успех", "Задача удалена", 
-                         "Задача успешно удалена из списка.");
+        widgetListView = new ListView<>(widgetItems);
+        widgetListView.setPrefSize(280, 220);
+
+        Label title = new Label("Срочные задачи");
+        title.setStyle("-fx-font-weight: bold; -fx-padding: 6 6 0 6;");
+
+        VBox root = new VBox(8, title, widgetListView);
+        root.setPrefSize(280, 240);
+
+        widgetStage = new Stage(StageStyle.UTILITY);
+        widgetStage.setTitle("ToDoList — Виджет");
+        widgetStage.setAlwaysOnTop(true);
+        widgetStage.setResizable(false);
+        widgetStage.setScene(new Scene(root));
+        ThemeManager.applyTheme(widgetStage.getScene(), ThemeManager.getCurrentTheme());
+        widgetStage.setOnCloseRequest(event -> widgetEnabledCheck.setSelected(false));
+        widgetStage.show();
+
+        updateWidget();
+    }
+
+    private void hideWidget() {
+        if (widgetStage != null) {
+            widgetStage.close();
+            widgetStage = null;
+            widgetItems.clear();
+        }
+    }
+
+    private void updateWidget() {
+        if (widgetStage == null || !widgetStage.isShowing()) {
+            return;
+        }
+        List<Task> tasks = taskManager.getAllTasks();
+        List<Task> urgent = tasks.stream()
+            .filter(task -> !task.isCompleted())
+            .sorted(Comparator
+                .comparing((Task t) -> priorityRank(t.getPriority()))
+                .thenComparing(Task::getEndTime))
+            .limit(5)
+            .collect(Collectors.toList());
+
+        widgetItems.setAll(urgent.stream()
+            .map(task -> String.format("%s — %s", task.getFormattedEndTime(), task.getTitle()))
+            .collect(Collectors.toList()));
+    }
+
+    private boolean isManualOrderAllowed() {
+        String query = searchField.getText();
+        return query == null || query.trim().isEmpty();
+    }
+
+    private TaskViewModel getRowTask(TableCell<TaskViewModel, ?> cell) {
+        if (cell == null) {
+            return null;
+        }
+        int idx = cell.getIndex();
+        if (idx < 0 || idx >= cell.getTableView().getItems().size()) {
+            return null;
+        }
+        return cell.getTableView().getItems().get(idx);
+    }
+
+    private int priorityRank(Priority priority) {
+        return switch (priority) {
+            case URGENT -> 0;
+            case IMPORTANT -> 1;
+            case NORMAL -> 2;
+        };
+    }
+
+    private int toMinutes(Integer value, String unit) {
+        int amount = value == null ? 0 : value;
+        if (amount <= 0) {
+            return 0;
+        }
+        if ("час".equals(unit)) {
+            return amount * 60;
+        }
+        if ("день".equals(unit)) {
+            return amount * 24 * 60;
+        }
+        return amount;
+    }
+
+    private void setReminderSpinner(int minutes) {
+        if (minutes <= 0) {
+            reminderValueSpinner.getValueFactory().setValue(0);
+            reminderUnitChoice.setValue("мин");
+            return;
+        }
+        if (minutes % (24 * 60) == 0) {
+            reminderValueSpinner.getValueFactory().setValue(minutes / (24 * 60));
+            reminderUnitChoice.setValue("день");
+        } else if (minutes % 60 == 0) {
+            reminderValueSpinner.getValueFactory().setValue(minutes / 60);
+            reminderUnitChoice.setValue("час");
+        } else {
+            reminderValueSpinner.getValueFactory().setValue(minutes);
+            reminderUnitChoice.setValue("мин");
+        }
+    }
+
+    private String buildIcs() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd'T'HHmmss");
+        StringBuilder sb = new StringBuilder();
+        sb.append("BEGIN:VCALENDAR\n");
+        sb.append("VERSION:2.0\n");
+        sb.append("PRODID:-//ToDoList//Calendar Export//RU\n");
+
+        for (Task task : taskManager.getAllTasks()) {
+            sb.append("BEGIN:VEVENT\n");
+            sb.append("UID:").append(task.getId()).append("\n");
+            sb.append("DTSTAMP:").append(LocalDateTime.now().format(formatter)).append("\n");
+            sb.append("DTSTART:").append(task.getStartTime().format(formatter)).append("\n");
+            sb.append("DTEND:").append(task.getEndTime().format(formatter)).append("\n");
+            sb.append("SUMMARY:").append(escapeIcs(task.getTitle())).append("\n");
+            sb.append("DESCRIPTION:").append(escapeIcs(task.getDescription())).append("\n");
+            sb.append("END:VEVENT\n");
+        }
+
+        sb.append("END:VCALENDAR\n");
+        return sb.toString();
+    }
+
+    private String escapeIcs(String value) {
+        if (value == null) {
+            return "";
+        }
+        return value
+            .replace("\\", "\\\\")
+            .replace(";", "\\;")
+            .replace(",", "\\,")
+            .replace("\n", "\\n");
+    }
+
+    private String buildCustomThemeCss(Color bg, Color accent) {
+        Color darker = accent.darker();
+        Color lighter = accent.brighter();
+        String bgHex = toHex(bg);
+        String accentHex = toHex(accent);
+        String accentDarkHex = toHex(darker);
+        String accentLightHex = toHex(lighter);
+
+        return """
+            .root-pane {
+                -fx-font-family: \"Avenir Next\", \"Verdana\", sans-serif;
+                -fx-background-color: linear-gradient(to bottom, %s, %s);
             }
+            .header-box {
+                -fx-background-color: rgba(255, 255, 255, 0.55);
+                -fx-background-radius: 16;
+                -fx-border-color: rgba(255, 255, 255, 0.9);
+                -fx-border-radius: 16;
+            }
+            .app-title { -fx-font-size: 30px; -fx-font-weight: 800; -fx-text-fill: #1f2b3a; }
+            .insight-label { -fx-text-fill: #1f2b3a; }
+            .field-label { -fx-text-fill: #1f2b3a; -fx-font-weight: 700; }
+            .button {
+                -fx-background-color: linear-gradient(to bottom, %s, %s);
+                -fx-border-color: %s;
+                -fx-border-radius: 10;
+                -fx-background-radius: 10;
+                -fx-font-weight: 700;
+                -fx-text-fill: #10232f;
+            }
+            .btn-success { -fx-background-color: linear-gradient(to bottom, %s, %s); -fx-text-fill: #0f1a1f; }
+            .btn-danger { -fx-background-color: linear-gradient(to bottom, #ff9c8e, #ff7668); -fx-text-fill: white; }
+            .btn-accent { -fx-background-color: linear-gradient(to bottom, %s, %s); -fx-text-fill: #0f1a1f; }
+            .table-box { -fx-background-color: rgba(255, 255, 255, 0.75); -fx-background-radius: 16; }
+            .tab-pane .tab { -fx-background-color: rgba(255, 255, 255, 0.7); -fx-background-radius: 10 10 0 0; -fx-font-weight: 700; }
+            .tab-pane .tab:selected { -fx-background-color: %s; }
+            .titled-pane > .title { -fx-background-color: rgba(255, 255, 255, 0.75); -fx-background-radius: 10; }
+            .titled-pane > *.content { -fx-background-color: rgba(255, 255, 255, 0.55); -fx-background-radius: 10; }
+            """.formatted(bgHex, accentLightHex, accentLightHex, accentHex, accentDarkHex,
+            accentLightHex, accentHex, accentLightHex, accentHex, accentHex);
+    }
+
+    private String toHex(Color color) {
+        int r = (int) Math.round(color.getRed() * 255);
+        int g = (int) Math.round(color.getGreen() * 255);
+        int b = (int) Math.round(color.getBlue() * 255);
+        return String.format("#%02x%02x%02x", r, g, b);
+    }
+
+    private double parseDouble(String value, double fallback) {
+        try {
+            return Double.parseDouble(value);
+        } catch (NumberFormatException e) {
+            return fallback;
         }
     }
-    
-    /**
-     * @brief Выполняет поиск задач по текстовому запросу
-     * @details Фильтрует список задач на основе текстового запроса из поля поиска.
-     *          Поиск выполняется в реальном времени по мере ввода текста.
-     *          Обновляет таблицу, отображая только задачи, соответствующие запросу.
-     * 
-     * @note Вызывается слушателем изменения текста в поле поиска
-     * @see TaskManager#searchTasks(String)
-     * @see TaskViewModel
-     */
-    private void searchTasks() {
-        String query = searchField.getText().trim();
-        List<Task> foundTasks = taskManager.searchTasks(query);
-        
-        taskList.clear();
-        for (Task task : foundTasks) {
-            taskList.add(new TaskViewModel(task));
-        }
-    }
-    
-    /**
-     * @brief Показывает информационное диалоговое окно
-     * @details Создает и отображает стандартное диалоговое окно с заданными
-     *          заголовком, заголовочным текстом и содержанием.
-     *          Используется для уведомлений, предупреждений и сообщений об ошибках.
-     * 
-     * @param title Заголовок диалогового окна
-     * @param header Заголовочный текст диалога (может быть null)
-     * @param content Основное текстовое содержание сообщения
-     * 
-     * @note Использует AlertType.INFORMATION для информационных сообщений
-     * @see Alert
-     */
-    private void showAlert(String title, String header, String content) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+
+    private void showAlert(Alert.AlertType type, String title, String header, String content) {
+        Alert alert = new Alert(type);
         alert.setTitle(title);
         alert.setHeaderText(header);
         alert.setContentText(content);
         alert.showAndWait();
     }
-    
-    /**
-     * @brief Обработчик закрытия приложения
-     * @details Останавливает анимацию снежинок и закрывает главное окно приложения.
-     *          Вызывается при завершении работы программы для корректного освобождения ресурсов.
-     * 
-     * @event Может быть привязан к кнопке закрытия или пункту меню "Выход"
-     * 
-     * @note Останавливает AnimationTimer для предотвращения утечек ресурсов
-     * @see AnimationTimer#stop()
-     */
+
     @FXML
     private void handleExit() {
-        // Останавливаем анимацию снежинок
-        if (snowTimer != null) {
-            snowTimer.stop();
-        }
         Stage stage = (Stage) taskTable.getScene().getWindow();
         stage.close();
     }

@@ -1,325 +1,441 @@
 package model;
 
+import repository.DatabaseManager;
+import util.JsonUtil;
+
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import util.RecurrenceUtil;
 
 /**
- * @class TaskManager
- * @brief Менеджер задач - центральный класс для управления задачами
- * 
- * @details Класс TaskManager реализует паттерн Singleton и служит центральным
- *          хранилищем и менеджером для всех задач в приложении. Отвечает за
- *          операции CRUD (Create, Read, Update, Delete) с задачами, поиск,
- *          фильтрацию и проверку статусов.
- * 
- * @author Чернов
- * @version 2.0
- * @date 2025-11-4
- * 
- * @implements Singleton паттерн
- * 
- * @see Task
- * @see Priority
- * @see Category
- * @see util.JsonUtil
- * 
- * @note Все методы возвращают неизменяемые списки для обеспечения инкапсуляции
- * @warning Для доступа к экземпляру используйте только getInstance()
- * @bug Исправлены проблемы с потокобезопасностью и инкапсуляцией
+ * Центральный менеджер задач (Singleton).
  */
 public class TaskManager {
-    
-    /**
-     * @brief Список всех задач
-     * @details Внутреннее хранилище задач приложения
-     * 
-     * @note Использует ArrayList для быстрого доступа по индексу
-     * @warning Не использовать напрямую, только через методы класса
-     */
-    private List<Task> tasks;
-    
-    /**
-     * @brief Единственный экземпляр TaskManager
-     * @details Реализация паттерна Singleton
-     * 
-     * @note Инициализируется лениво (при первом вызове getInstance())
-     * @see #getInstance()
-     */
     private static TaskManager instance;
-    
-    /**
-     * @brief Приватный конструктор
-     * @details Предотвращает создание экземпляров извне класса
-     * 
-     * @note Инициализирует пустой список задач
-     * @warning Только для внутреннего использования
-     */
+
+    private final List<Task> tasks = new ArrayList<>();
+    private DatabaseManager dbManager;
+    private boolean useDatabase = true;
+
+    private LocalDateTime lastOverdueCheck = LocalDateTime.MIN;
+    private static final Duration OVERDUE_CHECK_INTERVAL = Duration.ofSeconds(30);
+
     private TaskManager() {
-        this.tasks = new ArrayList<>();
+        initializeStorage();
     }
-    
-    /**
-     * @brief Возвращает единственный экземпляр TaskManager
-     * @details Реализация паттерна Singleton с ленивой инициализацией
-     * 
-     * @return TaskManager Единственный экземпляр менеджера задач
-     * 
-     * @note Использует synchronized для потокобезопасности
-     * @warning Всегда используйте этот метод для получения экземпляра
-     * 
-     * @see Singleton паттерн
-     */
+
     public static synchronized TaskManager getInstance() {
         if (instance == null) {
             instance = new TaskManager();
         }
         return instance;
     }
-    
-    /**
-     * @brief Добавляет новую задачу в менеджер
-     * @details Добавляет задачу в внутренний список и проверяет все задачи на просроченность
-     * 
-     * @param task Задача для добавления (не может быть null)
-     * 
-     * @throws NullPointerException если task равен null
-     * 
-     * @note После добавления автоматически проверяет все задачи на просроченность
-     * @see #checkAllTasksOverdue()
-     */
-    public void addTask(Task task) {
+
+    private void initializeStorage() {
+        List<Task> jsonTasks = JsonUtil.loadTasks();
+
+        if (useDatabase) {
+            try {
+                dbManager = DatabaseManager.getInstance();
+                List<Task> dbTasks = dbManager.getAllTasks();
+                mergeTasks(jsonTasks, dbTasks);
+            } catch (Exception e) {
+                System.err.println("TaskManager: DB unavailable, fallback to JSON only: " + e.getMessage());
+                useDatabase = false;
+                tasks.clear();
+                tasks.addAll(jsonTasks);
+            }
+        } else {
+            tasks.clear();
+            tasks.addAll(jsonTasks);
+        }
+
+        checkAllTasksOverdue();
+        normalizeSortIndexes();
+    }
+
+    private void mergeTasks(List<Task> jsonTasks, List<Task> dbTasks) {
+        tasks.clear();
+
+        if (dbTasks.isEmpty() && !jsonTasks.isEmpty()) {
+            tasks.addAll(jsonTasks);
+            if (dbManager != null) {
+                for (Task task : tasks) {
+                    dbManager.saveTask(task);
+                }
+            }
+            return;
+        }
+
+        tasks.addAll(dbTasks);
+
+        if (!jsonTasks.isEmpty()) {
+            Set<String> existingIds = tasks.stream().map(Task::getId).collect(Collectors.toSet());
+            for (Task jsonTask : jsonTasks) {
+                if (!existingIds.contains(jsonTask.getId())) {
+                    tasks.add(jsonTask);
+                    if (dbManager != null) {
+                        dbManager.saveTask(jsonTask);
+                    }
+                }
+            }
+        }
+    }
+
+    public synchronized void addTask(Task task) {
+        if (task == null) {
+            return;
+        }
+        if (task.getSortIndex() <= 0) {
+            task.setSortIndex(nextSortIndex());
+        }
         tasks.add(task);
+        persistTask(task);
+        saveJsonSnapshot();
         checkAllTasksOverdue();
     }
-    
-    /**
-     * @brief Удаляет задачу по её идентификатору
-     * @details Находит и удаляет задачу с указанным ID из списка
-     * 
-     * @param taskId Уникальный идентификатор задачи для удаления
-     * @return true если задача была найдена и удалена, false если задача не найдена
-     * 
-     * @note Использует Stream API для поиска задачи по ID
-     * @note ID задачи генерируется при создании (UUID)
-     * 
-     * @see Task#getId()
-     */
-    public boolean removeTask(String taskId) {
-        return tasks.removeIf(task -> task.getId().equals(taskId));
+
+    public synchronized boolean removeTask(String taskId) {
+        if (taskId == null || taskId.isBlank()) {
+            return false;
+        }
+
+        boolean removed = tasks.removeIf(task -> task.getId().equals(taskId));
+        if (!removed) {
+            return false;
+        }
+
+        if (useDatabase && dbManager != null) {
+            dbManager.deleteTask(taskId);
+        }
+        saveJsonSnapshot();
+        return true;
     }
-    
-    /**
-     * @brief Возвращает неизменяемую копию списка всех задач
-     * @details Предоставляет защищенную неизменяемую копию списка задач для предотвращения модификаций извне
-     * 
-     * @return List<Task> Неизменяемый список, содержащий все задачи
-     * 
-     * @note Перед возвратом проверяет все задачи на просроченность
-     * @note Возвращает неизменяемую копию для обеспечения инкапсуляции
-     * @note Использует Collections.unmodifiableList для создания защищенного представления
-     * 
-     * @see #checkAllTasksOverdue()
-     * @see Collections#unmodifiableList(List)
-     */
-    public List<Task> getAllTasks() {
-        checkAllTasksOverdue();
-        // Возвращаем неизменяемый список
+
+    public synchronized List<Task> getAllTasks() {
+        maybeCheckOverdue();
         return Collections.unmodifiableList(new ArrayList<>(tasks));
     }
-    
-    /**
-     * @brief Фильтрует задачи по статусу выполнения
-     * @details Возвращает список задач, отфильтрованный по статусу выполнения
-     * 
-     * @param completed true для выполненных задач, false для невыполненных
-     * @return List<Task> Неизменяемый список задач с указанным статусом выполнения
-     * 
-     * @note Использует Stream API для фильтрации
-     * @note Возвращает неизменяемую копию (оригинальный список не модифицируется)
-     * @note Использует Collections.unmodifiableList для создания защищенного представления
-     * 
-     * @see Task#isCompleted()
-     * @see Stream#filter(Predicate)
-     * @see Collections#unmodifiableList(List)
-     */
-    public List<Task> getTasksByCompletion(boolean completed) {
-        List<Task> filteredTasks = tasks.stream()
-            .filter(task -> task.isCompleted() == completed)
-            .collect(Collectors.toList());
-        
-        // Возвращаем неизменяемый список
-        return Collections.unmodifiableList(new ArrayList<>(filteredTasks));
+
+    public synchronized List<Task> getTasksByCompletion(boolean completed) {
+        return Collections.unmodifiableList(
+            tasks.stream()
+                .filter(task -> task.isCompleted() == completed)
+                .collect(Collectors.toList())
+        );
     }
-    
-    /**
-     * @brief Выполняет поиск задач по тексту
-     * @details Ищет задачи, в заголовке или описании которых содержится указанный текст
-     * 
-     * @param query Текст для поиска (может быть null или пустым)
-     * @return List<Task> Неизменяемый список найденных задач или все задачи если query пустой
-     * 
-     * @note Поиск не чувствителен к регистру (все приводится к нижнему регистру)
-     * @note Если query null или пустой, возвращает копию всех задач
-     * @note Ищет как в заголовке, так и в описании задачи
-     * @note Возвращает неизменяемую копию для обеспечения инкапсуляции
-     * 
-     * @see Task#getTitle()
-     * @see Task#getDescription()
-     * @see String#toLowerCase()
-     * @see String#contains(CharSequence)
-     * @see Collections#unmodifiableList(List)
-     */
-    public List<Task> searchTasks(String query) {
-        if (query == null || query.trim().isEmpty()) {
-            // Возвращаем копию всех задач
-            return Collections.unmodifiableList(new ArrayList<>(tasks));
+
+    public synchronized List<Task> searchTasks(String query) {
+        if (query == null || query.isBlank()) {
+            return getAllTasks();
         }
-        
-        String lowerQuery = query.toLowerCase();
-        List<Task> foundTasks = tasks.stream()
-            .filter(task -> task.getTitle().toLowerCase().contains(lowerQuery) ||
-                           task.getDescription().toLowerCase().contains(lowerQuery))
-            .collect(Collectors.toList());
-        
-        // Возвращаем неизменяемый список
-        return Collections.unmodifiableList(new ArrayList<>(foundTasks));
+
+        String trimmed = query.trim();
+        boolean hasNonAscii = trimmed.chars().anyMatch(ch -> ch > 127);
+
+        if (!hasNonAscii && useDatabase && dbManager != null) {
+            List<Task> dbResult = new ArrayList<>(dbManager.searchTasks(trimmed));
+            if (!dbResult.isEmpty()) {
+                return Collections.unmodifiableList(dbResult);
+            }
+        }
+
+        String lower = trimmed.toLowerCase();
+        return Collections.unmodifiableList(
+            tasks.stream()
+                .filter(task -> task.getTitle().toLowerCase().contains(lower)
+                    || task.getDescription().toLowerCase().contains(lower))
+                .collect(Collectors.toList())
+        );
     }
-    
-    /**
-     * @brief Изменяет статус выполнения задачи
-     * @details Помечает задачу как выполненную или невыполненную по её ID
-     * 
-     * @param taskId Уникальный идентификатор задачи
-     * @param completed Новый статус выполнения (true - выполнена, false - не выполнена)
-     * @return true если задача найдена и статус изменен, false если задача не найдена
-     * 
-     * @note При установке статуса "выполнено" автоматически снимается флаг просроченности
-     * @note Использует обычный цикл for для возможности возврата после нахождения задачи
-     * 
-     * @see Task#setCompleted(boolean)
-     * @see Task#getId()
-     */
-    public boolean markAsCompleted(String taskId, boolean completed) {
-        for (Task task : tasks) {
-            if (task.getId().equals(taskId)) {
-                task.setCompleted(completed);
+
+    public synchronized boolean markAsCompleted(String taskId, boolean completed) {
+        Task task = getTaskById(taskId);
+        if (task == null) {
+            return false;
+        }
+
+        task.setCompleted(completed);
+        task.checkOverdue();
+        persistTask(task);
+        saveJsonSnapshot();
+
+        if (completed) {
+            createNextRecurringTask(task);
+        }
+        return true;
+    }
+
+    public synchronized boolean updateTask(Task updatedTask) {
+        if (updatedTask == null) {
+            return false;
+        }
+
+        for (int i = 0; i < tasks.size(); i++) {
+            if (tasks.get(i).getId().equals(updatedTask.getId())) {
+                updatedTask.checkOverdue();
+                tasks.set(i, updatedTask);
+                persistTask(updatedTask);
+                saveJsonSnapshot();
                 return true;
             }
         }
+
         return false;
     }
-    
-    /**
-     * @brief Проверяет все задачи на просроченность
-     * @details Проходит по всем задачам и обновляет их статус просроченности
-     * 
-     * @note Вызывается автоматически при добавлении задачи и получении списка
-     * @note Проверяет только невыполненные задачи
-     * @note Использует текущее системное время для проверки
-     * 
-     * @see LocalDateTime#now()
-     * @see Task#isCompleted()
-     * @see Task#getEndTime()
-     * @see Task#checkOverdue()
-     */
-    public void checkAllTasksOverdue() {
-        LocalDateTime now = LocalDateTime.now();
+
+    public synchronized void checkAllTasksOverdue() {
+        boolean changed = false;
         for (Task task : tasks) {
-            if (!task.isCompleted() && now.isAfter(task.getEndTime())) {
-                task.checkOverdue();
+            boolean old = task.isOverdue();
+            task.checkOverdue();
+            if (old != task.isOverdue()) {
+                changed = true;
+                if (useDatabase && dbManager != null) {
+                    dbManager.updateTask(task);
+                }
             }
         }
+
+        lastOverdueCheck = LocalDateTime.now();
+
+        if (changed) {
+            saveJsonSnapshot();
+        }
     }
-    
-    /**
-     * @brief Подсчитывает количество задач по статусу выполнения
-     * @details Возвращает количество задач с указанным статусом выполнения
-     * 
-     * @param completed Статус выполнения для подсчета (true - выполненные, false - невыполненные)
-     * @return int Количество задач с указанным статусом
-     * 
-     * @note Использует Stream API с фильтрацией и подсчетом
-     * @note Более эффективен чем getTasksByCompletion().size()
-     * 
-     * @see Stream#filter(Predicate)
-     * @see Stream#count()
-     */
-    public int getTaskCount(boolean completed) {
-        return (int) tasks.stream()
-            .filter(task -> task.isCompleted() == completed)
-            .count();
+
+    private void maybeCheckOverdue() {
+        if (Duration.between(lastOverdueCheck, LocalDateTime.now()).compareTo(OVERDUE_CHECK_INTERVAL) >= 0) {
+            checkAllTasksOverdue();
+        }
     }
-    
-    /**
-     * @brief Подсчитывает количество просроченных задач
-     * @details Возвращает количество невыполненных задач, у которых истек срок выполнения
-     * 
-     * @return int Количество просроченных невыполненных задач
-     * 
-     * @note Учитывает только невыполненные задачи (выполненные не могут быть просроченными)
-     * @note Использует Stream API для фильтрации и подсчета
-     * 
-     * @see Task#isOverdue()
-     * @see Task#isCompleted()
-     */
-    public int getOverdueTaskCount() {
-        return (int) tasks.stream()
-            .filter(task -> task.isOverdue() && !task.isCompleted())
-            .count();
+
+    public synchronized int getTaskCount(boolean completed) {
+        return (int) tasks.stream().filter(task -> task.isCompleted() == completed).count();
     }
-    
-    /**
-     * @brief Очищает все задачи
-     * @details Удаляет все задачи из внутреннего списка
-     * 
-     * @note После очистки список задач становится пустым
-     * @warning Операция необратима, задачи не сохраняются автоматически
-     * 
-     * @see ArrayList#clear()
-     * @see util.JsonUtil#saveTasks(List)
-     */
-    public void clearAllTasks() {
+
+    public synchronized int getOverdueTaskCount() {
+        maybeCheckOverdue();
+        return (int) tasks.stream().filter(task -> task.isOverdue() && !task.isCompleted()).count();
+    }
+
+    public synchronized Task getTaskById(String taskId) {
+        if (taskId == null) {
+            return null;
+        }
+        return tasks.stream()
+            .filter(task -> task.getId().equals(taskId))
+            .findFirst()
+            .orElse(null);
+    }
+
+    public synchronized void clearAllTasks() {
+        if (useDatabase && dbManager != null) {
+            // Удаляем из БД поштучно, чтобы сохранить целостность статистики/связей.
+            List<String> ids = tasks.stream().map(Task::getId).collect(Collectors.toList());
+            for (String id : ids) {
+                dbManager.deleteTask(id);
+            }
+        }
+
         tasks.clear();
+        saveJsonSnapshot();
     }
-    
-    /**
-     * @brief Загружает задачи из внешнего списка
-     * @details Заменяет текущий список задач новым списком
-     * 
-     * @param loadedTasks Новый список задач для загрузки
-     * 
-     * @throws NullPointerException если loadedTasks равен null
-     * 
-     * @note После загрузки автоматически проверяет все задачи на просроченность
-     * @note Очищает предыдущий список задач
-     * 
-     * @see #clearAllTasks()
-     * @see #checkAllTasksOverdue()
-     * @see ArrayList#addAll(Collection)
-     */
-    public void loadTasks(List<Task> loadedTasks) {
+
+    public synchronized void loadTasks(List<Task> loadedTasks) {
         tasks.clear();
-        tasks.addAll(loadedTasks);
+        if (loadedTasks != null) {
+            tasks.addAll(loadedTasks);
+        }
+
+        if (useDatabase && dbManager != null) {
+            List<Task> existing = dbManager.getAllTasks();
+            Set<String> newIds = tasks.stream().map(Task::getId).collect(Collectors.toSet());
+            for (Task old : existing) {
+                if (!newIds.contains(old.getId())) {
+                    dbManager.deleteTask(old.getId());
+                }
+            }
+            for (Task task : tasks) {
+                dbManager.saveTask(task);
+            }
+        }
+
+        saveJsonSnapshot();
         checkAllTasksOverdue();
+        normalizeSortIndexes();
     }
-    
-    /**
-     * @brief Получает изменяемую копию списка задач для внутреннего использования
-     * @details Предоставляет изменяемую копию внутреннего списка задач
-     * 
-     * @return List<Task> Изменяемая копия списка задач
-     * 
-     * @note Приватный метод для внутреннего использования
-     * @warning Не использовать извне класса для сохранения инкапсуляции
-     * 
-     * @see ArrayList#ArrayList(Collection)
-     */
-    private List<Task> getMutableTasksCopy() {
-        return new ArrayList<>(tasks);
+
+    public synchronized boolean addTagToTask(String taskId, String tagName) {
+        if (!useDatabase || dbManager == null) {
+            return false;
+        }
+        try {
+            dbManager.addTagToTask(taskId, tagName);
+            return true;
+        } catch (Exception e) {
+            System.err.println("addTagToTask error: " + e.getMessage());
+            return false;
+        }
+    }
+
+    public synchronized List<String> getTaskTags(String taskId) {
+        if (!useDatabase || dbManager == null) {
+            return new ArrayList<>();
+        }
+        return dbManager.getTaskTags(taskId);
+    }
+
+    public synchronized String getStatistics() {
+        int total = tasks.size();
+        int completed = getTaskCount(true);
+        int pending = getTaskCount(false);
+        int overdue = getOverdueTaskCount();
+
+        return String.format(
+            "Всего задач: %d\nВыполнено: %d\nОжидает выполнения: %d\nПросрочено: %d",
+            total,
+            completed,
+            pending,
+            overdue
+        );
+    }
+
+    public synchronized boolean isUseDatabase() {
+        return useDatabase;
+    }
+
+    public synchronized void setUseDatabase(boolean useDatabase) {
+        this.useDatabase = useDatabase;
+        if (useDatabase && dbManager == null) {
+            initializeStorage();
+        }
+    }
+
+    public synchronized void close() {
+        if (dbManager != null) {
+            dbManager.close();
+        }
+    }
+
+    public synchronized List<Task> getFocusTasks(int limit) {
+        maybeCheckOverdue();
+        Comparator<Task> comparator = Comparator
+            .comparing(Task::isCompleted)
+            .thenComparing((Task t) -> priorityRank(t.getPriority()))
+            .thenComparing(Task::getEndTime);
+
+        return tasks.stream()
+            .filter(task -> !task.isCompleted())
+            .sorted(comparator)
+            .limit(Math.max(1, limit))
+            .collect(Collectors.toList());
+    }
+
+    public synchronized List<Task> getUpcomingTasks(int minutes) {
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime edge = now.plusMinutes(Math.max(1, minutes));
+
+        return tasks.stream()
+            .filter(task -> !task.isCompleted())
+            .filter(task -> !task.getStartTime().isBefore(now) && !task.getStartTime().isAfter(edge))
+            .sorted(Comparator.comparing(Task::getStartTime))
+            .collect(Collectors.toList());
+    }
+
+    private int priorityRank(Priority priority) {
+        return switch (priority) {
+            case URGENT -> 0;
+            case IMPORTANT -> 1;
+            case NORMAL -> 2;
+        };
+    }
+
+    private void persistTask(Task task) {
+        if (useDatabase && dbManager != null) {
+            dbManager.saveTask(task);
+        }
+    }
+
+    private void saveJsonSnapshot() {
+        try {
+            JsonUtil.saveTasks(tasks);
+        } catch (Exception e) {
+            System.err.println("JSON save error: " + e.getMessage());
+        }
+    }
+
+    public synchronized void updateSortOrder(List<Task> orderedTasks) {
+        if (orderedTasks == null || orderedTasks.isEmpty()) {
+            return;
+        }
+        tasks.clear();
+        tasks.addAll(orderedTasks);
+        int index = 1;
+        for (Task task : tasks) {
+            task.setSortIndex(index++);
+            persistTask(task);
+        }
+        saveJsonSnapshot();
+    }
+
+    private int nextSortIndex() {
+        return tasks.stream().mapToInt(Task::getSortIndex).max().orElse(0) + 1;
+    }
+
+    private void normalizeSortIndexes() {
+        boolean allZero = tasks.stream().allMatch(task -> task.getSortIndex() == 0);
+        if (!allZero) {
+            return;
+        }
+        int index = 1;
+        for (Task task : tasks) {
+            task.setSortIndex(index++);
+        }
+        saveJsonSnapshot();
+    }
+
+    private void createNextRecurringTask(Task task) {
+        String rule = task.getRecurrenceRule();
+        if (rule == null || rule.isBlank() || rule.equalsIgnoreCase("NONE")) {
+            return;
+        }
+
+        LocalDateTime nextStart = RecurrenceUtil.nextOccurrence(task.getStartTime(), rule);
+        if (nextStart == null) {
+            return;
+        }
+
+        if (task.getRecurrenceEnd() != null && nextStart.isAfter(task.getRecurrenceEnd())) {
+            return;
+        }
+
+        long durationMinutes = java.time.Duration.between(task.getStartTime(), task.getEndTime()).toMinutes();
+        if (durationMinutes < 0) {
+            durationMinutes = 60;
+        }
+
+        LocalDateTime nextEnd = nextStart.plusMinutes(durationMinutes);
+
+        Task next = new Task(
+            task.getTitle(),
+            task.getDescription(),
+            nextStart,
+            nextEnd,
+            task.getPriority(),
+            task.getCategory()
+        );
+        next.setRecurrenceRule(rule);
+        next.setReminderOffsetMinutes(task.getReminderOffsetMinutes());
+        next.setRecurrenceEnd(task.getRecurrenceEnd());
+        next.setSortIndex(nextSortIndex());
+        addTask(next);
     }
 }

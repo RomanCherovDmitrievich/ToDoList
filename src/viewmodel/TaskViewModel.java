@@ -412,7 +412,7 @@ public class TaskViewModel {
     public ObjectProperty<LocalDateTime> createdAtProperty() {
         return createdAt;
     }
-    
+
     // ====================================================
     // Методы для удобного отображения в таблице
     // ====================================================
@@ -610,6 +610,7 @@ public class TaskViewModel {
         category.set(task.getCategory());
         completed.set(task.isCompleted());
         overdue.set(task.isOverdue());
+        createdAt.set(task.getCreatedAt());
     }
     
     /**

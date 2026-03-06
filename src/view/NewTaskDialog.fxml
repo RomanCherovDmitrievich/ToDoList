@@ -5,49 +5,49 @@
 <?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 
-<BorderPane xmlns="http://javafx.com/javafx/11" 
-            xmlns:fx="http://javafx.com/fxml/1" 
+<BorderPane xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="view.NewTaskController"
-            prefWidth="500" prefHeight="500"
+            prefWidth="540" prefHeight="640"
             style="-fx-background-color: #f8f9fa;">
-    
+
     <top>
         <VBox spacing="5" style="-fx-padding: 15;">
-            <Label text="Новая задача" 
+            <Label fx:id="dialogTitleLabel"
+                   text="Новая задача"
                    style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;">
                 <font>
                     <Font name="System Bold" size="20.0" />
                 </font>
             </Label>
-            
             <Separator/>
         </VBox>
     </top>
-    
+
     <center>
         <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;">
             <VBox spacing="10" style="-fx-padding: 15;">
-                
+
                 <!-- Заголовок -->
                 <VBox spacing="5">
                     <Label text="Заголовок *" style="-fx-font-weight: bold;"/>
                     <TextField fx:id="titleField" promptText="Введите заголовок задачи"/>
                 </VBox>
-                
+
                 <!-- Описание -->
                 <VBox spacing="5">
                     <Label text="Описание" style="-fx-font-weight: bold;"/>
-                    <TextArea fx:id="descriptionArea" 
+                    <TextArea fx:id="descriptionArea"
                               promptText="Введите описание задачи"
                               wrapText="true"
                               prefRowCount="3"/>
                 </VBox>
-                
+
                 <!-- Время начала -->
                 <VBox spacing="5">
                     <Label text="Время начала" style="-fx-font-weight: bold;"/>
                     <HBox spacing="10">
-                        <DatePicker fx:id="startDatePicker" 
+                        <DatePicker fx:id="startDatePicker"
                                     promptText="Дата начала"
                                     HBox.hgrow="ALWAYS"/>
                         <ComboBox fx:id="startHourCombo" promptText="Часы" prefWidth="80"/>
@@ -55,12 +55,12 @@
                         <ComboBox fx:id="startMinuteCombo" promptText="Минуты" prefWidth="80"/>
                     </HBox>
                 </VBox>
-                
+
                 <!-- Время окончания -->
                 <VBox spacing="5">
                     <Label text="Время окончания *" style="-fx-font-weight: bold;"/>
                     <HBox spacing="10">
-                        <DatePicker fx:id="endDatePicker" 
+                        <DatePicker fx:id="endDatePicker"
                                     promptText="Дата окончания"
                                     HBox.hgrow="ALWAYS"/>
                         <ComboBox fx:id="endHourCombo" promptText="Часы" prefWidth="80"/>
@@ -68,45 +68,73 @@
                         <ComboBox fx:id="endMinuteCombo" promptText="Минуты" prefWidth="80"/>
                     </HBox>
                 </VBox>
-                
+
                 <!-- Приоритет и категория -->
                 <HBox spacing="20">
                     <VBox spacing="5" HBox.hgrow="ALWAYS">
                         <Label text="Приоритет" style="-fx-font-weight: bold;"/>
                         <ComboBox fx:id="priorityCombo" promptText="Выберите приоритет"/>
                     </VBox>
-                    
+
                     <VBox spacing="5" HBox.hgrow="ALWAYS">
                         <Label text="Категория" style="-fx-font-weight: bold;"/>
                         <ComboBox fx:id="categoryCombo" promptText="Выберите категорию"/>
                     </VBox>
                 </HBox>
-                
+
+                <!-- Напоминание -->
+                <VBox spacing="5">
+                    <Label text="Напоминание (0 = по умолчанию)" style="-fx-font-weight: bold;"/>
+                    <HBox spacing="10">
+                        <Spinner fx:id="reminderValueSpinner" prefWidth="100"/>
+                        <ChoiceBox fx:id="reminderUnitChoice"/>
+                    </HBox>
+                </VBox>
+
+                <!-- Повторение -->
+                <VBox spacing="5">
+                    <Label text="Повторение" style="-fx-font-weight: bold;"/>
+                    <ComboBox fx:id="recurrenceCombo" promptText="Не повторять"/>
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label text="Пользовательское правило (RRULE)" style="-fx-font-weight: bold;"/>
+                    <TextField fx:id="recurrenceRuleField" promptText="RRULE:FREQ=MONTHLY;BYDAY=TU;BYSETPOS=2"/>
+                    <Label fx:id="recurrenceHintLabel"
+                           text="Пример: RRULE:FREQ=MONTHLY;BYDAY=TU;BYSETPOS=2 — каждый второй вторник месяца"
+                           wrapText="true" style="-fx-font-size: 11px; -fx-text-fill: #5f6b7a;"/>
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label text="Повторять до (необязательно)" style="-fx-font-weight: bold;"/>
+                    <DatePicker fx:id="recurrenceEndPicker" promptText="Дата окончания повторов"/>
+                </VBox>
+
                 <!-- Сообщение об ошибке -->
-                <Label fx:id="errorLabel" 
+                <Label fx:id="errorLabel"
                        style="-fx-text-fill: red; -fx-font-size: 11px;"
                        wrapText="true"/>
-                
+
             </VBox>
         </ScrollPane>
     </center>
-    
+
     <bottom>
         <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 15;">
             <Region HBox.hgrow="ALWAYS"/>
-            
-            <Button fx:id="cancelButton" 
-                    text="Отмена" 
+
+            <Button fx:id="cancelButton"
+                    text="Отмена"
                     onAction="#handleCancel"
                     style="-fx-background-color: #95a5a6; -fx-text-fill: white;"
                     prefWidth="100"/>
-            
-            <Button fx:id="createButton" 
-                    text="Создать" 
+
+            <Button fx:id="createButton"
+                    text="Создать"
                     onAction="#handleCreateTask"
                     style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;"
-                    prefWidth="100"/>
+                    prefWidth="120"/>
         </HBox>
     </bottom>
-    
+
 </BorderPane>

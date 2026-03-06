@@ -1,135 +1,193 @@
-/* Новогодняя тема для ToDo List */
-
-.root {
-    -fx-font-family: "Arial", sans-serif;
-    -fx-font-size: 14px;
-    -fx-background-color: linear-gradient(to bottom, #0d1529, #1a0933);
+.root-pane {
+    -fx-font-family: "Avenir Next", "Verdana", sans-serif;
+    -fx-background-color:
+        radial-gradient(center 15% 10%, radius 90%, rgba(255, 244, 191, 0.65), transparent),
+        linear-gradient(to bottom, #8fd3ff 0%, #d8f2ff 42%, #fdf3c9 100%);
 }
 
-/* Заголовок приложения */
-#appTitleLabel {
-    -fx-font-size: 28px;
-    -fx-font-weight: bold;
-    -fx-text-fill: linear-gradient(to right, #ff3366, #ffcc00);
-    -fx-effect: dropshadow(gaussian, rgba(255,0,0,0.7), 10, 0.5, 0, 3);
-    -fx-alignment: center;
+.header-box {
+    -fx-background-color: rgba(255, 255, 255, 0.55);
+    -fx-background-radius: 16;
+    -fx-border-color: rgba(255, 255, 255, 0.9);
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
 }
 
-/* МАЛЕНЬКИЕ КНОПКИ с маленькими иконками */
+.app-title {
+    -fx-font-size: 31px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #1f4e6f;
+}
+
+.insight-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #2f6b8a;
+}
+
+.field-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #2f5f74;
+}
+
+.text-field {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-padding: 8 10;
+    -fx-border-color: #8bc7e9;
+    -fx-background-color: rgba(255, 255, 255, 0.95);
+    -fx-prompt-text-fill: #7f9fb0;
+}
+
 .button {
-    -fx-background-color: linear-gradient(to bottom, #ff3366, #cc0033);
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-font-size: 12px; /* Уменьшенный размер шрифта */
-    -fx-padding: 6px 12px; /* Уменьшенные отступы */
-    -fx-border-radius: 8px;
-    -fx-background-radius: 8px;
-    -fx-border-color: #ff6699;
-    -fx-border-width: 1px;
+    -fx-background-color: linear-gradient(to bottom, #ecf7ff, #d8efff);
+    -fx-border-color: #8ec8e8;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 7 14;
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #1f4e6f;
     -fx-cursor: hand;
-    -fx-effect: dropshadow(gaussian, rgba(255,51,102,0.3), 5, 0.3, 0, 1);
-    -fx-min-height: 30px; /* Минимальная высота */
-    -fx-max-height: 30px; /* Максимальная высота */
 }
 
 .button:hover {
-    -fx-background-color: linear-gradient(to bottom, #ff6699, #ff3366);
-    -fx-scale-x: 1.02;
-    -fx-scale-y: 1.02;
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #e4f4ff);
 }
 
-.button:pressed {
-    -fx-scale-x: 0.98;
-    -fx-scale-y: 0.98;
+.menu-button {
+    -fx-background-color: linear-gradient(to bottom, #ecf7ff, #d8efff);
+    -fx-border-color: #8ec8e8;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 7 14;
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #1f4e6f;
+    -fx-cursor: hand;
 }
 
-/* Маленькие иконки внутри кнопок */
-.button .image-view {
-    -fx-fit-height: 16px; /* ОЧЕНЬ маленькие иконки */
-    -fx-fit-width: 16px;
-    -fx-padding: 0 5px 0 0; /* Отступ справа от иконки */
+.menu-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #e4f4ff);
 }
 
-/* Кнопка добавления */
-#addButton {
-    -fx-background-color: linear-gradient(to bottom, #00cc66, #009933);
-    -fx-border-color: #00ff99;
-    -fx-graphic: url('icons/add_small.png'); /* Маленькая иконка */
+.btn-success {
+    -fx-background-color: linear-gradient(to bottom, #76d385, #4cbf64);
+    -fx-border-color: #43a65a;
+    -fx-text-fill: white;
 }
 
-#addButton:hover {
-    -fx-background-color: linear-gradient(to bottom, #00ff99, #00cc66);
+.btn-danger {
+    -fx-background-color: linear-gradient(to bottom, #ff9c8e, #ff7668);
+    -fx-border-color: #d86559;
+    -fx-text-fill: white;
 }
 
-/* Кнопка удаления */
-#deleteButton {
-    -fx-background-color: linear-gradient(to bottom, #ff6600, #cc3300);
-    -fx-border-color: #ff9966;
-    -fx-graphic: url('icons/delete_small.png'); /* Маленькая иконка */
+.btn-accent {
+    -fx-background-color: linear-gradient(to bottom, #ffd977, #ffb84e);
+    -fx-border-color: #d99b34;
+    -fx-text-fill: #5b3f07;
 }
 
-#deleteButton:hover {
-    -fx-background-color: linear-gradient(to bottom, #ff9966, #ff6600);
+.btn-neutral {
+    -fx-background-color: linear-gradient(to bottom, #e3edf4, #cedbe5);
+    -fx-border-color: #95aabd;
+    -fx-text-fill: #1b3d55;
 }
 
-/* Таблица */
+.table-box {
+    -fx-background-color: rgba(255, 255, 255, 0.8);
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: rgba(255, 255, 255, 0.95);
+    -fx-border-width: 1;
+}
+
 .table-view {
-    -fx-background-color: rgba(255, 255, 255, 0.95);
-    -fx-border-color: #ff3366;
-    -fx-border-width: 1px;
-    -fx-border-radius: 8px;
-    -fx-background-radius: 8px;
-    -fx-effect: dropshadow(gaussian, rgba(255,51,102,0.2), 10, 0.3, 0, 3);
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 8;
 }
 
 .table-view .column-header {
-    -fx-background-color: linear-gradient(to bottom, #ff3366, #cc0033);
+    -fx-background-color: linear-gradient(to bottom, #6bb8df, #4e9dc7);
     -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-font-size: 12px;
-    -fx-padding: 8px 5px;
-    -fx-border-color: #ff6699;
-    -fx-border-width: 0 1 1 0;
-    -fx-min-height: 35px;
+    -fx-font-weight: 700;
 }
 
-.table-view .table-cell {
-    -fx-border-color: #e6e6e6;
-    -fx-padding: 5px;
-    -fx-font-size: 12px;
+.table-view .table-row-cell {
+    -fx-background-color: rgba(255, 255, 255, 0.9);
 }
 
 .table-view .table-row-cell:odd {
-    -fx-background-color: rgba(255, 250, 250, 0.95);
+    -fx-background-color: rgba(244, 251, 255, 0.95);
 }
 
-.table-view .table-row-cell:even {
-    -fx-background-color: rgba(255, 255, 255, 0.98);
+.table-view .table-row-cell:selected {
+    -fx-background-color: rgba(255, 220, 138, 0.55);
 }
 
-/* Маленькие иконки в таблице */
-.table-cell .image-view {
-    -fx-fit-height: 14px;
-    -fx-fit-width: 14px;
+.status-box {
+    -fx-background-color: rgba(255, 255, 255, 0.6);
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(255, 255, 255, 0.95);
+    -fx-border-radius: 12;
 }
 
-/* Поле поиска */
-.text-field {
-    -fx-background-color: rgba(255, 255, 255, 0.9);
-    -fx-border-color: #ff3366;
-    -fx-border-width: 1px;
-    -fx-border-radius: 6px;
-    -fx-background-radius: 6px;
-    -fx-text-fill: #333333;
-    -fx-font-size: 13px;
-    -fx-padding: 6px;
-    -fx-prompt-text-fill: #999999;
+.status-label {
+    -fx-font-weight: 700;
+    -fx-text-fill: #2a5b75;
 }
 
-/* Статусная строка */
-#statusLabel {
-    -fx-font-size: 12px;
-    -fx-font-weight: bold;
-    -fx-text-fill: white;
-    -fx-padding: 5px;
+.tab-pane .tab-header-area {
+    -fx-padding: 0 0 6 0;
+}
+
+.tab-pane .tab-header-background {
+    -fx-background-color: transparent;
+}
+
+.tab-pane .tab {
+    -fx-background-color: rgba(255, 255, 255, 0.7);
+    -fx-background-radius: 10 10 0 0;
+    -fx-padding: 6 14;
+    -fx-font-weight: 700;
+    -fx-text-fill: #1f4e6f;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: rgba(255, 233, 175, 0.85);
+}
+
+.titled-pane > .title {
+    -fx-background-color: rgba(255, 255, 255, 0.75);
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: rgba(255, 255, 255, 0.9);
+    -fx-font-weight: 700;
+}
+
+.titled-pane > *.content {
+    -fx-background-color: rgba(255, 255, 255, 0.6);
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.list-view {
+    -fx-background-color: rgba(255, 255, 255, 0.8);
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(255, 255, 255, 0.9);
+    -fx-border-radius: 12;
+}
+
+.list-view .list-cell:filled:selected {
+    -fx-background-color: rgba(255, 220, 138, 0.55);
+}
+
+.chart {
+    -fx-background-color: transparent;
+}
+
+.chart-plot-background {
+    -fx-background-color: rgba(255, 255, 255, 0.6);
 }

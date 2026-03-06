@@ -36,6 +36,7 @@ public class JsonIntegrationTest {
         
         try {
             Files.createDirectories(testDataDir);
+            JsonUtil.setDataPath(testDataDir.toString(), "tasks.json");
         } catch (IOException e) {
             fail("Не удалось создать временную директорию: " + e.getMessage());
         }
@@ -44,6 +45,7 @@ public class JsonIntegrationTest {
     @AfterEach
     void tearDown() {
         // Очищаем временные файлы после каждого теста
+        JsonUtil.resetDataPath();
         try {
             if (Files.exists(testTasksFile)) {
                 Files.delete(testTasksFile);
@@ -61,7 +63,7 @@ public class JsonIntegrationTest {
      */
     @Test
     @DisplayName("Полный цикл: создание → сохранение → загрузка → проверка")
-    void testFullSaveLoadCycle() {
+    void testFullSaveLoadCycle() throws java.io.IOException {
         // 1. Создаем тестовые задачи
         List<Task> originalTasks = createTestTasks();
         
@@ -454,85 +456,21 @@ public class JsonIntegrationTest {
      * Сохраняет задачи в файл
      */
     private boolean saveTasksToFile(List<Task> tasks, String filePath) {
-        try {
-            // Временная реализация для тестов
-            // В реальном коде используйте JsonUtil.saveTasks()
-            
-            // Создаем JSON строку
-            StringBuilder jsonBuilder = new StringBuilder();
-            jsonBuilder.append("[\n");
-            
-            for (int i = 0; i < tasks.size(); i++) {
-                Task task = tasks.get(i);
-                jsonBuilder.append("  ");
-                jsonBuilder.append(task.toJsonString());
-                
-                if (i < tasks.size() - 1) {
-                    jsonBuilder.append(",");
-                }
-                jsonBuilder.append("\n");
-            }
-            
-            jsonBuilder.append("]");
-            
-            // Записываем в файл
-            Files.writeString(Paths.get(filePath), jsonBuilder.toString());
-            return true;
-            
-        } catch (Exception e) {
-            System.err.println("Ошибка при сохранении задач: " + e.getMessage());
-            return false;
-        }
+        return JsonUtil.saveTasksToPath(tasks, filePath);
     }
     
     /**
      * Загружает задачи из файла
      */
     private List<Task> loadTasksFromFile(String filePath) {
-        try {
-            // В реальном коде используйте JsonUtil.loadTasks()
-            // Здесь упрощенная версия для тестов
-            
-            Path path = Paths.get(filePath);
-            if (!Files.exists(path)) {
-                return new ArrayList<>();
-            }
-            
-            String jsonContent = Files.readString(path);
-            if (jsonContent.trim().isEmpty()) {
-                return new ArrayList<>();
-            }
-            
-            // Упрощенный парсинг для тестов
-            // В реальном приложении используйте JsonUtil
-            return parseTasksFromJson(jsonContent);
-            
-        } catch (Exception e) {
-            System.err.println("Ошибка при загрузке задач: " + e.getMessage());
-            return new ArrayList<>();
-        }
+        return JsonUtil.loadTasksFromPath(filePath);
     }
     
     /**
      * Упрощенный парсер JSON для тестов
      */
     private List<Task> parseTasksFromJson(String jsonContent) {
-        List<Task> tasks = new ArrayList<>();
-        
-        try {
-            // Упрощенная логика для тестов
-            // В реальном коде используйте JsonUtil
-            if (jsonContent.trim().equals("[]")) {
-                return tasks;
-            }
-            
-            // Просто возвращаем пустой список или моковые данные
-            // В реальных тестах нужно использовать настоящий парсер
-            return createTestTasks(); // Для демонстрации
-            
-        } catch (Exception e) {
-            return new ArrayList<>();
-        }
+        return JsonUtil.loadTasksFromPath(testTasksFile.toString());
     }
     
     /**

@@ -1,0 +1,200 @@
+.root-pane {
+    -fx-font-family: "Avenir Next", "Verdana", sans-serif;
+    -fx-background-color:
+        radial-gradient(center 20% 15%, radius 80%, rgba(80, 120, 160, 0.35), transparent),
+        linear-gradient(to bottom, #0c1118 0%, #121923 40%, #182535 100%);
+}
+
+.header-box {
+    -fx-background-color: rgba(20, 28, 40, 0.78);
+    -fx-background-radius: 16;
+    -fx-border-color: rgba(120, 160, 200, 0.35);
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+}
+
+.app-title {
+    -fx-font-size: 30px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #e8f1ff;
+}
+
+.insight-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #b7c7da;
+}
+
+.field-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #a7b7c9;
+}
+
+.text-field {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-padding: 8 10;
+    -fx-border-color: rgba(120, 160, 200, 0.45);
+    -fx-background-color: rgba(20, 28, 40, 0.9);
+    -fx-text-fill: #e5eefc;
+    -fx-prompt-text-fill: #6f8aa5;
+}
+
+.button {
+    -fx-background-color: linear-gradient(to bottom, #233245, #1a2836);
+    -fx-border-color: #35506b;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 7 14;
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #dbe7f4;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, #2c3f57, #1e2d3e);
+}
+
+.menu-button {
+    -fx-background-color: linear-gradient(to bottom, #233245, #1a2836);
+    -fx-border-color: #35506b;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 7 14;
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #dbe7f4;
+    -fx-cursor: hand;
+}
+
+.menu-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #2c3f57, #1e2d3e);
+}
+
+.btn-success {
+    -fx-background-color: linear-gradient(to bottom, #1f8a6a, #166a52);
+    -fx-border-color: #1a7b5f;
+    -fx-text-fill: #e6fff5;
+}
+
+.btn-danger {
+    -fx-background-color: linear-gradient(to bottom, #b4554b, #8f3f38);
+    -fx-border-color: #7a322c;
+    -fx-text-fill: #fff0ee;
+}
+
+.btn-accent {
+    -fx-background-color: linear-gradient(to bottom, #6a7cff, #4e5fd6);
+    -fx-border-color: #4454b5;
+    -fx-text-fill: #eef0ff;
+}
+
+.btn-neutral {
+    -fx-background-color: linear-gradient(to bottom, #2a3442, #1f2732);
+    -fx-border-color: #394556;
+    -fx-text-fill: #d9e2ec;
+}
+
+.table-box {
+    -fx-background-color: rgba(18, 26, 36, 0.8);
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: rgba(120, 160, 200, 0.35);
+    -fx-border-width: 1;
+}
+
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 8;
+}
+
+.table-view .column-header {
+    -fx-background-color: linear-gradient(to bottom, #2f435a, #24364b);
+    -fx-text-fill: #e5eefc;
+    -fx-font-weight: 700;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: rgba(24, 32, 44, 0.9);
+    -fx-text-fill: #d5e2ef;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: rgba(20, 28, 40, 0.9);
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: rgba(106, 124, 255, 0.35);
+}
+
+.status-box {
+    -fx-background-color: rgba(20, 28, 40, 0.78);
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(120, 160, 200, 0.35);
+    -fx-border-radius: 12;
+}
+
+.status-label {
+    -fx-font-weight: 700;
+    -fx-text-fill: #c9d6e4;
+}
+
+.tab-pane .tab-header-area {
+    -fx-padding: 0 0 6 0;
+}
+
+.tab-pane .tab-header-background {
+    -fx-background-color: transparent;
+}
+
+.tab-pane .tab {
+    -fx-background-color: rgba(25, 36, 50, 0.8);
+    -fx-background-radius: 10 10 0 0;
+    -fx-padding: 6 14;
+    -fx-font-weight: 700;
+    -fx-text-fill: #d5e2ef;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: rgba(106, 124, 255, 0.45);
+}
+
+.titled-pane > .title {
+    -fx-background-color: rgba(25, 36, 50, 0.85);
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: rgba(120, 160, 200, 0.35);
+    -fx-font-weight: 700;
+    -fx-text-fill: #d5e2ef;
+}
+
+.titled-pane > *.content {
+    -fx-background-color: rgba(20, 28, 40, 0.75);
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.list-view {
+    -fx-background-color: rgba(20, 28, 40, 0.8);
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(120, 160, 200, 0.35);
+    -fx-border-radius: 12;
+}
+
+.list-view .list-cell {
+    -fx-text-fill: #d5e2ef;
+}
+
+.list-view .list-cell:filled:selected {
+    -fx-background-color: rgba(106, 124, 255, 0.35);
+}
+
+.chart {
+    -fx-background-color: transparent;
+}
+
+.chart-plot-background {
+    -fx-background-color: rgba(20, 28, 40, 0.7);
+}

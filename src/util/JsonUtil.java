@@ -12,6 +12,7 @@ import java.time.format.DateTimeFormatterBuilder;
 import java.time.temporal.ChronoField;
 import java.util.*;
 import java.util.stream.Collectors;
+import util.PathResolver;
 
 /**
  * @class JsonUtil
@@ -41,7 +42,7 @@ public class JsonUtil {
      * @brief Директория для хранения данных
      * @details Может быть изменена для целей тестирования
      */
-    private static String dataDir = "data";
+    private static String dataDir = PathResolver.getDataDir().toString();
     
     /** 
      * @brief Имя файла задач
@@ -59,6 +60,13 @@ public class JsonUtil {
         .appendFraction(ChronoField.NANO_OF_SECOND, 0, 9, true)
         .optionalEnd()
         .toFormatter();
+
+    static {
+        Path legacy = Paths.get("data", "tasks.json");
+        if (Files.exists(legacy)) {
+            dataDir = Paths.get("data").toString();
+        }
+    }
     
     /**
      * @brief Устанавливает путь к данным для тестирования
@@ -82,7 +90,7 @@ public class JsonUtil {
      * @note Используется для очистки после тестов
      */
     public static void resetDataPath() {
-        dataDir = "data";
+        dataDir = PathResolver.getDataDir().toString();
         tasksFile = "tasks.json";
     }
     
@@ -497,7 +505,7 @@ public class JsonUtil {
         Map<String, String> fields = parseJsonFields(content);
         
         try {
-            return new Task(
+            Task task = new Task(
                 fields.getOrDefault("id", UUID.randomUUID().toString()),
                 fields.getOrDefault("title", ""),
                 fields.getOrDefault("description", ""),
@@ -509,6 +517,25 @@ public class JsonUtil {
                 Boolean.parseBoolean(fields.getOrDefault("overdue", "false")),
                 parseDateTime(fields.get("createdAt"))
             );
+            String sortIndex = fields.getOrDefault("sortIndex", "0");
+            String recurrenceRule = fields.getOrDefault("recurrenceRule", "NONE");
+            String reminderOffset = fields.getOrDefault("reminderOffsetMinutes", "0");
+            String recurrenceEnd = fields.getOrDefault("recurrenceEnd", "");
+
+            try {
+                task.setSortIndex(Integer.parseInt(sortIndex));
+            } catch (NumberFormatException ignored) {
+            }
+            task.setRecurrenceRule(recurrenceRule);
+            try {
+                task.setReminderOffsetMinutes(Integer.parseInt(reminderOffset));
+            } catch (NumberFormatException ignored) {
+            }
+            if (!recurrenceEnd.isBlank()) {
+                task.setRecurrenceEnd(LocalDateTime.parse(parseDateTime(recurrenceEnd), DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+            }
+
+            return task;
         } catch (Exception e) {
             System.err.println("Ошибка создания задачи из JSON: " + e.getMessage());
             throw new RuntimeException("Не удалось создать задачу из JSON", e);

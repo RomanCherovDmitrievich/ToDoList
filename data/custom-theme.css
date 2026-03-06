@@ -1,0 +1,29 @@
+.root-pane {
+    -fx-font-family: "Avenir Next", "Verdana", sans-serif;
+    -fx-background-color: linear-gradient(to bottom, #e64d4d, #00ffff);
+}
+.header-box {
+    -fx-background-color: rgba(255, 255, 255, 0.55);
+    -fx-background-radius: 16;
+    -fx-border-color: rgba(255, 255, 255, 0.9);
+    -fx-border-radius: 16;
+}
+.app-title { -fx-font-size: 30px; -fx-font-weight: 800; -fx-text-fill: #1f2b3a; }
+.insight-label { -fx-text-fill: #1f2b3a; }
+.field-label { -fx-text-fill: #1f2b3a; -fx-font-weight: 700; }
+.button {
+    -fx-background-color: linear-gradient(to bottom, #00ffff, #00ffff);
+    -fx-border-color: #00b2b2;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-font-weight: 700;
+    -fx-text-fill: #10232f;
+}
+.btn-success { -fx-background-color: linear-gradient(to bottom, #00ffff, #00ffff); -fx-text-fill: #0f1a1f; }
+.btn-danger { -fx-background-color: linear-gradient(to bottom, #ff9c8e, #ff7668); -fx-text-fill: white; }
+.btn-accent { -fx-background-color: linear-gradient(to bottom, #00ffff, #00ffff); -fx-text-fill: #0f1a1f; }
+.table-box { -fx-background-color: rgba(255, 255, 255, 0.75); -fx-background-radius: 16; }
+.tab-pane .tab { -fx-background-color: rgba(255, 255, 255, 0.7); -fx-background-radius: 10 10 0 0; -fx-font-weight: 700; }
+.tab-pane .tab:selected { -fx-background-color: #00ffff; }
+.titled-pane > .title { -fx-background-color: rgba(255, 255, 255, 0.75); -fx-background-radius: 10; }
+.titled-pane > *.content { -fx-background-color: rgba(255, 255, 255, 0.55); -fx-background-radius: 10; }

@@ -90,6 +90,26 @@ public class Task {
      * @details Дата и время, когда задача была создана в системе
      */
     private LocalDateTime createdAt;
+
+    /**
+     * @brief Индекс сортировки для ручного порядка
+     */
+    private int sortIndex;
+
+    /**
+     * @brief Правило повторения (RRULE-подобная строка)
+     */
+    private String recurrenceRule;
+
+    /**
+     * @brief Смещение напоминания в минутах (0 = использовать глобальное)
+     */
+    private int reminderOffsetMinutes;
+
+    /**
+     * @brief Дата окончания повторений (может быть null)
+     */
+    private LocalDateTime recurrenceEnd;
     
     /**
      * @brief Форматер для даты и времени
@@ -120,15 +140,19 @@ public class Task {
     public Task(String title, String description, LocalDateTime startTime, 
                 LocalDateTime endTime, Priority priority, Category category) {
         this.id = UUID.randomUUID().toString(); // UUID — 128-битное значение.
-        this.title = title;
-        this.description = description;
-        this.startTime = startTime;
-        this.endTime = endTime;
+        this.title = title == null ? "" : title.trim();
+        this.description = description == null ? "" : description.trim();
+        this.startTime = startTime == null ? LocalDateTime.now() : startTime;
+        this.endTime = endTime == null ? this.startTime.plusHours(1) : endTime;
         this.priority = (priority != null) ? priority : Priority.getDefault();
         this.category = (category != null) ? category : Category.OTHER;
         this.completed = false;
         this.overdue = false;
         this.createdAt = LocalDateTime.now();
+        this.sortIndex = 0;
+        this.recurrenceRule = "NONE";
+        this.reminderOffsetMinutes = 0;
+        this.recurrenceEnd = null;
     }
     
     /**
@@ -173,8 +197,37 @@ public class Task {
         this.completed = completed;
         this.overdue = overdue;
         this.createdAt = LocalDateTime.parse(createdAt, FORMATTER);
+        this.sortIndex = 0;
+        this.recurrenceRule = "NONE";
+        this.reminderOffsetMinutes = 0;
+        this.recurrenceEnd = null;
         
         // Проверяем, не просрочена ли задача
+        checkOverdue();
+    }
+
+    /**
+     * @brief Конструктор для загрузки из БД с расширенными полями
+     */
+    public Task(String id, String title, String description, String startTime,
+                String endTime, String priority, String category,
+                boolean completed, boolean overdue, String createdAt,
+                int sortIndex, String recurrenceRule, int reminderOffsetMinutes, String recurrenceEnd) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.startTime = LocalDateTime.parse(startTime, FORMATTER);
+        this.endTime = LocalDateTime.parse(endTime, FORMATTER);
+        this.priority = Priority.valueOf(priority);
+        this.category = Category.valueOf(category);
+        this.completed = completed;
+        this.overdue = overdue;
+        this.createdAt = LocalDateTime.parse(createdAt, FORMATTER);
+        this.sortIndex = sortIndex;
+        this.recurrenceRule = recurrenceRule == null || recurrenceRule.isBlank() ? "NONE" : recurrenceRule;
+        this.reminderOffsetMinutes = reminderOffsetMinutes;
+        this.recurrenceEnd = (recurrenceEnd == null || recurrenceEnd.isBlank()) ? null : LocalDateTime.parse(recurrenceEnd, FORMATTER);
+
         checkOverdue();
     }
     
@@ -190,9 +243,7 @@ public class Task {
      * @see #setCompleted(boolean)
      */
     public void checkOverdue() {
-        if (!completed && LocalDateTime.now().isAfter(endTime)) {
-            this.overdue = true;
-        }
+        this.overdue = !completed && LocalDateTime.now().isAfter(endTime);
     }
     
     
@@ -256,18 +307,26 @@ public class Task {
      */
     public LocalDateTime getCreatedAt() { return createdAt; }
 
+    public int getSortIndex() { return sortIndex; }
+
+    public String getRecurrenceRule() { return recurrenceRule; }
+
+    public int getReminderOffsetMinutes() { return reminderOffsetMinutes; }
+
+    public LocalDateTime getRecurrenceEnd() { return recurrenceEnd; }
+
     
     /**
      * @brief Устанавливает новый заголовок задачи
      * @param title Новый заголовок задачи
      */
-    public void setTitle(String title) { this.title = title; }
+    public void setTitle(String title) { this.title = title == null ? "" : title.trim(); }
     
     /**
      * @brief Устанавливает новое описание задачи
      * @param description Новое описание задачи
      */
-    public void setDescription(String description) { this.description = description; }
+    public void setDescription(String description) { this.description = description == null ? "" : description.trim(); }
     
     /**
      * @brief Устанавливает новое время начала задачи
@@ -299,6 +358,20 @@ public class Task {
      * @param category Новая категория
      */
     public void setCategory(Category category) { this.category = category; }
+
+    public void setSortIndex(int sortIndex) { this.sortIndex = sortIndex; }
+
+    public void setRecurrenceRule(String recurrenceRule) {
+        if (recurrenceRule == null || recurrenceRule.isBlank()) {
+            this.recurrenceRule = "NONE";
+        } else {
+            this.recurrenceRule = recurrenceRule.trim();
+        }
+    }
+
+    public void setReminderOffsetMinutes(int reminderOffsetMinutes) { this.reminderOffsetMinutes = reminderOffsetMinutes; }
+
+    public void setRecurrenceEnd(LocalDateTime recurrenceEnd) { this.recurrenceEnd = recurrenceEnd; }
     
     /**
      * @brief Устанавливает статус выполнения задачи
@@ -357,11 +430,13 @@ public class Task {
         String escapedTitle = escapeJson(title);
         String escapedDescription = escapeJson(description);
     
-        String result = String.format(
+        return String.format(
             "{\"id\":\"%s\",\"title\":\"%s\",\"description\":\"%s\"," +
             "\"startTime\":\"%s\",\"endTime\":\"%s\",\"priority\":\"%s\"," +
             "\"category\":\"%s\",\"completed\":%s,\"overdue\":%s," +
-            "\"createdAt\":\"%s\"}",
+            "\"createdAt\":\"%s\",\"sortIndex\":%d," +
+            "\"recurrenceRule\":\"%s\",\"reminderOffsetMinutes\":%d," +
+            "\"recurrenceEnd\":\"%s\"}",
             id, 
             escapedTitle, 
             escapedDescription,
@@ -371,11 +446,12 @@ public class Task {
             category.name(),
             completed, 
             overdue, 
-            createdAt.format(outputFormatter)
-    );
-    
-    System.out.println("DEBUG toJsonString: " + result);
-    return result;
+            createdAt.format(outputFormatter),
+            sortIndex,
+            escapeJson(recurrenceRule == null ? "NONE" : recurrenceRule),
+            reminderOffsetMinutes,
+            recurrenceEnd == null ? "" : recurrenceEnd.format(outputFormatter)
+        );
     }
     
     /**

@@ -2,8 +2,12 @@
     "java.project.sourcePaths": ["src"],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
-        "../javafx-sdk-25.0.1/lib/*.jar",
-        "lib/gson-2.10.1.jar"
+        "${workspaceFolder}/.javafx/lib/*.jar",
+        "${workspaceFolder}/javafx-sdk-*/lib/*.jar",
+        "lib/gson-2.10.1.jar",
+        "lib/sqlite-jdbc-3.45.1.0.jar",
+        "lib/slf4j-api-2.0.12.jar",
+        "lib/slf4j-nop-2.0.12.jar"
     ],
     "java.compile.nullAnalysis.mode": "automatic",
     "java.configuration.updateBuildConfiguration": "automatic",

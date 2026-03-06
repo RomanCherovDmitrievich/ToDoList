@@ -1,294 +1,285 @@
 package util;
 
+import javafx.application.Platform;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+
+import java.io.File;
+import java.net.URI;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
- * @class AudioManager
- * @brief Менеджер для работы с аудио в приложении
- * 
- * @details Класс AudioManager реализует паттерн Singleton для управления звуковыми эффектами.
- * Обеспечивает загрузку, воспроизведение и контроль аудио ресурсов приложения.
- * Поддерживает включение/выключение звуков и регулировку громкости.
- * 
- * @author Чернов
- * @version 1.0
- * @date 2025-11-2
- * 
- * @note Использует JavaFX Media API для воспроизведения звуков
- * @warning Звуки требуют наличия соответствующих файлов в resources/audio/
- * @see Media
- * @see MediaPlayer
- * 
- * @singleton Гарантирует единственный экземпляр в приложении
+ * Менеджер аудио с циклическим плейлистом.
  */
 public class AudioManager {
-    
-    /**
-     * @brief Единственный экземпляр AudioManager
-     * @details Статическое поле для реализации паттерна Singleton
-     */
     private static AudioManager instance;
-    
-    /**
-     * @brief Коллекция медиа-плееров
-     * @details Карта для хранения загруженных звуков по их именам
-     * 
-     * @key String - название звука (например, "startup", "add", "delete")
-     * @value MediaPlayer - плеер для воспроизведения звука
-     */
-    private Map<String, MediaPlayer> mediaPlayers;
-    
-    /**
-     * @brief Флаг включения звуков
-     * @details Определяет, будут ли воспроизводиться звуки в приложении
-     */
+
+    private final List<URI> playlist = new ArrayList<>();
+    private MediaPlayer currentPlayer;
+    private int currentTrackIndex = -1;
+
     private boolean soundsEnabled = true;
-    
-    /**
-     * @brief Приватный конструктор
-     * @details Инициализирует коллекцию медиа-плееров и загружает звуки
-     * 
-     * @note Конструктор приватный для реализации паттерна Singleton
-     * @see #loadSounds()
-     */
+    private double masterVolume = 0.35;
+
+    private boolean javafxReady = false;
+
     private AudioManager() {
-        mediaPlayers = new HashMap<>();
-        loadSounds();
+        refreshPlaylist();
     }
-    
-    /**
-     * @brief Получает единственный экземпляр AudioManager
-     * @details Реализация паттерна Singleton с синхронизацией для многопоточности
-     * 
-     * @return AudioManager единственный экземпляр класса
-     * 
-     * @note Метод synchronized для безопасного использования в многопоточной среде
-     * @warning При первом вызове создает новый экземпляр и загружает звуки
-     */
+
     public static synchronized AudioManager getInstance() {
         if (instance == null) {
             instance = new AudioManager();
         }
         return instance;
     }
-    
-    /**
-     * @brief Загружает все звуки приложения
-     * @details Загружает аудио файлы из папки resources/audio/ и создает MediaPlayer для каждого
-     * 
-     * @throws Exception если возникают ошибки при загрузке файлов
-     * 
-     * @note В случае ошибки отключает звуки и продолжает работу
-     * @note Текущая версия загружает только стартовый звук "startup3.mp3"
-     * 
-     * @see Media
-     * @see MediaPlayer
-     */
-    private void loadSounds() {
+
+    private boolean ensureJavafxReady() {
+        if (javafxReady) {
+            return true;
+        }
         try {
-            // Загружаем стартовый звук
-            URL startupSoundUrl = getClass().getResource("/resources/audio/startup.mp3");
-            if (startupSoundUrl != null) {
-                Media startupMedia = new Media(startupSoundUrl.toString());
-                MediaPlayer startupPlayer = new MediaPlayer(startupMedia);
-                startupPlayer.setVolume(0.3);
-                mediaPlayers.put("startup", startupPlayer);
-            } else {
-                System.out.println("Аудио файл не найден, звуки отключены");
-                soundsEnabled = false;
-            }
-            
+            Platform.startup(() -> {});
+            javafxReady = true;
+        } catch (IllegalStateException e) {
+            // Toolkit already initialized.
+            javafxReady = true;
         } catch (Exception e) {
-            System.err.println("Ошибка загрузки аудио файлов: " + e.getMessage());
-            // Продолжаем работу без звуков
+            javafxReady = false;
+        }
+        return javafxReady;
+    }
+
+    /**
+     * Пересканирует треки из внешней папки /audio и встроенных ресурсов.
+     */
+    public synchronized void refreshPlaylist() {
+        playlist.clear();
+
+        Set<String> unique = new HashSet<>();
+
+        // 1) Внешняя папка (приоритетно для пользовательской музыки)
+        for (Path dir : resolveExternalAudioDirs()) {
+            if (!Files.isDirectory(dir)) {
+                continue;
+            }
+            try {
+                Files.list(dir)
+                    .filter(Files::isRegularFile)
+                    .filter(path -> isAudioFile(path.getFileName().toString()))
+                    .sorted(Comparator.comparing(path -> path.getFileName().toString().toLowerCase()))
+                    .forEach(path -> {
+                        URI uri = path.toUri();
+                        if (unique.add(uri.toString())) {
+                            playlist.add(uri);
+                        }
+                    });
+            } catch (Exception e) {
+                System.err.println("Audio scan error (" + dir + "): " + e.getMessage());
+            }
+        }
+
+        // 2) Встроенные fallback-треки
+        addBundledTrack("/resources/audio/startup.mp3", unique);
+        addBundledTrack("/resources/audio/startup2.mp3", unique);
+        addBundledTrack("/resources/audio/startup3.mp3", unique);
+
+        if (playlist.isEmpty()) {
             soundsEnabled = false;
         }
     }
-    
-    /**
-     * @brief Воспроизводит стартовый звук
-     * @details Проигрывает звук запуска приложения с начала
-     * 
-     * @note Звук воспроизводится только если soundsEnabled = true
-     * @note Если плеер не найден или звуки отключены, метод ничего не делает
-     * 
-     * @see #soundsEnabled
-     * @see MediaPlayer#seek(javafx.util.Duration)
-     * @see MediaPlayer#play()
-     */
-    public void playStartupSound() {
-        if (!soundsEnabled) return;
-        
-        MediaPlayer player = mediaPlayers.get("startup");
-        if (player != null) {
-            player.seek(player.getStartTime());
-            player.play();
+
+    private List<Path> resolveExternalAudioDirs() {
+        List<Path> dirs = new ArrayList<>();
+
+        String env = System.getenv("TODOLIST_AUDIO_DIR");
+        if (env != null && !env.isBlank()) {
+            dirs.add(Paths.get(env));
+        }
+
+        dirs.add(PathResolver.getAudioDir());
+        dirs.add(Paths.get("audio"));
+        dirs.add(Paths.get("/audio"));
+
+        return dirs;
+    }
+
+    private void addBundledTrack(String resourcePath, Set<String> unique) {
+        try {
+            URL url = getClass().getResource(resourcePath);
+            if (url == null) {
+                return;
+            }
+            URI uri = URI.create(url.toString());
+            if (unique.add(uri.toString())) {
+                playlist.add(uri);
+            }
+        } catch (Exception ignored) {
         }
     }
 
-    public int getAudioFilesCount() {
-        return mediaPlayers.size();
+    private boolean isAudioFile(String fileName) {
+        String lower = fileName.toLowerCase();
+        return lower.endsWith(".mp3") || lower.endsWith(".wav") || lower.endsWith(".m4a");
     }
-    
-    /**
-     * @brief Воспроизводит звук добавления
-     * @details Проигрывает звук при добавлении новой задачи
-     * 
-     * @note В текущей реализации звук "add" не загружается
-     * @note Метод зарезервирован для будущего расширения функциональности
-     */
-    public void playAddSound() {
-        if (!soundsEnabled) return;
-        
-        MediaPlayer player = mediaPlayers.get("add");
-        if (player != null) {
-            player.seek(player.getStartTime());
-            player.play();
+
+    public synchronized void startPlaylist() {
+        if (!soundsEnabled) {
+            return;
+        }
+
+        if (!ensureJavafxReady()) {
+            return;
+        }
+
+        if (playlist.isEmpty()) {
+            refreshPlaylist();
+        }
+
+        if (playlist.isEmpty()) {
+            return;
+        }
+
+        if (currentPlayer == null) {
+            playTrackAt(0);
+            return;
+        }
+
+        currentPlayer.play();
+    }
+
+    public synchronized void playStartupSound() {
+        startPlaylist();
+    }
+
+    public synchronized void playAddSound() {
+        // Не прерываем фоновый плейлист.
+    }
+
+    public synchronized void playDeleteSound() {
+        // Не прерываем фоновый плейлист.
+    }
+
+    public synchronized void playCompleteSound() {
+        // Не прерываем фоновый плейлист.
+    }
+
+    private synchronized void playTrackAt(int index) {
+        if (playlist.isEmpty()) {
+            return;
+        }
+
+        if (!ensureJavafxReady()) {
+            soundsEnabled = false;
+            return;
+        }
+
+        int safeIndex = ((index % playlist.size()) + playlist.size()) % playlist.size();
+        URI uri = playlist.get(safeIndex);
+
+        disposeCurrentPlayer();
+
+        try {
+            Media media = new Media(uri.toString());
+            currentPlayer = new MediaPlayer(media);
+            currentPlayer.setVolume(masterVolume);
+            currentPlayer.setOnEndOfMedia(this::playNextTrack);
+            currentPlayer.setOnError(() -> {
+                System.err.println("Media player error: " + currentPlayer.getError());
+                playNextTrack();
+            });
+            currentTrackIndex = safeIndex;
+            currentPlayer.play();
+        } catch (Exception e) {
+            System.err.println("Cannot play track: " + uri + " -> " + e.getMessage());
+            playNextTrack();
         }
     }
-    
-    /**
-     * @brief Воспроизводит звук удаления
-     * @details Проигрывает звук при удалении задачи
-     * 
-     * @note В текущей реализации звук "delete" не загружается
-     * @note Метод зарезервирован для будущего расширения функциональности
-     */
-    public void playDeleteSound() {
-        if (!soundsEnabled) return;
-        
-        MediaPlayer player = mediaPlayers.get("delete");
-        if (player != null) {
-            player.seek(player.getStartTime());
-            player.play();
+
+    private synchronized void playNextTrack() {
+        if (playlist.isEmpty()) {
+            return;
         }
+        playTrackAt(currentTrackIndex + 1);
     }
-    
-    /**
-     * @brief Воспроизводит звук завершения
-     * @details Проигрывает звук при отметке задачи как выполненной
-     * 
-     * @note В текущей реализации звук "complete" не загружается
-     * @note Метод зарезервирован для будущего расширения функциональности
-     */
-    public void playCompleteSound() {
-        if (!soundsEnabled) return;
-        
-        MediaPlayer player = mediaPlayers.get("complete");
-        if (player != null) {
-            player.seek(player.getStartTime());
-            player.play();
+
+    private void disposeCurrentPlayer() {
+        if (currentPlayer == null) {
+            return;
         }
+        try {
+            currentPlayer.stop();
+            currentPlayer.dispose();
+        } catch (Exception ignored) {
+        }
+        currentPlayer = null;
     }
-    
-    /**
-     * @brief Включает/выключает звуки
-     * @details Устанавливает флаг, определяющий будут ли воспроизводиться звуки
-     * 
-     * @param enabled true - включить звуки, false - выключить
-     * 
-     * @note Изменение этого флага не останавливает уже играющие звуки
-     * @see #stopAllSounds() для остановки текущего воспроизведения
-     */
-    public void setSoundsEnabled(boolean enabled) {
+
+    public synchronized int getAudioFilesCount() {
+        return playlist.size();
+    }
+
+    public synchronized void setSoundsEnabled(boolean enabled) {
         this.soundsEnabled = enabled;
+        if (!enabled) {
+            stopAllSounds();
+        }
     }
-    
-    /**
-     * @brief Проверяет, включены ли звуки
-     * @details Возвращает текущее состояние флага soundsEnabled
-     * 
-     * @return true если звуки включены, false если выключены
-     * 
-     * @see #soundsEnabled
-     */
-    public boolean isSoundsEnabled() {
+
+    public synchronized boolean isSoundsEnabled() {
         return soundsEnabled;
     }
-    
-    /**
-     * @brief Останавливает все звуки
-     * @details Останавливает воспроизведение на всех активных медиа-плеерах
-     * 
-     * @note Метод не освобождает ресурсы плееров
-     * @see #dispose() для полного освобождения ресурсов
-     */
-    public void stopAllSounds() {
-        for (MediaPlayer player : mediaPlayers.values()) {
-            if (player != null) {
-                player.stop();
-            }
+
+    public synchronized void stopAllSounds() {
+        if (currentPlayer != null) {
+            currentPlayer.stop();
         }
     }
-    
-    /**
-     * @brief Устанавливает громкость для всех звуков
-     * @details Устанавливает уровень громкости для всех загруженных медиа-плееров
-     * 
-     * @param volume Уровень громкости от 0.0 (тишина) до 1.0 (максимальная)
-     * 
-     * @note Значение автоматически ограничивается диапазоном [0.0, 1.0]
-     * @warning Изменение громкости применяется ко всем последующим воспроизведениям
-     */
-    public void setMasterVolume(double volume) {
-        if (volume < 0) volume = 0;
-        if (volume > 1) volume = 1;
-        
-        for (MediaPlayer player : mediaPlayers.values()) {
-            if (player != null) {
-                player.setVolume(volume);
-            }
+
+    public synchronized void setMasterVolume(double volume) {
+        if (volume < 0.0) {
+            volume = 0.0;
+        } else if (volume > 1.0) {
+            volume = 1.0;
+        }
+
+        masterVolume = volume;
+
+        if (currentPlayer != null) {
+            currentPlayer.setVolume(volume);
         }
     }
-    
-    /**
-     * @brief Освобождает ресурсы
-     * @details Останавливает все звуки, освобождает ресурсы медиа-плееров и очищает коллекцию
-     * 
-     * @note Этот метод должен вызываться при завершении работы приложения
-     * @note После вызова dispose() объект AudioManager можно продолжать использовать
-     * 
-     * @see MediaPlayer#dispose()
-     * @warning Повторный вызов loadSounds() потребуется для восстановления функциональности
-     */
-    public void dispose() {
+
+    public synchronized void dispose() {
         stopAllSounds();
-        for (MediaPlayer player : mediaPlayers.values()) {
-            if (player != null) {
-                player.dispose();
+        disposeCurrentPlayer();
+        playlist.clear();
+        currentTrackIndex = -1;
+        instance = null;
+    }
+
+    public synchronized boolean hasAudioFiles() {
+        return !playlist.isEmpty();
+    }
+
+    public synchronized String[] getAvailableSounds() {
+        List<String> names = new ArrayList<>();
+        for (URI uri : playlist) {
+            try {
+                File file = Paths.get(uri).toFile();
+                names.add(file.getName());
+            } catch (Exception e) {
+                names.add(uri.toString());
             }
         }
-        mediaPlayers.clear();
-        instance = null; // СБРАСЫВАЕМ ИНСТАНС!
-    }
-    
-    /**
-     * @brief Проверяет наличие аудио файлов
-     * @details Определяет, были ли успешно загружены какие-либо звуки
-     * 
-     * @return true если есть хотя бы один загруженный звук, false если коллекция пуста
-     * 
-     * @see #mediaPlayers
-     */
-    public boolean hasAudioFiles() {
-        // Проверяем, есть ли вообще загруженные аудио файлы
-        return !mediaPlayers.isEmpty();
-    }
-    
-    /**
-     * @brief Получает список доступных звуков
-     * @details Возвращает массив названий всех загруженных звуков
-     * 
-     * @return String[] Массив названий звуков
-     * 
-     * @note Названия соответствуют ключам в коллекции mediaPlayers
-     * @see #mediaPlayers
-     */
-    public String[] getAvailableSounds() {
-        return mediaPlayers.keySet().toArray(new String[0]);
+        return names.toArray(new String[0]);
     }
 }

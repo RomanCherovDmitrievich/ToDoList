@@ -1,0 +1,23 @@
+/*! @page database_schema_page Схема Базы Данных
+ *
+ * @section database_overview Обзор
+ * Проект использует SQLite-базу `todolist.db` в директории данных.
+ * Если папка `data/` существует рядом с проектом — используется она,
+ * иначе путь выбирается по ОС (macOS: `~/Library/Application Support/ToDoList`,
+ * RedOS/Linux: `~/.local/share/ToDoList`, Windows: `%APPDATA%\\ToDoList`).
+ *
+ * @section database_tables Таблицы
+ * 1. `tasks` — основная таблица задач (включая `sort_index`, `recurrence_rule`,
+ *    `reminder_offset`, `recurrence_end`).
+ * 2. `tags` — словарь тегов.
+ * 3. `task_tags` — связь many-to-many между задачами и тегами.
+ * 4. `task_statistics` — аудит операций с задачами.
+ * 5. `app_settings` — настройки приложения.
+ *
+ * @section database_indexes Индексы
+ * Индексы созданы для полей `completed`, `priority`, `category`, `end_time`
+ * и ключевых FK в `task_tags` и `task_statistics`.
+ *
+ * @section database_file Где посмотреть SQL
+ * Полный SQL-скрипт: `tables.sql`
+ */
