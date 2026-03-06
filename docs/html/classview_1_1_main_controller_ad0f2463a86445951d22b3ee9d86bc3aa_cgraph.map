@@ -1,0 +1,15 @@
+<map id="view.MainController.updateWidget" name="view.MainController.updateWidget">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,142,182,182"/>
+<area shape="rect" id="Node000002" href="$classmodel_1_1_task.html#a7a97e0aae6d6edf514a6b7442ce76232" title="Возвращает время окончания задачи" alt="" coords="252,5,414,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,139,160,90,193,63,228,41,247,35,243,38,231,46,196,68,164,94,115,143"/>
+<area shape="rect" id="Node000003" href="$classviewmodel_1_1_task_view_model.html#a5f2424316f62a7ed7067602067535809" title=" " alt="" coords="233,55,434,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="142,139,229,105,250,100,246,103,231,110,145,143"/>
+<area shape="rect" id="Node000004" href="$classmodel_1_1_task.html#a84dce864c8b8cc246e25e11d9cf200ca" title="Возвращает приоритет задачи" alt="" coords="258,120,409,146"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="181,149,245,143,240,145,183,154"/>
+<area shape="rect" id="Node000005" href="$classviewmodel_1_1_task_view_model.html#a1a618ae9eecfd3fefadebd848a99ec92" title="Возвращает заголовок задачи" alt="" coords="233,170,434,210"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="182,170,220,176,215,178,183,175"/>
+<area shape="rect" id="Node000006" href="$classviewmodel_1_1_task_view_model.html#a6b568ef75542da4868a533844bbbe3a1" title="Проверяет, выполнена ли задача" alt="" coords="237,235,430,276"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="139,180,231,220,253,229,248,230,229,225,138,186"/>
+<area shape="rect" id="Node000007" href="$classview_1_1_main_controller.html#a58f505c47522701dc033b73171fc5e8c" title=" " alt="" coords="230,300,437,326"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="112,180,162,234,195,262,231,285,247,295,241,294,228,290,192,266,159,238,110,185"/>
+</map>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['документация_0',['Умный планировщик задач - Документация',['../index.html',1,'']]]
+  ['edition_0',['ToDoList (Cross-platform Edition)',['../index.html',1,'']]]
 ];

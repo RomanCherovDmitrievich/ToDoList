@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['введение_0',['Введение',['../index.html#intro_sec',1,'']]]
+  ['архитектура_0',['Архитектура',['../index.html#architecture_sec',1,'']]]
 ];

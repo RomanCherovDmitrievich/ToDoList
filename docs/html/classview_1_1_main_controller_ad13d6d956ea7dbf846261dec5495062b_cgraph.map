@@ -1,0 +1,17 @@
+<map id="view.MainController.handleRefreshWidget" name="view.MainController.handleRefreshWidget">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,142,181,182"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_main_controller.html#ad0f2463a86445951d22b3ee9d86bc3aa" title=" " alt="" coords="229,142,405,182"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,160,216,161,211,163,182,165"/>
+<area shape="rect" id="Node000003" href="$classmodel_1_1_task.html#a7a97e0aae6d6edf514a6b7442ce76232" title="Возвращает время окончания задачи" alt="" coords="476,5,638,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="334,139,384,90,416,63,452,41,471,35,466,38,454,46,419,68,387,94,338,143"/>
+<area shape="rect" id="Node000004" href="$classviewmodel_1_1_task_view_model.html#a5f2424316f62a7ed7067602067535809" title=" " alt="" coords="456,55,657,96"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="366,139,452,105,474,100,469,102,454,110,368,144"/>
+<area shape="rect" id="Node000005" href="$classmodel_1_1_task.html#a84dce864c8b8cc246e25e11d9cf200ca" title="Возвращает приоритет задачи" alt="" coords="481,120,632,146"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="405,149,468,143,463,145,406,154"/>
+<area shape="rect" id="Node000006" href="$classviewmodel_1_1_task_view_model.html#a1a618ae9eecfd3fefadebd848a99ec92" title="Возвращает заголовок задачи" alt="" coords="456,170,657,210"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="405,170,443,176,438,177,406,175"/>
+<area shape="rect" id="Node000007" href="$classviewmodel_1_1_task_view_model.html#a6b568ef75542da4868a533844bbbe3a1" title="Проверяет, выполнена ли задача" alt="" coords="460,235,653,276"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="362,180,454,220,476,230,471,230,452,225,362,186"/>
+<area shape="rect" id="Node000008" href="$classview_1_1_main_controller.html#a58f505c47522701dc033b73171fc5e8c" title=" " alt="" coords="453,300,660,326"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="336,180,386,234,418,262,454,285,470,295,465,294,452,290,415,266,382,238,334,185"/>
+</map>

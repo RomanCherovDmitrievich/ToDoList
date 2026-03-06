@@ -28,7 +28,7 @@
   <td id="projectalign">
    <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">JavaFX приложение для управления задачами с новогодней темой</div>
+   <div id="projectbrief">JavaFX ToDo-приложение с SQLite, уведомлениями и летней темой</div>
   </td>
  </tr>
  </tbody>
@@ -93,16 +93,16 @@ $(function(){initNavTree('classview_1_1_new_task_controller.html','','classview_
 </div><!--header-->
 <div class="contents">
 
-<p>Контроллер для диалогового окна создания новой задачи  
+<p>Диалог создания/редактирования задач.  
  <a href="#details">Подробнее...</a></p>
 <div class="dynheader">
 Граф связей класса view.NewTaskController:</div>
 <div class="dyncontent">
 <div class="center"><img src="classview_1_1_new_task_controller__coll__graph.png" border="0" usemap="#aview_8_new_task_controller_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="aview_8_new_task_controller_coll__map" id="aview_8_new_task_controller_coll__map">
-<area shape="rect" title="Контроллер для диалогового окна создания новой задачи" alt="" coords="41,199,202,224"/>
+<area shape="rect" title="Диалог создания/редактирования задач." alt="" coords="41,219,202,245"/>
 <area shape="rect" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении" alt="" coords="77,102,166,128"/>
-<area shape="poly" title=" " alt="" coords="123,141,124,199,119,197,119,145"/>
+<area shape="poly" title=" " alt="" coords="124,142,124,219,119,218,119,145"/>
 <area shape="rect" href="enummodel_1_1_priority.html" title=" " alt="" coords="5,5,107,31"/>
 <area shape="poly" title=" " alt="" coords="73,41,116,101,110,102,72,46"/>
 <area shape="rect" href="enummodel_1_1_category.html" title=" " alt="" coords="131,5,245,31"/>
@@ -113,71 +113,199 @@ $(function(){initNavTree('classview_1_1_new_task_controller.html','','classview_
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
 <tr class="memitem:a9dcf704ac7b311d8bfe516eff8643ad1" id="r_a9dcf704ac7b311d8bfe516eff8643ad1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9dcf704ac7b311d8bfe516eff8643ad1">initialize</a> ()</td></tr>
-<tr class="memdesc:a9dcf704ac7b311d8bfe516eff8643ad1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализация контроллера  <br /></td></tr>
+<tr class="memitem:a251389d73428dd28c385804e1e292b43" id="r_a251389d73428dd28c385804e1e292b43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a251389d73428dd28c385804e1e292b43">setEditingTask</a> (<a class="el" href="classmodel_1_1_task.html">Task</a> task)</td></tr>
+<tr class="memitem:ae59a87461da40dd8eb577e10f37da256" id="r_ae59a87461da40dd8eb577e10f37da256"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae59a87461da40dd8eb577e10f37da256">setPrefillDate</a> (LocalDate date)</td></tr>
 <tr class="memitem:a2b0dc44b9437aa1e0548cbf6c51e5721" id="r_a2b0dc44b9437aa1e0548cbf6c51e5721"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmodel_1_1_task.html">Task</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b0dc44b9437aa1e0548cbf6c51e5721">getCreatedTask</a> ()</td></tr>
-<tr class="memdesc:a2b0dc44b9437aa1e0548cbf6c51e5721"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает созданную задачу  <br /></td></tr>
 <tr class="memitem:ad985a55d5cf42453ff70863d8619713b" id="r_ad985a55d5cf42453ff70863d8619713b"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad985a55d5cf42453ff70863d8619713b">isTaskCreated</a> ()</td></tr>
-<tr class="memdesc:ad985a55d5cf42453ff70863d8619713b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, была ли создана задача  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Закрытые члены</h2></td></tr>
+<tr class="memitem:ac995363c56091dd4e0bdbc1a6ed078df" id="r_ac995363c56091dd4e0bdbc1a6ed078df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac995363c56091dd4e0bdbc1a6ed078df">initializeTimeCombos</a> ()</td></tr>
+<tr class="memitem:a7feab6d24703217f093e4fc8bbc1eac0" id="r_a7feab6d24703217f093e4fc8bbc1eac0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7feab6d24703217f093e4fc8bbc1eac0">initializePriorityAndCategory</a> ()</td></tr>
+<tr class="memitem:a2c8d8e26d31927089b039ad955124a82" id="r_a2c8d8e26d31927089b039ad955124a82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c8d8e26d31927089b039ad955124a82">initializeReminder</a> ()</td></tr>
+<tr class="memitem:a2bb2143f1fc38eb321fd5af63fae0670" id="r_a2bb2143f1fc38eb321fd5af63fae0670"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bb2143f1fc38eb321fd5af63fae0670">initializeRecurrence</a> ()</td></tr>
+<tr class="memitem:a51493073039f5fb340a0389271a500f8" id="r_a51493073039f5fb340a0389271a500f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51493073039f5fb340a0389271a500f8">updateRecurrenceFields</a> ()</td></tr>
+<tr class="memitem:a16da7a84bf64eb816ba4075b9b34f325" id="r_a16da7a84bf64eb816ba4075b9b34f325"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16da7a84bf64eb816ba4075b9b34f325">applyTaskToForm</a> (<a class="el" href="classmodel_1_1_task.html">Task</a> task)</td></tr>
 <tr class="memitem:a66c1573253964fcde19808f4d57ba3e3" id="r_a66c1573253964fcde19808f4d57ba3e3"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66c1573253964fcde19808f4d57ba3e3">validateForm</a> ()</td></tr>
-<tr class="memdesc:a66c1573253964fcde19808f4d57ba3e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет корректность заполнения формы  <br /></td></tr>
 <tr class="memitem:a337be480aeacacd900c710627a27a63e" id="r_a337be480aeacacd900c710627a27a63e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a337be480aeacacd900c710627a27a63e">handleCreateTask</a> ()</td></tr>
-<tr class="memdesc:a337be480aeacacd900c710627a27a63e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик кнопки создания задачи  <br /></td></tr>
 <tr class="memitem:ac77f5fcc6aa02cfe11a0d7760135509b" id="r_ac77f5fcc6aa02cfe11a0d7760135509b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac77f5fcc6aa02cfe11a0d7760135509b">handleCancel</a> ()</td></tr>
-<tr class="memdesc:ac77f5fcc6aa02cfe11a0d7760135509b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик кнопки отмены  <br /></td></tr>
+<tr class="memitem:ae890d916299b13fa18117c3c18549fb7" id="r_ae890d916299b13fa18117c3c18549fb7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae890d916299b13fa18117c3c18549fb7">toMinutes</a> (Integer value, String unit)</td></tr>
+<tr class="memitem:afa255dc7cdbbb1a55bb44678b72ad1e0" id="r_afa255dc7cdbbb1a55bb44678b72ad1e0"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa255dc7cdbbb1a55bb44678b72ad1e0">buildRecurrenceRule</a> ()</td></tr>
+<tr class="memitem:a11f23060f7cf74ca238678e91b97f67b" id="r_a11f23060f7cf74ca238678e91b97f67b"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11f23060f7cf74ca238678e91b97f67b">normalizeCustomRule</a> (String rawRule)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Закрытые данные</h2></td></tr>
+<tr class="memitem:a1b8caab3a27f995c6562394a852b166a" id="r_a1b8caab3a27f995c6562394a852b166a"><td class="memItemLeft" align="right" valign="top">Label&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b8caab3a27f995c6562394a852b166a">dialogTitleLabel</a></td></tr>
 <tr class="memitem:a161edea567440f779448a4b4c153ea32" id="r_a161edea567440f779448a4b4c153ea32"><td class="memItemLeft" align="right" valign="top">TextField&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a161edea567440f779448a4b4c153ea32">titleField</a></td></tr>
-<tr class="memdesc:a161edea567440f779448a4b4c153ea32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Поле для ввода заголовка задачи  <br /></td></tr>
 <tr class="memitem:addcfbea9b4ba568463ea16fb3cc6909f" id="r_addcfbea9b4ba568463ea16fb3cc6909f"><td class="memItemLeft" align="right" valign="top">TextArea&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#addcfbea9b4ba568463ea16fb3cc6909f">descriptionArea</a></td></tr>
-<tr class="memdesc:addcfbea9b4ba568463ea16fb3cc6909f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Область для ввода описания задачи  <br /></td></tr>
 <tr class="memitem:aae8a01c385fffcf88a441b82cf14bb6f" id="r_aae8a01c385fffcf88a441b82cf14bb6f"><td class="memItemLeft" align="right" valign="top">DatePicker&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae8a01c385fffcf88a441b82cf14bb6f">startDatePicker</a></td></tr>
-<tr class="memdesc:aae8a01c385fffcf88a441b82cf14bb6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выбор даты начала задачи  <br /></td></tr>
 <tr class="memitem:a9f4d05fca3f6f360c3d115b39c9137b7" id="r_a9f4d05fca3f6f360c3d115b39c9137b7"><td class="memItemLeft" align="right" valign="top">ComboBox&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f4d05fca3f6f360c3d115b39c9137b7">startHourCombo</a></td></tr>
-<tr class="memdesc:a9f4d05fca3f6f360c3d115b39c9137b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выбор часа начала задачи  <br /></td></tr>
 <tr class="memitem:ad6e0399a4cfca2b93ebe4e7f365ec417" id="r_ad6e0399a4cfca2b93ebe4e7f365ec417"><td class="memItemLeft" align="right" valign="top">ComboBox&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6e0399a4cfca2b93ebe4e7f365ec417">startMinuteCombo</a></td></tr>
-<tr class="memdesc:ad6e0399a4cfca2b93ebe4e7f365ec417"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выбор минут начала задачи  <br /></td></tr>
 <tr class="memitem:aee10d2ad3f47e34e747d230905108d11" id="r_aee10d2ad3f47e34e747d230905108d11"><td class="memItemLeft" align="right" valign="top">DatePicker&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee10d2ad3f47e34e747d230905108d11">endDatePicker</a></td></tr>
-<tr class="memdesc:aee10d2ad3f47e34e747d230905108d11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выбор даты окончания задачи  <br /></td></tr>
 <tr class="memitem:a5a5b3f7c39f938ebd23f00a1fd742464" id="r_a5a5b3f7c39f938ebd23f00a1fd742464"><td class="memItemLeft" align="right" valign="top">ComboBox&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a5b3f7c39f938ebd23f00a1fd742464">endHourCombo</a></td></tr>
-<tr class="memdesc:a5a5b3f7c39f938ebd23f00a1fd742464"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выбор часа окончания задачи  <br /></td></tr>
 <tr class="memitem:a588f5645a2696833e460dcc042f56bfd" id="r_a588f5645a2696833e460dcc042f56bfd"><td class="memItemLeft" align="right" valign="top">ComboBox&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a588f5645a2696833e460dcc042f56bfd">endMinuteCombo</a></td></tr>
-<tr class="memdesc:a588f5645a2696833e460dcc042f56bfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выбор минут окончания задачи  <br /></td></tr>
 <tr class="memitem:a6dc26f7c93c7ce8bf0d829dbef97c7f1" id="r_a6dc26f7c93c7ce8bf0d829dbef97c7f1"><td class="memItemLeft" align="right" valign="top">ComboBox&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6dc26f7c93c7ce8bf0d829dbef97c7f1">priorityCombo</a></td></tr>
-<tr class="memdesc:a6dc26f7c93c7ce8bf0d829dbef97c7f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выбор приоритета задачи  <br /></td></tr>
 <tr class="memitem:ade97f5d5ee809bda37c5e4bd33cf8d37" id="r_ade97f5d5ee809bda37c5e4bd33cf8d37"><td class="memItemLeft" align="right" valign="top">ComboBox&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade97f5d5ee809bda37c5e4bd33cf8d37">categoryCombo</a></td></tr>
-<tr class="memdesc:ade97f5d5ee809bda37c5e4bd33cf8d37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выбор категории задачи  <br /></td></tr>
+<tr class="memitem:a1658f7cdc0b15bedf68ca7e68a3a79f1" id="r_a1658f7cdc0b15bedf68ca7e68a3a79f1"><td class="memItemLeft" align="right" valign="top">Spinner&lt; Integer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1658f7cdc0b15bedf68ca7e68a3a79f1">reminderValueSpinner</a></td></tr>
+<tr class="memitem:a012eb5d39fafaa5a4591ea6bcf1afe9c" id="r_a012eb5d39fafaa5a4591ea6bcf1afe9c"><td class="memItemLeft" align="right" valign="top">ChoiceBox&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a012eb5d39fafaa5a4591ea6bcf1afe9c">reminderUnitChoice</a></td></tr>
+<tr class="memitem:a8c77d17608d8f18ddc44bdddafd6dd27" id="r_a8c77d17608d8f18ddc44bdddafd6dd27"><td class="memItemLeft" align="right" valign="top">ComboBox&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c77d17608d8f18ddc44bdddafd6dd27">recurrenceCombo</a></td></tr>
+<tr class="memitem:a6422ce3f8d036de5bc1cbb4bd1f5136d" id="r_a6422ce3f8d036de5bc1cbb4bd1f5136d"><td class="memItemLeft" align="right" valign="top">TextField&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6422ce3f8d036de5bc1cbb4bd1f5136d">recurrenceRuleField</a></td></tr>
+<tr class="memitem:a8d7c8b32dd795585d7fe09060b03f5bd" id="r_a8d7c8b32dd795585d7fe09060b03f5bd"><td class="memItemLeft" align="right" valign="top">DatePicker&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d7c8b32dd795585d7fe09060b03f5bd">recurrenceEndPicker</a></td></tr>
+<tr class="memitem:aff4b037ebc00739d267235b602bc39a8" id="r_aff4b037ebc00739d267235b602bc39a8"><td class="memItemLeft" align="right" valign="top">Label&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff4b037ebc00739d267235b602bc39a8">recurrenceHintLabel</a></td></tr>
 <tr class="memitem:acb6273d4d43093cfca439fa7726ee94a" id="r_acb6273d4d43093cfca439fa7726ee94a"><td class="memItemLeft" align="right" valign="top">Button&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb6273d4d43093cfca439fa7726ee94a">createButton</a></td></tr>
-<tr class="memdesc:acb6273d4d43093cfca439fa7726ee94a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Кнопка создания задачи  <br /></td></tr>
 <tr class="memitem:a27bc507ea73eb84fc79fa103e55c44de" id="r_a27bc507ea73eb84fc79fa103e55c44de"><td class="memItemLeft" align="right" valign="top">Button&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27bc507ea73eb84fc79fa103e55c44de">cancelButton</a></td></tr>
-<tr class="memdesc:a27bc507ea73eb84fc79fa103e55c44de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Кнопка отмены создания  <br /></td></tr>
 <tr class="memitem:a7d9ffad3e5bc47dba6eebaabedb6e485" id="r_a7d9ffad3e5bc47dba6eebaabedb6e485"><td class="memItemLeft" align="right" valign="top">Label&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d9ffad3e5bc47dba6eebaabedb6e485">errorLabel</a></td></tr>
-<tr class="memdesc:a7d9ffad3e5bc47dba6eebaabedb6e485"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метка для отображения ошибок валидации  <br /></td></tr>
 <tr class="memitem:ad986e4c590209dabc8ea088365828014" id="r_ad986e4c590209dabc8ea088365828014"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmodel_1_1_task.html">Task</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad986e4c590209dabc8ea088365828014">createdTask</a></td></tr>
-<tr class="memdesc:ad986e4c590209dabc8ea088365828014"><td class="mdescLeft">&#160;</td><td class="mdescRight">Созданная задача  <br /></td></tr>
 <tr class="memitem:ab434a033dba280d670f4fe3d479ff378" id="r_ab434a033dba280d670f4fe3d479ff378"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab434a033dba280d670f4fe3d479ff378">taskCreated</a> = false</td></tr>
-<tr class="memdesc:ab434a033dba280d670f4fe3d479ff378"><td class="mdescLeft">&#160;</td><td class="mdescRight">Флаг успешного создания задачи  <br /></td></tr>
+<tr class="memitem:ad2fa5da86ffaf40661c14fd51eb67332" id="r_ad2fa5da86ffaf40661c14fd51eb67332"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmodel_1_1_task.html">Task</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2fa5da86ffaf40661c14fd51eb67332">editingTask</a></td></tr>
+<tr class="memitem:a9bfe43654d83beb5978a7292a673ab31" id="r_a9bfe43654d83beb5978a7292a673ab31"><td class="memItemLeft" align="right" valign="top">LocalDate&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9bfe43654d83beb5978a7292a673ab31">prefillDate</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Контроллер для диалогового окна создания новой задачи </p>
-<p>Класс управляет интерфейсом создания новой задачи, обрабатывает ввод пользователя, валидирует данные и создает объект <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a>. Является частью View слоя архитектуры MVVM.</p>
-<dl class="section author"><dt>Автор</dt><dd>Чернов </dd></dl>
-<dl class="section version"><dt>Версия</dt><dd>1.0 </dd></dl>
-<dl class="section date"><dt>Дата</dt><dd>2025-11-4</dd></dl>
-<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a> </dd>
-<dd>
-<a class="el" href="enummodel_1_1_priority.html">Priority</a> </dd>
-<dd>
-<a class="el" href="enummodel_1_1_category.html">Category</a> </dd>
-<dd>
-<a class="el" href="classview_1_1_main_controller.html" title="Контроллер главного окна приложения To-Do List.">MainController</a></dd></dl>
-<dl class="section note"><dt>Заметки</dt><dd>Используется только для создания новых задач, не для редактирования существующих </dd></dl>
+<div class="textblock"><p>Диалог создания/редактирования задач. </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00034">34</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00028">28</a></p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="a16da7a84bf64eb816ba4075b9b34f325" name="a16da7a84bf64eb816ba4075b9b34f325"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16da7a84bf64eb816ba4075b9b34f325">&#9670;&#160;</a></span>applyTaskToForm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.NewTaskController.applyTaskToForm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmodel_1_1_task.html">Task</a></td>          <td class="paramname"><span class="paramname"><em>task</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00149">149</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_new_task_controller_8java_source.html#l00043">categoryCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00053">createButton</a>, <a class="el" href="_new_task_controller_8java_source.html#l00032">descriptionArea</a>, <a class="el" href="_new_task_controller_8java_source.html#l00029">dialogTitleLabel</a>, <a class="el" href="_new_task_controller_8java_source.html#l00038">endDatePicker</a>, <a class="el" href="_new_task_controller_8java_source.html#l00039">endHourCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00040">endMinuteCombo</a>, <a class="el" href="_task_8java_source.html#l00290">model.Task.getCategory()</a>, <a class="el" href="_task_8java_source.html#l00266">model.Task.getDescription()</a>, <a class="el" href="_category_8java_source.html#l00106">model.Category.getDisplayName()</a>, <a class="el" href="_priority_8java_source.html#l00121">model.Priority.getDisplayName()</a>, <a class="el" href="_task_8java_source.html#l00278">model.Task.getEndTime()</a>, <a class="el" href="_task_8java_source.html#l00284">model.Task.getPriority()</a>, <a class="el" href="_task_8java_source.html#l00316">model.Task.getRecurrenceEnd()</a>, <a class="el" href="_task_8java_source.html#l00312">model.Task.getRecurrenceRule()</a>, <a class="el" href="_task_8java_source.html#l00314">model.Task.getReminderOffsetMinutes()</a>, <a class="el" href="_task_8java_source.html#l00272">model.Task.getStartTime()</a>, <a class="el" href="_task_8java_source.html#l00260">model.Task.getTitle()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00042">priorityCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00048">recurrenceCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00050">recurrenceEndPicker</a>, <a class="el" href="_new_task_controller_8java_source.html#l00049">recurrenceRuleField</a>, <a class="el" href="_new_task_controller_8java_source.html#l00046">reminderUnitChoice</a>, <a class="el" href="_new_task_controller_8java_source.html#l00045">reminderValueSpinner</a>, <a class="el" href="_new_task_controller_8java_source.html#l00034">startDatePicker</a>, <a class="el" href="_new_task_controller_8java_source.html#l00035">startHourCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00036">startMinuteCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00031">titleField</a> и <a class="el" href="_new_task_controller_8java_source.html#l00143">updateRecurrenceFields()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00080">setEditingTask()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_new_task_controller_a16da7a84bf64eb816ba4075b9b34f325_cgraph.png" border="0" usemap="#aclassview_1_1_new_task_controller_a16da7a84bf64eb816ba4075b9b34f325_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_new_task_controller_a16da7a84bf64eb816ba4075b9b34f325_cgraph" id="aclassview_1_1_new_task_controller_a16da7a84bf64eb816ba4075b9b34f325_cgraph">
+<area shape="rect" title=" " alt="" coords="5,270,201,310"/>
+<area shape="rect" href="classmodel_1_1_task.html#a79d344fdb9abdebc5978f3936f7782dd" title="Возвращает категорию задачи" alt="" coords="273,5,436,31"/>
+<area shape="poly" title=" " alt="" coords="108,268,124,221,152,159,193,94,218,65,247,40,261,34,257,38,250,44,222,69,197,98,157,161,129,223,113,270"/>
+<area shape="rect" href="classmodel_1_1_task.html#a8dc5a073ec12dc2747bda501f29a0127" title="Возвращает описание задачи" alt="" coords="267,55,443,80"/>
+<area shape="poly" title=" " alt="" coords="111,268,130,230,160,181,199,131,222,109,247,89,258,85,254,89,250,94,225,113,203,135,164,184,135,232,116,271"/>
+<area shape="rect" href="enummodel_1_1_category.html#a7b617d5f06ca4cb136d681b1bd2e8d7d" title="Возвращает читаемое имя категории" alt="" coords="249,104,461,130"/>
+<area shape="poly" title=" " alt="" coords="116,268,168,203,205,168,247,139,260,134,257,138,250,143,209,172,172,207,120,271"/>
+<area shape="rect" href="enummodel_1_1_priority.html#a3cf5e815f238abd0cf21096783fea607" title="Возвращает читаемое имя приоритета" alt="" coords="255,153,455,179"/>
+<area shape="poly" title=" " alt="" coords="126,268,180,227,213,206,248,188,266,182,262,186,250,193,215,210,183,231,130,271"/>
+<area shape="rect" href="classmodel_1_1_task.html#a7a97e0aae6d6edf514a6b7442ce76232" title="Возвращает время окончания задачи" alt="" coords="274,203,436,228"/>
+<area shape="poly" title=" " alt="" coords="158,267,248,237,277,231,273,234,249,242,161,271"/>
+<area shape="rect" href="classmodel_1_1_task.html#a84dce864c8b8cc246e25e11d9cf200ca" title="Возвращает приоритет задачи" alt="" coords="279,252,430,278"/>
+<area shape="poly" title=" " alt="" coords="200,278,266,272,261,276,202,283"/>
+<area shape="rect" href="classmodel_1_1_task.html#a63b137fede1540f1191e2b03f6b145b6" title=" " alt="" coords="255,301,455,327"/>
+<area shape="poly" title=" " alt="" coords="200,297,242,302,237,304,202,302"/>
+<area shape="rect" href="classmodel_1_1_task.html#a06aae2333c73d9d8d665c02507403d23" title=" " alt="" coords="253,351,457,376"/>
+<area shape="poly" title=" " alt="" coords="161,308,249,337,278,346,273,347,248,342,162,314"/>
+<area shape="rect" href="classmodel_1_1_task.html#a345f13673c0e68e1fa8272c040926b76" title=" " alt="" coords="254,400,456,441"/>
+<area shape="poly" title=" " alt="" coords="129,308,184,348,250,386,264,394,259,395,247,391,181,352,130,314"/>
+<area shape="rect" href="classmodel_1_1_task.html#aafb825513f5c3287cb724ddf5943ec03" title="Возвращает время начала задачи" alt="" coords="271,465,438,491"/>
+<area shape="poly" title=" " alt="" coords="117,308,170,379,207,418,250,451,263,459,258,459,247,455,204,422,166,383,116,313"/>
+<area shape="rect" href="classmodel_1_1_task.html#a3016babcf59132145ef35906075ea109" title="Возвращает заголовок задачи" alt="" coords="287,515,422,540"/>
+<area shape="poly" title=" " alt="" coords="112,308,133,351,162,403,201,457,224,481,250,501,275,515,270,516,247,506,221,485,197,460,157,406,128,354,112,314"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a51493073039f5fb340a0389271a500f8" title=" " alt="" coords="253,564,456,605"/>
+<area shape="poly" title=" " alt="" coords="110,308,129,360,156,424,197,492,222,524,250,551,255,556,250,555,247,555,218,527,192,496,152,427,124,361,110,314"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_new_task_controller_a16da7a84bf64eb816ba4075b9b34f325_icgraph.png" border="0" usemap="#aclassview_1_1_new_task_controller_a16da7a84bf64eb816ba4075b9b34f325_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_new_task_controller_a16da7a84bf64eb816ba4075b9b34f325_icgraph" id="aclassview_1_1_new_task_controller_a16da7a84bf64eb816ba4075b9b34f325_icgraph">
+<area shape="rect" title=" " alt="" coords="1348,71,1544,111"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a251389d73428dd28c385804e1e292b43" title=" " alt="" coords="1118,71,1300,111"/>
+<area shape="poly" title=" " alt="" coords="1330,91,1301,94,1301,88,1335,91"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a76739ea654eaac37a81afdefb7f02f86" title=" " alt="" coords="902,71,1070,111"/>
+<area shape="poly" title=" " alt="" coords="1100,91,1070,94,1070,88,1105,91"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title=" " alt="" coords="678,5,854,46"/>
+<area shape="poly" title=" " alt="" coords="898,66,837,49,837,44,904,66"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6343e648a870a706a14bc46aa9b43b4c" title=" " alt="" coords="678,71,854,111"/>
+<area shape="poly" title=" " alt="" coords="883,91,854,94,854,88,889,91"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4766825edbb089c262ba6ee17ea273f8" title=" " alt="" coords="683,136,849,177"/>
+<area shape="poly" title=" " alt="" coords="903,116,838,138,837,133,898,117"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a157c635caf5c9cc208923226f28274e0" title=" " alt="" coords="460,79,625,119"/>
+<area shape="poly" title=" " alt="" coords="667,132,624,123,625,117,672,132"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a35f2a1470868c1e281d8750ab39baa5f" title=" " alt="" coords="238,108,407,149"/>
+<area shape="poly" title=" " alt="" coords="665,151,407,136,407,131,670,149"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afdc5d6820d84e41d7d0f86e633eba6a5" title=" " alt="" coords="455,193,630,234"/>
+<area shape="poly" title=" " alt="" coords="672,181,625,195,624,190,667,181"/>
+<area shape="poly" title=" " alt="" coords="442,113,408,120,407,114,448,111"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,116,190,141"/>
+<area shape="poly" title=" " alt="" coords="219,129,191,131,189,126,224,128"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afa255dc7cdbbb1a55bb44678b72ad1e0" name="afa255dc7cdbbb1a55bb44678b72ad1e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa255dc7cdbbb1a55bb44678b72ad1e0">&#9670;&#160;</a></span>buildRecurrenceRule()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String view.NewTaskController.buildRecurrenceRule </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00341">341</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_new_task_controller_8java_source.html#l00356">normalizeCustomRule()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00048">recurrenceCombo</a> и <a class="el" href="_new_task_controller_8java_source.html#l00049">recurrenceRuleField</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00252">handleCreateTask()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_new_task_controller_afa255dc7cdbbb1a55bb44678b72ad1e0_cgraph.png" border="0" usemap="#aclassview_1_1_new_task_controller_afa255dc7cdbbb1a55bb44678b72ad1e0_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_new_task_controller_afa255dc7cdbbb1a55bb44678b72ad1e0_cgraph" id="aclassview_1_1_new_task_controller_afa255dc7cdbbb1a55bb44678b72ad1e0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,197,46"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a11f23060f7cf74ca238678e91b97f67b" title=" " alt="" coords="245,5,465,46"/>
+<area shape="poly" title=" " alt="" coords="197,23,232,25,226,26,197,28"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_new_task_controller_afa255dc7cdbbb1a55bb44678b72ad1e0_icgraph.png" border="0" usemap="#aclassview_1_1_new_task_controller_afa255dc7cdbbb1a55bb44678b72ad1e0_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_new_task_controller_afa255dc7cdbbb1a55bb44678b72ad1e0_icgraph" id="aclassview_1_1_new_task_controller_afa255dc7cdbbb1a55bb44678b72ad1e0_icgraph">
+<area shape="rect" title=" " alt="" coords="256,5,447,46"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a337be480aeacacd900c710627a27a63e" title=" " alt="" coords="5,5,208,46"/>
+<area shape="poly" title=" " alt="" coords="238,26,208,28,208,23,243,26"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a2b0dc44b9437aa1e0548cbf6c51e5721" name="a2b0dc44b9437aa1e0548cbf6c51e5721"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2b0dc44b9437aa1e0548cbf6c51e5721">&#9670;&#160;</a></span>getCreatedTask()</h2>
 
@@ -193,25 +321,34 @@ $(function(){initNavTree('classview_1_1_new_task_controller.html','','classview_
       </table>
 </div><div class="memdoc">
 
-<p>Возвращает созданную задачу </p>
-<p>Геттер для получения созданного объекта <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a></p>
-<dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a> - созданная задача или null если задача не была создана</dd></dl>
-<dl class="section note"><dt>Заметки</dt><dd>Должен вызываться только после закрытия диалога и проверки <a class="el" href="#ad985a55d5cf42453ff70863d8619713b" title="Проверяет, была ли создана задача">isTaskCreated()</a> </dd></dl>
-<dl class="section see"><dt>См. также</dt><dd><a class="el" href="#ad985a55d5cf42453ff70863d8619713b" title="Проверяет, была ли создана задача">isTaskCreated()</a> </dd></dl>
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00319">319</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00358">358</a></p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_new_task_controller_8java_source.html#l00057">createdTask</a>.</p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_new_task_controller_8java_source.html#l00136">createdTask</a>.</p>
-
-<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00953">view.MainController.handleAddTask()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l01164">view.MainController.showTaskDialog()</a>.</p>
 <div class="dynheader">
 Граф вызова функции:</div>
 <div class="dyncontent">
 <div class="center"><img src="classview_1_1_new_task_controller_a2b0dc44b9437aa1e0548cbf6c51e5721_icgraph.png" border="0" usemap="#aclassview_1_1_new_task_controller_a2b0dc44b9437aa1e0548cbf6c51e5721_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassview_1_1_new_task_controller_a2b0dc44b9437aa1e0548cbf6c51e5721_icgraph" id="aclassview_1_1_new_task_controller_a2b0dc44b9437aa1e0548cbf6c51e5721_icgraph">
-<area shape="rect" title="Возвращает созданную задачу" alt="" coords="229,5,411,46"/>
-<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title="Обработчик кнопки добавления новой задачи" alt="" coords="5,5,181,46"/>
-<area shape="poly" title=" " alt="" coords="211,26,181,28,181,23,216,25"/>
+<area shape="rect" title=" " alt="" coords="1118,71,1300,111"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a76739ea654eaac37a81afdefb7f02f86" title=" " alt="" coords="902,71,1070,111"/>
+<area shape="poly" title=" " alt="" coords="1100,91,1070,94,1070,88,1105,91"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title=" " alt="" coords="678,5,854,46"/>
+<area shape="poly" title=" " alt="" coords="898,66,837,49,837,44,904,66"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6343e648a870a706a14bc46aa9b43b4c" title=" " alt="" coords="678,71,854,111"/>
+<area shape="poly" title=" " alt="" coords="883,91,854,94,854,88,889,91"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4766825edbb089c262ba6ee17ea273f8" title=" " alt="" coords="683,136,849,177"/>
+<area shape="poly" title=" " alt="" coords="903,116,838,138,837,133,898,117"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a157c635caf5c9cc208923226f28274e0" title=" " alt="" coords="460,79,625,119"/>
+<area shape="poly" title=" " alt="" coords="667,132,624,123,625,117,672,132"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a35f2a1470868c1e281d8750ab39baa5f" title=" " alt="" coords="238,108,407,149"/>
+<area shape="poly" title=" " alt="" coords="665,151,407,136,407,131,670,149"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afdc5d6820d84e41d7d0f86e633eba6a5" title=" " alt="" coords="455,193,630,234"/>
+<area shape="poly" title=" " alt="" coords="672,181,625,195,624,190,667,181"/>
+<area shape="poly" title=" " alt="" coords="442,113,408,120,407,114,448,111"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,116,190,141"/>
+<area shape="poly" title=" " alt="" coords="219,129,191,131,189,126,224,128"/>
 </map>
 </div>
 
@@ -240,15 +377,9 @@ $(function(){initNavTree('classview_1_1_new_task_controller.html','','classview_
 </table>
 </div><div class="memdoc">
 
-<p>Обработчик кнопки отмены </p>
-<p>Вызывается при нажатии кнопки "Отмена". Закрывает диалоговое окно без создания задачи.</p>
-<p>@event OnAction кнопки cancelButton</p>
-<dl class="section note"><dt>Заметки</dt><dd>Устанавливает флаг taskCreated в false </dd></dl>
-<dl class="section see"><dt>См. также</dt><dd><a class="el" href="#ab434a033dba280d670f4fe3d479ff378" title="Флаг успешного создания задачи">taskCreated</a> </dd></dl>
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00313">313</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00343">343</a></p>
-
-<p class="reference">Перекрестные ссылки <a class="el" href="_new_task_controller_8java_source.html#l00120">cancelButton</a> и <a class="el" href="_new_task_controller_8java_source.html#l00145">taskCreated</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_new_task_controller_8java_source.html#l00054">cancelButton</a> и <a class="el" href="_new_task_controller_8java_source.html#l00058">taskCreated</a>.</p>
 
 </div>
 </div>
@@ -275,51 +406,44 @@ $(function(){initNavTree('classview_1_1_new_task_controller.html','','classview_
 </table>
 </div><div class="memdoc">
 
-<p>Обработчик кнопки создания задачи </p>
-<p>Вызывается при нажатии кнопки "Создать". Собирает данные из формы, создает объект <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a> и закрывает диалоговое окно.</p>
-<p>@event OnAction кнопки createButton</p>
-<p>@steps</p><ol type="1">
-<li>Проверяет валидность формы</li>
-<li>Собирает данные из полей формы</li>
-<li>Преобразует строковые значения в соответствующие типы</li>
-<li>Создает объект <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a></li>
-<li>Устанавливает флаг taskCreated в true</li>
-<li>Закрывает диалоговое окно</li>
-</ol>
-<dl class="exception"><dt>Исключения</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">NumberFormatException</td><td>если не удается преобразовать строку времени в число </td></tr>
-    <tr><td class="paramname">Exception</td><td>другие возможные ошибки при создании задачи</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>См. также</dt><dd><a class="el" href="#a66c1573253964fcde19808f4d57ba3e3" title="Проверяет корректность заполнения формы">validateForm()</a> </dd>
-<dd>
-<a class="el" href="classmodel_1_1_task.html#ac875313dc638186c0d5cab57f83e7a5c" title="Конструктор для создания новой задачи">Task.Task(String, String, LocalDateTime, LocalDateTime, Priority, Category)</a> </dd>
-<dd>
-<a class="el" href="enummodel_1_1_priority.html#aefbb6c4f1528905793f8bee0902c457b">Priority.fromDisplayName(String)</a> </dd>
-<dd>
-<a class="el" href="enummodel_1_1_category.html#a8a5c20cba2237009b02d6b351785e64e">Category.fromDisplayName(String)</a> </dd></dl>
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00252">252</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00288">288</a></p>
-
-<p class="reference">Перекрестные ссылки <a class="el" href="_new_task_controller_8java_source.html#l00106">categoryCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00114">createButton</a>, <a class="el" href="_new_task_controller_8java_source.html#l00136">createdTask</a>, <a class="el" href="_new_task_controller_8java_source.html#l00050">descriptionArea</a>, <a class="el" href="_new_task_controller_8java_source.html#l00078">endDatePicker</a>, <a class="el" href="_new_task_controller_8java_source.html#l00084">endHourCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00090">endMinuteCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00128">errorLabel</a>, <a class="el" href="_category_8java_source.html#l00143">model.Category.fromDisplayName()</a>, <a class="el" href="_priority_8java_source.html#l00168">model.Priority.fromDisplayName()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00098">priorityCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00058">startDatePicker</a>, <a class="el" href="_new_task_controller_8java_source.html#l00064">startHourCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00070">startMinuteCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00145">taskCreated</a>, <a class="el" href="_new_task_controller_8java_source.html#l00042">titleField</a> и <a class="el" href="_new_task_controller_8java_source.html#l00225">validateForm()</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_new_task_controller_8java_source.html#l00341">buildRecurrenceRule()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00043">categoryCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00053">createButton</a>, <a class="el" href="_new_task_controller_8java_source.html#l00057">createdTask</a>, <a class="el" href="_new_task_controller_8java_source.html#l00032">descriptionArea</a>, <a class="el" href="_new_task_controller_8java_source.html#l00059">editingTask</a>, <a class="el" href="_new_task_controller_8java_source.html#l00038">endDatePicker</a>, <a class="el" href="_new_task_controller_8java_source.html#l00039">endHourCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00040">endMinuteCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00055">errorLabel</a>, <a class="el" href="_category_8java_source.html#l00143">model.Category.fromDisplayName()</a>, <a class="el" href="_priority_8java_source.html#l00168">model.Priority.fromDisplayName()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00042">priorityCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00050">recurrenceEndPicker</a>, <a class="el" href="_new_task_controller_8java_source.html#l00046">reminderUnitChoice</a>, <a class="el" href="_new_task_controller_8java_source.html#l00045">reminderValueSpinner</a>, <a class="el" href="_new_task_controller_8java_source.html#l00034">startDatePicker</a>, <a class="el" href="_new_task_controller_8java_source.html#l00035">startHourCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00036">startMinuteCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00058">taskCreated</a>, <a class="el" href="_new_task_controller_8java_source.html#l00031">titleField</a>, <a class="el" href="_new_task_controller_8java_source.html#l00327">toMinutes()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00206">validateForm()</a>.</p>
 <div class="dynheader">
 Граф вызовов:</div>
 <div class="dyncontent">
 <div class="center"><img src="classview_1_1_new_task_controller_a337be480aeacacd900c710627a27a63e_cgraph.png" border="0" usemap="#aclassview_1_1_new_task_controller_a337be480aeacacd900c710627a27a63e_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassview_1_1_new_task_controller_a337be480aeacacd900c710627a27a63e_cgraph" id="aclassview_1_1_new_task_controller_a337be480aeacacd900c710627a27a63e_cgraph">
-<area shape="rect" title="Обработчик кнопки создания задачи" alt="" coords="5,47,208,88"/>
+<area shape="rect" title=" " alt="" coords="5,104,208,145"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#afa255dc7cdbbb1a55bb44678b72ad1e0" title=" " alt="" coords="280,104,471,145"/>
+<area shape="poly" title=" " alt="" coords="207,122,266,124,261,126,209,127"/>
 <area shape="rect" href="enummodel_1_1_category.html#a8a5c20cba2237009b02d6b351785e64e" title=" " alt="" coords="265,5,486,31"/>
-<area shape="poly" title=" " alt="" coords="207,46,289,34,284,35,209,52"/>
+<area shape="poly" title=" " alt="" coords="136,102,190,70,255,40,279,34,274,37,257,45,193,74,140,106"/>
 <area shape="rect" href="enummodel_1_1_priority.html#aefbb6c4f1528905793f8bee0902c457b" title=" " alt="" coords="271,55,480,80"/>
-<area shape="poly" title=" " alt="" coords="208,65,258,67,253,68,208,70"/>
-<area shape="rect" href="classview_1_1_new_task_controller.html#a66c1573253964fcde19808f4d57ba3e3" title="Проверяет корректность заполнения формы" alt="" coords="256,104,495,130"/>
-<area shape="poly" title=" " alt="" coords="208,83,289,100,284,101,208,89"/>
-<area shape="rect" href="enummodel_1_1_category.html#a6e338cb2f171d3dd42fc7698d864e9b5" title="Конструктор категории" alt="" coords="543,5,711,31"/>
-<area shape="poly" title=" " alt="" coords="486,16,530,18,525,18,486,21"/>
-<area shape="rect" href="enummodel_1_1_priority.html#a6ea7a40e9195dbd8cc7aa9fa8cdb8c3d" title="Конструктор приоритета" alt="" coords="555,55,699,80"/>
-<area shape="poly" title=" " alt="" coords="480,65,542,67,537,68,480,70"/>
+<area shape="poly" title=" " alt="" coords="203,102,255,90,299,83,294,85,256,95,206,106"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#ae890d916299b13fa18117c3c18549fb7" title=" " alt="" coords="288,170,463,210"/>
+<area shape="poly" title=" " alt="" coords="193,143,277,165,272,167,193,148"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a66c1573253964fcde19808f4d57ba3e3" title=" " alt="" coords="256,235,495,260"/>
+<area shape="poly" title=" " alt="" coords="133,143,189,183,257,220,280,230,275,230,255,225,186,187,133,148"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a11f23060f7cf74ca238678e91b97f67b" title=" " alt="" coords="543,132,763,173"/>
+<area shape="poly" title=" " alt="" coords="471,132,530,140,525,141,472,137"/>
+<area shape="rect" href="enummodel_1_1_category.html#a6e338cb2f171d3dd42fc7698d864e9b5" title="Конструктор категории" alt="" coords="569,5,737,31"/>
+<area shape="poly" title=" " alt="" coords="485,16,556,17,551,19,486,21"/>
+<area shape="rect" href="enummodel_1_1_priority.html#a6ea7a40e9195dbd8cc7aa9fa8cdb8c3d" title="Конструктор приоритета" alt="" coords="581,55,725,80"/>
+<area shape="poly" title=" " alt="" coords="479,65,568,67,563,68,480,70"/>
+<area shape="poly" title=" " alt="" coords="450,232,494,220,547,200,595,181,600,179,549,205,496,225,451,237"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#a3414315b6a1a0c186a568273c2278838" title=" " alt="" coords="574,227,732,268"/>
+<area shape="poly" title=" " alt="" coords="495,245,561,247,556,248,496,250"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#aed72b268fd4973767b6bddd0a6791fb4" title=" " alt="" coords="815,194,973,234"/>
+<area shape="poly" title=" " alt="" coords="732,234,802,227,797,228,733,239"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#a423beeee65134aaa2faf43630ff147b6" title=" " alt="" coords="811,259,977,300"/>
+<area shape="poly" title=" " alt="" coords="733,255,798,266,793,266,732,261"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#ab4e3c92b43f595464f9d335f30e89cf1" title=" " alt="" coords="1040,194,1198,234"/>
+<area shape="poly" title=" " alt="" coords="966,256,1029,240,1034,239,967,261"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#a8c3268ab94b3fad39e9ed882802c0abf" title=" " alt="" coords="1040,259,1198,300"/>
+<area shape="poly" title=" " alt="" coords="977,277,1027,279,1022,280,977,282"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#a287e3b2cf15f382102445870f0db833d" title=" " alt="" coords="1025,324,1214,350"/>
+<area shape="poly" title=" " alt="" coords="977,298,1054,320,1049,319,976,303"/>
 </map>
 </div>
 
@@ -340,39 +464,235 @@ $(function(){initNavTree('classview_1_1_new_task_controller.html','','classview_
       </table>
 </div><div class="memdoc">
 
-<p>Инициализация контроллера </p>
-<p>Вызывается автоматически JavaFX после загрузки FXML файла. Настраивает начальные значения полей формы и инициализирует валидацию. Он вызывается автоматически JavaFX после того, как все UI-элементы (поля с @FXML) будут связаны с FXML-файлом.</p>
-<dl class="section note"><dt>Заметки</dt><dd>Метод выполняет следующие действия:<ol type="1">
-<li>Устанавливает значения по умолчанию для дат</li>
-<li>Заполняет выпадающие списки времени</li>
-<li>Заполняет списки приоритетов и категорий</li>
-<li>Настраивает слушатель для валидации в реальном времени</li>
-<li>Выполняет начальную валидацию формы</li>
-</ol>
-</dd></dl>
-<dl class="section see"><dt>См. также</dt><dd><a class="el" href="#a66c1573253964fcde19808f4d57ba3e3" title="Проверяет корректность заполнения формы">validateForm()</a> </dd>
-<dd>
-Priority#values() </dd>
-<dd>
-Category#values() </dd></dl>
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00063">63</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00165">165</a></p>
-
-<p class="reference">Перекрестные ссылки <a class="el" href="_new_task_controller_8java_source.html#l00106">categoryCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00078">endDatePicker</a>, <a class="el" href="_new_task_controller_8java_source.html#l00084">endHourCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00090">endMinuteCombo</a>, <a class="el" href="_priority_8java_source.html#l00184">model.Priority.getDefault()</a>, <a class="el" href="_priority_8java_source.html#l00121">model.Priority.getDisplayName()</a>, <a class="el" href="_category_8java_source.html#l00051">model.Category.OTHER</a>, <a class="el" href="_new_task_controller_8java_source.html#l00098">priorityCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00058">startDatePicker</a>, <a class="el" href="_new_task_controller_8java_source.html#l00064">startHourCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00070">startMinuteCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00042">titleField</a> и <a class="el" href="_new_task_controller_8java_source.html#l00225">validateForm()</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_new_task_controller_8java_source.html#l00038">endDatePicker</a>, <a class="el" href="_new_task_controller_8java_source.html#l00111">initializePriorityAndCategory()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00129">initializeRecurrence()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00123">initializeReminder()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00095">initializeTimeCombos()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00060">prefillDate</a>, <a class="el" href="_new_task_controller_8java_source.html#l00034">startDatePicker</a>, <a class="el" href="_new_task_controller_8java_source.html#l00031">titleField</a> и <a class="el" href="_new_task_controller_8java_source.html#l00206">validateForm()</a>.</p>
 <div class="dynheader">
 Граф вызовов:</div>
 <div class="dyncontent">
 <div class="center"><img src="classview_1_1_new_task_controller_a9dcf704ac7b311d8bfe516eff8643ad1_cgraph.png" border="0" usemap="#aclassview_1_1_new_task_controller_a9dcf704ac7b311d8bfe516eff8643ad1_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassview_1_1_new_task_controller_a9dcf704ac7b311d8bfe516eff8643ad1_cgraph" id="aclassview_1_1_new_task_controller_a9dcf704ac7b311d8bfe516eff8643ad1_cgraph">
-<area shape="rect" title="Инициализация контроллера" alt="" coords="5,55,217,80"/>
-<area shape="rect" href="enummodel_1_1_priority.html#a80b9836442ce641c8f1deeb10d9ef177" title="Возвращает приоритет по умолчанию" alt="" coords="303,5,466,31"/>
-<area shape="poly" title=" " alt="" coords="186,51,297,33,292,35,187,57"/>
-<area shape="rect" href="enummodel_1_1_priority.html#a3cf5e815f238abd0cf21096783fea607" title="Возвращает читаемое имя приоритета" alt="" coords="284,55,484,80"/>
-<area shape="poly" title=" " alt="" coords="217,65,271,67,266,68,217,70"/>
-<area shape="rect" href="classview_1_1_new_task_controller.html#a66c1573253964fcde19808f4d57ba3e3" title="Проверяет корректность заполнения формы" alt="" coords="265,104,504,130"/>
-<area shape="poly" title=" " alt="" coords="187,78,297,100,292,101,186,84"/>
-<area shape="rect" href="enummodel_1_1_priority.html#a6ea7a40e9195dbd8cc7aa9fa8cdb8c3d" title="Конструктор приоритета" alt="" coords="552,5,696,31"/>
-<area shape="poly" title=" " alt="" coords="466,16,539,18,534,19,467,21"/>
+<area shape="rect" title=" " alt="" coords="5,181,217,207"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a7feab6d24703217f093e4fc8bbc1eac0" title=" " alt="" coords="279,43,490,84"/>
+<area shape="poly" title=" " alt="" coords="128,179,186,138,264,94,285,88,281,91,266,99,189,142,131,183"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a2bb2143f1fc38eb321fd5af63fae0670" title=" " alt="" coords="279,108,490,149"/>
+<area shape="poly" title=" " alt="" coords="167,178,284,151,280,155,169,183"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a2c8d8e26d31927089b039ad955124a82" title=" " alt="" coords="279,174,490,214"/>
+<area shape="poly" title=" " alt="" coords="216,192,265,193,261,195,218,197"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#ac995363c56091dd4e0bdbc1a6ed078df" title=" " alt="" coords="279,239,490,280"/>
+<area shape="poly" title=" " alt="" coords="168,205,284,234,279,236,168,210"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a66c1573253964fcde19808f4d57ba3e3" title=" " alt="" coords="265,304,504,330"/>
+<area shape="poly" title=" " alt="" coords="129,205,188,247,226,270,266,289,290,299,284,299,264,294,223,274,185,251,128,210"/>
+<area shape="rect" href="enummodel_1_1_priority.html#a80b9836442ce641c8f1deeb10d9ef177" title="Возвращает приоритет по умолчанию" alt="" coords="580,5,744,31"/>
+<area shape="poly" title=" " alt="" coords="490,44,567,33,562,35,491,49"/>
+<area shape="rect" href="enummodel_1_1_priority.html#a3cf5e815f238abd0cf21096783fea607" title="Возвращает читаемое имя приоритета" alt="" coords="562,55,762,80"/>
+<area shape="poly" title=" " alt="" coords="490,62,549,65,544,67,491,68"/>
+<area shape="rect" href="enummodel_1_1_priority.html#a6ea7a40e9195dbd8cc7aa9fa8cdb8c3d" title="Конструктор приоритета" alt="" coords="831,5,975,31"/>
+<area shape="poly" title=" " alt="" coords="744,16,818,18,813,19,745,21"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a51493073039f5fb340a0389271a500f8" title=" " alt="" coords="560,108,764,149"/>
+<area shape="poly" title=" " alt="" coords="490,126,547,128,542,130,491,131"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#a3414315b6a1a0c186a568273c2278838" title=" " alt="" coords="583,263,741,304"/>
+<area shape="poly" title=" " alt="" coords="496,301,571,294,565,295,497,306"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a11f23060f7cf74ca238678e91b97f67b" title=" " alt="" coords="552,328,772,369"/>
+<area shape="poly" title=" " alt="" coords="502,328,539,334,534,334,502,333"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#aed72b268fd4973767b6bddd0a6791fb4" title=" " alt="" coords="824,231,982,272"/>
+<area shape="poly" title=" " alt="" coords="741,270,811,264,806,264,742,276"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#a423beeee65134aaa2faf43630ff147b6" title=" " alt="" coords="820,296,986,337"/>
+<area shape="poly" title=" " alt="" coords="742,292,807,303,802,303,741,297"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#ab4e3c92b43f595464f9d335f30e89cf1" title=" " alt="" coords="1049,231,1208,272"/>
+<area shape="poly" title=" " alt="" coords="975,293,1038,277,1043,276,976,299"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#a8c3268ab94b3fad39e9ed882802c0abf" title=" " alt="" coords="1049,296,1208,337"/>
+<area shape="poly" title=" " alt="" coords="986,314,1036,317,1031,317,986,319"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#a287e3b2cf15f382102445870f0db833d" title=" " alt="" coords="1034,361,1223,387"/>
+<area shape="poly" title=" " alt="" coords="986,335,1063,357,1058,357,985,340"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7feab6d24703217f093e4fc8bbc1eac0" name="a7feab6d24703217f093e4fc8bbc1eac0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7feab6d24703217f093e4fc8bbc1eac0">&#9670;&#160;</a></span>initializePriorityAndCategory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.NewTaskController.initializePriorityAndCategory </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00111">111</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_new_task_controller_8java_source.html#l00043">categoryCombo</a>, <a class="el" href="_priority_8java_source.html#l00184">model.Priority.getDefault()</a>, <a class="el" href="_priority_8java_source.html#l00121">model.Priority.getDisplayName()</a>, <a class="el" href="_category_8java_source.html#l00051">model.Category.OTHER</a> и <a class="el" href="_new_task_controller_8java_source.html#l00042">priorityCombo</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00063">initialize()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_new_task_controller_a7feab6d24703217f093e4fc8bbc1eac0_cgraph.png" border="0" usemap="#aclassview_1_1_new_task_controller_a7feab6d24703217f093e4fc8bbc1eac0_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_new_task_controller_a7feab6d24703217f093e4fc8bbc1eac0_cgraph" id="aclassview_1_1_new_task_controller_a7feab6d24703217f093e4fc8bbc1eac0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,23,217,64"/>
+<area shape="rect" href="enummodel_1_1_priority.html#a80b9836442ce641c8f1deeb10d9ef177" title="Возвращает приоритет по умолчанию" alt="" coords="283,5,446,31"/>
+<area shape="poly" title=" " alt="" coords="217,30,270,27,265,28,217,36"/>
+<area shape="rect" href="enummodel_1_1_priority.html#a3cf5e815f238abd0cf21096783fea607" title="Возвращает читаемое имя приоритета" alt="" coords="265,55,465,80"/>
+<area shape="poly" title=" " alt="" coords="217,51,252,56,247,57,217,56"/>
+<area shape="rect" href="enummodel_1_1_priority.html#a6ea7a40e9195dbd8cc7aa9fa8cdb8c3d" title="Конструктор приоритета" alt="" coords="513,5,657,31"/>
+<area shape="poly" title=" " alt="" coords="446,16,500,18,495,18,447,21"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_new_task_controller_a7feab6d24703217f093e4fc8bbc1eac0_icgraph.png" border="0" usemap="#aclassview_1_1_new_task_controller_a7feab6d24703217f093e4fc8bbc1eac0_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_new_task_controller_a7feab6d24703217f093e4fc8bbc1eac0_icgraph" id="aclassview_1_1_new_task_controller_a7feab6d24703217f093e4fc8bbc1eac0_icgraph">
+<area shape="rect" title=" " alt="" coords="265,5,476,46"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a9dcf704ac7b311d8bfe516eff8643ad1" title=" " alt="" coords="5,13,217,38"/>
+<area shape="poly" title=" " alt="" coords="247,26,217,28,217,23,252,26"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2bb2143f1fc38eb321fd5af63fae0670" name="a2bb2143f1fc38eb321fd5af63fae0670"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bb2143f1fc38eb321fd5af63fae0670">&#9670;&#160;</a></span>initializeRecurrence()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.NewTaskController.initializeRecurrence </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00129">129</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_new_task_controller_8java_source.html#l00048">recurrenceCombo</a> и <a class="el" href="_new_task_controller_8java_source.html#l00143">updateRecurrenceFields()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00063">initialize()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_new_task_controller_a2bb2143f1fc38eb321fd5af63fae0670_cgraph.png" border="0" usemap="#aclassview_1_1_new_task_controller_a2bb2143f1fc38eb321fd5af63fae0670_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_new_task_controller_a2bb2143f1fc38eb321fd5af63fae0670_cgraph" id="aclassview_1_1_new_task_controller_a2bb2143f1fc38eb321fd5af63fae0670_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,217,46"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a51493073039f5fb340a0389271a500f8" title=" " alt="" coords="265,5,468,46"/>
+<area shape="poly" title=" " alt="" coords="217,23,251,26,246,26,217,28"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_new_task_controller_a2bb2143f1fc38eb321fd5af63fae0670_icgraph.png" border="0" usemap="#aclassview_1_1_new_task_controller_a2bb2143f1fc38eb321fd5af63fae0670_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_new_task_controller_a2bb2143f1fc38eb321fd5af63fae0670_icgraph" id="aclassview_1_1_new_task_controller_a2bb2143f1fc38eb321fd5af63fae0670_icgraph">
+<area shape="rect" title=" " alt="" coords="265,5,476,46"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a9dcf704ac7b311d8bfe516eff8643ad1" title=" " alt="" coords="5,13,217,38"/>
+<area shape="poly" title=" " alt="" coords="247,26,217,28,217,23,252,26"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2c8d8e26d31927089b039ad955124a82" name="a2c8d8e26d31927089b039ad955124a82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c8d8e26d31927089b039ad955124a82">&#9670;&#160;</a></span>initializeReminder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.NewTaskController.initializeReminder </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00123">123</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_new_task_controller_8java_source.html#l00046">reminderUnitChoice</a> и <a class="el" href="_new_task_controller_8java_source.html#l00045">reminderValueSpinner</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00063">initialize()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_new_task_controller_a2c8d8e26d31927089b039ad955124a82_icgraph.png" border="0" usemap="#aclassview_1_1_new_task_controller_a2c8d8e26d31927089b039ad955124a82_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_new_task_controller_a2c8d8e26d31927089b039ad955124a82_icgraph" id="aclassview_1_1_new_task_controller_a2c8d8e26d31927089b039ad955124a82_icgraph">
+<area shape="rect" title=" " alt="" coords="265,5,476,46"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a9dcf704ac7b311d8bfe516eff8643ad1" title=" " alt="" coords="5,13,217,38"/>
+<area shape="poly" title=" " alt="" coords="247,26,217,28,217,23,252,26"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac995363c56091dd4e0bdbc1a6ed078df" name="ac995363c56091dd4e0bdbc1a6ed078df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac995363c56091dd4e0bdbc1a6ed078df">&#9670;&#160;</a></span>initializeTimeCombos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.NewTaskController.initializeTimeCombos </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00095">95</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_new_task_controller_8java_source.html#l00039">endHourCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00040">endMinuteCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00035">startHourCombo</a> и <a class="el" href="_new_task_controller_8java_source.html#l00036">startMinuteCombo</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00063">initialize()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_new_task_controller_ac995363c56091dd4e0bdbc1a6ed078df_icgraph.png" border="0" usemap="#aclassview_1_1_new_task_controller_ac995363c56091dd4e0bdbc1a6ed078df_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_new_task_controller_ac995363c56091dd4e0bdbc1a6ed078df_icgraph" id="aclassview_1_1_new_task_controller_ac995363c56091dd4e0bdbc1a6ed078df_icgraph">
+<area shape="rect" title=" " alt="" coords="265,5,476,46"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a9dcf704ac7b311d8bfe516eff8643ad1" title=" " alt="" coords="5,13,217,38"/>
+<area shape="poly" title=" " alt="" coords="247,26,217,28,217,23,252,26"/>
 </map>
 </div>
 
@@ -393,25 +713,317 @@ Category#values() </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Проверяет, была ли создана задача </p>
-<p>Возвращает флаг, указывающий на успешное создание задачи</p>
-<dl class="section return"><dt>Возвращает</dt><dd>boolean - true если задача была создана, false если была отмена или ошибка</dd></dl>
-<dl class="section note"><dt>Заметки</dt><dd>Используется основным контроллером для определения, нужно ли добавлять задачу в список </dd></dl>
-<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title="Обработчик кнопки добавления новой задачи">MainController.handleAddTask()</a> </dd></dl>
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00323">323</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00371">371</a></p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_new_task_controller_8java_source.html#l00058">taskCreated</a>.</p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_new_task_controller_8java_source.html#l00145">taskCreated</a>.</p>
-
-<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00953">view.MainController.handleAddTask()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l01164">view.MainController.showTaskDialog()</a>.</p>
 <div class="dynheader">
 Граф вызова функции:</div>
 <div class="dyncontent">
 <div class="center"><img src="classview_1_1_new_task_controller_ad985a55d5cf42453ff70863d8619713b_icgraph.png" border="0" usemap="#aclassview_1_1_new_task_controller_ad985a55d5cf42453ff70863d8619713b_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassview_1_1_new_task_controller_ad985a55d5cf42453ff70863d8619713b_icgraph" id="aclassview_1_1_new_task_controller_ad985a55d5cf42453ff70863d8619713b_icgraph">
-<area shape="rect" title="Проверяет, была ли создана задача" alt="" coords="229,5,403,46"/>
-<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title="Обработчик кнопки добавления новой задачи" alt="" coords="5,5,181,46"/>
-<area shape="poly" title=" " alt="" coords="210,26,181,28,181,23,215,25"/>
+<area shape="rect" title=" " alt="" coords="1118,71,1292,111"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a76739ea654eaac37a81afdefb7f02f86" title=" " alt="" coords="902,71,1070,111"/>
+<area shape="poly" title=" " alt="" coords="1100,91,1071,94,1070,88,1105,91"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title=" " alt="" coords="678,5,854,46"/>
+<area shape="poly" title=" " alt="" coords="898,66,837,49,837,44,904,66"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6343e648a870a706a14bc46aa9b43b4c" title=" " alt="" coords="678,71,854,111"/>
+<area shape="poly" title=" " alt="" coords="883,91,854,94,854,88,889,91"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4766825edbb089c262ba6ee17ea273f8" title=" " alt="" coords="683,136,849,177"/>
+<area shape="poly" title=" " alt="" coords="903,116,838,138,837,133,898,117"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a157c635caf5c9cc208923226f28274e0" title=" " alt="" coords="460,79,625,119"/>
+<area shape="poly" title=" " alt="" coords="667,132,624,123,625,117,672,132"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a35f2a1470868c1e281d8750ab39baa5f" title=" " alt="" coords="238,108,407,149"/>
+<area shape="poly" title=" " alt="" coords="665,151,407,136,407,131,670,149"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afdc5d6820d84e41d7d0f86e633eba6a5" title=" " alt="" coords="455,193,630,234"/>
+<area shape="poly" title=" " alt="" coords="672,181,625,195,624,190,667,181"/>
+<area shape="poly" title=" " alt="" coords="442,113,408,120,407,114,448,111"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,116,190,141"/>
+<area shape="poly" title=" " alt="" coords="219,129,191,131,189,126,224,128"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a11f23060f7cf74ca238678e91b97f67b" name="a11f23060f7cf74ca238678e91b97f67b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11f23060f7cf74ca238678e91b97f67b">&#9670;&#160;</a></span>normalizeCustomRule()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String view.NewTaskController.normalizeCustomRule </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>rawRule</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00356">356</a></p>
+
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00341">buildRecurrenceRule()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00206">validateForm()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_new_task_controller_a11f23060f7cf74ca238678e91b97f67b_icgraph.png" border="0" usemap="#aclassview_1_1_new_task_controller_a11f23060f7cf74ca238678e91b97f67b_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_new_task_controller_a11f23060f7cf74ca238678e91b97f67b_icgraph" id="aclassview_1_1_new_task_controller_a11f23060f7cf74ca238678e91b97f67b_icgraph">
+<area shape="rect" title=" " alt="" coords="552,35,772,75"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#afa255dc7cdbbb1a55bb44678b72ad1e0" title=" " alt="" coords="289,5,480,46"/>
+<area shape="poly" title=" " alt="" coords="534,42,480,38,480,33,539,42"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a66c1573253964fcde19808f4d57ba3e3" title=" " alt="" coords="265,70,504,96"/>
+<area shape="poly" title=" " alt="" coords="539,67,505,74,504,68,534,68"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a337be480aeacacd900c710627a27a63e" title=" " alt="" coords="10,5,212,46"/>
+<area shape="poly" title=" " alt="" coords="271,26,213,28,212,23,276,25"/>
+<area shape="poly" title=" " alt="" coords="302,67,211,49,212,44,307,66"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a9dcf704ac7b311d8bfe516eff8643ad1" title=" " alt="" coords="5,70,217,96"/>
+<area shape="poly" title=" " alt="" coords="246,83,217,86,217,80,252,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a251389d73428dd28c385804e1e292b43" name="a251389d73428dd28c385804e1e292b43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a251389d73428dd28c385804e1e292b43">&#9670;&#160;</a></span>setEditingTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.NewTaskController.setEditingTask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmodel_1_1_task.html">Task</a></td>          <td class="paramname"><span class="paramname"><em>task</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00080">80</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_new_task_controller_8java_source.html#l00149">applyTaskToForm()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l01164">view.MainController.showTaskDialog()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_new_task_controller_a251389d73428dd28c385804e1e292b43_cgraph.png" border="0" usemap="#aclassview_1_1_new_task_controller_a251389d73428dd28c385804e1e292b43_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_new_task_controller_a251389d73428dd28c385804e1e292b43_cgraph" id="aclassview_1_1_new_task_controller_a251389d73428dd28c385804e1e292b43_cgraph">
+<area shape="rect" title=" " alt="" coords="5,270,188,310"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a16da7a84bf64eb816ba4075b9b34f325" title=" " alt="" coords="236,270,431,310"/>
+<area shape="poly" title=" " alt="" coords="187,288,222,289,218,292,189,293"/>
+<area shape="rect" href="classmodel_1_1_task.html#a79d344fdb9abdebc5978f3936f7782dd" title="Возвращает категорию задачи" alt="" coords="504,5,667,31"/>
+<area shape="poly" title=" " alt="" coords="338,268,354,221,383,159,423,94,449,65,477,40,491,34,487,37,481,44,452,69,427,98,387,161,359,223,343,271"/>
+<area shape="rect" href="classmodel_1_1_task.html#a8dc5a073ec12dc2747bda501f29a0127" title="Возвращает описание задачи" alt="" coords="497,55,673,80"/>
+<area shape="poly" title=" " alt="" coords="341,268,360,230,390,181,429,131,452,109,478,89,489,85,484,89,480,94,456,113,433,135,394,184,365,232,346,271"/>
+<area shape="rect" href="enummodel_1_1_category.html#a7b617d5f06ca4cb136d681b1bd2e8d7d" title="Возвращает читаемое имя категории" alt="" coords="479,104,691,130"/>
+<area shape="poly" title=" " alt="" coords="346,268,399,203,436,168,478,139,491,134,487,137,480,143,439,172,403,207,350,271"/>
+<area shape="rect" href="enummodel_1_1_priority.html#a3cf5e815f238abd0cf21096783fea607" title="Возвращает читаемое имя приоритета" alt="" coords="485,153,685,179"/>
+<area shape="poly" title=" " alt="" coords="357,267,410,227,443,206,478,188,497,183,492,186,480,193,446,210,413,231,360,271"/>
+<area shape="rect" href="classmodel_1_1_task.html#a7a97e0aae6d6edf514a6b7442ce76232" title="Возвращает время окончания задачи" alt="" coords="504,203,666,228"/>
+<area shape="poly" title=" " alt="" coords="389,267,478,237,507,231,503,234,480,242,391,272"/>
+<area shape="rect" href="classmodel_1_1_task.html#a84dce864c8b8cc246e25e11d9cf200ca" title="Возвращает приоритет задачи" alt="" coords="510,252,661,278"/>
+<area shape="poly" title=" " alt="" coords="431,278,496,273,492,275,432,283"/>
+<area shape="rect" href="classmodel_1_1_task.html#a63b137fede1540f1191e2b03f6b145b6" title=" " alt="" coords="485,301,685,327"/>
+<area shape="poly" title=" " alt="" coords="431,297,472,302,467,304,432,302"/>
+<area shape="rect" href="classmodel_1_1_task.html#a06aae2333c73d9d8d665c02507403d23" title=" " alt="" coords="483,351,687,376"/>
+<area shape="poly" title=" " alt="" coords="391,308,480,337,509,346,503,347,478,342,392,314"/>
+<area shape="rect" href="classmodel_1_1_task.html#a345f13673c0e68e1fa8272c040926b76" title=" " alt="" coords="484,400,686,441"/>
+<area shape="poly" title=" " alt="" coords="360,308,414,348,480,386,495,395,489,395,478,391,412,352,360,314"/>
+<area shape="rect" href="classmodel_1_1_task.html#aafb825513f5c3287cb724ddf5943ec03" title="Возвращает время начала задачи" alt="" coords="502,465,669,491"/>
+<area shape="poly" title=" " alt="" coords="348,308,400,379,438,418,480,451,493,459,488,459,478,455,434,422,396,383,346,313"/>
+<area shape="rect" href="classmodel_1_1_task.html#a3016babcf59132145ef35906075ea109" title="Возвращает заголовок задачи" alt="" coords="518,515,653,540"/>
+<area shape="poly" title=" " alt="" coords="343,308,363,351,392,403,432,457,455,481,480,501,505,516,500,515,478,506,451,485,427,460,388,406,359,354,342,314"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a51493073039f5fb340a0389271a500f8" title=" " alt="" coords="484,564,687,605"/>
+<area shape="poly" title=" " alt="" coords="341,309,359,360,387,424,427,492,452,524,481,551,486,557,480,555,477,555,448,527,423,496,382,427,354,361,339,314"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_new_task_controller_a251389d73428dd28c385804e1e292b43_icgraph.png" border="0" usemap="#aclassview_1_1_new_task_controller_a251389d73428dd28c385804e1e292b43_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_new_task_controller_a251389d73428dd28c385804e1e292b43_icgraph" id="aclassview_1_1_new_task_controller_a251389d73428dd28c385804e1e292b43_icgraph">
+<area shape="rect" title=" " alt="" coords="1118,71,1300,111"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a76739ea654eaac37a81afdefb7f02f86" title=" " alt="" coords="902,71,1070,111"/>
+<area shape="poly" title=" " alt="" coords="1100,91,1070,94,1070,88,1105,91"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title=" " alt="" coords="678,5,854,46"/>
+<area shape="poly" title=" " alt="" coords="898,66,837,49,837,44,904,66"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6343e648a870a706a14bc46aa9b43b4c" title=" " alt="" coords="678,71,854,111"/>
+<area shape="poly" title=" " alt="" coords="883,91,854,94,854,88,889,91"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4766825edbb089c262ba6ee17ea273f8" title=" " alt="" coords="683,136,849,177"/>
+<area shape="poly" title=" " alt="" coords="903,116,838,138,837,133,898,117"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a157c635caf5c9cc208923226f28274e0" title=" " alt="" coords="460,79,625,119"/>
+<area shape="poly" title=" " alt="" coords="667,132,624,123,625,117,672,132"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a35f2a1470868c1e281d8750ab39baa5f" title=" " alt="" coords="238,108,407,149"/>
+<area shape="poly" title=" " alt="" coords="665,151,407,136,407,131,670,149"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afdc5d6820d84e41d7d0f86e633eba6a5" title=" " alt="" coords="455,193,630,234"/>
+<area shape="poly" title=" " alt="" coords="672,181,625,195,624,190,667,181"/>
+<area shape="poly" title=" " alt="" coords="442,113,408,120,407,114,448,111"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,116,190,141"/>
+<area shape="poly" title=" " alt="" coords="219,129,191,131,189,126,224,128"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae59a87461da40dd8eb577e10f37da256" name="ae59a87461da40dd8eb577e10f37da256"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae59a87461da40dd8eb577e10f37da256">&#9670;&#160;</a></span>setPrefillDate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.NewTaskController.setPrefillDate </td>
+          <td>(</td>
+          <td class="paramtype">LocalDate</td>          <td class="paramname"><span class="paramname"><em>date</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00087">87</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_new_task_controller_8java_source.html#l00038">endDatePicker</a> и <a class="el" href="_new_task_controller_8java_source.html#l00034">startDatePicker</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l01164">view.MainController.showTaskDialog()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_new_task_controller_ae59a87461da40dd8eb577e10f37da256_icgraph.png" border="0" usemap="#aclassview_1_1_new_task_controller_ae59a87461da40dd8eb577e10f37da256_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_new_task_controller_ae59a87461da40dd8eb577e10f37da256_icgraph" id="aclassview_1_1_new_task_controller_ae59a87461da40dd8eb577e10f37da256_icgraph">
+<area shape="rect" title=" " alt="" coords="1118,71,1300,111"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a76739ea654eaac37a81afdefb7f02f86" title=" " alt="" coords="902,71,1070,111"/>
+<area shape="poly" title=" " alt="" coords="1100,91,1070,94,1070,88,1105,91"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title=" " alt="" coords="678,5,854,46"/>
+<area shape="poly" title=" " alt="" coords="898,66,837,49,837,44,904,66"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6343e648a870a706a14bc46aa9b43b4c" title=" " alt="" coords="678,71,854,111"/>
+<area shape="poly" title=" " alt="" coords="883,91,854,94,854,88,889,91"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4766825edbb089c262ba6ee17ea273f8" title=" " alt="" coords="683,136,849,177"/>
+<area shape="poly" title=" " alt="" coords="903,116,838,138,837,133,898,117"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a157c635caf5c9cc208923226f28274e0" title=" " alt="" coords="460,79,625,119"/>
+<area shape="poly" title=" " alt="" coords="667,132,624,123,625,117,672,132"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a35f2a1470868c1e281d8750ab39baa5f" title=" " alt="" coords="238,108,407,149"/>
+<area shape="poly" title=" " alt="" coords="665,151,407,136,407,131,670,149"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afdc5d6820d84e41d7d0f86e633eba6a5" title=" " alt="" coords="455,193,630,234"/>
+<area shape="poly" title=" " alt="" coords="672,181,625,195,624,190,667,181"/>
+<area shape="poly" title=" " alt="" coords="442,113,408,120,407,114,448,111"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,116,190,141"/>
+<area shape="poly" title=" " alt="" coords="219,129,191,131,189,126,224,128"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae890d916299b13fa18117c3c18549fb7" name="ae890d916299b13fa18117c3c18549fb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae890d916299b13fa18117c3c18549fb7">&#9670;&#160;</a></span>toMinutes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int view.NewTaskController.toMinutes </td>
+          <td>(</td>
+          <td class="paramtype">Integer</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>unit</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00327">327</a></p>
+
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00252">handleCreateTask()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_new_task_controller_ae890d916299b13fa18117c3c18549fb7_icgraph.png" border="0" usemap="#aclassview_1_1_new_task_controller_ae890d916299b13fa18117c3c18549fb7_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_new_task_controller_ae890d916299b13fa18117c3c18549fb7_icgraph" id="aclassview_1_1_new_task_controller_ae890d916299b13fa18117c3c18549fb7_icgraph">
+<area shape="rect" title=" " alt="" coords="256,5,431,46"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a337be480aeacacd900c710627a27a63e" title=" " alt="" coords="5,5,208,46"/>
+<area shape="poly" title=" " alt="" coords="237,26,208,28,208,23,243,26"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a51493073039f5fb340a0389271a500f8" name="a51493073039f5fb340a0389271a500f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51493073039f5fb340a0389271a500f8">&#9670;&#160;</a></span>updateRecurrenceFields()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.NewTaskController.updateRecurrenceFields </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00143">143</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_new_task_controller_8java_source.html#l00048">recurrenceCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00051">recurrenceHintLabel</a> и <a class="el" href="_new_task_controller_8java_source.html#l00049">recurrenceRuleField</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00149">applyTaskToForm()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00129">initializeRecurrence()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_new_task_controller_a51493073039f5fb340a0389271a500f8_icgraph.png" border="0" usemap="#aclassview_1_1_new_task_controller_a51493073039f5fb340a0389271a500f8_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_new_task_controller_a51493073039f5fb340a0389271a500f8_icgraph" id="aclassview_1_1_new_task_controller_a51493073039f5fb340a0389271a500f8_icgraph">
+<area shape="rect" title=" " alt="" coords="1637,104,1840,145"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a16da7a84bf64eb816ba4075b9b34f325" title=" " alt="" coords="1385,71,1581,111"/>
+<area shape="poly" title=" " alt="" coords="1618,109,1581,106,1581,101,1624,109"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a2bb2143f1fc38eb321fd5af63fae0670" title=" " alt="" coords="1377,136,1589,177"/>
+<area shape="poly" title=" " alt="" coords="1624,139,1590,146,1589,140,1618,139"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a251389d73428dd28c385804e1e292b43" title=" " alt="" coords="1132,71,1315,111"/>
+<area shape="poly" title=" " alt="" coords="1367,91,1315,94,1315,88,1372,91"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a76739ea654eaac37a81afdefb7f02f86" title=" " alt="" coords="902,71,1070,111"/>
+<area shape="poly" title=" " alt="" coords="1114,91,1071,94,1070,88,1119,91"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title=" " alt="" coords="678,5,854,46"/>
+<area shape="poly" title=" " alt="" coords="898,66,837,49,837,44,904,66"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6343e648a870a706a14bc46aa9b43b4c" title=" " alt="" coords="678,71,854,111"/>
+<area shape="poly" title=" " alt="" coords="883,91,854,94,854,88,889,91"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4766825edbb089c262ba6ee17ea273f8" title=" " alt="" coords="683,136,849,177"/>
+<area shape="poly" title=" " alt="" coords="903,116,838,138,837,133,898,117"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a157c635caf5c9cc208923226f28274e0" title=" " alt="" coords="460,79,625,119"/>
+<area shape="poly" title=" " alt="" coords="667,132,624,123,625,117,672,132"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a35f2a1470868c1e281d8750ab39baa5f" title=" " alt="" coords="238,108,407,149"/>
+<area shape="poly" title=" " alt="" coords="665,151,407,136,407,131,670,149"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afdc5d6820d84e41d7d0f86e633eba6a5" title=" " alt="" coords="455,193,630,234"/>
+<area shape="poly" title=" " alt="" coords="672,181,625,195,624,190,667,181"/>
+<area shape="poly" title=" " alt="" coords="442,113,408,120,407,114,448,111"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,116,190,141"/>
+<area shape="poly" title=" " alt="" coords="219,129,191,131,189,126,224,128"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a9dcf704ac7b311d8bfe516eff8643ad1" title=" " alt="" coords="1118,144,1329,169"/>
+<area shape="poly" title=" " alt="" coords="1359,156,1330,159,1330,154,1365,156"/>
 </map>
 </div>
 
@@ -440,37 +1052,42 @@ Category#values() </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Проверяет корректность заполнения формы </p>
-<p>Выполняет валидацию всех обязательных полей формы создания задачи. Проверяет наличие заголовка и корректность дат.</p>
-<dl class="section return"><dt>Возвращает</dt><dd>boolean - true если форма валидна, false если есть ошибки</dd></dl>
-<p>@validation</p><ul>
-<li>Заголовок: не может быть null или пустой строкой</li>
-<li>Даты: обе даты должны быть указаны, дата окончания не может быть раньше даты начала</li>
-</ul>
-<dl class="section note"><dt>Заметки</dt><dd>Метод также обновляет интерфейс:<ul>
-<li>Устанавливает красную рамку для невалидных полей</li>
-<li>Показывает сообщения об ошибках в errorLabel</li>
-<li>Активирует/деактивирует кнопку создания</li>
-</ul>
-</dd></dl>
-<dl class="section see"><dt>См. также</dt><dd><a class="el" href="#a7d9ffad3e5bc47dba6eebaabedb6e485" title="Метка для отображения ошибок валидации">errorLabel</a> </dd>
-<dd>
-<a class="el" href="#acb6273d4d43093cfca439fa7726ee94a" title="Кнопка создания задачи">createButton</a> </dd></dl>
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00206">206</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00225">225</a></p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_new_task_controller_8java_source.html#l00053">createButton</a>, <a class="el" href="_new_task_controller_8java_source.html#l00038">endDatePicker</a>, <a class="el" href="_new_task_controller_8java_source.html#l00055">errorLabel</a>, <a class="el" href="_recurrence_util_8java_source.html#l00015">util.RecurrenceUtil.nextOccurrence()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00356">normalizeCustomRule()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00048">recurrenceCombo</a>, <a class="el" href="_new_task_controller_8java_source.html#l00049">recurrenceRuleField</a>, <a class="el" href="_new_task_controller_8java_source.html#l00034">startDatePicker</a> и <a class="el" href="_new_task_controller_8java_source.html#l00031">titleField</a>.</p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_new_task_controller_8java_source.html#l00114">createButton</a>, <a class="el" href="_new_task_controller_8java_source.html#l00078">endDatePicker</a>, <a class="el" href="_new_task_controller_8java_source.html#l00128">errorLabel</a>, <a class="el" href="_new_task_controller_8java_source.html#l00058">startDatePicker</a> и <a class="el" href="_new_task_controller_8java_source.html#l00042">titleField</a>.</p>
-
-<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00288">handleCreateTask()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00165">initialize()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00252">handleCreateTask()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00063">initialize()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classview_1_1_new_task_controller_a66c1573253964fcde19808f4d57ba3e3_cgraph.png" border="0" usemap="#aclassview_1_1_new_task_controller_a66c1573253964fcde19808f4d57ba3e3_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassview_1_1_new_task_controller_a66c1573253964fcde19808f4d57ba3e3_cgraph" id="aclassview_1_1_new_task_controller_a66c1573253964fcde19808f4d57ba3e3_cgraph">
+<area shape="rect" title=" " alt="" coords="5,78,245,104"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#a3414315b6a1a0c186a568273c2278838" title=" " alt="" coords="324,37,482,78"/>
+<area shape="poly" title=" " alt="" coords="237,75,311,68,306,70,238,80"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a11f23060f7cf74ca238678e91b97f67b" title=" " alt="" coords="293,103,513,143"/>
+<area shape="poly" title=" " alt="" coords="242,102,280,108,274,109,242,107"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#aed72b268fd4973767b6bddd0a6791fb4" title=" " alt="" coords="564,5,723,46"/>
+<area shape="poly" title=" " alt="" coords="482,45,552,38,546,39,483,50"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#a423beeee65134aaa2faf43630ff147b6" title=" " alt="" coords="561,71,726,111"/>
+<area shape="poly" title=" " alt="" coords="482,66,548,77,543,78,482,71"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#ab4e3c92b43f595464f9d335f30e89cf1" title=" " alt="" coords="790,5,948,46"/>
+<area shape="poly" title=" " alt="" coords="715,68,779,51,784,50,717,73"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#a8c3268ab94b3fad39e9ed882802c0abf" title=" " alt="" coords="790,71,948,111"/>
+<area shape="poly" title=" " alt="" coords="727,88,777,91,772,91,727,94"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#a287e3b2cf15f382102445870f0db833d" title=" " alt="" coords="774,136,964,161"/>
+<area shape="poly" title=" " alt="" coords="726,109,804,131,798,131,726,115"/>
+</map>
+</div>
 <div class="dynheader">
 Граф вызова функции:</div>
 <div class="dyncontent">
 <div class="center"><img src="classview_1_1_new_task_controller_a66c1573253964fcde19808f4d57ba3e3_icgraph.png" border="0" usemap="#aclassview_1_1_new_task_controller_a66c1573253964fcde19808f4d57ba3e3_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassview_1_1_new_task_controller_a66c1573253964fcde19808f4d57ba3e3_icgraph" id="aclassview_1_1_new_task_controller_a66c1573253964fcde19808f4d57ba3e3_icgraph">
-<area shape="rect" title="Проверяет корректность заполнения формы" alt="" coords="265,42,504,68"/>
-<area shape="rect" href="classview_1_1_new_task_controller.html#a337be480aeacacd900c710627a27a63e" title="Обработчик кнопки создания задачи" alt="" coords="10,5,212,46"/>
+<area shape="rect" title=" " alt="" coords="265,42,504,68"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a337be480aeacacd900c710627a27a63e" title=" " alt="" coords="10,5,212,46"/>
 <area shape="poly" title=" " alt="" coords="247,41,213,39,213,34,252,40"/>
-<area shape="rect" href="classview_1_1_new_task_controller.html#a9dcf704ac7b311d8bfe516eff8643ad1" title="Инициализация контроллера" alt="" coords="5,70,217,96"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a9dcf704ac7b311d8bfe516eff8643ad1" title=" " alt="" coords="5,70,217,96"/>
 <area shape="poly" title=" " alt="" coords="246,69,217,75,217,70,252,69"/>
 </map>
 </div>
@@ -498,12 +1115,9 @@ Category#values() </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Кнопка отмены создания </p>
-<p>JavaFX Button для отмены создания задачи и закрытия диалога </p>
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00054">54</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00120">120</a></p>
-
-<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00343">handleCancel()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00313">handleCancel()</a>.</p>
 
 </div>
 </div>
@@ -527,13 +1141,9 @@ Category#values() </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Выбор категории задачи </p>
-<p>JavaFX ComboBox для выбора категории из значений enum <a class="el" href="enummodel_1_1_category.html">Category</a></p>
-<p>@default <a class="el" href="enummodel_1_1_category.html#a8d66f9d03f0de46b44d673f33e1d9039" title="Другая категория">Category.OTHER</a> </p>
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00043">43</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00106">106</a></p>
-
-<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00288">handleCreateTask()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00165">initialize()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00149">applyTaskToForm()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00252">handleCreateTask()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00111">initializePriorityAndCategory()</a>.</p>
 
 </div>
 </div>
@@ -557,13 +1167,9 @@ Category#values() </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Кнопка создания задачи </p>
-<p>JavaFX Button для подтверждения и создания задачи</p>
-<dl class="section note"><dt>Заметки</dt><dd>Активна только при успешной валидации всех полей </dd></dl>
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00053">53</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00114">114</a></p>
-
-<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00288">handleCreateTask()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00225">validateForm()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00149">applyTaskToForm()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00252">handleCreateTask()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00206">validateForm()</a>.</p>
 
 </div>
 </div>
@@ -587,13 +1193,9 @@ Category#values() </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Созданная задача </p>
-<p>Объект <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a>, созданный на основе данных из формы</p>
-<dl class="section note"><dt>Заметки</dt><dd>Инициализируется только после успешного создания задачи </dd></dl>
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00057">57</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00136">136</a></p>
-
-<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00358">getCreatedTask()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00288">handleCreateTask()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00319">getCreatedTask()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00252">handleCreateTask()</a>.</p>
 
 </div>
 </div>
@@ -617,13 +1219,61 @@ Category#values() </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Область для ввода описания задачи </p>
-<p>JavaFX TextArea для многострочного описания задачи</p>
-<dl class="section note"><dt>Заметки</dt><dd>Может быть пустым, не проходит обязательную валидацию </dd></dl>
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00032">32</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00050">50</a></p>
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00149">applyTaskToForm()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00252">handleCreateTask()</a>.</p>
 
-<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00288">handleCreateTask()</a>.</p>
+</div>
+</div>
+<a id="a1b8caab3a27f995c6562394a852b166a" name="a1b8caab3a27f995c6562394a852b166a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b8caab3a27f995c6562394a852b166a">&#9670;&#160;</a></span>dialogTitleLabel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Label view.NewTaskController.dialogTitleLabel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00029">29</a></p>
+
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00149">applyTaskToForm()</a>.</p>
+
+</div>
+</div>
+<a id="ad2fa5da86ffaf40661c14fd51eb67332" name="ad2fa5da86ffaf40661c14fd51eb67332"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2fa5da86ffaf40661c14fd51eb67332">&#9670;&#160;</a></span>editingTask</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmodel_1_1_task.html">Task</a> view.NewTaskController.editingTask</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00059">59</a></p>
+
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00252">handleCreateTask()</a>.</p>
 
 </div>
 </div>
@@ -647,13 +1297,9 @@ Category#values() </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Выбор даты окончания задачи </p>
-<p>JavaFX DatePicker для выбора даты дедлайна задачи</p>
-<p>@default Завтрашняя дата </p>
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00038">38</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00078">78</a></p>
-
-<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00288">handleCreateTask()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00165">initialize()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00225">validateForm()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00149">applyTaskToForm()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00252">handleCreateTask()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00063">initialize()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00087">setPrefillDate()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00206">validateForm()</a>.</p>
 
 </div>
 </div>
@@ -677,12 +1323,9 @@ Category#values() </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Выбор часа окончания задачи </p>
-<p>JavaFX ComboBox для выбора часа окончания (00-23) </p>
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00039">39</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00084">84</a></p>
-
-<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00288">handleCreateTask()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00165">initialize()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00149">applyTaskToForm()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00252">handleCreateTask()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00095">initializeTimeCombos()</a>.</p>
 
 </div>
 </div>
@@ -706,12 +1349,9 @@ Category#values() </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Выбор минут окончания задачи </p>
-<p>JavaFX ComboBox для выбора минут окончания с шагом 5 минут </p>
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00040">40</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00090">90</a></p>
-
-<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00288">handleCreateTask()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00165">initialize()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00149">applyTaskToForm()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00252">handleCreateTask()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00095">initializeTimeCombos()</a>.</p>
 
 </div>
 </div>
@@ -735,13 +1375,35 @@ Category#values() </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Метка для отображения ошибок валидации </p>
-<p>JavaFX Label для отображения сообщений об ошибках валидации формы</p>
-<dl class="section warning"><dt>Предупреждения</dt><dd>Отображается красным цветом при наличии ошибок </dd></dl>
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00055">55</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00128">128</a></p>
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00252">handleCreateTask()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00206">validateForm()</a>.</p>
 
-<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00288">handleCreateTask()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00225">validateForm()</a>.</p>
+</div>
+</div>
+<a id="a9bfe43654d83beb5978a7292a673ab31" name="a9bfe43654d83beb5978a7292a673ab31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bfe43654d83beb5978a7292a673ab31">&#9670;&#160;</a></span>prefillDate</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LocalDate view.NewTaskController.prefillDate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00060">60</a></p>
+
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00063">initialize()</a>.</p>
 
 </div>
 </div>
@@ -765,13 +1427,165 @@ Category#values() </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Выбор приоритета задачи </p>
-<p>JavaFX ComboBox для выбора приоритета из значений enum <a class="el" href="enummodel_1_1_priority.html">Priority</a></p>
-<p>@default <a class="el" href="enummodel_1_1_priority.html#ac3d13333280e0a7bc1f33a340a57a9cf" title="Важный приоритет">Priority.IMPORTANT</a> </p>
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00042">42</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00098">98</a></p>
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00149">applyTaskToForm()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00252">handleCreateTask()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00111">initializePriorityAndCategory()</a>.</p>
 
-<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00288">handleCreateTask()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00165">initialize()</a>.</p>
+</div>
+</div>
+<a id="a8c77d17608d8f18ddc44bdddafd6dd27" name="a8c77d17608d8f18ddc44bdddafd6dd27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c77d17608d8f18ddc44bdddafd6dd27">&#9670;&#160;</a></span>recurrenceCombo</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ComboBox&lt;String&gt; view.NewTaskController.recurrenceCombo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00048">48</a></p>
+
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00149">applyTaskToForm()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00341">buildRecurrenceRule()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00129">initializeRecurrence()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00143">updateRecurrenceFields()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00206">validateForm()</a>.</p>
+
+</div>
+</div>
+<a id="a8d7c8b32dd795585d7fe09060b03f5bd" name="a8d7c8b32dd795585d7fe09060b03f5bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d7c8b32dd795585d7fe09060b03f5bd">&#9670;&#160;</a></span>recurrenceEndPicker</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DatePicker view.NewTaskController.recurrenceEndPicker</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00050">50</a></p>
+
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00149">applyTaskToForm()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00252">handleCreateTask()</a>.</p>
+
+</div>
+</div>
+<a id="aff4b037ebc00739d267235b602bc39a8" name="aff4b037ebc00739d267235b602bc39a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff4b037ebc00739d267235b602bc39a8">&#9670;&#160;</a></span>recurrenceHintLabel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Label view.NewTaskController.recurrenceHintLabel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00051">51</a></p>
+
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00143">updateRecurrenceFields()</a>.</p>
+
+</div>
+</div>
+<a id="a6422ce3f8d036de5bc1cbb4bd1f5136d" name="a6422ce3f8d036de5bc1cbb4bd1f5136d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6422ce3f8d036de5bc1cbb4bd1f5136d">&#9670;&#160;</a></span>recurrenceRuleField</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TextField view.NewTaskController.recurrenceRuleField</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00049">49</a></p>
+
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00149">applyTaskToForm()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00341">buildRecurrenceRule()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00143">updateRecurrenceFields()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00206">validateForm()</a>.</p>
+
+</div>
+</div>
+<a id="a012eb5d39fafaa5a4591ea6bcf1afe9c" name="a012eb5d39fafaa5a4591ea6bcf1afe9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a012eb5d39fafaa5a4591ea6bcf1afe9c">&#9670;&#160;</a></span>reminderUnitChoice</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ChoiceBox&lt;String&gt; view.NewTaskController.reminderUnitChoice</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00046">46</a></p>
+
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00149">applyTaskToForm()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00252">handleCreateTask()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00123">initializeReminder()</a>.</p>
+
+</div>
+</div>
+<a id="a1658f7cdc0b15bedf68ca7e68a3a79f1" name="a1658f7cdc0b15bedf68ca7e68a3a79f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1658f7cdc0b15bedf68ca7e68a3a79f1">&#9670;&#160;</a></span>reminderValueSpinner</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Spinner&lt;Integer&gt; view.NewTaskController.reminderValueSpinner</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00045">45</a></p>
+
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00149">applyTaskToForm()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00252">handleCreateTask()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00123">initializeReminder()</a>.</p>
 
 </div>
 </div>
@@ -795,13 +1609,9 @@ Category#values() </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Выбор даты начала задачи </p>
-<p>JavaFX DatePicker для выбора даты начала выполнения задачи</p>
-<p>@default Текущая дата </p>
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00034">34</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00058">58</a></p>
-
-<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00288">handleCreateTask()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00165">initialize()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00225">validateForm()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00149">applyTaskToForm()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00252">handleCreateTask()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00063">initialize()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00087">setPrefillDate()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00206">validateForm()</a>.</p>
 
 </div>
 </div>
@@ -825,12 +1635,9 @@ Category#values() </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Выбор часа начала задачи </p>
-<p>JavaFX ComboBox для выбора часа начала (00-23) </p>
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00035">35</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00064">64</a></p>
-
-<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00288">handleCreateTask()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00165">initialize()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00149">applyTaskToForm()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00252">handleCreateTask()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00095">initializeTimeCombos()</a>.</p>
 
 </div>
 </div>
@@ -854,12 +1661,9 @@ Category#values() </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Выбор минут начала задачи </p>
-<p>JavaFX ComboBox для выбора минут начала с шагом 5 минут </p>
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00036">36</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00070">70</a></p>
-
-<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00288">handleCreateTask()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00165">initialize()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00149">applyTaskToForm()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00252">handleCreateTask()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00095">initializeTimeCombos()</a>.</p>
 
 </div>
 </div>
@@ -883,13 +1687,9 @@ Category#values() </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Флаг успешного создания задачи </p>
-<p>Указывает, была ли задача успешно создана</p>
-<p>@value true - задача создана успешно @value false - задача не была создана (отмена или ошибка) </p>
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00058">58</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00145">145</a></p>
-
-<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00343">handleCancel()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00288">handleCreateTask()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00371">isTaskCreated()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00313">handleCancel()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00252">handleCreateTask()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00323">isTaskCreated()</a>.</p>
 
 </div>
 </div>
@@ -913,13 +1713,9 @@ Category#values() </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Поле для ввода заголовка задачи </p>
-<p>JavaFX TextField для ввода краткого названия задачи</p>
-<dl class="section warning"><dt>Предупреждения</dt><dd>Не может быть пустым, проходит обязательную валидацию </dd></dl>
+<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00031">31</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_new_task_controller_8java_source.html">NewTaskController.java</a> строка <a class="el" href="_new_task_controller_8java_source.html#l00042">42</a></p>
-
-<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00288">handleCreateTask()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00165">initialize()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00225">validateForm()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00149">applyTaskToForm()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00252">handleCreateTask()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00063">initialize()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00206">validateForm()</a>.</p>
 
 </div>
 </div>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Умный планировщик задач (To-Do List): Умный планировщик задач - Документация</title>
+<title>Умный планировщик задач (To-Do List): ToDoList (Cross-platform Edition)</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,7 +28,7 @@
   <td id="projectalign">
    <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">JavaFX приложение для управления задачами с новогодней темой</div>
+   <div id="projectbrief">JavaFX ToDo-приложение с SQLite, уведомлениями и летней темой</div>
   </td>
  </tr>
  </tbody>
@@ -89,12 +89,36 @@ $(function(){initNavTree('index.html','',''); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Умный планировщик задач - Документация </div></div>
+  <div class="headertitle"><div class="title">ToDoList (Cross-platform Edition) </div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h1 class="doxsection"><a class="anchor" id="intro_sec"></a>
-Введение</h1>
-<p>Это документация к проекту "Умный планировщик задач"... </p>
+О проекте</h1>
+<p>Десктопное JavaFX-приложение для управления задачами с SQLite-хранилищем, системными уведомлениями, календарём и фоновой музыкой.</p>
+<h1 class="doxsection"><a class="anchor" id="architecture_sec"></a>
+Архитектура</h1>
+<ul>
+<li>app: запуск JavaFX приложения</li>
+<li>view/viewmodel: UI и представление данных</li>
+<li>model: сущности и бизнес-логика</li>
+<li>repository: доступ к SQLite</li>
+<li>util: JSON, аудио, уведомления, напоминания, темы</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="db_sec"></a>
+База данных</h1>
+<p>Используется SQLite с 5+ таблицами. Подробности: <a class="el" href="database_schema_page.html">Схема Базы Данных</a></p>
+<h1 class="doxsection"><a class="anchor" id="features_sec"></a>
+Ключевые возможности</h1>
+<ul>
+<li>CRUD задач, фильтрация, сортировка и ручной порядок</li>
+<li>Редактирование задач на месте и контекстные действия</li>
+<li>Системные уведомления о старте/просрочке задач</li>
+<li>Календарь + экспорт в .ics</li>
+<li>Темы (Summer/Dark/Ocean/Custom)</li>
+<li>Циклический плейлист из папки /audio</li>
+<li>Функция "Фокус дня" (топ-3 приоритетных задачи)</li>
+<li>Кроссплатформенные скрипты setup/run/package </li>
+</ul>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->

@@ -1,0 +1,11 @@
+<map id="view.MainController.reloadTasksFromManager" name="view.MainController.reloadTasksFromManager">
+<area shape="rect" id="Node000001" title=" " alt="" coords="678,39,851,79"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_main_controller.html#ae8c9426ed1d46eb4f182a4db737d13c1" title=" " alt="" coords="455,5,630,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="660,44,631,42,631,36,666,44"/>
+<area shape="rect" id="Node000003" href="$classview_1_1_main_controller.html#ae0c75dcb2f1ff8c7d83a8c1d8f4e9637" title=" " alt="" coords="458,71,627,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="666,73,628,81,627,76,660,74"/>
+<area shape="rect" id="Node000004" href="$classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title=" " alt="" coords="238,71,407,111"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="440,91,407,94,407,88,445,91"/>
+<area shape="rect" id="Node000005" href="$classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,78,190,104"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="219,91,190,94,190,88,224,91"/>
+</map>

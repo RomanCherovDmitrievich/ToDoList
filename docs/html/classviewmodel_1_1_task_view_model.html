@@ -28,7 +28,7 @@
   <td id="projectalign">
    <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">JavaFX приложение для управления задачами с новогодней темой</div>
+   <div id="projectbrief">JavaFX ToDo-приложение с SQLite, уведомлениями и летней темой</div>
   </td>
  </tr>
  </tbody>
@@ -291,7 +291,7 @@ javafx.beans.property </dd></dl>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00153">setupBindings()</a> и <a class="el" href="_task_view_model_8java_source.html#l00071">task</a>.</p>
 
-<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00637">equals()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00638">equals()</a>.</p>
 <div class="dynheader">
 Граф вызовов:</div>
 <div class="dyncontent">
@@ -361,6 +361,22 @@ javafx.beans.property </dd></dl>
 <p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00370">370</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00062">completed</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00385">view.MainController.setupStatusColumn()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classviewmodel_1_1_task_view_model_a99d8237ca04d46fdcc2f00c04ee064f4_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_a99d8237ca04d46fdcc2f00c04ee064f4_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassviewmodel_1_1_task_view_model_a99d8237ca04d46fdcc2f00c04ee064f4_icgraph" id="aclassviewmodel_1_1_task_view_model_a99d8237ca04d46fdcc2f00c04ee064f4_icgraph">
+<area shape="rect" title="Возвращает свойство статуса выполнения задачи" alt="" coords="672,5,916,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae0c75dcb2f1ff8c7d83a8c1d8f4e9637" title=" " alt="" coords="455,5,624,46"/>
+<area shape="poly" title=" " alt="" coords="654,26,625,28,625,23,659,26"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title=" " alt="" coords="238,5,407,46"/>
+<area shape="poly" title=" " alt="" coords="437,26,407,28,407,23,442,26"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,13,190,38"/>
+<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -462,7 +478,7 @@ javafx.beans.property </dd></dl>
 <p>Два <a class="el" href="classviewmodel_1_1_task_view_model.html" title="ViewModel для отображения задачи в пользовательском интерфейсе">TaskViewModel</a> считаются равными, если их идентификаторы (id) равны.</p>
 <p>@overrides Object.equals(Object) </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00637">637</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00638">638</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00041">id</a> и <a class="el" href="_task_view_model_8java_source.html#l00110">TaskViewModel()</a>.</p>
 <div class="dynheader">
@@ -501,6 +517,75 @@ javafx.beans.property </dd></dl>
 <p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00338">338</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00059">category</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l01036">view.MainController.duplicateTask()</a> и <a class="el" href="_main_controller_8java_source.html#l00959">view.MainController.updateStatisticsCharts()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classviewmodel_1_1_task_view_model_aee7644b03c0ca5faa3aee9e691d658a3_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_aee7644b03c0ca5faa3aee9e691d658a3_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassviewmodel_1_1_task_view_model_aee7644b03c0ca5faa3aee9e691d658a3_icgraph" id="aclassviewmodel_1_1_task_view_model_aee7644b03c0ca5faa3aee9e691d658a3_icgraph">
+<area shape="rect" title="Возвращает категорию задачи" alt="" coords="1393,151,1595,192"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aafdc8cce09c744e950691a2c00408f27" title=" " alt="" coords="678,5,896,31"/>
+<area shape="poly" title=" " alt="" coords="1379,149,850,34,850,29,1384,146"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aedcff4ed0eec74c31a840783b64b42a8" title=" " alt="" coords="1169,179,1345,220"/>
+<area shape="poly" title=" " alt="" coords="1375,186,1347,192,1345,186,1380,184"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a157c635caf5c9cc208923226f28274e0" title=" " alt="" coords="460,187,625,228"/>
+<area shape="poly" title=" " alt="" coords="752,42,680,96,569,189,565,185,677,92,755,38"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a35f2a1470868c1e281d8750ab39baa5f" title=" " alt="" coords="238,282,407,322"/>
+<area shape="poly" title=" " alt="" coords="469,236,456,243,368,283,365,279,454,238,474,232"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,497,190,523"/>
+<area shape="poly" title=" " alt="" coords="287,336,115,499,111,495,289,331"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a2ae68644e5912e2c7aff36a412b445ba" title=" " alt="" coords="944,302,1121,342"/>
+<area shape="poly" title=" " alt="" coords="1207,226,1073,304,1070,299,1203,229"/>
+<area shape="poly" title=" " alt="" coords="1009,288,941,162,929,129,923,102,914,77,894,52,865,34,864,29,897,48,919,74,928,100,934,127,946,160,1014,289"/>
+<area shape="poly" title=" " alt="" coords="1010,287,947,174,915,122,894,96,833,68,777,53,725,51,674,61,624,80,572,107,456,178,422,203,390,231,342,283,338,280,387,227,419,199,454,173,569,102,622,75,673,56,725,46,778,48,835,63,897,92,920,119,952,171,1016,288"/>
+<area shape="poly" title=" " alt="" coords="1016,354,997,390,970,427,936,461,897,487,839,506,760,519,667,527,566,530,360,527,191,519,190,514,360,522,566,524,667,521,759,514,837,501,895,482,933,457,966,423,992,387,1012,358"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4bb1c177443c7d66b3c8e9687e3c6acb" title=" " alt="" coords="701,171,873,212"/>
+<area shape="poly" title=" " alt="" coords="993,292,948,259,894,227,867,215,866,210,897,222,951,255,998,292"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af0a082800f9000e19567bb5159af6cc2" title=" " alt="" coords="701,367,873,408"/>
+<area shape="poly" title=" " alt="" coords="936,348,867,369,865,364,941,346"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title=" " alt="" coords="699,739,875,780"/>
+<area shape="poly" title=" " alt="" coords="1031,356,1024,434,1003,533,985,586,963,637,934,685,897,728,876,743,874,738,894,724,929,682,958,635,980,584,998,532,1019,433,1028,360"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6343e648a870a706a14bc46aa9b43b4c" title=" " alt="" coords="699,106,875,146"/>
+<area shape="poly" title=" " alt="" coords="1009,288,962,225,930,191,894,162,873,150,872,144,897,157,934,187,966,221,1014,289"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a1eb59033ea2ca2caf351d917d1511cf1" title=" " alt="" coords="699,236,875,277"/>
+<area shape="poly" title=" " alt="" coords="936,298,866,280,866,275,941,297"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a2e6cee3bdcb7d5ef5f7d3227b9543601" title=" " alt="" coords="699,302,875,342"/>
+<area shape="poly" title=" " alt="" coords="925,323,876,325,875,320,930,321"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4766825edbb089c262ba6ee17ea273f8" title=" " alt="" coords="704,432,870,473"/>
+<area shape="poly" title=" " alt="" coords="998,351,951,389,897,422,867,434,865,429,894,417,948,385,993,354"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ad561284d1c935c94e1fe847c6221dfd5" title=" " alt="" coords="685,588,889,614"/>
+<area shape="poly" title=" " alt="" coords="1016,355,968,441,935,487,898,531,856,565,815,590,813,585,853,560,894,527,931,484,964,438,1012,358"/>
+<area shape="rect" href="classview_1_1_main_controller.html#adcfc31adcb42e729fab4174830d348fb" title=" " alt="" coords="701,674,873,714"/>
+<area shape="poly" title=" " alt="" coords="1024,356,1008,414,982,485,946,559,923,595,898,628,868,655,834,676,832,671,864,651,894,624,919,592,941,557,977,483,1003,413,1021,360"/>
+<area shape="poly" title=" " alt="" coords="683,199,626,205,624,200,688,197"/>
+<area shape="poly" title=" " alt="" coords="685,361,676,356,664,342,657,327,651,298,646,270,640,257,628,243,614,231,613,226,632,239,644,254,651,269,656,298,662,325,668,339,680,352,690,361"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af46f4eb82ac70e509c19caf615643d3d" title=" " alt="" coords="455,252,630,293"/>
+<area shape="poly" title=" " alt="" coords="687,361,677,356,662,344,652,332,643,320,629,308,608,296,607,291,632,304,647,317,656,329,665,341,680,352,692,360"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title=" " alt="" coords="455,318,630,358"/>
+<area shape="poly" title=" " alt="" coords="683,368,631,359,630,353,688,366"/>
+<area shape="poly" title=" " alt="" coords="688,430,676,421,660,399,652,376,651,331,650,287,643,265,628,243,616,231,615,226,632,239,648,262,656,286,656,331,657,375,665,396,680,418,693,430"/>
+<area shape="poly" title=" " alt="" coords="687,432,557,402,454,373,402,350,359,326,358,320,405,345,456,368,558,397,692,430"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afdc5d6820d84e41d7d0f86e633eba6a5" title=" " alt="" coords="455,432,630,473"/>
+<area shape="poly" title=" " alt="" coords="686,454,631,455,630,450,691,452"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a37244d4fc30d349270d91d0a773e805e" title=" " alt="" coords="458,547,627,588"/>
+<area shape="poly" title=" " alt="" coords="670,586,628,582,628,576,676,585"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6559431f69fcf69cfd6d91229df10914" title=" " alt="" coords="458,612,627,653"/>
+<area shape="poly" title=" " alt="" coords="667,617,629,624,627,619,672,616"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a9d857d9734592ea7ec42050493b3a053" title=" " alt="" coords="458,678,627,718"/>
+<area shape="poly" title=" " alt="" coords="742,619,631,667,600,680,598,675,629,662,737,621"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title=" " alt="" coords="238,612,407,653"/>
+<area shape="poly" title=" " alt="" coords="455,594,395,614,393,609,460,592"/>
+<area shape="poly" title=" " alt="" coords="268,606,123,526,123,521,273,603"/>
+<area shape="poly" title=" " alt="" coords="440,634,408,635,407,630,445,632"/>
+<area shape="poly" title=" " alt="" coords="455,673,394,656,394,651,460,673"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae8c9426ed1d46eb4f182a4db737d13c1" title=" " alt="" coords="455,808,630,849"/>
+<area shape="poly" title=" " alt="" coords="689,721,680,730,664,746,656,762,648,780,632,798,611,810,609,805,629,793,644,777,652,760,660,743,677,725,684,723"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae0c75dcb2f1ff8c7d83a8c1d8f4e9637" title=" " alt="" coords="458,743,627,784"/>
+<area shape="poly" title=" " alt="" coords="701,719,618,745,616,740,695,720"/>
+<area shape="poly" title=" " alt="" coords="465,736,454,732,394,694,347,656,348,651,397,689,456,728,470,737"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -547,6 +632,20 @@ javafx.beans.property </dd></dl>
 <p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00502">502</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00059">category</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00425">view.MainController.setupSearch()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classviewmodel_1_1_task_view_model_ad9417fde49996b27e6554ff9c72582a3_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_ad9417fde49996b27e6554ff9c72582a3_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassviewmodel_1_1_task_view_model_ad9417fde49996b27e6554ff9c72582a3_icgraph" id="aclassviewmodel_1_1_task_view_model_ad9417fde49996b27e6554ff9c72582a3_icgraph">
+<area shape="rect" title="Возвращает отображаемое имя категории" alt="" coords="455,5,656,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ac915bbe5e6b1d345251530fb2359e3c8" title=" " alt="" coords="238,5,407,46"/>
+<area shape="poly" title=" " alt="" coords="437,26,407,28,407,23,442,26"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,13,190,38"/>
+<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -596,6 +695,31 @@ javafx.beans.property </dd></dl>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00047">description</a>.</p>
 
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l01302">view.MainController.buildIcs()</a>, <a class="el" href="_main_controller_8java_source.html#l01036">view.MainController.duplicateTask()</a> и <a class="el" href="_main_controller_8java_source.html#l00425">view.MainController.setupSearch()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classviewmodel_1_1_task_view_model_a046488b4a90fb611ff40402bada134b0_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_a046488b4a90fb611ff40402bada134b0_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassviewmodel_1_1_task_view_model_a046488b4a90fb611ff40402bada134b0_icgraph" id="aclassviewmodel_1_1_task_view_model_a046488b4a90fb611ff40402bada134b0_icgraph">
+<area shape="rect" title="Возвращает описание задачи" alt="" coords="944,71,1145,111"/>
+<area shape="rect" href="classview_1_1_main_controller.html#acdde80c44920e4098b097591f9741392" title=" " alt="" coords="696,21,878,46"/>
+<area shape="poly" title=" " alt="" coords="932,67,848,50,848,44,938,67"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aafdc8cce09c744e950691a2c00408f27" title=" " alt="" coords="678,78,896,104"/>
+<area shape="poly" title=" " alt="" coords="925,91,896,94,896,88,931,91"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ac915bbe5e6b1d345251530fb2359e3c8" title=" " alt="" coords="238,133,407,174"/>
+<area shape="poly" title=" " alt="" coords="931,112,896,119,629,142,407,154,407,148,628,137,895,114,926,112"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a76d42bd03f97bfeaaaa738d6b9db53e6" title=" " alt="" coords="455,5,630,46"/>
+<area shape="poly" title=" " alt="" coords="678,30,631,31,630,26,683,30"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a157c635caf5c9cc208923226f28274e0" title=" " alt="" coords="460,71,625,111"/>
+<area shape="poly" title=" " alt="" coords="660,91,626,94,625,88,665,91"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a35f2a1470868c1e281d8750ab39baa5f" title=" " alt="" coords="238,68,407,109"/>
+<area shape="poly" title=" " alt="" coords="442,90,408,92,407,87,448,90"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,109,190,134"/>
+<area shape="poly" title=" " alt="" coords="219,104,189,111,188,106,225,102"/>
+<area shape="poly" title=" " alt="" coords="219,140,190,137,190,132,225,139"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="aa34a9517a43daff6eef84dc13e1cd0a9" name="aa34a9517a43daff6eef84dc13e1cd0a9"></a>
@@ -620,31 +744,98 @@ javafx.beans.property </dd></dl>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00053">endTime</a>.</p>
 
-<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00573">view.MainController.sortByDate()</a> и <a class="el" href="_main_controller_8java_source.html#l00614">view.MainController.sortByPriority()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00682">view.MainController.applySortMode()</a>, <a class="el" href="_main_controller_8java_source.html#l01302">view.MainController.buildIcs()</a>, <a class="el" href="_main_controller_8java_source.html#l01036">view.MainController.duplicateTask()</a>, <a class="el" href="_main_controller_8java_source.html#l01000">view.MainController.updateCalendarView()</a> и <a class="el" href="_main_controller_8java_source.html#l00959">view.MainController.updateStatisticsCharts()</a>.</p>
 <div class="dynheader">
 Граф вызова функции:</div>
 <div class="dyncontent">
 <div class="center"><img src="classviewmodel_1_1_task_view_model_aa34a9517a43daff6eef84dc13e1cd0a9_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_aa34a9517a43daff6eef84dc13e1cd0a9_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassviewmodel_1_1_task_view_model_aa34a9517a43daff6eef84dc13e1cd0a9_icgraph" id="aclassviewmodel_1_1_task_view_model_aa34a9517a43daff6eef84dc13e1cd0a9_icgraph">
-<area shape="rect" title="Возвращает время окончания (дедлайн) задачи" alt="" coords="894,39,1095,79"/>
-<area shape="rect" href="classview_1_1_main_controller.html#afefa6c872fcfd41bdbae5d6aa1078b21" title="Сортирует задачи по дате выполнения" alt="" coords="686,5,846,46"/>
-<area shape="poly" title=" " alt="" coords="876,42,846,40,846,35,881,42"/>
-<area shape="rect" href="classview_1_1_main_controller.html#a4bfffd15238c2895e76c565921cd3441" title="Сортирует задачи по приоритету" alt="" coords="686,71,846,111"/>
-<area shape="poly" title=" " alt="" coords="876,76,847,82,846,77,881,75"/>
-<area shape="rect" href="classview_1_1_main_controller.html#aa87f060a3d3e1f5747310cdf4945a256" title="Настраивает кнопки интерфейса" alt="" coords="465,5,634,46"/>
-<area shape="poly" title=" " alt="" coords="668,26,635,28,634,23,673,25"/>
-<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,93,190,118"/>
-<area shape="poly" title=" " alt="" coords="447,19,346,23,292,28,238,39,204,50,172,65,120,95,117,90,170,60,203,45,237,34,291,23,346,17,452,17"/>
-<area shape="poly" title=" " alt="" coords="680,66,619,49,620,44,685,66"/>
-<area shape="rect" href="classview_1_1_main_controller.html#a6c51614865ef9a13038357431ad8ee7c" title="Обновляет содержимое таблицы задач" alt="" coords="461,85,638,126"/>
-<area shape="poly" title=" " alt="" coords="668,98,639,102,639,97,673,97"/>
-<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title="Обработчик кнопки добавления новой задачи" alt="" coords="238,48,413,89"/>
-<area shape="poly" title=" " alt="" coords="443,89,414,86,414,80,448,88"/>
-<area shape="rect" href="classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title="Обработчик кнопки удаления задачи" alt="" coords="238,113,413,154"/>
-<area shape="poly" title=" " alt="" coords="443,119,414,125,413,120,448,118"/>
-<area shape="rect" href="classview_1_1_main_controller.html#af03ff4fe034cfc97fd82327d0e618e59" title="Загружает задачи из файла и отображает их в таблице" alt="" coords="245,179,406,219"/>
-<area shape="poly" title=" " alt="" coords="492,132,414,168,383,181,381,175,412,163,487,133"/>
-<area shape="poly" title=" " alt="" coords="253,173,237,168,129,122,130,117,239,163,258,173"/>
+<area shape="rect" title="Возвращает время окончания (дедлайн) задачи" alt="" coords="1399,670,1601,710"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aa5444ecb80b477bae47c620767d7d06b" title=" " alt="" coords="948,670,1116,710"/>
+<area shape="poly" title=" " alt="" coords="1381,691,1117,693,1117,687,1386,689"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aafdc8cce09c744e950691a2c00408f27" title=" " alt="" coords="678,292,896,317"/>
+<area shape="poly" title=" " alt="" coords="1481,655,1460,617,1430,571,1393,524,1350,484,1296,449,1238,418,1178,392,1117,371,998,339,896,320,895,315,999,334,1118,366,1180,387,1240,413,1299,444,1353,480,1397,521,1435,568,1464,615,1486,657"/>
+<area shape="rect" href="classview_1_1_main_controller.html#acdde80c44920e4098b097591f9741392" title=" " alt="" coords="1169,1025,1351,1051"/>
+<area shape="poly" title=" " alt="" coords="1478,722,1272,1027,1269,1022,1473,724"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a5981fecb5b1f6de2264882befb62d52f" title=" " alt="" coords="1172,804,1348,845"/>
+<area shape="poly" title=" " alt="" coords="1451,717,1300,806,1297,801,1446,719"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aedcff4ed0eec74c31a840783b64b42a8" title=" " alt="" coords="1172,494,1348,534"/>
+<area shape="poly" title=" " alt="" coords="1456,660,1289,537,1290,532,1461,660"/>
+<area shape="poly" title=" " alt="" coords="1012,655,978,580,941,489,930,442,928,403,920,367,910,350,894,332,878,321,878,315,897,328,914,347,925,365,933,402,936,441,946,488,983,578,1017,656"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title=" " alt="" coords="699,638,875,678"/>
+<area shape="poly" title=" " alt="" coords="930,677,875,672,875,667,935,677"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6343e648a870a706a14bc46aa9b43b4c" title=" " alt="" coords="699,572,875,613"/>
+<area shape="poly" title=" " alt="" coords="975,663,895,628,861,616,860,611,897,623,980,662"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af03ff4fe034cfc97fd82327d0e618e59" title=" " alt="" coords="242,706,403,746"/>
+<area shape="poly" title=" " alt="" coords="1021,722,1004,765,977,811,942,855,921,873,897,888,859,904,820,914,780,919,740,919,659,906,581,881,507,848,442,812,350,749,350,744,445,807,510,843,583,876,660,901,740,913,780,914,819,909,858,899,894,884,917,869,938,851,973,808,999,763,1017,726"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4766825edbb089c262ba6ee17ea273f8" title=" " alt="" coords="704,407,870,448"/>
+<area shape="poly" title=" " alt="" coords="1017,654,1000,611,973,559,938,506,894,461,870,447,870,442,897,457,942,503,978,556,1004,609,1022,656"/>
+<area shape="rect" href="classview_1_1_main_controller.html#adcfc31adcb42e729fab4174830d348fb" title=" " alt="" coords="701,703,873,744"/>
+<area shape="poly" title=" " alt="" coords="930,704,874,714,873,709,936,703"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afefa6c872fcfd41bdbae5d6aa1078b21" title=" " alt="" coords="707,834,867,874"/>
+<area shape="poly" title=" " alt="" coords="1007,721,959,775,929,801,897,823,868,837,866,832,894,818,926,796,956,771,1003,724"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4bfffd15238c2895e76c565921cd3441" title=" " alt="" coords="707,768,867,809"/>
+<area shape="poly" title=" " alt="" coords="981,717,897,758,862,770,860,765,895,753,976,719"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a157c635caf5c9cc208923226f28274e0" title=" " alt="" coords="460,223,625,264"/>
+<area shape="poly" title=" " alt="" coords="710,289,678,282,621,267,620,262,679,277,715,287"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a35f2a1470868c1e281d8750ab39baa5f" title=" " alt="" coords="238,252,407,293"/>
+<area shape="poly" title=" " alt="" coords="443,258,409,264,406,259,447,255"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,598,190,624"/>
+<area shape="poly" title=" " alt="" coords="299,309,110,599,105,597,299,303"/>
+<area shape="poly" title=" " alt="" coords="265,700,125,627,125,622,270,697"/>
+<area shape="poly" title=" " alt="" coords="688,404,677,396,664,382,657,367,651,339,646,311,639,298,628,284,607,267,606,262,632,280,644,295,651,310,656,338,662,366,668,379,680,392,694,403"/>
+<area shape="poly" title=" " alt="" coords="688,402,677,396,660,378,652,360,645,343,629,328,590,313,534,300,408,282,407,277,535,295,592,308,632,324,649,340,657,358,665,375,680,392,693,401"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afdc5d6820d84e41d7d0f86e633eba6a5" title=" " alt="" coords="455,338,630,378"/>
+<area shape="poly" title=" " alt="" coords="695,403,617,381,616,376,701,401"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae8c9426ed1d46eb4f182a4db737d13c1" title=" " alt="" coords="455,714,630,754"/>
+<area shape="poly" title=" " alt="" coords="683,729,632,733,630,728,688,727"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae0c75dcb2f1ff8c7d83a8c1d8f4e9637" title=" " alt="" coords="458,648,627,689"/>
+<area shape="poly" title=" " alt="" coords="683,701,628,690,627,685,688,700"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title=" " alt="" coords="238,534,407,574"/>
+<area shape="poly" title=" " alt="" coords="486,642,364,578,363,572,491,640"/>
+<area shape="poly" title=" " alt="" coords="224,581,153,600,149,596,227,577"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a76d42bd03f97bfeaaaa738d6b9db53e6" title=" " alt="" coords="945,1064,1120,1105"/>
+<area shape="poly" title=" " alt="" coords="1182,1054,1121,1069,1120,1064,1176,1055"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4ddceae47cb1ff66a2e7efc06b7dac84" title=" " alt="" coords="945,999,1120,1040"/>
+<area shape="poly" title=" " alt="" coords="1239,856,1189,921,1157,954,1123,983,1091,1001,1090,996,1119,978,1154,950,1185,917,1234,859"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a2ae68644e5912e2c7aff36a412b445ba" title=" " alt="" coords="944,436,1121,477"/>
+<area shape="poly" title=" " alt="" coords="1236,791,1045,480,1048,475,1241,791"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae52fbdd5164aefc0170ae4b650492e0c" title=" " alt="" coords="238,884,407,925"/>
+<area shape="poly" title=" " alt="" coords="1188,850,1053,893,975,911,896,925,762,935,629,935,506,928,408,918,407,913,507,922,629,929,762,930,895,919,974,906,1051,888,1183,851"/>
+<area shape="poly" title=" " alt="" coords="1003,424,956,377,926,353,894,332,867,321,866,315,897,328,929,348,960,373,1008,425"/>
+<area shape="poly" title=" " alt="" coords="1028,420,1021,347,1013,302,1001,254,984,206,961,161,931,120,894,87,837,50,783,26,731,12,681,8,629,14,575,29,518,52,456,83,432,99,410,119,374,166,349,214,333,253,328,251,344,212,370,163,406,115,429,95,454,78,516,47,574,24,628,9,680,3,732,7,785,21,839,46,897,83,935,117,965,158,989,204,1006,253,1018,301,1026,346,1033,422"/>
+<area shape="poly" title=" " alt="" coords="967,484,896,513,835,528,787,536,739,545,679,563,656,576,631,588,573,602,514,612,394,623,283,625,191,621,189,616,283,619,394,617,513,607,572,597,629,583,653,572,677,558,738,540,786,531,834,523,895,507,972,482"/>
+<area shape="poly" title=" " alt="" coords="1014,489,967,560,934,596,897,627,874,640,871,635,894,622,931,592,963,557,1010,492"/>
+<area shape="poly" title=" " alt="" coords="997,485,950,523,897,556,857,574,854,569,894,552,947,519,993,488"/>
+<area shape="poly" title=" " alt="" coords="925,445,871,440,870,435,930,443"/>
+<area shape="poly" title=" " alt="" coords="1022,490,1005,538,978,592,942,646,897,692,875,706,872,701,894,688,938,642,973,589,1000,536,1018,494"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4bb1c177443c7d66b3c8e9687e3c6acb" title=" " alt="" coords="701,162,873,202"/>
+<area shape="poly" title=" " alt="" coords="1018,421,1001,376,975,320,939,265,918,240,894,217,874,204,873,199,897,213,922,236,943,262,979,318,1006,374,1023,422"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af0a082800f9000e19567bb5159af6cc2" title=" " alt="" coords="701,96,873,137"/>
+<area shape="poly" title=" " alt="" coords="1023,420,1009,362,984,290,947,216,922,182,894,152,874,138,873,133,897,148,926,178,951,213,989,288,1014,361,1028,421"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a1eb59033ea2ca2caf351d917d1511cf1" title=" " alt="" coords="699,227,875,268"/>
+<area shape="poly" title=" " alt="" coords="1011,422,965,352,932,314,894,281,875,270,875,265,897,277,936,310,969,348,1016,423"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a2e6cee3bdcb7d5ef5f7d3227b9543601" title=" " alt="" coords="699,342,875,382"/>
+<area shape="poly" title=" " alt="" coords="972,430,895,398,860,385,859,380,897,393,977,429"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ad561284d1c935c94e1fe847c6221dfd5" title=" " alt="" coords="685,472,889,497"/>
+<area shape="poly" title=" " alt="" coords="926,469,890,475,889,470,931,468"/>
+<area shape="poly" title=" " alt="" coords="687,208,627,225,624,220,691,205"/>
+<area shape="poly" title=" " alt="" coords="686,146,680,152,665,166,656,181,648,196,632,212,611,224,607,221,629,208,643,193,652,178,661,163,677,148,690,142"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af46f4eb82ac70e509c19caf615643d3d" title=" " alt="" coords="455,92,630,133"/>
+<area shape="poly" title=" " alt="" coords="683,116,632,116,630,112,688,114"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title=" " alt="" coords="455,158,630,198"/>
+<area shape="poly" title=" " alt="" coords="686,143,628,159,625,155,691,140"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a37244d4fc30d349270d91d0a773e805e" title=" " alt="" coords="458,403,627,444"/>
+<area shape="poly" title=" " alt="" coords="710,468,678,462,621,447,620,442,679,457,715,467"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6559431f69fcf69cfd6d91229df10914" title=" " alt="" coords="458,468,627,509"/>
+<area shape="poly" title=" " alt="" coords="667,488,629,490,627,485,672,485"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a9d857d9734592ea7ec42050493b3a053" title=" " alt="" coords="458,534,627,574"/>
+<area shape="poly" title=" " alt="" coords="722,504,618,535,616,531,727,501"/>
+<area shape="poly" title=" " alt="" coords="465,452,456,459,397,497,349,535,346,531,394,493,454,454,469,449"/>
+<area shape="poly" title=" " alt="" coords="455,515,395,535,392,531,460,512"/>
+<area shape="poly" title=" " alt="" coords="440,555,408,556,406,552,445,553"/>
+<area shape="poly" title=" " alt="" coords="294,873,108,627,110,622,299,871"/>
+<area shape="poly" title=" " alt="" coords="1160,490,1116,480,1116,475,1165,489"/>
 </map>
 </div>
 
@@ -690,17 +881,83 @@ javafx.beans.property </dd></dl>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00077">DATE_TIME_FORMATTER</a> и <a class="el" href="_task_view_model_8java_source.html#l00053">endTime</a>.</p>
 
-<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00246">view.MainController.setupTableColumns()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00832">view.MainController.handleFocusMode()</a> и <a class="el" href="_main_controller_8java_source.html#l01228">view.MainController.updateWidget()</a>.</p>
 <div class="dynheader">
 Граф вызова функции:</div>
 <div class="dyncontent">
 <div class="center"><img src="classviewmodel_1_1_task_view_model_a5f2424316f62a7ed7067602067535809_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_a5f2424316f62a7ed7067602067535809_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassviewmodel_1_1_task_view_model_a5f2424316f62a7ed7067602067535809_icgraph" id="aclassviewmodel_1_1_task_view_model_a5f2424316f62a7ed7067602067535809_icgraph">
-<area shape="rect" title=" " alt="" coords="455,5,656,46"/>
-<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title="Настраивает колонки таблицы задач" alt="" coords="238,5,407,46"/>
-<area shape="poly" title=" " alt="" coords="437,26,407,28,407,23,442,26"/>
-<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,13,190,38"/>
-<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+<area shape="rect" title=" " alt="" coords="1393,652,1595,693"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a98e6bb3bed95bbe6479b95f60afcfad2" title=" " alt="" coords="1170,619,1345,659"/>
+<area shape="poly" title=" " alt="" coords="1375,656,1345,654,1345,649,1380,656"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ad0f2463a86445951d22b3ee9d86bc3aa" title=" " alt="" coords="1169,684,1345,725"/>
+<area shape="poly" title=" " alt="" coords="1375,689,1346,695,1345,690,1380,688"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ad13d6d956ea7dbf846261dec5495062b" title=" " alt="" coords="945,525,1120,566"/>
+<area shape="poly" title=" " alt="" coords="1172,675,1167,673,1149,649,1142,626,1136,603,1119,581,1103,569,1103,564,1123,577,1141,601,1148,624,1154,647,1171,669,1177,676"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a2ae68644e5912e2c7aff36a412b445ba" title=" " alt="" coords="944,591,1121,631"/>
+<area shape="poly" title=" " alt="" coords="1183,678,1168,673,1079,635,1079,629,1170,669,1189,678"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a832ae34bcb138f8090bf8213f1f97de9" title=" " alt="" coords="702,937,872,978"/>
+<area shape="poly" title=" " alt="" coords="1217,733,1078,828,989,880,897,927,864,939,863,934,895,922,987,875,1075,823,1212,735"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ab96d9e00350796e450dd564252136874" title=" " alt="" coords="948,937,1116,978"/>
+<area shape="poly" title=" " alt="" coords="1230,735,1053,939,1050,935,1225,737"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4bb1c177443c7d66b3c8e9687e3c6acb" title=" " alt="" coords="701,561,873,602"/>
+<area shape="poly" title=" " alt="" coords="925,599,874,595,873,589,931,598"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a35f2a1470868c1e281d8750ab39baa5f" title=" " alt="" coords="238,496,407,537"/>
+<area shape="poly" title=" " alt="" coords="946,582,942,580,931,567,925,554,919,529,913,506,906,496,894,487,856,472,805,464,745,462,681,463,553,475,455,487,398,498,395,493,455,482,553,470,680,458,745,456,805,459,857,467,897,482,910,492,917,504,924,528,930,552,935,564,946,576,952,582"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,353,190,378"/>
+<area shape="poly" title=" " alt="" coords="943,580,942,579,925,555,914,531,905,485,908,439,917,395,926,350,929,306,920,261,909,238,894,214,865,182,837,160,809,144,780,134,713,123,630,111,567,102,514,102,466,108,423,122,380,143,337,170,239,241,166,303,114,354,109,351,163,299,236,237,334,165,378,138,421,117,465,103,513,96,568,97,631,106,714,118,781,129,811,139,840,155,869,178,898,211,914,235,925,259,934,306,931,351,922,396,913,440,910,484,919,530,930,552,946,576,949,581"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af0a082800f9000e19567bb5159af6cc2" title=" " alt="" coords="701,676,873,717"/>
+<area shape="poly" title=" " alt="" coords="965,639,897,667,862,678,860,673,895,662,969,637"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aafdc8cce09c744e950691a2c00408f27" title=" " alt="" coords="678,626,896,652"/>
+<area shape="poly" title=" " alt="" coords="925,624,897,629,896,624,930,622"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title=" " alt="" coords="699,741,875,782"/>
+<area shape="poly" title=" " alt="" coords="1004,641,956,689,897,731,869,743,867,738,894,726,953,685,1000,644"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6343e648a870a706a14bc46aa9b43b4c" title=" " alt="" coords="699,807,875,847"/>
+<area shape="poly" title=" " alt="" coords="1016,644,970,722,936,762,897,796,875,808,873,804,894,791,932,758,965,719,1012,647"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a1eb59033ea2ca2caf351d917d1511cf1" title=" " alt="" coords="699,872,875,913"/>
+<area shape="poly" title=" " alt="" coords="1023,644,1007,695,981,753,944,811,922,838,897,861,876,874,874,870,894,857,918,834,940,808,976,750,1002,693,1019,648"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a2e6cee3bdcb7d5ef5f7d3227b9543601" title=" " alt="" coords="699,5,875,46"/>
+<area shape="poly" title=" " alt="" coords="943,579,942,579,919,545,905,511,897,478,895,446,902,382,918,320,933,258,940,195,938,164,930,132,915,99,894,66,875,49,875,44,898,63,920,97,935,130,943,163,946,195,939,259,923,321,907,383,900,446,902,478,910,510,924,543,946,576,948,580"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4766825edbb089c262ba6ee17ea273f8" title=" " alt="" coords="704,496,870,537"/>
+<area shape="poly" title=" " alt="" coords="955,584,942,580,918,566,895,552,864,540,863,535,897,547,921,561,945,575,961,584"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ad561284d1c935c94e1fe847c6221dfd5" title=" " alt="" coords="685,225,889,250"/>
+<area shape="poly" title=" " alt="" coords="944,580,942,579,923,553,913,528,909,503,909,479,909,428,905,401,893,371,872,335,847,302,802,253,803,248,851,298,876,332,898,369,910,399,915,428,915,479,915,503,918,526,928,550,946,576,949,581"/>
+<area shape="rect" href="classview_1_1_main_controller.html#adcfc31adcb42e729fab4174830d348fb" title=" " alt="" coords="701,381,873,422"/>
+<area shape="poly" title=" " alt="" coords="945,581,942,579,928,562,921,544,917,509,913,475,907,459,894,442,871,425,871,420,898,438,911,456,919,474,922,509,926,542,933,559,946,576,950,582"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a157c635caf5c9cc208923226f28274e0" title=" " alt="" coords="460,611,625,651"/>
+<area shape="poly" title=" " alt="" coords="683,603,626,617,624,612,688,601"/>
+<area shape="poly" title=" " alt="" coords="476,604,454,595,358,540,358,535,456,590,482,603"/>
+<area shape="poly" title=" " alt="" coords="276,488,119,382,118,376,280,486"/>
+<area shape="poly" title=" " alt="" coords="691,672,622,655,621,649,697,671"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af46f4eb82ac70e509c19caf615643d3d" title=" " alt="" coords="455,676,630,717"/>
+<area shape="poly" title=" " alt="" coords="683,697,631,699,630,694,688,696"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title=" " alt="" coords="455,741,630,782"/>
+<area shape="poly" title=" " alt="" coords="691,722,623,743,621,738,696,720"/>
+<area shape="poly" title=" " alt="" coords="660,636,626,636,625,631,665,634"/>
+<area shape="poly" title=" " alt="" coords="689,545,680,552,665,562,656,572,632,595,599,612,596,608,629,590,652,569,662,558,677,547,693,542"/>
+<area shape="poly" title=" " alt="" coords="687,540,631,551,543,557,455,551,397,540,396,535,455,546,543,552,630,546,692,538"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afdc5d6820d84e41d7d0f86e633eba6a5" title=" " alt="" coords="455,496,630,537"/>
+<area shape="poly" title=" " alt="" coords="686,517,632,519,630,514,691,515"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a37244d4fc30d349270d91d0a773e805e" title=" " alt="" coords="458,185,627,226"/>
+<area shape="poly" title=" " alt="" coords="667,223,629,219,627,214,672,221"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6559431f69fcf69cfd6d91229df10914" title=" " alt="" coords="458,251,627,291"/>
+<area shape="poly" title=" " alt="" coords="671,255,629,262,627,257,675,252"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a9d857d9734592ea7ec42050493b3a053" title=" " alt="" coords="458,120,627,161"/>
+<area shape="poly" title=" " alt="" coords="737,219,629,176,600,164,598,159,631,171,742,218"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title=" " alt="" coords="238,251,407,291"/>
+<area shape="poly" title=" " alt="" coords="456,233,395,252,392,248,459,229"/>
+<area shape="poly" title=" " alt="" coords="257,300,132,354,129,350,260,295"/>
+<area shape="poly" title=" " alt="" coords="440,272,409,273,406,269,445,270"/>
+<area shape="poly" title=" " alt="" coords="465,169,456,176,397,214,350,252,345,249,394,210,454,171,469,165"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae8c9426ed1d46eb4f182a4db737d13c1" title=" " alt="" coords="455,381,630,422"/>
+<area shape="poly" title=" " alt="" coords="683,403,632,404,630,399,688,401"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae0c75dcb2f1ff8c7d83a8c1d8f4e9637" title=" " alt="" coords="458,316,627,357"/>
+<area shape="poly" title=" " alt="" coords="691,378,622,360,621,355,696,376"/>
+<area shape="poly" title=" " alt="" coords="455,312,394,295,393,289,460,310"/>
+<area shape="poly" title=" " alt="" coords="693,931,677,927,559,871,511,841,453,796,392,741,334,681,230,558,151,450,108,382,107,376,156,447,234,555,338,678,396,737,457,792,514,836,562,867,679,922,699,932"/>
+<area shape="poly" title=" " alt="" coords="930,958,872,960,872,955,935,958"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aa6adc26184a175f0ddf6030f0c24d046" title=" " alt="" coords="699,1003,875,1043"/>
+<area shape="poly" title=" " alt="" coords="941,982,867,1005,866,999,936,983"/>
 </map>
 </div>
 
@@ -746,6 +1003,20 @@ javafx.beans.property </dd></dl>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00077">DATE_TIME_FORMATTER</a> и <a class="el" href="_task_view_model_8java_source.html#l00050">startTime</a>.</p>
 
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00545">view.MainController.setupCalendarTab()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classviewmodel_1_1_task_view_model_a5b507f08d5d17134eb0051f9198026ef_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_a5b507f08d5d17134eb0051f9198026ef_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassviewmodel_1_1_task_view_model_a5b507f08d5d17134eb0051f9198026ef_icgraph" id="aclassviewmodel_1_1_task_view_model_a5b507f08d5d17134eb0051f9198026ef_icgraph">
+<area shape="rect" title=" " alt="" coords="455,5,656,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae52fbdd5164aefc0170ae4b650492e0c" title=" " alt="" coords="238,5,407,46"/>
+<area shape="poly" title=" " alt="" coords="437,26,407,28,407,23,442,26"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,13,190,38"/>
+<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="ac50f2e97f44fd66fc50fa959730eb78f" name="ac50f2e97f44fd66fc50fa959730eb78f"></a>
@@ -768,19 +1039,36 @@ javafx.beans.property </dd></dl>
 
 <p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00202">202</a></p>
 
-<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l01004">view.MainController.handleDeleteTask()</a> и <a class="el" href="_main_controller_8java_source.html#l00246">view.MainController.setupTableColumns()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l01302">view.MainController.buildIcs()</a>, <a class="el" href="_main_controller_8java_source.html#l01142">view.MainController.deleteTasks()</a>, <a class="el" href="_main_controller_8java_source.html#l00774">view.MainController.handleBulkComplete()</a> и <a class="el" href="_main_controller_8java_source.html#l00385">view.MainController.setupStatusColumn()</a>.</p>
 <div class="dynheader">
 Граф вызова функции:</div>
 <div class="dyncontent">
 <div class="center"><img src="classviewmodel_1_1_task_view_model_ac50f2e97f44fd66fc50fa959730eb78f_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_ac50f2e97f44fd66fc50fa959730eb78f_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassviewmodel_1_1_task_view_model_ac50f2e97f44fd66fc50fa959730eb78f_icgraph" id="aclassviewmodel_1_1_task_view_model_ac50f2e97f44fd66fc50fa959730eb78f_icgraph">
-<area shape="rect" title="Возвращает идентификатор задачи" alt="" coords="461,46,673,72"/>
-<area shape="rect" href="classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title="Обработчик кнопки удаления задачи" alt="" coords="238,5,413,46"/>
-<area shape="poly" title=" " alt="" coords="452,44,414,40,414,35,457,43"/>
-<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title="Настраивает колонки таблицы задач" alt="" coords="241,71,410,111"/>
-<area shape="poly" title=" " alt="" coords="453,74,411,82,410,77,447,75"/>
-<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,78,190,104"/>
-<area shape="poly" title=" " alt="" coords="222,91,190,94,190,88,228,91"/>
+<area shape="rect" title="Возвращает идентификатор задачи" alt="" coords="909,169,1121,194"/>
+<area shape="rect" href="classview_1_1_main_controller.html#acdde80c44920e4098b097591f9741392" title=" " alt="" coords="678,46,861,72"/>
+<area shape="poly" title=" " alt="" coords="971,162,797,75,798,70,977,162"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af0a082800f9000e19567bb5159af6cc2" title=" " alt="" coords="683,128,856,169"/>
+<area shape="poly" title=" " alt="" coords="898,166,856,163,856,157,903,166"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae8c9426ed1d46eb4f182a4db737d13c1" title=" " alt="" coords="682,193,857,234"/>
+<area shape="poly" title=" " alt="" coords="899,197,858,205,857,200,893,197"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae0c75dcb2f1ff8c7d83a8c1d8f4e9637" title=" " alt="" coords="685,259,854,299"/>
+<area shape="poly" title=" " alt="" coords="971,200,862,248,829,261,828,255,860,243,966,202"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a76d42bd03f97bfeaaaa738d6b9db53e6" title=" " alt="" coords="455,5,630,46"/>
+<area shape="poly" title=" " alt="" coords="661,44,631,41,631,36,666,43"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a157c635caf5c9cc208923226f28274e0" title=" " alt="" coords="460,71,625,111"/>
+<area shape="poly" title=" " alt="" coords="669,124,625,114,625,109,675,124"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af46f4eb82ac70e509c19caf615643d3d" title=" " alt="" coords="455,136,630,177"/>
+<area shape="poly" title=" " alt="" coords="665,152,631,156,630,151,670,152"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title=" " alt="" coords="455,201,630,242"/>
+<area shape="poly" title=" " alt="" coords="693,173,609,203,608,198,687,175"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a35f2a1470868c1e281d8750ab39baa5f" title=" " alt="" coords="238,101,407,142"/>
+<area shape="poly" title=" " alt="" coords="443,105,408,112,407,107,448,104"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,173,190,198"/>
+<area shape="poly" title=" " alt="" coords="232,149,147,175,144,170,236,145"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title=" " alt="" coords="238,197,407,238"/>
+<area shape="poly" title=" " alt="" coords="667,276,565,271,455,256,390,241,391,236,455,251,566,266,672,276"/>
+<area shape="poly" title=" " alt="" coords="219,204,190,201,190,196,225,203"/>
 </map>
 </div>
 
@@ -807,6 +1095,91 @@ javafx.beans.property </dd></dl>
 <p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00314">314</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00056">priority</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00682">view.MainController.applySortMode()</a>, <a class="el" href="_main_controller_8java_source.html#l01036">view.MainController.duplicateTask()</a>, <a class="el" href="_main_controller_8java_source.html#l00832">view.MainController.handleFocusMode()</a> и <a class="el" href="_main_controller_8java_source.html#l00959">view.MainController.updateStatisticsCharts()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classviewmodel_1_1_task_view_model_a2d17f86b46ef153a4dc499a194d5e885_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_a2d17f86b46ef153a4dc499a194d5e885_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassviewmodel_1_1_task_view_model_a2d17f86b46ef153a4dc499a194d5e885_icgraph" id="aclassviewmodel_1_1_task_view_model_a2d17f86b46ef153a4dc499a194d5e885_icgraph">
+<area shape="rect" title="Возвращает приоритет задачи" alt="" coords="1393,225,1595,265"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aa5444ecb80b477bae47c620767d7d06b" title=" " alt="" coords="948,195,1116,236"/>
+<area shape="poly" title=" " alt="" coords="1376,238,1117,223,1116,218,1381,237"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aafdc8cce09c744e950691a2c00408f27" title=" " alt="" coords="678,47,896,72"/>
+<area shape="poly" title=" " alt="" coords="1400,221,895,87,848,76,846,70,896,82,1405,219"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a98e6bb3bed95bbe6479b95f60afcfad2" title=" " alt="" coords="1170,253,1345,293"/>
+<area shape="poly" title=" " alt="" coords="1375,259,1346,265,1344,260,1380,258"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aedcff4ed0eec74c31a840783b64b42a8" title=" " alt="" coords="1169,387,1345,428"/>
+<area shape="poly" title=" " alt="" coords="1452,273,1290,389,1287,384,1448,276"/>
+<area shape="poly" title=" " alt="" coords="1003,183,957,134,927,108,894,87,867,75,866,70,897,82,930,104,960,130,1009,183"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title=" " alt="" coords="699,227,875,268"/>
+<area shape="poly" title=" " alt="" coords="930,230,876,239,874,234,935,227"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6343e648a870a706a14bc46aa9b43b4c" title=" " alt="" coords="699,293,875,333"/>
+<area shape="poly" title=" " alt="" coords="975,244,897,282,862,294,859,290,895,277,980,242"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af03ff4fe034cfc97fd82327d0e618e59" title=" " alt="" coords="242,186,403,227"/>
+<area shape="poly" title=" " alt="" coords="1014,180,996,145,970,104,936,66,894,37,857,21,818,12,779,8,739,10,658,24,580,51,508,85,443,123,351,187,347,184,440,118,505,81,578,46,657,19,738,4,779,3,819,7,859,16,897,32,939,62,974,101,1000,142,1020,181"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4766825edbb089c262ba6ee17ea273f8" title=" " alt="" coords="704,358,870,399"/>
+<area shape="poly" title=" " alt="" coords="1007,246,959,300,929,325,897,347,871,360,868,355,894,343,926,321,955,296,1003,249"/>
+<area shape="rect" href="classview_1_1_main_controller.html#adcfc31adcb42e729fab4174830d348fb" title=" " alt="" coords="701,489,873,529"/>
+<area shape="poly" title=" " alt="" coords="1024,249,1008,302,982,363,946,424,923,453,897,478,875,492,872,487,894,473,919,449,941,421,978,360,1003,300,1020,253"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afefa6c872fcfd41bdbae5d6aa1078b21" title=" " alt="" coords="707,97,867,137"/>
+<area shape="poly" title=" " alt="" coords="976,188,895,153,861,140,861,135,897,148,981,187"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4bfffd15238c2895e76c565921cd3441" title=" " alt="" coords="707,162,867,203"/>
+<area shape="poly" title=" " alt="" coords="930,203,868,196,867,190,935,201"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a157c635caf5c9cc208923226f28274e0" title=" " alt="" coords="460,358,625,399"/>
+<area shape="poly" title=" " alt="" coords="680,84,680,87,658,118,650,149,650,180,655,212,660,245,661,278,653,312,632,347,618,359,614,355,628,343,648,310,655,278,654,246,649,213,645,181,645,148,654,116,676,83,683,80"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a35f2a1470868c1e281d8750ab39baa5f" title=" " alt="" coords="238,449,407,489"/>
+<area shape="poly" title=" " alt="" coords="470,406,456,414,372,450,369,446,454,409,474,403"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,576,190,602"/>
+<area shape="poly" title=" " alt="" coords="268,499,125,578,122,574,271,494"/>
+<area shape="poly" title=" " alt="" coords="302,242,109,577,104,574,301,237"/>
+<area shape="poly" title=" " alt="" coords="686,379,626,381,624,376,691,377"/>
+<area shape="poly" title=" " alt="" coords="688,353,677,347,661,330,653,312,645,296,629,283,583,264,542,257,502,263,456,283,432,299,411,318,375,364,349,411,333,449,328,447,345,408,371,361,407,315,429,295,454,278,501,258,542,252,584,259,632,279,649,293,658,310,665,327,680,343,693,352"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afdc5d6820d84e41d7d0f86e633eba6a5" title=" " alt="" coords="455,293,630,333"/>
+<area shape="poly" title=" " alt="" coords="691,354,622,336,621,331,696,353"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae8c9426ed1d46eb4f182a4db737d13c1" title=" " alt="" coords="455,423,630,464"/>
+<area shape="poly" title=" " alt="" coords="691,485,622,467,621,462,697,483"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae0c75dcb2f1ff8c7d83a8c1d8f4e9637" title=" " alt="" coords="458,489,627,529"/>
+<area shape="poly" title=" " alt="" coords="683,510,628,511,627,506,688,508"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title=" " alt="" coords="238,785,407,825"/>
+<area shape="poly" title=" " alt="" coords="520,541,341,786,337,782,515,542"/>
+<area shape="poly" title=" " alt="" coords="286,775,112,605,114,600,291,772"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a2ae68644e5912e2c7aff36a412b445ba" title=" " alt="" coords="944,489,1121,529"/>
+<area shape="poly" title=" " alt="" coords="1199,434,1081,490,1079,485,1194,436"/>
+<area shape="poly" title=" " alt="" coords="1016,473,941,248,932,199,929,159,921,123,910,105,894,87,879,76,879,70,897,83,915,102,926,121,934,158,937,199,946,247,1021,474"/>
+<area shape="poly" title=" " alt="" coords="939,534,896,543,772,560,674,570,626,571,576,567,520,558,454,543,397,521,352,492,351,487,400,516,456,538,521,553,577,562,627,566,673,565,771,555,895,538,944,532"/>
+<area shape="poly" title=" " alt="" coords="987,536,943,560,896,575,800,594,701,606,602,613,505,616,328,612,191,602,189,597,328,607,505,611,602,608,701,601,799,589,895,570,941,555,982,538"/>
+<area shape="poly" title=" " alt="" coords="1017,473,999,431,973,379,938,327,894,283,875,271,875,265,897,279,942,324,977,377,1004,429,1022,475"/>
+<area shape="poly" title=" " alt="" coords="1009,475,962,411,930,377,894,348,873,336,872,331,897,344,934,373,966,408,1014,476"/>
+<area shape="poly" title=" " alt="" coords="993,478,948,446,894,414,866,402,866,396,897,409,951,442,998,479"/>
+<area shape="poly" title=" " alt="" coords="925,510,874,511,873,506,931,508"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4bb1c177443c7d66b3c8e9687e3c6acb" title=" " alt="" coords="701,423,873,464"/>
+<area shape="poly" title=" " alt="" coords="936,484,866,467,866,462,941,484"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af0a082800f9000e19567bb5159af6cc2" title=" " alt="" coords="701,654,873,695"/>
+<area shape="poly" title=" " alt="" coords="1006,539,958,591,897,638,860,656,858,651,894,633,954,587,1002,542"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a1eb59033ea2ca2caf351d917d1511cf1" title=" " alt="" coords="699,719,875,760"/>
+<area shape="poly" title=" " alt="" coords="1018,541,999,583,972,627,938,671,897,708,876,721,874,716,894,704,934,667,968,624,995,580,1014,545"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a2e6cee3bdcb7d5ef5f7d3227b9543601" title=" " alt="" coords="699,785,875,825"/>
+<area shape="poly" title=" " alt="" coords="1024,543,1009,596,983,657,946,720,923,748,897,774,876,787,874,782,894,769,919,745,942,717,978,655,1004,594,1020,546"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ad561284d1c935c94e1fe847c6221dfd5" title=" " alt="" coords="685,853,889,879"/>
+<area shape="poly" title=" " alt="" coords="1028,543,1017,608,993,688,976,729,954,769,928,806,897,839,870,855,868,850,894,835,924,803,950,766,971,727,988,686,1012,607,1025,547"/>
+<area shape="poly" title=" " alt="" coords="691,419,622,402,621,397,697,418"/>
+<area shape="poly" title=" " alt="" coords="752,642,714,598,676,542,662,505,657,473,649,444,641,429,628,413,614,402,614,396,632,410,646,426,654,442,662,472,667,504,681,540,718,594,758,643"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af46f4eb82ac70e509c19caf615643d3d" title=" " alt="" coords="455,654,630,695"/>
+<area shape="poly" title=" " alt="" coords="683,675,631,677,630,672,688,674"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title=" " alt="" coords="455,719,630,760"/>
+<area shape="poly" title=" " alt="" coords="691,700,622,721,621,716,696,698"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a37244d4fc30d349270d91d0a773e805e" title=" " alt="" coords="458,785,627,825"/>
+<area shape="poly" title=" " alt="" coords="715,849,626,828,627,823,721,849"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6559431f69fcf69cfd6d91229df10914" title=" " alt="" coords="458,850,627,891"/>
+<area shape="poly" title=" " alt="" coords="667,868,628,871,628,866,672,868"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a9d857d9734592ea7ec42050493b3a053" title=" " alt="" coords="458,915,627,956"/>
+<area shape="poly" title=" " alt="" coords="727,883,618,917,617,912,722,884"/>
+<area shape="poly" title=" " alt="" coords="440,805,408,807,407,802,445,804"/>
+<area shape="poly" title=" " alt="" coords="455,845,393,828,394,823,460,845"/>
+<area shape="poly" title=" " alt="" coords="465,908,454,904,394,866,347,828,348,823,397,861,456,900,470,909"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -854,6 +1227,20 @@ javafx.beans.property </dd></dl>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00056">priority</a>.</p>
 
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00545">view.MainController.setupCalendarTab()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classviewmodel_1_1_task_view_model_abd84bdfcc6b71fd286231b1b4e19e4a0_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_abd84bdfcc6b71fd286231b1b4e19e4a0_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassviewmodel_1_1_task_view_model_abd84bdfcc6b71fd286231b1b4e19e4a0_icgraph" id="aclassviewmodel_1_1_task_view_model_abd84bdfcc6b71fd286231b1b4e19e4a0_icgraph">
+<area shape="rect" title="Возвращает отображаемое имя приоритета" alt="" coords="455,5,656,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae52fbdd5164aefc0170ae4b650492e0c" title=" " alt="" coords="238,5,407,46"/>
+<area shape="poly" title=" " alt="" coords="437,26,407,28,407,23,442,26"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,13,190,38"/>
+<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a5065f6eaa5f6039f4eee54f3376525ff" name="a5065f6eaa5f6039f4eee54f3376525ff"></a>
@@ -898,6 +1285,84 @@ javafx.beans.property </dd></dl>
 <p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00266">266</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00050">startTime</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l01302">view.MainController.buildIcs()</a>, <a class="el" href="_main_controller_8java_source.html#l01036">view.MainController.duplicateTask()</a> и <a class="el" href="_main_controller_8java_source.html#l01000">view.MainController.updateCalendarView()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classviewmodel_1_1_task_view_model_ad274b2e6ae4bfa67e9e4877d1f0d3104_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_ad274b2e6ae4bfa67e9e4877d1f0d3104_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassviewmodel_1_1_task_view_model_ad274b2e6ae4bfa67e9e4877d1f0d3104_icgraph" id="aclassviewmodel_1_1_task_view_model_ad274b2e6ae4bfa67e9e4877d1f0d3104_icgraph">
+<area shape="rect" title="Возвращает время начала задачи" alt="" coords="1399,185,1601,226"/>
+<area shape="rect" href="classview_1_1_main_controller.html#acdde80c44920e4098b097591f9741392" title=" " alt="" coords="1169,57,1351,82"/>
+<area shape="poly" title=" " alt="" coords="1447,178,1285,86,1285,80,1452,177"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aafdc8cce09c744e950691a2c00408f27" title=" " alt="" coords="678,236,896,261"/>
+<area shape="poly" title=" " alt="" coords="1381,210,1179,219,944,234,897,238,895,233,943,228,1178,214,1386,208"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a5981fecb5b1f6de2264882befb62d52f" title=" " alt="" coords="1172,243,1348,283"/>
+<area shape="poly" title=" " alt="" coords="1395,231,1349,245,1347,239,1400,229"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a76d42bd03f97bfeaaaa738d6b9db53e6" title=" " alt="" coords="945,5,1120,46"/>
+<area shape="poly" title=" " alt="" coords="1173,54,1121,45,1120,40,1178,53"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a157c635caf5c9cc208923226f28274e0" title=" " alt="" coords="460,301,625,342"/>
+<area shape="poly" title=" " alt="" coords="706,267,679,276,599,303,597,299,678,271,711,264"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a35f2a1470868c1e281d8750ab39baa5f" title=" " alt="" coords="238,331,407,371"/>
+<area shape="poly" title=" " alt="" coords="443,336,409,342,406,337,447,333"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,424,190,449"/>
+<area shape="poly" title=" " alt="" coords="251,379,136,425,132,421,254,375"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4ddceae47cb1ff66a2e7efc06b7dac84" title=" " alt="" coords="945,243,1120,283"/>
+<area shape="poly" title=" " alt="" coords="1154,264,1121,266,1120,260,1159,262"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a2ae68644e5912e2c7aff36a412b445ba" title=" " alt="" coords="944,416,1121,457"/>
+<area shape="poly" title=" " alt="" coords="1222,292,1062,418,1060,413,1217,294"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae52fbdd5164aefc0170ae4b650492e0c" title=" " alt="" coords="238,151,407,191"/>
+<area shape="poly" title=" " alt="" coords="1203,235,1143,208,1067,176,982,146,895,124,772,104,675,98,578,104,456,124,410,136,369,152,365,148,408,131,454,119,578,99,675,92,773,99,896,119,984,141,1069,171,1146,203,1209,235"/>
+<area shape="poly" title=" " alt="" coords="1009,402,963,338,931,304,894,276,870,264,870,259,897,271,934,300,967,334,1015,403"/>
+<area shape="poly" title=" " alt="" coords="1005,402,973,354,941,296,929,255,926,220,919,189,910,175,894,161,856,143,805,131,744,125,678,123,612,127,550,134,496,146,456,161,427,189,393,236,337,332,332,329,388,233,423,185,454,157,495,141,549,129,611,121,678,118,744,119,806,126,858,138,897,157,914,171,924,187,932,219,934,254,946,294,978,352,1010,404"/>
+<area shape="poly" title=" " alt="" coords="939,461,896,471,799,479,699,483,503,480,327,467,191,452,189,447,327,462,503,474,699,478,798,474,895,466,944,460"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4bb1c177443c7d66b3c8e9687e3c6acb" title=" " alt="" coords="701,351,873,391"/>
+<area shape="poly" title=" " alt="" coords="936,412,866,395,866,389,941,411"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af0a082800f9000e19567bb5159af6cc2" title=" " alt="" coords="701,171,873,211"/>
+<area shape="poly" title=" " alt="" coords="1007,402,894,225,874,213,874,207,898,221,1013,403"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title=" " alt="" coords="699,645,875,686"/>
+<area shape="poly" title=" " alt="" coords="1018,469,999,510,972,554,938,598,897,636,876,648,874,643,894,632,934,595,968,551,995,508,1014,472"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6343e648a870a706a14bc46aa9b43b4c" title=" " alt="" coords="699,711,875,751"/>
+<area shape="poly" title=" " alt="" coords="1024,470,1008,523,983,584,946,646,923,675,897,700,876,713,874,708,894,696,919,671,942,643,978,582,1003,521,1020,474"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a1eb59033ea2ca2caf351d917d1511cf1" title=" " alt="" coords="699,776,875,817"/>
+<area shape="poly" title=" " alt="" coords="1028,470,1016,535,992,613,975,655,954,695,928,732,897,765,876,779,874,774,894,761,924,729,949,692,970,652,987,612,1011,534,1024,474"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a2e6cee3bdcb7d5ef5f7d3227b9543601" title=" " alt="" coords="699,285,875,326"/>
+<area shape="poly" title=" " alt="" coords="993,406,948,374,894,341,866,329,866,324,897,337,951,369,998,406"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4766825edbb089c262ba6ee17ea273f8" title=" " alt="" coords="704,416,870,457"/>
+<area shape="poly" title=" " alt="" coords="925,437,871,439,870,434,930,436"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ad561284d1c935c94e1fe847c6221dfd5" title=" " alt="" coords="685,596,889,621"/>
+<area shape="poly" title=" " alt="" coords="1012,468,964,530,932,560,897,585,870,597,868,592,894,581,929,556,960,526,1007,471"/>
+<area shape="rect" href="classview_1_1_main_controller.html#adcfc31adcb42e729fab4174830d348fb" title=" " alt="" coords="701,531,873,571"/>
+<area shape="poly" title=" " alt="" coords="987,464,897,515,853,533,851,528,895,510,982,466"/>
+<area shape="poly" title=" " alt="" coords="683,351,626,341,625,336,688,350"/>
+<area shape="poly" title=" " alt="" coords="685,219,680,225,665,240,656,256,648,273,632,290,612,303,609,299,629,286,644,270,652,254,660,237,677,221,689,216"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af46f4eb82ac70e509c19caf615643d3d" title=" " alt="" coords="455,171,630,211"/>
+<area shape="poly" title=" " alt="" coords="683,192,632,193,630,189,688,190"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title=" " alt="" coords="455,236,630,277"/>
+<area shape="poly" title=" " alt="" coords="692,217,623,238,620,233,696,214"/>
+<area shape="poly" title=" " alt="" coords="688,410,677,405,662,395,652,384,629,363,598,345,597,340,632,358,656,380,665,391,680,401,694,409"/>
+<area shape="poly" title=" " alt="" coords="687,417,630,407,407,367,407,362,631,402,692,415"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afdc5d6820d84e41d7d0f86e633eba6a5" title=" " alt="" coords="455,416,630,457"/>
+<area shape="poly" title=" " alt="" coords="686,437,631,439,630,434,691,436"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a37244d4fc30d349270d91d0a773e805e" title=" " alt="" coords="458,661,627,702"/>
+<area shape="poly" title=" " alt="" coords="706,626,679,636,599,663,597,658,678,631,711,625"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6559431f69fcf69cfd6d91229df10914" title=" " alt="" coords="458,727,627,767"/>
+<area shape="poly" title=" " alt="" coords="689,627,680,636,663,654,656,674,649,695,632,716,613,729,611,724,629,712,644,692,651,672,659,651,677,632,684,629"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a9d857d9734592ea7ec42050493b3a053" title=" " alt="" coords="458,792,627,833"/>
+<area shape="poly" title=" " alt="" coords="685,629,680,636,666,652,659,669,656,705,653,743,646,762,632,781,616,794,614,789,628,777,641,759,648,741,650,705,654,668,662,650,676,632,681,631"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title=" " alt="" coords="238,661,407,702"/>
+<area shape="poly" title=" " alt="" coords="440,682,408,684,407,679,445,681"/>
+<area shape="poly" title=" " alt="" coords="290,651,110,452,112,447,294,649"/>
+<area shape="poly" title=" " alt="" coords="455,722,393,705,394,700,460,722"/>
+<area shape="poly" title=" " alt="" coords="465,785,454,781,394,743,347,705,348,700,397,738,456,777,470,786"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae8c9426ed1d46eb4f182a4db737d13c1" title=" " alt="" coords="455,596,630,637"/>
+<area shape="poly" title=" " alt="" coords="691,577,622,598,621,593,696,575"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae0c75dcb2f1ff8c7d83a8c1d8f4e9637" title=" " alt="" coords="458,531,627,571"/>
+<area shape="poly" title=" " alt="" coords="683,552,628,554,627,548,688,550"/>
+<area shape="poly" title=" " alt="" coords="465,579,456,587,397,625,349,663,346,659,394,621,454,582,470,577"/>
+<area shape="poly" title=" " alt="" coords="294,206,112,424,108,421,294,201"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -954,6 +1419,75 @@ javafx.beans.property </dd></dl>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00071">task</a>.</p>
 
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l01057">view.MainController.adjustReminder()</a>, <a class="el" href="_main_controller_8java_source.html#l00682">view.MainController.applySortMode()</a>, <a class="el" href="_main_controller_8java_source.html#l01036">view.MainController.duplicateTask()</a>, <a class="el" href="_main_controller_8java_source.html#l00805">view.MainController.handleBulkCategory()</a>, <a class="el" href="_main_controller_8java_source.html#l00787">view.MainController.handleBulkPriority()</a>, <a class="el" href="_main_controller_8java_source.html#l00747">view.MainController.openEditDialog()</a>, <a class="el" href="_main_controller_8java_source.html#l01030">view.MainController.persistOrder()</a> и <a class="el" href="_main_controller_8java_source.html#l01025">view.MainController.persistTask()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classviewmodel_1_1_task_view_model_aa0b4460345353c790c23679ca9cb37c6_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_aa0b4460345353c790c23679ca9cb37c6_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassviewmodel_1_1_task_view_model_aa0b4460345353c790c23679ca9cb37c6_icgraph" id="aclassviewmodel_1_1_task_view_model_aa0b4460345353c790c23679ca9cb37c6_icgraph">
+<area shape="rect" title="Возвращает базовую модель задачи" alt="" coords="1168,216,1397,241"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4bb1c177443c7d66b3c8e9687e3c6acb" title=" " alt="" coords="946,8,1118,49"/>
+<area shape="poly" title=" " alt="" coords="1259,203,1200,139,1161,102,1119,69,1089,52,1088,47,1121,65,1164,98,1204,135,1264,204"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aa5444ecb80b477bae47c620767d7d06b" title=" " alt="" coords="948,240,1116,281"/>
+<area shape="poly" title=" " alt="" coords="1159,245,1117,252,1116,247,1164,243"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aafdc8cce09c744e950691a2c00408f27" title=" " alt="" coords="678,68,896,93"/>
+<area shape="poly" title=" " alt="" coords="1249,206,1192,170,1156,151,1119,135,1063,118,1005,105,897,89,896,84,1006,100,1065,113,1121,130,1158,146,1194,165,1255,206"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4766825edbb089c262ba6ee17ea273f8" title=" " alt="" coords="704,117,870,158"/>
+<area shape="poly" title=" " alt="" coords="1239,208,1184,186,1119,166,1055,153,989,146,871,140,870,134,989,140,1056,148,1121,160,1186,181,1244,208"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a1eb59033ea2ca2caf351d917d1511cf1" title=" " alt="" coords="944,355,1120,395"/>
+<area shape="poly" title=" " alt="" coords="1254,249,1193,295,1121,339,1085,357,1083,352,1119,334,1190,290,1249,252"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a2e6cee3bdcb7d5ef5f7d3227b9543601" title=" " alt="" coords="944,420,1120,461"/>
+<area shape="poly" title=" " alt="" coords="1266,252,1208,330,1167,372,1121,409,1099,422,1097,417,1119,405,1163,368,1204,327,1262,255"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a93ab40dbc1ef0163ba9428c18aa48667" title=" " alt="" coords="944,175,1120,215"/>
+<area shape="poly" title=" " alt="" coords="1163,213,1121,209,1120,204,1169,212"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ad561284d1c935c94e1fe847c6221dfd5" title=" " alt="" coords="685,648,889,673"/>
+<area shape="poly" title=" " alt="" coords="1234,249,1121,295,1068,306,1024,308,1004,310,985,316,965,327,946,345,925,375,916,405,914,435,918,465,922,496,922,528,916,562,898,596,883,614,865,629,826,650,824,645,862,624,879,610,893,594,911,560,917,528,916,496,913,466,909,435,910,404,920,373,942,341,962,322,982,311,1003,305,1023,302,1067,300,1119,290,1239,247"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a157c635caf5c9cc208923226f28274e0" title=" " alt="" coords="460,5,625,46"/>
+<area shape="poly" title=" " alt="" coords="928,29,626,29,624,24,932,26"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a35f2a1470868c1e281d8750ab39baa5f" title=" " alt="" coords="238,120,407,161"/>
+<area shape="poly" title=" " alt="" coords="477,54,456,67,359,121,356,117,454,62,481,51"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,428,190,453"/>
+<area shape="poly" title=" " alt="" coords="297,176,111,428,107,425,297,170"/>
+<area shape="poly" title=" " alt="" coords="945,231,942,229,929,213,922,197,918,166,913,136,906,122,894,108,877,96,877,91,897,104,911,119,918,134,923,165,928,195,934,210,946,225,951,231"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title=" " alt="" coords="699,543,875,583"/>
+<area shape="poly" title=" " alt="" coords="955,288,946,301,928,330,921,359,921,387,924,416,927,444,926,473,918,502,898,531,876,548,874,543,894,528,913,500,921,472,922,444,919,416,915,388,916,358,923,328,942,297,951,291"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6343e648a870a706a14bc46aa9b43b4c" title=" " alt="" coords="699,232,875,273"/>
+<area shape="poly" title=" " alt="" coords="930,258,876,258,875,253,935,256"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af03ff4fe034cfc97fd82327d0e618e59" title=" " alt="" coords="242,420,403,461"/>
+<area shape="poly" title=" " alt="" coords="957,288,946,301,935,315,929,330,925,360,919,390,911,404,897,417,859,435,806,447,743,454,672,458,528,456,404,450,403,444,528,451,672,452,742,449,805,442,857,430,894,413,907,401,914,388,920,360,924,329,930,313,942,297,953,291"/>
+<area shape="poly" title=" " alt="" coords="956,234,942,229,876,194,821,161,821,156,879,190,945,225,961,234"/>
+<area shape="rect" href="classview_1_1_main_controller.html#adcfc31adcb42e729fab4174830d348fb" title=" " alt="" coords="701,477,873,518"/>
+<area shape="poly" title=" " alt="" coords="955,288,946,301,932,321,925,340,923,380,920,420,913,440,898,461,873,479,870,474,894,457,908,438,915,419,918,380,920,339,927,318,942,297,951,291"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afefa6c872fcfd41bdbae5d6aa1078b21" title=" " alt="" coords="707,297,867,338"/>
+<area shape="poly" title=" " alt="" coords="930,285,868,302,866,297,935,283"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4bfffd15238c2895e76c565921cd3441" title=" " alt="" coords="707,363,867,403"/>
+<area shape="poly" title=" " alt="" coords="964,287,945,301,931,314,922,326,913,339,897,352,868,366,866,361,894,347,909,336,918,323,927,310,942,297,959,289"/>
+<area shape="poly" title=" " alt="" coords="709,65,626,47,625,41,714,63"/>
+<area shape="poly" title=" " alt="" coords="224,442,192,443,189,438,229,439"/>
+<area shape="poly" title=" " alt="" coords="687,112,677,108,652,88,629,67,598,49,597,44,632,62,656,84,680,103,693,111"/>
+<area shape="poly" title=" " alt="" coords="687,118,630,111,543,105,455,111,398,122,395,117,455,106,543,99,631,106,692,116"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afdc5d6820d84e41d7d0f86e633eba6a5" title=" " alt="" coords="455,120,630,161"/>
+<area shape="poly" title=" " alt="" coords="686,140,632,142,630,137,691,138"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae8c9426ed1d46eb4f182a4db737d13c1" title=" " alt="" coords="455,477,630,518"/>
+<area shape="poly" title=" " alt="" coords="683,498,631,500,630,495,688,497"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae0c75dcb2f1ff8c7d83a8c1d8f4e9637" title=" " alt="" coords="458,543,627,583"/>
+<area shape="poly" title=" " alt="" coords="691,523,622,545,621,539,696,522"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title=" " alt="" coords="238,608,407,649"/>
+<area shape="poly" title=" " alt="" coords="455,589,394,610,393,605,460,587"/>
+<area shape="poly" title=" " alt="" coords="282,599,113,456,115,451,287,596"/>
+<area shape="poly" title=" " alt="" coords="926,198,710,196,582,189,455,175,399,164,398,159,455,170,582,183,710,191,931,196"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a37244d4fc30d349270d91d0a773e805e" title=" " alt="" coords="458,608,627,649"/>
+<area shape="poly" title=" " alt="" coords="667,645,628,642,628,637,672,645"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6559431f69fcf69cfd6d91229df10914" title=" " alt="" coords="458,673,627,714"/>
+<area shape="poly" title=" " alt="" coords="670,676,628,685,628,679,676,675"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a9d857d9734592ea7ec42050493b3a053" title=" " alt="" coords="458,739,627,779"/>
+<area shape="poly" title=" " alt="" coords="744,679,631,728,600,741,598,735,629,723,738,680"/>
+<area shape="poly" title=" " alt="" coords="440,629,408,631,407,626,445,628"/>
+<area shape="poly" title=" " alt="" coords="455,669,393,652,394,647,460,668"/>
+<area shape="poly" title=" " alt="" coords="465,732,454,728,394,689,347,652,348,647,397,685,456,723,470,732"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a53215ef77e237ab827e3e3156860d2f5" name="a53215ef77e237ab827e3e3156860d2f5"></a>
@@ -999,15 +1533,94 @@ javafx.beans.property </dd></dl>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00044">title</a>.</p>
 
-<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l01004">view.MainController.handleDeleteTask()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l01302">view.MainController.buildIcs()</a>, <a class="el" href="_main_controller_8java_source.html#l01036">view.MainController.duplicateTask()</a>, <a class="el" href="_main_controller_8java_source.html#l00832">view.MainController.handleFocusMode()</a>, <a class="el" href="_main_controller_8java_source.html#l00545">view.MainController.setupCalendarTab()</a>, <a class="el" href="_main_controller_8java_source.html#l00425">view.MainController.setupSearch()</a> и <a class="el" href="_main_controller_8java_source.html#l01228">view.MainController.updateWidget()</a>.</p>
 <div class="dynheader">
 Граф вызова функции:</div>
 <div class="dyncontent">
 <div class="center"><img src="classviewmodel_1_1_task_view_model_a1a618ae9eecfd3fefadebd848a99ec92_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_a1a618ae9eecfd3fefadebd848a99ec92_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassviewmodel_1_1_task_view_model_a1a618ae9eecfd3fefadebd848a99ec92_icgraph" id="aclassviewmodel_1_1_task_view_model_a1a618ae9eecfd3fefadebd848a99ec92_icgraph">
-<area shape="rect" title="Возвращает заголовок задачи" alt="" coords="229,5,430,46"/>
-<area shape="rect" href="classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title="Обработчик кнопки удаления задачи" alt="" coords="5,5,181,46"/>
-<area shape="poly" title=" " alt="" coords="210,26,181,28,181,23,216,25"/>
+<area shape="rect" title="Возвращает заголовок задачи" alt="" coords="1399,139,1601,179"/>
+<area shape="rect" href="classview_1_1_main_controller.html#acdde80c44920e4098b097591f9741392" title=" " alt="" coords="1169,17,1351,42"/>
+<area shape="poly" title=" " alt="" coords="1455,130,1407,99,1350,67,1302,46,1301,41,1353,62,1409,94,1461,130"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aafdc8cce09c744e950691a2c00408f27" title=" " alt="" coords="678,172,896,197"/>
+<area shape="poly" title=" " alt="" coords="1381,165,896,183,895,178,1386,162"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a98e6bb3bed95bbe6479b95f60afcfad2" title=" " alt="" coords="1172,657,1348,698"/>
+<area shape="poly" title=" " alt="" coords="1500,193,1494,284,1485,342,1472,404,1454,469,1428,533,1395,593,1353,646,1337,659,1334,654,1349,642,1391,590,1423,530,1448,467,1467,403,1480,341,1488,284,1497,197"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae52fbdd5164aefc0170ae4b650492e0c" title=" " alt="" coords="238,83,407,123"/>
+<area shape="poly" title=" " alt="" coords="1402,135,1325,120,1233,103,1133,91,1034,86,786,86,582,91,409,100,406,95,582,85,786,80,1034,80,1134,85,1233,98,1326,114,1408,134"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ac915bbe5e6b1d345251530fb2359e3c8" title=" " alt="" coords="238,185,407,226"/>
+<area shape="poly" title=" " alt="" coords="1381,150,1218,141,1034,136,786,136,683,141,581,154,408,187,406,182,580,149,683,136,786,131,1034,131,1218,136,1386,148"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ad0f2463a86445951d22b3ee9d86bc3aa" title=" " alt="" coords="1172,592,1348,633"/>
+<area shape="poly" title=" " alt="" coords="1483,192,1274,593,1270,590,1479,194"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a76d42bd03f97bfeaaaa738d6b9db53e6" title=" " alt="" coords="945,5,1120,46"/>
+<area shape="poly" title=" " alt="" coords="1151,29,1121,30,1119,25,1156,27"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a157c635caf5c9cc208923226f28274e0" title=" " alt="" coords="460,288,625,329"/>
+<area shape="poly" title=" " alt="" coords="744,206,586,289,583,285,748,203"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a35f2a1470868c1e281d8750ab39baa5f" title=" " alt="" coords="238,327,407,367"/>
+<area shape="poly" title=" " alt="" coords="443,327,409,334,406,330,448,324"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,541,190,566"/>
+<area shape="poly" title=" " alt="" coords="287,381,115,542,111,539,288,376"/>
+<area shape="poly" title=" " alt="" coords="275,136,258,154,240,175,209,225,183,278,142,386,117,480,104,541,99,540,111,479,137,384,178,276,205,222,236,172,254,150,278,131"/>
+<area shape="poly" title=" " alt="" coords="293,240,240,316,161,446,108,541,103,539,156,444,235,314,296,236"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ad13d6d956ea7dbf846261dec5495062b" title=" " alt="" coords="945,897,1120,938"/>
+<area shape="poly" title=" " alt="" coords="1174,641,1171,647,1152,677,1144,706,1144,735,1148,765,1151,794,1151,824,1143,855,1123,886,1108,899,1106,894,1119,883,1138,853,1145,823,1146,794,1142,765,1139,736,1139,706,1147,675,1167,644,1170,644"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a2ae68644e5912e2c7aff36a412b445ba" title=" " alt="" coords="944,533,1121,574"/>
+<area shape="poly" title=" " alt="" coords="1162,588,1114,577,1114,572,1167,588"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a832ae34bcb138f8090bf8213f1f97de9" title=" " alt="" coords="702,895,872,935"/>
+<area shape="poly" title=" " alt="" coords="1184,638,1170,648,1101,689,1050,724,1003,766,946,822,932,839,924,855,914,870,897,885,873,898,871,893,894,881,910,867,919,852,928,836,942,819,999,762,1047,720,1098,684,1168,643,1179,640"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ab96d9e00350796e450dd564252136874" title=" " alt="" coords="948,832,1116,873"/>
+<area shape="poly" title=" " alt="" coords="1178,639,1171,648,1126,693,1090,744,1062,794,1044,834,1040,830,1058,791,1085,741,1122,689,1167,644,1174,642"/>
+<area shape="poly" title=" " alt="" coords="1024,517,1012,454,989,373,972,331,951,290,925,252,894,218,865,200,864,195,897,214,929,248,955,287,977,329,994,371,1017,453,1029,519"/>
+<area shape="poly" title=" " alt="" coords="1024,517,1012,459,989,388,972,352,951,317,925,287,894,263,856,247,805,239,745,238,680,241,552,258,456,279,401,301,355,328,352,324,399,297,454,274,551,252,679,236,745,232,805,234,858,242,897,258,929,283,955,314,977,349,994,386,1017,458,1029,519"/>
+<area shape="poly" title=" " alt="" coords="1018,587,962,700,929,752,912,771,897,784,867,798,840,806,815,809,791,808,678,784,653,778,630,770,541,746,454,719,357,680,263,638,125,570,124,564,265,633,359,675,456,714,543,741,631,764,655,773,679,779,792,802,815,804,839,801,865,793,894,779,909,768,924,749,957,697,1014,590"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4bb1c177443c7d66b3c8e9687e3c6acb" title=" " alt="" coords="701,272,873,313"/>
+<area shape="poly" title=" " alt="" coords="1017,518,999,476,973,424,938,372,894,328,873,315,873,309,897,324,942,369,977,421,1004,474,1022,520"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af0a082800f9000e19567bb5159af6cc2" title=" " alt="" coords="701,533,873,574"/>
+<area shape="poly" title=" " alt="" coords="925,554,874,556,873,551,931,553"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title=" " alt="" coords="699,337,875,378"/>
+<area shape="poly" title=" " alt="" coords="1009,519,962,456,930,422,894,393,873,381,872,376,897,389,934,418,966,453,1014,520"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6343e648a870a706a14bc46aa9b43b4c" title=" " alt="" coords="699,403,875,443"/>
+<area shape="poly" title=" " alt="" coords="993,523,948,491,894,459,866,447,866,441,897,454,951,486,998,523"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a1eb59033ea2ca2caf351d917d1511cf1" title=" " alt="" coords="699,664,875,705"/>
+<area shape="poly" title=" " alt="" coords="998,583,951,621,897,653,867,666,865,661,894,649,948,616,993,585"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a2e6cee3bdcb7d5ef5f7d3227b9543601" title=" " alt="" coords="699,729,875,770"/>
+<area shape="poly" title=" " alt="" coords="1004,584,946,655,924,689,914,704,897,719,874,731,872,726,894,714,910,700,920,686,942,652,1000,587"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4766825edbb089c262ba6ee17ea273f8" title=" " alt="" coords="704,468,870,509"/>
+<area shape="poly" title=" " alt="" coords="936,529,866,512,866,507,941,528"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ad561284d1c935c94e1fe847c6221dfd5" title=" " alt="" coords="685,845,889,870"/>
+<area shape="poly" title=" " alt="" coords="999,584,971,618,946,655,936,680,931,702,929,745,924,785,914,806,897,828,868,847,866,842,894,824,910,803,919,784,924,744,925,702,931,678,941,652,967,615,995,587"/>
+<area shape="rect" href="classview_1_1_main_controller.html#adcfc31adcb42e729fab4174830d348fb" title=" " alt="" coords="701,599,873,639"/>
+<area shape="poly" title=" " alt="" coords="936,579,867,601,865,596,941,578"/>
+<area shape="poly" title=" " alt="" coords="683,300,626,305,624,301,688,298"/>
+<area shape="poly" title=" " alt="" coords="685,528,676,522,663,506,654,490,648,460,643,427,638,411,628,392,600,359,572,332,572,327,604,355,633,390,643,409,648,426,653,459,659,489,667,503,680,518,690,528"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af46f4eb82ac70e509c19caf615643d3d" title=" " alt="" coords="455,533,630,574"/>
+<area shape="poly" title=" " alt="" coords="683,555,632,556,630,551,688,553"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title=" " alt="" coords="455,468,630,509"/>
+<area shape="poly" title=" " alt="" coords="691,530,622,512,621,507,697,528"/>
+<area shape="poly" title=" " alt="" coords="688,464,677,457,664,443,657,430,651,402,645,376,639,362,628,349,606,332,605,326,632,345,644,359,650,374,656,401,662,428,669,440,680,453,693,464"/>
+<area shape="poly" title=" " alt="" coords="688,463,677,457,661,440,653,423,645,407,629,393,575,369,517,354,460,347,409,345,406,340,460,342,518,349,577,364,632,389,649,404,657,421,665,437,680,453,693,462"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afdc5d6820d84e41d7d0f86e633eba6a5" title=" " alt="" coords="455,403,630,443"/>
+<area shape="poly" title=" " alt="" coords="691,464,622,447,621,441,697,463"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a37244d4fc30d349270d91d0a773e805e" title=" " alt="" coords="458,909,627,950"/>
+<area shape="poly" title=" " alt="" coords="712,874,679,886,600,911,599,906,678,880,707,875"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6559431f69fcf69cfd6d91229df10914" title=" " alt="" coords="458,779,627,819"/>
+<area shape="poly" title=" " alt="" coords="713,841,628,822,628,817,718,840"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a9d857d9734592ea7ec42050493b3a053" title=" " alt="" coords="458,844,627,885"/>
+<area shape="poly" title=" " alt="" coords="667,861,628,865,628,859,672,861"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title=" " alt="" coords="238,779,407,819"/>
+<area shape="poly" title=" " alt="" coords="465,902,454,899,394,860,347,822,348,817,397,856,456,894,470,903"/>
+<area shape="poly" title=" " alt="" coords="249,771,236,762,188,712,149,657,120,605,105,570,105,564,125,603,154,654,193,709,239,758,254,770"/>
+<area shape="poly" title=" " alt="" coords="440,800,408,802,407,796,445,798"/>
+<area shape="poly" title=" " alt="" coords="455,840,394,823,394,817,460,839"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae8c9426ed1d46eb4f182a4db737d13c1" title=" " alt="" coords="455,599,630,639"/>
+<area shape="poly" title=" " alt="" coords="683,620,632,622,630,616,688,618"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae0c75dcb2f1ff8c7d83a8c1d8f4e9637" title=" " alt="" coords="458,664,627,705"/>
+<area shape="poly" title=" " alt="" coords="691,645,623,666,621,661,696,643"/>
+<area shape="poly" title=" " alt="" coords="486,714,365,780,362,776,491,711"/>
+<area shape="poly" title=" " alt="" coords="706,940,631,964,542,976,503,975,454,964,385,943,333,918,287,884,236,833,208,799,183,761,143,684,115,615,102,569,103,564,120,613,148,682,188,759,212,796,240,829,290,880,336,914,387,938,456,959,504,969,542,971,630,959,700,941"/>
+<area shape="poly" title=" " alt="" coords="938,877,870,897,869,891,932,878"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aa6adc26184a175f0ddf6030f0c24d046" title=" " alt="" coords="699,960,875,1001"/>
+<area shape="poly" title=" " alt="" coords="954,880,945,888,931,903,922,918,913,934,897,949,874,962,872,957,894,945,909,930,918,915,926,900,942,884,949,882"/>
 </map>
 </div>
 
@@ -1032,7 +1645,7 @@ javafx.beans.property </dd></dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Хэш-код, основанный на идентификаторе задачи</dd></dl>
 <p>@overrides Object.hashCode() </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00651">651</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00652">652</a></p>
 
 </div>
 </div>
@@ -1082,17 +1695,88 @@ javafx.beans.property </dd></dl>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00062">completed</a>.</p>
 
-<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00246">view.MainController.setupTableColumns()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00287">view.MainController.setupDeadlineColumn()</a>, <a class="el" href="_main_controller_8java_source.html#l00223">view.MainController.setupTitleColumn()</a>, <a class="el" href="_main_controller_8java_source.html#l00959">view.MainController.updateStatisticsCharts()</a> и <a class="el" href="_main_controller_8java_source.html#l01228">view.MainController.updateWidget()</a>.</p>
 <div class="dynheader">
 Граф вызова функции:</div>
 <div class="dyncontent">
 <div class="center"><img src="classviewmodel_1_1_task_view_model_a6b568ef75542da4868a533844bbbe3a1_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_a6b568ef75542da4868a533844bbbe3a1_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassviewmodel_1_1_task_view_model_a6b568ef75542da4868a533844bbbe3a1_icgraph" id="aclassviewmodel_1_1_task_view_model_a6b568ef75542da4868a533844bbbe3a1_icgraph">
-<area shape="rect" title="Проверяет, выполнена ли задача" alt="" coords="455,5,648,46"/>
-<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title="Настраивает колонки таблицы задач" alt="" coords="238,5,407,46"/>
-<area shape="poly" title=" " alt="" coords="437,26,408,28,407,23,442,26"/>
-<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,13,190,38"/>
-<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+<area shape="rect" title="Проверяет, выполнена ли задача" alt="" coords="1393,287,1587,327"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a52382ae9aa902be26d203e04b58e3f8c" title=" " alt="" coords="1172,36,1342,77"/>
+<area shape="poly" title=" " alt="" coords="1461,274,1409,210,1343,137,1283,80,1284,75,1347,133,1413,207,1466,275"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a9d857d9734592ea7ec42050493b3a053" title=" " alt="" coords="458,83,627,123"/>
+<area shape="poly" title=" " alt="" coords="1376,285,628,124,628,118,1380,281"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aedcff4ed0eec74c31a840783b64b42a8" title=" " alt="" coords="1169,496,1345,537"/>
+<area shape="poly" title=" " alt="" coords="1457,337,1283,498,1280,493,1452,340"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ad0f2463a86445951d22b3ee9d86bc3aa" title=" " alt="" coords="1169,665,1345,706"/>
+<area shape="poly" title=" " alt="" coords="1471,339,1348,550,1274,667,1270,663,1343,547,1467,343"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title=" " alt="" coords="238,181,407,222"/>
+<area shape="poly" title=" " alt="" coords="1155,36,1014,18,928,11,836,8,740,11,642,22,547,42,456,74,418,96,385,125,358,156,339,182,334,180,354,152,382,121,415,91,454,69,546,37,642,17,739,6,836,3,928,5,1015,13,1160,35"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,468,190,493"/>
+<area shape="poly" title=" " alt="" coords="294,237,111,469,107,466,296,232"/>
+<area shape="poly" title=" " alt="" coords="469,132,456,139,365,183,362,179,454,134,473,128"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a2ae68644e5912e2c7aff36a412b445ba" title=" " alt="" coords="944,553,1121,594"/>
+<area shape="poly" title=" " alt="" coords="1158,542,1116,555,1114,550,1163,540"/>
+<area shape="poly" title=" " alt="" coords="1005,541,959,492,928,468,895,450,843,432,790,418,681,403,571,400,464,406,363,419,274,436,143,469,140,465,272,431,362,414,463,401,571,394,681,397,791,413,845,427,897,445,931,463,962,488,1011,541"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4bb1c177443c7d66b3c8e9687e3c6acb" title=" " alt="" coords="701,524,873,565"/>
+<area shape="poly" title=" " alt="" coords="925,562,874,557,873,552,931,561"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a35f2a1470868c1e281d8750ab39baa5f" title=" " alt="" coords="238,545,407,586"/>
+<area shape="poly" title=" " alt="" coords="974,602,938,618,896,630,773,651,675,659,577,652,454,628,402,611,359,589,358,584,404,606,456,623,578,646,675,653,772,646,895,624,936,613,979,600"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af0a082800f9000e19567bb5159af6cc2" title=" " alt="" coords="701,689,873,730"/>
+<area shape="poly" title=" " alt="" coords="997,603,950,641,897,673,856,691,854,686,894,669,947,636,993,605"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aafdc8cce09c744e950691a2c00408f27" title=" " alt="" coords="678,589,896,615"/>
+<area shape="poly" title=" " alt="" coords="925,586,897,592,896,587,930,585"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title=" " alt="" coords="699,755,875,795"/>
+<area shape="poly" title=" " alt="" coords="995,603,946,655,932,679,925,701,916,722,897,744,876,757,874,752,894,740,912,720,920,699,927,677,942,652,990,606"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6343e648a870a706a14bc46aa9b43b4c" title=" " alt="" coords="699,820,875,861"/>
+<area shape="poly" title=" " alt="" coords="992,602,967,629,946,655,935,677,930,696,927,734,922,771,913,790,898,809,876,824,874,820,894,805,908,787,917,770,922,734,924,696,930,675,941,652,963,625,988,605"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a1eb59033ea2ca2caf351d917d1511cf1" title=" " alt="" coords="699,885,875,926"/>
+<area shape="poly" title=" " alt="" coords="990,603,966,629,946,655,933,686,927,714,929,768,930,794,927,820,917,847,898,874,876,890,874,886,894,871,913,844,922,819,925,794,924,768,922,714,928,684,941,652,962,625,986,606"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a2e6cee3bdcb7d5ef5f7d3227b9543601" title=" " alt="" coords="699,279,875,319"/>
+<area shape="poly" title=" " alt="" coords="1018,538,1001,493,975,438,939,382,918,357,894,335,875,322,875,317,897,330,922,353,943,379,979,435,1006,491,1023,539"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4766825edbb089c262ba6ee17ea273f8" title=" " alt="" coords="704,459,870,499"/>
+<area shape="poly" title=" " alt="" coords="972,547,895,515,860,503,860,497,897,510,977,546"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ad561284d1c935c94e1fe847c6221dfd5" title=" " alt="" coords="685,212,889,237"/>
+<area shape="poly" title=" " alt="" coords="1022,537,1007,481,983,409,945,334,921,300,894,269,870,252,845,240,844,235,873,247,897,265,926,297,950,332,987,407,1013,479,1027,539"/>
+<area shape="rect" href="classview_1_1_main_controller.html#adcfc31adcb42e729fab4174830d348fb" title=" " alt="" coords="701,344,873,385"/>
+<area shape="poly" title=" " alt="" coords="1009,539,962,473,930,437,894,405,863,388,863,383,897,401,934,433,967,469,1015,540"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a157c635caf5c9cc208923226f28274e0" title=" " alt="" coords="460,573,625,614"/>
+<area shape="poly" title=" " alt="" coords="684,566,626,580,624,575,688,564"/>
+<area shape="poly" title=" " alt="" coords="443,582,408,579,406,574,448,580"/>
+<area shape="poly" title=" " alt="" coords="250,541,135,496,133,491,255,538"/>
+<area shape="poly" title=" " alt="" coords="726,683,588,617,588,612,732,682"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af46f4eb82ac70e509c19caf615643d3d" title=" " alt="" coords="455,689,630,730"/>
+<area shape="poly" title=" " alt="" coords="683,710,631,712,630,707,688,709"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title=" " alt="" coords="455,755,630,795"/>
+<area shape="poly" title=" " alt="" coords="691,736,623,757,621,752,696,734"/>
+<area shape="poly" title=" " alt="" coords="660,599,626,599,625,594,665,597"/>
+<area shape="poly" title=" " alt="" coords="689,507,680,515,665,525,656,535,632,557,599,575,596,571,629,553,652,531,662,521,677,510,693,505"/>
+<area shape="poly" title=" " alt="" coords="687,501,631,514,408,554,406,549,630,508,692,498"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afdc5d6820d84e41d7d0f86e633eba6a5" title=" " alt="" coords="455,459,630,499"/>
+<area shape="poly" title=" " alt="" coords="686,480,632,482,630,477,691,478"/>
+<area shape="poly" title=" " alt="" coords="738,205,677,175,653,156,629,139,605,127,604,121,632,134,656,152,680,170,743,204"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a37244d4fc30d349270d91d0a773e805e" title=" " alt="" coords="458,148,627,189"/>
+<area shape="poly" title=" " alt="" coords="710,209,629,190,627,185,715,207"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6559431f69fcf69cfd6d91229df10914" title=" " alt="" coords="458,213,627,254"/>
+<area shape="poly" title=" " alt="" coords="667,230,629,233,627,228,672,228"/>
+<area shape="poly" title=" " alt="" coords="441,185,409,191,406,187,445,182"/>
+<area shape="poly" title=" " alt="" coords="441,221,409,216,406,212,445,218"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae8c9426ed1d46eb4f182a4db737d13c1" title=" " alt="" coords="455,344,630,385"/>
+<area shape="poly" title=" " alt="" coords="683,366,632,367,630,362,688,363"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae0c75dcb2f1ff8c7d83a8c1d8f4e9637" title=" " alt="" coords="458,279,627,319"/>
+<area shape="poly" title=" " alt="" coords="691,341,622,323,621,317,696,339"/>
+<area shape="poly" title=" " alt="" coords="469,274,454,268,365,225,363,220,456,263,474,272"/>
+<area shape="poly" title=" " alt="" coords="1199,658,1075,597,1075,592,1204,658"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ad13d6d956ea7dbf846261dec5495062b" title=" " alt="" coords="945,665,1120,706"/>
+<area shape="poly" title=" " alt="" coords="1151,686,1121,688,1120,683,1156,685"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a832ae34bcb138f8090bf8213f1f97de9" title=" " alt="" coords="702,951,872,991"/>
+<area shape="poly" title=" " alt="" coords="1223,715,1163,766,1085,825,993,886,897,940,866,953,865,948,895,935,991,882,1081,821,1160,762,1218,717"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ab96d9e00350796e450dd564252136874" title=" " alt="" coords="948,951,1116,991"/>
+<area shape="poly" title=" " alt="" coords="1233,718,1051,953,1048,948,1228,720"/>
+<area shape="poly" title=" " alt="" coords="693,945,677,940,611,910,561,883,453,809,344,721,243,629,111,496,111,491,246,625,347,717,457,805,563,878,613,905,679,935,699,945"/>
+<area shape="poly" title=" " alt="" coords="930,971,872,974,872,968,935,971"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aa6adc26184a175f0ddf6030f0c24d046" title=" " alt="" coords="699,1016,875,1057"/>
+<area shape="poly" title=" " alt="" coords="941,996,867,1018,866,1013,936,996"/>
 </map>
 </div>
 
@@ -1120,17 +1804,75 @@ javafx.beans.property </dd></dl>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00065">overdue</a>.</p>
 
-<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00246">view.MainController.setupTableColumns()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00287">view.MainController.setupDeadlineColumn()</a>, <a class="el" href="_main_controller_8java_source.html#l00223">view.MainController.setupTitleColumn()</a> и <a class="el" href="_main_controller_8java_source.html#l00959">view.MainController.updateStatisticsCharts()</a>.</p>
 <div class="dynheader">
 Граф вызова функции:</div>
 <div class="dyncontent">
 <div class="center"><img src="classviewmodel_1_1_task_view_model_a81effd078fee106eea52436907468ed9_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_a81effd078fee106eea52436907468ed9_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassviewmodel_1_1_task_view_model_a81effd078fee106eea52436907468ed9_icgraph" id="aclassviewmodel_1_1_task_view_model_a81effd078fee106eea52436907468ed9_icgraph">
-<area shape="rect" title="Проверяет, просрочена ли задача" alt="" coords="455,5,648,46"/>
-<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title="Настраивает колонки таблицы задач" alt="" coords="238,5,407,46"/>
-<area shape="poly" title=" " alt="" coords="437,26,408,28,407,23,442,26"/>
-<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,13,190,38"/>
-<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+<area shape="rect" title="Проверяет, просрочена ли задача" alt="" coords="1393,71,1587,112"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a52382ae9aa902be26d203e04b58e3f8c" title=" " alt="" coords="948,14,1117,55"/>
+<area shape="poly" title=" " alt="" coords="1375,78,1345,75,1118,47,1117,42,1346,70,1380,76"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a9d857d9734592ea7ec42050493b3a053" title=" " alt="" coords="458,71,627,112"/>
+<area shape="poly" title=" " alt="" coords="1376,94,628,94,627,89,1380,89"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aedcff4ed0eec74c31a840783b64b42a8" title=" " alt="" coords="1169,345,1345,385"/>
+<area shape="poly" title=" " alt="" coords="1463,122,1278,346,1274,342,1459,126"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title=" " alt="" coords="238,170,407,211"/>
+<area shape="poly" title=" " alt="" coords="930,19,829,11,707,10,643,15,579,25,516,40,456,62,418,85,386,114,339,171,335,168,382,110,415,80,454,57,515,35,578,19,643,10,707,5,829,5,934,17"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,397,190,423"/>
+<area shape="poly" title=" " alt="" coords="289,224,114,399,110,395,291,219"/>
+<area shape="poly" title=" " alt="" coords="469,120,456,127,365,171,362,167,454,122,473,116"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a2ae68644e5912e2c7aff36a412b445ba" title=" " alt="" coords="944,562,1121,603"/>
+<area shape="poly" title=" " alt="" coords="1226,395,1056,564,1053,560,1221,398"/>
+<area shape="poly" title=" " alt="" coords="1009,548,989,521,962,489,931,460,895,438,837,420,759,408,666,401,565,398,360,400,191,407,189,402,360,394,565,392,666,396,759,403,838,415,897,433,934,456,966,486,993,517,1014,549"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4bb1c177443c7d66b3c8e9687e3c6acb" title=" " alt="" coords="701,562,873,603"/>
+<area shape="poly" title=" " alt="" coords="925,583,874,585,873,580,931,582"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a35f2a1470868c1e281d8750ab39baa5f" title=" " alt="" coords="238,505,407,545"/>
+<area shape="poly" title=" " alt="" coords="1032,616,1025,690,1004,780,987,827,964,871,934,910,897,943,868,960,842,971,816,977,791,977,739,965,677,943,642,928,608,908,546,861,491,805,443,746,403,686,371,630,332,548,333,543,375,627,407,683,447,742,495,802,549,857,611,904,644,923,679,938,740,960,791,972,816,971,840,966,866,956,894,939,930,907,959,868,982,825,999,779,1020,689,1028,620"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af0a082800f9000e19567bb5159af6cc2" title=" " alt="" coords="701,627,873,668"/>
+<area shape="poly" title=" " alt="" coords="936,608,867,629,865,624,941,606"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aafdc8cce09c744e950691a2c00408f27" title=" " alt="" coords="678,512,896,538"/>
+<area shape="poly" title=" " alt="" coords="926,558,895,553,845,541,845,536,896,548,931,558"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title=" " alt="" coords="699,693,875,733"/>
+<area shape="poly" title=" " alt="" coords="998,611,951,649,897,682,867,694,865,689,894,677,948,645,993,614"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6343e648a870a706a14bc46aa9b43b4c" title=" " alt="" coords="699,758,875,799"/>
+<area shape="poly" title=" " alt="" coords="1014,614,966,683,934,718,897,747,874,760,872,755,894,743,930,714,962,680,1009,617"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a1eb59033ea2ca2caf351d917d1511cf1" title=" " alt="" coords="699,823,875,864"/>
+<area shape="poly" title=" " alt="" coords="1021,615,1004,662,977,714,942,767,897,812,876,825,874,820,894,808,938,764,973,712,999,660,1017,619"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a2e6cee3bdcb7d5ef5f7d3227b9543601" title=" " alt="" coords="699,889,875,929"/>
+<area shape="poly" title=" " alt="" coords="1026,616,1012,675,987,745,950,816,926,849,897,878,876,892,874,887,894,873,921,845,945,813,982,743,1007,674,1022,620"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4766825edbb089c262ba6ee17ea273f8" title=" " alt="" coords="704,447,870,488"/>
+<area shape="poly" title=" " alt="" coords="987,553,944,528,895,502,867,491,867,486,897,497,947,523,992,553"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ad561284d1c935c94e1fe847c6221dfd5" title=" " alt="" coords="685,177,889,203"/>
+<area shape="poly" title=" " alt="" coords="1013,547,964,445,930,383,893,322,843,255,801,206,801,201,847,252,898,319,935,380,969,443,1019,548"/>
+<area shape="rect" href="classview_1_1_main_controller.html#adcfc31adcb42e729fab4174830d348fb" title=" " alt="" coords="701,333,873,373"/>
+<area shape="poly" title=" " alt="" coords="1012,547,966,471,933,430,894,394,865,376,865,371,897,389,937,426,970,468,1017,548"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a157c635caf5c9cc208923226f28274e0" title=" " alt="" coords="460,563,625,604"/>
+<area shape="poly" title=" " alt="" coords="683,584,626,586,625,580,688,582"/>
+<area shape="poly" title=" " alt="" coords="447,560,402,548,401,543,452,558"/>
+<area shape="poly" title=" " alt="" coords="265,499,125,426,124,421,270,496"/>
+<area shape="poly" title=" " alt="" coords="689,623,623,607,623,602,694,622"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af46f4eb82ac70e509c19caf615643d3d" title=" " alt="" coords="455,694,630,735"/>
+<area shape="poly" title=" " alt="" coords="693,673,621,696,619,691,698,672"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title=" " alt="" coords="455,629,630,669"/>
+<area shape="poly" title=" " alt="" coords="683,649,631,651,630,646,688,647"/>
+<area shape="poly" title=" " alt="" coords="711,543,679,553,626,566,624,561,678,548,716,541"/>
+<area shape="poly" title=" " alt="" coords="688,495,680,502,665,514,656,526,647,539,632,552,609,565,606,560,629,548,643,535,652,523,661,510,677,497,692,492"/>
+<area shape="poly" title=" " alt="" coords="686,468,576,475,455,489,385,506,382,502,455,484,576,469,691,466"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afdc5d6820d84e41d7d0f86e633eba6a5" title=" " alt="" coords="455,498,630,539"/>
+<area shape="poly" title=" " alt="" coords="687,489,632,502,630,498,692,487"/>
+<area shape="poly" title=" " alt="" coords="739,172,629,127,600,115,598,110,631,122,744,170"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a37244d4fc30d349270d91d0a773e805e" title=" " alt="" coords="458,202,627,243"/>
+<area shape="poly" title=" " alt="" coords="667,207,629,213,627,209,672,204"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6559431f69fcf69cfd6d91229df10914" title=" " alt="" coords="458,137,627,177"/>
+<area shape="poly" title=" " alt="" coords="671,176,629,171,627,166,675,174"/>
+<area shape="poly" title=" " alt="" coords="441,209,408,205,406,200,445,206"/>
+<area shape="poly" title=" " alt="" coords="441,174,409,180,406,175,445,170"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae8c9426ed1d46eb4f182a4db737d13c1" title=" " alt="" coords="455,333,630,373"/>
+<area shape="poly" title=" " alt="" coords="683,354,632,355,630,350,688,352"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae0c75dcb2f1ff8c7d83a8c1d8f4e9637" title=" " alt="" coords="458,267,627,308"/>
+<area shape="poly" title=" " alt="" coords="691,329,622,311,621,306,696,327"/>
+<area shape="poly" title=" " alt="" coords="469,262,454,257,365,214,363,208,456,252,474,260"/>
 </map>
 </div>
 
@@ -1211,6 +1953,24 @@ javafx.beans.property </dd></dl>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00059">category</a>.</p>
 
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00805">view.MainController.handleBulkCategory()</a> и <a class="el" href="_main_controller_8java_source.html#l00361">view.MainController.setupCategoryColumn()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classviewmodel_1_1_task_view_model_a9ba1b0aebba5b80c88b67bec21710689_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_a9ba1b0aebba5b80c88b67bec21710689_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassviewmodel_1_1_task_view_model_a9ba1b0aebba5b80c88b67bec21710689_icgraph" id="aclassviewmodel_1_1_task_view_model_a9ba1b0aebba5b80c88b67bec21710689_icgraph">
+<area shape="rect" title="Устанавливает новую категорию задачи" alt="" coords="678,39,880,79"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a1eb59033ea2ca2caf351d917d1511cf1" title=" " alt="" coords="455,5,630,46"/>
+<area shape="poly" title=" " alt="" coords="660,43,631,41,631,35,665,43"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a37244d4fc30d349270d91d0a773e805e" title=" " alt="" coords="458,71,627,111"/>
+<area shape="poly" title=" " alt="" coords="666,74,628,82,627,77,660,75"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title=" " alt="" coords="238,71,407,111"/>
+<area shape="poly" title=" " alt="" coords="440,91,407,94,407,88,445,91"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,78,190,104"/>
+<area shape="poly" title=" " alt="" coords="219,91,190,94,190,88,224,91"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a1a2e539e816467e5df6588744541071b" name="a1a2e539e816467e5df6588744541071b"></a>
@@ -1241,17 +2001,21 @@ javafx.beans.property </dd></dl>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00062">completed</a>.</p>
 
-<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00246">view.MainController.setupTableColumns()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00774">view.MainController.handleBulkComplete()</a> и <a class="el" href="_main_controller_8java_source.html#l00385">view.MainController.setupStatusColumn()</a>.</p>
 <div class="dynheader">
 Граф вызова функции:</div>
 <div class="dyncontent">
 <div class="center"><img src="classviewmodel_1_1_task_view_model_a1a2e539e816467e5df6588744541071b_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_a1a2e539e816467e5df6588744541071b_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassviewmodel_1_1_task_view_model_a1a2e539e816467e5df6588744541071b_icgraph" id="aclassviewmodel_1_1_task_view_model_a1a2e539e816467e5df6588744541071b_icgraph">
-<area shape="rect" title="Устанавливает статус выполнения задачи" alt="" coords="455,5,656,46"/>
-<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title="Настраивает колонки таблицы задач" alt="" coords="238,5,407,46"/>
-<area shape="poly" title=" " alt="" coords="437,26,407,28,407,23,442,26"/>
-<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title="Инициализация контроллера" alt="" coords="5,13,190,38"/>
-<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+<area shape="rect" title="Устанавливает статус выполнения задачи" alt="" coords="678,39,880,79"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae8c9426ed1d46eb4f182a4db737d13c1" title=" " alt="" coords="455,5,630,46"/>
+<area shape="poly" title=" " alt="" coords="660,43,631,41,631,35,665,43"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae0c75dcb2f1ff8c7d83a8c1d8f4e9637" title=" " alt="" coords="458,71,627,111"/>
+<area shape="poly" title=" " alt="" coords="666,74,628,82,627,77,660,75"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title=" " alt="" coords="238,71,407,111"/>
+<area shape="poly" title=" " alt="" coords="440,91,407,94,407,88,445,91"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,78,190,104"/>
+<area shape="poly" title=" " alt="" coords="219,91,190,94,190,88,224,91"/>
 </map>
 </div>
 
@@ -1283,6 +2047,22 @@ javafx.beans.property </dd></dl>
 <p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00258">258</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00047">description</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00274">view.MainController.setupDescriptionColumn()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classviewmodel_1_1_task_view_model_a691a9b9777b75eaac085a7f19e062f20_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_a691a9b9777b75eaac085a7f19e062f20_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassviewmodel_1_1_task_view_model_a691a9b9777b75eaac085a7f19e062f20_icgraph" id="aclassviewmodel_1_1_task_view_model_a691a9b9777b75eaac085a7f19e062f20_icgraph">
+<area shape="rect" title="Устанавливает новое описание задачи" alt="" coords="672,5,874,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6559431f69fcf69cfd6d91229df10914" title=" " alt="" coords="455,5,624,46"/>
+<area shape="poly" title=" " alt="" coords="654,26,625,28,625,23,659,26"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title=" " alt="" coords="238,5,407,46"/>
+<area shape="poly" title=" " alt="" coords="437,26,407,28,407,23,442,26"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,13,190,38"/>
+<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1342,6 +2122,18 @@ javafx.beans.property </dd></dl>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00056">priority</a>.</p>
 
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00787">view.MainController.handleBulkPriority()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classviewmodel_1_1_task_view_model_a431f716cf65f5afcb54f969b44b4d380_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_a431f716cf65f5afcb54f969b44b4d380_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassviewmodel_1_1_task_view_model_a431f716cf65f5afcb54f969b44b4d380_icgraph" id="aclassviewmodel_1_1_task_view_model_a431f716cf65f5afcb54f969b44b4d380_icgraph">
+<area shape="rect" title="Устанавливает новый приоритет задачи" alt="" coords="229,5,430,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a2e6cee3bdcb7d5ef5f7d3227b9543601" title=" " alt="" coords="5,5,181,46"/>
+<area shape="poly" title=" " alt="" coords="210,26,181,28,181,23,216,25"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a163f018285b5cba883b0f4adabefa77d" name="a163f018285b5cba883b0f4adabefa77d"></a>
@@ -1399,6 +2191,22 @@ javafx.beans.property </dd></dl>
 <p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00234">234</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00044">title</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00223">view.MainController.setupTitleColumn()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classviewmodel_1_1_task_view_model_ac18ff6fe31191a83d34a265bfaa1cb01_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_ac18ff6fe31191a83d34a265bfaa1cb01_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassviewmodel_1_1_task_view_model_ac18ff6fe31191a83d34a265bfaa1cb01_icgraph" id="aclassviewmodel_1_1_task_view_model_ac18ff6fe31191a83d34a265bfaa1cb01_icgraph">
+<area shape="rect" title="Устанавливает новый заголовок задачи" alt="" coords="672,5,874,46"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a9d857d9734592ea7ec42050493b3a053" title=" " alt="" coords="455,5,624,46"/>
+<area shape="poly" title=" " alt="" coords="654,26,625,28,625,23,659,26"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title=" " alt="" coords="238,5,407,46"/>
+<area shape="poly" title=" " alt="" coords="437,26,407,28,407,23,442,26"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,13,190,38"/>
+<area shape="poly" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1525,7 +2333,7 @@ javafx.beans.property </dd></dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Строка в формате "TaskViewModel{title='...', priority=..., completed=...}"</dd></dl>
 <p>@overrides Object.toString() </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00622">622</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00623">623</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00062">completed</a>, <a class="el" href="_task_view_model_8java_source.html#l00056">priority</a> и <a class="el" href="_task_view_model_8java_source.html#l00044">title</a>.</p>
 
@@ -1548,14 +2356,35 @@ javafx.beans.property </dd></dl>
 
 <p>Обновляет ViewModel на основе изменений в модели </p>
 <p>Синхронизирует все свойства ViewModel с текущими значениями из связанного объекта <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a>. Используется при внешних изменениях модели, которые не были инициированы через UI.</p>
-<dl class="section note"><dt>Заметки</dt><dd>Этот метод следует вызывать при изменении модели <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a> извне, например, при загрузке задач из файла или изменении через <a class="el" href="classmodel_1_1_task_manager.html" title="Менеджер задач - центральный класс для управления задачами">TaskManager</a>.</dd></dl>
-<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classmodel_1_1_task_manager.html" title="Менеджер задач - центральный класс для управления задачами">TaskManager</a> </dd>
+<dl class="section note"><dt>Заметки</dt><dd>Этот метод следует вызывать при изменении модели <a class="el" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении">Task</a> извне, например, при загрузке задач из файла или изменении через <a class="el" href="classmodel_1_1_task_manager.html" title="Центральный менеджер задач (Singleton).">TaskManager</a>.</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classmodel_1_1_task_manager.html" title="Центральный менеджер задач (Singleton).">TaskManager</a> </dd>
 <dd>
 <a class="el" href="classutil_1_1_json_util.html" title="Утилита для загрузки и сохранения задач в формате JSON.">util.JsonUtil</a> </dd></dl>
 
 <p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00604">604</a></p>
 
-<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00059">category</a>, <a class="el" href="_task_view_model_8java_source.html#l00062">completed</a>, <a class="el" href="_task_view_model_8java_source.html#l00047">description</a>, <a class="el" href="_task_view_model_8java_source.html#l00053">endTime</a>, <a class="el" href="_task_view_model_8java_source.html#l00065">overdue</a>, <a class="el" href="_task_view_model_8java_source.html#l00056">priority</a>, <a class="el" href="_task_view_model_8java_source.html#l00050">startTime</a>, <a class="el" href="_task_view_model_8java_source.html#l00071">task</a> и <a class="el" href="_task_view_model_8java_source.html#l00044">title</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_view_model_8java_source.html#l00059">category</a>, <a class="el" href="_task_view_model_8java_source.html#l00062">completed</a>, <a class="el" href="_task_view_model_8java_source.html#l00068">createdAt</a>, <a class="el" href="_task_view_model_8java_source.html#l00047">description</a>, <a class="el" href="_task_view_model_8java_source.html#l00053">endTime</a>, <a class="el" href="_task_view_model_8java_source.html#l00065">overdue</a>, <a class="el" href="_task_view_model_8java_source.html#l00056">priority</a>, <a class="el" href="_task_view_model_8java_source.html#l00050">startTime</a>, <a class="el" href="_task_view_model_8java_source.html#l00071">task</a> и <a class="el" href="_task_view_model_8java_source.html#l00044">title</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l00747">view.MainController.openEditDialog()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classviewmodel_1_1_task_view_model_a61d0e437b7d85c8ec2462d15b7ef58e1_icgraph.png" border="0" usemap="#aclassviewmodel_1_1_task_view_model_a61d0e437b7d85c8ec2462d15b7ef58e1_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassviewmodel_1_1_task_view_model_a61d0e437b7d85c8ec2462d15b7ef58e1_icgraph" id="aclassviewmodel_1_1_task_view_model_a61d0e437b7d85c8ec2462d15b7ef58e1_icgraph">
+<area shape="rect" title="Обновляет ViewModel на основе изменений в модели" alt="" coords="892,63,1114,103"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4766825edbb089c262ba6ee17ea273f8" title=" " alt="" coords="678,63,844,103"/>
+<area shape="poly" title=" " alt="" coords="873,83,844,86,844,80,878,83"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a157c635caf5c9cc208923226f28274e0" title=" " alt="" coords="460,5,625,46"/>
+<area shape="poly" title=" " alt="" coords="664,58,623,49,623,44,669,58"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a35f2a1470868c1e281d8750ab39baa5f" title=" " alt="" coords="238,35,407,75"/>
+<area shape="poly" title=" " alt="" coords="661,78,407,63,407,58,666,76"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afdc5d6820d84e41d7d0f86e633eba6a5" title=" " alt="" coords="455,120,630,161"/>
+<area shape="poly" title=" " alt="" coords="669,107,623,122,622,117,664,108"/>
+<area shape="poly" title=" " alt="" coords="442,39,408,46,407,41,448,38"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,42,190,68"/>
+<area shape="poly" title=" " alt="" coords="219,56,191,58,189,52,224,54"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1612,7 +2441,7 @@ javafx.beans.property </dd></dl>
 
 <p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00062">62</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00370">completedProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00565">getStatusText()</a>, <a class="el" href="_task_view_model_8java_source.html#l00362">isCompleted()</a>, <a class="el" href="_task_view_model_8java_source.html#l00380">setCompleted()</a>, <a class="el" href="_task_view_model_8java_source.html#l00153">setupBindings()</a>, <a class="el" href="_task_view_model_8java_source.html#l00622">toString()</a> и <a class="el" href="_task_view_model_8java_source.html#l00604">updateFromModel()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00370">completedProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00565">getStatusText()</a>, <a class="el" href="_task_view_model_8java_source.html#l00362">isCompleted()</a>, <a class="el" href="_task_view_model_8java_source.html#l00380">setCompleted()</a>, <a class="el" href="_task_view_model_8java_source.html#l00153">setupBindings()</a>, <a class="el" href="_task_view_model_8java_source.html#l00623">toString()</a> и <a class="el" href="_task_view_model_8java_source.html#l00604">updateFromModel()</a>.</p>
 
 </div>
 </div>
@@ -1640,7 +2469,7 @@ javafx.beans.property </dd></dl>
 
 <p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00068">68</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00412">createdAtProperty()</a> и <a class="el" href="_task_view_model_8java_source.html#l00404">getCreatedAt()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00412">createdAtProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00404">getCreatedAt()</a> и <a class="el" href="_task_view_model_8java_source.html#l00604">updateFromModel()</a>.</p>
 
 </div>
 </div>
@@ -1784,7 +2613,7 @@ javafx.beans.property </dd></dl>
 
 <p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00041">41</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00637">equals()</a> и <a class="el" href="_task_view_model_8java_source.html#l00210">idProperty()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00638">equals()</a> и <a class="el" href="_task_view_model_8java_source.html#l00210">idProperty()</a>.</p>
 
 </div>
 </div>
@@ -1840,7 +2669,7 @@ javafx.beans.property </dd></dl>
 
 <p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00056">56</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00314">getPriority()</a>, <a class="el" href="_task_view_model_8java_source.html#l00481">getPriorityColor()</a>, <a class="el" href="_task_view_model_8java_source.html#l00470">getPriorityDisplay()</a>, <a class="el" href="_task_view_model_8java_source.html#l00492">getPriorityIconName()</a>, <a class="el" href="_task_view_model_8java_source.html#l00322">priorityProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00330">setPriority()</a>, <a class="el" href="_task_view_model_8java_source.html#l00153">setupBindings()</a>, <a class="el" href="_task_view_model_8java_source.html#l00622">toString()</a> и <a class="el" href="_task_view_model_8java_source.html#l00604">updateFromModel()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00314">getPriority()</a>, <a class="el" href="_task_view_model_8java_source.html#l00481">getPriorityColor()</a>, <a class="el" href="_task_view_model_8java_source.html#l00470">getPriorityDisplay()</a>, <a class="el" href="_task_view_model_8java_source.html#l00492">getPriorityIconName()</a>, <a class="el" href="_task_view_model_8java_source.html#l00322">priorityProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00330">setPriority()</a>, <a class="el" href="_task_view_model_8java_source.html#l00153">setupBindings()</a>, <a class="el" href="_task_view_model_8java_source.html#l00623">toString()</a> и <a class="el" href="_task_view_model_8java_source.html#l00604">updateFromModel()</a>.</p>
 
 </div>
 </div>
@@ -1954,7 +2783,7 @@ javafx.beans.property </dd></dl>
 
 <p class="definition">См. определение в файле <a class="el" href="_task_view_model_8java_source.html">TaskViewModel.java</a> строка <a class="el" href="_task_view_model_8java_source.html#l00044">44</a></p>
 
-<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00218">getTitle()</a>, <a class="el" href="_task_view_model_8java_source.html#l00234">setTitle()</a>, <a class="el" href="_task_view_model_8java_source.html#l00153">setupBindings()</a>, <a class="el" href="_task_view_model_8java_source.html#l00226">titleProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00622">toString()</a> и <a class="el" href="_task_view_model_8java_source.html#l00604">updateFromModel()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_task_view_model_8java_source.html#l00218">getTitle()</a>, <a class="el" href="_task_view_model_8java_source.html#l00234">setTitle()</a>, <a class="el" href="_task_view_model_8java_source.html#l00153">setupBindings()</a>, <a class="el" href="_task_view_model_8java_source.html#l00226">titleProperty()</a>, <a class="el" href="_task_view_model_8java_source.html#l00623">toString()</a> и <a class="el" href="_task_view_model_8java_source.html#l00604">updateFromModel()</a>.</p>
 
 </div>
 </div>

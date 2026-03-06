@@ -28,7 +28,7 @@
   <td id="projectalign">
    <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">JavaFX приложение для управления задачами с новогодней темой</div>
+   <div id="projectbrief">JavaFX ToDo-приложение с SQLite, уведомлениями и летней темой</div>
   </td>
  </tr>
  </tbody>
@@ -92,27 +92,41 @@ $(function(){initNavTree('functions_c.html','',''); });
 <div class="textblock">Список всех членов классов со ссылками на классы, к которым они принадлежат.</div>
 
 <h3 class="doxsection"><a id="index_c" name="index_c"></a>- c -</h3><ul>
+<li>calendarAddButton&#160;:&#160;<a class="el" href="classview_1_1_main_controller.html#a0f23068cbd8f4cfb43f64958d7393dcc">view.MainController</a></li>
+<li>calendarExportButton&#160;:&#160;<a class="el" href="classview_1_1_main_controller.html#a2d784828311e971042800c887be5ef96">view.MainController</a></li>
+<li>calendarPicker&#160;:&#160;<a class="el" href="classview_1_1_main_controller.html#a25e4adad7579a8773f55ec42668b13aa">view.MainController</a></li>
+<li>calendarSummaryLabel&#160;:&#160;<a class="el" href="classview_1_1_main_controller.html#abb7d342c49e5b8018f7fc350eafe3cfe">view.MainController</a></li>
+<li>calendarTaskList&#160;:&#160;<a class="el" href="classview_1_1_main_controller.html#ae71634cd85f5f2d2fc5c577686fa9345">view.MainController</a></li>
 <li>cancelButton&#160;:&#160;<a class="el" href="classview_1_1_new_task_controller.html#a27bc507ea73eb84fc79fa103e55c44de">view.NewTaskController</a></li>
 <li>Category()&#160;:&#160;<a class="el" href="enummodel_1_1_category.html#a6e338cb2f171d3dd42fc7698d864e9b5">model.Category</a></li>
 <li>category&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a084412f7db98a3a81a77761a22e6d00c">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#a7fe0ba6c6faa0f7cfe0ff14c3dc88f02">viewmodel.TaskViewModel</a></li>
-<li>categoryColumn&#160;:&#160;<a class="el" href="classview_1_1_main_controller.html#a9650b688c33a565ff303aad7a0a0364e">view.MainController</a></li>
+<li>categoryChart&#160;:&#160;<a class="el" href="classview_1_1_main_controller.html#a1fc597d70a83096ccc5f9495b0eff1d2">view.MainController</a></li>
+<li>categoryColumn&#160;:&#160;<a class="el" href="classview_1_1_main_controller.html#ad299127a3ea007c9ad99c47a03c54d94">view.MainController</a></li>
 <li>categoryCombo&#160;:&#160;<a class="el" href="classview_1_1_new_task_controller.html#ade97f5d5ee809bda37c5e4bd33cf8d37">view.NewTaskController</a></li>
 <li>categoryProperty()&#160;:&#160;<a class="el" href="classviewmodel_1_1_task_view_model.html#af4b66ae3828898e18e44ba926a565cbe">viewmodel.TaskViewModel</a></li>
-<li>checkAllTasksOverdue()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#a6ff214cd422dcd5f0d8c5d573cd251b6">model.TaskManager</a></li>
+<li>CHECK_INTERVAL_SECONDS&#160;:&#160;<a class="el" href="classutil_1_1_task_reminder_service.html#a2c925d8e4294056f30682278f5590837">util.TaskReminderService</a></li>
+<li>checkAllTasksOverdue()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#ad965ff12626fdfe14240873d272f1625">model.TaskManager</a></li>
 <li>checkOverdue()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a51d5d85ac6843e7c4631f7ab9b24853e">model.Task</a></li>
-<li>circle&#160;:&#160;<a class="el" href="classview_1_1_main_controller_1_1_snowflake_data.html#a18f663947362a2ffbc1243cb8ce393c2">view.MainController.SnowflakeData</a>, <a class="el" href="classview_1_1_snowflake_animation_1_1_snowflake.html#a8d4537ce1fd08a8521160cf99f7d4ef4">view.SnowflakeAnimation.Snowflake</a></li>
-<li>clearAllTasks()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#adcdfb8fc100b092808161ba2a72d4ee5">model.TaskManager</a>, <a class="el" href="classutil_1_1_json_util.html#ae911700fb851d4f6e7a7e4283ab3f654">util.JsonUtil</a></li>
-<li>color&#160;:&#160;<a class="el" href="enummodel_1_1_category.html#a7fd966ef14b6ec1099efa7f53d262f49">model.Category</a>, <a class="el" href="enummodel_1_1_priority.html#aaa3e4c889a0937ed6ce37b26bf9cc2f1">model.Priority</a></li>
+<li>checkTasks()&#160;:&#160;<a class="el" href="classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462">util.TaskReminderService</a></li>
+<li>clearAllTasks()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#a92eb5ae0395f835031c1692ef7e4f046">model.TaskManager</a>, <a class="el" href="classutil_1_1_json_util.html#ae911700fb851d4f6e7a7e4283ab3f654">util.JsonUtil</a></li>
+<li>close()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#a6e9c51f1937eb96cb69f7644090d19d0">model.TaskManager</a>, <a class="el" href="classrepository_1_1_database_manager.html#a525069947a9b68427172695e046619dc">repository.DatabaseManager</a></li>
+<li>color&#160;:&#160;<a class="el" href="enummodel_1_1_category.html#a7fd966ef14b6ec1099efa7f53d262f49">model.Category</a>, <a class="el" href="enummodel_1_1_priority.html#aaa3e4c889a0937ed6ce37b26bf9cc2f1">model.Priority</a>, <a class="el" href="classmodel_1_1_tag.html#a240fdcd1bc026decb3cd1cb059a46a2e">model.Tag</a></li>
 <li>completed&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a05c129aa054e0d7d98d701724f7956da">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#abac2ca51dc0b6b90ff866c71c3371930">viewmodel.TaskViewModel</a></li>
 <li>completedProperty()&#160;:&#160;<a class="el" href="classviewmodel_1_1_task_view_model.html#a99d8237ca04d46fdcc2f00c04ee064f4">viewmodel.TaskViewModel</a></li>
+<li>completionChart&#160;:&#160;<a class="el" href="classview_1_1_main_controller.html#a292746b6698ffec612c1a748874e2dab">view.MainController</a></li>
+<li>connection&#160;:&#160;<a class="el" href="classrepository_1_1_database_manager.html#a596dc25715246e71f4625c3ed1eb1c4a">repository.DatabaseManager</a></li>
 <li>convertTasksToJson()&#160;:&#160;<a class="el" href="classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243">util.JsonUtil</a></li>
-<li>createBackup()&#160;:&#160;<a class="el" href="classutil_1_1_json_util.html#a3dd1f85ca03096b50444f662632f0e01">util.JsonUtil</a></li>
+<li>createBackup()&#160;:&#160;<a class="el" href="classutil_1_1_database_migrator.html#a0ea23a994fcf0f7630ecaaea368f48e7">util.DatabaseMigrator</a>, <a class="el" href="classutil_1_1_json_util.html#a3dd1f85ca03096b50444f662632f0e01">util.JsonUtil</a></li>
 <li>createButton&#160;:&#160;<a class="el" href="classview_1_1_new_task_controller.html#acb6273d4d43093cfca439fa7726ee94a">view.NewTaskController</a></li>
 <li>createdAt&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a20967dcf39425b7ec0e2aecec7b6f9a4">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#ae66ade7b1fc8d06fd1dfba6560f94ad3">viewmodel.TaskViewModel</a></li>
 <li>createdAtProperty()&#160;:&#160;<a class="el" href="classviewmodel_1_1_task_view_model.html#a46792a8fe06ca7f494a3253118f72da7">viewmodel.TaskViewModel</a></li>
 <li>createdTask&#160;:&#160;<a class="el" href="classview_1_1_new_task_controller.html#ad986e4c590209dabc8ea088365828014">view.NewTaskController</a></li>
-<li>createSnowflake()&#160;:&#160;<a class="el" href="classview_1_1_snowflake_animation.html#a6d24131cdec8106f0705a107f30a538a">view.SnowflakeAnimation</a></li>
-<li>createSnowflakesForWindow()&#160;:&#160;<a class="el" href="classview_1_1_main_controller.html#ab66a02b22de6d12575196237192dbc81">view.MainController</a></li>
+<li>createNextRecurringTask()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#aa04652e119515ef085759f4b22f39462">model.TaskManager</a></li>
+<li>createTables()&#160;:&#160;<a class="el" href="classrepository_1_1_database_manager.html#a0f0fdcc1c89621e54aba873524c8785c">repository.DatabaseManager</a></li>
+<li>currentPlayer&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#affdfb9cb58c991a2c3a6b3b18228c2c7">util.AudioManager</a></li>
+<li>currentTrackIndex&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a4d147a5aa1c070faec91594ce67d141f">util.AudioManager</a></li>
+<li>customAccentColorPicker&#160;:&#160;<a class="el" href="classview_1_1_main_controller.html#a9a413036036cf0cae5c1abc15ec186c7">view.MainController</a></li>
+<li>customBgColorPicker&#160;:&#160;<a class="el" href="classview_1_1_main_controller.html#a48bd5c5c0cbd8008c8c7bb5f05c07c9a">view.MainController</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

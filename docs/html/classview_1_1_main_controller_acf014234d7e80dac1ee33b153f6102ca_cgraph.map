@@ -1,0 +1,7 @@
+<map id="view.MainController.showCategoryDialog" name="view.MainController.showCategoryDialog">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,174,46"/>
+<area shape="rect" id="Node000002" href="$enummodel_1_1_category.html#a8a5c20cba2237009b02d6b351785e64e" title=" " alt="" coords="222,13,442,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,23,209,25,203,26,174,28"/>
+<area shape="rect" id="Node000003" href="$enummodel_1_1_category.html#a6e338cb2f171d3dd42fc7698d864e9b5" title="Конструктор категории" alt="" coords="490,13,658,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="442,23,477,26,472,26,443,28"/>
+</map>

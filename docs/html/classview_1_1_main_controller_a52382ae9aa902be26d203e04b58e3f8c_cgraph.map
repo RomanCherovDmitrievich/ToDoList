@@ -1,0 +1,9 @@
+<map id="view.MainController.setupDeadlineColumn" name="view.MainController.setupDeadlineColumn">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,175,96"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_main_controller.html#a6e193c4e1514d1cdcc4ef1adc5971f2c" title=" " alt="" coords="223,5,433,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,53,259,34,254,37,176,58"/>
+<area shape="rect" id="Node000003" href="$classviewmodel_1_1_task_view_model.html#a6b568ef75542da4868a533844bbbe3a1" title="Проверяет, выполнена ли задача" alt="" coords="231,55,424,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="174,73,218,75,213,76,175,78"/>
+<area shape="rect" id="Node000004" href="$classviewmodel_1_1_task_view_model.html#a81effd078fee106eea52436907468ed9" title="Проверяет, просрочена ли задача" alt="" coords="231,120,424,161"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="167,94,239,115,234,117,166,99"/>
+</map>

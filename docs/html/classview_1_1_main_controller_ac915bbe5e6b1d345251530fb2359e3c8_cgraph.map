@@ -1,0 +1,9 @@
+<map id="view.MainController.setupSearch" name="view.MainController.setupSearch">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,71,175,111"/>
+<area shape="rect" id="Node000002" href="$classviewmodel_1_1_task_view_model.html#ad9417fde49996b27e6554ff9c72582a3" title="Возвращает отображаемое имя категории" alt="" coords="223,5,424,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,68,236,49,231,52,166,73"/>
+<area shape="rect" id="Node000003" href="$classviewmodel_1_1_task_view_model.html#a046488b4a90fb611ff40402bada134b0" title="Возвращает описание задачи" alt="" coords="223,71,424,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="175,88,210,90,204,92,176,94"/>
+<area shape="rect" id="Node000004" href="$classviewmodel_1_1_task_view_model.html#a1a618ae9eecfd3fefadebd848a99ec92" title="Возвращает заголовок задачи" alt="" coords="223,136,424,177"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="165,109,236,131,231,132,165,115"/>
+</map>

@@ -1,0 +1,29 @@
+<map id="view.NewTaskController.setEditingTask" name="view.NewTaskController.setEditingTask">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,270,188,310"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_new_task_controller.html#a16da7a84bf64eb816ba4075b9b34f325" title=" " alt="" coords="236,270,431,310"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,288,222,289,218,292,189,293"/>
+<area shape="rect" id="Node000003" href="$classmodel_1_1_task.html#a79d344fdb9abdebc5978f3936f7782dd" title="Возвращает категорию задачи" alt="" coords="504,5,667,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="338,268,354,221,383,159,423,94,449,65,477,40,491,34,487,37,481,44,452,69,427,98,387,161,359,223,343,271"/>
+<area shape="rect" id="Node000004" href="$classmodel_1_1_task.html#a8dc5a073ec12dc2747bda501f29a0127" title="Возвращает описание задачи" alt="" coords="497,55,673,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="341,268,360,230,390,181,429,131,452,109,478,89,489,85,484,89,480,94,456,113,433,135,394,184,365,232,346,271"/>
+<area shape="rect" id="Node000005" href="$enummodel_1_1_category.html#a7b617d5f06ca4cb136d681b1bd2e8d7d" title="Возвращает читаемое имя категории" alt="" coords="479,104,691,130"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="346,268,399,203,436,168,478,139,491,134,487,137,480,143,439,172,403,207,350,271"/>
+<area shape="rect" id="Node000006" href="$enummodel_1_1_priority.html#a3cf5e815f238abd0cf21096783fea607" title="Возвращает читаемое имя приоритета" alt="" coords="485,153,685,179"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="357,267,410,227,443,206,478,188,497,183,492,186,480,193,446,210,413,231,360,271"/>
+<area shape="rect" id="Node000007" href="$classmodel_1_1_task.html#a7a97e0aae6d6edf514a6b7442ce76232" title="Возвращает время окончания задачи" alt="" coords="504,203,666,228"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="389,267,478,237,507,231,503,234,480,242,391,272"/>
+<area shape="rect" id="Node000008" href="$classmodel_1_1_task.html#a84dce864c8b8cc246e25e11d9cf200ca" title="Возвращает приоритет задачи" alt="" coords="510,252,661,278"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="431,278,496,273,492,275,432,283"/>
+<area shape="rect" id="Node000009" href="$classmodel_1_1_task.html#a63b137fede1540f1191e2b03f6b145b6" title=" " alt="" coords="485,301,685,327"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="431,297,472,302,467,304,432,302"/>
+<area shape="rect" id="Node000010" href="$classmodel_1_1_task.html#a06aae2333c73d9d8d665c02507403d23" title=" " alt="" coords="483,351,687,376"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="391,308,480,337,509,346,503,347,478,342,392,314"/>
+<area shape="rect" id="Node000011" href="$classmodel_1_1_task.html#a345f13673c0e68e1fa8272c040926b76" title=" " alt="" coords="484,400,686,441"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="360,308,414,348,480,386,495,395,489,395,478,391,412,352,360,314"/>
+<area shape="rect" id="Node000012" href="$classmodel_1_1_task.html#aafb825513f5c3287cb724ddf5943ec03" title="Возвращает время начала задачи" alt="" coords="502,465,669,491"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="348,308,400,379,438,418,480,451,493,459,488,459,478,455,434,422,396,383,346,313"/>
+<area shape="rect" id="Node000013" href="$classmodel_1_1_task.html#a3016babcf59132145ef35906075ea109" title="Возвращает заголовок задачи" alt="" coords="518,515,653,540"/>
+<area shape="poly" id="edge12_Node000002_Node000013" title=" " alt="" coords="343,308,363,351,392,403,432,457,455,481,480,501,505,516,500,515,478,506,451,485,427,460,388,406,359,354,342,314"/>
+<area shape="rect" id="Node000014" href="$classview_1_1_new_task_controller.html#a51493073039f5fb340a0389271a500f8" title=" " alt="" coords="484,564,687,605"/>
+<area shape="poly" id="edge13_Node000002_Node000014" title=" " alt="" coords="341,309,359,360,387,424,427,492,452,524,481,551,486,557,480,555,477,555,448,527,423,496,382,427,354,361,339,314"/>
+</map>

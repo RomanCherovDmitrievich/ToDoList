@@ -1,0 +1,17 @@
+<map id="model.TaskManager.removeTask" name="model.TaskManager.removeTask">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,218,56"/>
+<area shape="rect" id="Node000002" href="$classmodel_1_1_task_manager.html#a0c065b1a2379283891f0ee94fa5c1ef4" title=" " alt="" coords="266,23,463,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,41,253,43,248,44,218,46"/>
+<area shape="rect" id="Node000003" href="$classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421" title="Сохраняет все задачи в JSON файл" alt="" coords="511,31,668,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="463,41,498,43,493,44,463,46"/>
+<area shape="rect" id="Node000004" href="$classutil_1_1_json_util.html#a6acc14b51427ce85235d8981f801d734" title="Возвращает полный путь к файлу задач" alt="" coords="735,5,896,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="668,32,717,29,723,29,669,37"/>
+<area shape="rect" id="Node000005" href="$classutil_1_1_json_util.html#a67200ee9448e6b079ca9ea49200dec30" title="Сохраняет задачи в указанный путь" alt="" coords="716,55,915,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="669,49,704,55,698,55,668,54"/>
+<area shape="rect" id="Node000006" href="$classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="963,47,1135,88"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="915,65,950,67,944,68,915,70"/>
+<area shape="rect" id="Node000007" href="$classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="1183,55,1348,80"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1135,65,1170,67,1165,68,1135,70"/>
+<area shape="rect" id="Node000008" href="$classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="1396,55,1559,80"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1348,65,1383,67,1378,68,1348,70"/>
+</map>

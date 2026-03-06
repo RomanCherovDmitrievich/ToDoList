@@ -25,7 +25,13 @@
 var NAVTREE =
 [
   [ "Умный планировщик задач (To-Do List)", "index.html", [
-    [ "Умный планировщик задач - Документация", "index.html", "index" ],
+    [ "ToDoList (Cross-platform Edition)", "index.html", "index" ],
+    [ "Схема Базы Данных", "database_schema_page.html", [
+      [ "Обзор", "database_schema_page.html#database_overview", null ],
+      [ "Таблицы", "database_schema_page.html#database_tables", null ],
+      [ "Индексы", "database_schema_page.html#database_indexes", null ],
+      [ "Где посмотреть SQL", "database_schema_page.html#database_file", null ]
+    ] ],
     [ "Ошибки", "bug.html", null ],
     [ "Пакеты", "namespaces.html", [
       [ "Список пакетов", "namespaces.html", "namespaces_dup" ]
@@ -36,7 +42,7 @@ var NAVTREE =
       [ "Иерархия классов", "hierarchy.html", "hierarchy" ],
       [ "Члены классов", "functions.html", [
         [ "Указатель", "functions.html", "functions_dup" ],
-        [ "Функции", "functions_func.html", null ],
+        [ "Функции", "functions_func.html", "functions_func" ],
         [ "Переменные", "functions_vars.html", null ]
       ] ]
     ] ],
@@ -50,8 +56,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "18_100-example.html",
-"classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421",
-"classviewmodel_1_1_task_view_model.html#a78e914dde721b09b9b4f6fef691aef02"
+"classmodel_1_1_task_manager.html#a75d8d9d2268f707974e22863ff7ed376",
+"classutil_1_1_notification_service.html",
+"classview_1_1_main_controller.html#a6bf5b38ee16bd6ca7b2f345072e46e7c",
+"classviewmodel_1_1_task_view_model.html#a1406520ea09048f9fdbeeaa66056ff84",
+"hierarchy.html"
 ];
 
 var SYNCONMSG = 'нажмите на выключить для синхронизации панелей';

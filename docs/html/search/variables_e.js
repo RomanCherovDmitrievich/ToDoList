@@ -1,14 +1,14 @@
 var searchData=
 [
-  ['task_0',['task',['../classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309',1,'viewmodel::TaskViewModel']]],
-  ['taskcreated_1',['taskCreated',['../classview_1_1_new_task_controller.html#ab434a033dba280d670f4fe3d479ff378',1,'view::NewTaskController']]],
-  ['tasklist_2',['taskList',['../classview_1_1_main_controller.html#ae06ddcbecf646568c4570a8d5b5e1c96',1,'view::MainController']]],
-  ['taskmanager_3',['taskManager',['../classview_1_1_main_controller.html#a98518138e35ef80460fb346d3e2b8e4f',1,'view::MainController']]],
-  ['tasks_4',['tasks',['../classmodel_1_1_task_manager.html#a3f4cf909b65371b019c344ceb2c65a6d',1,'model::TaskManager']]],
-  ['tasksfile_5',['tasksFile',['../classutil_1_1_json_util.html#a0c2f57be61fa29ebc99059ce8db4ac93',1,'util::JsonUtil']]],
-  ['tasktable_6',['taskTable',['../classview_1_1_main_controller.html#a913d44ac87626a10112f0dfce47d4779',1,'view::MainController']]],
-  ['time_5fformatter_7',['TIME_FORMATTER',['../classviewmodel_1_1_task_view_model.html#ad7df044a5e274feaa87e002eafdd3afa',1,'viewmodel::TaskViewModel']]],
-  ['title_8',['title',['../classmodel_1_1_task.html#a34c52d9ff8e7da7d626571734c42c3d8',1,'model.Task.title'],['../classviewmodel_1_1_task_view_model.html#a5985ed58b0e977027b51e79a3f17a205',1,'viewmodel.TaskViewModel.title']]],
-  ['titlecolumn_9',['titleColumn',['../classview_1_1_main_controller.html#a024755eb2f6747771ff804d5fc9f89d1',1,'view::MainController']]],
-  ['titlefield_10',['titleField',['../classview_1_1_new_task_controller.html#a161edea567440f779448a4b4c153ea32',1,'view::NewTaskController']]]
+  ['recurrencecombo_0',['recurrenceCombo',['../classview_1_1_new_task_controller.html#a8c77d17608d8f18ddc44bdddafd6dd27',1,'view::NewTaskController']]],
+  ['recurrenceend_1',['recurrenceEnd',['../classmodel_1_1_task.html#a2a19e21429babfab8e29c694ef4a9f2a',1,'model::Task']]],
+  ['recurrenceendpicker_2',['recurrenceEndPicker',['../classview_1_1_new_task_controller.html#a8d7c8b32dd795585d7fe09060b03f5bd',1,'view::NewTaskController']]],
+  ['recurrencehintlabel_3',['recurrenceHintLabel',['../classview_1_1_new_task_controller.html#aff4b037ebc00739d267235b602bc39a8',1,'view::NewTaskController']]],
+  ['recurrencerule_4',['recurrenceRule',['../classmodel_1_1_task.html#add47ecfb43379c26dc8aac3acfcff647',1,'model::Task']]],
+  ['recurrencerulefield_5',['recurrenceRuleField',['../classview_1_1_new_task_controller.html#a6422ce3f8d036de5bc1cbb4bd1f5136d',1,'view::NewTaskController']]],
+  ['redos_6',['REDOS',['../enumutil_1_1_platform_util_1_1_os_family.html#a3b0ad472d2107e3f908946b116f39584',1,'util::PlatformUtil::OsFamily']]],
+  ['reminderoffsetminutes_7',['reminderOffsetMinutes',['../classmodel_1_1_task.html#a65c7c5d16c758cf83b0bc479b859bd28',1,'model.Task.reminderOffsetMinutes'],['../classutil_1_1_notification_settings.html#a61919eb39e30a53d4a5f84d8f1c392a1',1,'util.NotificationSettings.reminderOffsetMinutes']]],
+  ['reminderservice_8',['reminderService',['../classview_1_1_main_controller.html#a2798add663c55fdb237d2554a30da428',1,'view::MainController']]],
+  ['reminderunitchoice_9',['reminderUnitChoice',['../classview_1_1_main_controller.html#a40deb09b2d2a47f09d3c6a8bb5044a0e',1,'view.MainController.reminderUnitChoice'],['../classview_1_1_new_task_controller.html#a012eb5d39fafaa5a4591ea6bcf1afe9c',1,'view.NewTaskController.reminderUnitChoice']]],
+  ['remindervaluespinner_10',['reminderValueSpinner',['../classview_1_1_main_controller.html#adee6663cf12dfba9f75342f8d324f222',1,'view.MainController.reminderValueSpinner'],['../classview_1_1_new_task_controller.html#a1658f7cdc0b15bedf68ca7e68a3a79f1',1,'view.NewTaskController.reminderValueSpinner']]]
 ];

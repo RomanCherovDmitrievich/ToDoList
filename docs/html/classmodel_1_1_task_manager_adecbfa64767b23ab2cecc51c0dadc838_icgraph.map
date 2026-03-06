@@ -1,0 +1,7 @@
+<map id="model.TaskManager.addTask" name="model.TaskManager.addTask">
+<area shape="rect" id="Node000001" title=" " alt="" coords="465,13,655,38"/>
+<area shape="rect" id="Node000002" href="$classmodel_1_1_task_manager.html#aa04652e119515ef085759f4b22f39462" title=" " alt="" coords="240,5,417,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="447,26,418,28,417,23,452,26"/>
+<area shape="rect" id="Node000003" href="$classmodel_1_1_task_manager.html#a552b2534c08e0610e8d4114396984949" title=" " alt="" coords="5,5,192,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="221,26,192,28,192,23,227,25"/>
+</map>

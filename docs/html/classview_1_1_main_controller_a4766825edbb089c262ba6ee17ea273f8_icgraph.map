@@ -1,0 +1,12 @@
+<map id="view.MainController.openEditDialog" name="view.MainController.openEditDialog">
+<area shape="rect" id="Node000001" title=" " alt="" coords="678,63,844,103"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_main_controller.html#a157c635caf5c9cc208923226f28274e0" title=" " alt="" coords="460,5,625,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="664,58,623,49,623,44,669,58"/>
+<area shape="rect" id="Node000003" href="$classview_1_1_main_controller.html#a35f2a1470868c1e281d8750ab39baa5f" title=" " alt="" coords="238,35,407,75"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="661,78,407,63,407,58,666,76"/>
+<area shape="rect" id="Node000005" href="$classview_1_1_main_controller.html#afdc5d6820d84e41d7d0f86e633eba6a5" title=" " alt="" coords="455,120,630,161"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="669,107,623,122,622,117,664,108"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="442,39,408,46,407,41,448,38"/>
+<area shape="rect" id="Node000004" href="$classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,42,190,68"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="219,56,191,58,189,52,224,54"/>
+</map>

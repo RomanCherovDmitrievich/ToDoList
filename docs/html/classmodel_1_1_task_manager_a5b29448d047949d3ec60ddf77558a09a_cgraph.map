@@ -1,0 +1,25 @@
+<map id="model.TaskManager.getStatistics" name="model.TaskManager.getStatistics">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,64,220,90"/>
+<area shape="rect" id="Node000002" href="$classmodel_1_1_task_manager.html#aaad627d6b62312c96ca60d42088b9fbb" title=" " alt="" coords="268,23,476,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="217,61,255,58,250,59,218,66"/>
+<area shape="rect" id="Node000012" href="$classmodel_1_1_task_manager.html#af6f197df2a7bad492ce75ee9c9448c05" title=" " alt="" coords="278,88,466,129"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="220,87,265,95,260,96,220,93"/>
+<area shape="rect" id="Node000003" href="$classmodel_1_1_task_manager.html#a4bd41b58b761b909528ab4786b95a390" title=" " alt="" coords="524,23,742,64"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="476,41,511,43,506,44,477,46"/>
+<area shape="rect" id="Node000004" href="$classmodel_1_1_task_manager.html#ad965ff12626fdfe14240873d272f1625" title=" " alt="" coords="790,23,982,64"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="743,41,778,43,772,44,743,46"/>
+<area shape="rect" id="Node000005" href="$classmodel_1_1_task_manager.html#a0c065b1a2379283891f0ee94fa5c1ef4" title=" " alt="" coords="1030,23,1227,64"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="982,41,1017,43,1011,44,982,46"/>
+<area shape="rect" id="Node000006" href="$classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421" title="Сохраняет все задачи в JSON файл" alt="" coords="1275,31,1432,56"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1227,41,1262,43,1257,44,1227,46"/>
+<area shape="rect" id="Node000007" href="$classutil_1_1_json_util.html#a6acc14b51427ce85235d8981f801d734" title="Возвращает полный путь к файлу задач" alt="" coords="1499,5,1660,31"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1432,32,1481,29,1487,29,1433,37"/>
+<area shape="rect" id="Node000008" href="$classutil_1_1_json_util.html#a67200ee9448e6b079ca9ea49200dec30" title="Сохраняет задачи в указанный путь" alt="" coords="1480,55,1679,80"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="1433,49,1468,55,1462,55,1432,54"/>
+<area shape="rect" id="Node000009" href="$classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="1727,47,1899,88"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1679,65,1714,67,1708,68,1679,70"/>
+<area shape="rect" id="Node000010" href="$classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="1947,55,2112,80"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="1899,65,1934,67,1929,68,1899,70"/>
+<area shape="rect" id="Node000011" href="$classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="2160,55,2323,80"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="2112,65,2147,67,2142,68,2113,70"/>
+</map>

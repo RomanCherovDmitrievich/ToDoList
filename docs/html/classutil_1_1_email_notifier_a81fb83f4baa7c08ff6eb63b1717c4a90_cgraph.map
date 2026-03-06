@@ -1,0 +1,11 @@
+<map id="util.EmailNotifier.writeOutbox" name="util.EmailNotifier.writeOutbox">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,154,46"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_path_resolver.html#ab88418dd91edd05d4458f1fce2f32afa" title=" " alt="" coords="202,13,438,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,23,189,25,184,26,154,28"/>
+<area shape="rect" id="Node000003" href="$classutil_1_1_path_resolver.html#abd3fe2993d257c6e777a1303a872be26" title=" " alt="" coords="486,13,673,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="438,23,473,26,468,26,439,28"/>
+<area shape="rect" id="Node000004" href="$classutil_1_1_platform_util.html#ae1f7127305756e82c242eea124934f5b" title=" " alt="" coords="721,13,890,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="674,23,709,26,703,26,674,28"/>
+<area shape="rect" id="Node000005" href="$classutil_1_1_platform_util.html#ab3325e5522d5be0de30703ddc160f076" title=" " alt="" coords="938,13,1104,38"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="890,23,925,26,920,26,890,28"/>
+</map>

@@ -1,0 +1,18 @@
+<map id="viewmodel.TaskViewModel.getDescription" name="viewmodel.TaskViewModel.getDescription">
+<area shape="rect" id="Node000001" title="Возвращает описание задачи" alt="" coords="944,71,1145,111"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_main_controller.html#acdde80c44920e4098b097591f9741392" title=" " alt="" coords="696,21,878,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="932,67,848,50,848,44,938,67"/>
+<area shape="rect" id="Node000004" href="$classview_1_1_main_controller.html#aafdc8cce09c744e950691a2c00408f27" title=" " alt="" coords="678,78,896,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="925,91,896,94,896,88,931,91"/>
+<area shape="rect" id="Node000008" href="$classview_1_1_main_controller.html#ac915bbe5e6b1d345251530fb2359e3c8" title=" " alt="" coords="238,133,407,174"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="931,112,896,119,629,142,407,154,407,148,628,137,895,114,926,112"/>
+<area shape="rect" id="Node000003" href="$classview_1_1_main_controller.html#a76d42bd03f97bfeaaaa738d6b9db53e6" title=" " alt="" coords="455,5,630,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="678,30,631,31,630,26,683,30"/>
+<area shape="rect" id="Node000005" href="$classview_1_1_main_controller.html#a157c635caf5c9cc208923226f28274e0" title=" " alt="" coords="460,71,625,111"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="660,91,626,94,625,88,665,91"/>
+<area shape="rect" id="Node000006" href="$classview_1_1_main_controller.html#a35f2a1470868c1e281d8750ab39baa5f" title=" " alt="" coords="238,68,407,109"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="442,90,408,92,407,87,448,90"/>
+<area shape="rect" id="Node000007" href="$classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,109,190,134"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="219,104,189,111,188,106,225,102"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="219,140,190,137,190,132,225,139"/>
+</map>

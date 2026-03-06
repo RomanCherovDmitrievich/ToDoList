@@ -1,0 +1,11 @@
+<map id="util.EmailNotifier.sendViaMail" name="util.EmailNotifier.sendViaMail">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,35,197,60"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_email_notifier.html#afe3b480418fca64d178479016f9b0ea6" title=" " alt="" coords="259,5,421,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,33,246,29,241,31,198,38"/>
+<area shape="rect" id="Node000003" href="$classutil_1_1_email_notifier.html#a6cab94683703c93cbcd1d587284e7f20" title=" " alt="" coords="245,55,435,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="197,56,232,62,226,63,197,61"/>
+<area shape="rect" id="Node000004" href="$classutil_1_1_platform_util.html#ae1f7127305756e82c242eea124934f5b" title=" " alt="" coords="483,63,651,88"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="435,73,470,75,465,76,435,78"/>
+<area shape="rect" id="Node000005" href="$classutil_1_1_platform_util.html#ab3325e5522d5be0de30703ddc160f076" title=" " alt="" coords="699,63,866,88"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="652,73,687,75,681,76,652,78"/>
+</map>

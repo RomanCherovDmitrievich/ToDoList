@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['newtaskcontroller_0',['NewTaskController',['../classview_1_1_new_task_controller.html',1,'view']]]
+  ['jsonutil_0',['JsonUtil',['../classutil_1_1_json_util.html',1,'util']]]
 ];

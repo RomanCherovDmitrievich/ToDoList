@@ -1,8 +1,27 @@
 var searchData=
 [
-  ['random_0',['random',['../classview_1_1_main_controller.html#ad92a8438dd70b5ed4ea5e6a259ca61e3',1,'view.MainController.random'],['../classview_1_1_snowflake_animation.html#acc030a7922b49fe9e68f4df1eeea59eb',1,'view.SnowflakeAnimation.random']]],
-  ['refreshtable_1',['refreshTable',['../classview_1_1_main_controller.html#a6c51614865ef9a13038357431ad8ee7c',1,'view::MainController']]],
-  ['reloadmainview_2',['reloadMainView',['../classapp_1_1_main_app.html#a5546682bda948ba9513d649b6aaf33a8',1,'app::MainApp']]],
-  ['removetask_3',['removeTask',['../classmodel_1_1_task_manager.html#a46e1d00e8a9e4c37eaf71795c5d0b1b5',1,'model.TaskManager.removeTask()'],['../classutil_1_1_json_util.html#a9911e93dd04ddd5151397f9a50e2811f',1,'util.JsonUtil.removeTask(String taskId)']]],
-  ['resetdatapath_4',['resetDataPath',['../classutil_1_1_json_util.html#acc37e843c653d0a7ebe4843ef4d7f0a2',1,'util::JsonUtil']]]
+  ['recurrencecombo_0',['recurrenceCombo',['../classview_1_1_new_task_controller.html#a8c77d17608d8f18ddc44bdddafd6dd27',1,'view::NewTaskController']]],
+  ['recurrenceend_1',['recurrenceEnd',['../classmodel_1_1_task.html#a2a19e21429babfab8e29c694ef4a9f2a',1,'model::Task']]],
+  ['recurrenceendpicker_2',['recurrenceEndPicker',['../classview_1_1_new_task_controller.html#a8d7c8b32dd795585d7fe09060b03f5bd',1,'view::NewTaskController']]],
+  ['recurrencehintlabel_3',['recurrenceHintLabel',['../classview_1_1_new_task_controller.html#aff4b037ebc00739d267235b602bc39a8',1,'view::NewTaskController']]],
+  ['recurrencerule_4',['recurrenceRule',['../classmodel_1_1_task.html#add47ecfb43379c26dc8aac3acfcff647',1,'model::Task']]],
+  ['recurrencerulefield_5',['recurrenceRuleField',['../classview_1_1_new_task_controller.html#a6422ce3f8d036de5bc1cbb4bd1f5136d',1,'view::NewTaskController']]],
+  ['recurrenceutil_6',['RecurrenceUtil',['../classutil_1_1_recurrence_util.html',1,'util.RecurrenceUtil'],['../classutil_1_1_recurrence_util.html#ac3c649fecbe5555fa5feac770499e7ef',1,'util.RecurrenceUtil.RecurrenceUtil()']]],
+  ['recurrenceutil_2ejava_7',['RecurrenceUtil.java',['../_recurrence_util_8java.html',1,'']]],
+  ['redos_8',['REDOS',['../enumutil_1_1_platform_util_1_1_os_family.html#a3b0ad472d2107e3f908946b116f39584',1,'util::PlatformUtil::OsFamily']]],
+  ['refreshallviews_9',['refreshAllViews',['../classview_1_1_main_controller.html#a2ae68644e5912e2c7aff36a412b445ba',1,'view::MainController']]],
+  ['refreshplaylist_10',['refreshPlaylist',['../classutil_1_1_audio_manager.html#a04e6d26f9669bac9b360109a9fae574a',1,'util::AudioManager']]],
+  ['reloadtasksfrommanager_11',['reloadTasksFromManager',['../classview_1_1_main_controller.html#adcfc31adcb42e729fab4174830d348fb',1,'view::MainController']]],
+  ['reminderoffsetminutes_12',['reminderOffsetMinutes',['../classmodel_1_1_task.html#a65c7c5d16c758cf83b0bc479b859bd28',1,'model.Task.reminderOffsetMinutes'],['../classutil_1_1_notification_settings.html#a61919eb39e30a53d4a5f84d8f1c392a1',1,'util.NotificationSettings.reminderOffsetMinutes']]],
+  ['reminderservice_13',['reminderService',['../classview_1_1_main_controller.html#a2798add663c55fdb237d2554a30da428',1,'view::MainController']]],
+  ['reminderunitchoice_14',['reminderUnitChoice',['../classview_1_1_main_controller.html#a40deb09b2d2a47f09d3c6a8bb5044a0e',1,'view.MainController.reminderUnitChoice'],['../classview_1_1_new_task_controller.html#a012eb5d39fafaa5a4591ea6bcf1afe9c',1,'view.NewTaskController.reminderUnitChoice']]],
+  ['remindervaluespinner_15',['reminderValueSpinner',['../classview_1_1_main_controller.html#adee6663cf12dfba9f75342f8d324f222',1,'view.MainController.reminderValueSpinner'],['../classview_1_1_new_task_controller.html#a1658f7cdc0b15bedf68ca7e68a3a79f1',1,'view.NewTaskController.reminderValueSpinner']]],
+  ['removetagfromtask_16',['removeTagFromTask',['../classrepository_1_1_database_manager.html#a661113f43546c34cf93d61c1b7e304f7',1,'repository::DatabaseManager']]],
+  ['removetask_17',['removeTask',['../classmodel_1_1_task_manager.html#aa35f43df9eb5e341eba6f55af23ca5f8',1,'model.TaskManager.removeTask()'],['../classutil_1_1_json_util.html#a9911e93dd04ddd5151397f9a50e2811f',1,'util.JsonUtil.removeTask()']]],
+  ['repository_18',['repository',['../namespacerepository.html',1,'']]],
+  ['resetdatapath_19',['resetDataPath',['../classutil_1_1_json_util.html#acc37e843c653d0a7ebe4843ef4d7f0a2',1,'util::JsonUtil']]],
+  ['resolveexternalaudiodirs_20',['resolveExternalAudioDirs',['../classutil_1_1_audio_manager.html#a74db019bafa3f55bc243ae236c150c7e',1,'util::AudioManager']]],
+  ['resolvetheme_21',['resolveTheme',['../classutil_1_1_theme_manager.html#ad2da1c8826c4bf5fee6c2cb0dbbe2f5b',1,'util::ThemeManager']]],
+  ['restorefrombackup_22',['restoreFromBackup',['../classutil_1_1_database_migrator.html#aea6a5dfdcad47388ebda07e015b364b6',1,'util::DatabaseMigrator']]],
+  ['resultsettotask_23',['resultSetToTask',['../classrepository_1_1_database_manager.html#a79fcaa3ae166aa0a2bf2a62b60008da1',1,'repository::DatabaseManager']]]
 ];

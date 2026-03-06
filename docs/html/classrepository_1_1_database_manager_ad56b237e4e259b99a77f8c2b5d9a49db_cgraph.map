@@ -1,0 +1,17 @@
+<map id="repository.DatabaseManager.initializeDatabase" name="repository.DatabaseManager.initializeDatabase">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,128,242,169"/>
+<area shape="rect" id="Node000002" href="$classrepository_1_1_database_manager.html#a0f0fdcc1c89621e54aba873524c8785c" title=" " alt="" coords="293,5,518,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,125,217,91,289,57,312,50,308,53,291,61,219,96,159,130"/>
+<area shape="rect" id="Node000003" href="$classrepository_1_1_database_manager.html#ab11cedc68f3e40fa74cd71dcd3c28d47" title=" " alt="" coords="292,71,520,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="226,125,290,114,285,116,228,130"/>
+<area shape="rect" id="Node000004" href="$classutil_1_1_path_resolver.html#abd3fe2993d257c6e777a1303a872be26" title=" " alt="" coords="312,136,500,161"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="242,146,299,147,294,149,243,151"/>
+<area shape="rect" id="Node000007" href="$classrepository_1_1_database_manager.html#a104e5dac8b06b56fb358902e183b3711" title=" " alt="" coords="290,185,522,226"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="227,167,290,181,285,182,227,172"/>
+<area shape="rect" id="Node000008" href="$classrepository_1_1_database_manager.html#a12107d0489c1b18ad4e574a1f5fc1a36" title=" " alt="" coords="297,251,514,291"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="158,166,219,201,291,235,313,245,307,245,289,240,217,206,157,172"/>
+<area shape="rect" id="Node000005" href="$classutil_1_1_platform_util.html#ae1f7127305756e82c242eea124934f5b" title=" " alt="" coords="570,136,738,161"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="500,146,557,148,552,149,500,151"/>
+<area shape="rect" id="Node000006" href="$classutil_1_1_platform_util.html#ab3325e5522d5be0de30703ddc160f076" title=" " alt="" coords="786,136,953,161"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="739,146,774,148,768,149,739,151"/>
+</map>

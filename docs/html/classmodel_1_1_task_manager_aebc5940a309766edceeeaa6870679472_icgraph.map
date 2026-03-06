@@ -1,0 +1,9 @@
+<map id="model.TaskManager.getAllTasks" name="model.TaskManager.getAllTasks">
+<area shape="rect" id="Node000001" title=" " alt="" coords="510,39,684,79"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462" title=" " alt="" coords="253,5,462,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="492,45,463,43,463,38,497,45"/>
+<area shape="rect" id="Node000004" href="$classmodel_1_1_task_manager.html#a04d933100bf6f82eda40774a677c2472" title=" " alt="" coords="267,71,448,111"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="497,72,448,82,448,76,492,73"/>
+<area shape="rect" id="Node000003" href="$classutil_1_1_task_reminder_service.html#aadd0b77dafd4c390cbdf367b9654aa6c" title=" " alt="" coords="5,5,205,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="235,26,206,28,205,23,240,25"/>
+</map>

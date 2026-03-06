@@ -37,6 +37,8 @@ resolve_javafx_lib() {
   echo ""
 }
 
+OS="$(uname -s 2>/dev/null || echo UNKNOWN)"
+
 JAVAFX_LIB="$(resolve_javafx_lib)"
 if [[ -z "$JAVAFX_LIB" ]]; then
   echo "[package] JavaFX SDK not found. Set JAVAFX_HOME or place javafx-sdk-<version> in project root."
@@ -82,8 +84,6 @@ cp lib/slf4j-nop-2.0.12.jar "$INPUT_DIR/" 2>/dev/null || true
 
 mkdir -p "$INPUT_DIR/javafx"
 cp "$JAVAFX_LIB"/* "$INPUT_DIR/javafx/" 2>/dev/null || true
-
-OS="$(uname -s 2>/dev/null || echo UNKNOWN)"
 
 ICON_OPTION=()
 if [[ -f "src/resources/images/app_icon.png" ]]; then

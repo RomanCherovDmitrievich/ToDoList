@@ -1,0 +1,9 @@
+<map id="view.MainController.showWidget" name="view.MainController.showWidget">
+<area shape="rect" id="Node000001" title=" " alt="" coords="461,39,629,79"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_main_controller.html#aa6adc26184a175f0ddf6030f0c24d046" title=" " alt="" coords="238,5,413,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="443,44,413,42,413,36,448,44"/>
+<area shape="rect" id="Node000003" href="$classview_1_1_main_controller.html#a832ae34bcb138f8090bf8213f1f97de9" title=" " alt="" coords="241,71,410,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="448,73,411,81,410,76,443,74"/>
+<area shape="rect" id="Node000004" href="$classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,78,190,104"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="222,91,190,94,190,88,228,91"/>
+</map>

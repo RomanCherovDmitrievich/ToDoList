@@ -1,0 +1,19 @@
+<map id="repository.DatabaseManager.DatabaseManager" name="repository.DatabaseManager.DatabaseManager">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,128,195,169"/>
+<area shape="rect" id="Node000002" href="$classrepository_1_1_database_manager.html#ad56b237e4e259b99a77f8c2b5d9a49db" title=" " alt="" coords="243,128,479,169"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,146,230,147,225,149,196,151"/>
+<area shape="rect" id="Node000003" href="$classrepository_1_1_database_manager.html#a0f0fdcc1c89621e54aba873524c8785c" title=" " alt="" coords="530,5,756,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="394,125,454,91,526,57,550,50,545,52,528,61,457,96,396,130"/>
+<area shape="rect" id="Node000004" href="$classrepository_1_1_database_manager.html#ab11cedc68f3e40fa74cd71dcd3c28d47" title=" " alt="" coords="530,71,757,111"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="464,125,528,114,522,116,465,130"/>
+<area shape="rect" id="Node000005" href="$classutil_1_1_path_resolver.html#abd3fe2993d257c6e777a1303a872be26" title=" " alt="" coords="550,136,737,161"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="479,146,536,148,531,149,480,151"/>
+<area shape="rect" id="Node000008" href="$classrepository_1_1_database_manager.html#a104e5dac8b06b56fb358902e183b3711" title=" " alt="" coords="527,185,759,226"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="464,167,528,182,522,182,464,172"/>
+<area shape="rect" id="Node000009" href="$classrepository_1_1_database_manager.html#a12107d0489c1b18ad4e574a1f5fc1a36" title=" " alt="" coords="534,251,752,291"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="396,166,457,201,528,235,550,246,545,245,526,240,454,206,395,172"/>
+<area shape="rect" id="Node000006" href="$classutil_1_1_platform_util.html#ae1f7127305756e82c242eea124934f5b" title=" " alt="" coords="807,136,976,161"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="737,146,795,148,789,149,738,151"/>
+<area shape="rect" id="Node000007" href="$classutil_1_1_platform_util.html#ab3325e5522d5be0de30703ddc160f076" title=" " alt="" coords="1024,136,1190,161"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="976,146,1011,148,1006,149,976,151"/>
+</map>

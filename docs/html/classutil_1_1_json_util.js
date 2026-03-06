@@ -1,5 +1,6 @@
 var classutil_1_1_json_util =
 [
+    [ "[static initializer]", "classutil_1_1_json_util.html#a73649da538fbfb23ef608efe55b4fad5", null ],
     [ "addTask", "classutil_1_1_json_util.html#ac6e9a870e12429cc80b4ddf8ba98af0d", null ],
     [ "clearAllTasks", "classutil_1_1_json_util.html#ae911700fb851d4f6e7a7e4283ab3f654", null ],
     [ "clearAllTasks", "classutil_1_1_json_util.html#a6d28c92afdc46b0aeab751d685fde26a", null ],

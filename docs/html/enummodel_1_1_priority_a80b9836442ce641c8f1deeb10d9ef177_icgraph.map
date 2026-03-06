@@ -1,7 +1,9 @@
 <map id="model.Priority.getDefault" name="model.Priority.getDefault">
-<area shape="rect" id="Node000001" title="Возвращает приоритет по умолчанию" alt="" coords="265,31,428,56"/>
-<area shape="rect" id="Node000002" href="$classview_1_1_new_task_controller.html#a9dcf704ac7b311d8bfe516eff8643ad1" title="Инициализация контроллера" alt="" coords="5,5,217,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="246,33,217,32,217,27,252,33"/>
-<area shape="rect" id="Node000003" href="$classmodel_1_1_task.html#ac875313dc638186c0d5cab57f83e7a5c" title="Конструктор для создания новой задачи" alt="" coords="51,55,171,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="246,54,172,64,171,59,252,53"/>
+<area shape="rect" id="Node000001" title="Возвращает приоритет по умолчанию" alt="" coords="524,42,687,68"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_new_task_controller.html#a7feab6d24703217f093e4fc8bbc1eac0" title=" " alt="" coords="265,5,476,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="506,43,476,42,476,36,511,43"/>
+<area shape="rect" id="Node000004" href="$classmodel_1_1_task.html#ac875313dc638186c0d5cab57f83e7a5c" title="Конструктор для создания новой задачи" alt="" coords="310,70,430,96"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="511,66,431,79,431,73,506,67"/>
+<area shape="rect" id="Node000003" href="$classview_1_1_new_task_controller.html#a9dcf704ac7b311d8bfe516eff8643ad1" title=" " alt="" coords="5,13,217,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="247,26,218,28,217,23,252,25"/>
 </map>

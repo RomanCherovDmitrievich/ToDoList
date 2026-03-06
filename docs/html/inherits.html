@@ -28,7 +28,7 @@
   <td id="projectalign">
    <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">JavaFX приложение для управления задачами с новогодней темой</div>
+   <div id="projectbrief">JavaFX ToDo-приложение с SQLite, уведомлениями и летней темой</div>
   </td>
  </tr>
  </tbody>
@@ -98,7 +98,7 @@ $(function(){initNavTree('hierarchy.html','',''); });
 <tr><td><img src="inherit_graph_0.png" border="0" usemap="#a_application" loading="lazy" alt=""/>
 <map name="a_application" id="a_application">
 <area shape="rect" title=" " alt="" coords="5,5,91,31"/>
-<area shape="rect" href="classapp_1_1_main_app.html" title="Главный класс приложения To&#45;Do List." alt="" coords="139,5,236,31"/>
+<area shape="rect" href="classapp_1_1_main_app.html" title="Точка входа JavaFX&#45;приложения." alt="" coords="139,5,236,31"/>
 <area shape="poly" title=" " alt="" coords="106,16,141,18,136,18,106,21"/>
 </map>
 </td></tr>
@@ -112,52 +112,102 @@ $(function(){initNavTree('hierarchy.html','',''); });
 <area shape="rect" href="enummodel_1_1_priority.html" title=" " alt="" coords="5,5,107,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_3.png" border="0" usemap="#amodel_8_task" loading="lazy" alt=""/>
+<tr><td><img src="inherit_graph_3.png" border="0" usemap="#amodel_8_tag" loading="lazy" alt=""/>
+<map name="amodel_8_tag" id="amodel_8_tag">
+<area shape="rect" href="classmodel_1_1_tag.html" title="Класс для представления тега задачи" alt="" coords="5,5,87,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_4.png" border="0" usemap="#amodel_8_task" loading="lazy" alt=""/>
 <map name="amodel_8_task" id="amodel_8_task">
 <area shape="rect" href="classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении" alt="" coords="5,5,94,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_4.png" border="0" usemap="#amodel_8_task_manager" loading="lazy" alt=""/>
+<tr><td><img src="inherit_graph_5.png" border="0" usemap="#amodel_8_task_manager" loading="lazy" alt=""/>
 <map name="amodel_8_task_manager" id="amodel_8_task_manager">
-<area shape="rect" href="classmodel_1_1_task_manager.html" title="Менеджер задач &#45; центральный класс для управления задачами" alt="" coords="5,5,144,31"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html" title="Центральный менеджер задач (Singleton)." alt="" coords="5,5,144,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_5.png" border="0" usemap="#autil_8_audio_manager" loading="lazy" alt=""/>
+<tr><td><img src="inherit_graph_6.png" border="0" usemap="#arepository_8_database_manager" loading="lazy" alt=""/>
+<map name="arepository_8_database_manager" id="arepository_8_database_manager">
+<area shape="rect" href="classrepository_1_1_database_manager.html" title="SQLite DAO для задач и связанных таблиц." alt="" coords="5,5,192,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_7.png" border="0" usemap="#autil_8_audio_manager" loading="lazy" alt=""/>
 <map name="autil_8_audio_manager" id="autil_8_audio_manager">
-<area shape="rect" href="classutil_1_1_audio_manager.html" title="Менеджер для работы с аудио в приложении" alt="" coords="5,5,131,31"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html" title="Менеджер аудио с циклическим плейлистом." alt="" coords="5,5,131,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_6.png" border="0" usemap="#autil_8_json_util" loading="lazy" alt=""/>
+<tr><td><img src="inherit_graph_8.png" border="0" usemap="#autil_8_database_migrator" loading="lazy" alt=""/>
+<map name="autil_8_database_migrator" id="autil_8_database_migrator">
+<area shape="rect" href="classutil_1_1_database_migrator.html" title="Утилита для миграции данных между JSON и базой данных" alt="" coords="5,5,151,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_9.png" border="0" usemap="#autil_8_email_notifier" loading="lazy" alt=""/>
+<map name="autil_8_email_notifier" id="autil_8_email_notifier">
+<area shape="rect" href="classutil_1_1_email_notifier.html" title=" " alt="" coords="5,5,123,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_10.png" border="0" usemap="#autil_8_json_util" loading="lazy" alt=""/>
 <map name="autil_8_json_util" id="autil_8_json_util">
 <area shape="rect" href="classutil_1_1_json_util.html" title="Утилита для загрузки и сохранения задач в формате JSON." alt="" coords="5,5,96,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_7.png" border="0" usemap="#aview_8_main_controller" loading="lazy" alt=""/>
+<tr><td><img src="inherit_graph_11.png" border="0" usemap="#autil_8_notification_service" loading="lazy" alt=""/>
+<map name="autil_8_notification_service" id="autil_8_notification_service">
+<area shape="rect" href="classutil_1_1_notification_service.html" title="Кроссплатформенный сервис системных уведомлений." alt="" coords="5,5,158,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_12.png" border="0" usemap="#autil_8_notification_settings" loading="lazy" alt=""/>
+<map name="autil_8_notification_settings" id="autil_8_notification_settings">
+<area shape="rect" href="classutil_1_1_notification_settings.html" title=" " alt="" coords="5,5,162,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_13.png" border="0" usemap="#autil_8_path_resolver" loading="lazy" alt=""/>
+<map name="autil_8_path_resolver" id="autil_8_path_resolver">
+<area shape="rect" href="classutil_1_1_path_resolver.html" title=" " alt="" coords="5,5,127,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_14.png" border="0" usemap="#autil_8_platform_util" loading="lazy" alt=""/>
+<map name="autil_8_platform_util" id="autil_8_platform_util">
+<area shape="rect" href="classutil_1_1_platform_util.html" title=" " alt="" coords="5,5,117,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_15.png" border="0" usemap="#autil_8_platform_util_8_os_family" loading="lazy" alt=""/>
+<map name="autil_8_platform_util_8_os_family" id="autil_8_platform_util_8_os_family">
+<area shape="rect" href="enumutil_1_1_platform_util_1_1_os_family.html" title=" " alt="" coords="5,5,177,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_16.png" border="0" usemap="#autil_8_recurrence_util" loading="lazy" alt=""/>
+<map name="autil_8_recurrence_util" id="autil_8_recurrence_util">
+<area shape="rect" href="classutil_1_1_recurrence_util.html" title=" " alt="" coords="5,5,135,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_17.png" border="0" usemap="#autil_8_task_reminder_service" loading="lazy" alt=""/>
+<map name="autil_8_task_reminder_service" id="autil_8_task_reminder_service">
+<area shape="rect" href="classutil_1_1_task_reminder_service.html" title="Периодически проверяет задачи и отправляет системные напоминания." alt="" coords="5,5,176,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_18.png" border="0" usemap="#autil_8_theme_manager" loading="lazy" alt=""/>
+<map name="autil_8_theme_manager" id="autil_8_theme_manager">
+<area shape="rect" href="classutil_1_1_theme_manager.html" title=" " alt="" coords="5,5,138,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_19.png" border="0" usemap="#aview_8_main_controller" loading="lazy" alt=""/>
 <map name="aview_8_main_controller" id="aview_8_main_controller">
-<area shape="rect" href="classview_1_1_main_controller.html" title="Контроллер главного окна приложения To&#45;Do List." alt="" coords="5,5,140,31"/>
+<area shape="rect" href="classview_1_1_main_controller.html" title="Контроллер главного окна." alt="" coords="5,5,140,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_8.png" border="0" usemap="#aview_8_main_controller_8_snowflake_data" loading="lazy" alt=""/>
-<map name="aview_8_main_controller_8_snowflake_data" id="aview_8_main_controller_8_snowflake_data">
-<area shape="rect" href="classview_1_1_main_controller_1_1_snowflake_data.html" title="Внутренний класс для хранения данных одной снежинки" alt="" coords="5,5,232,31"/>
+<tr><td><img src="inherit_graph_20.png" border="0" usemap="#aview_8_main_controller_8_sort_mode" loading="lazy" alt=""/>
+<map name="aview_8_main_controller_8_sort_mode" id="aview_8_main_controller_8_sort_mode">
+<area shape="rect" href="enumview_1_1_main_controller_1_1_sort_mode.html" title=" " alt="" coords="5,5,199,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_9.png" border="0" usemap="#aview_8_new_task_controller" loading="lazy" alt=""/>
+<tr><td><img src="inherit_graph_21.png" border="0" usemap="#aview_8_new_task_controller" loading="lazy" alt=""/>
 <map name="aview_8_new_task_controller" id="aview_8_new_task_controller">
-<area shape="rect" href="classview_1_1_new_task_controller.html" title="Контроллер для диалогового окна создания новой задачи" alt="" coords="5,5,167,31"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html" title="Диалог создания/редактирования задач." alt="" coords="5,5,167,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_10.png" border="0" usemap="#aview_8_snowflake_animation" loading="lazy" alt=""/>
-<map name="aview_8_snowflake_animation" id="aview_8_snowflake_animation">
-<area shape="rect" href="classview_1_1_snowflake_animation.html" title="Класс для создания и управления анимацией падающих снежинок" alt="" coords="5,5,175,31"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_11.png" border="0" usemap="#aview_8_snowflake_animation_8_snowflake" loading="lazy" alt=""/>
-<map name="aview_8_snowflake_animation_8_snowflake" id="aview_8_snowflake_animation_8_snowflake">
-<area shape="rect" href="classview_1_1_snowflake_animation_1_1_snowflake.html" title="Внутренний класс для хранения данных одной снежинки" alt="" coords="5,5,179,46"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_12.png" border="0" usemap="#aviewmodel_8_task_view_model" loading="lazy" alt=""/>
+<tr><td><img src="inherit_graph_22.png" border="0" usemap="#aviewmodel_8_task_view_model" loading="lazy" alt=""/>
 <map name="aviewmodel_8_task_view_model" id="aviewmodel_8_task_view_model">
 <area shape="rect" href="classviewmodel_1_1_task_view_model.html" title="ViewModel для отображения задачи в пользовательском интерфейсе" alt="" coords="5,5,185,31"/>
 </map>

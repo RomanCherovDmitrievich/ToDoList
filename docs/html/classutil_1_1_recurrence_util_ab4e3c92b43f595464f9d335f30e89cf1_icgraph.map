@@ -1,0 +1,17 @@
+<map id="util.RecurrenceUtil.nextMonthly" name="util.RecurrenceUtil.nextMonthly">
+<area shape="rect" id="Node000001" title=" " alt="" coords="972,43,1130,83"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_recurrence_util.html#a423beeee65134aaa2faf43630ff147b6" title=" " alt="" coords="758,43,924,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="953,63,924,66,924,60,959,63"/>
+<area shape="rect" id="Node000003" href="$classutil_1_1_recurrence_util.html#a3414315b6a1a0c186a568273c2278838" title=" " alt="" coords="552,43,710,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="740,63,711,66,711,60,745,63"/>
+<area shape="rect" id="Node000004" href="$classmodel_1_1_task_manager.html#aa04652e119515ef085759f4b22f39462" title=" " alt="" coords="296,9,473,50"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="534,51,474,44,474,39,539,50"/>
+<area shape="rect" id="Node000006" href="$classview_1_1_new_task_controller.html#a66c1573253964fcde19808f4d57ba3e3" title=" " alt="" coords="265,78,504,104"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="534,74,503,80,503,75,539,73"/>
+<area shape="rect" id="Node000005" href="$classmodel_1_1_task_manager.html#a552b2534c08e0610e8d4114396984949" title=" " alt="" coords="18,5,204,46"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="277,29,205,30,204,24,282,27"/>
+<area shape="rect" id="Node000007" href="$classview_1_1_new_task_controller.html#a337be480aeacacd900c710627a27a63e" title=" " alt="" coords="10,71,212,111"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="247,92,213,94,212,88,252,90"/>
+<area shape="rect" id="Node000008" href="$classview_1_1_new_task_controller.html#a9dcf704ac7b311d8bfe516eff8643ad1" title=" " alt="" coords="5,136,217,161"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="308,107,176,137,175,132,302,108"/>
+</map>

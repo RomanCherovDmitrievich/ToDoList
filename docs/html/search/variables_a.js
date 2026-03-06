@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['other_0',['OTHER',['../enummodel_1_1_category.html#a8d66f9d03f0de46b44d673f33e1d9039',1,'model::Category']]],
-  ['overdue_1',['overdue',['../classmodel_1_1_task.html#a02c952a8c39fc4492b71a9e303d5f3ed',1,'model.Task.overdue'],['../classviewmodel_1_1_task_view_model.html#a24805572ae9b3de96a4dc520c0496f43',1,'viewmodel.TaskViewModel.overdue']]]
+  ['mac_0',['MAC',['../enumutil_1_1_platform_util_1_1_os_family.html#abcae9ae2cd5dedd889bbab5f70f6f68c',1,'util::PlatformUtil::OsFamily']]],
+  ['maintabpane_1',['mainTabPane',['../classview_1_1_main_controller.html#a9740f6751739f0a5499d2e2b4f8635d2',1,'view::MainController']]],
+  ['manual_2',['MANUAL',['../enumview_1_1_main_controller_1_1_sort_mode.html#ad8f284cdd37df9afc786b36521b1c132',1,'view::MainController::SortMode']]],
+  ['mastervolume_3',['masterVolume',['../classutil_1_1_audio_manager.html#ac22819019199a22ad9a753dfc4fc6f6d',1,'util::AudioManager']]],
+  ['musicenabledcheck_4',['musicEnabledCheck',['../classview_1_1_main_controller.html#a1b1f6bcab879d32a0826257296cb9b67',1,'view::MainController']]]
 ];

@@ -28,7 +28,7 @@
   <td id="projectalign">
    <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">JavaFX приложение для управления задачами с новогодней темой</div>
+   <div id="projectbrief">JavaFX ToDo-приложение с SQLite, уведомлениями и летней темой</div>
   </td>
  </tr>
  </tbody>
@@ -175,13 +175,23 @@ $(function(){initNavTree('enummodel_1_1_category.html','','enummodel_1_1_categor
 <div class="dyncontent">
 <div class="center"><img src="enummodel_1_1_category_a6e338cb2f171d3dd42fc7698d864e9b5_icgraph.png" border="0" usemap="#aenummodel_1_1_category_a6e338cb2f171d3dd42fc7698d864e9b5_icgraph" loading="lazy" alt=""/></div>
 <map name="aenummodel_1_1_category_a6e338cb2f171d3dd42fc7698d864e9b5_icgraph" id="aenummodel_1_1_category_a6e338cb2f171d3dd42fc7698d864e9b5_icgraph">
-<area shape="rect" title="Конструктор категории" alt="" coords="524,42,692,68"/>
-<area shape="rect" href="enummodel_1_1_category.html#a11040a27e212101e733b8b7f7c478034" title="Статический инициализатор" alt="" coords="290,5,442,46"/>
-<area shape="poly" title=" " alt="" coords="506,43,442,37,442,32,511,43"/>
-<area shape="rect" href="enummodel_1_1_category.html#a8a5c20cba2237009b02d6b351785e64e" title=" " alt="" coords="256,70,476,96"/>
-<area shape="poly" title=" " alt="" coords="511,66,477,73,476,68,506,67"/>
-<area shape="rect" href="classview_1_1_new_task_controller.html#a337be480aeacacd900c710627a27a63e" title="Обработчик кнопки создания задачи" alt="" coords="5,63,208,103"/>
-<area shape="poly" title=" " alt="" coords="237,83,208,86,208,80,243,83"/>
+<area shape="rect" title="Конструктор категории" alt="" coords="980,50,1148,76"/>
+<area shape="rect" href="enummodel_1_1_category.html#a11040a27e212101e733b8b7f7c478034" title="Статический инициализатор" alt="" coords="746,13,897,54"/>
+<area shape="poly" title=" " alt="" coords="961,51,898,45,898,40,967,51"/>
+<area shape="rect" href="enummodel_1_1_category.html#a8a5c20cba2237009b02d6b351785e64e" title=" " alt="" coords="711,78,932,104"/>
+<area shape="poly" title=" " alt="" coords="967,74,932,81,932,76,961,75"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a337be480aeacacd900c710627a27a63e" title=" " alt="" coords="461,5,663,46"/>
+<area shape="poly" title=" " alt="" coords="744,74,711,68,639,49,639,44,712,63,749,74"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a37244d4fc30d349270d91d0a773e805e" title=" " alt="" coords="478,71,647,111"/>
+<area shape="poly" title=" " alt="" coords="693,91,648,94,647,88,699,91"/>
+<area shape="rect" href="classview_1_1_main_controller.html#acf014234d7e80dac1ee33b153f6102ca" title=" " alt="" coords="478,136,646,177"/>
+<area shape="poly" title=" " alt="" coords="756,108,646,138,645,133,750,108"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title=" " alt="" coords="241,71,410,111"/>
+<area shape="poly" title=" " alt="" coords="459,91,411,94,410,88,465,91"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,78,190,104"/>
+<area shape="poly" title=" " alt="" coords="223,92,191,94,190,88,228,90"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a1eb59033ea2ca2caf351d917d1511cf1" title=" " alt="" coords="238,136,413,177"/>
+<area shape="poly" title=" " alt="" coords="460,156,414,159,414,154,465,156"/>
 </map>
 </div>
 
@@ -253,7 +263,7 @@ $(function(){initNavTree('enummodel_1_1_category.html','','enummodel_1_1_categor
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_category_8java_source.html#l00069">BY_NAME</a>, <a class="el" href="_category_8java_source.html#l00092">Category()</a> и <a class="el" href="_category_8java_source.html#l00051">OTHER</a>.</p>
 
-<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00288">view.NewTaskController.handleCreateTask()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00252">view.NewTaskController.handleCreateTask()</a>, <a class="el" href="_main_controller_8java_source.html#l00361">view.MainController.setupCategoryColumn()</a> и <a class="el" href="_main_controller_8java_source.html#l01127">view.MainController.showCategoryDialog()</a>.</p>
 <div class="dynheader">
 Граф вызовов:</div>
 <div class="dyncontent">
@@ -269,9 +279,19 @@ $(function(){initNavTree('enummodel_1_1_category.html','','enummodel_1_1_categor
 <div class="dyncontent">
 <div class="center"><img src="enummodel_1_1_category_a8a5c20cba2237009b02d6b351785e64e_icgraph.png" border="0" usemap="#aenummodel_1_1_category_a8a5c20cba2237009b02d6b351785e64e_icgraph" loading="lazy" alt=""/></div>
 <map name="aenummodel_1_1_category_a8a5c20cba2237009b02d6b351785e64e_icgraph" id="aenummodel_1_1_category_a8a5c20cba2237009b02d6b351785e64e_icgraph">
-<area shape="rect" title=" " alt="" coords="256,13,476,38"/>
-<area shape="rect" href="classview_1_1_new_task_controller.html#a337be480aeacacd900c710627a27a63e" title="Обработчик кнопки создания задачи" alt="" coords="5,5,208,46"/>
-<area shape="poly" title=" " alt="" coords="237,26,208,28,208,23,243,26"/>
+<area shape="rect" title=" " alt="" coords="711,78,932,104"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a337be480aeacacd900c710627a27a63e" title=" " alt="" coords="461,5,663,46"/>
+<area shape="poly" title=" " alt="" coords="750,74,646,49,646,44,756,74"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a37244d4fc30d349270d91d0a773e805e" title=" " alt="" coords="478,71,647,111"/>
+<area shape="poly" title=" " alt="" coords="693,91,648,94,647,88,699,91"/>
+<area shape="rect" href="classview_1_1_main_controller.html#acf014234d7e80dac1ee33b153f6102ca" title=" " alt="" coords="478,136,646,177"/>
+<area shape="poly" title=" " alt="" coords="756,108,646,138,645,133,750,108"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title=" " alt="" coords="241,71,410,111"/>
+<area shape="poly" title=" " alt="" coords="459,91,411,94,410,88,465,91"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,78,190,104"/>
+<area shape="poly" title=" " alt="" coords="223,92,191,94,190,88,228,90"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a1eb59033ea2ca2caf351d917d1511cf1" title=" " alt="" coords="238,136,413,177"/>
+<area shape="poly" title=" " alt="" coords="460,156,414,159,414,154,465,156"/>
 </map>
 </div>
 
@@ -328,6 +348,42 @@ $(function(){initNavTree('enummodel_1_1_category.html','','enummodel_1_1_categor
 <p class="definition">См. определение в файле <a class="el" href="_category_8java_source.html">Category.java</a> строка <a class="el" href="_category_8java_source.html#l00106">106</a></p>
 
 <p class="reference">Перекрестные ссылки <a class="el" href="_category_8java_source.html#l00057">displayName</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_new_task_controller_8java_source.html#l00149">view.NewTaskController.applyTaskToForm()</a> и <a class="el" href="_main_controller_8java_source.html#l00361">view.MainController.setupCategoryColumn()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="enummodel_1_1_category_a7b617d5f06ca4cb136d681b1bd2e8d7d_icgraph.png" border="0" usemap="#aenummodel_1_1_category_a7b617d5f06ca4cb136d681b1bd2e8d7d_icgraph" loading="lazy" alt=""/></div>
+<map name="aenummodel_1_1_category_a7b617d5f06ca4cb136d681b1bd2e8d7d_icgraph" id="aenummodel_1_1_category_a7b617d5f06ca4cb136d681b1bd2e8d7d_icgraph">
+<area shape="rect" title="Возвращает читаемое имя категории" alt="" coords="1593,158,1805,184"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a16da7a84bf64eb816ba4075b9b34f325" title=" " alt="" coords="1349,103,1545,143"/>
+<area shape="poly" title=" " alt="" coords="1610,155,1545,144,1545,139,1615,155"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a37244d4fc30d349270d91d0a773e805e" title=" " alt="" coords="1362,183,1532,223"/>
+<area shape="poly" title=" " alt="" coords="1580,186,1532,195,1532,190,1575,187"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a251389d73428dd28c385804e1e292b43" title=" " alt="" coords="1119,101,1301,142"/>
+<area shape="poly" title=" " alt="" coords="1331,122,1302,125,1302,120,1336,122"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a76739ea654eaac37a81afdefb7f02f86" title=" " alt="" coords="902,100,1070,141"/>
+<area shape="poly" title=" " alt="" coords="1101,121,1071,123,1071,118,1106,121"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title=" " alt="" coords="678,5,854,46"/>
+<area shape="poly" title=" " alt="" coords="926,93,853,61,823,49,824,44,855,57,931,93"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6343e648a870a706a14bc46aa9b43b4c" title=" " alt="" coords="678,71,854,111"/>
+<area shape="poly" title=" " alt="" coords="884,107,854,105,854,100,890,107"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4766825edbb089c262ba6ee17ea273f8" title=" " alt="" coords="683,136,849,177"/>
+<area shape="poly" title=" " alt="" coords="890,136,850,145,849,140,885,137"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a157c635caf5c9cc208923226f28274e0" title=" " alt="" coords="460,49,625,90"/>
+<area shape="poly" title=" " alt="" coords="694,130,677,125,596,93,597,88,679,121,699,130"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a35f2a1470868c1e281d8750ab39baa5f" title=" " alt="" coords="238,107,407,147"/>
+<area shape="poly" title=" " alt="" coords="665,151,407,135,407,130,670,149"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afdc5d6820d84e41d7d0f86e633eba6a5" title=" " alt="" coords="455,164,630,205"/>
+<area shape="poly" title=" " alt="" coords="665,169,631,176,630,171,671,168"/>
+<area shape="poly" title=" " alt="" coords="445,95,404,109,402,104,450,94"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,172,190,197"/>
+<area shape="poly" title=" " alt="" coords="223,153,152,173,150,168,228,150"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title=" " alt="" coords="902,217,1071,258"/>
+<area shape="poly" title=" " alt="" coords="1350,210,1071,234,1071,229,1345,211"/>
+<area shape="poly" title=" " alt="" coords="884,235,687,231,455,219,190,196,190,191,455,214,687,226,889,235"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -455,7 +511,7 @@ $(function(){initNavTree('enummodel_1_1_category.html','','enummodel_1_1_categor
 
 <p class="definition">См. определение в файле <a class="el" href="_category_8java_source.html">Category.java</a> строка <a class="el" href="_category_8java_source.html#l00051">51</a></p>
 
-<p class="reference">Используется в <a class="el" href="_category_8java_source.html#l00143">fromDisplayName()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00165">view.NewTaskController.initialize()</a> и <a class="el" href="_task_8java_source.html#l00120">model.Task.Task()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_category_8java_source.html#l00143">fromDisplayName()</a>, <a class="el" href="_new_task_controller_8java_source.html#l00111">view.NewTaskController.initializePriorityAndCategory()</a>, <a class="el" href="_database_manager_8java_source.html#l00560">repository.DatabaseManager.resultSetToTask()</a> и <a class="el" href="_task_8java_source.html#l00140">model.Task.Task()</a>.</p>
 
 </div>
 </div>

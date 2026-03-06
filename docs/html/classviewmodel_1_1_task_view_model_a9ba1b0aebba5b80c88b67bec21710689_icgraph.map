@@ -1,0 +1,11 @@
+<map id="viewmodel.TaskViewModel.setCategory" name="viewmodel.TaskViewModel.setCategory">
+<area shape="rect" id="Node000001" title="Устанавливает новую категорию задачи" alt="" coords="678,39,880,79"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_main_controller.html#a1eb59033ea2ca2caf351d917d1511cf1" title=" " alt="" coords="455,5,630,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="660,43,631,41,631,35,665,43"/>
+<area shape="rect" id="Node000003" href="$classview_1_1_main_controller.html#a37244d4fc30d349270d91d0a773e805e" title=" " alt="" coords="458,71,627,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="666,74,628,82,627,77,660,75"/>
+<area shape="rect" id="Node000004" href="$classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title=" " alt="" coords="238,71,407,111"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="440,91,407,94,407,88,445,91"/>
+<area shape="rect" id="Node000005" href="$classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,78,190,104"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="219,91,190,94,190,88,224,91"/>
+</map>

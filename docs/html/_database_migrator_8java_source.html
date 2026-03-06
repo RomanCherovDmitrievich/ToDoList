@@ -1,0 +1,370 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Умный планировщик задач (To-Do List): Исходный файл src/util/DatabaseMigrator.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">JavaFX ToDo-приложение с SQLite, уведомлениями и летней темой</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_database_migrator_8java_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">DatabaseMigrator.java</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_database_migrator_8java.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">package </span>util;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> model.Task;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">import</span> repository.DatabaseManager;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> com.google.gson.Gson;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">import</span> com.google.gson.reflect.TypeToken;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">import</span> java.io.File;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">import</span> java.io.FileReader;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">import</span> java.io.IOException;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">import</span> java.lang.reflect.Type;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">import</span> java.nio.file.Files;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">import</span> java.nio.file.Path;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">import</span> java.nio.file.Paths;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">import</span> java.nio.file.StandardCopyOption;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">import</span> java.util.List;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classutil_1_1_database_migrator.html">   31</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classutil_1_1_database_migrator.html">DatabaseMigrator</a> {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classutil_1_1_database_migrator.html#a132ba9c7b9444ffb52a26031ee1465eb">   36</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String <a class="code hl_variable" href="classutil_1_1_database_migrator.html#a132ba9c7b9444ffb52a26031ee1465eb">JSON_FILE_PATH</a> = <span class="stringliteral">&quot;data/tasks.json&quot;</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classutil_1_1_database_migrator.html#af966070f7a8d37ada910635f802d5db6">   41</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String <a class="code hl_variable" href="classutil_1_1_database_migrator.html#af966070f7a8d37ada910635f802d5db6">BACKUP_EXTENSION</a> = <span class="stringliteral">&quot;.backup&quot;</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    </div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classutil_1_1_database_migrator.html#a462520e06be58bc2d42fe6bef64c68ff">   51</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">boolean</span> <a class="code hl_function" href="classutil_1_1_database_migrator.html#a462520e06be58bc2d42fe6bef64c68ff">migrateJsonToDatabase</a>() {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            File jsonFile = <span class="keyword">new</span> File(<a class="code hl_variable" href="classutil_1_1_database_migrator.html#a132ba9c7b9444ffb52a26031ee1465eb">JSON_FILE_PATH</a>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="keywordflow">if</span> (!jsonFile.exists()) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                System.out.println(<span class="stringliteral">&quot;JSON файл не найден: &quot;</span> + <a class="code hl_variable" href="classutil_1_1_database_migrator.html#a132ba9c7b9444ffb52a26031ee1465eb">JSON_FILE_PATH</a>);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            System.out.println(<span class="stringliteral">&quot;Начинаем миграцию данных из JSON в базу данных...&quot;</span>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="comment">// Создаем резервную копию</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <a class="code hl_function" href="classutil_1_1_database_migrator.html#a0ea23a994fcf0f7630ecaaea368f48e7">createBackup</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <span class="comment">// Читаем задачи из JSON</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            Gson gson = <span class="keyword">new</span> Gson();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            Type taskListType = <span class="keyword">new</span> TypeToken&lt;List&lt;Task&gt;&gt;(){}.getType();</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            List&lt;Task&gt; tasks;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordflow">try</span> (FileReader reader = <span class="keyword">new</span> FileReader(jsonFile)) {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                tasks = gson.fromJson(reader, taskListType);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="keywordflow">if</span> (tasks == <span class="keyword">null</span> || tasks.isEmpty()) {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                System.out.println(<span class="stringliteral">&quot;В JSON файле нет задач для миграции&quot;</span>);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            System.out.println(<span class="stringliteral">&quot;Загружено &quot;</span> + tasks.size() + <span class="stringliteral">&quot; задач из JSON&quot;</span>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <span class="comment">// Сохраняем задачи в БД</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <a class="code hl_class" href="classrepository_1_1_database_manager.html">DatabaseManager</a> dbManager = <a class="code hl_class" href="classrepository_1_1_database_manager.html">DatabaseManager</a>.<a class="code hl_function" href="classrepository_1_1_database_manager.html#a2035f400cd8f5f503ea6f961de54d4ff">getInstance</a>();</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <span class="keywordflow">for</span> (<a class="code hl_class" href="classmodel_1_1_task.html">Task</a> task : tasks) {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                dbManager.<a class="code hl_function" href="classrepository_1_1_database_manager.html#a6cb10a041d036be47596127942959f83">saveTask</a>(task);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            System.out.println(<span class="stringliteral">&quot;Миграция успешно завершена!&quot;</span>);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            System.out.println(<span class="stringliteral">&quot;Мигрировано задач: &quot;</span> + tasks.size());</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            System.out.println(<span class="stringliteral">&quot;Резервная копия создана: &quot;</span> + <a class="code hl_variable" href="classutil_1_1_database_migrator.html#a132ba9c7b9444ffb52a26031ee1465eb">JSON_FILE_PATH</a> + <a class="code hl_variable" href="classutil_1_1_database_migrator.html#af966070f7a8d37ada910635f802d5db6">BACKUP_EXTENSION</a>);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        } <span class="keywordflow">catch</span> (IOException e) {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            System.err.println(<span class="stringliteral">&quot;Ошибка чтения JSON файла: &quot;</span> + e.getMessage());</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        } <span class="keywordflow">catch</span> (Exception e) {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            System.err.println(<span class="stringliteral">&quot;Ошибка миграции данных: &quot;</span> + e.getMessage());</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            e.printStackTrace();</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    }</div>
+</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    </div>
+<div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classutil_1_1_database_migrator.html#a34362d012dac2e981674eb3b74cc2004">  108</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">boolean</span> <a class="code hl_function" href="classutil_1_1_database_migrator.html#a34362d012dac2e981674eb3b74cc2004">exportDatabaseToJson</a>() {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            System.out.println(<span class="stringliteral">&quot;Начинаем экспорт данных из базы данных в JSON...&quot;</span>);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            <span class="comment">// Загружаем задачи из БД</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            <a class="code hl_class" href="classrepository_1_1_database_manager.html">DatabaseManager</a> dbManager = <a class="code hl_class" href="classrepository_1_1_database_manager.html">DatabaseManager</a>.<a class="code hl_function" href="classrepository_1_1_database_manager.html#a2035f400cd8f5f503ea6f961de54d4ff">getInstance</a>();</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            List&lt;Task&gt; tasks = dbManager.<a class="code hl_function" href="classrepository_1_1_database_manager.html#ab0244b63c298e858b95b53cdba1c8783">getAllTasks</a>();</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            <span class="keywordflow">if</span> (tasks.isEmpty()) {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                System.out.println(<span class="stringliteral">&quot;В базе данных нет задач для экспорта&quot;</span>);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            }</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            System.out.println(<span class="stringliteral">&quot;Загружено &quot;</span> + tasks.size() + <span class="stringliteral">&quot; задач из базы данных&quot;</span>);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            <span class="comment">// Сохраняем в JSON</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            <a class="code hl_class" href="classutil_1_1_json_util.html">JsonUtil</a>.<a class="code hl_function" href="classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421">saveTasks</a>(tasks);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            System.out.println(<span class="stringliteral">&quot;Экспорт успешно завершен!&quot;</span>);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            System.out.println(<span class="stringliteral">&quot;Экспортировано задач: &quot;</span> + tasks.size());</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        }<span class="keywordflow">catch</span> (Exception e) {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            System.err.println(<span class="stringliteral">&quot;Ошибка экспорта данных: &quot;</span> + e.getMessage());</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            e.printStackTrace();</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        }</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    }</div>
+</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    </div>
+<div class="foldopen" id="foldopen00144" data-start="{" data-end="}">
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="classutil_1_1_database_migrator.html#a0ea23a994fcf0f7630ecaaea368f48e7">  144</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classutil_1_1_database_migrator.html#a0ea23a994fcf0f7630ecaaea368f48e7">createBackup</a>() throws IOException {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        Path source = Paths.get(<a class="code hl_variable" href="classutil_1_1_database_migrator.html#a132ba9c7b9444ffb52a26031ee1465eb">JSON_FILE_PATH</a>);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        Path backup = Paths.get(<a class="code hl_variable" href="classutil_1_1_database_migrator.html#a132ba9c7b9444ffb52a26031ee1465eb">JSON_FILE_PATH</a> + <a class="code hl_variable" href="classutil_1_1_database_migrator.html#af966070f7a8d37ada910635f802d5db6">BACKUP_EXTENSION</a>);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        Files.copy(source, backup, StandardCopyOption.REPLACE_EXISTING);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        System.out.println(<span class="stringliteral">&quot;Резервная копия создана: &quot;</span> + backup);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    }</div>
+</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    </div>
+<div class="foldopen" id="foldopen00158" data-start="{" data-end="}">
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="classutil_1_1_database_migrator.html#aea6a5dfdcad47388ebda07e015b364b6">  158</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">boolean</span> <a class="code hl_function" href="classutil_1_1_database_migrator.html#aea6a5dfdcad47388ebda07e015b364b6">restoreFromBackup</a>() {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            Path backup = Paths.get(<a class="code hl_variable" href="classutil_1_1_database_migrator.html#a132ba9c7b9444ffb52a26031ee1465eb">JSON_FILE_PATH</a> + <a class="code hl_variable" href="classutil_1_1_database_migrator.html#af966070f7a8d37ada910635f802d5db6">BACKUP_EXTENSION</a>);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            Path original = Paths.get(<a class="code hl_variable" href="classutil_1_1_database_migrator.html#a132ba9c7b9444ffb52a26031ee1465eb">JSON_FILE_PATH</a>);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            <span class="keywordflow">if</span> (!Files.exists(backup)) {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                System.out.println(<span class="stringliteral">&quot;Резервная копия не найдена: &quot;</span> + backup);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            }</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            Files.copy(backup, original, StandardCopyOption.REPLACE_EXISTING);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            System.out.println(<span class="stringliteral">&quot;Данные восстановлены из резервной копии: &quot;</span> + backup);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        } <span class="keywordflow">catch</span> (IOException e) {</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            System.err.println(<span class="stringliteral">&quot;Ошибка восстановления из резервной копии: &quot;</span> + e.getMessage());</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        }</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    }</div>
+</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    </div>
+<div class="foldopen" id="foldopen00185" data-start="{" data-end="}">
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="classutil_1_1_database_migrator.html#a11687638f060b50427b94a0778df07b8">  185</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> String <a class="code hl_function" href="classutil_1_1_database_migrator.html#a11687638f060b50427b94a0778df07b8">synchronizeData</a>() {</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>            StringBuilder result = <span class="keyword">new</span> StringBuilder();</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>            result.append(<span class="stringliteral">&quot;Синхронизация данных:\n&quot;</span>);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>            </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>            <span class="comment">// Загружаем из JSON</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>            List&lt;Task&gt; jsonTasks = <a class="code hl_class" href="classutil_1_1_json_util.html">JsonUtil</a>.<a class="code hl_function" href="classutil_1_1_json_util.html#a2a80078f88c932a5ab230d4775c2391d">loadTasks</a>();</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>            result.append(<span class="stringliteral">&quot;Задач в JSON: &quot;</span>).append(jsonTasks.size()).append(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>            </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>            <span class="comment">// Загружаем из БД</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>            <a class="code hl_class" href="classrepository_1_1_database_manager.html">DatabaseManager</a> dbManager = <a class="code hl_class" href="classrepository_1_1_database_manager.html">DatabaseManager</a>.<a class="code hl_function" href="classrepository_1_1_database_manager.html#a2035f400cd8f5f503ea6f961de54d4ff">getInstance</a>();</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>            List&lt;Task&gt; dbTasks = dbManager.<a class="code hl_function" href="classrepository_1_1_database_manager.html#ab0244b63c298e858b95b53cdba1c8783">getAllTasks</a>();</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>            result.append(<span class="stringliteral">&quot;Задач в БД: &quot;</span>).append(dbTasks.size()).append(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>            </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>            <span class="comment">// Находим различия</span></div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>            <span class="keywordtype">int</span> addedToDB = 0;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>            <span class="keywordtype">int</span> addedToJSON = 0;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>            </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>            <span class="comment">// Добавляем в БД задачи, которых там нет</span></div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            <span class="keywordflow">for</span> (<a class="code hl_class" href="classmodel_1_1_task.html">Task</a> jsonTask : jsonTasks) {</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>                <span class="keywordtype">boolean</span> existsInDB = dbTasks.stream()</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                    .anyMatch(dbTask -&gt; dbTask.getId().equals(jsonTask.getId()));</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>                <span class="keywordflow">if</span> (!existsInDB) {</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>                    dbManager.<a class="code hl_function" href="classrepository_1_1_database_manager.html#a6cb10a041d036be47596127942959f83">saveTask</a>(jsonTask);</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                    addedToDB++;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>                }</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>            }</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            <span class="comment">// Добавляем в JSON задачи, которых там нет</span></div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            <span class="keywordflow">for</span> (<a class="code hl_class" href="classmodel_1_1_task.html">Task</a> dbTask : dbTasks) {</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>                <span class="keywordtype">boolean</span> existsInJSON = jsonTasks.stream()</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>                    .anyMatch(jsonTask -&gt; jsonTask.getId().equals(dbTask.getId()));</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>                <span class="keywordflow">if</span> (!existsInJSON) {</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>                    jsonTasks.add(dbTask);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>                    addedToJSON++;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>                }</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>            }</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>            </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>            <span class="comment">// Сохраняем обновленный JSON</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>            <span class="keywordflow">if</span> (addedToJSON &gt; 0) {</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                <a class="code hl_class" href="classutil_1_1_json_util.html">JsonUtil</a>.<a class="code hl_function" href="classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421">saveTasks</a>(jsonTasks);</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            }</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>            </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>            result.append(<span class="stringliteral">&quot;Добавлено в БД: &quot;</span>).append(addedToDB).append(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>            result.append(<span class="stringliteral">&quot;Добавлено в JSON: &quot;</span>).append(addedToJSON).append(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>            result.append(<span class="stringliteral">&quot;Синхронизация завершена!&quot;</span>);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>            </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            <span class="keywordflow">return</span> result.toString();</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>            </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        } <span class="keywordflow">catch</span> (Exception e) {</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;Ошибка синхронизации: &quot;</span> + e.getMessage();</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        }</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    }</div>
+</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    </div>
+<div class="foldopen" id="foldopen00245" data-start="{" data-end="}">
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno"><a class="line" href="classutil_1_1_database_migrator.html#a703826c15e609176f3da25d6ce8f755d">  245</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classutil_1_1_database_migrator.html#a703826c15e609176f3da25d6ce8f755d">main</a>(String[] args) {</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        <span class="keywordflow">if</span> (args.length == 0) {</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>            System.out.println(<span class="stringliteral">&quot;Использование:&quot;</span>);</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>            System.out.println(<span class="stringliteral">&quot;  java DatabaseMigrator migrate   - Мигрировать из JSON в БД&quot;</span>);</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            System.out.println(<span class="stringliteral">&quot;  java DatabaseMigrator export    - Экспортировать из БД в JSON&quot;</span>);</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>            System.out.println(<span class="stringliteral">&quot;  java DatabaseMigrator sync      - Синхронизировать данные&quot;</span>);</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>            System.out.println(<span class="stringliteral">&quot;  java DatabaseMigrator restore   - Восстановить из резервной копии&quot;</span>);</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        }</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        String command = args[0].toLowerCase();</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        </div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>        <span class="keywordflow">switch</span> (command) {</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>            <span class="keywordflow">case</span> <span class="stringliteral">&quot;migrate&quot;</span>:</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>                <span class="keywordflow">if</span> (<a class="code hl_function" href="classutil_1_1_database_migrator.html#a462520e06be58bc2d42fe6bef64c68ff">migrateJsonToDatabase</a>()) {</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>                    System.out.println(<span class="stringliteral">&quot;Миграция успешно завершена!&quot;</span>);</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>                    System.out.println(<span class="stringliteral">&quot;Миграция не удалась!&quot;</span>);</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>                }</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>                </div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>            <span class="keywordflow">case</span> <span class="stringliteral">&quot;export&quot;</span>:</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>                <span class="keywordflow">if</span> (<a class="code hl_function" href="classutil_1_1_database_migrator.html#a34362d012dac2e981674eb3b74cc2004">exportDatabaseToJson</a>()) {</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>                    System.out.println(<span class="stringliteral">&quot;Экспорт успешно завершен!&quot;</span>);</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>                    System.out.println(<span class="stringliteral">&quot;Экспорт не удался!&quot;</span>);</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>                }</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>                </div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>            <span class="keywordflow">case</span> <span class="stringliteral">&quot;sync&quot;</span>:</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>                System.out.println(<a class="code hl_function" href="classutil_1_1_database_migrator.html#a11687638f060b50427b94a0778df07b8">synchronizeData</a>());</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>                </div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>            <span class="keywordflow">case</span> <span class="stringliteral">&quot;restore&quot;</span>:</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>                <span class="keywordflow">if</span> (<a class="code hl_function" href="classutil_1_1_database_migrator.html#aea6a5dfdcad47388ebda07e015b364b6">restoreFromBackup</a>()) {</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>                    System.out.println(<span class="stringliteral">&quot;Восстановление успешно завершено!&quot;</span>);</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>                    System.out.println(<span class="stringliteral">&quot;Восстановление не удалось!&quot;</span>);</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>                }</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>                </div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>                System.out.println(<span class="stringliteral">&quot;Неизвестная команда: &quot;</span> + command);</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        }</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    }</div>
+</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>}</div>
+</div>
+<div class="ttc" id="aclassmodel_1_1_task_html"><div class="ttname"><a href="classmodel_1_1_task.html">model.Task</a></div><div class="ttdoc">Основной класс, представляющий задачу в приложении</div><div class="ttdef"><b>Определения</b> <a href="_task_8java_source.html#l00029">Task.java:29</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_manager_html"><div class="ttname"><a href="classrepository_1_1_database_manager.html">repository.DatabaseManager</a></div><div class="ttdoc">SQLite DAO для задач и связанных таблиц.</div><div class="ttdef"><b>Определения</b> <a href="_database_manager_8java_source.html#l00026">DatabaseManager.java:26</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_manager_html_a2035f400cd8f5f503ea6f961de54d4ff"><div class="ttname"><a href="classrepository_1_1_database_manager.html#a2035f400cd8f5f503ea6f961de54d4ff">repository.DatabaseManager.getInstance</a></div><div class="ttdeci">static synchronized DatabaseManager getInstance()</div><div class="ttdef"><b>Определения</b> <a href="_database_manager_8java_source.html#l00037">DatabaseManager.java:37</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_manager_html_a6cb10a041d036be47596127942959f83"><div class="ttname"><a href="classrepository_1_1_database_manager.html#a6cb10a041d036be47596127942959f83">repository.DatabaseManager.saveTask</a></div><div class="ttdeci">synchronized void saveTask(Task task)</div><div class="ttdef"><b>Определения</b> <a href="_database_manager_8java_source.html#l00242">DatabaseManager.java:242</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_manager_html_ab0244b63c298e858b95b53cdba1c8783"><div class="ttname"><a href="classrepository_1_1_database_manager.html#ab0244b63c298e858b95b53cdba1c8783">repository.DatabaseManager.getAllTasks</a></div><div class="ttdeci">synchronized List&lt; Task &gt; getAllTasks()</div><div class="ttdef"><b>Определения</b> <a href="_database_manager_8java_source.html#l00290">DatabaseManager.java:290</a></div></div>
+<div class="ttc" id="aclassutil_1_1_database_migrator_html"><div class="ttname"><a href="classutil_1_1_database_migrator.html">util.DatabaseMigrator</a></div><div class="ttdoc">Утилита для миграции данных между JSON и базой данных</div><div class="ttdef"><b>Определения</b> <a href="#l00031">DatabaseMigrator.java:31</a></div></div>
+<div class="ttc" id="aclassutil_1_1_database_migrator_html_a0ea23a994fcf0f7630ecaaea368f48e7"><div class="ttname"><a href="classutil_1_1_database_migrator.html#a0ea23a994fcf0f7630ecaaea368f48e7">util.DatabaseMigrator.createBackup</a></div><div class="ttdeci">static void createBackup()</div><div class="ttdoc">Создает резервную копию JSON файла</div><div class="ttdef"><b>Определения</b> <a href="#l00144">DatabaseMigrator.java:144</a></div></div>
+<div class="ttc" id="aclassutil_1_1_database_migrator_html_a11687638f060b50427b94a0778df07b8"><div class="ttname"><a href="classutil_1_1_database_migrator.html#a11687638f060b50427b94a0778df07b8">util.DatabaseMigrator.synchronizeData</a></div><div class="ttdeci">static String synchronizeData()</div><div class="ttdoc">Синхронизирует данные между JSON и БД</div><div class="ttdef"><b>Определения</b> <a href="#l00185">DatabaseMigrator.java:185</a></div></div>
+<div class="ttc" id="aclassutil_1_1_database_migrator_html_a132ba9c7b9444ffb52a26031ee1465eb"><div class="ttname"><a href="classutil_1_1_database_migrator.html#a132ba9c7b9444ffb52a26031ee1465eb">util.DatabaseMigrator.JSON_FILE_PATH</a></div><div class="ttdeci">static final String JSON_FILE_PATH</div><div class="ttdoc">Путь к JSON файлу с задачами</div><div class="ttdef"><b>Определения</b> <a href="#l00036">DatabaseMigrator.java:36</a></div></div>
+<div class="ttc" id="aclassutil_1_1_database_migrator_html_a34362d012dac2e981674eb3b74cc2004"><div class="ttname"><a href="classutil_1_1_database_migrator.html#a34362d012dac2e981674eb3b74cc2004">util.DatabaseMigrator.exportDatabaseToJson</a></div><div class="ttdeci">static boolean exportDatabaseToJson()</div><div class="ttdoc">Экспортирует задачи из базы данных в JSON.</div><div class="ttdef"><b>Определения</b> <a href="#l00108">DatabaseMigrator.java:108</a></div></div>
+<div class="ttc" id="aclassutil_1_1_database_migrator_html_a462520e06be58bc2d42fe6bef64c68ff"><div class="ttname"><a href="classutil_1_1_database_migrator.html#a462520e06be58bc2d42fe6bef64c68ff">util.DatabaseMigrator.migrateJsonToDatabase</a></div><div class="ttdeci">static boolean migrateJsonToDatabase()</div><div class="ttdoc">Мигрирует задачи из JSON в базу данных</div><div class="ttdef"><b>Определения</b> <a href="#l00051">DatabaseMigrator.java:51</a></div></div>
+<div class="ttc" id="aclassutil_1_1_database_migrator_html_a703826c15e609176f3da25d6ce8f755d"><div class="ttname"><a href="classutil_1_1_database_migrator.html#a703826c15e609176f3da25d6ce8f755d">util.DatabaseMigrator.main</a></div><div class="ttdeci">static void main(String[] args)</div><div class="ttdoc">Точка входа для запуска миграции из командной строки</div><div class="ttdef"><b>Определения</b> <a href="#l00245">DatabaseMigrator.java:245</a></div></div>
+<div class="ttc" id="aclassutil_1_1_database_migrator_html_aea6a5dfdcad47388ebda07e015b364b6"><div class="ttname"><a href="classutil_1_1_database_migrator.html#aea6a5dfdcad47388ebda07e015b364b6">util.DatabaseMigrator.restoreFromBackup</a></div><div class="ttdeci">static boolean restoreFromBackup()</div><div class="ttdoc">Восстанавливает данные из резервной копии</div><div class="ttdef"><b>Определения</b> <a href="#l00158">DatabaseMigrator.java:158</a></div></div>
+<div class="ttc" id="aclassutil_1_1_database_migrator_html_af966070f7a8d37ada910635f802d5db6"><div class="ttname"><a href="classutil_1_1_database_migrator.html#af966070f7a8d37ada910635f802d5db6">util.DatabaseMigrator.BACKUP_EXTENSION</a></div><div class="ttdeci">static final String BACKUP_EXTENSION</div><div class="ttdoc">Расширение для резервных копий JSON.</div><div class="ttdef"><b>Определения</b> <a href="#l00041">DatabaseMigrator.java:41</a></div></div>
+<div class="ttc" id="aclassutil_1_1_json_util_html"><div class="ttname"><a href="classutil_1_1_json_util.html">util.JsonUtil</a></div><div class="ttdoc">Утилита для загрузки и сохранения задач в формате JSON.</div><div class="ttdef"><b>Определения</b> <a href="_json_util_8java_source.html#l00039">JsonUtil.java:39</a></div></div>
+<div class="ttc" id="aclassutil_1_1_json_util_html_a2a80078f88c932a5ab230d4775c2391d"><div class="ttname"><a href="classutil_1_1_json_util.html#a2a80078f88c932a5ab230d4775c2391d">util.JsonUtil.loadTasks</a></div><div class="ttdeci">static List&lt; Task &gt; loadTasks()</div><div class="ttdoc">Загружает все задачи из JSON файла</div><div class="ttdef"><b>Определения</b> <a href="_json_util_8java_source.html#l00117">JsonUtil.java:117</a></div></div>
+<div class="ttc" id="aclassutil_1_1_json_util_html_aaca9aa25da0edb1a143c540d0c618421"><div class="ttname"><a href="classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421">util.JsonUtil.saveTasks</a></div><div class="ttdeci">static boolean saveTasks(List&lt; Task &gt; tasks)</div><div class="ttdoc">Сохраняет все задачи в JSON файл</div><div class="ttdef"><b>Определения</b> <a href="_json_util_8java_source.html#l00186">JsonUtil.java:186</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_b7878ad5ecbf2506f4125b9d34c97e45.html">util</a></li><li class="navelem"><a href="_database_migrator_8java.html">DatabaseMigrator.java</a></li>
+    <li class="footer">Документация по Умный планировщик задач (To-Do List). Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

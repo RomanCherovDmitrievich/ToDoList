@@ -1,13 +1,32 @@
 <map id="view.NewTaskController.handleCreateTask" name="view.NewTaskController.handleCreateTask">
-<area shape="rect" id="Node000001" title="Обработчик кнопки создания задачи" alt="" coords="5,47,208,88"/>
-<area shape="rect" id="Node000002" href="$enummodel_1_1_category.html#a8a5c20cba2237009b02d6b351785e64e" title=" " alt="" coords="265,5,486,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="207,46,289,34,284,35,209,52"/>
-<area shape="rect" id="Node000004" href="$enummodel_1_1_priority.html#aefbb6c4f1528905793f8bee0902c457b" title=" " alt="" coords="271,55,480,80"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="208,65,258,67,253,68,208,70"/>
-<area shape="rect" id="Node000006" href="$classview_1_1_new_task_controller.html#a66c1573253964fcde19808f4d57ba3e3" title="Проверяет корректность заполнения формы" alt="" coords="256,104,495,130"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="208,83,289,100,284,101,208,89"/>
-<area shape="rect" id="Node000003" href="$enummodel_1_1_category.html#a6e338cb2f171d3dd42fc7698d864e9b5" title="Конструктор категории" alt="" coords="543,5,711,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="486,16,530,18,525,18,486,21"/>
-<area shape="rect" id="Node000005" href="$enummodel_1_1_priority.html#a6ea7a40e9195dbd8cc7aa9fa8cdb8c3d" title="Конструктор приоритета" alt="" coords="555,55,699,80"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="480,65,542,67,537,68,480,70"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,104,208,145"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_new_task_controller.html#afa255dc7cdbbb1a55bb44678b72ad1e0" title=" " alt="" coords="280,104,471,145"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="207,122,266,124,261,126,209,127"/>
+<area shape="rect" id="Node000004" href="$enummodel_1_1_category.html#a8a5c20cba2237009b02d6b351785e64e" title=" " alt="" coords="265,5,486,31"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="136,102,190,70,255,40,279,34,274,37,257,45,193,74,140,106"/>
+<area shape="rect" id="Node000006" href="$enummodel_1_1_priority.html#aefbb6c4f1528905793f8bee0902c457b" title=" " alt="" coords="271,55,480,80"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="203,102,255,90,299,83,294,85,256,95,206,106"/>
+<area shape="rect" id="Node000008" href="$classview_1_1_new_task_controller.html#ae890d916299b13fa18117c3c18549fb7" title=" " alt="" coords="288,170,463,210"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="193,143,277,165,272,167,193,148"/>
+<area shape="rect" id="Node000009" href="$classview_1_1_new_task_controller.html#a66c1573253964fcde19808f4d57ba3e3" title=" " alt="" coords="256,235,495,260"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="133,143,189,183,257,220,280,230,275,230,255,225,186,187,133,148"/>
+<area shape="rect" id="Node000003" href="$classview_1_1_new_task_controller.html#a11f23060f7cf74ca238678e91b97f67b" title=" " alt="" coords="543,132,763,173"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="471,132,530,140,525,141,472,137"/>
+<area shape="rect" id="Node000005" href="$enummodel_1_1_category.html#a6e338cb2f171d3dd42fc7698d864e9b5" title="Конструктор категории" alt="" coords="569,5,737,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="485,16,556,17,551,19,486,21"/>
+<area shape="rect" id="Node000007" href="$enummodel_1_1_priority.html#a6ea7a40e9195dbd8cc7aa9fa8cdb8c3d" title="Конструктор приоритета" alt="" coords="581,55,725,80"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="479,65,568,67,563,68,480,70"/>
+<area shape="poly" id="edge15_Node000009_Node000003" title=" " alt="" coords="450,232,494,220,547,200,595,181,600,179,549,205,496,225,451,237"/>
+<area shape="rect" id="Node000010" href="$classutil_1_1_recurrence_util.html#a3414315b6a1a0c186a568273c2278838" title=" " alt="" coords="574,227,732,268"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="495,245,561,247,556,248,496,250"/>
+<area shape="rect" id="Node000011" href="$classutil_1_1_recurrence_util.html#aed72b268fd4973767b6bddd0a6791fb4" title=" " alt="" coords="815,194,973,234"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="732,234,802,227,797,228,733,239"/>
+<area shape="rect" id="Node000012" href="$classutil_1_1_recurrence_util.html#a423beeee65134aaa2faf43630ff147b6" title=" " alt="" coords="811,259,977,300"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="733,255,798,266,793,266,732,261"/>
+<area shape="rect" id="Node000013" href="$classutil_1_1_recurrence_util.html#ab4e3c92b43f595464f9d335f30e89cf1" title=" " alt="" coords="1040,194,1198,234"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="966,256,1029,240,1034,239,967,261"/>
+<area shape="rect" id="Node000014" href="$classutil_1_1_recurrence_util.html#a8c3268ab94b3fad39e9ed882802c0abf" title=" " alt="" coords="1040,259,1198,300"/>
+<area shape="poly" id="edge13_Node000012_Node000014" title=" " alt="" coords="977,277,1027,279,1022,280,977,282"/>
+<area shape="rect" id="Node000015" href="$classutil_1_1_recurrence_util.html#a287e3b2cf15f382102445870f0db833d" title=" " alt="" coords="1025,324,1214,350"/>
+<area shape="poly" id="edge14_Node000012_Node000015" title=" " alt="" coords="977,298,1054,320,1049,319,976,303"/>
 </map>

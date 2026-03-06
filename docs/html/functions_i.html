@@ -28,7 +28,7 @@
   <td id="projectalign">
    <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">JavaFX приложение для управления задачами с новогодней темой</div>
+   <div id="projectbrief">JavaFX ToDo-приложение с SQLite, уведомлениями и летней темой</div>
   </td>
  </tr>
  </tbody>
@@ -93,17 +93,32 @@ $(function(){initNavTree('functions_i.html','',''); });
 
 <h3 class="doxsection"><a id="index_i" name="index_i"></a>- i -</h3><ul>
 <li>iconName&#160;:&#160;<a class="el" href="enummodel_1_1_priority.html#a9d4bb7d2963660f657069d44a90860fb">model.Priority</a></li>
-<li>id&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#aa21bd9d6331060a2941919100058e93a">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#a81c1f7c14ffd517a4224b527dae12b4a">viewmodel.TaskViewModel</a></li>
+<li>id&#160;:&#160;<a class="el" href="classmodel_1_1_tag.html#a89adcaa3b6d5a6df8cf68714c013e4d4">model.Tag</a>, <a class="el" href="classmodel_1_1_task.html#aa21bd9d6331060a2941919100058e93a">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#a81c1f7c14ffd517a4224b527dae12b4a">viewmodel.TaskViewModel</a></li>
 <li>idProperty()&#160;:&#160;<a class="el" href="classviewmodel_1_1_task_view_model.html#a78bbc21be4a7366ff977474cb547ca0e">viewmodel.TaskViewModel</a></li>
 <li>IMPORTANT&#160;:&#160;<a class="el" href="enummodel_1_1_priority.html#ac3d13333280e0a7bc1f33a340a57a9cf">model.Priority</a></li>
 <li>init()&#160;:&#160;<a class="el" href="classapp_1_1_main_app.html#acbf781550cefac29e6c8ecbdd2b38904">app.MainApp</a></li>
 <li>initialize()&#160;:&#160;<a class="el" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd">view.MainController</a>, <a class="el" href="classview_1_1_new_task_controller.html#a9dcf704ac7b311d8bfe516eff8643ad1">view.NewTaskController</a></li>
-<li>initSnowflakes()&#160;:&#160;<a class="el" href="classview_1_1_main_controller.html#a176bf2a7ba00056ac7a14652c6650c2d">view.MainController</a></li>
-<li>instance&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#aaa6f3dca38b29f6106f5f5c781caf626">model.TaskManager</a>, <a class="el" href="classutil_1_1_audio_manager.html#a3fda3878e3ef5d2cba54657417d98670">util.AudioManager</a></li>
+<li>initializeDatabase()&#160;:&#160;<a class="el" href="classrepository_1_1_database_manager.html#ad56b237e4e259b99a77f8c2b5d9a49db">repository.DatabaseManager</a></li>
+<li>initializePriorityAndCategory()&#160;:&#160;<a class="el" href="classview_1_1_new_task_controller.html#a7feab6d24703217f093e4fc8bbc1eac0">view.NewTaskController</a></li>
+<li>initializeRecurrence()&#160;:&#160;<a class="el" href="classview_1_1_new_task_controller.html#a2bb2143f1fc38eb321fd5af63fae0670">view.NewTaskController</a></li>
+<li>initializeReminder()&#160;:&#160;<a class="el" href="classview_1_1_new_task_controller.html#a2c8d8e26d31927089b039ad955124a82">view.NewTaskController</a></li>
+<li>initializeStorage()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#a2cd3b65bd29af3b855f653a323e2b2f5">model.TaskManager</a></li>
+<li>initializeTimeCombos()&#160;:&#160;<a class="el" href="classview_1_1_new_task_controller.html#ac995363c56091dd4e0bdbc1a6ed078df">view.NewTaskController</a></li>
+<li>insightLabel&#160;:&#160;<a class="el" href="classview_1_1_main_controller.html#aa00323db552e16f7fc6e753c02392dfb">view.MainController</a></li>
+<li>instance&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#aaa6f3dca38b29f6106f5f5c781caf626">model.TaskManager</a>, <a class="el" href="classrepository_1_1_database_manager.html#a34f0f3f6abca1c83c497f32e03084930">repository.DatabaseManager</a>, <a class="el" href="classutil_1_1_audio_manager.html#a3fda3878e3ef5d2cba54657417d98670">util.AudioManager</a>, <a class="el" href="classutil_1_1_notification_service.html#a29379fa88f806c07750f200cff3f0429">util.NotificationService</a>, <a class="el" href="classutil_1_1_task_reminder_service.html#a7a9c14ce57e8fe2b8fc103a2f344713f">util.TaskReminderService</a></li>
+<li>isAudioFile()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#ac359959426e86ac5a4a2974b492cfd7e">util.AudioManager</a></li>
+<li>isCommandAvailable()&#160;:&#160;<a class="el" href="classutil_1_1_email_notifier.html#a6cab94683703c93cbcd1d587284e7f20">util.EmailNotifier</a></li>
 <li>isCompleted()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a9e92e43dca03f30943efdb87b476e71c">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#a6b568ef75542da4868a533844bbbe3a1">viewmodel.TaskViewModel</a></li>
+<li>isEmailEnabled()&#160;:&#160;<a class="el" href="classutil_1_1_notification_settings.html#a5dbcdb3386bc1aa64246f34777f22f95">util.NotificationSettings</a></li>
+<li>isMac()&#160;:&#160;<a class="el" href="classutil_1_1_notification_service.html#aed3398a7349e472b9c2d9de26eecf447">util.NotificationService</a></li>
+<li>isManualOrderAllowed()&#160;:&#160;<a class="el" href="classview_1_1_main_controller.html#abe7a48020650d788f73c30d42470f9e5">view.MainController</a></li>
 <li>isOverdue()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a6c49d13cb1e76676ef53876e9acc3ca4">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#a81effd078fee106eea52436907468ed9">viewmodel.TaskViewModel</a></li>
-<li>isSoundsEnabled()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a62a0acbea9b3248bf06398f2dfdeda4c">util.AudioManager</a></li>
+<li>isPopupEnabled()&#160;:&#160;<a class="el" href="classutil_1_1_notification_settings.html#a1b0679cfe9a92d59e5a67b7b0ec0a365">util.NotificationSettings</a></li>
+<li>isRedOs()&#160;:&#160;<a class="el" href="classutil_1_1_platform_util.html#ab3325e5522d5be0de30703ddc160f076">util.PlatformUtil</a></li>
+<li>isSoundEnabled()&#160;:&#160;<a class="el" href="classutil_1_1_notification_settings.html#a0dbdc534ea35f03a33a6978186c733eb">util.NotificationSettings</a></li>
+<li>isSoundsEnabled()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#ac13f5b8830cab147db74eb4bd301d3e5">util.AudioManager</a></li>
 <li>isTaskCreated()&#160;:&#160;<a class="el" href="classview_1_1_new_task_controller.html#ad985a55d5cf42453ff70863d8619713b">view.NewTaskController</a></li>
+<li>isUseDatabase()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#a9cb847e5bb1a6437545211f1ffbaf8df">model.TaskManager</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,0 +1,9 @@
+<map id="view.MainController.duplicateTask" name="view.MainController.duplicateTask">
+<area shape="rect" id="Node000001" title=" " alt="" coords="667,13,885,38"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_main_controller.html#a157c635caf5c9cc208923226f28274e0" title=" " alt="" coords="455,5,619,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="649,26,620,28,620,23,654,26"/>
+<area shape="rect" id="Node000003" href="$classview_1_1_main_controller.html#a35f2a1470868c1e281d8750ab39baa5f" title=" " alt="" coords="238,5,407,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="437,26,407,28,407,23,442,26"/>
+<area shape="rect" id="Node000004" href="$classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,13,190,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="219,26,190,28,190,23,224,25"/>
+</map>

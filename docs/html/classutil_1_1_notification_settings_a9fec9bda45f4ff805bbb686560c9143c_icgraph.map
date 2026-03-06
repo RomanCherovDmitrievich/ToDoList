@@ -1,0 +1,11 @@
+<map id="util.NotificationSettings.getReminderOffsetMinutes" name="util.NotificationSettings.getReminderOffsetMinutes">
+<area shape="rect" id="Node000001" title=" " alt="" coords="510,39,688,79"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462" title=" " alt="" coords="253,5,462,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="492,45,462,43,462,37,497,45"/>
+<area shape="rect" id="Node000004" href="$classview_1_1_main_controller.html#afba699a59966cda24b9998995a17c94d" title=" " alt="" coords="273,71,442,111"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="497,73,443,82,442,77,492,73"/>
+<area shape="rect" id="Node000003" href="$classutil_1_1_task_reminder_service.html#aadd0b77dafd4c390cbdf367b9654aa6c" title=" " alt="" coords="5,5,205,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="235,26,206,28,205,23,240,25"/>
+<area shape="rect" id="Node000005" href="$classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="13,78,197,104"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="255,91,198,94,198,88,260,91"/>
+</map>

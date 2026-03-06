@@ -1,0 +1,55 @@
+<map id="view.MainController.handleBulkPriority" name="view.MainController.handleBulkPriority">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,552,181,593"/>
+<area shape="rect" id="Node000002" href="$classviewmodel_1_1_task_view_model.html#aa0b4460345353c790c23679ca9cb37c6" title="Возвращает базовую модель задачи" alt="" coords="229,469,458,495"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,550,176,527,228,505,258,498,253,501,230,510,178,531,133,554"/>
+<area shape="rect" id="Node000003" href="$classview_1_1_main_controller.html#a2ae68644e5912e2c7aff36a412b445ba" title=" " alt="" coords="255,519,432,560"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="180,559,242,552,238,555,183,564"/>
+<area shape="rect" id="Node000023" href="$classviewmodel_1_1_task_view_model.html#a431f716cf65f5afcb54f969b44b4d380" title="Устанавливает новый приоритет задачи" alt="" coords="243,584,444,625"/>
+<area shape="poly" id="edge24_Node000001_Node000023" title=" " alt="" coords="180,582,230,589,225,591,182,587"/>
+<area shape="rect" id="Node000024" href="$classview_1_1_main_controller.html#a44a03e3789175a711678c05703c4c85a" title=" " alt="" coords="259,670,428,710"/>
+<area shape="poly" id="edge25_Node000001_Node000024" title=" " alt="" coords="138,591,230,634,286,662,281,663,228,639,138,596"/>
+<area shape="rect" id="Node000004" href="$classview_1_1_main_controller.html#a5981fecb5b1f6de2264882befb62d52f" title=" " alt="" coords="522,694,698,734"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="431,558,459,571,496,595,530,624,585,682,580,681,527,628,493,600,457,575,431,563"/>
+<area shape="rect" id="Node000007" href="$classview_1_1_main_controller.html#ac1b9b14c549fa2e91b6a110fce94cfd8" title=" " alt="" coords="522,391,698,432"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="429,516,457,505,481,490,504,472,563,439,558,442,508,476,484,494,459,510,432,521"/>
+<area shape="rect" id="Node000010" href="$classview_1_1_main_controller.html#aedcff4ed0eec74c31a840783b64b42a8" title=" " alt="" coords="522,551,698,592"/>
+<area shape="poly" id="edge9_Node000003_Node000010" title=" " alt="" coords="432,548,509,558,504,560,433,553"/>
+<area shape="rect" id="Node000016" href="$classview_1_1_main_controller.html#a073ccddeb707b28c89c4f0c69065fcfb" title=" " alt="" coords="522,486,698,526"/>
+<area shape="poly" id="edge16_Node000003_Node000016" title=" " alt="" coords="432,526,509,518,504,520,433,531"/>
+<area shape="rect" id="Node000017" href="$classview_1_1_main_controller.html#ad0f2463a86445951d22b3ee9d86bc3aa" title=" " alt="" coords="522,162,698,202"/>
+<area shape="poly" id="edge17_Node000003_Node000017" title=" " alt="" coords="431,522,456,506,479,477,487,448,492,417,504,379,547,289,588,218,591,214,552,292,508,380,497,418,492,449,483,479,460,509,434,526"/>
+<area shape="rect" id="Node000005" href="$classviewmodel_1_1_task_view_model.html#aa34a9517a43daff6eef84dc13e1cd0a9" title="Возвращает время окончания (дедлайн) задачи" alt="" coords="775,694,976,734"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="699,712,762,714,756,714,699,717"/>
+<area shape="rect" id="Node000006" href="$classviewmodel_1_1_task_view_model.html#ad274b2e6ae4bfa67e9e4877d1f0d3104" title="Возвращает время начала задачи" alt="" coords="775,759,976,800"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="696,732,778,755,773,755,695,738"/>
+<area shape="rect" id="Node000008" href="$classmodel_1_1_task.html#aaccdcedbfad9e320aac68c2c78da90be" title="Возвращает отформатированное время начала" alt="" coords="762,284,989,310"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="639,389,694,353,761,320,788,313,783,315,763,325,697,358,642,393"/>
+<area shape="rect" id="Node000009" href="$classmodel_1_1_task.html#a3016babcf59132145ef35906075ea109" title="Возвращает заголовок задачи" alt="" coords="808,399,943,424"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="698,409,795,411,790,412,700,414"/>
+<area shape="poly" id="edge11_Node000010_Node000005" title=" " alt="" coords="635,590,692,635,727,659,764,680,778,688,772,688,761,685,724,664,689,640,634,595"/>
+<area shape="rect" id="Node000011" href="$classviewmodel_1_1_task_view_model.html#aee7644b03c0ca5faa3aee9e691d658a3" title="Возвращает категорию задачи" alt="" coords="775,514,976,554"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="698,556,762,550,757,551,700,562"/>
+<area shape="rect" id="Node000012" href="$classviewmodel_1_1_task_view_model.html#a2d17f86b46ef153a4dc499a194d5e885" title="Возвращает приоритет задачи" alt="" coords="775,579,976,620"/>
+<area shape="poly" id="edge12_Node000010_Node000012" title=" " alt="" coords="699,578,762,587,757,588,699,583"/>
+<area shape="rect" id="Node000013" href="$classmodel_1_1_task.html#a9e92e43dca03f30943efdb87b476e71c" title="Проверяет, выполнена ли задача" alt="" coords="793,644,958,670"/>
+<area shape="poly" id="edge13_Node000010_Node000013" title=" " alt="" coords="659,590,763,629,795,640,790,640,762,634,659,595"/>
+<area shape="rect" id="Node000014" href="$classviewmodel_1_1_task_view_model.html#a6b568ef75542da4868a533844bbbe3a1" title="Проверяет, выполнена ли задача" alt="" coords="779,334,972,374"/>
+<area shape="poly" id="edge14_Node000010_Node000014" title=" " alt="" coords="697,548,712,536,726,518,733,500,735,462,738,423,745,404,760,384,764,384,768,381,764,388,750,406,743,424,741,462,738,501,731,521,716,540,700,553"/>
+<area shape="rect" id="Node000015" href="$classviewmodel_1_1_task_view_model.html#a81effd078fee106eea52436907468ed9" title="Проверяет, просрочена ли задача" alt="" coords="779,448,972,489"/>
+<area shape="poly" id="edge15_Node000010_Node000015" title=" " alt="" coords="685,548,713,536,737,518,761,500,780,494,775,496,764,504,740,522,716,540,687,553"/>
+<area shape="poly" id="edge22_Node000017_Node000014" title=" " alt="" coords="629,200,686,260,723,292,764,320,775,327,769,327,761,324,720,297,682,264,628,206"/>
+<area shape="rect" id="Node000018" href="$classmodel_1_1_task.html#a7a97e0aae6d6edf514a6b7442ce76232" title="Возвращает время окончания задачи" alt="" coords="794,169,957,195"/>
+<area shape="poly" id="edge18_Node000017_Node000018" title=" " alt="" coords="698,180,781,181,776,183,700,185"/>
+<area shape="rect" id="Node000019" href="$classviewmodel_1_1_task_view_model.html#a5f2424316f62a7ed7067602067535809" title=" " alt="" coords="775,219,976,260"/>
+<area shape="poly" id="edge19_Node000017_Node000019" title=" " alt="" coords="698,199,766,215,761,216,700,204"/>
+<area shape="rect" id="Node000020" href="$classmodel_1_1_task.html#a84dce864c8b8cc246e25e11d9cf200ca" title="Возвращает приоритет задачи" alt="" coords="800,5,951,31"/>
+<area shape="poly" id="edge20_Node000017_Node000020" title=" " alt="" coords="626,160,681,100,719,68,761,41,787,32,783,35,764,46,722,72,685,104,630,163"/>
+<area shape="rect" id="Node000021" href="$classviewmodel_1_1_task_view_model.html#a1a618ae9eecfd3fefadebd848a99ec92" title="Возвращает заголовок задачи" alt="" coords="775,55,976,96"/>
+<area shape="poly" id="edge21_Node000017_Node000021" title=" " alt="" coords="648,159,701,132,761,105,782,100,778,103,763,110,703,136,651,163"/>
+<area shape="rect" id="Node000022" href="$classview_1_1_main_controller.html#a58f505c47522701dc033b73171fc5e8c" title=" " alt="" coords="772,120,979,146"/>
+<area shape="poly" id="edge23_Node000017_Node000022" title=" " alt="" coords="698,163,790,148,785,150,700,168"/>
+<area shape="rect" id="Node000025" href="$enummodel_1_1_priority.html#aefbb6c4f1528905793f8bee0902c457b" title=" " alt="" coords="506,791,714,816"/>
+<area shape="poly" id="edge26_Node000024_Node000025" title=" " alt="" coords="394,708,566,784,561,785,393,714"/>
+<area shape="rect" id="Node000026" href="$enummodel_1_1_priority.html#a6ea7a40e9195dbd8cc7aa9fa8cdb8c3d" title="Конструктор приоритета" alt="" coords="803,824,948,850"/>
+<area shape="poly" id="edge27_Node000025_Node000026" title=" " alt="" coords="715,814,791,826,785,826,715,819"/>
+</map>

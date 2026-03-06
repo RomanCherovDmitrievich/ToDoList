@@ -1,0 +1,10 @@
+<map id="util.AudioManager.playNextTrack" name="util.AudioManager.playNextTrack">
+<area shape="rect" id="Node000001" title=" " alt="" coords="739,5,920,46"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_audio_manager.html#a4bcea547d46807f80857a390f3290af8" title=" " alt="" coords="493,13,691,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="721,35,692,37,692,32,726,35"/>
+<area shape="poly" id="edge2_Node000002_Node000001" title=" " alt="" coords="707,14,741,17,736,17,707,19"/>
+<area shape="rect" id="Node000003" href="$classutil_1_1_audio_manager.html#ae04329cfc7470fd3f46c661339db9e50" title=" " alt="" coords="248,13,445,38"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="475,26,446,28,445,23,480,26"/>
+<area shape="rect" id="Node000004" href="$classutil_1_1_audio_manager.html#ab3b039dfadbe826a0f7436d2eb6fea88" title=" " alt="" coords="5,5,200,46"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="230,26,200,28,200,23,235,26"/>
+</map>

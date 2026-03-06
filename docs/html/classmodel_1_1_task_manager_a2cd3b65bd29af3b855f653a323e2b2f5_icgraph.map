@@ -1,0 +1,19 @@
+<map id="model.TaskManager.initializeStorage" name="model.TaskManager.initializeStorage">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1035,60,1223,101"/>
+<area shape="rect" id="Node000002" href="$classmodel_1_1_task_manager.html#aa8a86d1ff2433a9cf9d28018a67581ae" title=" " alt="" coords="785,31,969,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1016,68,969,64,969,59,1022,68"/>
+<area shape="rect" id="Node000003" href="$classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c" title=" " alt="" coords="767,96,987,121"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1022,92,987,99,987,93,1016,93"/>
+<area shape="rect" id="Node000004" href="$classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea" title=" " alt="" coords="510,96,719,121"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="749,109,720,111,720,106,754,108"/>
+<area shape="rect" id="Node000005" href="$classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462" title=" " alt="" coords="253,5,462,46"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="557,90,461,60,427,49,427,44,463,55,562,90"/>
+<area shape="rect" id="Node000007" href="$classapp_1_1_main_app.html#acbf781550cefac29e6c8ecbdd2b38904" title=" " alt="" coords="298,70,416,96"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="491,97,417,91,417,86,497,96"/>
+<area shape="rect" id="Node000008" href="$classapp_1_1_main_app.html#a9788978994366c880434d9cc05a21cb1" title=" " alt="" coords="293,120,422,145"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="492,120,423,129,422,124,497,119"/>
+<area shape="rect" id="Node000009" href="$classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834" title=" " alt="" coords="294,169,420,194"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="564,126,463,160,421,171,420,166,461,155,559,127"/>
+<area shape="rect" id="Node000006" href="$classutil_1_1_task_reminder_service.html#aadd0b77dafd4c390cbdf367b9654aa6c" title=" " alt="" coords="5,5,205,46"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="235,27,206,28,205,23,240,25"/>
+</map>

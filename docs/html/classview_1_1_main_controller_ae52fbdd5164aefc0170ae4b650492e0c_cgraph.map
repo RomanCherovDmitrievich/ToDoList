@@ -1,0 +1,15 @@
+<map id="view.MainController.setupCalendarTab" name="view.MainController.setupCalendarTab">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,104,175,145"/>
+<area shape="rect" id="Node000002" href="$classviewmodel_1_1_task_view_model.html#a5b507f08d5d17134eb0051f9198026ef" title=" " alt="" coords="223,5,424,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,101,222,57,244,50,239,53,224,61,131,106"/>
+<area shape="rect" id="Node000003" href="$classviewmodel_1_1_task_view_model.html#abd84bdfcc6b71fd286231b1b4e19e4a0" title="Возвращает отображаемое имя приоритета" alt="" coords="223,71,424,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="174,110,209,106,205,109,176,115"/>
+<area shape="rect" id="Node000004" href="$classviewmodel_1_1_task_view_model.html#a1a618ae9eecfd3fefadebd848a99ec92" title="Возвращает заголовок задачи" alt="" coords="223,136,424,177"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="175,133,210,140,204,141,176,139"/>
+<area shape="rect" id="Node000005" href="$classview_1_1_main_controller.html#a5981fecb5b1f6de2264882befb62d52f" title=" " alt="" coords="235,201,412,242"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="131,143,224,186,244,196,239,196,222,191,131,148"/>
+<area shape="rect" id="Node000006" href="$classviewmodel_1_1_task_view_model.html#aa34a9517a43daff6eef84dc13e1cd0a9" title="Возвращает время окончания (дедлайн) задачи" alt="" coords="472,168,673,209"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="412,207,459,203,454,204,412,213"/>
+<area shape="rect" id="Node000007" href="$classviewmodel_1_1_task_view_model.html#ad274b2e6ae4bfa67e9e4877d1f0d3104" title="Возвращает время начала задачи" alt="" coords="472,233,673,274"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="412,230,459,239,454,239,412,236"/>
+</map>

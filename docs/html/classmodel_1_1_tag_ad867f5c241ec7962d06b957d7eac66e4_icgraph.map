@@ -1,0 +1,5 @@
+<map id="model.Tag.Tag" name="model.Tag.Tag">
+<area shape="rect" id="Node000001" title="Конструктор для создания нового тега" alt="" coords="177,5,283,31"/>
+<area shape="rect" id="Node000002" href="$classmodel_1_1_tag.html#a25c5b0c9771f6431338a44b361de9988" title="Сравнивает теги по названию" alt="" coords="5,5,129,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,18,129,21,129,16,164,18"/>
+</map>

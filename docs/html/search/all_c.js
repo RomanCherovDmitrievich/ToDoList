@@ -1,16 +1,21 @@
 var searchData=
 [
-  ['main_0',['main',['../classapp_1_1_main_app.html#a9788978994366c880434d9cc05a21cb1',1,'app::MainApp']]],
-  ['mainapp_1',['MainApp',['../classapp_1_1_main_app.html',1,'app']]],
-  ['mainapp_2ejava_2',['MainApp.java',['../_main_app_8java.html',1,'']]],
-  ['maincontainer_3',['mainContainer',['../classview_1_1_main_controller.html#a3bea8aa103232816bfd84a1da6f70dd9',1,'view::MainController']]],
+  ['mac_0',['MAC',['../enumutil_1_1_platform_util_1_1_os_family.html#abcae9ae2cd5dedd889bbab5f70f6f68c',1,'util::PlatformUtil::OsFamily']]],
+  ['main_1',['main',['../classapp_1_1_main_app.html#a9788978994366c880434d9cc05a21cb1',1,'app.MainApp.main()'],['../classutil_1_1_database_migrator.html#a703826c15e609176f3da25d6ce8f755d',1,'util.DatabaseMigrator.main()']]],
+  ['mainapp_2',['MainApp',['../classapp_1_1_main_app.html',1,'app']]],
+  ['mainapp_2ejava_3',['MainApp.java',['../_main_app_8java.html',1,'']]],
   ['maincontroller_4',['MainController',['../classview_1_1_main_controller.html',1,'view']]],
   ['maincontroller_2ejava_5',['MainController.java',['../_main_controller_8java.html',1,'']]],
   ['mainpage_2edox_6',['mainpage.dox',['../mainpage_8dox.html',1,'']]],
-  ['mainview_2efxml_7',['MainView.fxml',['../_main_view_8fxml.html',1,'']]],
-  ['markascompleted_8',['markAsCompleted',['../classmodel_1_1_task_manager.html#a3be20318c826cf81cdd44962c31bbf86',1,'model::TaskManager']]],
-  ['mediaplayers_9',['mediaPlayers',['../classutil_1_1_audio_manager.html#ad821ccdc501aee02b922c7a780481422',1,'util::AudioManager']]],
-  ['min_5fheight_10',['MIN_HEIGHT',['../classapp_1_1_main_app.html#adb5ea69d0160842c8866b1482238712b',1,'app::MainApp']]],
-  ['min_5fwidth_11',['MIN_WIDTH',['../classapp_1_1_main_app.html#a37ee9c5df8c0291fa0a35f78cbd54e0d',1,'app::MainApp']]],
-  ['model_12',['model',['../namespacemodel.html',1,'']]]
+  ['maintabpane_7',['mainTabPane',['../classview_1_1_main_controller.html#a9740f6751739f0a5499d2e2b4f8635d2',1,'view::MainController']]],
+  ['mainview_2efxml_8',['MainView.fxml',['../_main_view_8fxml.html',1,'']]],
+  ['manual_9',['MANUAL',['../enumview_1_1_main_controller_1_1_sort_mode.html#ad8f284cdd37df9afc786b36521b1c132',1,'view::MainController::SortMode']]],
+  ['markascompleted_10',['markAsCompleted',['../classmodel_1_1_task_manager.html#a552b2534c08e0610e8d4114396984949',1,'model::TaskManager']]],
+  ['mastervolume_11',['masterVolume',['../classutil_1_1_audio_manager.html#ac22819019199a22ad9a753dfc4fc6f6d',1,'util::AudioManager']]],
+  ['maybecheckoverdue_12',['maybeCheckOverdue',['../classmodel_1_1_task_manager.html#a4bd41b58b761b909528ab4786b95a390',1,'model::TaskManager']]],
+  ['mergetasks_13',['mergeTasks',['../classmodel_1_1_task_manager.html#aad4a8847ce89cef479fc3f6f82d218ab',1,'model::TaskManager']]],
+  ['migratejsontodatabase_14',['migrateJsonToDatabase',['../classutil_1_1_database_migrator.html#a462520e06be58bc2d42fe6bef64c68ff',1,'util::DatabaseMigrator']]],
+  ['migrateschema_15',['migrateSchema',['../classrepository_1_1_database_manager.html#a104e5dac8b06b56fb358902e183b3711',1,'repository::DatabaseManager']]],
+  ['model_16',['model',['../namespacemodel.html',1,'']]],
+  ['musicenabledcheck_17',['musicEnabledCheck',['../classview_1_1_main_controller.html#a1b1f6bcab879d32a0826257296cb9b67',1,'view::MainController']]]
 ];

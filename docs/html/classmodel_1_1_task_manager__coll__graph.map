@@ -1,6 +1,10 @@
 <map id="model.TaskManager" name="model.TaskManager">
-<area shape="rect" id="Node000001" title="Менеджер задач &#45; центральный класс для управления задачами" alt="" coords="5,102,144,128"/>
-<area shape="rect" id="Node000002" href="$classmodel_1_1_task_manager.html" title="Менеджер задач &#45; центральный класс для управления задачами" alt="" coords="5,5,144,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,45,77,102,72,101,72,48"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="159,9,170,18,162,26,145,29,143,24,160,22,165,18,159,14"/>
+<area shape="rect" id="Node000001" title="Центральный менеджер задач (Singleton)." alt="" coords="60,199,198,224"/>
+<area shape="rect" id="Node000002" href="$classmodel_1_1_task_manager.html" title="Центральный менеджер задач (Singleton)." alt="" coords="173,102,312,128"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,137,145,200,142,196,214,138"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="327,106,338,115,330,123,313,126,311,121,328,118,333,115,326,111"/>
+<area shape="rect" id="Node000003" href="$classrepository_1_1_database_manager.html" title="SQLite DAO для задач и связанных таблиц." alt="" coords="5,5,192,31"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="93,43,89,85,92,127,106,166,124,199,119,198,102,169,87,128,84,85,91,48"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="130,37,226,100,222,103,129,42"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="207,10,218,18,210,26,193,29,191,24,208,21,213,18,207,15"/>
 </map>

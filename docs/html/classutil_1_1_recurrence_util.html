@@ -1,0 +1,530 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Умный планировщик задач (To-Do List): Класс util.RecurrenceUtil</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">JavaFX ToDo-приложение с SQLite, уведомлениями и летней темой</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classutil_1_1_recurrence_util.html','','classutil_1_1_recurrence_util-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс util.RecurrenceUtil</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:a3414315b6a1a0c186a568273c2278838" id="r_a3414315b6a1a0c186a568273c2278838"><td class="memItemLeft" align="right" valign="top">static LocalDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3414315b6a1a0c186a568273c2278838">nextOccurrence</a> (LocalDateTime start, String rule)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:ac3c649fecbe5555fa5feac770499e7ef" id="r_ac3c649fecbe5555fa5feac770499e7ef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3c649fecbe5555fa5feac770499e7ef">RecurrenceUtil</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-methods" class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Закрытые статические члены</h2></td></tr>
+<tr class="memitem:aed72b268fd4973767b6bddd0a6791fb4" id="r_aed72b268fd4973767b6bddd0a6791fb4"><td class="memItemLeft" align="right" valign="top">static LocalDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed72b268fd4973767b6bddd0a6791fb4">nextWeekday</a> (LocalDateTime start)</td></tr>
+<tr class="memitem:a423beeee65134aaa2faf43630ff147b6" id="r_a423beeee65134aaa2faf43630ff147b6"><td class="memItemLeft" align="right" valign="top">static LocalDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a423beeee65134aaa2faf43630ff147b6">parseRRule</a> (LocalDateTime start, String rule)</td></tr>
+<tr class="memitem:a8c3268ab94b3fad39e9ed882802c0abf" id="r_a8c3268ab94b3fad39e9ed882802c0abf"><td class="memItemLeft" align="right" valign="top">static LocalDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c3268ab94b3fad39e9ed882802c0abf">nextWeekly</a> (LocalDateTime start, int interval, List&lt; DayOfWeek &gt; byDays)</td></tr>
+<tr class="memitem:ab4e3c92b43f595464f9d335f30e89cf1" id="r_ab4e3c92b43f595464f9d335f30e89cf1"><td class="memItemLeft" align="right" valign="top">static LocalDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4e3c92b43f595464f9d335f30e89cf1">nextMonthly</a> (LocalDateTime start, int interval, List&lt; DayOfWeek &gt; byDays, int bySetPos)</td></tr>
+<tr class="memitem:a287e3b2cf15f382102445870f0db833d" id="r_a287e3b2cf15f382102445870f0db833d"><td class="memItemLeft" align="right" valign="top">static DayOfWeek&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a287e3b2cf15f382102445870f0db833d">parseDay</a> (String value)</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock">
+<p class="definition">См. определение в файле <a class="el" href="_recurrence_util_8java_source.html">RecurrenceUtil.java</a> строка <a class="el" href="_recurrence_util_8java_source.html#l00011">11</a></p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="ac3c649fecbe5555fa5feac770499e7ef" name="ac3c649fecbe5555fa5feac770499e7ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3c649fecbe5555fa5feac770499e7ef">&#9670;&#160;</a></span>RecurrenceUtil()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">util.RecurrenceUtil.RecurrenceUtil </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_recurrence_util_8java_source.html">RecurrenceUtil.java</a> строка <a class="el" href="_recurrence_util_8java_source.html#l00012">12</a></p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="ab4e3c92b43f595464f9d335f30e89cf1" name="ab4e3c92b43f595464f9d335f30e89cf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4e3c92b43f595464f9d335f30e89cf1">&#9670;&#160;</a></span>nextMonthly()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LocalDateTime util.RecurrenceUtil.nextMonthly </td>
+          <td>(</td>
+          <td class="paramtype">LocalDateTime</td>          <td class="paramname"><span class="paramname"><em>start</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>interval</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">List&lt; DayOfWeek &gt;</td>          <td class="paramname"><span class="paramname"><em>byDays</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>bySetPos</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_recurrence_util_8java_source.html">RecurrenceUtil.java</a> строка <a class="el" href="_recurrence_util_8java_source.html#l00108">108</a></p>
+
+<p class="reference">Используется в <a class="el" href="_recurrence_util_8java_source.html#l00038">parseRRule()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_recurrence_util_ab4e3c92b43f595464f9d335f30e89cf1_icgraph.png" border="0" usemap="#aclassutil_1_1_recurrence_util_ab4e3c92b43f595464f9d335f30e89cf1_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_recurrence_util_ab4e3c92b43f595464f9d335f30e89cf1_icgraph" id="aclassutil_1_1_recurrence_util_ab4e3c92b43f595464f9d335f30e89cf1_icgraph">
+<area shape="rect" title=" " alt="" coords="972,43,1130,83"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#a423beeee65134aaa2faf43630ff147b6" title=" " alt="" coords="758,43,924,83"/>
+<area shape="poly" title=" " alt="" coords="953,63,924,66,924,60,959,63"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#a3414315b6a1a0c186a568273c2278838" title=" " alt="" coords="552,43,710,83"/>
+<area shape="poly" title=" " alt="" coords="740,63,711,66,711,60,745,63"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#aa04652e119515ef085759f4b22f39462" title=" " alt="" coords="296,9,473,50"/>
+<area shape="poly" title=" " alt="" coords="534,51,474,44,474,39,539,50"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a66c1573253964fcde19808f4d57ba3e3" title=" " alt="" coords="265,78,504,104"/>
+<area shape="poly" title=" " alt="" coords="534,74,503,80,503,75,539,73"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a552b2534c08e0610e8d4114396984949" title=" " alt="" coords="18,5,204,46"/>
+<area shape="poly" title=" " alt="" coords="277,29,205,30,204,24,282,27"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a337be480aeacacd900c710627a27a63e" title=" " alt="" coords="10,71,212,111"/>
+<area shape="poly" title=" " alt="" coords="247,92,213,94,212,88,252,90"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a9dcf704ac7b311d8bfe516eff8643ad1" title=" " alt="" coords="5,136,217,161"/>
+<area shape="poly" title=" " alt="" coords="308,107,176,137,175,132,302,108"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3414315b6a1a0c186a568273c2278838" name="a3414315b6a1a0c186a568273c2278838"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3414315b6a1a0c186a568273c2278838">&#9670;&#160;</a></span>nextOccurrence()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LocalDateTime util.RecurrenceUtil.nextOccurrence </td>
+          <td>(</td>
+          <td class="paramtype">LocalDateTime</td>          <td class="paramname"><span class="paramname"><em>start</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>rule</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_recurrence_util_8java_source.html">RecurrenceUtil.java</a> строка <a class="el" href="_recurrence_util_8java_source.html#l00015">15</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_recurrence_util_8java_source.html#l00030">nextWeekday()</a> и <a class="el" href="_recurrence_util_8java_source.html#l00038">parseRRule()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_task_manager_8java_source.html#l00405">model.TaskManager.createNextRecurringTask()</a> и <a class="el" href="_new_task_controller_8java_source.html#l00206">view.NewTaskController.validateForm()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_recurrence_util_a3414315b6a1a0c186a568273c2278838_cgraph.png" border="0" usemap="#aclassutil_1_1_recurrence_util_a3414315b6a1a0c186a568273c2278838_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_recurrence_util_a3414315b6a1a0c186a568273c2278838_cgraph" id="aclassutil_1_1_recurrence_util_a3414315b6a1a0c186a568273c2278838_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,164,79"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#aed72b268fd4973767b6bddd0a6791fb4" title=" " alt="" coords="215,5,374,46"/>
+<area shape="poly" title=" " alt="" coords="163,44,202,40,197,42,165,49"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#a423beeee65134aaa2faf43630ff147b6" title=" " alt="" coords="212,71,377,111"/>
+<area shape="poly" title=" " alt="" coords="164,68,199,75,194,77,164,74"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#ab4e3c92b43f595464f9d335f30e89cf1" title=" " alt="" coords="440,5,599,46"/>
+<area shape="poly" title=" " alt="" coords="366,68,430,52,435,50,367,73"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#a8c3268ab94b3fad39e9ed882802c0abf" title=" " alt="" coords="440,71,599,111"/>
+<area shape="poly" title=" " alt="" coords="377,88,428,91,422,91,378,94"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#a287e3b2cf15f382102445870f0db833d" title=" " alt="" coords="425,136,614,161"/>
+<area shape="poly" title=" " alt="" coords="377,109,454,131,449,131,376,115"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_recurrence_util_a3414315b6a1a0c186a568273c2278838_icgraph.png" border="0" usemap="#aclassutil_1_1_recurrence_util_a3414315b6a1a0c186a568273c2278838_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_recurrence_util_a3414315b6a1a0c186a568273c2278838_icgraph" id="aclassutil_1_1_recurrence_util_a3414315b6a1a0c186a568273c2278838_icgraph">
+<area shape="rect" title=" " alt="" coords="552,43,710,83"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#aa04652e119515ef085759f4b22f39462" title=" " alt="" coords="296,9,473,50"/>
+<area shape="poly" title=" " alt="" coords="534,51,474,44,474,39,539,50"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a66c1573253964fcde19808f4d57ba3e3" title=" " alt="" coords="265,78,504,104"/>
+<area shape="poly" title=" " alt="" coords="534,74,503,80,503,75,539,73"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a552b2534c08e0610e8d4114396984949" title=" " alt="" coords="18,5,204,46"/>
+<area shape="poly" title=" " alt="" coords="277,29,205,30,204,24,282,27"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a337be480aeacacd900c710627a27a63e" title=" " alt="" coords="10,71,212,111"/>
+<area shape="poly" title=" " alt="" coords="247,92,213,94,212,88,252,90"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a9dcf704ac7b311d8bfe516eff8643ad1" title=" " alt="" coords="5,136,217,161"/>
+<area shape="poly" title=" " alt="" coords="308,107,176,137,175,132,302,108"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aed72b268fd4973767b6bddd0a6791fb4" name="aed72b268fd4973767b6bddd0a6791fb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed72b268fd4973767b6bddd0a6791fb4">&#9670;&#160;</a></span>nextWeekday()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LocalDateTime util.RecurrenceUtil.nextWeekday </td>
+          <td>(</td>
+          <td class="paramtype">LocalDateTime</td>          <td class="paramname"><span class="paramname"><em>start</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_recurrence_util_8java_source.html">RecurrenceUtil.java</a> строка <a class="el" href="_recurrence_util_8java_source.html#l00030">30</a></p>
+
+<p class="reference">Используется в <a class="el" href="_recurrence_util_8java_source.html#l00015">nextOccurrence()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_recurrence_util_aed72b268fd4973767b6bddd0a6791fb4_icgraph.png" border="0" usemap="#aclassutil_1_1_recurrence_util_aed72b268fd4973767b6bddd0a6791fb4_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_recurrence_util_aed72b268fd4973767b6bddd0a6791fb4_icgraph" id="aclassutil_1_1_recurrence_util_aed72b268fd4973767b6bddd0a6791fb4_icgraph">
+<area shape="rect" title=" " alt="" coords="758,43,917,83"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#a3414315b6a1a0c186a568273c2278838" title=" " alt="" coords="552,43,710,83"/>
+<area shape="poly" title=" " alt="" coords="740,63,711,66,711,60,746,63"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#aa04652e119515ef085759f4b22f39462" title=" " alt="" coords="296,9,473,50"/>
+<area shape="poly" title=" " alt="" coords="534,51,474,44,474,39,539,50"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a66c1573253964fcde19808f4d57ba3e3" title=" " alt="" coords="265,78,504,104"/>
+<area shape="poly" title=" " alt="" coords="534,74,503,80,503,75,539,73"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a552b2534c08e0610e8d4114396984949" title=" " alt="" coords="18,5,204,46"/>
+<area shape="poly" title=" " alt="" coords="277,29,205,30,204,24,282,27"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a337be480aeacacd900c710627a27a63e" title=" " alt="" coords="10,71,212,111"/>
+<area shape="poly" title=" " alt="" coords="247,92,213,94,212,88,252,90"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a9dcf704ac7b311d8bfe516eff8643ad1" title=" " alt="" coords="5,136,217,161"/>
+<area shape="poly" title=" " alt="" coords="308,107,176,137,175,132,302,108"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8c3268ab94b3fad39e9ed882802c0abf" name="a8c3268ab94b3fad39e9ed882802c0abf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c3268ab94b3fad39e9ed882802c0abf">&#9670;&#160;</a></span>nextWeekly()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LocalDateTime util.RecurrenceUtil.nextWeekly </td>
+          <td>(</td>
+          <td class="paramtype">LocalDateTime</td>          <td class="paramname"><span class="paramname"><em>start</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>interval</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">List&lt; DayOfWeek &gt;</td>          <td class="paramname"><span class="paramname"><em>byDays</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_recurrence_util_8java_source.html">RecurrenceUtil.java</a> строка <a class="el" href="_recurrence_util_8java_source.html#l00091">91</a></p>
+
+<p class="reference">Используется в <a class="el" href="_recurrence_util_8java_source.html#l00038">parseRRule()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_recurrence_util_a8c3268ab94b3fad39e9ed882802c0abf_icgraph.png" border="0" usemap="#aclassutil_1_1_recurrence_util_a8c3268ab94b3fad39e9ed882802c0abf_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_recurrence_util_a8c3268ab94b3fad39e9ed882802c0abf_icgraph" id="aclassutil_1_1_recurrence_util_a8c3268ab94b3fad39e9ed882802c0abf_icgraph">
+<area shape="rect" title=" " alt="" coords="972,43,1130,83"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#a423beeee65134aaa2faf43630ff147b6" title=" " alt="" coords="758,43,924,83"/>
+<area shape="poly" title=" " alt="" coords="953,63,924,66,924,60,959,63"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#a3414315b6a1a0c186a568273c2278838" title=" " alt="" coords="552,43,710,83"/>
+<area shape="poly" title=" " alt="" coords="740,63,711,66,711,60,745,63"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#aa04652e119515ef085759f4b22f39462" title=" " alt="" coords="296,9,473,50"/>
+<area shape="poly" title=" " alt="" coords="534,51,474,44,474,39,539,50"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a66c1573253964fcde19808f4d57ba3e3" title=" " alt="" coords="265,78,504,104"/>
+<area shape="poly" title=" " alt="" coords="534,74,503,80,503,75,539,73"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a552b2534c08e0610e8d4114396984949" title=" " alt="" coords="18,5,204,46"/>
+<area shape="poly" title=" " alt="" coords="277,29,205,30,204,24,282,27"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a337be480aeacacd900c710627a27a63e" title=" " alt="" coords="10,71,212,111"/>
+<area shape="poly" title=" " alt="" coords="247,92,213,94,212,88,252,90"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a9dcf704ac7b311d8bfe516eff8643ad1" title=" " alt="" coords="5,136,217,161"/>
+<area shape="poly" title=" " alt="" coords="308,107,176,137,175,132,302,108"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a287e3b2cf15f382102445870f0db833d" name="a287e3b2cf15f382102445870f0db833d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a287e3b2cf15f382102445870f0db833d">&#9670;&#160;</a></span>parseDay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DayOfWeek util.RecurrenceUtil.parseDay </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_recurrence_util_8java_source.html">RecurrenceUtil.java</a> строка <a class="el" href="_recurrence_util_8java_source.html#l00129">129</a></p>
+
+<p class="reference">Используется в <a class="el" href="_recurrence_util_8java_source.html#l00038">parseRRule()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_recurrence_util_a287e3b2cf15f382102445870f0db833d_icgraph.png" border="0" usemap="#aclassutil_1_1_recurrence_util_a287e3b2cf15f382102445870f0db833d_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_recurrence_util_a287e3b2cf15f382102445870f0db833d_icgraph" id="aclassutil_1_1_recurrence_util_a287e3b2cf15f382102445870f0db833d_icgraph">
+<area shape="rect" title=" " alt="" coords="972,50,1161,76"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#a423beeee65134aaa2faf43630ff147b6" title=" " alt="" coords="758,43,924,83"/>
+<area shape="poly" title=" " alt="" coords="953,63,924,66,924,60,959,63"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#a3414315b6a1a0c186a568273c2278838" title=" " alt="" coords="552,43,710,83"/>
+<area shape="poly" title=" " alt="" coords="740,63,711,66,711,60,745,63"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#aa04652e119515ef085759f4b22f39462" title=" " alt="" coords="296,9,473,50"/>
+<area shape="poly" title=" " alt="" coords="534,51,474,44,474,39,539,50"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a66c1573253964fcde19808f4d57ba3e3" title=" " alt="" coords="265,78,504,104"/>
+<area shape="poly" title=" " alt="" coords="534,74,503,80,503,75,539,73"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a552b2534c08e0610e8d4114396984949" title=" " alt="" coords="18,5,204,46"/>
+<area shape="poly" title=" " alt="" coords="277,29,205,30,204,24,282,27"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a337be480aeacacd900c710627a27a63e" title=" " alt="" coords="10,71,212,111"/>
+<area shape="poly" title=" " alt="" coords="247,92,213,94,212,88,252,90"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a9dcf704ac7b311d8bfe516eff8643ad1" title=" " alt="" coords="5,136,217,161"/>
+<area shape="poly" title=" " alt="" coords="308,107,176,137,175,132,302,108"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a423beeee65134aaa2faf43630ff147b6" name="a423beeee65134aaa2faf43630ff147b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a423beeee65134aaa2faf43630ff147b6">&#9670;&#160;</a></span>parseRRule()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LocalDateTime util.RecurrenceUtil.parseRRule </td>
+          <td>(</td>
+          <td class="paramtype">LocalDateTime</td>          <td class="paramname"><span class="paramname"><em>start</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>rule</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_recurrence_util_8java_source.html">RecurrenceUtil.java</a> строка <a class="el" href="_recurrence_util_8java_source.html#l00038">38</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_recurrence_util_8java_source.html#l00108">nextMonthly()</a>, <a class="el" href="_recurrence_util_8java_source.html#l00091">nextWeekly()</a> и <a class="el" href="_recurrence_util_8java_source.html#l00129">parseDay()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_recurrence_util_8java_source.html#l00015">nextOccurrence()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_recurrence_util_a423beeee65134aaa2faf43630ff147b6_cgraph.png" border="0" usemap="#aclassutil_1_1_recurrence_util_a423beeee65134aaa2faf43630ff147b6_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_recurrence_util_a423beeee65134aaa2faf43630ff147b6_cgraph" id="aclassutil_1_1_recurrence_util_a423beeee65134aaa2faf43630ff147b6_cgraph">
+<area shape="rect" title=" " alt="" coords="5,71,171,111"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#ab4e3c92b43f595464f9d335f30e89cf1" title=" " alt="" coords="234,5,392,46"/>
+<area shape="poly" title=" " alt="" coords="159,68,228,50,223,52,161,73"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#a8c3268ab94b3fad39e9ed882802c0abf" title=" " alt="" coords="234,71,392,111"/>
+<area shape="poly" title=" " alt="" coords="171,88,221,90,216,92,171,94"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#a287e3b2cf15f382102445870f0db833d" title=" " alt="" coords="219,136,408,161"/>
+<area shape="poly" title=" " alt="" coords="171,109,248,131,243,132,170,115"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_recurrence_util_a423beeee65134aaa2faf43630ff147b6_icgraph.png" border="0" usemap="#aclassutil_1_1_recurrence_util_a423beeee65134aaa2faf43630ff147b6_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_recurrence_util_a423beeee65134aaa2faf43630ff147b6_icgraph" id="aclassutil_1_1_recurrence_util_a423beeee65134aaa2faf43630ff147b6_icgraph">
+<area shape="rect" title=" " alt="" coords="758,43,924,83"/>
+<area shape="rect" href="classutil_1_1_recurrence_util.html#a3414315b6a1a0c186a568273c2278838" title=" " alt="" coords="552,43,710,83"/>
+<area shape="poly" title=" " alt="" coords="740,63,711,66,711,60,745,63"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#aa04652e119515ef085759f4b22f39462" title=" " alt="" coords="296,9,473,50"/>
+<area shape="poly" title=" " alt="" coords="534,51,474,44,474,39,539,50"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a66c1573253964fcde19808f4d57ba3e3" title=" " alt="" coords="265,78,504,104"/>
+<area shape="poly" title=" " alt="" coords="534,74,503,80,503,75,539,73"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a552b2534c08e0610e8d4114396984949" title=" " alt="" coords="18,5,204,46"/>
+<area shape="poly" title=" " alt="" coords="277,29,205,30,204,24,282,27"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a337be480aeacacd900c710627a27a63e" title=" " alt="" coords="10,71,212,111"/>
+<area shape="poly" title=" " alt="" coords="247,92,213,94,212,88,252,90"/>
+<area shape="rect" href="classview_1_1_new_task_controller.html#a9dcf704ac7b311d8bfe516eff8643ad1" title=" " alt="" coords="5,136,217,161"/>
+<area shape="poly" title=" " alt="" coords="308,107,176,137,175,132,302,108"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>src/util/<a class="el" href="_recurrence_util_8java_source.html">RecurrenceUtil.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespaceutil.html">util</a></li><li class="navelem"><a href="classutil_1_1_recurrence_util.html">RecurrenceUtil</a></li>
+    <li class="footer">Документация по Умный планировщик задач (To-Do List). Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

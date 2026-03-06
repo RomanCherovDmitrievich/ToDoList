@@ -1,0 +1,9 @@
+<map id="view.MainController.handleCalendarDateChange" name="view.MainController.handleCalendarDateChange">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,181,79"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_main_controller.html#a5981fecb5b1f6de2264882befb62d52f" title=" " alt="" coords="229,39,405,79"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,56,216,59,211,59,181,62"/>
+<area shape="rect" id="Node000003" href="$classviewmodel_1_1_task_view_model.html#aa34a9517a43daff6eef84dc13e1cd0a9" title="Возвращает время окончания (дедлайн) задачи" alt="" coords="453,5,654,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="405,44,440,42,435,42,406,49"/>
+<area shape="rect" id="Node000004" href="$classviewmodel_1_1_task_view_model.html#ad274b2e6ae4bfa67e9e4877d1f0d3104" title="Возвращает время начала задачи" alt="" coords="453,71,654,111"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="405,68,440,75,435,75,405,74"/>
+</map>

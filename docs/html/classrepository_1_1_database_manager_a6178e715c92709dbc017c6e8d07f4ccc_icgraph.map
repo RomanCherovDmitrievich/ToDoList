@@ -1,0 +1,27 @@
+<map id="repository.DatabaseManager.getSetting" name="repository.DatabaseManager.getSetting">
+<area shape="rect" id="Node000001" title=" " alt="" coords="987,165,1194,206"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_theme_manager.html#a2c5933297ff3dd3af83560dcfc759dc5" title=" " alt="" coords="742,104,939,145"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="988,161,926,148,926,143,993,161"/>
+<area shape="rect" id="Node000009" href="$classutil_1_1_notification_settings.html#a10f7651faed4b44cf764ad6bd0542ced" title=" " alt="" coords="748,201,933,226"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="974,199,933,206,933,201,969,199"/>
+<area shape="rect" id="Node000003" href="$classview_1_1_main_controller.html#acb8e00ddc7401d25f6975bd5118a6bee" title=" " alt="" coords="253,5,422,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="783,97,741,81,694,66,623,51,551,40,423,30,422,25,552,35,624,45,695,60,742,76,788,97"/>
+<area shape="rect" id="Node000005" href="$classview_1_1_main_controller.html#ab96d9e00350796e450dd564252136874" title=" " alt="" coords="506,75,674,115"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="724,111,675,108,674,102,730,111"/>
+<area shape="rect" id="Node000008" href="$classapp_1_1_main_app.html#a47878f33c1c0458f442d9b3f93bedf06" title=" " alt="" coords="526,140,653,165"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="724,137,654,148,653,143,729,137"/>
+<area shape="rect" id="Node000004" href="$classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,144,190,169"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="250,54,239,61,169,105,116,145,113,141,166,100,236,57,254,51"/>
+<area shape="rect" id="Node000006" href="$classview_1_1_main_controller.html#aa6adc26184a175f0ddf6030f0c24d046" title=" " alt="" coords="250,71,425,111"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="487,94,426,95,425,90,492,93"/>
+<area shape="rect" id="Node000007" href="$classview_1_1_main_controller.html#a832ae34bcb138f8090bf8213f1f97de9" title=" " alt="" coords="253,136,422,177"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="488,120,423,138,422,133,493,118"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="234,157,191,159,190,154,239,155"/>
+<area shape="rect" id="Node000010" href="$classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462" title=" " alt="" coords="485,193,694,234"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="730,214,695,216,695,211,735,213"/>
+<area shape="rect" id="Node000012" href="$classview_1_1_main_controller.html#afba699a59966cda24b9998995a17c94d" title=" " alt="" coords="505,259,674,299"/>
+<area shape="poly" id="edge12_Node000009_Node000012" title=" " alt="" coords="776,230,671,261,670,255,771,231"/>
+<area shape="rect" id="Node000011" href="$classutil_1_1_task_reminder_service.html#aadd0b77dafd4c390cbdf367b9654aa6c" title=" " alt="" coords="238,201,437,242"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="467,218,438,221,437,216,472,217"/>
+<area shape="poly" id="edge13_Node000012_Node000004" title=" " alt="" coords="487,286,431,288,367,284,301,274,237,256,198,238,163,215,112,172,113,167,166,211,201,234,239,251,302,269,368,279,432,283,492,286"/>
+</map>

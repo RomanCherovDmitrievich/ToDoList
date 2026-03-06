@@ -1,0 +1,69 @@
+<map id="model.TaskManager.initializeStorage" name="model.TaskManager.initializeStorage">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,209,194,250"/>
+<area shape="rect" id="Node000002" href="$classmodel_1_1_task_manager.html#ad965ff12626fdfe14240873d272f1625" title=" " alt="" coords="252,152,444,193"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,207,244,195,240,199,192,211"/>
+<area shape="rect" id="Node000010" href="$classrepository_1_1_database_manager.html#a2035f400cd8f5f503ea6f961de54d4ff" title=" " alt="" coords="244,267,452,307"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="190,248,244,261,239,264,191,253"/>
+<area shape="rect" id="Node000020" href="$classutil_1_1_json_util.html#a2a80078f88c932a5ab230d4775c2391d" title="Загружает все задачи из JSON файла" alt="" coords="271,217,424,242"/>
+<area shape="poly" id="edge19_Node000001_Node000020" title=" " alt="" coords="193,227,258,228,253,231,195,232"/>
+<area shape="rect" id="Node000031" href="$classmodel_1_1_task_manager.html#aad4a8847ce89cef479fc3f6f82d218ab" title=" " alt="" coords="242,332,454,357"/>
+<area shape="poly" id="edge31_Node000001_Node000031" title=" " alt="" coords="127,248,180,283,243,317,265,326,260,327,241,321,177,288,128,253"/>
+<area shape="rect" id="Node000033" href="$classmodel_1_1_task_manager.html#a148e0a483446591b0b0b38a7f52f425f" title=" " alt="" coords="249,87,446,127"/>
+<area shape="poly" id="edge33_Node000001_Node000033" title=" " alt="" coords="127,207,179,172,240,138,260,131,256,135,243,143,181,177,131,211"/>
+<area shape="rect" id="Node000003" href="$classmodel_1_1_task_manager.html#a0c065b1a2379283891f0ee94fa5c1ef4" title=" " alt="" coords="508,91,706,131"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="436,149,506,134,502,137,438,154"/>
+<area shape="rect" id="Node000004" href="$classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421" title="Сохраняет все задачи в JSON файл" alt="" coords="800,98,957,124"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="706,108,786,110,781,112,707,114"/>
+<area shape="rect" id="Node000005" href="$classutil_1_1_json_util.html#a6acc14b51427ce85235d8981f801d734" title="Возвращает полный путь к файлу задач" alt="" coords="1081,108,1241,133"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="957,111,1067,117,1062,118,958,116"/>
+<area shape="rect" id="Node000006" href="$classutil_1_1_json_util.html#a67200ee9448e6b079ca9ea49200dec30" title="Сохраняет задачи в указанный путь" alt="" coords="1062,32,1260,57"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="936,95,1091,60,1086,62,937,100"/>
+<area shape="rect" id="Node000007" href="$classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="1341,5,1513,46"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1260,35,1328,32,1323,33,1261,40"/>
+<area shape="rect" id="Node000008" href="$classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="1578,13,1743,38"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1513,23,1565,25,1560,26,1514,28"/>
+<area shape="rect" id="Node000009" href="$classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="1792,13,1954,38"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1743,23,1779,25,1773,26,1744,28"/>
+<area shape="rect" id="Node000011" href="$classrepository_1_1_database_manager.html#adff3d0488b1f5e07b737c8028fd61b38" title=" " alt="" coords="512,267,702,307"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="451,284,499,286,494,288,453,290"/>
+<area shape="rect" id="Node000012" href="$classrepository_1_1_database_manager.html#ad56b237e4e259b99a77f8c2b5d9a49db" title=" " alt="" coords="760,389,997,430"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="683,305,713,317,776,347,834,381,828,381,774,352,711,321,683,311"/>
+<area shape="rect" id="Node000013" href="$classrepository_1_1_database_manager.html#a0f0fdcc1c89621e54aba873524c8785c" title=" " alt="" coords="1048,549,1274,590"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="902,428,965,481,1004,509,1046,534,1063,544,1057,543,1043,539,1001,514,961,485,901,433"/>
+<area shape="rect" id="Node000014" href="$classrepository_1_1_database_manager.html#ab11cedc68f3e40fa74cd71dcd3c28d47" title=" " alt="" coords="1047,304,1274,345"/>
+<area shape="poly" id="edge13_Node000012_Node000014" title=" " alt="" coords="942,386,1044,354,1066,350,1071,349,1045,359,943,391"/>
+<area shape="rect" id="Node000015" href="$classutil_1_1_path_resolver.html#abd3fe2993d257c6e777a1303a872be26" title=" " alt="" coords="1067,369,1254,394"/>
+<area shape="poly" id="edge14_Node000012_Node000015" title=" " alt="" coords="997,395,1054,392,1049,393,998,401"/>
+<area shape="rect" id="Node000018" href="$classrepository_1_1_database_manager.html#a104e5dac8b06b56fb358902e183b3711" title=" " alt="" coords="1045,419,1277,459"/>
+<area shape="poly" id="edge17_Node000012_Node000018" title=" " alt="" coords="997,419,1032,425,1027,425,997,425"/>
+<area shape="rect" id="Node000019" href="$classrepository_1_1_database_manager.html#a12107d0489c1b18ad4e574a1f5fc1a36" title=" " alt="" coords="1052,484,1270,525"/>
+<area shape="poly" id="edge18_Node000012_Node000019" title=" " alt="" coords="933,428,1046,468,1073,479,1067,479,1044,474,933,433"/>
+<area shape="rect" id="Node000016" href="$classutil_1_1_platform_util.html#ae1f7127305756e82c242eea124934f5b" title=" " alt="" coords="1343,382,1511,408"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="1255,384,1330,390,1325,390,1255,389"/>
+<area shape="rect" id="Node000017" href="$classutil_1_1_platform_util.html#ab3325e5522d5be0de30703ddc160f076" title=" " alt="" coords="1577,382,1744,408"/>
+<area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="1512,392,1564,395,1559,395,1512,398"/>
+<area shape="poly" id="edge20_Node000020_Node000005" title=" " alt="" coords="424,214,502,202,811,160,1068,130,1063,132,811,165,502,207,426,219"/>
+<area shape="rect" id="Node000021" href="$classutil_1_1_json_util.html#a6999d4de89d6d2f242f70822b6641672" title="Загружает задачи из указанного пути" alt="" coords="502,217,712,242"/>
+<area shape="poly" id="edge21_Node000020_Node000021" title=" " alt="" coords="424,227,489,229,484,231,426,232"/>
+<area shape="rect" id="Node000022" href="$classutil_1_1_json_util.html#a92865a18b3e9681f516419fd55bfb27a" title="Парсит JSON строку в список задач" alt="" coords="798,209,959,250"/>
+<area shape="poly" id="edge22_Node000021_Node000022" title=" " alt="" coords="712,227,785,229,780,230,713,232"/>
+<area shape="rect" id="Node000023" href="$classutil_1_1_json_util.html#a428f650826f08a9ee580d87bb60a1443" title="Парсит один JSON объект задачи" alt="" coords="1066,181,1256,206"/>
+<area shape="poly" id="edge23_Node000022_Node000023" title=" " alt="" coords="959,217,1053,207,1048,208,960,222"/>
+<area shape="rect" id="Node000030" href="$classutil_1_1_json_util.html#a53c77a1cd244ad8e37075b9a6c44da32" title="Разделяет JSON массив на отдельные объекты" alt="" coords="1065,230,1256,256"/>
+<area shape="poly" id="edge30_Node000022_Node000030" title=" " alt="" coords="959,231,1052,237,1047,238,960,236"/>
+<area shape="rect" id="Node000024" href="$classutil_1_1_json_util.html#aee5a01fe4fd4d523b312591d077d3f13" title="Парсит дату&#45;время с поддержкой различных форматов" alt="" coords="1336,120,1519,145"/>
+<area shape="poly" id="edge24_Node000023_Node000024" title=" " alt="" coords="1219,178,1356,148,1351,150,1221,183"/>
+<area shape="rect" id="Node000025" href="$classutil_1_1_json_util.html#a45c51c188f965f7eafd39189c91ea0bd" title="Парсит JSON поля из строки" alt="" coords="1332,169,1522,194"/>
+<area shape="poly" id="edge25_Node000023_Node000025" title=" " alt="" coords="1256,187,1320,186,1314,187,1257,192"/>
+<area shape="rect" id="Node000026" href="$classmodel_1_1_task.html#ab0baf46a0eaf537e019f5589d31600ee" title=" " alt="" coords="1327,218,1527,244"/>
+<area shape="poly" id="edge26_Node000023_Node000026" title=" " alt="" coords="1256,204,1318,215,1313,216,1257,210"/>
+<area shape="rect" id="Node000027" href="$classmodel_1_1_task.html#a5e261c2bdd2250bb8fcbf52eae83517f" title=" " alt="" coords="1325,268,1529,293"/>
+<area shape="poly" id="edge27_Node000023_Node000027" title=" " alt="" coords="1248,204,1278,215,1293,225,1303,235,1312,245,1326,254,1341,262,1335,262,1324,259,1309,249,1299,239,1290,229,1276,220,1248,210"/>
+<area shape="rect" id="Node000028" href="$classmodel_1_1_task.html#acbf938d98a6b9a8e72cdf04d200dfece" title=" " alt="" coords="1326,317,1528,358"/>
+<area shape="poly" id="edge28_Node000023_Node000028" title=" " alt="" coords="1257,204,1279,216,1297,237,1304,260,1310,282,1327,304,1332,309,1326,308,1323,308,1306,285,1299,262,1292,240,1275,220,1256,209"/>
+<area shape="rect" id="Node000029" href="$classmodel_1_1_task.html#a7db5ca31a1b8fc9bb8ddb84ea22c7adf" title=" " alt="" coords="1344,70,1510,96"/>
+<area shape="poly" id="edge29_Node000023_Node000029" title=" " alt="" coords="1201,178,1238,163,1276,143,1299,124,1324,105,1335,102,1340,100,1326,109,1302,128,1278,148,1240,168,1203,183"/>
+<area shape="rect" id="Node000032" href="$classmodel_1_1_task.html#ad8dccd120a6f3e607f46f0c3765de3a5" title="Возвращает уникальный идентификатор задачи" alt="" coords="546,332,668,357"/>
+<area shape="poly" id="edge32_Node000031_Node000032" title=" " alt="" coords="454,342,533,344,528,345,455,347"/>
+<area shape="poly" id="edge34_Node000033_Node000003" title=" " alt="" coords="446,106,495,108,490,110,448,111"/>
+</map>

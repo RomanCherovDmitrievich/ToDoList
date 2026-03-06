@@ -1,6 +1,25 @@
 var searchData=
 [
-  ['loadsounds_0',['loadSounds',['../classutil_1_1_audio_manager.html#a5ad71057028d829235d9ca3519feae2d',1,'util::AudioManager']]],
-  ['loadtasks_1',['loadTasks',['../classmodel_1_1_task_manager.html#a34ef794553cd1ac2b4603298b564dafb',1,'model.TaskManager.loadTasks()'],['../classutil_1_1_json_util.html#a2a80078f88c932a5ab230d4775c2391d',1,'util.JsonUtil.loadTasks()'],['../classview_1_1_main_controller.html#af03ff4fe034cfc97fd82327d0e618e59',1,'view.MainController.loadTasks()']]],
-  ['loadtasksfrompath_2',['loadTasksFromPath',['../classutil_1_1_json_util.html#a6999d4de89d6d2f242f70822b6641672',1,'util::JsonUtil']]]
+  ['idproperty_0',['idProperty',['../classviewmodel_1_1_task_view_model.html#a78bbc21be4a7366ff977474cb547ca0e',1,'viewmodel::TaskViewModel']]],
+  ['init_1',['init',['../classapp_1_1_main_app.html#acbf781550cefac29e6c8ecbdd2b38904',1,'app::MainApp']]],
+  ['initialize_2',['initialize',['../classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd',1,'view.MainController.initialize()'],['../classview_1_1_new_task_controller.html#a9dcf704ac7b311d8bfe516eff8643ad1',1,'view.NewTaskController.initialize()']]],
+  ['initializedatabase_3',['initializeDatabase',['../classrepository_1_1_database_manager.html#ad56b237e4e259b99a77f8c2b5d9a49db',1,'repository::DatabaseManager']]],
+  ['initializepriorityandcategory_4',['initializePriorityAndCategory',['../classview_1_1_new_task_controller.html#a7feab6d24703217f093e4fc8bbc1eac0',1,'view::NewTaskController']]],
+  ['initializerecurrence_5',['initializeRecurrence',['../classview_1_1_new_task_controller.html#a2bb2143f1fc38eb321fd5af63fae0670',1,'view::NewTaskController']]],
+  ['initializereminder_6',['initializeReminder',['../classview_1_1_new_task_controller.html#a2c8d8e26d31927089b039ad955124a82',1,'view::NewTaskController']]],
+  ['initializestorage_7',['initializeStorage',['../classmodel_1_1_task_manager.html#a2cd3b65bd29af3b855f653a323e2b2f5',1,'model::TaskManager']]],
+  ['initializetimecombos_8',['initializeTimeCombos',['../classview_1_1_new_task_controller.html#ac995363c56091dd4e0bdbc1a6ed078df',1,'view::NewTaskController']]],
+  ['isaudiofile_9',['isAudioFile',['../classutil_1_1_audio_manager.html#ac359959426e86ac5a4a2974b492cfd7e',1,'util::AudioManager']]],
+  ['iscommandavailable_10',['isCommandAvailable',['../classutil_1_1_email_notifier.html#a6cab94683703c93cbcd1d587284e7f20',1,'util::EmailNotifier']]],
+  ['iscompleted_11',['isCompleted',['../classmodel_1_1_task.html#a9e92e43dca03f30943efdb87b476e71c',1,'model.Task.isCompleted()'],['../classviewmodel_1_1_task_view_model.html#a6b568ef75542da4868a533844bbbe3a1',1,'viewmodel.TaskViewModel.isCompleted()']]],
+  ['isemailenabled_12',['isEmailEnabled',['../classutil_1_1_notification_settings.html#a5dbcdb3386bc1aa64246f34777f22f95',1,'util::NotificationSettings']]],
+  ['ismac_13',['isMac',['../classutil_1_1_notification_service.html#aed3398a7349e472b9c2d9de26eecf447',1,'util::NotificationService']]],
+  ['ismanualorderallowed_14',['isManualOrderAllowed',['../classview_1_1_main_controller.html#abe7a48020650d788f73c30d42470f9e5',1,'view::MainController']]],
+  ['isoverdue_15',['isOverdue',['../classmodel_1_1_task.html#a6c49d13cb1e76676ef53876e9acc3ca4',1,'model.Task.isOverdue()'],['../classviewmodel_1_1_task_view_model.html#a81effd078fee106eea52436907468ed9',1,'viewmodel.TaskViewModel.isOverdue()']]],
+  ['ispopupenabled_16',['isPopupEnabled',['../classutil_1_1_notification_settings.html#a1b0679cfe9a92d59e5a67b7b0ec0a365',1,'util::NotificationSettings']]],
+  ['isredos_17',['isRedOs',['../classutil_1_1_platform_util.html#ab3325e5522d5be0de30703ddc160f076',1,'util::PlatformUtil']]],
+  ['issoundenabled_18',['isSoundEnabled',['../classutil_1_1_notification_settings.html#a0dbdc534ea35f03a33a6978186c733eb',1,'util::NotificationSettings']]],
+  ['issoundsenabled_19',['isSoundsEnabled',['../classutil_1_1_audio_manager.html#ac13f5b8830cab147db74eb4bd301d3e5',1,'util::AudioManager']]],
+  ['istaskcreated_20',['isTaskCreated',['../classview_1_1_new_task_controller.html#ad985a55d5cf42453ff70863d8619713b',1,'view::NewTaskController']]],
+  ['isusedatabase_21',['isUseDatabase',['../classmodel_1_1_task_manager.html#a9cb847e5bb1a6437545211f1ffbaf8df',1,'model::TaskManager']]]
 ];

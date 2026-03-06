@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Умный планировщик задач (To-Do List): Исходный файл src/util/TaskReminderService.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">JavaFX ToDo-приложение с SQLite, уведомлениями и летней темой</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_task_reminder_service_8java_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">TaskReminderService.java</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_task_reminder_service_8java.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">package </span>util;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> model.Task;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">import</span> model.TaskManager;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> util.NotificationSettings;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">import</span> java.time.Duration;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">import</span> java.time.LocalDateTime;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">import</span> java.util.HashSet;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">import</span> java.util.List;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">import</span> java.util.Set;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">import</span> java.util.concurrent.ConcurrentHashMap;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">import</span> java.util.concurrent.Executors;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">import</span> java.util.concurrent.ScheduledExecutorService;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">import</span> java.util.concurrent.TimeUnit;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classutil_1_1_task_reminder_service.html">   20</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="classutil_1_1_task_reminder_service.html#a596b567e69cbc3162c125350d1beedac">TaskReminderService</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classutil_1_1_task_reminder_service.html#a2c925d8e4294056f30682278f5590837">   21</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#a2c925d8e4294056f30682278f5590837">CHECK_INTERVAL_SECONDS</a> = 60;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classutil_1_1_task_reminder_service.html#a7a9c14ce57e8fe2b8fc103a2f344713f">   23</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <a class="code hl_function" href="classutil_1_1_task_reminder_service.html#a596b567e69cbc3162c125350d1beedac">TaskReminderService</a> <a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#a7a9c14ce57e8fe2b8fc103a2f344713f">instance</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classutil_1_1_task_reminder_service.html#ac2859134bcaf8ae7cccb1e7c1afbf06d">   25</a></span>    <span class="keyword">private</span> ScheduledExecutorService <a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#ac2859134bcaf8ae7cccb1e7c1afbf06d">scheduler</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classutil_1_1_task_reminder_service.html#a11868f7c721a47c1508e6972fa1086e6">   26</a></span>    <span class="keyword">private</span> <span class="keyword">final</span> Set&lt;String&gt; <a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#a11868f7c721a47c1508e6972fa1086e6">upcomingNotified</a> = ConcurrentHashMap.newKeySet();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classutil_1_1_task_reminder_service.html#aef2bfea16964180853f061e611c8d2b8">   27</a></span>    <span class="keyword">private</span> <span class="keyword">final</span> Set&lt;String&gt; <a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#aef2bfea16964180853f061e611c8d2b8">overdueNotified</a> = ConcurrentHashMap.newKeySet();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classutil_1_1_task_reminder_service.html#a509d98e44cd438c97e98309924c0f3d2">   29</a></span>    <span class="keyword">private</span> <span class="keyword">final</span> <a class="code hl_class" href="classutil_1_1_notification_service.html">NotificationService</a> <a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#a509d98e44cd438c97e98309924c0f3d2">notificationService</a> = <a class="code hl_class" href="classutil_1_1_notification_service.html">NotificationService</a>.<a class="code hl_function" href="classutil_1_1_notification_service.html#a93a569a76ba27310e8ecf6c792431efd">getInstance</a>();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classutil_1_1_task_reminder_service.html#a6cdfc0662b728cd446d1fa1a5d4835d4">   30</a></span>    <span class="keyword">private</span> <span class="keyword">final</span> <a class="code hl_class" href="classutil_1_1_email_notifier.html">EmailNotifier</a> <a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#a6cdfc0662b728cd446d1fa1a5d4835d4">emailNotifier</a> = <span class="keyword">new</span> <a class="code hl_class" href="classutil_1_1_email_notifier.html">EmailNotifier</a>();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classutil_1_1_task_reminder_service.html#a596b567e69cbc3162c125350d1beedac">   32</a></span>    <span class="keyword">private</span> <a class="code hl_function" href="classutil_1_1_task_reminder_service.html#a596b567e69cbc3162c125350d1beedac">TaskReminderService</a>() {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
+</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classutil_1_1_task_reminder_service.html#af553d1ff0e23581c2a5371c1bd246fc6">   35</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> <a class="code hl_function" href="classutil_1_1_task_reminder_service.html#a596b567e69cbc3162c125350d1beedac">TaskReminderService</a> <a class="code hl_function" href="classutil_1_1_task_reminder_service.html#af553d1ff0e23581c2a5371c1bd246fc6">getInstance</a>() {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#a7a9c14ce57e8fe2b8fc103a2f344713f">instance</a> == <span class="keyword">null</span>) {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#a7a9c14ce57e8fe2b8fc103a2f344713f">instance</a> = <span class="keyword">new</span> <a class="code hl_function" href="classutil_1_1_task_reminder_service.html#a596b567e69cbc3162c125350d1beedac">TaskReminderService</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#a7a9c14ce57e8fe2b8fc103a2f344713f">instance</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
+</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classutil_1_1_task_reminder_service.html#ac37ddcc6753f6a5ed8c5f2ff7d318582">   42</a></span>    <span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classutil_1_1_task_reminder_service.html#ac37ddcc6753f6a5ed8c5f2ff7d318582">start</a>() {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#ac2859134bcaf8ae7cccb1e7c1afbf06d">scheduler</a> != <span class="keyword">null</span> &amp;&amp; !<a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#ac2859134bcaf8ae7cccb1e7c1afbf06d">scheduler</a>.isShutdown()) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#ac2859134bcaf8ae7cccb1e7c1afbf06d">scheduler</a> = Executors.newSingleThreadScheduledExecutor(r -&gt; {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            Thread thread = <span class="keyword">new</span> Thread(r, <span class="stringliteral">&quot;task-reminder-thread&quot;</span>);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            thread.setDaemon(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            <span class="keywordflow">return</span> thread;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        });</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#ac2859134bcaf8ae7cccb1e7c1afbf06d">scheduler</a>.scheduleAtFixedRate(</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            this::safeCheck,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            5,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#a2c925d8e4294056f30682278f5590837">CHECK_INTERVAL_SECONDS</a>,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            TimeUnit.SECONDS</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        );</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classutil_1_1_task_reminder_service.html#aadd0b77dafd4c390cbdf367b9654aa6c">   61</a></span>    <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classutil_1_1_task_reminder_service.html#aadd0b77dafd4c390cbdf367b9654aa6c">safeCheck</a>() {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <a class="code hl_function" href="classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462">checkTasks</a>();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        } <span class="keywordflow">catch</span> (Exception e) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            System.err.println(<span class="stringliteral">&quot;Reminder check error: &quot;</span> + e.getMessage());</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
+</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462">   69</a></span>    <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462">checkTasks</a>() {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        List&lt;Task&gt; tasks = <a class="code hl_class" href="classmodel_1_1_task_manager.html">TaskManager</a>.<a class="code hl_function" href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea">getInstance</a>().<a class="code hl_function" href="classmodel_1_1_task_manager.html#aebc5940a309766edceeeaa6870679472">getAllTasks</a>();</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <a class="code hl_class" href="classutil_1_1_notification_settings.html">NotificationSettings</a> settings = <a class="code hl_class" href="classutil_1_1_notification_settings.html">NotificationSettings</a>.<a class="code hl_function" href="classutil_1_1_notification_settings.html#a10f7651faed4b44cf764ad6bd0542ced">load</a>();</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        LocalDateTime now = LocalDateTime.now();</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        Set&lt;String&gt; activeIds = <span class="keyword">new</span> HashSet&lt;&gt;();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">for</span> (<a class="code hl_class" href="classmodel_1_1_task.html">Task</a> task : tasks) {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            String <span class="keywordtype">id</span> = task.getId();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            activeIds.add(<span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <span class="keywordflow">if</span> (task.isCompleted()) {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                <a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#a11868f7c721a47c1508e6972fa1086e6">upcomingNotified</a>.remove(<span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                <a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#aef2bfea16964180853f061e611c8d2b8">overdueNotified</a>.remove(<span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            <span class="keywordtype">int</span> offset = task.getReminderOffsetMinutes() &gt; 0 ? task.getReminderOffsetMinutes() : settings.<a class="code hl_function" href="classutil_1_1_notification_settings.html#a9fec9bda45f4ff805bbb686560c9143c">getReminderOffsetMinutes</a>();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            LocalDateTime <a class="code hl_function" href="classutil_1_1_task_reminder_service.html#ac37ddcc6753f6a5ed8c5f2ff7d318582">start</a> = task.getStartTime();</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            LocalDateTime upcomingEdge = now.plusMinutes(Math.max(1, offset));</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            <span class="keywordflow">if</span> (!<a class="code hl_function" href="classutil_1_1_task_reminder_service.html#ac37ddcc6753f6a5ed8c5f2ff7d318582">start</a>.isBefore(now) &amp;&amp; !<a class="code hl_function" href="classutil_1_1_task_reminder_service.html#ac37ddcc6753f6a5ed8c5f2ff7d318582">start</a>.isAfter(upcomingEdge)) {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                <span class="keywordtype">long</span> minutes = Math.max(0, Duration.between(now, <a class="code hl_function" href="classutil_1_1_task_reminder_service.html#ac37ddcc6753f6a5ed8c5f2ff7d318582">start</a>).toMinutes());</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#a11868f7c721a47c1508e6972fa1086e6">upcomingNotified</a>.add(<span class="keywordtype">id</span>)) {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                    <a class="code hl_function" href="classutil_1_1_task_reminder_service.html#a6864ccc68057bd25e1f83dcb3c4f2d31">notifyAllChannels</a>(settings, <span class="stringliteral">&quot;Скоро начнется задача&quot;</span>,</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                        task.getTitle() + <span class="stringliteral">&quot; (через &quot;</span> + minutes + <span class="stringliteral">&quot; мин.)&quot;</span>);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            LocalDateTime end = task.getEndTime();</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            <span class="keywordflow">if</span> (now.isAfter(end)) {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#aef2bfea16964180853f061e611c8d2b8">overdueNotified</a>.add(<span class="keywordtype">id</span>)) {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                    <a class="code hl_function" href="classutil_1_1_task_reminder_service.html#a6864ccc68057bd25e1f83dcb3c4f2d31">notifyAllChannels</a>(settings, <span class="stringliteral">&quot;Задача просрочена&quot;</span>,</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                        task.getTitle() + <span class="stringliteral">&quot; — дедлайн был &quot;</span> + task.getFormattedEndTime());</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                <a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#aef2bfea16964180853f061e611c8d2b8">overdueNotified</a>.remove(<span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#a11868f7c721a47c1508e6972fa1086e6">upcomingNotified</a>.retainAll(activeIds);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#aef2bfea16964180853f061e611c8d2b8">overdueNotified</a>.retainAll(activeIds);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    }</div>
+</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="foldopen" id="foldopen00113" data-start="{" data-end="}">
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="classutil_1_1_task_reminder_service.html#a49d4e5db52110d2bf66f48e1b102fff0">  113</a></span>    <span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classutil_1_1_task_reminder_service.html#a49d4e5db52110d2bf66f48e1b102fff0">stop</a>() {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#ac2859134bcaf8ae7cccb1e7c1afbf06d">scheduler</a> != <span class="keyword">null</span>) {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            <a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#ac2859134bcaf8ae7cccb1e7c1afbf06d">scheduler</a>.shutdownNow();</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            <a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#ac2859134bcaf8ae7cccb1e7c1afbf06d">scheduler</a> = <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#a11868f7c721a47c1508e6972fa1086e6">upcomingNotified</a>.clear();</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#aef2bfea16964180853f061e611c8d2b8">overdueNotified</a>.clear();</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
+</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="foldopen" id="foldopen00122" data-start="{" data-end="}">
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="classutil_1_1_task_reminder_service.html#a6864ccc68057bd25e1f83dcb3c4f2d31">  122</a></span>    <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classutil_1_1_task_reminder_service.html#a6864ccc68057bd25e1f83dcb3c4f2d31">notifyAllChannels</a>(<a class="code hl_class" href="classutil_1_1_notification_settings.html">NotificationSettings</a> settings, String title, String message) {</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <span class="keywordflow">if</span> (settings.<a class="code hl_function" href="classutil_1_1_notification_settings.html#a1b0679cfe9a92d59e5a67b7b0ec0a365">isPopupEnabled</a>()) {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            <a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#a509d98e44cd438c97e98309924c0f3d2">notificationService</a>.showNotification(title, message);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        }</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keywordflow">if</span> (settings.<a class="code hl_function" href="classutil_1_1_notification_settings.html#a0dbdc534ea35f03a33a6978186c733eb">isSoundEnabled</a>()) {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            java.awt.Toolkit.getDefaultToolkit().beep();</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <span class="keywordflow">if</span> (settings.<a class="code hl_function" href="classutil_1_1_notification_settings.html#a5dbcdb3386bc1aa64246f34777f22f95">isEmailEnabled</a>()) {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            String emailTo = settings.<a class="code hl_function" href="classutil_1_1_notification_settings.html#a642e8457d15ad6e842afe7a9d4ebbe48">getEmailTo</a>();</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            <a class="code hl_variable" href="classutil_1_1_task_reminder_service.html#a6cdfc0662b728cd446d1fa1a5d4835d4">emailNotifier</a>.sendEmail(emailTo, title, message);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    }</div>
+</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>}</div>
+</div>
+<div class="ttc" id="aclassmodel_1_1_task_html"><div class="ttname"><a href="classmodel_1_1_task.html">model.Task</a></div><div class="ttdoc">Основной класс, представляющий задачу в приложении</div><div class="ttdef"><b>Определения</b> <a href="_task_8java_source.html#l00029">Task.java:29</a></div></div>
+<div class="ttc" id="aclassmodel_1_1_task_manager_html"><div class="ttname"><a href="classmodel_1_1_task_manager.html">model.TaskManager</a></div><div class="ttdoc">Центральный менеджер задач (Singleton).</div><div class="ttdef"><b>Определения</b> <a href="_task_manager_8java_source.html#l00020">TaskManager.java:20</a></div></div>
+<div class="ttc" id="aclassmodel_1_1_task_manager_html_a25e2f8d72d281275facbc0e9badb47ea"><div class="ttname"><a href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea">model.TaskManager.getInstance</a></div><div class="ttdeci">static synchronized TaskManager getInstance()</div><div class="ttdef"><b>Определения</b> <a href="_task_manager_8java_source.html#l00034">TaskManager.java:34</a></div></div>
+<div class="ttc" id="aclassmodel_1_1_task_manager_html_aebc5940a309766edceeeaa6870679472"><div class="ttname"><a href="classmodel_1_1_task_manager.html#aebc5940a309766edceeeaa6870679472">model.TaskManager.getAllTasks</a></div><div class="ttdeci">synchronized List&lt; Task &gt; getAllTasks()</div><div class="ttdef"><b>Определения</b> <a href="_task_manager_8java_source.html#l00122">TaskManager.java:122</a></div></div>
+<div class="ttc" id="aclassutil_1_1_email_notifier_html"><div class="ttname"><a href="classutil_1_1_email_notifier.html">util.EmailNotifier</a></div><div class="ttdef"><b>Определения</b> <a href="_email_notifier_8java_source.html#l00008">EmailNotifier.java:8</a></div></div>
+<div class="ttc" id="aclassutil_1_1_notification_service_html"><div class="ttname"><a href="classutil_1_1_notification_service.html">util.NotificationService</a></div><div class="ttdoc">Кроссплатформенный сервис системных уведомлений.</div><div class="ttdef"><b>Определения</b> <a href="_notification_service_8java_source.html#l00014">NotificationService.java:14</a></div></div>
+<div class="ttc" id="aclassutil_1_1_notification_service_html_a93a569a76ba27310e8ecf6c792431efd"><div class="ttname"><a href="classutil_1_1_notification_service.html#a93a569a76ba27310e8ecf6c792431efd">util.NotificationService.getInstance</a></div><div class="ttdeci">static synchronized NotificationService getInstance()</div><div class="ttdef"><b>Определения</b> <a href="_notification_service_8java_source.html#l00023">NotificationService.java:23</a></div></div>
+<div class="ttc" id="aclassutil_1_1_notification_settings_html"><div class="ttname"><a href="classutil_1_1_notification_settings.html">util.NotificationSettings</a></div><div class="ttdef"><b>Определения</b> <a href="_notification_settings_8java_source.html#l00005">NotificationSettings.java:5</a></div></div>
+<div class="ttc" id="aclassutil_1_1_notification_settings_html_a0dbdc534ea35f03a33a6978186c733eb"><div class="ttname"><a href="classutil_1_1_notification_settings.html#a0dbdc534ea35f03a33a6978186c733eb">util.NotificationSettings.isSoundEnabled</a></div><div class="ttdeci">boolean isSoundEnabled()</div><div class="ttdef"><b>Определения</b> <a href="_notification_settings_8java_source.html#l00040">NotificationSettings.java:40</a></div></div>
+<div class="ttc" id="aclassutil_1_1_notification_settings_html_a10f7651faed4b44cf764ad6bd0542ced"><div class="ttname"><a href="classutil_1_1_notification_settings.html#a10f7651faed4b44cf764ad6bd0542ced">util.NotificationSettings.load</a></div><div class="ttdeci">static NotificationSettings load()</div><div class="ttdef"><b>Определения</b> <a href="_notification_settings_8java_source.html#l00021">NotificationSettings.java:21</a></div></div>
+<div class="ttc" id="aclassutil_1_1_notification_settings_html_a1b0679cfe9a92d59e5a67b7b0ec0a365"><div class="ttname"><a href="classutil_1_1_notification_settings.html#a1b0679cfe9a92d59e5a67b7b0ec0a365">util.NotificationSettings.isPopupEnabled</a></div><div class="ttdeci">boolean isPopupEnabled()</div><div class="ttdef"><b>Определения</b> <a href="_notification_settings_8java_source.html#l00039">NotificationSettings.java:39</a></div></div>
+<div class="ttc" id="aclassutil_1_1_notification_settings_html_a5dbcdb3386bc1aa64246f34777f22f95"><div class="ttname"><a href="classutil_1_1_notification_settings.html#a5dbcdb3386bc1aa64246f34777f22f95">util.NotificationSettings.isEmailEnabled</a></div><div class="ttdeci">boolean isEmailEnabled()</div><div class="ttdef"><b>Определения</b> <a href="_notification_settings_8java_source.html#l00041">NotificationSettings.java:41</a></div></div>
+<div class="ttc" id="aclassutil_1_1_notification_settings_html_a642e8457d15ad6e842afe7a9d4ebbe48"><div class="ttname"><a href="classutil_1_1_notification_settings.html#a642e8457d15ad6e842afe7a9d4ebbe48">util.NotificationSettings.getEmailTo</a></div><div class="ttdeci">String getEmailTo()</div><div class="ttdef"><b>Определения</b> <a href="_notification_settings_8java_source.html#l00043">NotificationSettings.java:43</a></div></div>
+<div class="ttc" id="aclassutil_1_1_notification_settings_html_a9fec9bda45f4ff805bbb686560c9143c"><div class="ttname"><a href="classutil_1_1_notification_settings.html#a9fec9bda45f4ff805bbb686560c9143c">util.NotificationSettings.getReminderOffsetMinutes</a></div><div class="ttdeci">int getReminderOffsetMinutes()</div><div class="ttdef"><b>Определения</b> <a href="_notification_settings_8java_source.html#l00042">NotificationSettings.java:42</a></div></div>
+<div class="ttc" id="aclassutil_1_1_task_reminder_service_html_a11868f7c721a47c1508e6972fa1086e6"><div class="ttname"><a href="classutil_1_1_task_reminder_service.html#a11868f7c721a47c1508e6972fa1086e6">util.TaskReminderService.upcomingNotified</a></div><div class="ttdeci">final Set&lt; String &gt; upcomingNotified</div><div class="ttdef"><b>Определения</b> <a href="#l00026">TaskReminderService.java:26</a></div></div>
+<div class="ttc" id="aclassutil_1_1_task_reminder_service_html_a2c925d8e4294056f30682278f5590837"><div class="ttname"><a href="classutil_1_1_task_reminder_service.html#a2c925d8e4294056f30682278f5590837">util.TaskReminderService.CHECK_INTERVAL_SECONDS</a></div><div class="ttdeci">static final int CHECK_INTERVAL_SECONDS</div><div class="ttdef"><b>Определения</b> <a href="#l00021">TaskReminderService.java:21</a></div></div>
+<div class="ttc" id="aclassutil_1_1_task_reminder_service_html_a49d4e5db52110d2bf66f48e1b102fff0"><div class="ttname"><a href="classutil_1_1_task_reminder_service.html#a49d4e5db52110d2bf66f48e1b102fff0">util.TaskReminderService.stop</a></div><div class="ttdeci">synchronized void stop()</div><div class="ttdef"><b>Определения</b> <a href="#l00113">TaskReminderService.java:113</a></div></div>
+<div class="ttc" id="aclassutil_1_1_task_reminder_service_html_a509d98e44cd438c97e98309924c0f3d2"><div class="ttname"><a href="classutil_1_1_task_reminder_service.html#a509d98e44cd438c97e98309924c0f3d2">util.TaskReminderService.notificationService</a></div><div class="ttdeci">final NotificationService notificationService</div><div class="ttdef"><b>Определения</b> <a href="#l00029">TaskReminderService.java:29</a></div></div>
+<div class="ttc" id="aclassutil_1_1_task_reminder_service_html_a596b567e69cbc3162c125350d1beedac"><div class="ttname"><a href="classutil_1_1_task_reminder_service.html#a596b567e69cbc3162c125350d1beedac">util.TaskReminderService.TaskReminderService</a></div><div class="ttdeci">TaskReminderService()</div><div class="ttdef"><b>Определения</b> <a href="#l00032">TaskReminderService.java:32</a></div></div>
+<div class="ttc" id="aclassutil_1_1_task_reminder_service_html_a6864ccc68057bd25e1f83dcb3c4f2d31"><div class="ttname"><a href="classutil_1_1_task_reminder_service.html#a6864ccc68057bd25e1f83dcb3c4f2d31">util.TaskReminderService.notifyAllChannels</a></div><div class="ttdeci">void notifyAllChannels(NotificationSettings settings, String title, String message)</div><div class="ttdef"><b>Определения</b> <a href="#l00122">TaskReminderService.java:122</a></div></div>
+<div class="ttc" id="aclassutil_1_1_task_reminder_service_html_a6cdfc0662b728cd446d1fa1a5d4835d4"><div class="ttname"><a href="classutil_1_1_task_reminder_service.html#a6cdfc0662b728cd446d1fa1a5d4835d4">util.TaskReminderService.emailNotifier</a></div><div class="ttdeci">final EmailNotifier emailNotifier</div><div class="ttdef"><b>Определения</b> <a href="#l00030">TaskReminderService.java:30</a></div></div>
+<div class="ttc" id="aclassutil_1_1_task_reminder_service_html_a7268b2ddd5e9c929a726d52ae7d93462"><div class="ttname"><a href="classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462">util.TaskReminderService.checkTasks</a></div><div class="ttdeci">void checkTasks()</div><div class="ttdef"><b>Определения</b> <a href="#l00069">TaskReminderService.java:69</a></div></div>
+<div class="ttc" id="aclassutil_1_1_task_reminder_service_html_a7a9c14ce57e8fe2b8fc103a2f344713f"><div class="ttname"><a href="classutil_1_1_task_reminder_service.html#a7a9c14ce57e8fe2b8fc103a2f344713f">util.TaskReminderService.instance</a></div><div class="ttdeci">static TaskReminderService instance</div><div class="ttdef"><b>Определения</b> <a href="#l00023">TaskReminderService.java:23</a></div></div>
+<div class="ttc" id="aclassutil_1_1_task_reminder_service_html_aadd0b77dafd4c390cbdf367b9654aa6c"><div class="ttname"><a href="classutil_1_1_task_reminder_service.html#aadd0b77dafd4c390cbdf367b9654aa6c">util.TaskReminderService.safeCheck</a></div><div class="ttdeci">void safeCheck()</div><div class="ttdef"><b>Определения</b> <a href="#l00061">TaskReminderService.java:61</a></div></div>
+<div class="ttc" id="aclassutil_1_1_task_reminder_service_html_ac2859134bcaf8ae7cccb1e7c1afbf06d"><div class="ttname"><a href="classutil_1_1_task_reminder_service.html#ac2859134bcaf8ae7cccb1e7c1afbf06d">util.TaskReminderService.scheduler</a></div><div class="ttdeci">ScheduledExecutorService scheduler</div><div class="ttdef"><b>Определения</b> <a href="#l00025">TaskReminderService.java:25</a></div></div>
+<div class="ttc" id="aclassutil_1_1_task_reminder_service_html_ac37ddcc6753f6a5ed8c5f2ff7d318582"><div class="ttname"><a href="classutil_1_1_task_reminder_service.html#ac37ddcc6753f6a5ed8c5f2ff7d318582">util.TaskReminderService.start</a></div><div class="ttdeci">synchronized void start()</div><div class="ttdef"><b>Определения</b> <a href="#l00042">TaskReminderService.java:42</a></div></div>
+<div class="ttc" id="aclassutil_1_1_task_reminder_service_html_aef2bfea16964180853f061e611c8d2b8"><div class="ttname"><a href="classutil_1_1_task_reminder_service.html#aef2bfea16964180853f061e611c8d2b8">util.TaskReminderService.overdueNotified</a></div><div class="ttdeci">final Set&lt; String &gt; overdueNotified</div><div class="ttdef"><b>Определения</b> <a href="#l00027">TaskReminderService.java:27</a></div></div>
+<div class="ttc" id="aclassutil_1_1_task_reminder_service_html_af553d1ff0e23581c2a5371c1bd246fc6"><div class="ttname"><a href="classutil_1_1_task_reminder_service.html#af553d1ff0e23581c2a5371c1bd246fc6">util.TaskReminderService.getInstance</a></div><div class="ttdeci">static synchronized TaskReminderService getInstance()</div><div class="ttdef"><b>Определения</b> <a href="#l00035">TaskReminderService.java:35</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_b7878ad5ecbf2506f4125b9d34c97e45.html">util</a></li><li class="navelem"><a href="_task_reminder_service_8java.html">TaskReminderService.java</a></li>
+    <li class="footer">Документация по Умный планировщик задач (To-Do List). Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

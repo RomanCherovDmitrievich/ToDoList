@@ -1,0 +1,16 @@
+<map id="repository.DatabaseManager.logTaskOperation" name="repository.DatabaseManager.logTaskOperation">
+<area shape="rect" id="Node000001" title=" " alt="" coords="834,39,1041,79"/>
+<area shape="rect" id="Node000002" href="$classrepository_1_1_database_manager.html#a08d4af86828a92b6a80993417f8ef92f" title=" " alt="" coords="534,21,786,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="816,48,787,48,787,43,822,48"/>
+<area shape="rect" id="Node000003" href="$classrepository_1_1_database_manager.html#a6cb10a041d036be47596127942959f83" title=" " alt="" coords="538,70,783,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="816,70,784,75,783,70,821,69"/>
+<area shape="rect" id="Node000004" href="$classutil_1_1_database_migrator.html#a462520e06be58bc2d42fe6bef64c68ff" title="Мигрирует задачи из JSON в базу данных" alt="" coords="262,5,454,46"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="571,67,454,46,454,41,576,66"/>
+<area shape="rect" id="Node000006" href="$classutil_1_1_database_migrator.html#a11687638f060b50427b94a0778df07b8" title="Синхронизирует данные между JSON и БД" alt="" coords="235,70,481,96"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="519,83,482,86,481,80,524,83"/>
+<area shape="rect" id="Node000007" href="$classrepository_1_1_database_manager.html#a3d0ef1c3ab248d9fa7a48475a7452cb7" title=" " alt="" coords="230,120,486,145"/>
+<area shape="poly" id="edge7_Node000003_Node000007" title=" " alt="" coords="565,99,441,122,441,116,560,99"/>
+<area shape="rect" id="Node000005" href="$classutil_1_1_database_migrator.html#a703826c15e609176f3da25d6ce8f755d" title="Точка входа для запуска миграции из командной строки" alt="" coords="5,42,182,68"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="244,39,183,48,181,43,249,37"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="216,69,182,67,182,62,221,68"/>
+</map>

@@ -1,0 +1,17 @@
+<map id="model.TaskManager.maybeCheckOverdue" name="model.TaskManager.maybeCheckOverdue">
+<area shape="rect" id="Node000001" title=" " alt="" coords="771,103,990,143"/>
+<area shape="rect" id="Node000002" href="$classmodel_1_1_task_manager.html#aebc5940a309766edceeeaa6870679472" title=" " alt="" coords="532,37,706,78"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="779,98,703,81,704,76,784,98"/>
+<area shape="rect" id="Node000006" href="$classmodel_1_1_task_manager.html#a418d7f78c3357b34396d4bfcac6a6483" title=" " alt="" coords="522,103,717,143"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="753,123,717,126,717,120,758,123"/>
+<area shape="rect" id="Node000007" href="$classmodel_1_1_task_manager.html#aaad627d6b62312c96ca60d42088b9fbb" title=" " alt="" coords="515,168,723,209"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="784,147,704,170,703,165,779,148"/>
+<area shape="rect" id="Node000003" href="$classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462" title=" " alt="" coords="255,5,464,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="514,45,465,41,465,36,520,45"/>
+<area shape="rect" id="Node000005" href="$classmodel_1_1_task_manager.html#a04d933100bf6f82eda40774a677c2472" title=" " alt="" coords="270,71,450,111"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="514,71,451,82,450,77,519,70"/>
+<area shape="rect" id="Node000004" href="$classutil_1_1_task_reminder_service.html#aadd0b77dafd4c390cbdf367b9654aa6c" title=" " alt="" coords="5,5,205,46"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="237,27,206,28,204,23,242,25"/>
+<area shape="rect" id="Node000008" href="$classmodel_1_1_task_manager.html#a5b29448d047949d3ec60ddf77558a09a" title=" " alt="" coords="253,176,467,201"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="497,188,468,191,468,186,502,188"/>
+</map>

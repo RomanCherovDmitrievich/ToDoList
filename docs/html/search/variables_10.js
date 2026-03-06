@@ -1,6 +1,19 @@
 var searchData=
 [
-  ['window_5fheight_0',['WINDOW_HEIGHT',['../classapp_1_1_main_app.html#ae939f4a6c6431cf101b4c427d11710ed',1,'app::MainApp']]],
-  ['window_5fwidth_1',['WINDOW_WIDTH',['../classapp_1_1_main_app.html#a565d6f2ea906cb6b7c64d0a2e6a3da31',1,'app::MainApp']]],
-  ['work_2',['WORK',['../enummodel_1_1_category.html#a8fb93187dc9c56f26a393b4074ee5391',1,'model::Category']]]
+  ['task_0',['task',['../classviewmodel_1_1_task_view_model.html#a97f13543b8cfec1764e1ccc0241b0309',1,'viewmodel::TaskViewModel']]],
+  ['taskcreated_1',['taskCreated',['../classview_1_1_new_task_controller.html#ab434a033dba280d670f4fe3d479ff378',1,'view::NewTaskController']]],
+  ['tasklist_2',['taskList',['../classview_1_1_main_controller.html#aff09363c7d8e47cc62d7269efbc1b70c',1,'view::MainController']]],
+  ['taskmanager_3',['taskManager',['../classview_1_1_main_controller.html#a7b27ec9e4c581b8f0afff4b1b2601e0d',1,'view::MainController']]],
+  ['tasks_4',['tasks',['../classmodel_1_1_task_manager.html#a2fa7b9f5897bffa04718f60592024b47',1,'model::TaskManager']]],
+  ['tasksfile_5',['tasksFile',['../classutil_1_1_json_util.html#a0c2f57be61fa29ebc99059ce8db4ac93',1,'util::JsonUtil']]],
+  ['tasktable_6',['taskTable',['../classview_1_1_main_controller.html#a913d44ac87626a10112f0dfce47d4779',1,'view::MainController']]],
+  ['themecombo_7',['themeCombo',['../classview_1_1_main_controller.html#a623a15f69e9bc7dad06970f52e3b349c',1,'view::MainController']]],
+  ['themes_8',['THEMES',['../classutil_1_1_theme_manager.html#a455ca1e5b976aedc453d94c0540de067',1,'util::ThemeManager']]],
+  ['time_5fformatter_9',['TIME_FORMATTER',['../classviewmodel_1_1_task_view_model.html#ad7df044a5e274feaa87e002eafdd3afa',1,'viewmodel::TaskViewModel']]],
+  ['timelinechart_10',['timelineChart',['../classview_1_1_main_controller.html#ac88e594142b10f8ec775178add748cf0',1,'view::MainController']]],
+  ['title_11',['title',['../classmodel_1_1_task.html#a34c52d9ff8e7da7d626571734c42c3d8',1,'model.Task.title'],['../classviewmodel_1_1_task_view_model.html#a5985ed58b0e977027b51e79a3f17a205',1,'viewmodel.TaskViewModel.title']]],
+  ['titlecolumn_12',['titleColumn',['../classview_1_1_main_controller.html#a024755eb2f6747771ff804d5fc9f89d1',1,'view::MainController']]],
+  ['titlefield_13',['titleField',['../classview_1_1_new_task_controller.html#a161edea567440f779448a4b4c153ea32',1,'view::NewTaskController']]],
+  ['trayicon_14',['trayIcon',['../classutil_1_1_notification_service.html#a4ec444b3beaef6654b9cd6ad14786d81',1,'util::NotificationService']]],
+  ['trayready_15',['trayReady',['../classutil_1_1_notification_service.html#a4e5b689b7fbd18b4cd10bef95f59a929',1,'util::NotificationService']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['введение_0',['Введение',['../index.html#intro_sec',1,'']]]
+  ['cross_20platform_20edition_0',['ToDoList (Cross-platform Edition)',['../index.html',1,'']]]
 ];

@@ -1,4 +1,22 @@
 var searchData=
 [
-  ['urgent_0',['URGENT',['../enummodel_1_1_priority.html#a969d5503cc0cec4d109e99f1eabf97e9',1,'model::Priority']]]
+  ['savecustomthemebutton_0',['saveCustomThemeButton',['../classview_1_1_main_controller.html#afcf5e6f047f5e329409198d5c89f6bf0',1,'view::MainController']]],
+  ['savenotificationbutton_1',['saveNotificationButton',['../classview_1_1_main_controller.html#a6d170c4692eecc0c6f102c2b73f376bf',1,'view::MainController']]],
+  ['scheduler_2',['scheduler',['../classutil_1_1_task_reminder_service.html#ac2859134bcaf8ae7cccb1e7c1afbf06d',1,'util::TaskReminderService']]],
+  ['searchfield_3',['searchField',['../classview_1_1_main_controller.html#a4f8d5b8214e956d51dab2d44a760aeb1',1,'view::MainController']]],
+  ['sortbydateascending_4',['sortByDateAscending',['../classview_1_1_main_controller.html#aef8f3aaf553a94a2d7fc3e662309ef79',1,'view::MainController']]],
+  ['sortbydatebutton_5',['sortByDateButton',['../classview_1_1_main_controller.html#a08c6fc68b23fdbadd9bbdbc1b44e5c7a',1,'view::MainController']]],
+  ['sortbypriorityascending_6',['sortByPriorityAscending',['../classview_1_1_main_controller.html#a23a0e446693c2e65459640e0bb6a4ac1',1,'view::MainController']]],
+  ['sortbyprioritybutton_7',['sortByPriorityButton',['../classview_1_1_main_controller.html#abcf16b7820504772707b5b011ff56898',1,'view::MainController']]],
+  ['sortindex_8',['sortIndex',['../classmodel_1_1_task.html#a8e13a5b2d5bca4a12345ab19750f918f',1,'model::Task']]],
+  ['sortmode_9',['sortMode',['../classview_1_1_main_controller.html#ad74c8e145e02c28844ea43748e714c54',1,'view::MainController']]],
+  ['soundenabled_10',['soundEnabled',['../classutil_1_1_notification_settings.html#a79e92cfbf4932d6ddb7d54bce044a9c4',1,'util::NotificationSettings']]],
+  ['soundsenabled_11',['soundsEnabled',['../classutil_1_1_audio_manager.html#a8d8ac1f3063b0865a6cf88f95dad1554',1,'util::AudioManager']]],
+  ['startdatepicker_12',['startDatePicker',['../classview_1_1_new_task_controller.html#aae8a01c385fffcf88a441b82cf14bb6f',1,'view::NewTaskController']]],
+  ['starthourcombo_13',['startHourCombo',['../classview_1_1_new_task_controller.html#a9f4d05fca3f6f360c3d115b39c9137b7',1,'view::NewTaskController']]],
+  ['startminutecombo_14',['startMinuteCombo',['../classview_1_1_new_task_controller.html#ad6e0399a4cfca2b93ebe4e7f365ec417',1,'view::NewTaskController']]],
+  ['starttime_15',['startTime',['../classmodel_1_1_task.html#a4d724b7a2a78a0c4f5fb64ac7f105ab2',1,'model.Task.startTime'],['../classviewmodel_1_1_task_view_model.html#a6803f8e2e1d27bf672e331486aff9934',1,'viewmodel.TaskViewModel.startTime']]],
+  ['statuscolumn_16',['statusColumn',['../classview_1_1_main_controller.html#a0859893b8b9dc5032b836774a2e07229',1,'view::MainController']]],
+  ['statuslabel_17',['statusLabel',['../classview_1_1_main_controller.html#a229f68a68979f67428e5ecf5523131f6',1,'view::MainController']]],
+  ['study_18',['STUDY',['../enummodel_1_1_category.html#a182e27a8be76c55bf622158977f2b5a0',1,'model::Category']]]
 ];

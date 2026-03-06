@@ -1,0 +1,15 @@
+<map id="model.TaskManager.saveJsonSnapshot" name="model.TaskManager.saveJsonSnapshot">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,23,203,64"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421" title="Сохраняет все задачи в JSON файл" alt="" coords="251,31,408,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,41,238,43,232,44,203,46"/>
+<area shape="rect" id="Node000003" href="$classutil_1_1_json_util.html#a6acc14b51427ce85235d8981f801d734" title="Возвращает полный путь к файлу задач" alt="" coords="475,5,635,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="408,32,462,29,457,29,408,37"/>
+<area shape="rect" id="Node000004" href="$classutil_1_1_json_util.html#a67200ee9448e6b079ca9ea49200dec30" title="Сохраняет задачи в указанный путь" alt="" coords="456,55,654,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="408,49,443,55,438,55,408,54"/>
+<area shape="rect" id="Node000005" href="$classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="702,47,875,88"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="655,65,689,67,684,68,655,70"/>
+<area shape="rect" id="Node000006" href="$classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="923,55,1088,80"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="875,65,910,67,905,68,875,70"/>
+<area shape="rect" id="Node000007" href="$classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="1136,55,1298,80"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1088,65,1123,67,1118,68,1088,70"/>
+</map>

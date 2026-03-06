@@ -1,0 +1,7 @@
+<map id="view.MainController.updateCalendarView" name="view.MainController.updateCalendarView">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,182,79"/>
+<area shape="rect" id="Node000002" href="$classviewmodel_1_1_task_view_model.html#aa34a9517a43daff6eef84dc13e1cd0a9" title="Возвращает время окончания (дедлайн) задачи" alt="" coords="230,5,431,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,44,217,41,211,43,183,49"/>
+<area shape="rect" id="Node000003" href="$classviewmodel_1_1_task_view_model.html#ad274b2e6ae4bfa67e9e4877d1f0d3104" title="Возвращает время начала задачи" alt="" coords="230,71,431,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="182,68,217,75,211,75,182,74"/>
+</map>

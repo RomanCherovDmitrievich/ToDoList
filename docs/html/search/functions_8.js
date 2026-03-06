@@ -1,11 +1,24 @@
 var searchData=
 [
-  ['idproperty_0',['idProperty',['../classviewmodel_1_1_task_view_model.html#a78bbc21be4a7366ff977474cb547ca0e',1,'viewmodel::TaskViewModel']]],
-  ['init_1',['init',['../classapp_1_1_main_app.html#acbf781550cefac29e6c8ecbdd2b38904',1,'app::MainApp']]],
-  ['initialize_2',['initialize',['../classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd',1,'view.MainController.initialize()'],['../classview_1_1_new_task_controller.html#a9dcf704ac7b311d8bfe516eff8643ad1',1,'view.NewTaskController.initialize()']]],
-  ['initsnowflakes_3',['initSnowflakes',['../classview_1_1_main_controller.html#a176bf2a7ba00056ac7a14652c6650c2d',1,'view::MainController']]],
-  ['iscompleted_4',['isCompleted',['../classmodel_1_1_task.html#a9e92e43dca03f30943efdb87b476e71c',1,'model.Task.isCompleted()'],['../classviewmodel_1_1_task_view_model.html#a6b568ef75542da4868a533844bbbe3a1',1,'viewmodel.TaskViewModel.isCompleted()']]],
-  ['isoverdue_5',['isOverdue',['../classmodel_1_1_task.html#a6c49d13cb1e76676ef53876e9acc3ca4',1,'model.Task.isOverdue()'],['../classviewmodel_1_1_task_view_model.html#a81effd078fee106eea52436907468ed9',1,'viewmodel.TaskViewModel.isOverdue()']]],
-  ['issoundsenabled_6',['isSoundsEnabled',['../classutil_1_1_audio_manager.html#a62a0acbea9b3248bf06398f2dfdeda4c',1,'util::AudioManager']]],
-  ['istaskcreated_7',['isTaskCreated',['../classview_1_1_new_task_controller.html#ad985a55d5cf42453ff70863d8619713b',1,'view::NewTaskController']]]
+  ['handleaddtask_0',['handleAddTask',['../classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21',1,'view::MainController']]],
+  ['handleaddtaskfordate_1',['handleAddTaskForDate',['../classview_1_1_main_controller.html#a6343e648a870a706a14bc46aa9b43b4c',1,'view::MainController']]],
+  ['handlebulkcategory_2',['handleBulkCategory',['../classview_1_1_main_controller.html#a1eb59033ea2ca2caf351d917d1511cf1',1,'view::MainController']]],
+  ['handlebulkcomplete_3',['handleBulkComplete',['../classview_1_1_main_controller.html#ae8c9426ed1d46eb4f182a4db737d13c1',1,'view::MainController']]],
+  ['handlebulkdelete_4',['handleBulkDelete',['../classview_1_1_main_controller.html#af46f4eb82ac70e509c19caf615643d3d',1,'view::MainController']]],
+  ['handlebulkpriority_5',['handleBulkPriority',['../classview_1_1_main_controller.html#a2e6cee3bdcb7d5ef5f7d3227b9543601',1,'view::MainController']]],
+  ['handlecalendardatechange_6',['handleCalendarDateChange',['../classview_1_1_main_controller.html#a4ddceae47cb1ff66a2e7efc06b7dac84',1,'view::MainController']]],
+  ['handlecancel_7',['handleCancel',['../classview_1_1_new_task_controller.html#ac77f5fcc6aa02cfe11a0d7760135509b',1,'view::NewTaskController']]],
+  ['handlecreatetask_8',['handleCreateTask',['../classview_1_1_new_task_controller.html#a337be480aeacacd900c710627a27a63e',1,'view::NewTaskController']]],
+  ['handledeletetask_9',['handleDeleteTask',['../classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78',1,'view::MainController']]],
+  ['handleedittask_10',['handleEditTask',['../classview_1_1_main_controller.html#afdc5d6820d84e41d7d0f86e633eba6a5',1,'view::MainController']]],
+  ['handleexit_11',['handleExit',['../classview_1_1_main_controller.html#a923c864e4e8cb56706451947145459a5',1,'view::MainController']]],
+  ['handleexportcalendar_12',['handleExportCalendar',['../classview_1_1_main_controller.html#a76d42bd03f97bfeaaaa738d6b9db53e6',1,'view::MainController']]],
+  ['handlefocusmode_13',['handleFocusMode',['../classview_1_1_main_controller.html#a98e6bb3bed95bbe6479b95f60afcfad2',1,'view::MainController']]],
+  ['handlerefreshwidget_14',['handleRefreshWidget',['../classview_1_1_main_controller.html#ad13d6d956ea7dbf846261dec5495062b',1,'view::MainController']]],
+  ['handlesavecustomtheme_15',['handleSaveCustomTheme',['../classview_1_1_main_controller.html#ad805604b0d662e806bc73402d9fa82b6',1,'view::MainController']]],
+  ['handlesavenotificationsettings_16',['handleSaveNotificationSettings',['../classview_1_1_main_controller.html#ae3379203625870608f9a53723f0518ed',1,'view::MainController']]],
+  ['handletogglewidget_17',['handleToggleWidget',['../classview_1_1_main_controller.html#aa6adc26184a175f0ddf6030f0c24d046',1,'view::MainController']]],
+  ['hasaudiofiles_18',['hasAudioFiles',['../classutil_1_1_audio_manager.html#a219fe55527963b4d93b39e2b21469af5',1,'util::AudioManager']]],
+  ['hashcode_19',['hashCode',['../classmodel_1_1_tag.html#a1f2bf59de9b0b58a7dcbcdc22f71b511',1,'model.Tag.hashCode()'],['../classviewmodel_1_1_task_view_model.html#ad70dc62dc109b6038a4504708d3ed961',1,'viewmodel.TaskViewModel.hashCode()']]],
+  ['hidewidget_20',['hideWidget',['../classview_1_1_main_controller.html#a9b026e09b19d35151fad586a38612ab2',1,'view::MainController']]]
 ];

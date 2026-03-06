@@ -1,0 +1,13 @@
+<map id="view.MainController.applySortMode" name="view.MainController.applySortMode">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,128,174,169"/>
+<area shape="rect" id="Node000002" href="$classviewmodel_1_1_task_view_model.html#aa34a9517a43daff6eef84dc13e1cd0a9" title="Возвращает время окончания (дедлайн) задачи" alt="" coords="236,5,437,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,126,162,91,220,57,241,50,236,53,223,61,165,95,118,130"/>
+<area shape="rect" id="Node000003" href="$classviewmodel_1_1_task_view_model.html#a2d17f86b46ef153a4dc499a194d5e885" title="Возвращает приоритет задачи" alt="" coords="236,71,437,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="173,126,234,114,229,117,175,131"/>
+<area shape="rect" id="Node000004" href="$classmodel_1_1_task.html#ae720154219f067a6dd6c5b6c3189fb89" title=" " alt="" coords="253,136,420,161"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="174,146,240,147,235,149,175,151"/>
+<area shape="rect" id="Node000005" href="$classviewmodel_1_1_task_view_model.html#aa0b4460345353c790c23679ca9cb37c6" title="Возвращает базовую модель задачи" alt="" coords="222,185,451,210"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="174,163,256,180,251,182,174,168"/>
+<area shape="rect" id="Node000006" href="$classview_1_1_main_controller.html#a58f505c47522701dc033b73171fc5e8c" title=" " alt="" coords="233,234,440,260"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="122,167,169,195,223,221,244,230,239,229,221,225,166,200,121,172"/>
+</map>

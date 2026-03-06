@@ -28,7 +28,7 @@
   <td id="projectalign">
    <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">JavaFX приложение для управления задачами с новогодней темой</div>
+   <div id="projectbrief">JavaFX ToDo-приложение с SQLite, уведомлениями и летней темой</div>
   </td>
  </tr>
  </tbody>
@@ -92,41 +92,68 @@ $(function(){initNavTree('functions_g.html','',''); });
 <div class="textblock">Список всех членов классов со ссылками на классы, к которым они принадлежат.</div>
 
 <h3 class="doxsection"><a id="index_g" name="index_g"></a>- g -</h3><ul>
-<li>getAllTasks()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#abc809a0b2d184494368cc5cc6dae6346">model.TaskManager</a></li>
-<li>getAudioFilesCount()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a00bb5a3b968b566c3c65b8f2d3fcf740">util.AudioManager</a></li>
-<li>getAvailableSounds()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a7e6f303dee5ec6b835e850b493d01ac8">util.AudioManager</a></li>
+<li>getAllTasks()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#aebc5940a309766edceeeaa6870679472">model.TaskManager</a>, <a class="el" href="classrepository_1_1_database_manager.html#ab0244b63c298e858b95b53cdba1c8783">repository.DatabaseManager</a></li>
+<li>getAudioDir()&#160;:&#160;<a class="el" href="classutil_1_1_path_resolver.html#a355df9450ea40bdd5ddd4f8610cacdfd">util.PathResolver</a></li>
+<li>getAudioFilesCount()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#a8f407850fd40a30052ef39803df099e0">util.AudioManager</a></li>
+<li>getAvailableSounds()&#160;:&#160;<a class="el" href="classutil_1_1_audio_manager.html#ad6a96d110a57a64e77dee8619cdb61a4">util.AudioManager</a></li>
+<li>getAvailableThemes()&#160;:&#160;<a class="el" href="classutil_1_1_theme_manager.html#ab839ff05745eaf088b08323a0c11866f">util.ThemeManager</a></li>
 <li>getCategory()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a79d344fdb9abdebc5978f3936f7782dd">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#aee7644b03c0ca5faa3aee9e691d658a3">viewmodel.TaskViewModel</a></li>
 <li>getCategoryColor()&#160;:&#160;<a class="el" href="classviewmodel_1_1_task_view_model.html#a5db1325cc03d4923c411bbaedb74051c">viewmodel.TaskViewModel</a></li>
 <li>getCategoryDisplay()&#160;:&#160;<a class="el" href="classviewmodel_1_1_task_view_model.html#ad9417fde49996b27e6554ff9c72582a3">viewmodel.TaskViewModel</a></li>
-<li>getColor()&#160;:&#160;<a class="el" href="enummodel_1_1_category.html#a18e40e08e0930aa1d73271a5b5cb4059">model.Category</a>, <a class="el" href="enummodel_1_1_priority.html#ac87523bbf2e804984e1754dacf2661ce">model.Priority</a></li>
+<li>getColor()&#160;:&#160;<a class="el" href="enummodel_1_1_category.html#a18e40e08e0930aa1d73271a5b5cb4059">model.Category</a>, <a class="el" href="enummodel_1_1_priority.html#ac87523bbf2e804984e1754dacf2661ce">model.Priority</a>, <a class="el" href="classmodel_1_1_tag.html#a8cf9d8923bc49b2c5037ce0bc548ff02">model.Tag</a></li>
+<li>getCompletedTasksCount()&#160;:&#160;<a class="el" href="classrepository_1_1_database_manager.html#a36f84a53a5b5aa1cb0e0bdbf6a569a7a">repository.DatabaseManager</a></li>
+<li>getCount()&#160;:&#160;<a class="el" href="classrepository_1_1_database_manager.html#a9be42bf1e4f746b4a3797cbf56042b3c">repository.DatabaseManager</a></li>
 <li>getCreatedAt()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#ad6ec5cffb9609071d2f5161d6e4b045f">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#a78e914dde721b09b9b4f6fef691aef02">viewmodel.TaskViewModel</a></li>
 <li>getCreatedTask()&#160;:&#160;<a class="el" href="classview_1_1_new_task_controller.html#a2b0dc44b9437aa1e0548cbf6c51e5721">view.NewTaskController</a></li>
+<li>getCurrentTheme()&#160;:&#160;<a class="el" href="classutil_1_1_theme_manager.html#a2c5933297ff3dd3af83560dcfc759dc5">util.ThemeManager</a></li>
+<li>getCustomThemePath()&#160;:&#160;<a class="el" href="classutil_1_1_theme_manager.html#acd90667dbb2d1cb2c3d1916702b68346">util.ThemeManager</a></li>
+<li>getDatabaseFile()&#160;:&#160;<a class="el" href="classutil_1_1_path_resolver.html#a50961f05bdf2c5652e65d92495c625ba">util.PathResolver</a></li>
+<li>getDataDir()&#160;:&#160;<a class="el" href="classutil_1_1_path_resolver.html#abd3fe2993d257c6e777a1303a872be26">util.PathResolver</a></li>
 <li>getDefault()&#160;:&#160;<a class="el" href="enummodel_1_1_priority.html#a80b9836442ce641c8f1deeb10d9ef177">model.Priority</a></li>
 <li>getDescription()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a8dc5a073ec12dc2747bda501f29a0127">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#a046488b4a90fb611ff40402bada134b0">viewmodel.TaskViewModel</a></li>
 <li>getDisplayName()&#160;:&#160;<a class="el" href="enummodel_1_1_category.html#a7b617d5f06ca4cb136d681b1bd2e8d7d">model.Category</a>, <a class="el" href="enummodel_1_1_priority.html#a3cf5e815f238abd0cf21096783fea607">model.Priority</a></li>
+<li>getEmailTo()&#160;:&#160;<a class="el" href="classutil_1_1_notification_settings.html#a642e8457d15ad6e842afe7a9d4ebbe48">util.NotificationSettings</a></li>
 <li>getEndTime()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a7a97e0aae6d6edf514a6b7442ce76232">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#aa34a9517a43daff6eef84dc13e1cd0a9">viewmodel.TaskViewModel</a></li>
+<li>getFocusTasks()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#a418d7f78c3357b34396d4bfcac6a6483">model.TaskManager</a></li>
 <li>getFormattedEndDate()&#160;:&#160;<a class="el" href="classviewmodel_1_1_task_view_model.html#a7c7c15b784f5c86b74d58943dd897cc6">viewmodel.TaskViewModel</a></li>
 <li>getFormattedEndTime()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a6fc04a059d729e6dcede486b3020e292">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#a5f2424316f62a7ed7067602067535809">viewmodel.TaskViewModel</a></li>
 <li>getFormattedEndTimeOnly()&#160;:&#160;<a class="el" href="classviewmodel_1_1_task_view_model.html#a5be935664988b6d0a49931df9beed5cc">viewmodel.TaskViewModel</a></li>
 <li>getFormattedStartTime()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#aaccdcedbfad9e320aac68c2c78da90be">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#a5b507f08d5d17134eb0051f9198026ef">viewmodel.TaskViewModel</a></li>
 <li>getFullPath()&#160;:&#160;<a class="el" href="classutil_1_1_json_util.html#a6acc14b51427ce85235d8981f801d734">util.JsonUtil</a></li>
 <li>getIconName()&#160;:&#160;<a class="el" href="enummodel_1_1_priority.html#afd6b22def31fc20e4d2f209d27faa2a4">model.Priority</a></li>
-<li>getId()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#ad8dccd120a6f3e607f46f0c3765de3a5">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#ac50f2e97f44fd66fc50fa959730eb78f">viewmodel.TaskViewModel</a></li>
-<li>getInstance()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea">model.TaskManager</a>, <a class="el" href="classutil_1_1_audio_manager.html#aaf7ec801730bf60f659b843ace062d86">util.AudioManager</a></li>
-<li>getMutableTasksCopy()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#a0c081195a22aba964ca8c745a134e7c2">model.TaskManager</a></li>
-<li>getOverdueTaskCount()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#a593c44bb00c7932604aefff2aed3713f">model.TaskManager</a></li>
+<li>getId()&#160;:&#160;<a class="el" href="classmodel_1_1_tag.html#ab8b501dc0d0a81ade184f9eae743e6d9">model.Tag</a>, <a class="el" href="classmodel_1_1_task.html#ad8dccd120a6f3e607f46f0c3765de3a5">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#ac50f2e97f44fd66fc50fa959730eb78f">viewmodel.TaskViewModel</a></li>
+<li>getInstance()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea">model.TaskManager</a>, <a class="el" href="classrepository_1_1_database_manager.html#a2035f400cd8f5f503ea6f961de54d4ff">repository.DatabaseManager</a>, <a class="el" href="classutil_1_1_audio_manager.html#aaf7ec801730bf60f659b843ace062d86">util.AudioManager</a>, <a class="el" href="classutil_1_1_notification_service.html#a93a569a76ba27310e8ecf6c792431efd">util.NotificationService</a>, <a class="el" href="classutil_1_1_task_reminder_service.html#af553d1ff0e23581c2a5371c1bd246fc6">util.TaskReminderService</a></li>
+<li>getName()&#160;:&#160;<a class="el" href="classmodel_1_1_tag.html#aa467ff84ea5ea450f85cf94dbfa1d069">model.Tag</a></li>
+<li>getNotificationsLog()&#160;:&#160;<a class="el" href="classutil_1_1_path_resolver.html#ab88418dd91edd05d4458f1fce2f32afa">util.PathResolver</a></li>
+<li>getOrCreateTag()&#160;:&#160;<a class="el" href="classrepository_1_1_database_manager.html#ac334bf9c4c0f5cb484aab257fae8fd79">repository.DatabaseManager</a></li>
+<li>getOverdueTaskCount()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#aaad627d6b62312c96ca60d42088b9fbb">model.TaskManager</a></li>
+<li>getOverdueTasksCount()&#160;:&#160;<a class="el" href="classrepository_1_1_database_manager.html#a521fdf24718cb265fd99f2979d464aef">repository.DatabaseManager</a></li>
+<li>getPendingTasksCount()&#160;:&#160;<a class="el" href="classrepository_1_1_database_manager.html#a3fd0a69170466ae9c0ecd805dd37a6df">repository.DatabaseManager</a></li>
 <li>getPrimaryStage()&#160;:&#160;<a class="el" href="classapp_1_1_main_app.html#a58283a36a2e01e38efa19edd9ba77d59">app.MainApp</a></li>
 <li>getPriority()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a84dce864c8b8cc246e25e11d9cf200ca">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#a2d17f86b46ef153a4dc499a194d5e885">viewmodel.TaskViewModel</a></li>
 <li>getPriorityColor()&#160;:&#160;<a class="el" href="classviewmodel_1_1_task_view_model.html#ad9bc7c38357c8e5fd8ca4b399b5e5567">viewmodel.TaskViewModel</a></li>
 <li>getPriorityDisplay()&#160;:&#160;<a class="el" href="classviewmodel_1_1_task_view_model.html#abd84bdfcc6b71fd286231b1b4e19e4a0">viewmodel.TaskViewModel</a></li>
 <li>getPriorityIconName()&#160;:&#160;<a class="el" href="classviewmodel_1_1_task_view_model.html#a5065f6eaa5f6039f4eee54f3376525ff">viewmodel.TaskViewModel</a></li>
+<li>getRecurrenceEnd()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a63b137fede1540f1191e2b03f6b145b6">model.Task</a></li>
+<li>getRecurrenceRule()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a06aae2333c73d9d8d665c02507403d23">model.Task</a></li>
+<li>getReminderOffsetMinutes()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a345f13673c0e68e1fa8272c040926b76">model.Task</a>, <a class="el" href="classutil_1_1_notification_settings.html#a9fec9bda45f4ff805bbb686560c9143c">util.NotificationSettings</a></li>
+<li>getRowTask()&#160;:&#160;<a class="el" href="classview_1_1_main_controller.html#a6e193c4e1514d1cdcc4ef1adc5971f2c">view.MainController</a></li>
+<li>getSetting()&#160;:&#160;<a class="el" href="classrepository_1_1_database_manager.html#a6178e715c92709dbc017c6e8d07f4ccc">repository.DatabaseManager</a></li>
+<li>getSortIndex()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#ae720154219f067a6dd6c5b6c3189fb89">model.Task</a></li>
 <li>getStartTime()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#aafb825513f5c3287cb724ddf5943ec03">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#ad274b2e6ae4bfa67e9e4877d1f0d3104">viewmodel.TaskViewModel</a></li>
+<li>getStatistics()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#a5b29448d047949d3ec60ddf77558a09a">model.TaskManager</a></li>
 <li>getStatusText()&#160;:&#160;<a class="el" href="classviewmodel_1_1_task_view_model.html#acac81fa6ee313ed5801a06dfece854f7">viewmodel.TaskViewModel</a></li>
 <li>getTask()&#160;:&#160;<a class="el" href="classviewmodel_1_1_task_view_model.html#aa0b4460345353c790c23679ca9cb37c6">viewmodel.TaskViewModel</a></li>
-<li>getTaskCount()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#a83be2e7272a4f79d69be72380893f0f6">model.TaskManager</a></li>
-<li>getTasksByCompletion()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#a7bb0de58bf371543965a953b7f2261b5">model.TaskManager</a></li>
+<li>getTaskById()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#a4cc0a5ae51c57b876d78ce9a7e03f61c">model.TaskManager</a>, <a class="el" href="classrepository_1_1_database_manager.html#a9e616e08acbcbd3c52ef097387c27f93">repository.DatabaseManager</a></li>
+<li>getTaskCount()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#af6f197df2a7bad492ce75ee9c9448c05">model.TaskManager</a></li>
+<li>getTasksByCategory()&#160;:&#160;<a class="el" href="classrepository_1_1_database_manager.html#a68aa2aa2b60b0915fee9dccd5f461a62">repository.DatabaseManager</a></li>
+<li>getTasksByCompletion()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#a5ac7187075eb57c2913351988b230b52">model.TaskManager</a></li>
+<li>getTasksByPriority()&#160;:&#160;<a class="el" href="classrepository_1_1_database_manager.html#ab87b5b248bbddbde02333f6360812c7c">repository.DatabaseManager</a></li>
+<li>getTasksJsonFile()&#160;:&#160;<a class="el" href="classutil_1_1_path_resolver.html#a559f206e3664e28aa24ed1bc8703dd2d">util.PathResolver</a></li>
+<li>getTaskTags()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#a99465f09d2330eda83628f3c19407fe7">model.TaskManager</a>, <a class="el" href="classrepository_1_1_database_manager.html#ace797e335bc70e697388d696b102141c">repository.DatabaseManager</a></li>
 <li>getTimeRemaining()&#160;:&#160;<a class="el" href="classviewmodel_1_1_task_view_model.html#a53215ef77e237ab827e3e3156860d2f5">viewmodel.TaskViewModel</a></li>
 <li>getTitle()&#160;:&#160;<a class="el" href="classmodel_1_1_task.html#a3016babcf59132145ef35906075ea109">model.Task</a>, <a class="el" href="classviewmodel_1_1_task_view_model.html#a1a618ae9eecfd3fefadebd848a99ec92">viewmodel.TaskViewModel</a></li>
+<li>getUpcomingTasks()&#160;:&#160;<a class="el" href="classmodel_1_1_task_manager.html#a1c3b25fe599e00b7d8d265a02a259bd0">model.TaskManager</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

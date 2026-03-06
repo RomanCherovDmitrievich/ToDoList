@@ -28,7 +28,7 @@
   <td id="projectalign">
    <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">JavaFX приложение для управления задачами с новогодней темой</div>
+   <div id="projectbrief">JavaFX ToDo-приложение с SQLite, уведомлениями и летней темой</div>
   </td>
  </tr>
  </tbody>
@@ -93,14 +93,14 @@ $(function(){initNavTree('classapp_1_1_main_app.html','','classapp_1_1_main_app-
 </div><!--header-->
 <div class="contents">
 
-<p>Главный класс приложения To-Do List.  
+<p>Точка входа JavaFX-приложения.  
  <a href="#details">Подробнее...</a></p>
 <div class="dynheader">
 Граф наследования:app.MainApp:</div>
 <div class="dyncontent">
 <div class="center"><img src="classapp_1_1_main_app__inherit__graph.png" border="0" usemap="#aapp_8_main_app_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
 <map name="aapp_8_main_app_inherit__map" id="aapp_8_main_app_inherit__map">
-<area shape="rect" title="Главный класс приложения To&#45;Do List." alt="" coords="5,79,103,105"/>
+<area shape="rect" title="Точка входа JavaFX&#45;приложения." alt="" coords="5,79,103,105"/>
 <area shape="rect" title=" " alt="" coords="11,5,97,31"/>
 <area shape="poly" title=" " alt="" coords="56,45,57,79,51,78,52,48"/>
 </map>
@@ -110,76 +110,41 @@ $(function(){initNavTree('classapp_1_1_main_app.html','','classapp_1_1_main_app-
 <div class="dyncontent">
 <div class="center"><img src="classapp_1_1_main_app__coll__graph.png" border="0" usemap="#aapp_8_main_app_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="aapp_8_main_app_coll__map" id="aapp_8_main_app_coll__map">
-<area shape="rect" title="Главный класс приложения To&#45;Do List." alt="" coords="42,102,139,128"/>
-<area shape="rect" title=" " alt="" coords="5,5,91,31"/>
-<area shape="poly" title=" " alt="" coords="61,43,88,101,83,102,58,47"/>
-<area shape="rect" href="classutil_1_1_audio_manager.html" title="Менеджер для работы с аудио в приложении" alt="" coords="115,5,240,31"/>
-<area shape="poly" title=" " alt="" coords="159,42,104,103,100,99,154,43"/>
-<area shape="poly" title=" " alt="" coords="256,9,267,18,258,27,241,30,240,24,256,22,261,18,255,14"/>
+<area shape="rect" title="Точка входа JavaFX&#45;приложения." alt="" coords="5,79,103,105"/>
+<area shape="rect" title=" " alt="" coords="11,5,97,31"/>
+<area shape="poly" title=" " alt="" coords="56,45,57,79,51,78,52,48"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
 <tr class="memitem:acbf781550cefac29e6c8ecbdd2b38904" id="r_acbf781550cefac29e6c8ecbdd2b38904"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbf781550cefac29e6c8ecbdd2b38904">init</a> ()</td></tr>
-<tr class="memdesc:acbf781550cefac29e6c8ecbdd2b38904"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метод инициализации приложения  <br /></td></tr>
-<tr class="memitem:a2f925faf172d4a1a66bf616b47a8b368" id="r_a2f925faf172d4a1a66bf616b47a8b368"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f925faf172d4a1a66bf616b47a8b368">start</a> (Stage <a class="el" href="#afbe7794c7747dbb9041de396c018cac9">primaryStage</a>)</td></tr>
-<tr class="memdesc:a2f925faf172d4a1a66bf616b47a8b368"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метод запуска JavaFX приложения  <br /></td></tr>
+<tr class="memitem:a47878f33c1c0458f442d9b3f93bedf06" id="r_a47878f33c1c0458f442d9b3f93bedf06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47878f33c1c0458f442d9b3f93bedf06">start</a> (Stage stage)</td></tr>
 <tr class="memitem:a81713cb9b4148cc9775e965fc14a1834" id="r_a81713cb9b4148cc9775e965fc14a1834"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81713cb9b4148cc9775e965fc14a1834">stop</a> ()</td></tr>
-<tr class="memdesc:a81713cb9b4148cc9775e965fc14a1834"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метод остановки приложения  <br /></td></tr>
 <tr class="memitem:a58283a36a2e01e38efa19edd9ba77d59" id="r_a58283a36a2e01e38efa19edd9ba77d59"><td class="memItemLeft" align="right" valign="top">Stage&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58283a36a2e01e38efa19edd9ba77d59">getPrimaryStage</a> ()</td></tr>
-<tr class="memdesc:a58283a36a2e01e38efa19edd9ba77d59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает главное окно приложения  <br /></td></tr>
-<tr class="memitem:a5546682bda948ba9513d649b6aaf33a8" id="r_a5546682bda948ba9513d649b6aaf33a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5546682bda948ba9513d649b6aaf33a8">reloadMainView</a> ()</td></tr>
-<tr class="memdesc:a5546682bda948ba9513d649b6aaf33a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Перезагружает главное окно  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Открытые статические члены</h2></td></tr>
 <tr class="memitem:a9788978994366c880434d9cc05a21cb1" id="r_a9788978994366c880434d9cc05a21cb1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9788978994366c880434d9cc05a21cb1">main</a> (String[] args)</td></tr>
-<tr class="memdesc:a9788978994366c880434d9cc05a21cb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Точка входа в приложение  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Закрытые члены</h2></td></tr>
-<tr class="memitem:a92cfa72f96cc381ef46d20c6fb1ae193" id="r_a92cfa72f96cc381ef46d20c6fb1ae193"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92cfa72f96cc381ef46d20c6fb1ae193">showErrorDialog</a> (String title, String header, String content)</td></tr>
-<tr class="memdesc:a92cfa72f96cc381ef46d20c6fb1ae193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Показывает диалоговое окно с ошибкой  <br /></td></tr>
+<tr class="memitem:a3f7b3f260d11dbec5429f1f90a24687b" id="r_a3f7b3f260d11dbec5429f1f90a24687b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f7b3f260d11dbec5429f1f90a24687b">showFatalError</a> (String header, String details)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Закрытые данные</h2></td></tr>
 <tr class="memitem:afbe7794c7747dbb9041de396c018cac9" id="r_afbe7794c7747dbb9041de396c018cac9"><td class="memItemLeft" align="right" valign="top">Stage&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afbe7794c7747dbb9041de396c018cac9">primaryStage</a></td></tr>
-<tr class="memdesc:afbe7794c7747dbb9041de396c018cac9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Главное окно приложения  <br /></td></tr>
-<tr class="memitem:a821a0cbc770b47e801af93c8b55c7c98" id="r_a821a0cbc770b47e801af93c8b55c7c98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classutil_1_1_audio_manager.html">AudioManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a821a0cbc770b47e801af93c8b55c7c98">audioManager</a></td></tr>
-<tr class="memdesc:a821a0cbc770b47e801af93c8b55c7c98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Менеджер аудио  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Закрытые статические данные</h2></td></tr>
-<tr class="memitem:a4de943445d70b65abd35b43f95dfcf72" id="r_a4de943445d70b65abd35b43f95dfcf72"><td class="memItemLeft" align="right" valign="top">static final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4de943445d70b65abd35b43f95dfcf72">APP_TITLE</a> = &quot;Умный планировщик задач&quot;</td></tr>
-<tr class="memdesc:a4de943445d70b65abd35b43f95dfcf72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заголовок приложения  <br /></td></tr>
-<tr class="memitem:a565d6f2ea906cb6b7c64d0a2e6a3da31" id="r_a565d6f2ea906cb6b7c64d0a2e6a3da31"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a565d6f2ea906cb6b7c64d0a2e6a3da31">WINDOW_WIDTH</a> = 900</td></tr>
-<tr class="memdesc:a565d6f2ea906cb6b7c64d0a2e6a3da31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Начальная ширина окна  <br /></td></tr>
-<tr class="memitem:ae939f4a6c6431cf101b4c427d11710ed" id="r_ae939f4a6c6431cf101b4c427d11710ed"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae939f4a6c6431cf101b4c427d11710ed">WINDOW_HEIGHT</a> = 600</td></tr>
-<tr class="memdesc:ae939f4a6c6431cf101b4c427d11710ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Начальная высота окна  <br /></td></tr>
-<tr class="memitem:a37ee9c5df8c0291fa0a35f78cbd54e0d" id="r_a37ee9c5df8c0291fa0a35f78cbd54e0d"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37ee9c5df8c0291fa0a35f78cbd54e0d">MIN_WIDTH</a> = 700</td></tr>
-<tr class="memdesc:a37ee9c5df8c0291fa0a35f78cbd54e0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Минимальная ширина окна  <br /></td></tr>
-<tr class="memitem:adb5ea69d0160842c8866b1482238712b" id="r_adb5ea69d0160842c8866b1482238712b"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb5ea69d0160842c8866b1482238712b">MIN_HEIGHT</a> = 500</td></tr>
-<tr class="memdesc:adb5ea69d0160842c8866b1482238712b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Минимальная высота окна  <br /></td></tr>
+<tr class="memitem:a4de943445d70b65abd35b43f95dfcf72" id="r_a4de943445d70b65abd35b43f95dfcf72"><td class="memItemLeft" align="right" valign="top">static final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4de943445d70b65abd35b43f95dfcf72">APP_TITLE</a> = &quot;ToDoList&quot;</td></tr>
+<tr class="memitem:a565d6f2ea906cb6b7c64d0a2e6a3da31" id="r_a565d6f2ea906cb6b7c64d0a2e6a3da31"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a565d6f2ea906cb6b7c64d0a2e6a3da31">WINDOW_WIDTH</a> = 1024</td></tr>
+<tr class="memitem:ae939f4a6c6431cf101b4c427d11710ed" id="r_ae939f4a6c6431cf101b4c427d11710ed"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae939f4a6c6431cf101b4c427d11710ed">WINDOW_HEIGHT</a> = 700</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Главный класс приложения To-Do List. </p>
-<p>Класс <a class="el" href="classapp_1_1_main_app.html" title="Главный класс приложения To-Do List.">MainApp</a> является точкой входа JavaFX приложения. Отвечает за инициализацию, настройку и запуск главного окна приложения. Управляет жизненным циклом приложения, загрузкой ресурсов и обработкой ошибок.</p>
-<dl class="section author"><dt>Автор</dt><dd>Чернов </dd></dl>
-<dl class="section version"><dt>Версия</dt><dd>1.0 </dd></dl>
-<dl class="section date"><dt>Дата</dt><dd>2025-11-2</dd></dl>
-<p>(JavaFX)</p>
-<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classview_1_1_main_controller.html" title="Контроллер главного окна приложения To-Do List.">view.MainController</a> </dd>
-<dd>
-<a class="el" href="classutil_1_1_audio_manager.html" title="Менеджер для работы с аудио в приложении">util.AudioManager</a> </dd>
-<dd>
-<a class="el" href="classmodel_1_1_task_manager.html" title="Менеджер задач - центральный класс для управления задачами">model.TaskManager</a> </dd>
-<dd>
-<a class="el" href="classutil_1_1_json_util.html" title="Утилита для загрузки и сохранения задач в формате JSON.">util.JsonUtil</a></dd></dl>
-<dl class="section note"><dt>Заметки</dt><dd>Этот класс использует паттерн Singleton для <a class="el" href="classutil_1_1_audio_manager.html" title="Менеджер для работы с аудио в приложении">AudioManager</a> и <a class="el" href="classmodel_1_1_task_manager.html" title="Менеджер задач - центральный класс для управления задачами">TaskManager</a> </dd></dl>
-<dl class="section warning"><dt>Предупреждения</dt><dd>Требует JavaFX SDK в classpath для работы </dd></dl>
+<div class="textblock"><p>Точка входа JavaFX-приложения. </p>
 
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00040">40</a></p>
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00022">22</a></p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
 <a id="a58283a36a2e01e38efa19edd9ba77d59" name="a58283a36a2e01e38efa19edd9ba77d59"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a58283a36a2e01e38efa19edd9ba77d59">&#9670;&#160;</a></span>getPrimaryStage()</h2>
@@ -196,15 +161,9 @@ $(function(){initNavTree('classapp_1_1_main_app.html','','classapp_1_1_main_app-
       </table>
 </div><div class="memdoc">
 
-<p>Возвращает главное окно приложения </p>
-<p>Предоставляет доступ к первичному Stage для других компонентов</p>
-<dl class="section return"><dt>Возвращает</dt><dd>Stage Главное окно приложения</dd></dl>
-<dl class="section note"><dt>Заметки</dt><dd>Используется для модальных диалогов и управления окном</dd></dl>
-<dl class="section see"><dt>См. также</dt><dd>Stage </dd></dl>
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00104">104</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00277">277</a></p>
-
-<p class="reference">Перекрестные ссылки <a class="el" href="_main_app_8java_source.html#l00076">primaryStage</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_app_8java_source.html#l00027">primaryStage</a>.</p>
 
 </div>
 </div>
@@ -223,32 +182,106 @@ $(function(){initNavTree('classapp_1_1_main_app.html','','classapp_1_1_main_app-
       </table>
 </div><div class="memdoc">
 
-<p>Метод инициализации приложения </p>
-<p>Вызывается автоматически JavaFX перед методом <a class="el" href="#a2f925faf172d4a1a66bf616b47a8b368" title="Метод запуска JavaFX приложения">start()</a> Выполняет предварительную настройку приложения</p>
-<dl class="section note"><dt>Заметки</dt><dd>В этом методе:<ul>
-<li>Выводится информация о версиях Java и JavaFX</li>
-<li>Инициализируется <a class="el" href="classutil_1_1_audio_manager.html" title="Менеджер для работы с аудио в приложении">AudioManager</a></li>
-<li>Логируются ошибки инициализации</li>
-</ul>
-</dd></dl>
-<dl class="section warning"><dt>Предупреждения</dt><dd>Исключения в этом методе не прерывают запуск приложения</dd></dl>
-<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classutil_1_1_audio_manager.html#aaf7ec801730bf60f659b843ace062d86" title="Получает единственный экземпляр AudioManager.">AudioManager.getInstance()</a> </dd></dl>
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00049">49</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00126">126</a></p>
-
-<p class="reference">Перекрестные ссылки <a class="el" href="_main_app_8java_source.html#l00082">audioManager</a> и <a class="el" href="_audio_manager_8java_source.html#l00072">util.AudioManager.getInstance()</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_manager_8java_source.html#l00034">model.TaskManager.getInstance()</a>, <a class="el" href="_audio_manager_8java_source.html#l00038">util.AudioManager.getInstance()</a> и <a class="el" href="_task_reminder_service_8java_source.html#l00035">util.TaskReminderService.getInstance()</a>.</p>
 <div class="dynheader">
 Граф вызовов:</div>
 <div class="dyncontent">
 <div class="center"><img src="classapp_1_1_main_app_acbf781550cefac29e6c8ecbdd2b38904_cgraph.png" border="0" usemap="#aclassapp_1_1_main_app_acbf781550cefac29e6c8ecbdd2b38904_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassapp_1_1_main_app_acbf781550cefac29e6c8ecbdd2b38904_cgraph" id="aclassapp_1_1_main_app_acbf781550cefac29e6c8ecbdd2b38904_cgraph">
-<area shape="rect" title="Метод инициализации приложения" alt="" coords="5,5,124,31"/>
-<area shape="rect" href="classutil_1_1_audio_manager.html#aaf7ec801730bf60f659b843ace062d86" title="Получает единственный экземпляр AudioManager." alt="" coords="172,5,368,31"/>
-<area shape="poly" title=" " alt="" coords="124,16,159,18,154,18,124,21"/>
-<area shape="rect" href="classutil_1_1_audio_manager.html#ab16a211144282895701d2b0a64a66145" title="Приватный конструктор" alt="" coords="416,5,627,31"/>
-<area shape="poly" title=" " alt="" coords="369,16,403,18,398,18,369,21"/>
-<area shape="rect" href="classutil_1_1_audio_manager.html#a5ad71057028d829235d9ca3519feae2d" title="Загружает все звуки приложения" alt="" coords="675,5,872,31"/>
-<area shape="poly" title=" " alt="" coords="628,16,662,18,657,18,628,21"/>
+<area shape="rect" title=" " alt="" coords="5,518,124,544"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea" title=" " alt="" coords="172,469,381,494"/>
+<area shape="poly" title=" " alt="" coords="121,515,171,503,204,497,200,500,172,508,123,520"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#aaf7ec801730bf60f659b843ace062d86" title=" " alt="" coords="178,518,374,544"/>
+<area shape="poly" title=" " alt="" coords="123,528,165,530,160,532,125,534"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#af553d1ff0e23581c2a5371c1bd246fc6" title=" " alt="" coords="180,568,372,609"/>
+<area shape="poly" title=" " alt="" coords="115,542,186,562,182,565,115,547"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c" title=" " alt="" coords="429,433,648,458"/>
+<area shape="poly" title=" " alt="" coords="374,466,427,460,422,462,376,471"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a2cd3b65bd29af3b855f653a323e2b2f5" title=" " alt="" coords="696,391,885,431"/>
+<area shape="poly" title=" " alt="" coords="636,430,683,425,678,427,637,435"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#ad965ff12626fdfe14240873d272f1625" title=" " alt="" coords="943,296,1134,337"/>
+<area shape="poly" title=" " alt="" coords="835,388,932,347,957,341,952,343,934,352,837,393"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a2035f400cd8f5f503ea6f961de54d4ff" title=" " alt="" coords="935,476,1142,517"/>
+<area shape="poly" title=" " alt="" coords="845,429,934,462,955,471,950,471,932,467,844,434"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a2a80078f88c932a5ab230d4775c2391d" title="Загружает все задачи из JSON файла" alt="" coords="962,246,1116,272"/>
+<area shape="poly" title=" " alt="" coords="808,388,859,335,894,306,931,282,945,279,950,276,934,287,897,310,863,339,811,392"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#aad4a8847ce89cef479fc3f6f82d218ab" title=" " alt="" coords="933,426,1145,452"/>
+<area shape="poly" title=" " alt="" coords="885,419,920,425,914,426,885,424"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a148e0a483446591b0b0b38a7f52f425f" title=" " alt="" coords="940,361,1138,402"/>
+<area shape="poly" title=" " alt="" coords="884,397,927,395,922,396,886,402"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a0c065b1a2379283891f0ee94fa5c1ef4" title=" " alt="" coords="1200,296,1397,337"/>
+<area shape="poly" title=" " alt="" coords="1135,314,1187,316,1181,317,1135,319"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421" title="Сохраняет все задачи в JSON файл" alt="" coords="1491,304,1648,329"/>
+<area shape="poly" title=" " alt="" coords="1397,314,1478,316,1472,317,1398,319"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a6acc14b51427ce85235d8981f801d734" title="Возвращает полный путь к файлу задач" alt="" coords="1772,250,1932,276"/>
+<area shape="poly" title=" " alt="" coords="1641,300,1768,279,1763,280,1642,305"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a67200ee9448e6b079ca9ea49200dec30" title="Сохраняет задачи в указанный путь" alt="" coords="1753,304,1951,329"/>
+<area shape="poly" title=" " alt="" coords="1648,314,1739,316,1734,317,1649,319"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="2032,317,2204,358"/>
+<area shape="poly" title=" " alt="" coords="1951,322,2019,329,2014,330,1951,327"/>
+<area shape="rect" href="classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="2269,325,2434,350"/>
+<area shape="poly" title=" " alt="" coords="2205,335,2256,337,2250,338,2205,340"/>
+<area shape="rect" href="classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="2483,325,2645,350"/>
+<area shape="poly" title=" " alt="" coords="2434,335,2470,337,2464,338,2435,340"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#adff3d0488b1f5e07b737c8028fd61b38" title=" " alt="" coords="1204,479,1393,519"/>
+<area shape="poly" title=" " alt="" coords="1143,495,1190,498,1185,498,1143,500"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#ad56b237e4e259b99a77f8c2b5d9a49db" title=" " alt="" coords="1451,480,1688,521"/>
+<area shape="poly" title=" " alt="" coords="1393,497,1439,499,1433,500,1394,502"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a0f0fdcc1c89621e54aba873524c8785c" title=" " alt="" coords="1739,419,1964,459"/>
+<area shape="poly" title=" " alt="" coords="1666,477,1737,464,1743,463,1667,482"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#ab11cedc68f3e40fa74cd71dcd3c28d47" title=" " alt="" coords="1738,484,1966,525"/>
+<area shape="poly" title=" " alt="" coords="1688,499,1725,502,1720,503,1688,505"/>
+<area shape="rect" href="classutil_1_1_path_resolver.html#abd3fe2993d257c6e777a1303a872be26" title=" " alt="" coords="1758,614,1946,640"/>
+<area shape="poly" title=" " alt="" coords="1599,518,1660,560,1737,599,1761,610,1756,609,1735,604,1658,564,1597,524"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a104e5dac8b06b56fb358902e183b3711" title=" " alt="" coords="1736,549,1968,590"/>
+<area shape="poly" title=" " alt="" coords="1656,519,1754,545,1749,545,1655,524"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a12107d0489c1b18ad4e574a1f5fc1a36" title=" " alt="" coords="1743,353,1960,394"/>
+<area shape="poly" title=" " alt="" coords="1602,477,1662,441,1735,405,1752,400,1757,399,1737,409,1664,445,1603,482"/>
+<area shape="rect" href="classutil_1_1_platform_util.html#ae1f7127305756e82c242eea124934f5b" title=" " alt="" coords="2034,614,2202,640"/>
+<area shape="poly" title=" " alt="" coords="1946,624,2021,627,2016,627,1946,630"/>
+<area shape="rect" href="classutil_1_1_platform_util.html#ab3325e5522d5be0de30703ddc160f076" title=" " alt="" coords="2268,614,2435,640"/>
+<area shape="poly" title=" " alt="" coords="2203,624,2255,627,2250,627,2203,630"/>
+<area shape="poly" title=" " alt="" coords="1116,257,1759,262,1754,264,1116,262"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a6999d4de89d6d2f242f70822b6641672" title="Загружает задачи из указанного пути" alt="" coords="1193,182,1403,208"/>
+<area shape="poly" title=" " alt="" coords="1093,243,1231,211,1226,213,1095,248"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a92865a18b3e9681f516419fd55bfb27a" title="Парсит JSON строку в список задач" alt="" coords="1489,161,1650,202"/>
+<area shape="poly" title=" " alt="" coords="1403,187,1476,186,1471,187,1404,192"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a428f650826f08a9ee580d87bb60a1443" title="Парсит один JSON объект задачи" alt="" coords="1757,169,1947,194"/>
+<area shape="poly" title=" " alt="" coords="1650,179,1744,181,1739,182,1651,184"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a53c77a1cd244ad8e37075b9a6c44da32" title="Разделяет JSON массив на отдельные объекты" alt="" coords="1756,120,1948,145"/>
+<area shape="poly" title=" " alt="" coords="1650,165,1762,148,1757,149,1651,170"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aee5a01fe4fd4d523b312591d077d3f13" title="Парсит дату&#45;время с поддержкой различных форматов" alt="" coords="2026,120,2210,145"/>
+<area shape="poly" title=" " alt="" coords="1925,166,2033,148,2028,149,1926,171"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a45c51c188f965f7eafd39189c91ea0bd" title="Парсит JSON поля из строки" alt="" coords="2024,169,2213,194"/>
+<area shape="poly" title=" " alt="" coords="1947,179,2011,181,2005,182,1948,184"/>
+<area shape="rect" href="classmodel_1_1_task.html#ab0baf46a0eaf537e019f5589d31600ee" title=" " alt="" coords="2018,218,2218,244"/>
+<area shape="poly" title=" " alt="" coords="1925,192,2033,215,2027,215,1925,198"/>
+<area shape="rect" href="classmodel_1_1_task.html#a5e261c2bdd2250bb8fcbf52eae83517f" title=" " alt="" coords="2016,268,2220,293"/>
+<area shape="poly" title=" " alt="" coords="1881,192,2017,254,2041,263,2035,263,2015,259,1880,198"/>
+<area shape="rect" href="classmodel_1_1_task.html#acbf938d98a6b9a8e72cdf04d200dfece" title=" " alt="" coords="2017,5,2219,46"/>
+<area shape="poly" title=" " alt="" coords="1946,167,1966,156,1978,144,1984,133,1990,108,1996,82,2003,68,2014,56,2017,56,2022,54,2018,60,2007,72,2001,84,1995,109,1989,135,1982,148,1970,160,1948,172"/>
+<area shape="rect" href="classmodel_1_1_task.html#a7db5ca31a1b8fc9bb8ddb84ea22c7adf" title=" " alt="" coords="2035,70,2201,96"/>
+<area shape="poly" title=" " alt="" coords="1943,166,1967,155,1981,144,1990,131,1999,118,2015,105,2023,103,2028,101,2017,109,2003,121,1994,134,1985,147,1969,160,1944,171"/>
+<area shape="rect" href="classmodel_1_1_task.html#ad8dccd120a6f3e607f46f0c3765de3a5" title="Возвращает уникальный идентификатор задачи" alt="" coords="1238,426,1359,452"/>
+<area shape="poly" title=" " alt="" coords="1145,436,1224,439,1219,439,1146,442"/>
+<area shape="poly" title=" " alt="" coords="1122,358,1202,340,1197,342,1123,363"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#ab16a211144282895701d2b0a64a66145" title=" " alt="" coords="433,518,644,544"/>
+<area shape="poly" title=" " alt="" coords="375,528,420,530,415,532,376,534"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#a04e6d26f9669bac9b360109a9fae574a" title="Пересканирует треки из внешней папки /audio и встроенных ресурсов." alt="" coords="706,573,875,614"/>
+<area shape="poly" title=" " alt="" coords="599,542,649,554,700,569,694,569,648,559,599,547"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#a0c90298ac8f7e2870d61be6c6e7abf95" title=" " alt="" coords="941,541,1137,582"/>
+<area shape="poly" title=" " alt="" coords="875,580,928,576,923,577,875,585"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#ac359959426e86ac5a4a2974b492cfd7e" title=" " alt="" coords="943,672,1135,697"/>
+<area shape="poly" title=" " alt="" coords="832,612,880,635,934,656,961,667,956,667,932,662,878,640,830,617"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#a74db019bafa3f55bc243ae236c150c7e" title=" " alt="" coords="954,607,1124,647"/>
+<area shape="poly" title=" " alt="" coords="875,602,941,614,935,614,875,608"/>
+<area shape="rect" href="classutil_1_1_path_resolver.html#a355df9450ea40bdd5ddd4f8610cacdfd" title=" " alt="" coords="1473,614,1666,640"/>
+<area shape="poly" title=" " alt="" coords="1124,624,1461,627,1455,627,1124,630"/>
+<area shape="poly" title=" " alt="" coords="1666,624,1745,627,1740,627,1666,630"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#a596b567e69cbc3162c125350d1beedac" title=" " alt="" coords="452,568,626,609"/>
+<area shape="poly" title=" " alt="" coords="373,586,439,588,434,589,373,591"/>
 </map>
 </div>
 
@@ -277,68 +310,123 @@ $(function(){initNavTree('classapp_1_1_main_app.html','','classapp_1_1_main_app-
 </table>
 </div><div class="memdoc">
 
-<p>Точка входа в приложение </p>
-<p>Главный метод, вызываемый JVM для запуска приложения</p>
-<dl class="params"><dt>Аргументы</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">args</td><td>Аргументы командной строки (не используются)</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Исключения</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">ClassNotFoundException</td><td>если JavaFX не найден в classpath </td></tr>
-    <tr><td class="paramname">RuntimeException</td><td>если не удается запустить JavaFX Application</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Заметки</dt><dd>Метод проверяет наличие JavaFX перед запуском приложения </dd></dl>
-<dl class="section warning"><dt>Предупреждения</dt><dd>Без JavaFX приложение не сможет запуститься</dd></dl>
-<dl class="section see"><dt>См. также</dt><dd>Application#launch(String...) </dd></dl>
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00029">29</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00098">98</a></p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_manager_8java_source.html#l00322">model.TaskManager.close()</a>, <a class="el" href="_audio_manager_8java_source.html#l00261">util.AudioManager.dispose()</a>, <a class="el" href="_task_manager_8java_source.html#l00034">model.TaskManager.getInstance()</a>, <a class="el" href="_audio_manager_8java_source.html#l00038">util.AudioManager.getInstance()</a>, <a class="el" href="_notification_service_8java_source.html#l00023">util.NotificationService.getInstance()</a>, <a class="el" href="_task_reminder_service_8java_source.html#l00035">util.TaskReminderService.getInstance()</a>, <a class="el" href="_notification_service_8java_source.html#l00118">util.NotificationService.shutdown()</a> и <a class="el" href="_task_reminder_service_8java_source.html#l00113">util.TaskReminderService.stop()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classapp_1_1_main_app_a9788978994366c880434d9cc05a21cb1_cgraph.png" border="0" usemap="#aclassapp_1_1_main_app_a9788978994366c880434d9cc05a21cb1_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassapp_1_1_main_app_a9788978994366c880434d9cc05a21cb1_cgraph" id="aclassapp_1_1_main_app_a9788978994366c880434d9cc05a21cb1_cgraph">
+<area shape="rect" title=" " alt="" coords="5,529,135,554"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a6e9c51f1937eb96cb69f7644090d19d0" title=" " alt="" coords="203,348,375,373"/>
+<area shape="poly" title=" " alt="" coords="74,527,89,497,112,457,142,416,181,382,191,378,188,382,184,386,146,420,116,460,93,499,79,529"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#a4b17927c67a7ff6bac31a3b24bfbe115" title=" " alt="" coords="202,397,376,422"/>
+<area shape="poly" title=" " alt="" coords="80,527,121,482,150,457,181,435,206,426,202,430,184,440,153,461,125,486,84,530"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea" title=" " alt="" coords="184,450,394,476"/>
+<area shape="poly" title=" " alt="" coords="93,526,134,505,182,484,206,479,202,482,184,490,136,510,96,530"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#aaf7ec801730bf60f659b843ace062d86" title=" " alt="" coords="191,500,387,525"/>
+<area shape="poly" title=" " alt="" coords="134,531,177,526,173,529,136,535"/>
+<area shape="rect" href="classutil_1_1_notification_service.html#a93a569a76ba27310e8ecf6c792431efd" title=" " alt="" coords="202,549,376,590"/>
+<area shape="poly" title=" " alt="" coords="134,547,188,555,184,558,136,552"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#af553d1ff0e23581c2a5371c1bd246fc6" title=" " alt="" coords="193,615,385,655"/>
+<area shape="poly" title=" " alt="" coords="93,552,135,576,184,599,204,609,199,610,182,604,133,581,94,558"/>
+<area shape="rect" href="classutil_1_1_notification_service.html#a4fff3ea8b7488faf9768617cf7183bce" title=" " alt="" coords="183,680,395,705"/>
+<area shape="poly" title=" " alt="" coords="80,552,121,608,150,639,184,665,197,673,192,673,181,669,147,643,117,612,79,558"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#a49d4e5db52110d2bf66f48e1b102fff0" title=" " alt="" coords="189,729,388,754"/>
+<area shape="poly" title=" " alt="" coords="76,552,91,587,113,631,144,677,163,698,184,716,191,722,186,721,181,720,159,702,140,680,108,634,86,589,75,557"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#a905c8624d232f6b5711ba37bc2967a22" title=" " alt="" coords="466,320,639,361"/>
+<area shape="poly" title=" " alt="" coords="350,394,394,383,470,364,466,367,396,388,353,399"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#aa61869323ea0a5466573e97e3413adcd" title=" " alt="" coords="468,385,637,426"/>
+<area shape="poly" title=" " alt="" coords="375,406,455,406,451,408,377,411"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c" title=" " alt="" coords="443,450,662,476"/>
+<area shape="poly" title=" " alt="" coords="393,460,430,462,425,464,395,466"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a2cd3b65bd29af3b855f653a323e2b2f5" title=" " alt="" coords="710,391,899,431"/>
+<area shape="poly" title=" " alt="" coords="617,447,698,433,693,434,619,452"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#ad965ff12626fdfe14240873d272f1625" title=" " alt="" coords="957,296,1148,337"/>
+<area shape="poly" title=" " alt="" coords="849,388,946,347,971,341,966,343,948,352,851,393"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a2035f400cd8f5f503ea6f961de54d4ff" title=" " alt="" coords="949,476,1156,517"/>
+<area shape="poly" title=" " alt="" coords="859,429,948,462,969,471,964,471,946,467,858,434"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a2a80078f88c932a5ab230d4775c2391d" title="Загружает все задачи из JSON файла" alt="" coords="976,246,1130,272"/>
+<area shape="poly" title=" " alt="" coords="821,388,873,335,908,306,945,282,964,276,959,279,948,287,911,310,877,339,825,392"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#aad4a8847ce89cef479fc3f6f82d218ab" title=" " alt="" coords="947,426,1159,452"/>
+<area shape="poly" title=" " alt="" coords="899,419,934,425,928,426,899,424"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a148e0a483446591b0b0b38a7f52f425f" title=" " alt="" coords="954,361,1152,402"/>
+<area shape="poly" title=" " alt="" coords="898,397,941,394,936,396,900,402"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a0c065b1a2379283891f0ee94fa5c1ef4" title=" " alt="" coords="1214,296,1411,337"/>
+<area shape="poly" title=" " alt="" coords="1149,314,1201,316,1195,317,1149,319"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421" title="Сохраняет все задачи в JSON файл" alt="" coords="1505,304,1662,329"/>
+<area shape="poly" title=" " alt="" coords="1411,314,1492,316,1486,317,1412,319"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a6acc14b51427ce85235d8981f801d734" title="Возвращает полный путь к файлу задач" alt="" coords="1786,250,1946,276"/>
+<area shape="poly" title=" " alt="" coords="1655,300,1782,279,1777,280,1656,305"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a67200ee9448e6b079ca9ea49200dec30" title="Сохраняет задачи в указанный путь" alt="" coords="1767,304,1965,329"/>
+<area shape="poly" title=" " alt="" coords="1662,314,1753,316,1748,317,1663,319"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="2046,317,2218,358"/>
+<area shape="poly" title=" " alt="" coords="1965,322,2033,329,2028,330,1966,327"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#adff3d0488b1f5e07b737c8028fd61b38" title=" " alt="" coords="1218,479,1407,519"/>
+<area shape="poly" title=" " alt="" coords="1157,495,1204,498,1199,498,1157,500"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#ad56b237e4e259b99a77f8c2b5d9a49db" title=" " alt="" coords="1465,480,1702,521"/>
+<area shape="poly" title=" " alt="" coords="1407,497,1453,499,1447,500,1408,502"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a0f0fdcc1c89621e54aba873524c8785c" title=" " alt="" coords="1753,419,1978,459"/>
+<area shape="poly" title=" " alt="" coords="1680,477,1751,464,1757,463,1681,482"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#ab11cedc68f3e40fa74cd71dcd3c28d47" title=" " alt="" coords="1752,484,1980,525"/>
+<area shape="poly" title=" " alt="" coords="1702,499,1739,502,1734,503,1702,505"/>
+<area shape="rect" href="classutil_1_1_path_resolver.html#abd3fe2993d257c6e777a1303a872be26" title=" " alt="" coords="1772,614,1960,640"/>
+<area shape="poly" title=" " alt="" coords="1613,518,1674,560,1751,599,1775,610,1770,609,1749,604,1672,564,1611,524"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a104e5dac8b06b56fb358902e183b3711" title=" " alt="" coords="1750,549,1982,590"/>
+<area shape="poly" title=" " alt="" coords="1670,519,1768,545,1763,545,1669,524"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a12107d0489c1b18ad4e574a1f5fc1a36" title=" " alt="" coords="1757,353,1974,394"/>
+<area shape="poly" title=" " alt="" coords="1616,477,1676,441,1749,405,1766,400,1771,399,1751,409,1678,445,1617,482"/>
+<area shape="rect" href="classutil_1_1_platform_util.html#ae1f7127305756e82c242eea124934f5b" title=" " alt="" coords="2048,614,2216,640"/>
+<area shape="poly" title=" " alt="" coords="1960,624,2035,627,2030,627,1960,630"/>
+<area shape="poly" title=" " alt="" coords="1130,257,1773,262,1768,264,1130,262"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a6999d4de89d6d2f242f70822b6641672" title="Загружает задачи из указанного пути" alt="" coords="1207,182,1417,208"/>
+<area shape="poly" title=" " alt="" coords="1107,243,1245,211,1240,213,1109,248"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a92865a18b3e9681f516419fd55bfb27a" title="Парсит JSON строку в список задач" alt="" coords="1503,161,1664,202"/>
+<area shape="poly" title=" " alt="" coords="1417,187,1490,186,1485,187,1418,192"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a428f650826f08a9ee580d87bb60a1443" title="Парсит один JSON объект задачи" alt="" coords="1771,169,1961,194"/>
+<area shape="poly" title=" " alt="" coords="1664,179,1758,181,1753,182,1665,184"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a53c77a1cd244ad8e37075b9a6c44da32" title="Разделяет JSON массив на отдельные объекты" alt="" coords="1770,120,1962,145"/>
+<area shape="poly" title=" " alt="" coords="1664,165,1776,148,1771,149,1665,170"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aee5a01fe4fd4d523b312591d077d3f13" title="Парсит дату&#45;время с поддержкой различных форматов" alt="" coords="2040,120,2224,145"/>
+<area shape="poly" title=" " alt="" coords="1939,166,2047,148,2042,149,1940,171"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a45c51c188f965f7eafd39189c91ea0bd" title="Парсит JSON поля из строки" alt="" coords="2038,169,2227,194"/>
+<area shape="poly" title=" " alt="" coords="1961,179,2025,181,2019,182,1962,184"/>
+<area shape="rect" href="classmodel_1_1_task.html#ab0baf46a0eaf537e019f5589d31600ee" title=" " alt="" coords="2032,218,2232,244"/>
+<area shape="poly" title=" " alt="" coords="1939,192,2047,215,2041,215,1939,198"/>
+<area shape="rect" href="classmodel_1_1_task.html#a5e261c2bdd2250bb8fcbf52eae83517f" title=" " alt="" coords="2030,268,2234,293"/>
+<area shape="poly" title=" " alt="" coords="1895,192,2031,254,2055,263,2049,263,2029,259,1894,198"/>
+<area shape="rect" href="classmodel_1_1_task.html#acbf938d98a6b9a8e72cdf04d200dfece" title=" " alt="" coords="2031,5,2233,46"/>
+<area shape="poly" title=" " alt="" coords="1960,167,1980,156,1992,144,1998,133,2004,108,2010,82,2017,68,2028,56,2031,56,2036,54,2032,60,2021,72,2015,84,2009,109,2003,135,1996,148,1984,160,1962,172"/>
+<area shape="rect" href="classmodel_1_1_task.html#a7db5ca31a1b8fc9bb8ddb84ea22c7adf" title=" " alt="" coords="2049,70,2215,96"/>
+<area shape="poly" title=" " alt="" coords="1957,166,1981,155,1995,144,2004,131,2013,118,2029,105,2037,103,2042,101,2031,109,2017,121,2008,134,1999,147,1983,160,1958,171"/>
+<area shape="rect" href="classmodel_1_1_task.html#ad8dccd120a6f3e607f46f0c3765de3a5" title="Возвращает уникальный идентификатор задачи" alt="" coords="1252,426,1373,452"/>
+<area shape="poly" title=" " alt="" coords="1159,436,1238,439,1233,439,1160,442"/>
+<area shape="poly" title=" " alt="" coords="1136,358,1216,340,1211,342,1137,363"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#ab16a211144282895701d2b0a64a66145" title=" " alt="" coords="447,500,658,525"/>
+<area shape="poly" title=" " alt="" coords="387,510,434,512,429,513,388,515"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#a04e6d26f9669bac9b360109a9fae574a" title="Пересканирует треки из внешней папки /audio и встроенных ресурсов." alt="" coords="720,573,889,614"/>
+<area shape="poly" title=" " alt="" coords="619,523,663,535,744,567,739,567,662,540,619,528"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#a0c90298ac8f7e2870d61be6c6e7abf95" title=" " alt="" coords="955,541,1151,582"/>
+<area shape="poly" title=" " alt="" coords="889,580,942,576,937,577,889,585"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#ac359959426e86ac5a4a2974b492cfd7e" title=" " alt="" coords="957,672,1149,697"/>
+<area shape="poly" title=" " alt="" coords="845,612,894,635,948,656,975,667,970,667,946,662,892,640,845,617"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#a74db019bafa3f55bc243ae236c150c7e" title=" " alt="" coords="968,607,1138,647"/>
+<area shape="poly" title=" " alt="" coords="889,602,955,613,949,614,889,608"/>
+<area shape="rect" href="classutil_1_1_path_resolver.html#a355df9450ea40bdd5ddd4f8610cacdfd" title=" " alt="" coords="1487,614,1680,640"/>
+<area shape="poly" title=" " alt="" coords="1138,624,1475,627,1469,627,1139,630"/>
+<area shape="poly" title=" " alt="" coords="1680,624,1759,627,1754,627,1680,630"/>
+<area shape="rect" href="classutil_1_1_notification_service.html#aef01902013eab648b9296a28d0347fb8" title=" " alt="" coords="474,549,631,590"/>
+<area shape="poly" title=" " alt="" coords="376,567,461,569,456,570,377,572"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#a596b567e69cbc3162c125350d1beedac" title=" " alt="" coords="466,615,640,655"/>
+<area shape="poly" title=" " alt="" coords="385,632,452,635,447,635,386,638"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a5546682bda948ba9513d649b6aaf33a8" name="a5546682bda948ba9513d649b6aaf33a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5546682bda948ba9513d649b6aaf33a8">&#9670;&#160;</a></span>reloadMainView()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void app.MainApp.reloadMainView </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Перезагружает главное окно </p>
-<p>Загружает заново FXML файл главного окна и обновляет сцену</p>
-<dl class="section note"><dt>Заметки</dt><dd>Используется для обновления интерфейса без перезапуска приложения </dd>
-<dd>
-Сохраняет текущие размеры окна</dd></dl>
-<dl class="exception"><dt>Исключения</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">IOException</td><td>если не удается загрузить FXML файл</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>См. также</dt><dd>FXMLLoader </dd>
-<dd>
-Scene </dd></dl>
-<dl class="section warning"><dt>Предупреждения</dt><dd>Не сохраняет состояние таблицы и другие UI элементы </dd></dl>
-
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00317">317</a></p>
-
-<p class="reference">Перекрестные ссылки <a class="el" href="_main_app_8java_source.html#l00076">primaryStage</a>.</p>
-
-</div>
-</div>
-<a id="a92cfa72f96cc381ef46d20c6fb1ae193" name="a92cfa72f96cc381ef46d20c6fb1ae193"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92cfa72f96cc381ef46d20c6fb1ae193">&#9670;&#160;</a></span>showErrorDialog()</h2>
+<a id="a3f7b3f260d11dbec5429f1f90a24687b" name="a3f7b3f260d11dbec5429f1f90a24687b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f7b3f260d11dbec5429f1f90a24687b">&#9670;&#160;</a></span>showFatalError()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -347,19 +435,14 @@ Scene </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void app.MainApp.showErrorDialog </td>
+          <td class="memname">void app.MainApp.showFatalError </td>
           <td>(</td>
-          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>title</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>header</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>content</em></span>&#160;)</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>details</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -369,41 +452,24 @@ Scene </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Показывает диалоговое окно с ошибкой </p>
-<p>Создает и отображает модальное диалоговое окно с сообщением об ошибке</p>
-<dl class="params"><dt>Аргументы</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">title</td><td>Заголовок диалогового окна </td></tr>
-    <tr><td class="paramname">header</td><td>Основной заголовок сообщения </td></tr>
-    <tr><td class="paramname">content</td><td>Подробное описание ошибки</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Заметки</dt><dd>Используется для информирования пользователя о критических ошибках </dd>
-<dd>
-Окно блокирует взаимодействие с основным приложением до закрытия</dd></dl>
-<dl class="section see"><dt>См. также</dt><dd>Alert </dd>
-<dd>
-Alert.AlertType#ERROR </dd></dl>
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00096">96</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00295">295</a></p>
-
-<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00165">start()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00057">start()</a>.</p>
 <div class="dynheader">
 Граф вызова функции:</div>
 <div class="dyncontent">
-<div class="center"><img src="classapp_1_1_main_app_a92cfa72f96cc381ef46d20c6fb1ae193_icgraph.png" border="0" usemap="#aclassapp_1_1_main_app_a92cfa72f96cc381ef46d20c6fb1ae193_icgraph" loading="lazy" alt=""/></div>
-<map name="aclassapp_1_1_main_app_a92cfa72f96cc381ef46d20c6fb1ae193_icgraph" id="aclassapp_1_1_main_app_a92cfa72f96cc381ef46d20c6fb1ae193_icgraph">
-<area shape="rect" title="Показывает диалоговое окно с ошибкой" alt="" coords="181,5,378,31"/>
-<area shape="rect" href="classapp_1_1_main_app.html#a2f925faf172d4a1a66bf616b47a8b368" title="Метод запуска JavaFX приложения" alt="" coords="5,5,133,31"/>
+<div class="center"><img src="classapp_1_1_main_app_a3f7b3f260d11dbec5429f1f90a24687b_icgraph.png" border="0" usemap="#aclassapp_1_1_main_app_a3f7b3f260d11dbec5429f1f90a24687b_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassapp_1_1_main_app_a3f7b3f260d11dbec5429f1f90a24687b_icgraph" id="aclassapp_1_1_main_app_a3f7b3f260d11dbec5429f1f90a24687b_icgraph">
+<area shape="rect" title=" " alt="" coords="181,5,370,31"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a47878f33c1c0458f442d9b3f93bedf06" title=" " alt="" coords="5,5,133,31"/>
 <area shape="poly" title=" " alt="" coords="163,18,133,21,133,16,168,18"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a2f925faf172d4a1a66bf616b47a8b368" name="a2f925faf172d4a1a66bf616b47a8b368"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f925faf172d4a1a66bf616b47a8b368">&#9670;&#160;</a></span>start()</h2>
+<a id="a47878f33c1c0458f442d9b3f93bedf06" name="a47878f33c1c0458f442d9b3f93bedf06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47878f33c1c0458f442d9b3f93bedf06">&#9670;&#160;</a></span>start()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -411,56 +477,56 @@ Alert.AlertType#ERROR </dd></dl>
         <tr>
           <td class="memname">void app.MainApp.start </td>
           <td>(</td>
-          <td class="paramtype">Stage</td>          <td class="paramname"><span class="paramname"><em>primaryStage</em></span></td><td>)</td>
+          <td class="paramtype">Stage</td>          <td class="paramname"><span class="paramname"><em>stage</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Метод запуска JavaFX приложения </p>
-<p>Основной метод настройки и отображения пользовательского интерфейса</p>
-<dl class="params"><dt>Аргументы</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">primaryStage</td><td>Главное окно приложения, предоставляемое JavaFX</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Исключения</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">IOException</td><td>если не удается загрузить FXML файл главного окна </td></tr>
-    <tr><td class="paramname">NullPointerException</td><td>если не найден CSS файл или иконка</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Заметки</dt><dd>В этом методе:<ul>
-<li>Загружается FXML файл главного окна</li>
-<li>Настраивается сцена с CSS стилями</li>
-<li>Устанавливается иконка приложения</li>
-<li>Настраиваются минимальные размеры окна</li>
-<li>Добавляется обработчик закрытия окна</li>
-<li>Отображается главное окно</li>
-</ul>
-</dd></dl>
-<dl class="section warning"><dt>Предупреждения</dt><dd>Все исключения перехватываются и показываются в диалоговом окне</dd></dl>
-<dl class="section see"><dt>См. также</dt><dd>FXMLLoader </dd>
-<dd>
-Scene </dd>
-<dd>
-Stage </dd>
-<dd>
-<a class="el" href="#a92cfa72f96cc381ef46d20c6fb1ae193" title="Показывает диалоговое окно с ошибкой">showErrorDialog(String, String, String)</a> </dd></dl>
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00057">57</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00165">165</a></p>
-
-<p class="reference">Перекрестные ссылки <a class="el" href="_main_app_8java_source.html#l00046">APP_TITLE</a>, <a class="el" href="_main_app_8java_source.html#l00082">audioManager</a>, <a class="el" href="_main_app_8java_source.html#l00070">MIN_HEIGHT</a>, <a class="el" href="_main_app_8java_source.html#l00064">MIN_WIDTH</a>, <a class="el" href="_main_app_8java_source.html#l00076">primaryStage</a>, <a class="el" href="_main_app_8java_source.html#l00295">showErrorDialog()</a>, <a class="el" href="_main_app_8java_source.html#l00058">WINDOW_HEIGHT</a> и <a class="el" href="_main_app_8java_source.html#l00052">WINDOW_WIDTH</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_main_app_8java_source.html#l00023">APP_TITLE</a>, <a class="el" href="_theme_manager_8java_source.html#l00048">util.ThemeManager.applyTheme()</a>, <a class="el" href="_theme_manager_8java_source.html#l00026">util.ThemeManager.getCurrentTheme()</a>, <a class="el" href="_main_app_8java_source.html#l00096">showFatalError()</a>, <a class="el" href="_main_app_8java_source.html#l00025">WINDOW_HEIGHT</a> и <a class="el" href="_main_app_8java_source.html#l00024">WINDOW_WIDTH</a>.</p>
 <div class="dynheader">
 Граф вызовов:</div>
 <div class="dyncontent">
-<div class="center"><img src="classapp_1_1_main_app_a2f925faf172d4a1a66bf616b47a8b368_cgraph.png" border="0" usemap="#aclassapp_1_1_main_app_a2f925faf172d4a1a66bf616b47a8b368_cgraph" loading="lazy" alt=""/></div>
-<map name="aclassapp_1_1_main_app_a2f925faf172d4a1a66bf616b47a8b368_cgraph" id="aclassapp_1_1_main_app_a2f925faf172d4a1a66bf616b47a8b368_cgraph">
-<area shape="rect" title="Метод запуска JavaFX приложения" alt="" coords="5,5,133,31"/>
-<area shape="rect" href="classapp_1_1_main_app.html#a92cfa72f96cc381ef46d20c6fb1ae193" title="Показывает диалоговое окно с ошибкой" alt="" coords="181,5,378,31"/>
-<area shape="poly" title=" " alt="" coords="133,16,167,18,162,18,133,21"/>
+<div class="center"><img src="classapp_1_1_main_app_a47878f33c1c0458f442d9b3f93bedf06_cgraph.png" border="0" usemap="#aclassapp_1_1_main_app_a47878f33c1c0458f442d9b3f93bedf06_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassapp_1_1_main_app_a47878f33c1c0458f442d9b3f93bedf06_cgraph" id="aclassapp_1_1_main_app_a47878f33c1c0458f442d9b3f93bedf06_cgraph">
+<area shape="rect" title=" " alt="" coords="5,184,133,209"/>
+<area shape="rect" href="classutil_1_1_theme_manager.html#a0984bdb5127eb1409e464247f0b78e37" title=" " alt="" coords="181,98,387,124"/>
+<area shape="poly" title=" " alt="" coords="102,181,236,127,234,132,105,185"/>
+<area shape="rect" href="classutil_1_1_theme_manager.html#a2c5933297ff3dd3af83560dcfc759dc5" title=" " alt="" coords="186,176,382,217"/>
+<area shape="poly" title=" " alt="" coords="132,194,172,195,168,197,133,199"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a3f7b3f260d11dbec5429f1f90a24687b" title=" " alt="" coords="189,241,378,266"/>
+<area shape="poly" title=" " alt="" coords="115,207,181,226,215,236,210,237,180,231,115,212"/>
+<area shape="rect" href="classutil_1_1_theme_manager.html#acd90667dbb2d1cb2c3d1916702b68346" title=" " alt="" coords="708,5,908,46"/>
+<area shape="poly" title=" " alt="" coords="309,95,365,70,434,47,500,35,568,27,696,23,690,24,568,32,501,40,436,52,367,75,312,100"/>
+<area shape="rect" href="classutil_1_1_theme_manager.html#ad2da1c8826c4bf5fee6c2cb0dbbe2f5b" title=" " alt="" coords="459,61,636,102"/>
+<area shape="poly" title=" " alt="" coords="387,97,446,92,441,94,388,102"/>
+<area shape="rect" href="classutil_1_1_theme_manager.html#a5fbd939adaab5230705627b889d2fa6b" title=" " alt="" coords="435,126,660,152"/>
+<area shape="poly" title=" " alt="" coords="387,119,422,125,417,126,388,125"/>
+<area shape="rect" href="classutil_1_1_path_resolver.html#abd3fe2993d257c6e777a1303a872be26" title=" " alt="" coords="1262,16,1450,41"/>
+<area shape="poly" title=" " alt="" coords="908,23,1250,27,1245,28,908,29"/>
+<area shape="rect" href="classutil_1_1_platform_util.html#ae1f7127305756e82c242eea124934f5b" title=" " alt="" coords="1520,16,1689,41"/>
+<area shape="poly" title=" " alt="" coords="1450,26,1508,28,1502,29,1451,31"/>
+<area shape="rect" href="classutil_1_1_platform_util.html#ab3325e5522d5be0de30703ddc160f076" title=" " alt="" coords="1737,16,1903,41"/>
+<area shape="poly" title=" " alt="" coords="1689,26,1724,28,1719,29,1689,31"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a2035f400cd8f5f503ea6f961de54d4ff" title=" " alt="" coords="444,176,651,217"/>
+<area shape="poly" title=" " alt="" coords="382,194,431,196,426,197,383,199"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a6178e715c92709dbc017c6e8d07f4ccc" title=" " alt="" coords="444,241,651,282"/>
+<area shape="poly" title=" " alt="" coords="369,215,451,237,445,237,369,220"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#adff3d0488b1f5e07b737c8028fd61b38" title=" " alt="" coords="713,152,903,193"/>
+<area shape="poly" title=" " alt="" coords="652,184,701,182,695,183,652,189"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#ad56b237e4e259b99a77f8c2b5d9a49db" title=" " alt="" coords="956,140,1192,181"/>
+<area shape="poly" title=" " alt="" coords="903,165,943,166,937,167,903,171"/>
+<area shape="poly" title=" " alt="" coords="1101,137,1162,95,1239,54,1267,46,1273,45,1241,59,1165,100,1103,142"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a0f0fdcc1c89621e54aba873524c8785c" title=" " alt="" coords="1244,68,1469,109"/>
+<area shape="poly" title=" " alt="" coords="1156,137,1256,114,1261,113,1157,142"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#ab11cedc68f3e40fa74cd71dcd3c28d47" title=" " alt="" coords="1242,133,1470,174"/>
+<area shape="poly" title=" " alt="" coords="1192,155,1230,157,1224,157,1193,160"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a104e5dac8b06b56fb358902e183b3711" title=" " alt="" coords="1240,199,1472,239"/>
+<area shape="poly" title=" " alt="" coords="1175,179,1243,195,1238,195,1175,184"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a12107d0489c1b18ad4e574a1f5fc1a36" title=" " alt="" coords="1248,264,1465,305"/>
+<area shape="poly" title=" " alt="" coords="1108,178,1169,214,1241,249,1263,259,1258,258,1239,253,1167,218,1107,184"/>
 </map>
 </div>
 
@@ -481,50 +547,116 @@ Stage </dd>
       </table>
 </div><div class="memdoc">
 
-<p>Метод остановки приложения </p>
-<p>Вызывается автоматически JavaFX при завершении приложения Выполняет очистку ресурсов и сохранение данных</p>
-<dl class="section note"><dt>Заметки</dt><dd>В этом методе:<ul>
-<li>Сохраняются все задачи в JSON файл</li>
-<li>Освобождаются ресурсы <a class="el" href="classutil_1_1_audio_manager.html" title="Менеджер для работы с аудио в приложении">AudioManager</a></li>
-<li>Логируется процесс остановки</li>
-</ul>
-</dd></dl>
-<dl class="section warning"><dt>Предупреждения</dt><dd>Метод гарантированно вызывается при нормальном завершении приложения</dd></dl>
-<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea" title="Возвращает единственный экземпляр TaskManager.">TaskManager.getInstance()</a> </dd>
-<dd>
-JsonUtil#saveTasks(List) </dd>
-<dd>
-<a class="el" href="classutil_1_1_audio_manager.html#a67ab556a4d2e6faff27ec5b80d97220c" title="Освобождает ресурсы">AudioManager.dispose()</a> </dd></dl>
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00089">89</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00246">246</a></p>
-
-<p class="reference">Перекрестные ссылки <a class="el" href="_main_app_8java_source.html#l00082">audioManager</a>, <a class="el" href="_task_manager_8java_source.html#l00129">model.TaskManager.getAllTasks()</a>, <a class="el" href="_task_manager_8java_source.html#l00077">model.TaskManager.getInstance()</a> и <a class="el" href="_json_util_8java_source.html#l00178">util.JsonUtil.saveTasks()</a>.</p>
+<p class="reference">Перекрестные ссылки <a class="el" href="_task_manager_8java_source.html#l00322">model.TaskManager.close()</a>, <a class="el" href="_audio_manager_8java_source.html#l00261">util.AudioManager.dispose()</a>, <a class="el" href="_task_manager_8java_source.html#l00034">model.TaskManager.getInstance()</a>, <a class="el" href="_audio_manager_8java_source.html#l00038">util.AudioManager.getInstance()</a>, <a class="el" href="_notification_service_8java_source.html#l00023">util.NotificationService.getInstance()</a>, <a class="el" href="_task_reminder_service_8java_source.html#l00035">util.TaskReminderService.getInstance()</a>, <a class="el" href="_notification_service_8java_source.html#l00118">util.NotificationService.shutdown()</a> и <a class="el" href="_task_reminder_service_8java_source.html#l00113">util.TaskReminderService.stop()</a>.</p>
 <div class="dynheader">
 Граф вызовов:</div>
 <div class="dyncontent">
 <div class="center"><img src="classapp_1_1_main_app_a81713cb9b4148cc9775e965fc14a1834_cgraph.png" border="0" usemap="#aclassapp_1_1_main_app_a81713cb9b4148cc9775e965fc14a1834_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassapp_1_1_main_app_a81713cb9b4148cc9775e965fc14a1834_cgraph" id="aclassapp_1_1_main_app_a81713cb9b4148cc9775e965fc14a1834_cgraph">
-<area shape="rect" title="Метод остановки приложения" alt="" coords="5,70,132,96"/>
-<area shape="rect" href="classmodel_1_1_task_manager.html#abc809a0b2d184494368cc5cc6dae6346" title="Возвращает неизменяемую копию списка всех задач" alt="" coords="197,5,372,46"/>
-<area shape="poly" title=" " alt="" coords="119,67,192,49,188,52,121,72"/>
-<area shape="rect" href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea" title="Возвращает единственный экземпляр TaskManager." alt="" coords="180,70,389,96"/>
-<area shape="poly" title=" " alt="" coords="131,80,167,82,162,84,133,86"/>
-<area shape="rect" href="classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421" title="Сохраняет все задачи в JSON файл" alt="" coords="206,120,363,145"/>
-<area shape="poly" title=" " alt="" coords="128,94,212,114,208,117,128,99"/>
-<area shape="rect" href="classmodel_1_1_task_manager.html#a6ff214cd422dcd5f0d8c5d573cd251b6" title="Проверяет все задачи на просроченность" alt="" coords="451,5,642,46"/>
-<area shape="poly" title=" " alt="" coords="372,23,438,25,433,26,373,28"/>
-<area shape="rect" href="classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c" title="Приватный конструктор" alt="" coords="437,70,656,96"/>
-<area shape="poly" title=" " alt="" coords="389,80,424,83,419,83,390,86"/>
-<area shape="rect" href="classutil_1_1_json_util.html#a6acc14b51427ce85235d8981f801d734" title="Возвращает полный путь к файлу задач" alt="" coords="466,120,627,145"/>
-<area shape="poly" title=" " alt="" coords="363,130,454,132,448,133,364,135"/>
-<area shape="rect" href="classutil_1_1_json_util.html#a67200ee9448e6b079ca9ea49200dec30" title="Сохраняет задачи в указанный путь" alt="" coords="448,169,646,194"/>
-<area shape="poly" title=" " alt="" coords="357,143,462,165,457,166,356,148"/>
-<area shape="rect" href="classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="704,161,877,202"/>
-<area shape="poly" title=" " alt="" coords="646,179,691,182,686,182,646,184"/>
-<area shape="rect" href="classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf" title="Преобразует задачу в JSON строку" alt="" coords="925,169,1090,194"/>
-<area shape="poly" title=" " alt="" coords="877,179,912,182,907,182,877,184"/>
-<area shape="rect" href="classmodel_1_1_task.html#a06ac3cb0d7ec1aa23be54ce85963aa75" title="Экранирует специальные символы для JSON." alt="" coords="1138,169,1300,194"/>
-<area shape="poly" title=" " alt="" coords="1090,179,1125,182,1120,182,1090,184"/>
+<area shape="rect" title=" " alt="" coords="5,529,132,554"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a6e9c51f1937eb96cb69f7644090d19d0" title=" " alt="" coords="200,348,372,373"/>
+<area shape="poly" title=" " alt="" coords="73,527,87,497,109,457,140,416,178,382,188,378,185,382,181,386,144,420,114,460,92,499,78,529"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#a4b17927c67a7ff6bac31a3b24bfbe115" title=" " alt="" coords="199,397,372,422"/>
+<area shape="poly" title=" " alt="" coords="78,527,119,482,147,457,178,435,203,426,199,430,181,440,150,461,122,486,82,530"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea" title=" " alt="" coords="181,450,390,476"/>
+<area shape="poly" title=" " alt="" coords="91,526,131,505,179,485,203,479,198,482,181,489,134,510,95,530"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#aaf7ec801730bf60f659b843ace062d86" title=" " alt="" coords="188,500,384,525"/>
+<area shape="poly" title=" " alt="" coords="131,531,174,526,170,529,133,536"/>
+<area shape="rect" href="classutil_1_1_notification_service.html#a93a569a76ba27310e8ecf6c792431efd" title=" " alt="" coords="199,549,373,590"/>
+<area shape="poly" title=" " alt="" coords="131,547,185,555,181,558,133,552"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#af553d1ff0e23581c2a5371c1bd246fc6" title=" " alt="" coords="190,615,382,655"/>
+<area shape="poly" title=" " alt="" coords="91,552,133,576,181,599,201,608,196,610,179,604,131,581,92,558"/>
+<area shape="rect" href="classutil_1_1_notification_service.html#a4fff3ea8b7488faf9768617cf7183bce" title=" " alt="" coords="180,680,392,705"/>
+<area shape="poly" title=" " alt="" coords="78,552,119,608,147,639,181,665,194,673,189,673,178,669,144,643,114,612,77,558"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#a49d4e5db52110d2bf66f48e1b102fff0" title=" " alt="" coords="186,729,386,754"/>
+<area shape="poly" title=" " alt="" coords="74,552,89,587,111,631,141,677,160,698,181,716,188,722,183,721,178,720,156,702,137,680,106,634,84,589,74,557"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#a905c8624d232f6b5711ba37bc2967a22" title=" " alt="" coords="463,320,636,361"/>
+<area shape="poly" title=" " alt="" coords="347,394,391,383,467,364,463,367,393,388,350,399"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#aa61869323ea0a5466573e97e3413adcd" title=" " alt="" coords="466,385,634,426"/>
+<area shape="poly" title=" " alt="" coords="372,406,452,406,448,408,374,411"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c" title=" " alt="" coords="440,450,659,476"/>
+<area shape="poly" title=" " alt="" coords="390,460,427,462,422,464,392,466"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a2cd3b65bd29af3b855f653a323e2b2f5" title=" " alt="" coords="707,391,896,431"/>
+<area shape="poly" title=" " alt="" coords="614,447,695,433,690,434,616,452"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#ad965ff12626fdfe14240873d272f1625" title=" " alt="" coords="954,296,1146,337"/>
+<area shape="poly" title=" " alt="" coords="846,388,943,347,968,341,963,343,945,352,848,393"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a2035f400cd8f5f503ea6f961de54d4ff" title=" " alt="" coords="946,476,1154,517"/>
+<area shape="poly" title=" " alt="" coords="856,429,945,462,966,471,961,471,943,467,855,434"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a2a80078f88c932a5ab230d4775c2391d" title="Загружает все задачи из JSON файла" alt="" coords="973,246,1126,272"/>
+<area shape="poly" title=" " alt="" coords="818,388,870,335,905,306,942,282,961,276,956,279,945,287,908,310,874,339,822,392"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#aad4a8847ce89cef479fc3f6f82d218ab" title=" " alt="" coords="944,426,1156,452"/>
+<area shape="poly" title=" " alt="" coords="896,419,931,425,925,426,896,424"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a148e0a483446591b0b0b38a7f52f425f" title=" " alt="" coords="951,361,1148,402"/>
+<area shape="poly" title=" " alt="" coords="895,397,938,394,933,396,897,402"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a0c065b1a2379283891f0ee94fa5c1ef4" title=" " alt="" coords="1210,296,1408,337"/>
+<area shape="poly" title=" " alt="" coords="1146,314,1198,316,1192,317,1146,319"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421" title="Сохраняет все задачи в JSON файл" alt="" coords="1502,304,1659,329"/>
+<area shape="poly" title=" " alt="" coords="1408,314,1489,316,1483,317,1409,319"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a6acc14b51427ce85235d8981f801d734" title="Возвращает полный путь к файлу задач" alt="" coords="1783,250,1943,276"/>
+<area shape="poly" title=" " alt="" coords="1652,300,1779,279,1774,280,1653,305"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a67200ee9448e6b079ca9ea49200dec30" title="Сохраняет задачи в указанный путь" alt="" coords="1764,304,1962,329"/>
+<area shape="poly" title=" " alt="" coords="1659,314,1750,316,1745,317,1660,319"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aaaa83983070d38c894e85492c2ef7243" title="Преобразует список задач в JSON строку" alt="" coords="2043,317,2215,358"/>
+<area shape="poly" title=" " alt="" coords="1962,322,2030,329,2025,330,1963,327"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#adff3d0488b1f5e07b737c8028fd61b38" title=" " alt="" coords="1214,479,1404,519"/>
+<area shape="poly" title=" " alt="" coords="1154,495,1201,498,1196,498,1154,500"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#ad56b237e4e259b99a77f8c2b5d9a49db" title=" " alt="" coords="1462,480,1699,521"/>
+<area shape="poly" title=" " alt="" coords="1404,497,1450,499,1444,500,1405,502"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a0f0fdcc1c89621e54aba873524c8785c" title=" " alt="" coords="1750,419,1976,459"/>
+<area shape="poly" title=" " alt="" coords="1677,477,1748,464,1754,463,1678,482"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#ab11cedc68f3e40fa74cd71dcd3c28d47" title=" " alt="" coords="1749,484,1976,525"/>
+<area shape="poly" title=" " alt="" coords="1699,499,1736,502,1731,503,1699,505"/>
+<area shape="rect" href="classutil_1_1_path_resolver.html#abd3fe2993d257c6e777a1303a872be26" title=" " alt="" coords="1769,614,1956,640"/>
+<area shape="poly" title=" " alt="" coords="1610,518,1671,560,1748,599,1772,610,1767,609,1746,604,1669,564,1608,524"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a104e5dac8b06b56fb358902e183b3711" title=" " alt="" coords="1747,549,1979,590"/>
+<area shape="poly" title=" " alt="" coords="1667,519,1765,545,1760,545,1666,524"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a12107d0489c1b18ad4e574a1f5fc1a36" title=" " alt="" coords="1754,353,1972,394"/>
+<area shape="poly" title=" " alt="" coords="1613,477,1673,441,1746,405,1763,400,1768,399,1748,409,1675,445,1614,482"/>
+<area shape="rect" href="classutil_1_1_platform_util.html#ae1f7127305756e82c242eea124934f5b" title=" " alt="" coords="2045,614,2213,640"/>
+<area shape="poly" title=" " alt="" coords="1957,624,2032,627,2027,627,1957,630"/>
+<area shape="poly" title=" " alt="" coords="1127,257,1770,261,1765,264,1127,262"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a6999d4de89d6d2f242f70822b6641672" title="Загружает задачи из указанного пути" alt="" coords="1204,182,1414,208"/>
+<area shape="poly" title=" " alt="" coords="1104,243,1242,211,1237,213,1106,248"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a92865a18b3e9681f516419fd55bfb27a" title="Парсит JSON строку в список задач" alt="" coords="1500,161,1661,202"/>
+<area shape="poly" title=" " alt="" coords="1414,187,1487,186,1482,187,1415,192"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a428f650826f08a9ee580d87bb60a1443" title="Парсит один JSON объект задачи" alt="" coords="1768,169,1958,194"/>
+<area shape="poly" title=" " alt="" coords="1661,179,1755,181,1750,182,1662,184"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a53c77a1cd244ad8e37075b9a6c44da32" title="Разделяет JSON массив на отдельные объекты" alt="" coords="1767,120,1958,145"/>
+<area shape="poly" title=" " alt="" coords="1661,165,1773,148,1768,149,1662,170"/>
+<area shape="rect" href="classutil_1_1_json_util.html#aee5a01fe4fd4d523b312591d077d3f13" title="Парсит дату&#45;время с поддержкой различных форматов" alt="" coords="2038,120,2221,145"/>
+<area shape="poly" title=" " alt="" coords="1936,166,2044,148,2039,149,1937,171"/>
+<area shape="rect" href="classutil_1_1_json_util.html#a45c51c188f965f7eafd39189c91ea0bd" title="Парсит JSON поля из строки" alt="" coords="2034,169,2224,194"/>
+<area shape="poly" title=" " alt="" coords="1958,179,2022,181,2016,182,1959,184"/>
+<area shape="rect" href="classmodel_1_1_task.html#ab0baf46a0eaf537e019f5589d31600ee" title=" " alt="" coords="2029,218,2229,244"/>
+<area shape="poly" title=" " alt="" coords="1936,192,2044,215,2038,215,1936,198"/>
+<area shape="rect" href="classmodel_1_1_task.html#a5e261c2bdd2250bb8fcbf52eae83517f" title=" " alt="" coords="2027,268,2231,293"/>
+<area shape="poly" title=" " alt="" coords="1892,192,2028,254,2052,263,2046,263,2026,259,1891,198"/>
+<area shape="rect" href="classmodel_1_1_task.html#acbf938d98a6b9a8e72cdf04d200dfece" title=" " alt="" coords="2028,5,2230,46"/>
+<area shape="poly" title=" " alt="" coords="1957,167,1977,156,1989,144,1995,133,2001,108,2007,82,2014,68,2025,56,2028,56,2033,54,2029,60,2018,72,2012,84,2006,109,2000,135,1993,148,1981,160,1959,172"/>
+<area shape="rect" href="classmodel_1_1_task.html#a7db5ca31a1b8fc9bb8ddb84ea22c7adf" title=" " alt="" coords="2046,70,2212,96"/>
+<area shape="poly" title=" " alt="" coords="1954,166,1978,155,1992,144,2001,131,2010,118,2026,105,2034,103,2039,101,2028,109,2014,121,2005,134,1996,147,1980,160,1955,171"/>
+<area shape="rect" href="classmodel_1_1_task.html#ad8dccd120a6f3e607f46f0c3765de3a5" title="Возвращает уникальный идентификатор задачи" alt="" coords="1248,426,1370,452"/>
+<area shape="poly" title=" " alt="" coords="1156,436,1235,439,1230,439,1157,442"/>
+<area shape="poly" title=" " alt="" coords="1133,358,1213,340,1208,342,1134,363"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#ab16a211144282895701d2b0a64a66145" title=" " alt="" coords="444,500,655,525"/>
+<area shape="poly" title=" " alt="" coords="384,510,431,512,426,513,385,515"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#a04e6d26f9669bac9b360109a9fae574a" title="Пересканирует треки из внешней папки /audio и встроенных ресурсов." alt="" coords="717,573,886,614"/>
+<area shape="poly" title=" " alt="" coords="616,523,660,535,741,567,736,567,659,540,616,528"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#a0c90298ac8f7e2870d61be6c6e7abf95" title=" " alt="" coords="952,541,1148,582"/>
+<area shape="poly" title=" " alt="" coords="886,580,939,576,934,577,886,585"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#ac359959426e86ac5a4a2974b492cfd7e" title=" " alt="" coords="954,672,1146,697"/>
+<area shape="poly" title=" " alt="" coords="842,612,891,635,945,656,972,667,967,667,943,662,889,640,842,617"/>
+<area shape="rect" href="classutil_1_1_audio_manager.html#a74db019bafa3f55bc243ae236c150c7e" title=" " alt="" coords="965,607,1135,647"/>
+<area shape="poly" title=" " alt="" coords="886,602,952,613,946,614,886,608"/>
+<area shape="rect" href="classutil_1_1_path_resolver.html#a355df9450ea40bdd5ddd4f8610cacdfd" title=" " alt="" coords="1484,614,1677,640"/>
+<area shape="poly" title=" " alt="" coords="1135,624,1472,627,1466,627,1136,630"/>
+<area shape="poly" title=" " alt="" coords="1677,624,1756,627,1751,627,1677,630"/>
+<area shape="rect" href="classutil_1_1_notification_service.html#aef01902013eab648b9296a28d0347fb8" title=" " alt="" coords="472,549,628,590"/>
+<area shape="poly" title=" " alt="" coords="373,567,458,569,453,570,374,572"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#a596b567e69cbc3162c125350d1beedac" title=" " alt="" coords="462,615,637,655"/>
+<area shape="poly" title=" " alt="" coords="382,632,449,635,444,635,383,638"/>
 </map>
 </div>
 
@@ -541,7 +673,7 @@ JsonUtil#saveTasks(List) </dd>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">final String app.MainApp.APP_TITLE = &quot;Умный планировщик задач&quot;</td>
+          <td class="memname">final String app.MainApp.APP_TITLE = &quot;ToDoList&quot;</td>
         </tr>
       </table>
   </td>
@@ -551,99 +683,9 @@ JsonUtil#saveTasks(List) </dd>
 </table>
 </div><div class="memdoc">
 
-<p>Заголовок приложения </p>
-<p>Отображается в заголовке главного окна </p>
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00023">23</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00046">46</a></p>
-
-<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00165">start()</a>.</p>
-
-</div>
-</div>
-<a id="a821a0cbc770b47e801af93c8b55c7c98" name="a821a0cbc770b47e801af93c8b55c7c98"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a821a0cbc770b47e801af93c8b55c7c98">&#9670;&#160;</a></span>audioManager</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classutil_1_1_audio_manager.html">AudioManager</a> app.MainApp.audioManager</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Менеджер аудио </p>
-<p>Управляет звуковыми эффектами приложения (Singleton) </p>
-
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00082">82</a></p>
-
-<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00126">init()</a>, <a class="el" href="_main_app_8java_source.html#l00165">start()</a> и <a class="el" href="_main_app_8java_source.html#l00246">stop()</a>.</p>
-
-</div>
-</div>
-<a id="adb5ea69d0160842c8866b1482238712b" name="adb5ea69d0160842c8866b1482238712b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb5ea69d0160842c8866b1482238712b">&#9670;&#160;</a></span>MIN_HEIGHT</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">final int app.MainApp.MIN_HEIGHT = 500</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Минимальная высота окна </p>
-<p>Минимальная высота, до которой пользователь может уменьшить окно </p>
-
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00070">70</a></p>
-
-<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00165">start()</a>.</p>
-
-</div>
-</div>
-<a id="a37ee9c5df8c0291fa0a35f78cbd54e0d" name="a37ee9c5df8c0291fa0a35f78cbd54e0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37ee9c5df8c0291fa0a35f78cbd54e0d">&#9670;&#160;</a></span>MIN_WIDTH</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">final int app.MainApp.MIN_WIDTH = 700</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Минимальная ширина окна </p>
-<p>Минимальная ширина, до которой пользователь может уменьшить окно </p>
-
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00064">64</a></p>
-
-<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00165">start()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00057">start()</a>.</p>
 
 </div>
 </div>
@@ -667,12 +709,9 @@ JsonUtil#saveTasks(List) </dd>
 </table>
 </div><div class="memdoc">
 
-<p>Главное окно приложения </p>
-<p>Ссылка на первичную Stage (окно) JavaFX приложения </p>
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00027">27</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00076">76</a></p>
-
-<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00277">getPrimaryStage()</a>, <a class="el" href="_main_app_8java_source.html#l00317">reloadMainView()</a> и <a class="el" href="_main_app_8java_source.html#l00165">start()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00104">getPrimaryStage()</a>.</p>
 
 </div>
 </div>
@@ -686,7 +725,7 @@ JsonUtil#saveTasks(List) </dd>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">final int app.MainApp.WINDOW_HEIGHT = 600</td>
+          <td class="memname">final int app.MainApp.WINDOW_HEIGHT = 700</td>
         </tr>
       </table>
   </td>
@@ -696,12 +735,9 @@ JsonUtil#saveTasks(List) </dd>
 </table>
 </div><div class="memdoc">
 
-<p>Начальная высота окна </p>
-<p>Высота главного окна при запуске приложения (в пикселях) </p>
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00025">25</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00058">58</a></p>
-
-<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00165">start()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00057">start()</a>.</p>
 
 </div>
 </div>
@@ -715,7 +751,7 @@ JsonUtil#saveTasks(List) </dd>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">final int app.MainApp.WINDOW_WIDTH = 900</td>
+          <td class="memname">final int app.MainApp.WINDOW_WIDTH = 1024</td>
         </tr>
       </table>
   </td>
@@ -725,12 +761,9 @@ JsonUtil#saveTasks(List) </dd>
 </table>
 </div><div class="memdoc">
 
-<p>Начальная ширина окна </p>
-<p>Ширина главного окна при запуске приложения (в пикселях) </p>
+<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00024">24</a></p>
 
-<p class="definition">См. определение в файле <a class="el" href="_main_app_8java_source.html">MainApp.java</a> строка <a class="el" href="_main_app_8java_source.html#l00052">52</a></p>
-
-<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00165">start()</a>.</p>
+<p class="reference">Используется в <a class="el" href="_main_app_8java_source.html#l00057">start()</a>.</p>
 
 </div>
 </div>

@@ -1,0 +1,9 @@
+<map id="util.JsonUtil.resetDataPath" name="util.JsonUtil.resetDataPath">
+<area shape="rect" id="Node000001" title="Сбрасывает путь к данным на стандартный" alt="" coords="5,5,184,31"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_path_resolver.html#abd3fe2993d257c6e777a1303a872be26" title=" " alt="" coords="232,5,419,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,16,219,18,213,18,184,21"/>
+<area shape="rect" id="Node000003" href="$classutil_1_1_platform_util.html#ae1f7127305756e82c242eea124934f5b" title=" " alt="" coords="467,5,635,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="419,16,454,18,449,18,419,21"/>
+<area shape="rect" id="Node000004" href="$classutil_1_1_platform_util.html#ab3325e5522d5be0de30703ddc160f076" title=" " alt="" coords="683,5,850,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="636,16,671,18,665,18,636,21"/>
+</map>

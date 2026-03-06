@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Умный планировщик задач (To-Do List): Исходный файл src/util/PathResolver.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">JavaFX ToDo-приложение с SQLite, уведомлениями и летней темой</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_path_resolver_8java_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">PathResolver.java</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_path_resolver_8java.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">package </span>util;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> java.nio.file.Files;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">import</span> java.nio.file.Path;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> java.nio.file.Paths;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="classutil_1_1_path_resolver.html">    7</a></span><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">class </span><a class="code hl_function" href="classutil_1_1_path_resolver.html#a690d07a0088c0faaf8b618cbd2f193f8">PathResolver</a> {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="classutil_1_1_path_resolver.html#ad1c3a9745c5768fafe931c1ba417703d">    8</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String <a class="code hl_variable" href="classutil_1_1_path_resolver.html#ad1c3a9745c5768fafe931c1ba417703d">APP_DIR_NAME</a> = <span class="stringliteral">&quot;ToDoList&quot;</span>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="classutil_1_1_path_resolver.html#a690d07a0088c0faaf8b618cbd2f193f8">   10</a></span>    <span class="keyword">private</span> <a class="code hl_function" href="classutil_1_1_path_resolver.html#a690d07a0088c0faaf8b618cbd2f193f8">PathResolver</a>() {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    }</div>
+</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classutil_1_1_path_resolver.html#abd3fe2993d257c6e777a1303a872be26">   13</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> Path <a class="code hl_function" href="classutil_1_1_path_resolver.html#abd3fe2993d257c6e777a1303a872be26">getDataDir</a>() {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        Path projectData = Paths.get(<span class="stringliteral">&quot;data&quot;</span>);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordflow">if</span> (Files.isDirectory(projectData)) {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            <span class="keywordflow">return</span> projectData.toAbsolutePath();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        String userHome = System.getProperty(<span class="stringliteral">&quot;user.home&quot;</span>, <span class="stringliteral">&quot;.&quot;</span>);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <a class="code hl_class" href="enumutil_1_1_platform_util_1_1_os_family.html">PlatformUtil.OsFamily</a> os = <a class="code hl_class" href="classutil_1_1_platform_util.html">PlatformUtil</a>.<a class="code hl_function" href="classutil_1_1_platform_util.html#ae1f7127305756e82c242eea124934f5b">detectOs</a>();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">return</span> <span class="keywordflow">switch</span> (os) {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <span class="keywordflow">case</span> MAC -&gt; Paths.get(userHome, <span class="stringliteral">&quot;Library&quot;</span>, <span class="stringliteral">&quot;Application Support&quot;</span>, <a class="code hl_variable" href="classutil_1_1_path_resolver.html#ad1c3a9745c5768fafe931c1ba417703d">APP_DIR_NAME</a>);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="keywordflow">case</span> REDOS, LINUX -&gt; Paths.get(userHome, <span class="stringliteral">&quot;.local&quot;</span>, <span class="stringliteral">&quot;share&quot;</span>, <a class="code hl_variable" href="classutil_1_1_path_resolver.html#ad1c3a9745c5768fafe931c1ba417703d">APP_DIR_NAME</a>);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <span class="keywordflow">case</span> WINDOWS -&gt; {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                String appData = System.getenv(<span class="stringliteral">&quot;APPDATA&quot;</span>);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                <span class="keywordflow">if</span> (appData != <span class="keyword">null</span> &amp;&amp; !appData.isBlank()) {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                    yield Paths.get(appData, <a class="code hl_variable" href="classutil_1_1_path_resolver.html#ad1c3a9745c5768fafe931c1ba417703d">APP_DIR_NAME</a>);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                yield Paths.get(userHome, <span class="stringliteral">&quot;AppData&quot;</span>, <span class="stringliteral">&quot;Roaming&quot;</span>, <a class="code hl_variable" href="classutil_1_1_path_resolver.html#ad1c3a9745c5768fafe931c1ba417703d">APP_DIR_NAME</a>);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            <span class="keywordflow">case</span> OTHER -&gt; Paths.get(userHome, <a class="code hl_variable" href="classutil_1_1_path_resolver.html#ad1c3a9745c5768fafe931c1ba417703d">APP_DIR_NAME</a>);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        };</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    }</div>
+</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classutil_1_1_path_resolver.html#a355df9450ea40bdd5ddd4f8610cacdfd">   36</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> Path <a class="code hl_function" href="classutil_1_1_path_resolver.html#a355df9450ea40bdd5ddd4f8610cacdfd">getAudioDir</a>() {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        Path projectAudio = Paths.get(<span class="stringliteral">&quot;audio&quot;</span>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">if</span> (Files.isDirectory(projectAudio)) {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="keywordflow">return</span> projectAudio.toAbsolutePath();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        Path dataDir = <a class="code hl_function" href="classutil_1_1_path_resolver.html#abd3fe2993d257c6e777a1303a872be26">getDataDir</a>();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">return</span> dataDir.resolve(<span class="stringliteral">&quot;audio&quot;</span>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
+</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classutil_1_1_path_resolver.html#a50961f05bdf2c5652e65d92495c625ba">   46</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> Path <a class="code hl_function" href="classutil_1_1_path_resolver.html#a50961f05bdf2c5652e65d92495c625ba">getDatabaseFile</a>() {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classutil_1_1_path_resolver.html#abd3fe2993d257c6e777a1303a872be26">getDataDir</a>().resolve(<span class="stringliteral">&quot;todolist.db&quot;</span>);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
+</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="foldopen" id="foldopen00050" data-start="{" data-end="}">
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classutil_1_1_path_resolver.html#a559f206e3664e28aa24ed1bc8703dd2d">   50</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> Path <a class="code hl_function" href="classutil_1_1_path_resolver.html#a559f206e3664e28aa24ed1bc8703dd2d">getTasksJsonFile</a>() {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classutil_1_1_path_resolver.html#abd3fe2993d257c6e777a1303a872be26">getDataDir</a>().resolve(<span class="stringliteral">&quot;tasks.json&quot;</span>);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
+</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classutil_1_1_path_resolver.html#ab88418dd91edd05d4458f1fce2f32afa">   54</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> Path <a class="code hl_function" href="classutil_1_1_path_resolver.html#ab88418dd91edd05d4458f1fce2f32afa">getNotificationsLog</a>() {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classutil_1_1_path_resolver.html#abd3fe2993d257c6e777a1303a872be26">getDataDir</a>().resolve(<span class="stringliteral">&quot;notifications_outbox.log&quot;</span>);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
+</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
+</div>
+<div class="ttc" id="aclassutil_1_1_path_resolver_html_a355df9450ea40bdd5ddd4f8610cacdfd"><div class="ttname"><a href="classutil_1_1_path_resolver.html#a355df9450ea40bdd5ddd4f8610cacdfd">util.PathResolver.getAudioDir</a></div><div class="ttdeci">static Path getAudioDir()</div><div class="ttdef"><b>Определения</b> <a href="#l00036">PathResolver.java:36</a></div></div>
+<div class="ttc" id="aclassutil_1_1_path_resolver_html_a50961f05bdf2c5652e65d92495c625ba"><div class="ttname"><a href="classutil_1_1_path_resolver.html#a50961f05bdf2c5652e65d92495c625ba">util.PathResolver.getDatabaseFile</a></div><div class="ttdeci">static Path getDatabaseFile()</div><div class="ttdef"><b>Определения</b> <a href="#l00046">PathResolver.java:46</a></div></div>
+<div class="ttc" id="aclassutil_1_1_path_resolver_html_a559f206e3664e28aa24ed1bc8703dd2d"><div class="ttname"><a href="classutil_1_1_path_resolver.html#a559f206e3664e28aa24ed1bc8703dd2d">util.PathResolver.getTasksJsonFile</a></div><div class="ttdeci">static Path getTasksJsonFile()</div><div class="ttdef"><b>Определения</b> <a href="#l00050">PathResolver.java:50</a></div></div>
+<div class="ttc" id="aclassutil_1_1_path_resolver_html_a690d07a0088c0faaf8b618cbd2f193f8"><div class="ttname"><a href="classutil_1_1_path_resolver.html#a690d07a0088c0faaf8b618cbd2f193f8">util.PathResolver.PathResolver</a></div><div class="ttdeci">PathResolver()</div><div class="ttdef"><b>Определения</b> <a href="#l00010">PathResolver.java:10</a></div></div>
+<div class="ttc" id="aclassutil_1_1_path_resolver_html_ab88418dd91edd05d4458f1fce2f32afa"><div class="ttname"><a href="classutil_1_1_path_resolver.html#ab88418dd91edd05d4458f1fce2f32afa">util.PathResolver.getNotificationsLog</a></div><div class="ttdeci">static Path getNotificationsLog()</div><div class="ttdef"><b>Определения</b> <a href="#l00054">PathResolver.java:54</a></div></div>
+<div class="ttc" id="aclassutil_1_1_path_resolver_html_abd3fe2993d257c6e777a1303a872be26"><div class="ttname"><a href="classutil_1_1_path_resolver.html#abd3fe2993d257c6e777a1303a872be26">util.PathResolver.getDataDir</a></div><div class="ttdeci">static Path getDataDir()</div><div class="ttdef"><b>Определения</b> <a href="#l00013">PathResolver.java:13</a></div></div>
+<div class="ttc" id="aclassutil_1_1_path_resolver_html_ad1c3a9745c5768fafe931c1ba417703d"><div class="ttname"><a href="classutil_1_1_path_resolver.html#ad1c3a9745c5768fafe931c1ba417703d">util.PathResolver.APP_DIR_NAME</a></div><div class="ttdeci">static final String APP_DIR_NAME</div><div class="ttdef"><b>Определения</b> <a href="#l00008">PathResolver.java:8</a></div></div>
+<div class="ttc" id="aclassutil_1_1_platform_util_html"><div class="ttname"><a href="classutil_1_1_platform_util.html">util.PlatformUtil</a></div><div class="ttdef"><b>Определения</b> <a href="_platform_util_8java_source.html#l00007">PlatformUtil.java:7</a></div></div>
+<div class="ttc" id="aclassutil_1_1_platform_util_html_ae1f7127305756e82c242eea124934f5b"><div class="ttname"><a href="classutil_1_1_platform_util.html#ae1f7127305756e82c242eea124934f5b">util.PlatformUtil.detectOs</a></div><div class="ttdeci">static OsFamily detectOs()</div><div class="ttdef"><b>Определения</b> <a href="_platform_util_8java_source.html#l00019">PlatformUtil.java:19</a></div></div>
+<div class="ttc" id="aenumutil_1_1_platform_util_1_1_os_family_html"><div class="ttname"><a href="enumutil_1_1_platform_util_1_1_os_family.html">util.PlatformUtil.OsFamily</a></div><div class="ttdef"><b>Определения</b> <a href="_platform_util_8java_source.html#l00008">PlatformUtil.java:8</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_b7878ad5ecbf2506f4125b9d34c97e45.html">util</a></li><li class="navelem"><a href="_path_resolver_8java.html">PathResolver.java</a></li>
+    <li class="footer">Документация по Умный планировщик задач (To-Do List). Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

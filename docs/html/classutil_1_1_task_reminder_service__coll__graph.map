@@ -1,0 +1,13 @@
+<map id="util.TaskReminderService" name="util.TaskReminderService">
+<area shape="rect" id="Node000001" title="Периодически проверяет задачи и отправляет системные напоминания." alt="" coords="182,199,352,224"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_task_reminder_service.html" title="Периодически проверяет задачи и отправляет системные напоминания." alt="" coords="182,102,352,128"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="269,141,269,199,265,197,265,145"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="368,106,379,115,371,123,353,126,352,121,368,118,373,115,367,111"/>
+<area shape="rect" id="Node000003" href="$classutil_1_1_notification_service.html" title="Кроссплатформенный сервис системных уведомлений." alt="" coords="5,5,158,31"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="64,47,58,65,51,86,50,107,57,126,82,153,113,173,147,188,184,200,178,200,145,193,110,178,78,157,52,129,44,108,46,85,53,63,66,42"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="119,36,245,100,241,103,119,41"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="173,9,184,18,176,26,159,29,157,24,174,21,179,18,173,15"/>
+<area shape="rect" id="Node000004" href="$classutil_1_1_email_notifier.html" title=" " alt="" coords="343,5,460,31"/>
+<area shape="poly" id="edge7_Node000001_Node000004" title=" " alt="" coords="428,40,438,54,456,91,456,109,448,129,425,155,396,175,365,190,334,201,333,195,363,185,394,171,421,151,443,126,451,108,451,92,434,56,426,45"/>
+<area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="374,39,286,104,283,99,370,41"/>
+</map>

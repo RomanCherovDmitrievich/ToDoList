@@ -1,0 +1,14 @@
+<map id="model.Task.isOverdue" name="model.Task.isOverdue">
+<area shape="rect" id="Node000001" title="Проверяет, просрочена ли задача" alt="" coords="827,70,979,96"/>
+<area shape="rect" id="Node000002" href="$classrepository_1_1_database_manager.html#a6cb10a041d036be47596127942959f83" title=" " alt="" coords="534,70,779,96"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="809,83,780,86,779,80,815,83"/>
+<area shape="rect" id="Node000003" href="$classutil_1_1_database_migrator.html#a462520e06be58bc2d42fe6bef64c68ff" title="Мигрирует задачи из JSON в базу данных" alt="" coords="262,5,454,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="569,67,454,47,454,41,574,66"/>
+<area shape="rect" id="Node000005" href="$classutil_1_1_database_migrator.html#a11687638f060b50427b94a0778df07b8" title="Синхронизирует данные между JSON и БД" alt="" coords="235,70,481,96"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="516,83,482,86,481,80,521,83"/>
+<area shape="rect" id="Node000006" href="$classrepository_1_1_database_manager.html#a3d0ef1c3ab248d9fa7a48475a7452cb7" title=" " alt="" coords="230,120,486,145"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="562,99,440,122,440,116,557,99"/>
+<area shape="rect" id="Node000004" href="$classutil_1_1_database_migrator.html#a703826c15e609176f3da25d6ce8f755d" title="Точка входа для запуска миграции из командной строки" alt="" coords="5,42,182,68"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="244,39,183,48,181,43,249,37"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="216,69,182,67,182,62,221,68"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="model.TaskManager.nextSortIndex" name="model.TaskManager.nextSortIndex">
+<area shape="rect" id="Node000001" title=" " alt="" coords="703,23,894,64"/>
+<area shape="rect" id="Node000002" href="$classmodel_1_1_task_manager.html#adecbfa64767b23ab2cecc51c0dadc838" title=" " alt="" coords="465,5,655,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="685,32,656,31,656,26,690,32"/>
+<area shape="rect" id="Node000003" href="$classmodel_1_1_task_manager.html#aa04652e119515ef085759f4b22f39462" title=" " alt="" coords="240,23,417,64"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="685,44,418,46,418,41,691,43"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="452,30,418,36,417,31,447,30"/>
+<area shape="rect" id="Node000004" href="$classmodel_1_1_task_manager.html#a552b2534c08e0610e8d4114396984949" title=" " alt="" coords="5,23,192,64"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="221,44,192,46,192,41,227,43"/>
+</map>

@@ -1,9 +1,14 @@
 var searchData=
 [
-  ['task_0',['Task',['../classmodel_1_1_task.html#ac875313dc638186c0d5cab57f83e7a5c',1,'model.Task.Task(String title, String description, LocalDateTime startTime, LocalDateTime endTime, Priority priority, Category category)'],['../classmodel_1_1_task.html#a588c01505352172d2ba968bfcf483b5b',1,'model.Task.Task(String id, String title, String description, String startTime, String endTime, String priority, String category, boolean completed, boolean overdue, String createdAt)']]],
-  ['taskmanager_1',['TaskManager',['../classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c',1,'model::TaskManager']]],
-  ['taskviewmodel_2',['TaskViewModel',['../classviewmodel_1_1_task_view_model.html#a97b1077049d5d441d305aa75b0ca41a6',1,'viewmodel::TaskViewModel']]],
-  ['titleproperty_3',['titleProperty',['../classviewmodel_1_1_task_view_model.html#acae67880baf2c3c2f7b47810b572edd6',1,'viewmodel::TaskViewModel']]],
-  ['tojsonstring_4',['toJsonString',['../classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf',1,'model::Task']]],
-  ['tostring_5',['toString',['../classmodel_1_1_task.html#a96557889dbc2c8c92c71ecd2381332bd',1,'model.Task.toString()'],['../classviewmodel_1_1_task_view_model.html#ad99556d90305e5cf07b1188055ee8477',1,'viewmodel.TaskViewModel.toString()']]]
+  ['recurrenceutil_0',['RecurrenceUtil',['../classutil_1_1_recurrence_util.html#ac3c649fecbe5555fa5feac770499e7ef',1,'util::RecurrenceUtil']]],
+  ['refreshallviews_1',['refreshAllViews',['../classview_1_1_main_controller.html#a2ae68644e5912e2c7aff36a412b445ba',1,'view::MainController']]],
+  ['refreshplaylist_2',['refreshPlaylist',['../classutil_1_1_audio_manager.html#a04e6d26f9669bac9b360109a9fae574a',1,'util::AudioManager']]],
+  ['reloadtasksfrommanager_3',['reloadTasksFromManager',['../classview_1_1_main_controller.html#adcfc31adcb42e729fab4174830d348fb',1,'view::MainController']]],
+  ['removetagfromtask_4',['removeTagFromTask',['../classrepository_1_1_database_manager.html#a661113f43546c34cf93d61c1b7e304f7',1,'repository::DatabaseManager']]],
+  ['removetask_5',['removeTask',['../classmodel_1_1_task_manager.html#aa35f43df9eb5e341eba6f55af23ca5f8',1,'model.TaskManager.removeTask()'],['../classutil_1_1_json_util.html#a9911e93dd04ddd5151397f9a50e2811f',1,'util.JsonUtil.removeTask(String taskId)']]],
+  ['resetdatapath_6',['resetDataPath',['../classutil_1_1_json_util.html#acc37e843c653d0a7ebe4843ef4d7f0a2',1,'util::JsonUtil']]],
+  ['resolveexternalaudiodirs_7',['resolveExternalAudioDirs',['../classutil_1_1_audio_manager.html#a74db019bafa3f55bc243ae236c150c7e',1,'util::AudioManager']]],
+  ['resolvetheme_8',['resolveTheme',['../classutil_1_1_theme_manager.html#ad2da1c8826c4bf5fee6c2cb0dbbe2f5b',1,'util::ThemeManager']]],
+  ['restorefrombackup_9',['restoreFromBackup',['../classutil_1_1_database_migrator.html#aea6a5dfdcad47388ebda07e015b364b6',1,'util::DatabaseMigrator']]],
+  ['resultsettotask_10',['resultSetToTask',['../classrepository_1_1_database_manager.html#a79fcaa3ae166aa0a2bf2a62b60008da1',1,'repository::DatabaseManager']]]
 ];

@@ -1,0 +1,5 @@
+<map id="util.DatabaseMigrator.exportDatabaseToJson" name="util.DatabaseMigrator.exportDatabaseToJson">
+<area shape="rect" id="Node000001" title="Экспортирует задачи из базы данных в JSON." alt="" coords="230,5,414,46"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_database_migrator.html#a703826c15e609176f3da25d6ce8f755d" title="Точка входа для запуска миграции из командной строки" alt="" coords="5,13,182,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,26,182,28,182,23,217,25"/>
+</map>

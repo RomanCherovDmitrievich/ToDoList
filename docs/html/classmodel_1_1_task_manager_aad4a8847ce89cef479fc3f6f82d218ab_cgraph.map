@@ -1,0 +1,5 @@
+<map id="model.TaskManager.mergeTasks" name="model.TaskManager.mergeTasks">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,218,31"/>
+<area shape="rect" id="Node000002" href="$classmodel_1_1_task.html#ad8dccd120a6f3e607f46f0c3765de3a5" title="Возвращает уникальный идентификатор задачи" alt="" coords="266,5,387,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,16,253,18,248,18,218,21"/>
+</map>

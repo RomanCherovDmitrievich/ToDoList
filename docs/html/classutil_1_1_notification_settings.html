@@ -1,0 +1,684 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Умный планировщик задач (To-Do List): Класс util.NotificationSettings</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">JavaFX ToDo-приложение с SQLite, уведомлениями и летней темой</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classutil_1_1_notification_settings.html','','classutil_1_1_notification_settings-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс util.NotificationSettings</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a1b0679cfe9a92d59e5a67b7b0ec0a365" id="r_a1b0679cfe9a92d59e5a67b7b0ec0a365"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b0679cfe9a92d59e5a67b7b0ec0a365">isPopupEnabled</a> ()</td></tr>
+<tr class="memitem:a0dbdc534ea35f03a33a6978186c733eb" id="r_a0dbdc534ea35f03a33a6978186c733eb"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0dbdc534ea35f03a33a6978186c733eb">isSoundEnabled</a> ()</td></tr>
+<tr class="memitem:a5dbcdb3386bc1aa64246f34777f22f95" id="r_a5dbcdb3386bc1aa64246f34777f22f95"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5dbcdb3386bc1aa64246f34777f22f95">isEmailEnabled</a> ()</td></tr>
+<tr class="memitem:a9fec9bda45f4ff805bbb686560c9143c" id="r_a9fec9bda45f4ff805bbb686560c9143c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9fec9bda45f4ff805bbb686560c9143c">getReminderOffsetMinutes</a> ()</td></tr>
+<tr class="memitem:a642e8457d15ad6e842afe7a9d4ebbe48" id="r_a642e8457d15ad6e842afe7a9d4ebbe48"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a642e8457d15ad6e842afe7a9d4ebbe48">getEmailTo</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:a10f7651faed4b44cf764ad6bd0542ced" id="r_a10f7651faed4b44cf764ad6bd0542ced"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="#aba1bfbe094259659ce7d46a1f4a707ab">NotificationSettings</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10f7651faed4b44cf764ad6bd0542ced">load</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:aba1bfbe094259659ce7d46a1f4a707ab" id="r_aba1bfbe094259659ce7d46a1f4a707ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba1bfbe094259659ce7d46a1f4a707ab">NotificationSettings</a> (boolean <a class="el" href="#ad82fcbcc4ee48423695b23eabf7924d9">popupEnabled</a>, boolean <a class="el" href="#a79e92cfbf4932d6ddb7d54bce044a9c4">soundEnabled</a>, boolean <a class="el" href="#aa438f781ae620fad5c9bbbb9931def56">emailEnabled</a>, int <a class="el" href="#a61919eb39e30a53d4a5f84d8f1c392a1">reminderOffsetMinutes</a>, String <a class="el" href="#aae674d707722efad069e3497cc245274">emailTo</a>)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-methods" class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Закрытые статические члены</h2></td></tr>
+<tr class="memitem:a37c1c27e873ea287a2cc9456a8861dcf" id="r_a37c1c27e873ea287a2cc9456a8861dcf"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37c1c27e873ea287a2cc9456a8861dcf">parseInt</a> (String value, int fallback)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:ad82fcbcc4ee48423695b23eabf7924d9" id="r_ad82fcbcc4ee48423695b23eabf7924d9"><td class="memItemLeft" align="right" valign="top">final boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad82fcbcc4ee48423695b23eabf7924d9">popupEnabled</a></td></tr>
+<tr class="memitem:a79e92cfbf4932d6ddb7d54bce044a9c4" id="r_a79e92cfbf4932d6ddb7d54bce044a9c4"><td class="memItemLeft" align="right" valign="top">final boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79e92cfbf4932d6ddb7d54bce044a9c4">soundEnabled</a></td></tr>
+<tr class="memitem:aa438f781ae620fad5c9bbbb9931def56" id="r_aa438f781ae620fad5c9bbbb9931def56"><td class="memItemLeft" align="right" valign="top">final boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa438f781ae620fad5c9bbbb9931def56">emailEnabled</a></td></tr>
+<tr class="memitem:a61919eb39e30a53d4a5f84d8f1c392a1" id="r_a61919eb39e30a53d4a5f84d8f1c392a1"><td class="memItemLeft" align="right" valign="top">final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61919eb39e30a53d4a5f84d8f1c392a1">reminderOffsetMinutes</a></td></tr>
+<tr class="memitem:aae674d707722efad069e3497cc245274" id="r_aae674d707722efad069e3497cc245274"><td class="memItemLeft" align="right" valign="top">final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae674d707722efad069e3497cc245274">emailTo</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock">
+<p class="definition">См. определение в файле <a class="el" href="_notification_settings_8java_source.html">NotificationSettings.java</a> строка <a class="el" href="_notification_settings_8java_source.html#l00005">5</a></p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="aba1bfbe094259659ce7d46a1f4a707ab" name="aba1bfbe094259659ce7d46a1f4a707ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba1bfbe094259659ce7d46a1f4a707ab">&#9670;&#160;</a></span>NotificationSettings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">util.NotificationSettings.NotificationSettings </td>
+          <td>(</td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>popupEnabled</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>soundEnabled</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>emailEnabled</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>reminderOffsetMinutes</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>emailTo</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_notification_settings_8java_source.html">NotificationSettings.java</a> строка <a class="el" href="_notification_settings_8java_source.html#l00012">12</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_notification_settings_8java_source.html#l00008">emailEnabled</a>, <a class="el" href="_notification_settings_8java_source.html#l00010">emailTo</a>, <a class="el" href="_notification_settings_8java_source.html#l00006">popupEnabled</a>, <a class="el" href="_notification_settings_8java_source.html#l00009">reminderOffsetMinutes</a> и <a class="el" href="_notification_settings_8java_source.html#l00007">soundEnabled</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_notification_settings_8java_source.html#l00021">load()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_notification_settings_aba1bfbe094259659ce7d46a1f4a707ab_icgraph.png" border="0" usemap="#aclassutil_1_1_notification_settings_aba1bfbe094259659ce7d46a1f4a707ab_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_notification_settings_aba1bfbe094259659ce7d46a1f4a707ab_icgraph" id="aclassutil_1_1_notification_settings_aba1bfbe094259659ce7d46a1f4a707ab_icgraph">
+<area shape="rect" title=" " alt="" coords="742,39,903,79"/>
+<area shape="rect" href="classutil_1_1_notification_settings.html#a10f7651faed4b44cf764ad6bd0542ced" title=" " alt="" coords="510,46,694,72"/>
+<area shape="poly" title=" " alt="" coords="724,59,695,62,695,56,729,59"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462" title=" " alt="" coords="253,5,462,46"/>
+<area shape="poly" title=" " alt="" coords="492,44,462,43,462,37,497,44"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afba699a59966cda24b9998995a17c94d" title=" " alt="" coords="273,71,442,111"/>
+<area shape="poly" title=" " alt="" coords="497,73,443,83,442,77,492,73"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#aadd0b77dafd4c390cbdf367b9654aa6c" title=" " alt="" coords="5,5,205,46"/>
+<area shape="poly" title=" " alt="" coords="235,26,206,28,205,23,240,25"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="13,78,197,104"/>
+<area shape="poly" title=" " alt="" coords="255,91,198,94,198,88,260,91"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="a642e8457d15ad6e842afe7a9d4ebbe48" name="a642e8457d15ad6e842afe7a9d4ebbe48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a642e8457d15ad6e842afe7a9d4ebbe48">&#9670;&#160;</a></span>getEmailTo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String util.NotificationSettings.getEmailTo </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_notification_settings_8java_source.html">NotificationSettings.java</a> строка <a class="el" href="_notification_settings_8java_source.html#l00043">43</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_notification_settings_8java_source.html#l00010">emailTo</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_task_reminder_service_8java_source.html#l00122">util.TaskReminderService.notifyAllChannels()</a> и <a class="el" href="_main_controller_8java_source.html#l00589">view.MainController.setupNotificationSettings()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_notification_settings_a642e8457d15ad6e842afe7a9d4ebbe48_icgraph.png" border="0" usemap="#aclassutil_1_1_notification_settings_a642e8457d15ad6e842afe7a9d4ebbe48_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_notification_settings_a642e8457d15ad6e842afe7a9d4ebbe48_icgraph" id="aclassutil_1_1_notification_settings_a642e8457d15ad6e842afe7a9d4ebbe48_icgraph">
+<area shape="rect" title=" " alt="" coords="764,39,943,79"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#a6864ccc68057bd25e1f83dcb3c4f2d31" title=" " alt="" coords="510,5,716,46"/>
+<area shape="poly" title=" " alt="" coords="746,44,717,43,717,37,751,45"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afba699a59966cda24b9998995a17c94d" title=" " alt="" coords="528,71,698,111"/>
+<area shape="poly" title=" " alt="" coords="752,73,699,82,698,77,746,73"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462" title=" " alt="" coords="253,5,462,46"/>
+<area shape="poly" title=" " alt="" coords="492,26,463,28,462,23,497,25"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#aadd0b77dafd4c390cbdf367b9654aa6c" title=" " alt="" coords="5,5,205,46"/>
+<area shape="poly" title=" " alt="" coords="235,26,206,28,205,23,240,25"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="265,78,450,104"/>
+<area shape="poly" title=" " alt="" coords="510,91,450,94,450,88,516,91"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9fec9bda45f4ff805bbb686560c9143c" name="a9fec9bda45f4ff805bbb686560c9143c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fec9bda45f4ff805bbb686560c9143c">&#9670;&#160;</a></span>getReminderOffsetMinutes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int util.NotificationSettings.getReminderOffsetMinutes </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_notification_settings_8java_source.html">NotificationSettings.java</a> строка <a class="el" href="_notification_settings_8java_source.html#l00042">42</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_notification_settings_8java_source.html#l00009">reminderOffsetMinutes</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_task_reminder_service_8java_source.html#l00069">util.TaskReminderService.checkTasks()</a> и <a class="el" href="_main_controller_8java_source.html#l00589">view.MainController.setupNotificationSettings()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_notification_settings_a9fec9bda45f4ff805bbb686560c9143c_icgraph.png" border="0" usemap="#aclassutil_1_1_notification_settings_a9fec9bda45f4ff805bbb686560c9143c_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_notification_settings_a9fec9bda45f4ff805bbb686560c9143c_icgraph" id="aclassutil_1_1_notification_settings_a9fec9bda45f4ff805bbb686560c9143c_icgraph">
+<area shape="rect" title=" " alt="" coords="510,39,688,79"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462" title=" " alt="" coords="253,5,462,46"/>
+<area shape="poly" title=" " alt="" coords="492,45,462,43,462,37,497,45"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afba699a59966cda24b9998995a17c94d" title=" " alt="" coords="273,71,442,111"/>
+<area shape="poly" title=" " alt="" coords="497,73,443,82,442,77,492,73"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#aadd0b77dafd4c390cbdf367b9654aa6c" title=" " alt="" coords="5,5,205,46"/>
+<area shape="poly" title=" " alt="" coords="235,26,206,28,205,23,240,25"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="13,78,197,104"/>
+<area shape="poly" title=" " alt="" coords="255,91,198,94,198,88,260,91"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5dbcdb3386bc1aa64246f34777f22f95" name="a5dbcdb3386bc1aa64246f34777f22f95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dbcdb3386bc1aa64246f34777f22f95">&#9670;&#160;</a></span>isEmailEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean util.NotificationSettings.isEmailEnabled </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_notification_settings_8java_source.html">NotificationSettings.java</a> строка <a class="el" href="_notification_settings_8java_source.html#l00041">41</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_notification_settings_8java_source.html#l00008">emailEnabled</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_task_reminder_service_8java_source.html#l00122">util.TaskReminderService.notifyAllChannels()</a> и <a class="el" href="_main_controller_8java_source.html#l00589">view.MainController.setupNotificationSettings()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_notification_settings_a5dbcdb3386bc1aa64246f34777f22f95_icgraph.png" border="0" usemap="#aclassutil_1_1_notification_settings_a5dbcdb3386bc1aa64246f34777f22f95_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_notification_settings_a5dbcdb3386bc1aa64246f34777f22f95_icgraph" id="aclassutil_1_1_notification_settings_a5dbcdb3386bc1aa64246f34777f22f95_icgraph">
+<area shape="rect" title=" " alt="" coords="764,39,935,79"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#a6864ccc68057bd25e1f83dcb3c4f2d31" title=" " alt="" coords="510,5,716,46"/>
+<area shape="poly" title=" " alt="" coords="746,45,717,43,717,38,752,45"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afba699a59966cda24b9998995a17c94d" title=" " alt="" coords="528,71,698,111"/>
+<area shape="poly" title=" " alt="" coords="751,72,699,82,698,77,746,73"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462" title=" " alt="" coords="253,5,462,46"/>
+<area shape="poly" title=" " alt="" coords="492,26,463,28,462,23,497,25"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#aadd0b77dafd4c390cbdf367b9654aa6c" title=" " alt="" coords="5,5,205,46"/>
+<area shape="poly" title=" " alt="" coords="235,26,206,28,205,23,240,25"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="265,78,450,104"/>
+<area shape="poly" title=" " alt="" coords="510,91,450,94,450,88,516,91"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1b0679cfe9a92d59e5a67b7b0ec0a365" name="a1b0679cfe9a92d59e5a67b7b0ec0a365"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b0679cfe9a92d59e5a67b7b0ec0a365">&#9670;&#160;</a></span>isPopupEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean util.NotificationSettings.isPopupEnabled </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_notification_settings_8java_source.html">NotificationSettings.java</a> строка <a class="el" href="_notification_settings_8java_source.html#l00039">39</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_notification_settings_8java_source.html#l00006">popupEnabled</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_task_reminder_service_8java_source.html#l00122">util.TaskReminderService.notifyAllChannels()</a> и <a class="el" href="_main_controller_8java_source.html#l00589">view.MainController.setupNotificationSettings()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_notification_settings_a1b0679cfe9a92d59e5a67b7b0ec0a365_icgraph.png" border="0" usemap="#aclassutil_1_1_notification_settings_a1b0679cfe9a92d59e5a67b7b0ec0a365_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_notification_settings_a1b0679cfe9a92d59e5a67b7b0ec0a365_icgraph" id="aclassutil_1_1_notification_settings_a1b0679cfe9a92d59e5a67b7b0ec0a365_icgraph">
+<area shape="rect" title=" " alt="" coords="764,39,935,79"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#a6864ccc68057bd25e1f83dcb3c4f2d31" title=" " alt="" coords="510,5,716,46"/>
+<area shape="poly" title=" " alt="" coords="746,45,717,43,717,38,752,45"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afba699a59966cda24b9998995a17c94d" title=" " alt="" coords="528,71,698,111"/>
+<area shape="poly" title=" " alt="" coords="751,72,699,82,698,77,746,73"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462" title=" " alt="" coords="253,5,462,46"/>
+<area shape="poly" title=" " alt="" coords="492,26,463,28,462,23,497,25"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#aadd0b77dafd4c390cbdf367b9654aa6c" title=" " alt="" coords="5,5,205,46"/>
+<area shape="poly" title=" " alt="" coords="235,26,206,28,205,23,240,25"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="265,78,450,104"/>
+<area shape="poly" title=" " alt="" coords="510,91,450,94,450,88,516,91"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0dbdc534ea35f03a33a6978186c733eb" name="a0dbdc534ea35f03a33a6978186c733eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dbdc534ea35f03a33a6978186c733eb">&#9670;&#160;</a></span>isSoundEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean util.NotificationSettings.isSoundEnabled </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_notification_settings_8java_source.html">NotificationSettings.java</a> строка <a class="el" href="_notification_settings_8java_source.html#l00040">40</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_notification_settings_8java_source.html#l00007">soundEnabled</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_task_reminder_service_8java_source.html#l00122">util.TaskReminderService.notifyAllChannels()</a> и <a class="el" href="_main_controller_8java_source.html#l00589">view.MainController.setupNotificationSettings()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_notification_settings_a0dbdc534ea35f03a33a6978186c733eb_icgraph.png" border="0" usemap="#aclassutil_1_1_notification_settings_a0dbdc534ea35f03a33a6978186c733eb_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_notification_settings_a0dbdc534ea35f03a33a6978186c733eb_icgraph" id="aclassutil_1_1_notification_settings_a0dbdc534ea35f03a33a6978186c733eb_icgraph">
+<area shape="rect" title=" " alt="" coords="764,39,935,79"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#a6864ccc68057bd25e1f83dcb3c4f2d31" title=" " alt="" coords="510,5,716,46"/>
+<area shape="poly" title=" " alt="" coords="746,45,717,43,717,38,752,45"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afba699a59966cda24b9998995a17c94d" title=" " alt="" coords="528,71,698,111"/>
+<area shape="poly" title=" " alt="" coords="751,72,699,82,698,77,746,73"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462" title=" " alt="" coords="253,5,462,46"/>
+<area shape="poly" title=" " alt="" coords="492,26,463,28,462,23,497,25"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#aadd0b77dafd4c390cbdf367b9654aa6c" title=" " alt="" coords="5,5,205,46"/>
+<area shape="poly" title=" " alt="" coords="235,26,206,28,205,23,240,25"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="265,78,450,104"/>
+<area shape="poly" title=" " alt="" coords="510,91,450,94,450,88,516,91"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a10f7651faed4b44cf764ad6bd0542ced" name="a10f7651faed4b44cf764ad6bd0542ced"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10f7651faed4b44cf764ad6bd0542ced">&#9670;&#160;</a></span>load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aba1bfbe094259659ce7d46a1f4a707ab">NotificationSettings</a> util.NotificationSettings.load </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_notification_settings_8java_source.html">NotificationSettings.java</a> строка <a class="el" href="_notification_settings_8java_source.html#l00021">21</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_notification_settings_8java_source.html#l00010">emailTo</a>, <a class="el" href="_database_manager_8java_source.html#l00037">repository.DatabaseManager.getInstance()</a>, <a class="el" href="_database_manager_8java_source.html#l00482">repository.DatabaseManager.getSetting()</a>, <a class="el" href="_notification_settings_8java_source.html#l00012">NotificationSettings()</a> и <a class="el" href="_notification_settings_8java_source.html#l00031">parseInt()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_task_reminder_service_8java_source.html#l00069">util.TaskReminderService.checkTasks()</a> и <a class="el" href="_main_controller_8java_source.html#l00589">view.MainController.setupNotificationSettings()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_notification_settings_a10f7651faed4b44cf764ad6bd0542ced_cgraph.png" border="0" usemap="#aclassutil_1_1_notification_settings_a10f7651faed4b44cf764ad6bd0542ced_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_notification_settings_a10f7651faed4b44cf764ad6bd0542ced_cgraph" id="aclassutil_1_1_notification_settings_a10f7651faed4b44cf764ad6bd0542ced_cgraph">
+<area shape="rect" title=" " alt="" coords="5,234,190,260"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a2035f400cd8f5f503ea6f961de54d4ff" title=" " alt="" coords="238,128,445,169"/>
+<area shape="poly" title=" " alt="" coords="123,231,237,179,260,173,255,175,239,184,126,236"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a6178e715c92709dbc017c6e8d07f4ccc" title=" " alt="" coords="238,193,445,234"/>
+<area shape="poly" title=" " alt="" coords="189,232,225,229,220,231,191,237"/>
+<area shape="rect" href="classutil_1_1_notification_settings.html#aba1bfbe094259659ce7d46a1f4a707ab" title=" " alt="" coords="261,259,422,299"/>
+<area shape="poly" title=" " alt="" coords="190,256,248,266,243,267,190,262"/>
+<area shape="rect" href="classutil_1_1_notification_settings.html#a37c1c27e873ea287a2cc9456a8861dcf" title=" " alt="" coords="238,324,445,349"/>
+<area shape="poly" title=" " alt="" coords="124,258,177,283,239,308,266,319,261,319,237,314,175,288,123,263"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#adff3d0488b1f5e07b737c8028fd61b38" title=" " alt="" coords="493,128,682,169"/>
+<area shape="poly" title=" " alt="" coords="445,146,480,148,475,149,446,151"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#ad56b237e4e259b99a77f8c2b5d9a49db" title=" " alt="" coords="730,128,967,169"/>
+<area shape="poly" title=" " alt="" coords="683,146,717,148,712,149,683,151"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a0f0fdcc1c89621e54aba873524c8785c" title=" " alt="" coords="1018,5,1244,46"/>
+<area shape="poly" title=" " alt="" coords="882,125,942,91,1014,57,1032,52,1037,51,1016,61,944,96,884,130"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#ab11cedc68f3e40fa74cd71dcd3c28d47" title=" " alt="" coords="1017,71,1244,111"/>
+<area shape="poly" title=" " alt="" coords="951,125,1015,114,1010,116,953,130"/>
+<area shape="rect" href="classutil_1_1_path_resolver.html#abd3fe2993d257c6e777a1303a872be26" title=" " alt="" coords="1037,136,1224,161"/>
+<area shape="poly" title=" " alt="" coords="967,146,1024,148,1019,149,967,151"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a104e5dac8b06b56fb358902e183b3711" title=" " alt="" coords="1015,185,1247,226"/>
+<area shape="poly" title=" " alt="" coords="952,167,1015,182,1010,182,952,172"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a12107d0489c1b18ad4e574a1f5fc1a36" title=" " alt="" coords="1022,251,1240,291"/>
+<area shape="poly" title=" " alt="" coords="883,166,944,201,1016,235,1037,246,1032,245,1014,240,942,206,882,172"/>
+<area shape="rect" href="classutil_1_1_platform_util.html#ae1f7127305756e82c242eea124934f5b" title=" " alt="" coords="1295,136,1463,161"/>
+<area shape="poly" title=" " alt="" coords="1225,146,1282,148,1277,149,1225,151"/>
+<area shape="rect" href="classutil_1_1_platform_util.html#ab3325e5522d5be0de30703ddc160f076" title=" " alt="" coords="1511,136,1678,161"/>
+<area shape="poly" title=" " alt="" coords="1464,146,1499,148,1493,149,1464,151"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_notification_settings_a10f7651faed4b44cf764ad6bd0542ced_icgraph.png" border="0" usemap="#aclassutil_1_1_notification_settings_a10f7651faed4b44cf764ad6bd0542ced_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_notification_settings_a10f7651faed4b44cf764ad6bd0542ced_icgraph" id="aclassutil_1_1_notification_settings_a10f7651faed4b44cf764ad6bd0542ced_icgraph">
+<area shape="rect" title=" " alt="" coords="510,46,694,72"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462" title=" " alt="" coords="253,5,462,46"/>
+<area shape="poly" title=" " alt="" coords="492,44,462,43,462,37,497,44"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afba699a59966cda24b9998995a17c94d" title=" " alt="" coords="273,71,442,111"/>
+<area shape="poly" title=" " alt="" coords="497,73,443,83,442,77,492,73"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#aadd0b77dafd4c390cbdf367b9654aa6c" title=" " alt="" coords="5,5,205,46"/>
+<area shape="poly" title=" " alt="" coords="235,26,206,28,205,23,240,25"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="13,78,197,104"/>
+<area shape="poly" title=" " alt="" coords="255,91,198,94,198,88,260,91"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a37c1c27e873ea287a2cc9456a8861dcf" name="a37c1c27e873ea287a2cc9456a8861dcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37c1c27e873ea287a2cc9456a8861dcf">&#9670;&#160;</a></span>parseInt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int util.NotificationSettings.parseInt </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>fallback</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_notification_settings_8java_source.html">NotificationSettings.java</a> строка <a class="el" href="_notification_settings_8java_source.html#l00031">31</a></p>
+
+<p class="reference">Используется в <a class="el" href="_notification_settings_8java_source.html#l00021">load()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_notification_settings_a37c1c27e873ea287a2cc9456a8861dcf_icgraph.png" border="0" usemap="#aclassutil_1_1_notification_settings_a37c1c27e873ea287a2cc9456a8861dcf_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_notification_settings_a37c1c27e873ea287a2cc9456a8861dcf_icgraph" id="aclassutil_1_1_notification_settings_a37c1c27e873ea287a2cc9456a8861dcf_icgraph">
+<area shape="rect" title=" " alt="" coords="742,46,950,72"/>
+<area shape="rect" href="classutil_1_1_notification_settings.html#a10f7651faed4b44cf764ad6bd0542ced" title=" " alt="" coords="510,46,694,72"/>
+<area shape="poly" title=" " alt="" coords="724,59,695,62,695,56,729,59"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462" title=" " alt="" coords="253,5,462,46"/>
+<area shape="poly" title=" " alt="" coords="492,44,462,43,462,37,497,44"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afba699a59966cda24b9998995a17c94d" title=" " alt="" coords="273,71,442,111"/>
+<area shape="poly" title=" " alt="" coords="497,73,443,83,442,77,492,73"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#aadd0b77dafd4c390cbdf367b9654aa6c" title=" " alt="" coords="5,5,205,46"/>
+<area shape="poly" title=" " alt="" coords="235,26,206,28,205,23,240,25"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="13,78,197,104"/>
+<area shape="poly" title=" " alt="" coords="255,91,198,94,198,88,260,91"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="aa438f781ae620fad5c9bbbb9931def56" name="aa438f781ae620fad5c9bbbb9931def56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa438f781ae620fad5c9bbbb9931def56">&#9670;&#160;</a></span>emailEnabled</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final boolean util.NotificationSettings.emailEnabled</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_notification_settings_8java_source.html">NotificationSettings.java</a> строка <a class="el" href="_notification_settings_8java_source.html#l00008">8</a></p>
+
+<p class="reference">Используется в <a class="el" href="_notification_settings_8java_source.html#l00041">isEmailEnabled()</a> и <a class="el" href="_notification_settings_8java_source.html#l00012">NotificationSettings()</a>.</p>
+
+</div>
+</div>
+<a id="aae674d707722efad069e3497cc245274" name="aae674d707722efad069e3497cc245274"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae674d707722efad069e3497cc245274">&#9670;&#160;</a></span>emailTo</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String util.NotificationSettings.emailTo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_notification_settings_8java_source.html">NotificationSettings.java</a> строка <a class="el" href="_notification_settings_8java_source.html#l00010">10</a></p>
+
+<p class="reference">Используется в <a class="el" href="_notification_settings_8java_source.html#l00043">getEmailTo()</a>, <a class="el" href="_notification_settings_8java_source.html#l00021">load()</a> и <a class="el" href="_notification_settings_8java_source.html#l00012">NotificationSettings()</a>.</p>
+
+</div>
+</div>
+<a id="ad82fcbcc4ee48423695b23eabf7924d9" name="ad82fcbcc4ee48423695b23eabf7924d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad82fcbcc4ee48423695b23eabf7924d9">&#9670;&#160;</a></span>popupEnabled</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final boolean util.NotificationSettings.popupEnabled</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_notification_settings_8java_source.html">NotificationSettings.java</a> строка <a class="el" href="_notification_settings_8java_source.html#l00006">6</a></p>
+
+<p class="reference">Используется в <a class="el" href="_notification_settings_8java_source.html#l00039">isPopupEnabled()</a> и <a class="el" href="_notification_settings_8java_source.html#l00012">NotificationSettings()</a>.</p>
+
+</div>
+</div>
+<a id="a61919eb39e30a53d4a5f84d8f1c392a1" name="a61919eb39e30a53d4a5f84d8f1c392a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61919eb39e30a53d4a5f84d8f1c392a1">&#9670;&#160;</a></span>reminderOffsetMinutes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final int util.NotificationSettings.reminderOffsetMinutes</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_notification_settings_8java_source.html">NotificationSettings.java</a> строка <a class="el" href="_notification_settings_8java_source.html#l00009">9</a></p>
+
+<p class="reference">Используется в <a class="el" href="_notification_settings_8java_source.html#l00042">getReminderOffsetMinutes()</a> и <a class="el" href="_notification_settings_8java_source.html#l00012">NotificationSettings()</a>.</p>
+
+</div>
+</div>
+<a id="a79e92cfbf4932d6ddb7d54bce044a9c4" name="a79e92cfbf4932d6ddb7d54bce044a9c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79e92cfbf4932d6ddb7d54bce044a9c4">&#9670;&#160;</a></span>soundEnabled</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final boolean util.NotificationSettings.soundEnabled</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_notification_settings_8java_source.html">NotificationSettings.java</a> строка <a class="el" href="_notification_settings_8java_source.html#l00007">7</a></p>
+
+<p class="reference">Используется в <a class="el" href="_notification_settings_8java_source.html#l00040">isSoundEnabled()</a> и <a class="el" href="_notification_settings_8java_source.html#l00012">NotificationSettings()</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>src/util/<a class="el" href="_notification_settings_8java_source.html">NotificationSettings.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespaceutil.html">util</a></li><li class="navelem"><a href="classutil_1_1_notification_settings.html">NotificationSettings</a></li>
+    <li class="footer">Документация по Умный планировщик задач (To-Do List). Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

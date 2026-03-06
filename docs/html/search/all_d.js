@@ -1,7 +1,25 @@
 var searchData=
 [
-  ['newtaskcontroller_0',['NewTaskController',['../classview_1_1_new_task_controller.html',1,'view']]],
-  ['newtaskcontroller_2ejava_1',['NewTaskController.java',['../_new_task_controller_8java.html',1,'']]],
-  ['newtaskdialog_2efxml_2',['NewTaskDialog.fxml',['../_new_task_dialog_8fxml.html',1,'']]],
-  ['normal_3',['NORMAL',['../enummodel_1_1_priority.html#a7d22c5e833d7137d952c5ebe508f739f',1,'model::Priority']]]
+  ['name_0',['name',['../classmodel_1_1_tag.html#add710174f13f12c534f9368894c4f10d',1,'model::Tag']]],
+  ['newtaskcontroller_1',['NewTaskController',['../classview_1_1_new_task_controller.html',1,'view']]],
+  ['newtaskcontroller_2ejava_2',['NewTaskController.java',['../_new_task_controller_8java.html',1,'']]],
+  ['newtaskdialog_2efxml_3',['NewTaskDialog.fxml',['../_new_task_dialog_8fxml.html',1,'']]],
+  ['nextmonthly_4',['nextMonthly',['../classutil_1_1_recurrence_util.html#ab4e3c92b43f595464f9d335f30e89cf1',1,'util::RecurrenceUtil']]],
+  ['nextoccurrence_5',['nextOccurrence',['../classutil_1_1_recurrence_util.html#a3414315b6a1a0c186a568273c2278838',1,'util::RecurrenceUtil']]],
+  ['nextsortindex_6',['nextSortIndex',['../classmodel_1_1_task_manager.html#a8692c4fb562ef5c451627077f8fd8c81',1,'model::TaskManager']]],
+  ['nextweekday_7',['nextWeekday',['../classutil_1_1_recurrence_util.html#aed72b268fd4973767b6bddd0a6791fb4',1,'util::RecurrenceUtil']]],
+  ['nextweekly_8',['nextWeekly',['../classutil_1_1_recurrence_util.html#a8c3268ab94b3fad39e9ed882802c0abf',1,'util::RecurrenceUtil']]],
+  ['normal_9',['NORMAL',['../enummodel_1_1_priority.html#a7d22c5e833d7137d952c5ebe508f739f',1,'model::Priority']]],
+  ['normalizecustomrule_10',['normalizeCustomRule',['../classview_1_1_new_task_controller.html#a11f23060f7cf74ca238678e91b97f67b',1,'view::NewTaskController']]],
+  ['normalizesortindexes_11',['normalizeSortIndexes',['../classmodel_1_1_task_manager.html#a148e0a483446591b0b0b38a7f52f425f',1,'model::TaskManager']]],
+  ['notificationservice_12',['NotificationService',['../classutil_1_1_notification_service.html',1,'util.NotificationService'],['../classutil_1_1_notification_service.html#aef01902013eab648b9296a28d0347fb8',1,'util.NotificationService.NotificationService()']]],
+  ['notificationservice_13',['notificationService',['../classutil_1_1_task_reminder_service.html#a509d98e44cd438c97e98309924c0f3d2',1,'util::TaskReminderService']]],
+  ['notificationservice_2ejava_14',['NotificationService.java',['../_notification_service_8java.html',1,'']]],
+  ['notificationsettings_15',['NotificationSettings',['../classutil_1_1_notification_settings.html',1,'util.NotificationSettings'],['../classutil_1_1_notification_settings.html#aba1bfbe094259659ce7d46a1f4a707ab',1,'util.NotificationSettings.NotificationSettings()']]],
+  ['notificationsettings_2ejava_16',['NotificationSettings.java',['../_notification_settings_8java.html',1,'']]],
+  ['notifyallchannels_17',['notifyAllChannels',['../classutil_1_1_task_reminder_service.html#a6864ccc68057bd25e1f83dcb3c4f2d31',1,'util::TaskReminderService']]],
+  ['notifyemailcheck_18',['notifyEmailCheck',['../classview_1_1_main_controller.html#ac0a00df9afe3d61f6bc35f7ad120df29',1,'view::MainController']]],
+  ['notifyemailfield_19',['notifyEmailField',['../classview_1_1_main_controller.html#a6ca1cc35df50f28f333694534cc7c6a1',1,'view::MainController']]],
+  ['notifypopupcheck_20',['notifyPopupCheck',['../classview_1_1_main_controller.html#aac558d67f8363cc476dec304b9b91ef9',1,'view::MainController']]],
+  ['notifysoundcheck_21',['notifySoundCheck',['../classview_1_1_main_controller.html#ac34dd999b31da567fe4a1d26a5278de3',1,'view::MainController']]]
 ];

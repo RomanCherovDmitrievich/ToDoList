@@ -1,0 +1,5 @@
+<map id="util.DatabaseMigrator.synchronizeData" name="util.DatabaseMigrator.synchronizeData">
+<area shape="rect" id="Node000001" title="Синхронизирует данные между JSON и БД" alt="" coords="230,5,476,31"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_database_migrator.html#a703826c15e609176f3da25d6ce8f755d" title="Точка входа для запуска миграции из командной строки" alt="" coords="5,5,182,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,18,182,21,182,16,217,18"/>
+</map>

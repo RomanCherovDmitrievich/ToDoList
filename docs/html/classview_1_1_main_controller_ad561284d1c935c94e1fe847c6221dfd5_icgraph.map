@@ -1,0 +1,15 @@
+<map id="view.MainController.persistTask" name="view.MainController.persistTask">
+<area shape="rect" id="Node000001" title=" " alt="" coords="672,78,877,104"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_main_controller.html#a37244d4fc30d349270d91d0a773e805e" title=" " alt="" coords="455,5,624,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="708,73,615,49,616,44,714,73"/>
+<area shape="rect" id="Node000005" href="$classview_1_1_main_controller.html#a6559431f69fcf69cfd6d91229df10914" title=" " alt="" coords="455,71,624,111"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="654,91,625,94,625,88,659,91"/>
+<area shape="rect" id="Node000006" href="$classview_1_1_main_controller.html#a9d857d9734592ea7ec42050493b3a053" title=" " alt="" coords="455,136,624,177"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="713,108,616,138,615,133,708,109"/>
+<area shape="rect" id="Node000003" href="$classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title=" " alt="" coords="238,71,407,111"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="458,50,393,73,392,67,453,52"/>
+<area shape="rect" id="Node000004" href="$classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,78,190,104"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="219,92,190,94,190,88,224,90"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="437,91,408,94,407,88,442,91"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="453,131,392,115,393,109,458,131"/>
+</map>

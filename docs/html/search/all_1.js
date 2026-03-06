@@ -1,14 +1,20 @@
 var searchData=
 [
-  ['addbutton_0',['addButton',['../classview_1_1_main_controller.html#a22521069c59ba2b0bdbc22a47f159223',1,'view::MainController']]],
-  ['addtask_1',['addTask',['../classmodel_1_1_task_manager.html#a0248e3e7f014e9e35cce33f4f36bdc3e',1,'model.TaskManager.addTask()'],['../classutil_1_1_json_util.html#ac6e9a870e12429cc80b4ddf8ba98af0d',1,'util.JsonUtil.addTask()']]],
-  ['adjusttablecolumns_2',['adjustTableColumns',['../classview_1_1_main_controller.html#ab0783c7504d7a4fe9637653fbbdeff9a',1,'view::MainController']]],
-  ['adjusttableheight_3',['adjustTableHeight',['../classview_1_1_main_controller.html#af4f451efaddaf24ec9e252f9d1f7bbc1',1,'view::MainController']]],
-  ['animationtimer_4',['animationTimer',['../classview_1_1_snowflake_animation.html#a22dd1672634bb0a9140b55c2e98b88ae',1,'view::SnowflakeAnimation']]],
+  ['addbundledtrack_0',['addBundledTrack',['../classutil_1_1_audio_manager.html#a0c90298ac8f7e2870d61be6c6e7abf95',1,'util::AudioManager']]],
+  ['addbutton_1',['addButton',['../classview_1_1_main_controller.html#a22521069c59ba2b0bdbc22a47f159223',1,'view::MainController']]],
+  ['addtagtotask_2',['addTagToTask',['../classmodel_1_1_task_manager.html#ad95f7dbc5a52785e5ad0c07417d6082b',1,'model.TaskManager.addTagToTask()'],['../classrepository_1_1_database_manager.html#aec1b83da666eedf233e1427621910db8',1,'repository.DatabaseManager.addTagToTask()']]],
+  ['addtask_3',['addTask',['../classmodel_1_1_task_manager.html#adecbfa64767b23ab2cecc51c0dadc838',1,'model.TaskManager.addTask()'],['../classutil_1_1_json_util.html#ac6e9a870e12429cc80b4ddf8ba98af0d',1,'util.JsonUtil.addTask()']]],
+  ['adjustreminder_4',['adjustReminder',['../classview_1_1_main_controller.html#a4bb1c177443c7d66b3c8e9687e3c6acb',1,'view::MainController']]],
   ['app_5',['app',['../namespaceapp.html',1,'']]],
-  ['app_5ftitle_6',['APP_TITLE',['../classapp_1_1_main_app.html#a4de943445d70b65abd35b43f95dfcf72',1,'app::MainApp']]],
-  ['apptitlelabel_7',['appTitleLabel',['../classview_1_1_main_controller.html#a28672b48fd401684108b52a3806de7cb',1,'view::MainController']]],
-  ['audiomanager_8',['AudioManager',['../classutil_1_1_audio_manager.html',1,'util.AudioManager'],['../classutil_1_1_audio_manager.html#ab16a211144282895701d2b0a64a66145',1,'util.AudioManager.AudioManager()']]],
-  ['audiomanager_9',['audioManager',['../classapp_1_1_main_app.html#a821a0cbc770b47e801af93c8b55c7c98',1,'app.MainApp.audioManager'],['../classview_1_1_main_controller.html#adf49d42c90d8876b46d204cdc35b08c5',1,'view.MainController.audioManager']]],
-  ['audiomanager_2ejava_10',['AudioManager.java',['../_audio_manager_8java.html',1,'']]]
+  ['app_5fdir_5fname_6',['APP_DIR_NAME',['../classutil_1_1_path_resolver.html#ad1c3a9745c5768fafe931c1ba417703d',1,'util::PathResolver']]],
+  ['app_5ftitle_7',['APP_TITLE',['../classapp_1_1_main_app.html#a4de943445d70b65abd35b43f95dfcf72',1,'app::MainApp']]],
+  ['applyselectedtheme_8',['applySelectedTheme',['../classview_1_1_main_controller.html#ab77fd01a8289a0c6016f8bc612157056',1,'view::MainController']]],
+  ['applysortmode_9',['applySortMode',['../classview_1_1_main_controller.html#aa5444ecb80b477bae47c620767d7d06b',1,'view::MainController']]],
+  ['applytasktoform_10',['applyTaskToForm',['../classview_1_1_new_task_controller.html#a16da7a84bf64eb816ba4075b9b34f325',1,'view::NewTaskController']]],
+  ['applytheme_11',['applyTheme',['../classutil_1_1_theme_manager.html#a0984bdb5127eb1409e464247f0b78e37',1,'util::ThemeManager']]],
+  ['apptitlelabel_12',['appTitleLabel',['../classview_1_1_main_controller.html#a28672b48fd401684108b52a3806de7cb',1,'view::MainController']]],
+  ['audiocountlabel_13',['audioCountLabel',['../classview_1_1_main_controller.html#a34f3b84fe08434b47239380d2ea4c99e',1,'view::MainController']]],
+  ['audiomanager_14',['AudioManager',['../classutil_1_1_audio_manager.html',1,'util.AudioManager'],['../classutil_1_1_audio_manager.html#ab16a211144282895701d2b0a64a66145',1,'util.AudioManager.AudioManager()']]],
+  ['audiomanager_15',['audioManager',['../classview_1_1_main_controller.html#a84087f73d66c582be0fb856f19d971b7',1,'view::MainController']]],
+  ['audiomanager_2ejava_16',['AudioManager.java',['../_audio_manager_8java.html',1,'']]]
 ];

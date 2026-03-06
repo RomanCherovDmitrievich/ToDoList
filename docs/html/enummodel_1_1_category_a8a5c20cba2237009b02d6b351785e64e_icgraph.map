@@ -1,5 +1,15 @@
 <map id="model.Category.fromDisplayName" name="model.Category.fromDisplayName">
-<area shape="rect" id="Node000001" title=" " alt="" coords="256,13,476,38"/>
-<area shape="rect" id="Node000002" href="$classview_1_1_new_task_controller.html#a337be480aeacacd900c710627a27a63e" title="Обработчик кнопки создания задачи" alt="" coords="5,5,208,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="237,26,208,28,208,23,243,26"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="711,78,932,104"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_new_task_controller.html#a337be480aeacacd900c710627a27a63e" title=" " alt="" coords="461,5,663,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="750,74,646,49,646,44,756,74"/>
+<area shape="rect" id="Node000003" href="$classview_1_1_main_controller.html#a37244d4fc30d349270d91d0a773e805e" title=" " alt="" coords="478,71,647,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="693,91,648,94,647,88,699,91"/>
+<area shape="rect" id="Node000006" href="$classview_1_1_main_controller.html#acf014234d7e80dac1ee33b153f6102ca" title=" " alt="" coords="478,136,646,177"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="756,108,646,138,645,133,750,108"/>
+<area shape="rect" id="Node000004" href="$classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title=" " alt="" coords="241,71,410,111"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="459,91,411,94,410,88,465,91"/>
+<area shape="rect" id="Node000005" href="$classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,78,190,104"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="223,92,191,94,190,88,228,90"/>
+<area shape="rect" id="Node000007" href="$classview_1_1_main_controller.html#a1eb59033ea2ca2caf351d917d1511cf1" title=" " alt="" coords="238,136,413,177"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="460,156,414,159,414,154,465,156"/>
 </map>
