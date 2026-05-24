@@ -12,6 +12,12 @@ fi
 SRC_DIR="src"
 BIN_DIR="bin"
 LIB_DIR="lib"
+POSTGRES_JAR="$LIB_DIR/postgresql-42.7.4.jar"
+MYSQL_JAR="$LIB_DIR/mysql-connector-j-9.3.0.jar"
+MAIL_API_JAR="$LIB_DIR/jakarta.mail-api-2.1.5.jar"
+ANGUS_MAIL_JAR="$LIB_DIR/angus-mail-2.0.5.jar"
+ACTIVATION_API_JAR="$LIB_DIR/jakarta.activation-api-2.1.4.jar"
+ANGUS_ACTIVATION_JAR="$LIB_DIR/angus-activation-2.0.3.jar"
 
 OS="$(uname -s 2>/dev/null || echo UNKNOWN)"
 if [[ "$OS" == MINGW* || "$OS" == MSYS* || "$OS" == CYGWIN* ]]; then
@@ -69,9 +75,17 @@ if [[ "$OS" == "Darwin" ]]; then
   fi
 fi
 
-if [[ ! -f "$LIB_DIR/gson-2.10.1.jar" || ! -f "$LIB_DIR/sqlite-jdbc-3.45.1.0.jar" || ! -f "$LIB_DIR/slf4j-api-2.0.12.jar" || ! -f "$LIB_DIR/slf4j-nop-2.0.12.jar" ]]; then
+if [[ ! -f "$LIB_DIR/gson-2.10.1.jar" || ! -f "$LIB_DIR/sqlite-jdbc-3.45.1.0.jar" || ! -f "$LIB_DIR/slf4j-api-2.0.12.jar" || ! -f "$LIB_DIR/slf4j-nop-2.0.12.jar" || ! -f "$MAIL_API_JAR" || ! -f "$ANGUS_MAIL_JAR" || ! -f "$ACTIVATION_API_JAR" || ! -f "$ANGUS_ACTIVATION_JAR" ]]; then
   echo "[run] Required jars missing in lib/. Run: ./scripts/setup.sh"
   exit 1
+fi
+
+CLASSPATH="$LIB_DIR/gson-2.10.1.jar${CP_SEP}$LIB_DIR/sqlite-jdbc-3.45.1.0.jar${CP_SEP}$LIB_DIR/slf4j-api-2.0.12.jar${CP_SEP}$LIB_DIR/slf4j-nop-2.0.12.jar${CP_SEP}$MAIL_API_JAR${CP_SEP}$ANGUS_MAIL_JAR${CP_SEP}$ACTIVATION_API_JAR${CP_SEP}$ANGUS_ACTIVATION_JAR"
+if [[ -f "$POSTGRES_JAR" ]]; then
+  CLASSPATH="${CLASSPATH}${CP_SEP}$POSTGRES_JAR"
+fi
+if [[ -f "$MYSQL_JAR" ]]; then
+  CLASSPATH="${CLASSPATH}${CP_SEP}$MYSQL_JAR"
 fi
 
 mkdir -p "$BIN_DIR" data audio
@@ -83,7 +97,7 @@ find "$SRC_DIR" -name "*.java" -type f | sort > "$SOURCES_LIST"
 javac \
   --module-path "$JAVAFX_LIB" \
   --add-modules javafx.controls,javafx.fxml,javafx.media \
-  -cp "$LIB_DIR/gson-2.10.1.jar${CP_SEP}$LIB_DIR/sqlite-jdbc-3.45.1.0.jar${CP_SEP}$LIB_DIR/slf4j-api-2.0.12.jar${CP_SEP}$LIB_DIR/slf4j-nop-2.0.12.jar" \
+  -cp "$CLASSPATH" \
   -d "$BIN_DIR" \
   @"$SOURCES_LIST"
 
@@ -92,6 +106,7 @@ cp "$SRC_DIR"/view/*.fxml "$BIN_DIR/view/"
 cp -R "$SRC_DIR/resources"/* "$BIN_DIR/resources/"
 
 if [[ "$BUILD_ONLY" == "true" ]]; then
+  rm -f "$SOURCES_LIST"
   echo "[run] Build complete (build-only mode)."
   exit 0
 fi
@@ -101,7 +116,7 @@ java \
   --module-path "$JAVAFX_LIB" \
   --add-modules javafx.controls,javafx.fxml,javafx.media \
   --enable-native-access=javafx.graphics \
-  -cp "$BIN_DIR${CP_SEP}$LIB_DIR/gson-2.10.1.jar${CP_SEP}$LIB_DIR/sqlite-jdbc-3.45.1.0.jar${CP_SEP}$LIB_DIR/slf4j-api-2.0.12.jar${CP_SEP}$LIB_DIR/slf4j-nop-2.0.12.jar" \
+  -cp "$BIN_DIR${CP_SEP}$CLASSPATH" \
   app.MainApp
 
 rm -f "$SOURCES_LIST"

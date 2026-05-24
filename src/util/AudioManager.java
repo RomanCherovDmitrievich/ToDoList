@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
+import java.awt.GraphicsEnvironment;
 import java.io.File;
 import java.net.URI;
 import java.net.URL;
@@ -21,6 +22,8 @@ import java.util.Set;
  */
 public class AudioManager {
     private static AudioManager instance;
+    private static final String DISABLE_AUDIO_PROPERTY = "todolist.disableAudio";
+    private static final String DISABLE_AUDIO_ENV = "TODOLIST_DISABLE_AUDIO";
 
     private final List<URI> playlist = new ArrayList<>();
     private MediaPlayer currentPlayer;
@@ -46,6 +49,11 @@ public class AudioManager {
         if (javafxReady) {
             return true;
         }
+        if (isAudioRuntimeDisabled()) {
+            soundsEnabled = false;
+            javafxReady = false;
+            return false;
+        }
         try {
             Platform.startup(() -> {});
             javafxReady = true;
@@ -56,6 +64,13 @@ public class AudioManager {
             javafxReady = false;
         }
         return javafxReady;
+    }
+
+    private boolean isAudioRuntimeDisabled() {
+        String envValue = System.getenv(DISABLE_AUDIO_ENV);
+        return Boolean.getBoolean(DISABLE_AUDIO_PROPERTY)
+            || "true".equalsIgnoreCase(envValue)
+            || GraphicsEnvironment.isHeadless();
     }
 
     /**

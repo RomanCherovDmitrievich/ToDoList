@@ -1,0 +1,43 @@
+# Copy this file to data/db.properties and edit the values below.
+
+# To switch DB in one line, change only this value:
+# sqlite | postgresql | mysql | firebird | custom
+db.type= mysql
+
+# Universal fallback settings
+db.sqlitePath=data/todolist.db
+db.host=
+db.port=
+db.name=
+db.username=
+db.password=
+db.sslMode=require
+
+# SQLite profile
+db.sqlite.sqlitePath=data/todolist.db
+
+# PostgreSQL profile
+db.postgresql.host=3e24e-rw.db.pub.dbaas.postgrespro.ru
+db.postgresql.port=5432
+db.postgresql.name=dbstud
+db.postgresql.username=chernov_rd
+db.postgresql.password=UJ83vb$#%UG8
+db.postgresql.sslMode=require
+
+# MySQL profile
+db.mysql.host=localhost
+db.mysql.port=3306
+db.mysql.name=todolist
+db.mysql.username=root
+db.mysql.password=UJ83vb$#%UG8
+
+# Firebird / Red DB profile
+db.firebird.host=192.168.1.6
+db.firebird.port=3050
+db.firebird.name=emp
+db.firebird.username=user113
+db.firebird.password=L@b$-113
+
+# Custom JDBC settings for unsupported DB engines
+db.jdbcUrl=
+db.driverClass=

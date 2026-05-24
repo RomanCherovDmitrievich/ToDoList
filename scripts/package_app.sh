@@ -10,6 +10,11 @@ DIST_DIR="$PROJECT_ROOT/dist"
 INPUT_DIR="$DIST_DIR/package-input"
 OUTPUT_DIR="$DIST_DIR/package-output"
 JAR_NAME="ToDoList.jar"
+POSTGRES_JAR="postgresql-42.7.4.jar"
+MAIL_API_JAR="jakarta.mail-api-2.1.5.jar"
+ANGUS_MAIL_JAR="angus-mail-2.0.5.jar"
+ACTIVATION_API_JAR="jakarta.activation-api-2.1.4.jar"
+ANGUS_ACTIVATION_JAR="angus-activation-2.0.3.jar"
 
 INSTALLER_MODE="false"
 if [[ "${1:-}" == "--installer" ]]; then
@@ -73,7 +78,7 @@ mkdir -p "$INPUT_DIR" "$OUTPUT_DIR"
 cat > "$DIST_DIR/MANIFEST.MF" <<MANIFEST
 Manifest-Version: 1.0
 Main-Class: app.MainApp
-Class-Path: gson-2.10.1.jar sqlite-jdbc-3.45.1.0.jar slf4j-api-2.0.12.jar slf4j-nop-2.0.12.jar
+Class-Path: gson-2.10.1.jar sqlite-jdbc-3.45.1.0.jar slf4j-api-2.0.12.jar slf4j-nop-2.0.12.jar $MAIL_API_JAR $ANGUS_MAIL_JAR $ACTIVATION_API_JAR $ANGUS_ACTIVATION_JAR $POSTGRES_JAR
 MANIFEST
 
 jar cfm "$INPUT_DIR/$JAR_NAME" "$DIST_DIR/MANIFEST.MF" -C bin .
@@ -81,6 +86,11 @@ cp lib/gson-2.10.1.jar "$INPUT_DIR/"
 cp lib/sqlite-jdbc-3.45.1.0.jar "$INPUT_DIR/"
 cp lib/slf4j-api-2.0.12.jar "$INPUT_DIR/" 2>/dev/null || true
 cp lib/slf4j-nop-2.0.12.jar "$INPUT_DIR/" 2>/dev/null || true
+cp "lib/$MAIL_API_JAR" "$INPUT_DIR/" 2>/dev/null || true
+cp "lib/$ANGUS_MAIL_JAR" "$INPUT_DIR/" 2>/dev/null || true
+cp "lib/$ACTIVATION_API_JAR" "$INPUT_DIR/" 2>/dev/null || true
+cp "lib/$ANGUS_ACTIVATION_JAR" "$INPUT_DIR/" 2>/dev/null || true
+cp "lib/$POSTGRES_JAR" "$INPUT_DIR/" 2>/dev/null || true
 
 mkdir -p "$INPUT_DIR/javafx"
 cp "$JAVAFX_LIB"/* "$INPUT_DIR/javafx/" 2>/dev/null || true

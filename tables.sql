@@ -5,7 +5,20 @@ PRAGMA foreign_keys = ON;
 PRAGMA journal_mode = WAL;
 PRAGMA synchronous = NORMAL;
 
--- 1) Main task table
+-- 1) Users table
+CREATE TABLE IF NOT EXISTS users (
+    id TEXT PRIMARY KEY,
+    username TEXT NOT NULL UNIQUE,
+    email TEXT UNIQUE,
+    password_hash TEXT NOT NULL,
+    password_salt TEXT NOT NULL,
+    created_at TEXT NOT NULL,
+    updated_at TEXT NOT NULL,
+    reset_code TEXT,
+    reset_code_expires_at TEXT
+);
+
+-- 2) Main task table
 CREATE TABLE IF NOT EXISTS tasks (
     id TEXT PRIMARY KEY,
     title TEXT NOT NULL,
@@ -17,6 +30,7 @@ CREATE TABLE IF NOT EXISTS tasks (
     completed INTEGER NOT NULL DEFAULT 0,
     overdue INTEGER NOT NULL DEFAULT 0,
     sort_index INTEGER NOT NULL DEFAULT 0,
+    owner_user_id TEXT,
     recurrence_rule TEXT,
     reminder_offset INTEGER NOT NULL DEFAULT 0,
     recurrence_end TEXT,
@@ -24,14 +38,14 @@ CREATE TABLE IF NOT EXISTS tasks (
     updated_at TEXT NOT NULL
 );
 
--- 2) Tag dictionary
+-- 3) Tag dictionary
 CREATE TABLE IF NOT EXISTS tags (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL UNIQUE,
     color TEXT NOT NULL DEFAULT '#95a5a6'
 );
 
--- 3) Many-to-many link table
+-- 4) Many-to-many link table
 CREATE TABLE IF NOT EXISTS task_tags (
     task_id TEXT NOT NULL,
     tag_id INTEGER NOT NULL,
@@ -41,7 +55,7 @@ CREATE TABLE IF NOT EXISTS task_tags (
     FOREIGN KEY (tag_id) REFERENCES tags(id) ON DELETE CASCADE
 );
 
--- 4) Audit log table
+-- 5) Audit log table
 CREATE TABLE IF NOT EXISTS task_statistics (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     task_id TEXT NOT NULL,
@@ -51,17 +65,20 @@ CREATE TABLE IF NOT EXISTS task_statistics (
     FOREIGN KEY (task_id) REFERENCES tasks(id) ON DELETE CASCADE
 );
 
--- 5) App settings table
+-- 6) App settings table
 CREATE TABLE IF NOT EXISTS app_settings (
     key TEXT PRIMARY KEY,
     value TEXT,
     updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE INDEX IF NOT EXISTS idx_users_username ON users(username);
+CREATE INDEX IF NOT EXISTS idx_users_email ON users(email);
 CREATE INDEX IF NOT EXISTS idx_tasks_completed ON tasks(completed);
 CREATE INDEX IF NOT EXISTS idx_tasks_priority ON tasks(priority);
 CREATE INDEX IF NOT EXISTS idx_tasks_category ON tasks(category);
 CREATE INDEX IF NOT EXISTS idx_tasks_end_time ON tasks(end_time);
+CREATE INDEX IF NOT EXISTS idx_tasks_owner_user_id ON tasks(owner_user_id);
 CREATE INDEX IF NOT EXISTS idx_task_tags_task_id ON task_tags(task_id);
 CREATE INDEX IF NOT EXISTS idx_task_statistics_task_id ON task_statistics(task_id);
 

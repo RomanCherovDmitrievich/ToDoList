@@ -1,0 +1,11 @@
+<map id="repository.DatabaseManager.getUserById" name="repository.DatabaseManager.getUserById">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,213,79"/>
+<area shape="rect" id="Node000002" href="$classrepository_1_1_database_manager.html#a7407642e97a424de9bab9605699b577f" title=" " alt="" coords="266,5,476,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,43,253,40,248,42,214,48"/>
+<area shape="rect" id="Node000003" href="$classrepository_1_1_database_manager.html#a7f8c76bff542bcaaa757209f11e8065d" title=" " alt="" coords="261,71,482,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="213,69,248,75,242,76,213,74"/>
+<area shape="rect" id="Node000004" href="$classrepository_1_1_database_manager.html#af477fbf728fb93b131aeca0561f8db70" title=" " alt="" coords="530,37,751,78"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="482,75,517,73,512,74,483,80"/>
+<area shape="rect" id="Node000005" href="$classrepository_1_1_database_manager.html#a95fec557df19bce8d2b5d542416a4b1a" title=" " alt="" coords="530,103,751,143"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="482,101,517,108,512,108,482,107"/>
+</map>

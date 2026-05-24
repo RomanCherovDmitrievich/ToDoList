@@ -97,6 +97,11 @@ public class Task {
     private int sortIndex;
 
     /**
+     * @brief Идентификатор владельца задачи
+     */
+    private String ownerUserId;
+
+    /**
      * @brief Правило повторения (RRULE-подобная строка)
      */
     private String recurrenceRule;
@@ -150,6 +155,7 @@ public class Task {
         this.overdue = false;
         this.createdAt = LocalDateTime.now();
         this.sortIndex = 0;
+        this.ownerUserId = null;
         this.recurrenceRule = "NONE";
         this.reminderOffsetMinutes = 0;
         this.recurrenceEnd = null;
@@ -198,6 +204,7 @@ public class Task {
         this.overdue = overdue;
         this.createdAt = LocalDateTime.parse(createdAt, FORMATTER);
         this.sortIndex = 0;
+        this.ownerUserId = null;
         this.recurrenceRule = "NONE";
         this.reminderOffsetMinutes = 0;
         this.recurrenceEnd = null;
@@ -224,6 +231,7 @@ public class Task {
         this.overdue = overdue;
         this.createdAt = LocalDateTime.parse(createdAt, FORMATTER);
         this.sortIndex = sortIndex;
+        this.ownerUserId = null;
         this.recurrenceRule = recurrenceRule == null || recurrenceRule.isBlank() ? "NONE" : recurrenceRule;
         this.reminderOffsetMinutes = reminderOffsetMinutes;
         this.recurrenceEnd = (recurrenceEnd == null || recurrenceEnd.isBlank()) ? null : LocalDateTime.parse(recurrenceEnd, FORMATTER);
@@ -309,6 +317,8 @@ public class Task {
 
     public int getSortIndex() { return sortIndex; }
 
+    public String getOwnerUserId() { return ownerUserId; }
+
     public String getRecurrenceRule() { return recurrenceRule; }
 
     public int getReminderOffsetMinutes() { return reminderOffsetMinutes; }
@@ -360,6 +370,10 @@ public class Task {
     public void setCategory(Category category) { this.category = category; }
 
     public void setSortIndex(int sortIndex) { this.sortIndex = sortIndex; }
+
+    public void setOwnerUserId(String ownerUserId) {
+        this.ownerUserId = ownerUserId == null || ownerUserId.isBlank() ? null : ownerUserId.trim();
+    }
 
     public void setRecurrenceRule(String recurrenceRule) {
         if (recurrenceRule == null || recurrenceRule.isBlank()) {
@@ -434,7 +448,7 @@ public class Task {
             "{\"id\":\"%s\",\"title\":\"%s\",\"description\":\"%s\"," +
             "\"startTime\":\"%s\",\"endTime\":\"%s\",\"priority\":\"%s\"," +
             "\"category\":\"%s\",\"completed\":%s,\"overdue\":%s," +
-            "\"createdAt\":\"%s\",\"sortIndex\":%d," +
+            "\"createdAt\":\"%s\",\"sortIndex\":%d,\"ownerUserId\":\"%s\"," +
             "\"recurrenceRule\":\"%s\",\"reminderOffsetMinutes\":%d," +
             "\"recurrenceEnd\":\"%s\"}",
             id, 
@@ -448,6 +462,7 @@ public class Task {
             overdue, 
             createdAt.format(outputFormatter),
             sortIndex,
+            escapeJson(ownerUserId == null ? "" : ownerUserId),
             escapeJson(recurrenceRule == null ? "NONE" : recurrenceRule),
             reminderOffsetMinutes,
             recurrenceEnd == null ? "" : recurrenceEnd.format(outputFormatter)

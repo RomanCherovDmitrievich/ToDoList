@@ -1,0 +1,25 @@
+var classmodel_1_1_user =
+[
+    [ "User", "classmodel_1_1_user.html#a5d56e52d182299a47d6bdcc845d37a6f", null ],
+    [ "User", "classmodel_1_1_user.html#a1b71749cfb57e2beb65f4f17ff967c28", null ],
+    [ "getCreatedAt", "classmodel_1_1_user.html#a62608dbd6cc097b3f12b689e1c48258b", null ],
+    [ "getDisplayName", "classmodel_1_1_user.html#a5c00703eb7213e66634c2380420ded9d", null ],
+    [ "getEmail", "classmodel_1_1_user.html#a6e21aef79f65d6b31cef1732a94b5f39", null ],
+    [ "getId", "classmodel_1_1_user.html#abd58b71654ebe63e1bee16a382e64fa8", null ],
+    [ "getPasswordHash", "classmodel_1_1_user.html#ac8e7ad45a0401a253cb6517f2cba9319", null ],
+    [ "getPasswordSalt", "classmodel_1_1_user.html#a06f3cac0de7d8f2ea3f1d6f99d589088", null ],
+    [ "getResetCode", "classmodel_1_1_user.html#ac2c3edcf7b03bfb143c5999a6a932472", null ],
+    [ "getResetCodeExpiresAt", "classmodel_1_1_user.html#aa66aa30c479633f703963421b3d902c8", null ],
+    [ "getUpdatedAt", "classmodel_1_1_user.html#ab0668d8eff83ce53ea074c707f58e204", null ],
+    [ "getUsername", "classmodel_1_1_user.html#a964ba13bb99d3bd7ab7c342a9c03bc46", null ],
+    [ "hasEmail", "classmodel_1_1_user.html#ad22e1df8acb20efdba9f9e254d80a931", null ],
+    [ "createdAt", "classmodel_1_1_user.html#afd805917c015f20f7c8e1a37c72b4fb8", null ],
+    [ "email", "classmodel_1_1_user.html#af96870e803a7fbd7f94ad6f67b376320", null ],
+    [ "id", "classmodel_1_1_user.html#ac8095c60997fb755ef0bf5ef8ab83c56", null ],
+    [ "passwordHash", "classmodel_1_1_user.html#a24a164934e58312875e3d4c9e7003938", null ],
+    [ "passwordSalt", "classmodel_1_1_user.html#a6a9c695b2e7f32b26022ea0785676a20", null ],
+    [ "resetCode", "classmodel_1_1_user.html#af49a1b8fc359ac837990c1d661babfc3", null ],
+    [ "resetCodeExpiresAt", "classmodel_1_1_user.html#ac97f709d3e60c46efa674331225f8363", null ],
+    [ "updatedAt", "classmodel_1_1_user.html#ae28747e99a338524b10795de91c945ed", null ],
+    [ "username", "classmodel_1_1_user.html#a595ee1ee03ee6effd7dc702e5fcd0765", null ]
+];

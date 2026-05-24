@@ -23,6 +23,7 @@ public class TaskManager {
     private final List<Task> tasks = new ArrayList<>();
     private DatabaseManager dbManager;
     private boolean useDatabase = true;
+    private User currentUser;
 
     private LocalDateTime lastOverdueCheck = LocalDateTime.MIN;
     private static final Duration OVERDUE_CHECK_INTERVAL = Duration.ofSeconds(30);
@@ -93,6 +94,9 @@ public class TaskManager {
         if (task == null) {
             return;
         }
+        if (currentUser != null && (task.getOwnerUserId() == null || task.getOwnerUserId().isBlank())) {
+            task.setOwnerUserId(currentUser.getId());
+        }
         if (task.getSortIndex() <= 0) {
             task.setSortIndex(nextSortIndex());
         }
@@ -107,7 +111,7 @@ public class TaskManager {
             return false;
         }
 
-        boolean removed = tasks.removeIf(task -> task.getId().equals(taskId));
+        boolean removed = tasks.removeIf(task -> task.getId().equals(taskId) && isVisibleForCurrentUser(task));
         if (!removed) {
             return false;
         }
@@ -121,12 +125,12 @@ public class TaskManager {
 
     public synchronized List<Task> getAllTasks() {
         maybeCheckOverdue();
-        return Collections.unmodifiableList(new ArrayList<>(tasks));
+        return Collections.unmodifiableList(visibleTasksSnapshot());
     }
 
     public synchronized List<Task> getTasksByCompletion(boolean completed) {
         return Collections.unmodifiableList(
-            tasks.stream()
+            visibleTasksStream()
                 .filter(task -> task.isCompleted() == completed)
                 .collect(Collectors.toList())
         );
@@ -141,7 +145,9 @@ public class TaskManager {
         boolean hasNonAscii = trimmed.chars().anyMatch(ch -> ch > 127);
 
         if (!hasNonAscii && useDatabase && dbManager != null) {
-            List<Task> dbResult = new ArrayList<>(dbManager.searchTasks(trimmed));
+            List<Task> dbResult = dbManager.searchTasks(trimmed).stream()
+                .filter(this::isVisibleForCurrentUser)
+                .collect(Collectors.toList());
             if (!dbResult.isEmpty()) {
                 return Collections.unmodifiableList(dbResult);
             }
@@ -149,7 +155,7 @@ public class TaskManager {
 
         String lower = trimmed.toLowerCase();
         return Collections.unmodifiableList(
-            tasks.stream()
+            visibleTasksStream()
                 .filter(task -> task.getTitle().toLowerCase().contains(lower)
                     || task.getDescription().toLowerCase().contains(lower))
                 .collect(Collectors.toList())
@@ -218,12 +224,12 @@ public class TaskManager {
     }
 
     public synchronized int getTaskCount(boolean completed) {
-        return (int) tasks.stream().filter(task -> task.isCompleted() == completed).count();
+        return (int) visibleTasksStream().filter(task -> task.isCompleted() == completed).count();
     }
 
     public synchronized int getOverdueTaskCount() {
         maybeCheckOverdue();
-        return (int) tasks.stream().filter(task -> task.isOverdue() && !task.isCompleted()).count();
+        return (int) visibleTasksStream().filter(task -> task.isOverdue() && !task.isCompleted()).count();
     }
 
     public synchronized Task getTaskById(String taskId) {
@@ -232,6 +238,7 @@ public class TaskManager {
         }
         return tasks.stream()
             .filter(task -> task.getId().equals(taskId))
+            .filter(this::isVisibleForCurrentUser)
             .findFirst()
             .orElse(null);
     }
@@ -294,7 +301,7 @@ public class TaskManager {
     }
 
     public synchronized String getStatistics() {
-        int total = tasks.size();
+        int total = visibleTasksSnapshot().size();
         int completed = getTaskCount(true);
         int pending = getTaskCount(false);
         int overdue = getOverdueTaskCount();
@@ -319,6 +326,17 @@ public class TaskManager {
         }
     }
 
+    public synchronized void setCurrentUser(User user) {
+        this.currentUser = user;
+        if (currentUser != null && dbManager != null) {
+            claimOrphanTasks(currentUser.getId());
+        }
+    }
+
+    public synchronized User getCurrentUser() {
+        return currentUser;
+    }
+
     public synchronized void close() {
         if (dbManager != null) {
             dbManager.close();
@@ -332,7 +350,7 @@ public class TaskManager {
             .thenComparing((Task t) -> priorityRank(t.getPriority()))
             .thenComparing(Task::getEndTime);
 
-        return tasks.stream()
+        return visibleTasksStream()
             .filter(task -> !task.isCompleted())
             .sorted(comparator)
             .limit(Math.max(1, limit))
@@ -343,7 +361,7 @@ public class TaskManager {
         LocalDateTime now = LocalDateTime.now();
         LocalDateTime edge = now.plusMinutes(Math.max(1, minutes));
 
-        return tasks.stream()
+        return visibleTasksStream()
             .filter(task -> !task.isCompleted())
             .filter(task -> !task.getStartTime().isBefore(now) && !task.getStartTime().isAfter(edge))
             .sorted(Comparator.comparing(Task::getStartTime))
@@ -376,6 +394,17 @@ public class TaskManager {
         if (orderedTasks == null || orderedTasks.isEmpty()) {
             return;
         }
+        if (currentUser != null) {
+            int index = 1;
+            for (Task task : orderedTasks) {
+                if (task != null && isVisibleForCurrentUser(task)) {
+                    task.setSortIndex(index++);
+                    persistTask(task);
+                }
+            }
+            saveJsonSnapshot();
+            return;
+        }
         tasks.clear();
         tasks.addAll(orderedTasks);
         int index = 1;
@@ -387,7 +416,7 @@ public class TaskManager {
     }
 
     private int nextSortIndex() {
-        return tasks.stream().mapToInt(Task::getSortIndex).max().orElse(0) + 1;
+        return visibleTasksStream().mapToInt(Task::getSortIndex).max().orElse(0) + 1;
     }
 
     private void normalizeSortIndexes() {
@@ -435,7 +464,48 @@ public class TaskManager {
         next.setRecurrenceRule(rule);
         next.setReminderOffsetMinutes(task.getReminderOffsetMinutes());
         next.setRecurrenceEnd(task.getRecurrenceEnd());
+        next.setOwnerUserId(task.getOwnerUserId());
         next.setSortIndex(nextSortIndex());
         addTask(next);
+    }
+
+    public synchronized int claimOrphanTasks(String userId) {
+        if (userId == null || userId.isBlank()) {
+            return 0;
+        }
+
+        int claimed = 0;
+        for (Task task : tasks) {
+            if (task.getOwnerUserId() == null || task.getOwnerUserId().isBlank()) {
+                task.setOwnerUserId(userId);
+                persistTask(task);
+                claimed++;
+            }
+        }
+        if (claimed > 0) {
+            saveJsonSnapshot();
+        }
+        return claimed;
+    }
+
+    private List<Task> visibleTasksSnapshot() {
+        return visibleTasksStream().collect(Collectors.toList());
+    }
+
+    private java.util.stream.Stream<Task> visibleTasksStream() {
+        return tasks.stream().filter(this::isVisibleForCurrentUser);
+    }
+
+    private boolean isVisibleForCurrentUser(Task task) {
+        if (task == null) {
+            return false;
+        }
+        if (currentUser == null || currentUser.getId() == null || currentUser.getId().isBlank()) {
+            return true;
+        }
+        if (task.getOwnerUserId() == null || task.getOwnerUserId().isBlank()) {
+            return true;
+        }
+        return currentUser.getId().equals(task.getOwnerUserId());
     }
 }

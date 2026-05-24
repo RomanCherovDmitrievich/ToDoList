@@ -1,0 +1,7 @@
+<map id="view.MainController.findTasksForDate" name="view.MainController.findTasksForDate">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,164,79"/>
+<area shape="rect" id="Node000002" href="$classviewmodel_1_1_task_view_model.html#aa34a9517a43daff6eef84dc13e1cd0a9" title="Возвращает время окончания (дедлайн) задачи" alt="" coords="212,5,413,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,45,199,42,194,43,165,50"/>
+<area shape="rect" id="Node000003" href="$classviewmodel_1_1_task_view_model.html#ad274b2e6ae4bfa67e9e4877d1f0d3104" title="Возвращает время начала задачи" alt="" coords="212,71,413,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="164,67,199,74,194,75,164,73"/>
+</map>

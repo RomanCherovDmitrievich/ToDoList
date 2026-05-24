@@ -1,19 +1,21 @@
 <map id="util.JsonUtil.parseTasksFromJson" name="util.JsonUtil.parseTasksFromJson">
-<area shape="rect" id="Node000001" title="Парсит JSON строку в список задач" alt="" coords="5,147,167,188"/>
-<area shape="rect" id="Node000002" href="$classutil_1_1_json_util.html#a428f650826f08a9ee580d87bb60a1443" title="Парсит один JSON объект задачи" alt="" coords="215,129,406,155"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,156,202,153,197,156,168,161"/>
-<area shape="rect" id="Node000009" href="$classutil_1_1_json_util.html#a53c77a1cd244ad8e37075b9a6c44da32" title="Разделяет JSON массив на отдельные объекты" alt="" coords="215,179,406,204"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="166,173,202,179,197,180,167,179"/>
+<area shape="rect" id="Node000001" title="Парсит JSON строку в список задач" alt="" coords="5,171,167,212"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_json_util.html#a428f650826f08a9ee580d87bb60a1443" title="Парсит один JSON объект задачи" alt="" coords="215,153,406,179"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,180,202,177,197,180,168,185"/>
+<area shape="rect" id="Node000010" href="$classutil_1_1_json_util.html#a53c77a1cd244ad8e37075b9a6c44da32" title="Разделяет JSON массив на отдельные объекты" alt="" coords="215,203,406,228"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="166,197,202,203,197,205,167,203"/>
 <area shape="rect" id="Node000003" href="$classutil_1_1_json_util.html#aee5a01fe4fd4d523b312591d077d3f13" title="Парсит дату&#45;время с поддержкой различных форматов" alt="" coords="464,5,648,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="325,127,379,84,415,60,453,40,471,35,466,37,455,45,417,65,382,88,328,131"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="321,151,374,97,411,66,453,40,468,35,464,38,455,45,414,70,377,101,324,155"/>
 <area shape="rect" id="Node000004" href="$classutil_1_1_json_util.html#a45c51c188f965f7eafd39189c91ea0bd" title="Парсит JSON поля из строки" alt="" coords="462,55,651,80"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="345,126,453,89,482,84,477,85,455,94,347,131"/>
-<area shape="rect" id="Node000005" href="$classmodel_1_1_task.html#ab0baf46a0eaf537e019f5589d31600ee" title=" " alt="" coords="456,104,656,130"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="405,130,443,128,438,129,407,135"/>
-<area shape="rect" id="Node000006" href="$classmodel_1_1_task.html#a5e261c2bdd2250bb8fcbf52eae83517f" title=" " alt="" coords="454,153,658,179"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="406,149,441,154,436,155,406,154"/>
-<area shape="rect" id="Node000007" href="$classmodel_1_1_task.html#acbf938d98a6b9a8e72cdf04d200dfece" title=" " alt="" coords="455,203,657,244"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="373,153,407,164,431,176,455,189,471,198,466,197,453,194,429,181,405,169,373,158"/>
-<area shape="rect" id="Node000008" href="$classmodel_1_1_task.html#a7db5ca31a1b8fc9bb8ddb84ea22c7adf" title=" " alt="" coords="473,268,639,294"/>
-<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="388,153,408,164,426,187,433,210,439,233,456,254,464,261,459,260,452,257,434,235,427,212,421,189,404,168,388,158"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="332,150,386,120,453,89,476,84,471,86,455,94,388,125,334,155"/>
+<area shape="rect" id="Node000005" href="$classmodel_1_1_task.html#a9a0a352d3f78fb40f17551736367b3f6" title=" " alt="" coords="462,104,650,130"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="377,150,476,132,471,134,379,155"/>
+<area shape="rect" id="Node000006" href="$classmodel_1_1_task.html#ab0baf46a0eaf537e019f5589d31600ee" title=" " alt="" coords="456,153,656,179"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="406,164,443,166,438,167,407,169"/>
+<area shape="rect" id="Node000007" href="$classmodel_1_1_task.html#a5e261c2bdd2250bb8fcbf52eae83517f" title=" " alt="" coords="454,203,658,228"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="378,177,476,199,471,200,378,182"/>
+<area shape="rect" id="Node000008" href="$classmodel_1_1_task.html#acbf938d98a6b9a8e72cdf04d200dfece" title=" " alt="" coords="455,252,657,293"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="383,177,407,188,423,201,432,214,441,226,456,239,464,246,459,245,452,243,437,230,428,217,419,204,405,192,383,182"/>
+<area shape="rect" id="Node000009" href="$classmodel_1_1_task.html#a7db5ca31a1b8fc9bb8ddb84ea22c7adf" title=" " alt="" coords="473,317,639,343"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="390,177,408,188,421,202,428,217,433,247,437,276,444,290,456,303,463,310,457,309,452,307,439,293,432,278,427,248,423,219,416,205,404,192,389,182"/>
 </map>

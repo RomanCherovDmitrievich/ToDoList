@@ -1,7 +1,7 @@
 var searchData=
 [
   ['mac_0',['MAC',['../enumutil_1_1_platform_util_1_1_os_family.html#abcae9ae2cd5dedd889bbab5f70f6f68c',1,'util::PlatformUtil::OsFamily']]],
-  ['main_1',['main',['../classapp_1_1_main_app.html#a9788978994366c880434d9cc05a21cb1',1,'app.MainApp.main()'],['../classutil_1_1_database_migrator.html#a703826c15e609176f3da25d6ce8f755d',1,'util.DatabaseMigrator.main()']]],
+  ['main_1',['main',['../classapp_1_1_main_app.html#a9788978994366c880434d9cc05a21cb1',1,'app.MainApp.main()'],['../classutil_1_1_database_cli.html#a71f8f6fb070d38d93606f081115edf69',1,'util.DatabaseCli.main()'],['../classutil_1_1_database_migrator.html#a703826c15e609176f3da25d6ce8f755d',1,'util.DatabaseMigrator.main()'],['../classutil_1_1_test_report_generator.html#a05c87b1a2498085c297eed75bfdccb08',1,'util.TestReportGenerator.main()']]],
   ['mainapp_2',['MainApp',['../classapp_1_1_main_app.html',1,'app']]],
   ['mainapp_2ejava_3',['MainApp.java',['../_main_app_8java.html',1,'']]],
   ['maincontroller_4',['MainController',['../classview_1_1_main_controller.html',1,'view']]],

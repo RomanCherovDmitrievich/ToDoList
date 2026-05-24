@@ -1,0 +1,880 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Умный планировщик задач (To-Do List): Класс model.User</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">JavaFX ToDo-приложение с SQLite, уведомлениями и летней темой</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classmodel_1_1_user.html','','classmodel_1_1_user-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс model.User</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Данные учетной записи пользователя.  
+ <a href="#details">Подробнее...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a5d56e52d182299a47d6bdcc845d37a6f" id="r_a5d56e52d182299a47d6bdcc845d37a6f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d56e52d182299a47d6bdcc845d37a6f">User</a> (String <a class="el" href="#ac8095c60997fb755ef0bf5ef8ab83c56">id</a>, String <a class="el" href="#a595ee1ee03ee6effd7dc702e5fcd0765">username</a>, String <a class="el" href="#af96870e803a7fbd7f94ad6f67b376320">email</a>)</td></tr>
+<tr class="memitem:a1b71749cfb57e2beb65f4f17ff967c28" id="r_a1b71749cfb57e2beb65f4f17ff967c28"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b71749cfb57e2beb65f4f17ff967c28">User</a> (String <a class="el" href="#ac8095c60997fb755ef0bf5ef8ab83c56">id</a>, String <a class="el" href="#a595ee1ee03ee6effd7dc702e5fcd0765">username</a>, String <a class="el" href="#af96870e803a7fbd7f94ad6f67b376320">email</a>, String <a class="el" href="#a24a164934e58312875e3d4c9e7003938">passwordHash</a>, String <a class="el" href="#a6a9c695b2e7f32b26022ea0785676a20">passwordSalt</a>, LocalDateTime <a class="el" href="#afd805917c015f20f7c8e1a37c72b4fb8">createdAt</a>, LocalDateTime <a class="el" href="#ae28747e99a338524b10795de91c945ed">updatedAt</a>, String <a class="el" href="#af49a1b8fc359ac837990c1d661babfc3">resetCode</a>, LocalDateTime <a class="el" href="#ac97f709d3e60c46efa674331225f8363">resetCodeExpiresAt</a>)</td></tr>
+<tr class="memitem:abd58b71654ebe63e1bee16a382e64fa8" id="r_abd58b71654ebe63e1bee16a382e64fa8"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd58b71654ebe63e1bee16a382e64fa8">getId</a> ()</td></tr>
+<tr class="memitem:a964ba13bb99d3bd7ab7c342a9c03bc46" id="r_a964ba13bb99d3bd7ab7c342a9c03bc46"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a964ba13bb99d3bd7ab7c342a9c03bc46">getUsername</a> ()</td></tr>
+<tr class="memitem:a6e21aef79f65d6b31cef1732a94b5f39" id="r_a6e21aef79f65d6b31cef1732a94b5f39"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e21aef79f65d6b31cef1732a94b5f39">getEmail</a> ()</td></tr>
+<tr class="memitem:ac8e7ad45a0401a253cb6517f2cba9319" id="r_ac8e7ad45a0401a253cb6517f2cba9319"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8e7ad45a0401a253cb6517f2cba9319">getPasswordHash</a> ()</td></tr>
+<tr class="memitem:a06f3cac0de7d8f2ea3f1d6f99d589088" id="r_a06f3cac0de7d8f2ea3f1d6f99d589088"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06f3cac0de7d8f2ea3f1d6f99d589088">getPasswordSalt</a> ()</td></tr>
+<tr class="memitem:a62608dbd6cc097b3f12b689e1c48258b" id="r_a62608dbd6cc097b3f12b689e1c48258b"><td class="memItemLeft" align="right" valign="top">LocalDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62608dbd6cc097b3f12b689e1c48258b">getCreatedAt</a> ()</td></tr>
+<tr class="memitem:ab0668d8eff83ce53ea074c707f58e204" id="r_ab0668d8eff83ce53ea074c707f58e204"><td class="memItemLeft" align="right" valign="top">LocalDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0668d8eff83ce53ea074c707f58e204">getUpdatedAt</a> ()</td></tr>
+<tr class="memitem:ac2c3edcf7b03bfb143c5999a6a932472" id="r_ac2c3edcf7b03bfb143c5999a6a932472"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2c3edcf7b03bfb143c5999a6a932472">getResetCode</a> ()</td></tr>
+<tr class="memitem:aa66aa30c479633f703963421b3d902c8" id="r_aa66aa30c479633f703963421b3d902c8"><td class="memItemLeft" align="right" valign="top">LocalDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa66aa30c479633f703963421b3d902c8">getResetCodeExpiresAt</a> ()</td></tr>
+<tr class="memitem:ad22e1df8acb20efdba9f9e254d80a931" id="r_ad22e1df8acb20efdba9f9e254d80a931"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad22e1df8acb20efdba9f9e254d80a931">hasEmail</a> ()</td></tr>
+<tr class="memitem:a5c00703eb7213e66634c2380420ded9d" id="r_a5c00703eb7213e66634c2380420ded9d"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c00703eb7213e66634c2380420ded9d">getDisplayName</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:ac8095c60997fb755ef0bf5ef8ab83c56" id="r_ac8095c60997fb755ef0bf5ef8ab83c56"><td class="memItemLeft" align="right" valign="top">final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8095c60997fb755ef0bf5ef8ab83c56">id</a></td></tr>
+<tr class="memitem:a595ee1ee03ee6effd7dc702e5fcd0765" id="r_a595ee1ee03ee6effd7dc702e5fcd0765"><td class="memItemLeft" align="right" valign="top">final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a595ee1ee03ee6effd7dc702e5fcd0765">username</a></td></tr>
+<tr class="memitem:af96870e803a7fbd7f94ad6f67b376320" id="r_af96870e803a7fbd7f94ad6f67b376320"><td class="memItemLeft" align="right" valign="top">final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af96870e803a7fbd7f94ad6f67b376320">email</a></td></tr>
+<tr class="memitem:a24a164934e58312875e3d4c9e7003938" id="r_a24a164934e58312875e3d4c9e7003938"><td class="memItemLeft" align="right" valign="top">final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24a164934e58312875e3d4c9e7003938">passwordHash</a></td></tr>
+<tr class="memitem:a6a9c695b2e7f32b26022ea0785676a20" id="r_a6a9c695b2e7f32b26022ea0785676a20"><td class="memItemLeft" align="right" valign="top">final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a9c695b2e7f32b26022ea0785676a20">passwordSalt</a></td></tr>
+<tr class="memitem:afd805917c015f20f7c8e1a37c72b4fb8" id="r_afd805917c015f20f7c8e1a37c72b4fb8"><td class="memItemLeft" align="right" valign="top">final LocalDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd805917c015f20f7c8e1a37c72b4fb8">createdAt</a></td></tr>
+<tr class="memitem:ae28747e99a338524b10795de91c945ed" id="r_ae28747e99a338524b10795de91c945ed"><td class="memItemLeft" align="right" valign="top">final LocalDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae28747e99a338524b10795de91c945ed">updatedAt</a></td></tr>
+<tr class="memitem:af49a1b8fc359ac837990c1d661babfc3" id="r_af49a1b8fc359ac837990c1d661babfc3"><td class="memItemLeft" align="right" valign="top">final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af49a1b8fc359ac837990c1d661babfc3">resetCode</a></td></tr>
+<tr class="memitem:ac97f709d3e60c46efa674331225f8363" id="r_ac97f709d3e60c46efa674331225f8363"><td class="memItemLeft" align="right" valign="top">final LocalDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac97f709d3e60c46efa674331225f8363">resetCodeExpiresAt</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Данные учетной записи пользователя. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_user_8java_source.html">User.java</a> строка <a class="el" href="_user_8java_source.html#l00008">8</a></p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="a5d56e52d182299a47d6bdcc845d37a6f" name="a5d56e52d182299a47d6bdcc845d37a6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d56e52d182299a47d6bdcc845d37a6f">&#9670;&#160;</a></span>User() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">model.User.User </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>username</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>email</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_user_8java_source.html">User.java</a> строка <a class="el" href="_user_8java_source.html#l00019">19</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_user_8java_source.html#l00011">email</a>, <a class="el" href="_user_8java_source.html#l00009">id</a> и <a class="el" href="_user_8java_source.html#l00010">username</a>.</p>
+
+</div>
+</div>
+<a id="a1b71749cfb57e2beb65f4f17ff967c28" name="a1b71749cfb57e2beb65f4f17ff967c28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b71749cfb57e2beb65f4f17ff967c28">&#9670;&#160;</a></span>User() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">model.User.User </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>username</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>email</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>passwordHash</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>passwordSalt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LocalDateTime</td>          <td class="paramname"><span class="paramname"><em>createdAt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LocalDateTime</td>          <td class="paramname"><span class="paramname"><em>updatedAt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>resetCode</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LocalDateTime</td>          <td class="paramname"><span class="paramname"><em>resetCodeExpiresAt</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_user_8java_source.html">User.java</a> строка <a class="el" href="_user_8java_source.html#l00023">23</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_user_8java_source.html#l00014">createdAt</a>, <a class="el" href="_user_8java_source.html#l00011">email</a>, <a class="el" href="_user_8java_source.html#l00009">id</a>, <a class="el" href="_user_8java_source.html#l00012">passwordHash</a>, <a class="el" href="_user_8java_source.html#l00013">passwordSalt</a>, <a class="el" href="_user_8java_source.html#l00016">resetCode</a>, <a class="el" href="_user_8java_source.html#l00017">resetCodeExpiresAt</a>, <a class="el" href="_user_8java_source.html#l00015">updatedAt</a> и <a class="el" href="_user_8java_source.html#l00010">username</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="a62608dbd6cc097b3f12b689e1c48258b" name="a62608dbd6cc097b3f12b689e1c48258b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62608dbd6cc097b3f12b689e1c48258b">&#9670;&#160;</a></span>getCreatedAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LocalDateTime model.User.getCreatedAt </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_user_8java_source.html">User.java</a> строка <a class="el" href="_user_8java_source.html#l00065">65</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_user_8java_source.html#l00014">createdAt</a>.</p>
+
+</div>
+</div>
+<a id="a5c00703eb7213e66634c2380420ded9d" name="a5c00703eb7213e66634c2380420ded9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c00703eb7213e66634c2380420ded9d">&#9670;&#160;</a></span>getDisplayName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String model.User.getDisplayName </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_user_8java_source.html">User.java</a> строка <a class="el" href="_user_8java_source.html#l00085">85</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_user_8java_source.html#l00010">username</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_main_controller_8java_source.html#l01097">view.MainController.updateCurrentUserBadge()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_user_a5c00703eb7213e66634c2380420ded9d_icgraph.png" border="0" usemap="#aclassmodel_1_1_user_a5c00703eb7213e66634c2380420ded9d_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassmodel_1_1_user_a5c00703eb7213e66634c2380420ded9d_icgraph" id="aclassmodel_1_1_user_a5c00703eb7213e66634c2380420ded9d_icgraph">
+<area shape="rect" title=" " alt="" coords="1393,123,1582,149"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ab9f884e05c7d36ebd75115f71f5e6da0" title=" " alt="" coords="1169,116,1345,156"/>
+<area shape="poly" title=" " alt="" coords="1375,137,1346,139,1345,133,1380,135"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a24ac9b270355d80bd918408cb60c7a50" title=" " alt="" coords="699,116,875,156"/>
+<area shape="poly" title=" " alt="" coords="1151,137,876,139,875,133,1156,135"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,275,190,301"/>
+<area shape="poly" title=" " alt="" coords="1196,109,1118,79,1017,45,904,19,846,11,788,8,541,8,504,10,467,17,396,42,329,78,268,121,214,167,169,211,112,276,107,273,165,207,210,163,264,117,326,74,393,37,466,12,503,5,541,3,788,3,846,6,905,14,1019,40,1120,74,1201,108"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a2ae68644e5912e2c7aff36a412b445ba" title=" " alt="" coords="944,504,1121,544"/>
+<area shape="poly" title=" " alt="" coords="1239,169,1048,505,1044,501,1234,172"/>
+<area shape="poly" title=" " alt="" coords="1025,487,1014,421,991,335,974,290,953,246,926,206,894,170,875,156,875,151,897,166,930,202,957,244,979,288,997,333,1019,420,1030,489"/>
+<area shape="poly" title=" " alt="" coords="1002,491,955,448,926,426,895,409,832,385,778,372,728,366,681,365,581,368,522,366,455,359,296,331,163,304,161,299,297,326,455,353,523,361,581,363,681,360,728,361,779,367,834,380,897,404,929,422,959,444,1007,492"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4bb1c177443c7d66b3c8e9687e3c6acb" title=" " alt="" coords="701,533,873,574"/>
+<area shape="poly" title=" " alt="" coords="925,537,874,546,873,540,931,536"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a35f2a1470868c1e281d8750ab39baa5f" title=" " alt="" coords="238,476,407,516"/>
+<area shape="poly" title=" " alt="" coords="1033,558,1028,637,1021,685,1009,736,992,786,968,835,937,878,897,914,869,932,842,943,816,948,791,948,739,937,677,914,642,899,608,880,546,832,491,777,443,717,403,657,371,601,332,520,333,514,375,599,407,654,447,714,495,773,549,828,611,875,644,894,679,910,740,932,792,943,816,943,840,938,866,927,894,910,933,875,963,832,987,784,1004,734,1015,684,1023,637,1029,562"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af0a082800f9000e19567bb5159af6cc2" title=" " alt="" coords="701,598,873,639"/>
+<area shape="poly" title=" " alt="" coords="977,550,897,588,861,600,859,595,895,583,972,552"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aafdc8cce09c744e950691a2c00408f27" title=" " alt="" coords="678,483,896,509"/>
+<area shape="poly" title=" " alt="" coords="925,513,897,511,896,506,931,512"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a7b2629529c3951a605585504047aca21" title=" " alt="" coords="699,664,875,704"/>
+<area shape="poly" title=" " alt="" coords="1007,555,959,607,929,631,897,653,871,666,869,661,894,648,926,627,955,603,1002,557"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6343e648a870a706a14bc46aa9b43b4c" title=" " alt="" coords="699,729,875,770"/>
+<area shape="poly" title=" " alt="" coords="1018,556,998,596,971,639,938,682,897,718,875,731,873,726,894,714,934,678,967,636,994,594,1014,560"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a1eb59033ea2ca2caf351d917d1511cf1" title=" " alt="" coords="699,794,875,835"/>
+<area shape="poly" title=" " alt="" coords="1024,557,1008,610,982,670,945,731,923,759,897,783,876,797,874,792,894,779,919,755,941,728,977,668,1003,608,1020,561"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a2e6cee3bdcb7d5ef5f7d3227b9543601" title=" " alt="" coords="699,860,875,900"/>
+<area shape="poly" title=" " alt="" coords="1028,558,1016,622,991,700,974,740,953,780,928,816,897,849,876,863,874,858,894,845,923,813,949,777,969,738,986,698,1010,621,1024,562"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a4766825edbb089c262ba6ee17ea273f8" title=" " alt="" coords="704,418,870,459"/>
+<area shape="poly" title=" " alt="" coords="964,498,895,473,862,462,861,457,897,468,970,497"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ad561284d1c935c94e1fe847c6221dfd5" title=" " alt="" coords="685,180,889,206"/>
+<area shape="poly" title=" " alt="" coords="1013,490,964,399,931,345,894,294,847,245,806,209,806,204,851,241,898,290,935,342,969,396,1018,491"/>
+<area shape="rect" href="classview_1_1_main_controller.html#adcfc31adcb42e729fab4174830d348fb" title=" " alt="" coords="701,304,873,344"/>
+<area shape="poly" title=" " alt="" coords="1008,490,961,428,929,394,894,365,863,348,862,342,897,360,933,390,965,424,1013,491"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a157c635caf5c9cc208923226f28274e0" title=" " alt="" coords="460,534,625,575"/>
+<area shape="poly" title=" " alt="" coords="683,555,626,557,625,552,688,553"/>
+<area shape="poly" title=" " alt="" coords="447,531,402,520,401,514,452,529"/>
+<area shape="poly" title=" " alt="" coords="285,466,113,304,113,299,290,464"/>
+<area shape="poly" title=" " alt="" coords="689,594,623,578,623,573,694,593"/>
+<area shape="rect" href="classview_1_1_main_controller.html#af46f4eb82ac70e509c19caf615643d3d" title=" " alt="" coords="455,600,630,640"/>
+<area shape="poly" title=" " alt="" coords="683,620,631,622,630,617,688,619"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a97dc6cade09436222a2a9a4876b94b78" title=" " alt="" coords="455,665,630,706"/>
+<area shape="poly" title=" " alt="" coords="693,645,621,667,619,662,698,643"/>
+<area shape="poly" title=" " alt="" coords="711,514,679,524,626,537,624,532,678,519,716,512"/>
+<area shape="poly" title=" " alt="" coords="688,466,680,473,665,485,656,497,647,510,632,524,609,536,606,531,629,519,643,507,652,494,661,481,677,468,692,463"/>
+<area shape="poly" title=" " alt="" coords="686,439,576,446,455,460,385,477,382,473,455,455,576,441,691,437"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afdc5d6820d84e41d7d0f86e633eba6a5" title=" " alt="" coords="455,469,630,510"/>
+<area shape="poly" title=" " alt="" coords="687,460,632,474,630,469,692,458"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a37244d4fc30d349270d91d0a773e805e" title=" " alt="" coords="458,108,627,148"/>
+<area shape="poly" title=" " alt="" coords="709,177,678,171,612,151,611,146,679,165,714,175"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a6559431f69fcf69cfd6d91229df10914" title=" " alt="" coords="458,173,627,214"/>
+<area shape="poly" title=" " alt="" coords="667,195,629,196,627,191,672,192"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a9d857d9734592ea7ec42050493b3a053" title=" " alt="" coords="458,42,627,83"/>
+<area shape="poly" title=" " alt="" coords="684,174,677,170,660,152,651,134,644,116,629,98,611,86,610,81,632,94,648,113,656,132,664,149,680,166,690,173"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae16c7e665a88192e87fb07fff3dd7ad5" title=" " alt="" coords="238,173,407,214"/>
+<area shape="poly" title=" " alt="" coords="456,155,395,174,392,170,459,151"/>
+<area shape="poly" title=" " alt="" coords="257,222,132,277,129,273,260,218"/>
+<area shape="poly" title=" " alt="" coords="440,195,409,196,406,191,445,192"/>
+<area shape="poly" title=" " alt="" coords="465,92,456,98,397,137,350,174,345,171,394,132,454,94,469,88"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae8c9426ed1d46eb4f182a4db737d13c1" title=" " alt="" coords="455,304,630,344"/>
+<area shape="poly" title=" " alt="" coords="683,325,632,327,630,321,688,323"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ae0c75dcb2f1ff8c7d83a8c1d8f4e9637" title=" " alt="" coords="458,238,627,279"/>
+<area shape="poly" title=" " alt="" coords="691,300,622,282,621,277,696,298"/>
+<area shape="poly" title=" " alt="" coords="455,235,394,217,393,212,460,232"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6e21aef79f65d6b31cef1732a94b5f39" name="a6e21aef79f65d6b31cef1732a94b5f39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e21aef79f65d6b31cef1732a94b5f39">&#9670;&#160;</a></span>getEmail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String model.User.getEmail </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_user_8java_source.html">User.java</a> строка <a class="el" href="_user_8java_source.html#l00053">53</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_user_8java_source.html#l00011">email</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_auth_service_8java_source.html#l00092">util.AuthService.requestPasswordReset()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_user_a6e21aef79f65d6b31cef1732a94b5f39_icgraph.png" border="0" usemap="#aclassmodel_1_1_user_a6e21aef79f65d6b31cef1732a94b5f39_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassmodel_1_1_user_a6e21aef79f65d6b31cef1732a94b5f39_icgraph" id="aclassmodel_1_1_user_a6e21aef79f65d6b31cef1732a94b5f39_icgraph">
+<area shape="rect" title=" " alt="" coords="214,13,356,38"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a0a731f1763f7e69fdb2d259d25454a51" title=" " alt="" coords="5,5,166,46"/>
+<area shape="poly" title=" " alt="" coords="195,26,166,28,166,23,200,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abd58b71654ebe63e1bee16a382e64fa8" name="abd58b71654ebe63e1bee16a382e64fa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd58b71654ebe63e1bee16a382e64fa8">&#9670;&#160;</a></span>getId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String model.User.getId </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_user_8java_source.html">User.java</a> строка <a class="el" href="_user_8java_source.html#l00045">45</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_user_8java_source.html#l00009">id</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_auth_service_8java_source.html#l00092">util.AuthService.requestPasswordReset()</a> и <a class="el" href="_auth_service_8java_source.html#l00142">util.AuthService.resetPassword()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_user_abd58b71654ebe63e1bee16a382e64fa8_icgraph.png" border="0" usemap="#aclassmodel_1_1_user_abd58b71654ebe63e1bee16a382e64fa8_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassmodel_1_1_user_abd58b71654ebe63e1bee16a382e64fa8_icgraph" id="aclassmodel_1_1_user_abd58b71654ebe63e1bee16a382e64fa8_icgraph">
+<area shape="rect" title=" " alt="" coords="258,42,378,68"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a0a731f1763f7e69fdb2d259d25454a51" title=" " alt="" coords="27,5,188,46"/>
+<area shape="poly" title=" " alt="" coords="240,45,188,40,188,34,245,44"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a06a3fd96d0a20f45db5be40b24623346" title=" " alt="" coords="5,70,210,96"/>
+<area shape="poly" title=" " alt="" coords="245,65,209,72,208,67,240,65"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac8e7ad45a0401a253cb6517f2cba9319" name="ac8e7ad45a0401a253cb6517f2cba9319"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8e7ad45a0401a253cb6517f2cba9319">&#9670;&#160;</a></span>getPasswordHash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String model.User.getPasswordHash </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_user_8java_source.html">User.java</a> строка <a class="el" href="_user_8java_source.html#l00057">57</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_user_8java_source.html#l00012">passwordHash</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_auth_service_8java_source.html#l00054">util.AuthService.login()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_user_ac8e7ad45a0401a253cb6517f2cba9319_icgraph.png" border="0" usemap="#aclassmodel_1_1_user_ac8e7ad45a0401a253cb6517f2cba9319_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassmodel_1_1_user_ac8e7ad45a0401a253cb6517f2cba9319_icgraph" id="aclassmodel_1_1_user_ac8e7ad45a0401a253cb6517f2cba9319_icgraph">
+<area shape="rect" title=" " alt="" coords="198,5,396,31"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a2981a8f11aa3eea66cc1535be59ccd4f" title=" " alt="" coords="5,5,150,31"/>
+<area shape="poly" title=" " alt="" coords="179,18,150,21,150,16,185,18"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a06f3cac0de7d8f2ea3f1d6f99d589088" name="a06f3cac0de7d8f2ea3f1d6f99d589088"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06f3cac0de7d8f2ea3f1d6f99d589088">&#9670;&#160;</a></span>getPasswordSalt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String model.User.getPasswordSalt </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_user_8java_source.html">User.java</a> строка <a class="el" href="_user_8java_source.html#l00061">61</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_user_8java_source.html#l00013">passwordSalt</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_auth_service_8java_source.html#l00054">util.AuthService.login()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_user_a06f3cac0de7d8f2ea3f1d6f99d589088_icgraph.png" border="0" usemap="#aclassmodel_1_1_user_a06f3cac0de7d8f2ea3f1d6f99d589088_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassmodel_1_1_user_a06f3cac0de7d8f2ea3f1d6f99d589088_icgraph" id="aclassmodel_1_1_user_a06f3cac0de7d8f2ea3f1d6f99d589088_icgraph">
+<area shape="rect" title=" " alt="" coords="198,5,388,31"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a2981a8f11aa3eea66cc1535be59ccd4f" title=" " alt="" coords="5,5,150,31"/>
+<area shape="poly" title=" " alt="" coords="180,18,150,21,150,16,185,18"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac2c3edcf7b03bfb143c5999a6a932472" name="ac2c3edcf7b03bfb143c5999a6a932472"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2c3edcf7b03bfb143c5999a6a932472">&#9670;&#160;</a></span>getResetCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String model.User.getResetCode </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_user_8java_source.html">User.java</a> строка <a class="el" href="_user_8java_source.html#l00073">73</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_user_8java_source.html#l00016">resetCode</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_auth_service_8java_source.html#l00142">util.AuthService.resetPassword()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_user_ac2c3edcf7b03bfb143c5999a6a932472_icgraph.png" border="0" usemap="#aclassmodel_1_1_user_ac2c3edcf7b03bfb143c5999a6a932472_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassmodel_1_1_user_ac2c3edcf7b03bfb143c5999a6a932472_icgraph" id="aclassmodel_1_1_user_ac2c3edcf7b03bfb143c5999a6a932472_icgraph">
+<area shape="rect" title=" " alt="" coords="258,5,433,31"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a06a3fd96d0a20f45db5be40b24623346" title=" " alt="" coords="5,5,210,31"/>
+<area shape="poly" title=" " alt="" coords="239,18,210,21,210,16,244,18"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa66aa30c479633f703963421b3d902c8" name="aa66aa30c479633f703963421b3d902c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa66aa30c479633f703963421b3d902c8">&#9670;&#160;</a></span>getResetCodeExpiresAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LocalDateTime model.User.getResetCodeExpiresAt </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_user_8java_source.html">User.java</a> строка <a class="el" href="_user_8java_source.html#l00077">77</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_user_8java_source.html#l00017">resetCodeExpiresAt</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_auth_service_8java_source.html#l00142">util.AuthService.resetPassword()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_user_aa66aa30c479633f703963421b3d902c8_icgraph.png" border="0" usemap="#aclassmodel_1_1_user_aa66aa30c479633f703963421b3d902c8_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassmodel_1_1_user_aa66aa30c479633f703963421b3d902c8_icgraph" id="aclassmodel_1_1_user_aa66aa30c479633f703963421b3d902c8_icgraph">
+<area shape="rect" title=" " alt="" coords="258,5,490,31"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a06a3fd96d0a20f45db5be40b24623346" title=" " alt="" coords="5,5,210,31"/>
+<area shape="poly" title=" " alt="" coords="239,18,210,21,210,16,245,18"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab0668d8eff83ce53ea074c707f58e204" name="ab0668d8eff83ce53ea074c707f58e204"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0668d8eff83ce53ea074c707f58e204">&#9670;&#160;</a></span>getUpdatedAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LocalDateTime model.User.getUpdatedAt </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_user_8java_source.html">User.java</a> строка <a class="el" href="_user_8java_source.html#l00069">69</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_user_8java_source.html#l00015">updatedAt</a>.</p>
+
+</div>
+</div>
+<a id="a964ba13bb99d3bd7ab7c342a9c03bc46" name="a964ba13bb99d3bd7ab7c342a9c03bc46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a964ba13bb99d3bd7ab7c342a9c03bc46">&#9670;&#160;</a></span>getUsername()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String model.User.getUsername </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_user_8java_source.html">User.java</a> строка <a class="el" href="_user_8java_source.html#l00049">49</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_user_8java_source.html#l00010">username</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_auth_service_8java_source.html#l00092">util.AuthService.requestPasswordReset()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_user_a964ba13bb99d3bd7ab7c342a9c03bc46_icgraph.png" border="0" usemap="#aclassmodel_1_1_user_a964ba13bb99d3bd7ab7c342a9c03bc46_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassmodel_1_1_user_a964ba13bb99d3bd7ab7c342a9c03bc46_icgraph" id="aclassmodel_1_1_user_a964ba13bb99d3bd7ab7c342a9c03bc46_icgraph">
+<area shape="rect" title=" " alt="" coords="214,13,383,38"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a0a731f1763f7e69fdb2d259d25454a51" title=" " alt="" coords="5,5,166,46"/>
+<area shape="poly" title=" " alt="" coords="196,26,166,28,166,23,201,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad22e1df8acb20efdba9f9e254d80a931" name="ad22e1df8acb20efdba9f9e254d80a931"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad22e1df8acb20efdba9f9e254d80a931">&#9670;&#160;</a></span>hasEmail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean model.User.hasEmail </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_user_8java_source.html">User.java</a> строка <a class="el" href="_user_8java_source.html#l00081">81</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_user_8java_source.html#l00011">email</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_auth_service_8java_source.html#l00092">util.AuthService.requestPasswordReset()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmodel_1_1_user_ad22e1df8acb20efdba9f9e254d80a931_icgraph.png" border="0" usemap="#aclassmodel_1_1_user_ad22e1df8acb20efdba9f9e254d80a931_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassmodel_1_1_user_ad22e1df8acb20efdba9f9e254d80a931_icgraph" id="aclassmodel_1_1_user_ad22e1df8acb20efdba9f9e254d80a931_icgraph">
+<area shape="rect" title=" " alt="" coords="214,13,359,38"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a0a731f1763f7e69fdb2d259d25454a51" title=" " alt="" coords="5,5,166,46"/>
+<area shape="poly" title=" " alt="" coords="195,26,166,28,166,23,201,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="afd805917c015f20f7c8e1a37c72b4fb8" name="afd805917c015f20f7c8e1a37c72b4fb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd805917c015f20f7c8e1a37c72b4fb8">&#9670;&#160;</a></span>createdAt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final LocalDateTime model.User.createdAt</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_user_8java_source.html">User.java</a> строка <a class="el" href="_user_8java_source.html#l00014">14</a></p>
+
+<p class="reference">Используется в <a class="el" href="_user_8java_source.html#l00065">getCreatedAt()</a> и <a class="el" href="_user_8java_source.html#l00023">User()</a>.</p>
+
+</div>
+</div>
+<a id="af96870e803a7fbd7f94ad6f67b376320" name="af96870e803a7fbd7f94ad6f67b376320"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af96870e803a7fbd7f94ad6f67b376320">&#9670;&#160;</a></span>email</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String model.User.email</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_user_8java_source.html">User.java</a> строка <a class="el" href="_user_8java_source.html#l00011">11</a></p>
+
+<p class="reference">Используется в <a class="el" href="_user_8java_source.html#l00053">getEmail()</a>, <a class="el" href="_user_8java_source.html#l00081">hasEmail()</a>, <a class="el" href="_user_8java_source.html#l00019">User()</a> и <a class="el" href="_user_8java_source.html#l00023">User()</a>.</p>
+
+</div>
+</div>
+<a id="ac8095c60997fb755ef0bf5ef8ab83c56" name="ac8095c60997fb755ef0bf5ef8ab83c56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8095c60997fb755ef0bf5ef8ab83c56">&#9670;&#160;</a></span>id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String model.User.id</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_user_8java_source.html">User.java</a> строка <a class="el" href="_user_8java_source.html#l00009">9</a></p>
+
+<p class="reference">Используется в <a class="el" href="_user_8java_source.html#l00045">getId()</a>, <a class="el" href="_user_8java_source.html#l00019">User()</a> и <a class="el" href="_user_8java_source.html#l00023">User()</a>.</p>
+
+</div>
+</div>
+<a id="a24a164934e58312875e3d4c9e7003938" name="a24a164934e58312875e3d4c9e7003938"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24a164934e58312875e3d4c9e7003938">&#9670;&#160;</a></span>passwordHash</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String model.User.passwordHash</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_user_8java_source.html">User.java</a> строка <a class="el" href="_user_8java_source.html#l00012">12</a></p>
+
+<p class="reference">Используется в <a class="el" href="_user_8java_source.html#l00057">getPasswordHash()</a> и <a class="el" href="_user_8java_source.html#l00023">User()</a>.</p>
+
+</div>
+</div>
+<a id="a6a9c695b2e7f32b26022ea0785676a20" name="a6a9c695b2e7f32b26022ea0785676a20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a9c695b2e7f32b26022ea0785676a20">&#9670;&#160;</a></span>passwordSalt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String model.User.passwordSalt</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_user_8java_source.html">User.java</a> строка <a class="el" href="_user_8java_source.html#l00013">13</a></p>
+
+<p class="reference">Используется в <a class="el" href="_user_8java_source.html#l00061">getPasswordSalt()</a> и <a class="el" href="_user_8java_source.html#l00023">User()</a>.</p>
+
+</div>
+</div>
+<a id="af49a1b8fc359ac837990c1d661babfc3" name="af49a1b8fc359ac837990c1d661babfc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af49a1b8fc359ac837990c1d661babfc3">&#9670;&#160;</a></span>resetCode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String model.User.resetCode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_user_8java_source.html">User.java</a> строка <a class="el" href="_user_8java_source.html#l00016">16</a></p>
+
+<p class="reference">Используется в <a class="el" href="_user_8java_source.html#l00073">getResetCode()</a> и <a class="el" href="_user_8java_source.html#l00023">User()</a>.</p>
+
+</div>
+</div>
+<a id="ac97f709d3e60c46efa674331225f8363" name="ac97f709d3e60c46efa674331225f8363"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac97f709d3e60c46efa674331225f8363">&#9670;&#160;</a></span>resetCodeExpiresAt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final LocalDateTime model.User.resetCodeExpiresAt</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_user_8java_source.html">User.java</a> строка <a class="el" href="_user_8java_source.html#l00017">17</a></p>
+
+<p class="reference">Используется в <a class="el" href="_user_8java_source.html#l00077">getResetCodeExpiresAt()</a> и <a class="el" href="_user_8java_source.html#l00023">User()</a>.</p>
+
+</div>
+</div>
+<a id="ae28747e99a338524b10795de91c945ed" name="ae28747e99a338524b10795de91c945ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae28747e99a338524b10795de91c945ed">&#9670;&#160;</a></span>updatedAt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final LocalDateTime model.User.updatedAt</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_user_8java_source.html">User.java</a> строка <a class="el" href="_user_8java_source.html#l00015">15</a></p>
+
+<p class="reference">Используется в <a class="el" href="_user_8java_source.html#l00069">getUpdatedAt()</a> и <a class="el" href="_user_8java_source.html#l00023">User()</a>.</p>
+
+</div>
+</div>
+<a id="a595ee1ee03ee6effd7dc702e5fcd0765" name="a595ee1ee03ee6effd7dc702e5fcd0765"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a595ee1ee03ee6effd7dc702e5fcd0765">&#9670;&#160;</a></span>username</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String model.User.username</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_user_8java_source.html">User.java</a> строка <a class="el" href="_user_8java_source.html#l00010">10</a></p>
+
+<p class="reference">Используется в <a class="el" href="_user_8java_source.html#l00085">getDisplayName()</a>, <a class="el" href="_user_8java_source.html#l00049">getUsername()</a>, <a class="el" href="_user_8java_source.html#l00019">User()</a> и <a class="el" href="_user_8java_source.html#l00023">User()</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>src/model/<a class="el" href="_user_8java_source.html">User.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacemodel.html">model</a></li><li class="navelem"><a href="classmodel_1_1_user.html">User</a></li>
+    <li class="footer">Документация по Умный планировщик задач (To-Do List). Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

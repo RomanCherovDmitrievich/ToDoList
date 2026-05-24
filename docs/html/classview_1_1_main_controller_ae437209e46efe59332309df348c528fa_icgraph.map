@@ -1,0 +1,12 @@
+<map id="view.MainController.showRegistrationDialog" name="view.MainController.showRegistrationDialog">
+<area shape="rect" id="Node000001" title=" " alt="" coords="678,35,847,75"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_main_controller.html#ab26820ca26b9811f75812a5ffc1f1a7f" title=" " alt="" coords="238,35,414,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="660,52,630,54,462,54,415,55,414,49,462,48,630,48,665,52"/>
+<area shape="rect" id="Node000005" href="$classview_1_1_main_controller.html#a94181ba884bb77b8c3e408b0c54fcb07" title=" " alt="" coords="462,63,630,103"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="666,68,631,75,631,69,660,68"/>
+<area shape="rect" id="Node000003" href="$classview_1_1_main_controller.html#a24ac9b270355d80bd918408cb60c7a50" title=" " alt="" coords="10,5,185,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="220,42,186,40,185,34,225,41"/>
+<area shape="rect" id="Node000004" href="$classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,70,190,96"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="220,68,191,74,190,69,225,67"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="444,70,414,69,415,64,450,70"/>
+</map>

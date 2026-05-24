@@ -518,6 +518,7 @@ public class JsonUtil {
                 parseDateTime(fields.get("createdAt"))
             );
             String sortIndex = fields.getOrDefault("sortIndex", "0");
+            String ownerUserId = fields.getOrDefault("ownerUserId", "");
             String recurrenceRule = fields.getOrDefault("recurrenceRule", "NONE");
             String reminderOffset = fields.getOrDefault("reminderOffsetMinutes", "0");
             String recurrenceEnd = fields.getOrDefault("recurrenceEnd", "");
@@ -526,6 +527,7 @@ public class JsonUtil {
                 task.setSortIndex(Integer.parseInt(sortIndex));
             } catch (NumberFormatException ignored) {
             }
+            task.setOwnerUserId(ownerUserId);
             task.setRecurrenceRule(recurrenceRule);
             try {
                 task.setReminderOffsetMinutes(Integer.parseInt(reminderOffset));

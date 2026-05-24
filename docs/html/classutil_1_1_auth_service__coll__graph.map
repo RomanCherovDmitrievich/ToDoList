@@ -1,0 +1,20 @@
+<map id="util.AuthService" name="util.AuthService">
+<area shape="rect" id="Node000001" title="Сервис регистрации, входа и восстановления доступа." alt="" coords="237,392,350,418"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_auth_service.html" title="Сервис регистрации, входа и восстановления доступа." alt="" coords="348,295,461,321"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="382,330,309,394,307,389,377,332"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="477,299,488,308,480,317,462,320,461,314,477,312,483,308,476,304"/>
+<area shape="rect" id="Node000003" href="$classrepository_1_1_database_manager.html" title="SQLite DAO для задач и связанных таблиц." alt="" coords="15,199,202,224"/>
+<area shape="poly" id="edge9_Node000001_Node000003" title=" " alt="" coords="120,236,144,278,174,319,224,360,273,392,267,391,221,365,171,323,139,280,119,241"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="161,227,369,293,365,297,161,232"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="217,203,228,211,220,219,203,222,201,217,218,214,223,212,217,208"/>
+<area shape="rect" id="Node000004" href="$classrepository_1_1_database_config.html" title="Настройки подключения к БД." alt="" coords="21,102,196,128"/>
+<area shape="poly" id="edge5_Node000003_Node000004" title=" " alt="" coords="109,140,111,198,106,198,108,145"/>
+<area shape="rect" id="Node000005" href="$enumrepository_1_1_database_config_1_1_type.html" title=" " alt="" coords="5,5,212,31"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="109,44,111,102,106,101,108,49"/>
+<area shape="rect" id="Node000006" href="$classutil_1_1_email_notifier.html" title=" " alt="" coords="315,199,432,224"/>
+<area shape="poly" id="edge10_Node000001_Node000006" title=" " alt="" coords="331,230,289,260,272,277,258,296,253,321,259,347,272,371,286,393,281,391,267,374,254,349,248,322,253,294,268,273,286,255,326,233"/>
+<area shape="poly" id="edge7_Node000002_Node000006" title=" " alt="" coords="376,238,383,270,397,296,392,294,378,272,373,242"/>
+<area shape="rect" id="Node000007" href="$classmodel_1_1_user.html" title="Данные учетной записи пользователя." alt="" coords="496,199,585,224"/>
+<area shape="poly" id="edge11_Node000001_Node000007" title=" " alt="" coords="565,233,574,247,579,269,578,288,570,305,556,323,534,342,509,358,455,381,400,396,351,403,351,398,399,391,453,376,506,353,530,338,552,319,566,303,573,287,574,270,569,249,563,238"/>
+<area shape="poly" id="edge8_Node000002_Node000007" title=" " alt="" coords="516,233,463,274,426,297,424,292,460,269,511,235"/>
+</map>

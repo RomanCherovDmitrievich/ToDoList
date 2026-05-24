@@ -29,7 +29,6 @@ public class MainApp extends Application {
     public static void main(String[] args) {
         try {
             Class.forName("javafx.application.Application");
-            Class.forName("org.sqlite.JDBC");
         } catch (ClassNotFoundException e) {
             System.err.println("Missing dependency: " + e.getMessage());
             System.exit(1);

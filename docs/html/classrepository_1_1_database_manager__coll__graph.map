@@ -1,6 +1,11 @@
 <map id="repository.DatabaseManager" name="repository.DatabaseManager">
-<area shape="rect" id="Node000001" title="SQLite DAO для задач и связанных таблиц." alt="" coords="5,102,192,128"/>
-<area shape="rect" id="Node000002" href="$classrepository_1_1_database_manager.html" title="SQLite DAO для задач и связанных таблиц." alt="" coords="5,5,192,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,45,101,102,96,101,96,48"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="207,10,218,18,210,26,193,29,191,24,208,21,213,18,207,15"/>
+<area shape="rect" id="Node000001" title="SQLite DAO для задач и связанных таблиц." alt="" coords="15,295,202,321"/>
+<area shape="rect" id="Node000002" href="$classrepository_1_1_database_manager.html" title="SQLite DAO для задач и связанных таблиц." alt="" coords="154,199,340,224"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="220,234,128,297,125,292,215,233"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="356,203,367,211,359,219,342,222,340,217,357,214,362,212,355,208"/>
+<area shape="rect" id="Node000003" href="$classrepository_1_1_database_config.html" title="Настройки подключения к БД." alt="" coords="21,102,196,128"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="106,140,101,199,103,252,109,296,104,294,98,253,96,199,103,145"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="139,134,232,197,227,199,138,139"/>
+<area shape="rect" id="Node000004" href="$enumrepository_1_1_database_config_1_1_type.html" title=" " alt="" coords="5,5,212,31"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="109,44,111,102,106,101,108,49"/>
 </map>

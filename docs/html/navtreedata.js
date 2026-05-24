@@ -30,7 +30,8 @@ var NAVTREE =
       [ "Обзор", "database_schema_page.html#database_overview", null ],
       [ "Таблицы", "database_schema_page.html#database_tables", null ],
       [ "Индексы", "database_schema_page.html#database_indexes", null ],
-      [ "Где посмотреть SQL", "database_schema_page.html#database_file", null ]
+      [ "Где посмотреть SQL", "database_schema_page.html#database_file", null ],
+      [ "Проверка соединения", "database_schema_page.html#database_cli", null ]
     ] ],
     [ "Ошибки", "bug.html", null ],
     [ "Пакеты", "namespaces.html", [
@@ -43,7 +44,7 @@ var NAVTREE =
       [ "Члены классов", "functions.html", [
         [ "Указатель", "functions.html", "functions_dup" ],
         [ "Функции", "functions_func.html", "functions_func" ],
-        [ "Переменные", "functions_vars.html", null ]
+        [ "Переменные", "functions_vars.html", "functions_vars" ]
       ] ]
     ] ],
     [ "Файлы", "files.html", [
@@ -56,11 +57,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "18_100-example.html",
-"classmodel_1_1_task_manager.html#a75d8d9d2268f707974e22863ff7ed376",
-"classutil_1_1_notification_service.html",
-"classview_1_1_main_controller.html#a6bf5b38ee16bd6ca7b2f345072e46e7c",
-"classviewmodel_1_1_task_view_model.html#a1406520ea09048f9fdbeeaa66056ff84",
-"hierarchy.html"
+"classmodel_1_1_task_manager.html#a4cc0a5ae51c57b876d78ce9a7e03f61c",
+"classrepository_1_1_database_manager.html#a6cb10a041d036be47596127942959f83",
+"classutil_1_1_json_util.html#aaca9aa25da0edb1a143c540d0c618421",
+"classview_1_1_main_controller.html#a2ae68644e5912e2c7aff36a412b445ba",
+"classview_1_1_main_controller.html#aed2ab41b31aa09baf945a3247142ab43",
+"enummodel_1_1_category.html#a182e27a8be76c55bf622158977f2b5a0"
 ];
 
 var SYNCONMSG = 'нажмите на выключить для синхронизации панелей';

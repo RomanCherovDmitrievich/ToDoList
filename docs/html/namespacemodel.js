@@ -4,5 +4,6 @@ var namespacemodel =
     [ "Priority", "enummodel_1_1_priority.html", "enummodel_1_1_priority" ],
     [ "Tag", "classmodel_1_1_tag.html", "classmodel_1_1_tag" ],
     [ "Task", "classmodel_1_1_task.html", "classmodel_1_1_task" ],
-    [ "TaskManager", "classmodel_1_1_task_manager.html", "classmodel_1_1_task_manager" ]
+    [ "TaskManager", "classmodel_1_1_task_manager.html", "classmodel_1_1_task_manager" ],
+    [ "User", "classmodel_1_1_user.html", "classmodel_1_1_user" ]
 ];

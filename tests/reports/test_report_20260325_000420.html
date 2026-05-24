@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Report - ToDo List</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 32px; color: #1f2937; background: #f8fafc; }
+        .header { background: #0f766e; color: white; padding: 24px; border-radius: 12px; }
+        .stats { display: flex; gap: 12px; margin: 20px 0; flex-wrap: wrap; }
+        .card { background: white; border-radius: 12px; padding: 16px; min-width: 150px; box-shadow: 0 4px 18px rgba(15, 23, 42, 0.08); }
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 18px rgba(15, 23, 42, 0.08); }
+        th, td { padding: 12px; border-bottom: 1px solid #e5e7eb; text-align: left; vertical-align: top; }
+        th { background: #f1f5f9; }
+        .status { display: inline-block; padding: 4px 10px; border-radius: 999px; font-weight: bold; }
+        .passed { background: #dcfce7; color: #166534; }
+        .failed, .error { background: #fee2e2; color: #991b1b; }
+        .skipped { background: #fef3c7; color: #92400e; }
+        pre { white-space: pre-wrap; margin: 0; font-family: Menlo, monospace; }
+        .logs { margin-top: 24px; background: white; border-radius: 12px; padding: 16px; box-shadow: 0 4px 18px rgba(15, 23, 42, 0.08); }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Отчет по тестам ToDo List</h1>
+        <p>Сформирован: 2026-03-25 00:04:21</p>
+    </div>
+    <div class="stats">
+        <div class="card"><strong>Всего тестов</strong><div>126</div></div>
+        <div class="card"><strong>Успешно</strong><div>126</div></div>
+        <div class="card"><strong>Ошибки</strong><div>0</div></div>
+        <div class="card"><strong>Пропущено</strong><div>0</div></div>
+        <div class="card"><strong>Успешность</strong><div>100%</div></div>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Тест</th>
+                <th>Описание</th>
+                <th>Результат</th>
+                <th>Время, с</th>
+                <th>Причина ошибки</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+    <td>unit.util.AudioManagerTest</td>
+    <td>testSetMasterVolume()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.repository.DatabaseConfigTest</td>
+    <td>testDefaultSqliteConfig()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.PriorityTest</td>
+    <td>testGetColor(Priority)[3]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskTest</td>
+    <td>testEqualsAndHashCode()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>integration.JsonIntegrationTest</td>
+    <td>testLoadFromNonExistentFile()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.001</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.repository.DatabaseConfigTest</td>
+    <td>testCustomConfigRequiresJdbcUrlAndDriver()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskManagerTest</td>
+    <td>testOverdueUpdateOnCompletion()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.001</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.PriorityTest</td>
+    <td>testGetColor(Priority)[1]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.PriorityTest</td>
+    <td>testGetColor(Priority)[2]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.viewmodel.TaskViewModelTest</td>
+    <td>testTimeRemaining()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskManagerTest</td>
+    <td>testGetOverdueTaskCount()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.002</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.viewmodel.TaskViewModelTest</td>
+    <td>testTwoWayBindingModelToViewModel()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>gui.MainViewStructureTest</td>
+    <td>testCalendarTabContainsExpectedControls()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.003</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>integration.JsonIntegrationTest</td>
+    <td>testRemoveTaskFromFile()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.006</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>util.JsonUtilTest</td>
+    <td>testClearAllTasks()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskTest</td>
+    <td>testFormattedDates()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.PriorityTest</td>
+    <td>testFromDisplayNameValid(String)[1]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.PriorityTest</td>
+    <td>testFromDisplayNameValid(String)[2]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.PriorityTest</td>
+    <td>testFromDisplayNameValid(String)[7]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.PriorityTest</td>
+    <td>testFromDisplayNameInvalid(String)[3]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.PriorityTest</td>
+    <td>testFromDisplayNameInvalid(String)[2]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.PriorityTest</td>
+    <td>testFromDisplayNameInvalid(String)[5]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.PriorityTest</td>
+    <td>testFromDisplayNameInvalid(String)[4]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.PriorityTest</td>
+    <td>testFromDisplayNameValid(String)[3]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.viewmodel.TaskViewModelTest</td>
+    <td>testFormattedDates()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskManagerTest</td>
+    <td>testAutomaticOverdueCheck()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.001</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.PriorityTest</td>
+    <td>testFromDisplayNameValid(String)[4]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.viewmodel.TaskViewModelTest</td>
+    <td>testEqualsAndHashCode()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.PriorityTest</td>
+    <td>testFromDisplayNameValid(String)[5]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.PriorityTest</td>
+    <td>testFromDisplayNameInvalid(String)[1]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.PriorityTest</td>
+    <td>testFromDisplayNameValid(String)[6]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.PriorityTest</td>
+    <td>testPriorityComparison()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.repository.DatabaseConfigTest</td>
+    <td>testPostgresqlConfig()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.PriorityTest</td>
+    <td>testFromDisplayNameInvalid(String)[6]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.util.AudioManagerTest</td>
+    <td>testSingletonPattern()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskTest</td>
+    <td>testJsonEscape()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskManagerTest</td>
+    <td>testReturnedListsImmutability()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.002</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.viewmodel.TaskViewModelTest</td>
+    <td>testDisplayNames()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.004</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.CategoryTest</td>
+    <td>testDisplayNameUniqueness()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.util.AudioManagerTest</td>
+    <td>testEnableDisableSounds()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>integration.JsonIntegrationTest</td>
+    <td>testDataIntegrityAfterMultipleOperations()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.004</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskTest</td>
+    <td>testToJsonString()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskTest</td>
+    <td>testOverdueCheck()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskTest</td>
+    <td>testToString()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>integration.JsonIntegrationTest</td>
+    <td>testSaveEmptyList()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.viewmodel.TaskViewModelTest</td>
+    <td>testColors()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.util.AudioManagerTest</td>
+    <td>testGetAvailableSounds()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.004</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskTest</td>
+    <td>testTaskFromJson()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskTest</td>
+    <td>testSetters()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.viewmodel.TaskViewModelTest</td>
+    <td>testPriorityIconName()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskTest</td>
+    <td>testOverdueUpdateOnTimeChange()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskManagerTest</td>
+    <td>testSearchTasks()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.003</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>util.JsonUtilTest</td>
+    <td>testAddSingleTask()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.025</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.util.AudioManagerTest</td>
+    <td>testMultipleCalls()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskManagerTest</td>
+    <td>testLoadTasks()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.002</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.util.AudioManagerTest</td>
+    <td>testPlaySoundsWhenDisabled()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.viewmodel.TaskViewModelTest</td>
+    <td>testGetTask()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskManagerTest</td>
+    <td>testAddMultipleTasks()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.396</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>util.JsonUtilTest</td>
+    <td>testLoadEmptyList()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>integration.JsonIntegrationTest</td>
+    <td>testDateFormatInJson()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.001</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.viewmodel.TaskViewModelTest</td>
+    <td>testStatusText()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>gui.NewTaskDialogGuiTest</td>
+    <td>testDialogButtonsHaveExpectedActions()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.015</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.PriorityTest</td>
+    <td>testAllValuesExist()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskTest</td>
+    <td>testTaskWithEmptyTitle()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskManagerTest</td>
+    <td>testMarkAsCompleted()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.003</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.CategoryTest</td>
+    <td>testAllValuesExist()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.util.AudioManagerTest</td>
+    <td>testStopAllSounds()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskManagerTest</td>
+    <td>testAddTask()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.001</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskManagerTest</td>
+    <td>testGetTaskCount()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.002</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.util.AudioManagerTest</td>
+    <td>testHasAudioFiles()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>util.JsonUtilTest</td>
+    <td>testRemoveNonExistentTask()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskTest</td>
+    <td>testCompletedStatus(boolean)[2]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskTest</td>
+    <td>testCompletedStatus(boolean)[1]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.006</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.util.AudioManagerTest</td>
+    <td>testWithoutAudioFiles()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>integration.JsonIntegrationTest</td>
+    <td>testUpdateTaskInFile()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.002</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>gui.NewTaskDialogGuiTest</td>
+    <td>testDialogContainsCoreControls()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.002</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.CategoryTest</td>
+    <td>testGetDisplayName(Category)[1]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.CategoryTest</td>
+    <td>testGetDisplayName(Category)[2]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.CategoryTest</td>
+    <td>testGetDisplayName(Category)[3]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.CategoryTest</td>
+    <td>testGetDisplayName(Category)[4]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.util.AudioManagerTest</td>
+    <td>testPlaySoundsWhenEnabled()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskManagerTest</td>
+    <td>testRemoveTaskById()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.001</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskTest</td>
+    <td>testIdGeneration()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.CategoryTest</td>
+    <td>testGetColor(Category)[3]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.viewmodel.TaskViewModelTest</td>
+    <td>testViewModelCreation()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskManagerTest</td>
+    <td>testSingletonPattern()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.CategoryTest</td>
+    <td>testGetColor(Category)[4]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>util.JsonUtilTest</td>
+    <td>testSaveAndLoadMultipleTasks()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.001</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.CategoryTest</td>
+    <td>testGetColor(Category)[1]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.CategoryTest</td>
+    <td>testGetColor(Category)[2]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskManagerTest</td>
+    <td>testSearchWithEmptyQuery()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.001</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.viewmodel.TaskViewModelTest</td>
+    <td>testJavaFXProperties()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskTest</td>
+    <td>testTaskWithNullPriorityAndCategory()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskManagerTest</td>
+    <td>testClearAllTasks()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.003</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>integration.JsonIntegrationTest</td>
+    <td>testFullSaveLoadCycle()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.002</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.CategoryTest</td>
+    <td>testCategoryComparison()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.viewmodel.TaskViewModelTest</td>
+    <td>testTwoWayBindingViewModelToModel()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskManagerTest</td>
+    <td>testMarkNonExistentAsCompleted()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>integration.JsonIntegrationTest</td>
+    <td>testLoadFromInvalidJsonFile()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.001</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.util.AudioManagerTest</td>
+    <td>testDispose()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>integration.JsonIntegrationTest</td>
+    <td>testAddTaskToExistingFile()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.003</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.viewmodel.TaskViewModelTest</td>
+    <td>testOverdueUpdate()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>util.JsonUtilTest</td>
+    <td>testExportTasks()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskManagerTest</td>
+    <td>testGetTasksByCompletion()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.003</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskManagerTest</td>
+    <td>testRemoveNonExistentTask()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0.001</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.PriorityTest</td>
+    <td>testGetIconName()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.PriorityTest</td>
+    <td>testGetDisplayName(Priority)[1]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.CategoryTest</td>
+    <td>testFromDisplayNameValid(String)[2]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.PriorityTest</td>
+    <td>testGetDisplayName(Priority)[2]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.CategoryTest</td>
+    <td>testFromDisplayNameValid(String)[1]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.PriorityTest</td>
+    <td>testGetDisplayName(Priority)[3]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.CategoryTest</td>
+    <td>testFromDisplayNameValid(String)[4]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.CategoryTest</td>
+    <td>testFromDisplayNameValid(String)[3]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.CategoryTest</td>
+    <td>testFromDisplayNameValid(String)[6]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.CategoryTest</td>
+    <td>testFromDisplayNameInvalid(String)[2]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.CategoryTest</td>
+    <td>testFromDisplayNameValid(String)[5]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.CategoryTest</td>
+    <td>testFromDisplayNameInvalid(String)[3]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.CategoryTest</td>
+    <td>testFromDisplayNameValid(String)[8]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.CategoryTest</td>
+    <td>testFromDisplayNameValid(String)[7]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.CategoryTest</td>
+    <td>testFromDisplayNameInvalid(String)[1]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.PriorityTest</td>
+    <td>testGetDefault()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.viewmodel.TaskViewModelTest</td>
+    <td>testToString()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.CategoryTest</td>
+    <td>testFromDisplayNameValid(String)[9]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.CategoryTest</td>
+    <td>testFromDisplayNameInvalid(String)[4]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.CategoryTest</td>
+    <td>testFromDisplayNameInvalid(String)[5]</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr>
+    <td>unit.model.TaskTest</td>
+    <td>testTaskCreation()</td>
+    <td><span class="status passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+
+        </tbody>
+    </table>
+    <div class="logs">
+        <h2>Логи запуска</h2>
+        <pre>WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.sqlite.SQLiteJDBCLoader in an unnamed module (file:/Users/sigm/Study/Institut/6semestr/OOP_Java/Project/lib/sqlite-jdbc-3.45.1.0.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+Database ready: SQLite -&gt; /Users/sigm/Study/Institut/6semestr/OOP_Java/Project/tests/reports/runtime-data-20260325_000420/todolist.db
+[36m╷[0m
+[36m├─[0m [36mJUnit Jupiter[0m [32m✔[0m
+[36m│  ├─[0m [36mJsonUtilTest[0m [32m✔[0m
+[36m│  │  ├─[0m [34mtestAddSingleTask()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mtestClearAllTasks()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mtestRemoveNonExistentTask()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mtestSaveAndLoadMultipleTasks()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mtestExportTasks()[0m [32m✔[0m
+[36m│  │  └─[0m [34mtestLoadEmptyList()[0m [32m✔[0m
+[36m│  ├─[0m [36mПроверка структуры NewTaskDialog.fxml[0m [32m✔[0m
+[36m│  │  ├─[0m [34mКнопки диалога привязаны к ожидаемым обработчикам[0m [32m✔[0m
+[36m│  │  └─[0m [34mДиалог создания задачи содержит основные поля формы[0m [32m✔[0m
+[36m│  ├─[0m [36mТестирование TaskViewModel[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение отображаемых имен приоритета и категории[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение имени иконки приоритета[0m [32m✔[0m
+[36m│  │  ├─[0m [34mТестирование toString()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mОбновление ViewModel при изменении статуса просроченности[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение базовой модели задачи[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение статуса задачи в виде строки[0m [32m✔[0m
+[36m│  │  ├─[0m [34mРасчет оставшегося времени[0m [32m✔[0m
+[36m│  │  ├─[0m [34mСоздание ViewModel из модели Task[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка свойств JavaFX[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение цветов приоритета и категории[0m [32m✔[0m
+[36m│  │  ├─[0m [34mФорматирование дат для отображения[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка equals() и hashCode()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mДвусторонняя привязка свойств - изменение Model[0m [32m✔[0m
+[36m│  │  └─[0m [34mДвусторонняя привязка свойств - изменение ViewModel[0m [32m✔[0m
+[36m│  ├─[0m [36mПроверка структуры MainView.fxml[0m [32m✔[0m
+[36m│  │  └─[0m [34mКалендарная вкладка содержит выбор даты и список задач[0m [32m✔[0m
+[36m│  ├─[0m [36mТестирование AudioManager[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение списка доступных звуков[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка паттерна Singleton[0m [32m✔[0m
+[36m│  │  ├─[0m [34mВоспроизведение звуков при включенных звуках[0m [32m✔[0m
+[36m│  │  ├─[0m [34mОстановка всех звуков[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка наличия аудио файлов[0m [32m✔[0m
+[36m│  │  ├─[0m [34mtestEnableDisableSounds()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mТестирование методов без реальных аудио файлов[0m [32m✔[0m
+[36m│  │  ├─[0m [34mВоспроизведение звуков при выключенных звуках[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка многократного вызова методов[0m [32m✔[0m
+[36m│  │  ├─[0m [34mОсвобождение ресурсов[0m [32m✔[0m
+[36m│  │  └─[0m [34mУстановка громкости[0m [32m✔[0m
+[36m│  ├─[0m [36mJsonIntegrationTest[0m [32m✔[0m
+[36m│  │  ├─[0m [34mУдаление задачи из файла[0m [32m✔[0m
+[36m│  │  ├─[0m [34mОбновление задачи в файле[0m [32m✔[0m
+[36m│  │  ├─[0m [34mСохранение пустого списка задач[0m [32m✔[0m
+[36m│  │  ├─[0m [34mЦелостность данных после нескольких операций[0m [32m✔[0m
+[36m│  │  ├─[0m [34mЗагрузка из файла с некорректным JSON[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка формата дат при сериализации/десериализации[0m [32m✔[0m
+[36m│  │  ├─[0m [34mЗагрузка из несуществующего файла[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолный цикл: создание → сохранение → загрузка → проверка[0m [32m✔[0m
+[36m│  │  └─[0m [34mДобавление задачи к существующим[0m [32m✔[0m
+[36m│  ├─[0m [36mТестирование Task[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПарсинг задачи из JSON строки[0m [32m✔[0m
+[36m│  │  ├─[0m [34mСоздание задачи с null приоритетом и категорией[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка toString()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mЭкранирование специальных символов в JSON[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка метода toJsonString()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mСоздание задачи с пустым заголовком[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка просроченности задачи[0m [32m✔[0m
+[36m│  │  ├─[0m [34mАвтоматическая генерация ID[0m [32m✔[0m
+[36m│  │  ├─[0m [36mПроверка статуса выполнения[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[1] true[0m [32m✔[0m
+[36m│  │  │  └─[0m [34m[2] false[0m [32m✔[0m
+[36m│  │  ├─[0m [34mСоздание задачи с валидными данными[0m [32m✔[0m
+[36m│  │  ├─[0m [34mФорматирование дат для отображения[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка equals() и hashCode()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка сеттеров[0m [32m✔[0m
+[36m│  │  └─[0m [34mПроверка обновления просроченности при изменении времени[0m [32m✔[0m
+[36m│  ├─[0m [36mТестирование DatabaseConfig[0m [32m✔[0m
+[36m│  │  ├─[0m [34mPostgreSQL конфиг собирает JDBC URL и credentials[0m [32m✔[0m
+[36m│  │  ├─[0m [34mSQLite конфиг используется по умолчанию[0m [32m✔[0m
+[36m│  │  └─[0m [34mCustom JDBC без URL и драйвера валидироваться не должен[0m [32m✔[0m
+[36m│  ├─[0m [36mТестирование TaskManager[0m [32m✔[0m
+[36m│  │  ├─[0m [34mДобавление нескольких задач[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение задач по статусу выполнения[0m [32m✔[0m
+[36m│  │  ├─[0m [34mДобавление задачи в менеджер[0m [32m✔[0m
+[36m│  │  ├─[0m [34mОчистка всех задач[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПоиск задач по тексту (регистронезависимый)[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка неизменяемости возвращаемых списков[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение количества просроченных задач[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПоиск по пустому запросу[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка паттерна Singleton[0m [32m✔[0m
+[36m│  │  ├─[0m [34mОтметка задачи как выполненной[0m [32m✔[0m
+[36m│  │  ├─[0m [34mОтметка несуществующей задачи как выполненной[0m [32m✔[0m
+[36m│  │  ├─[0m [34mУдаление несуществующей задачи[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка обновления просроченности при изменении статуса[0m [32m✔[0m
+[36m│  │  ├─[0m [34mУдаление задачи по ID[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение количества задач[0m [32m✔[0m
+[36m│  │  ├─[0m [34mАвтоматическая проверка просроченности[0m [32m✔[0m
+[36m│  │  └─[0m [34mЗагрузка списка задач[0m [32m✔[0m
+[36m│  ├─[0m [36mТестирование Priority[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка сравнения приоритетов[0m [32m✔[0m
+[36m│  │  ├─[0m [36mПреобразование строки в Priority (регистронезависимое)[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[1] Срочно[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[2] срочно[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[3] СРОЧНО[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[4] Важно[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[5] важно[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[6] Желательно[0m [32m✔[0m
+[36m│  │  │  └─[0m [34m[7] желательно[0m [32m✔[0m
+[36m│  │  ├─[0m [36mПроверка цветов для всех приоритетов[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[1] URGENT[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[2] IMPORTANT[0m [32m✔[0m
+[36m│  │  │  └─[0m [34m[3] NORMAL[0m [32m✔[0m
+[36m│  │  ├─[0m [36mПроверка отображаемых имен для всех приоритетов[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[1] URGENT[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[2] IMPORTANT[0m [32m✔[0m
+[36m│  │  │  └─[0m [34m[3] NORMAL[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка имени иконки[0m [32m✔[0m
+[36m│  │  ├─[0m [36mПреобразование некорректной строки в Priority[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[1] [0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[2] неизвестно[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[3] high[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[4] low[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[5] 123[0m [32m✔[0m
+[36m│  │  │  └─[0m [34m[6] приоритет[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка всех значений перечисления[0m [32m✔[0m
+[36m│  │  └─[0m [34mПроверка приоритета по умолчанию[0m [32m✔[0m
+[36m│  └─[0m [36mТестирование Category[0m [32m✔[0m
+[36m│     ├─[0m [36mПреобразование строки в Category (регистронезависимое)[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[1] Работа[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[2] работа[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[3] РАБОТА[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[4] Дом[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[5] дом[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[6] Учёба[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[7] учёба[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[8] Другое[0m [32m✔[0m
+[36m│     │  └─[0m [34m[9] другое[0m [32m✔[0m
+[36m│     ├─[0m [36mПроверка цветов для всех категорий[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[1] WORK[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[2] HOME[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[3] STUDY[0m [32m✔[0m
+[36m│     │  └─[0m [34m[4] OTHER[0m [32m✔[0m
+[36m│     ├─[0m [36mПроверка отображаемых имен для всех категорий[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[1] WORK[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[2] HOME[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[3] STUDY[0m [32m✔[0m
+[36m│     │  └─[0m [34m[4] OTHER[0m [32m✔[0m
+[36m│     ├─[0m [34mПроверка уникальности отображаемых имен[0m [32m✔[0m
+[36m│     ├─[0m [34mПроверка сравнения категорий[0m [32m✔[0m
+[36m│     ├─[0m [36mПреобразование некорректной строки в Category[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[1] [0m [32m✔[0m
+[36m│     │  ├─[0m [34m[2] неизвестно[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[3] категория[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[4] 123[0m [32m✔[0m
+[36m│     │  └─[0m [34m[5] test[0m [32m✔[0m
+[36m│     └─[0m [34mПроверка всех значений перечисления[0m [32m✔[0m
+[36m├─[0m [36mJUnit Vintage[0m [32m✔[0m
+[36m└─[0m [36mJUnit Platform Suite[0m [32m✔[0m
+
+Test run finished after 641 ms
+[        23 containers found      ]
+[         0 containers skipped    ]
+[        23 containers started    ]
+[         0 containers aborted    ]
+[        23 containers successful ]
+[         0 containers failed     ]
+[       126 tests found           ]
+[         0 tests skipped         ]
+[       126 tests started         ]
+[         0 tests aborted         ]
+[       126 tests successful      ]
+[         0 tests failed          ]
+
+</pre>
+    </div>
+</body>
+</html>

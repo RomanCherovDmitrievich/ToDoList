@@ -1,23 +1,45 @@
 /*! @page database_schema_page Схема Базы Данных
  *
  * @section database_overview Обзор
- * Проект использует SQLite-базу `todolist.db` в директории данных.
- * Если папка `data/` существует рядом с проектом — используется она,
+ * Проект поддерживает два основных режима хранения:
+ * - SQLite: локальная база `todolist.db` в директории данных.
+ * - PostgreSQL/MySQL/Firebird: серверное подключение через JDBC.
+ *
+ * Параметры подключения задаются в `data/db.properties`
+ * (шаблон: `data/db.properties.example`).
+ *
+ * Если папка `data/` существует рядом с проектом — для локальных файлов используется она,
  * иначе путь выбирается по ОС (macOS: `~/Library/Application Support/ToDoList`,
  * RedOS/Linux: `~/.local/share/ToDoList`, Windows: `%APPDATA%\\ToDoList`).
  *
  * @section database_tables Таблицы
- * 1. `tasks` — основная таблица задач (включая `sort_index`, `recurrence_rule`,
- *    `reminder_offset`, `recurrence_end`).
- * 2. `tags` — словарь тегов.
- * 3. `task_tags` — связь many-to-many между задачами и тегами.
- * 4. `task_statistics` — аудит операций с задачами.
- * 5. `app_settings` — настройки приложения.
+ * 1. `users` — учетные записи пользователей, хеши паролей и коды восстановления.
+ * 2. `tasks` — основная таблица задач (включая `sort_index`, `owner_user_id`,
+ *    `recurrence_rule`, `reminder_offset`, `recurrence_end`).
+ * 3. `tags` — словарь тегов.
+ * 4. `task_tags` — связь many-to-many между задачами и тегами.
+ * 5. `task_statistics` — аудит операций с задачами.
+ * 6. `app_settings` — настройки приложения.
  *
  * @section database_indexes Индексы
- * Индексы созданы для полей `completed`, `priority`, `category`, `end_time`
+ * Индексы созданы для `users.username`, `users.email`, `tasks.completed`,
+ * `tasks.priority`, `tasks.category`, `tasks.end_time`, `tasks.owner_user_id`
  * и ключевых FK в `task_tags` и `task_statistics`.
  *
  * @section database_file Где посмотреть SQL
- * Полный SQL-скрипт: `tables.sql`
+ * - SQLite SQL-скрипт: `tables.sql`
+ * - PostgreSQL SQL-скрипт: `sql/postgresql_schema.sql`
+ * - MySQL SQL-скрипт: `sql/mysql_schema.sql`
+ * - Firebird SQL-скрипт: `sql/firebird_schema.sql`
+ * - JDBC-конфиг и URL: `repository.DatabaseConfig`
+ * - Фабрика соединений: `repository.ConnectionFactory`
+ * - SQL-диалект: `repository.SqlDialect`
+ * - DAO-интерфейс задач: `repository.TaskDao`
+ * - Создание таблиц, миграции и UPSERT: `repository.DatabaseManager`
+ * - Проверка соединения и массовая генерация: `util.DatabaseCli`
+ *
+ * @section database_cli Проверка соединения
+ * Для ручной проверки БД используйте:
+ * - `./scripts/test_db_connection.sh` — выполняет `CREATE TABLE`, `INSERT`, `SELECT`, `DROP`
+ * - `./scripts/fill_tasks.sh 1000` — создаёт 1000 тестовых задач
  */

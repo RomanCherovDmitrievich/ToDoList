@@ -1,0 +1,20 @@
+# Email delivery mode:
+#   auto   - try SMTP first if configured, otherwise use system transport
+#   smtp   - use only SMTP from this file
+#   system - use Mail.app/mail command only
+#   outbox - never send automatically, always write to notifications_outbox.log
+email.transport=auto
+
+# Optional display data for the dedicated sender address.
+email.fromName=ToDoList Service
+email.fromAddress=noreply@example.com
+
+# Dedicated SMTP account for password reset and notifications.
+smtp.host=smtp.example.com
+smtp.port=587
+smtp.username=noreply@example.com
+smtp.password=change-me
+smtp.auth=true
+smtp.starttls=true
+smtp.ssl=false
+smtp.timeoutMillis=15000

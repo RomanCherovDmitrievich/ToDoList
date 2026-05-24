@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="JUnit Jupiter" tests="126" skipped="0" failures="0" errors="0" time="0.882" hostname="MacBook-Pro-Roman.local" timestamp="2026-03-25T00:00:42">
+<properties>
+<property name="apple.awt.application.name" value="ConsoleLauncher"/>
+<property name="file.encoding" value="UTF-8"/>
+<property name="file.separator" value="/"/>
+<property name="java.awt.headless" value="true"/>
+<property name="java.class.path" value="/Users/sigm/Study/Institut/6semestr/OOP_Java/Project/bin:/Users/sigm/Study/Institut/6semestr/OOP_Java/Project/lib/gson-2.10.1.jar:/Users/sigm/Study/Institut/6semestr/OOP_Java/Project/lib/sqlite-jdbc-3.45.1.0.jar:/Users/sigm/Study/Institut/6semestr/OOP_Java/Project/lib/slf4j-api-2.0.12.jar:/Users/sigm/Study/Institut/6semestr/OOP_Java/Project/lib/slf4j-nop-2.0.12.jar:/Users/sigm/Study/Institut/6semestr/OOP_Java/Project/lib/postgresql-42.7.4.jar:/Users/sigm/Study/Institut/6semestr/OOP_Java/Project/tests/classes:/Users/sigm/Study/Institut/6semestr/OOP_Java/Project/tests/lib/junit-platform-console-standalone-1.9.2.jar"/>
+<property name="java.class.version" value="69.0"/>
+<property name="java.home" value="/Library/Java/JavaVirtualMachines/zulu-25.jdk/Contents/Home"/>
+<property name="java.io.tmpdir" value="/var/folders/kz/8c7qgytn2n3f87yq0p4r6rxh0000gn/T/"/>
+<property name="java.library.path" value="/Users/sigm/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+<property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+<property name="java.runtime.version" value="25.0.1+8-LTS"/>
+<property name="java.specification.name" value="Java Platform API Specification"/>
+<property name="java.specification.vendor" value="Oracle Corporation"/>
+<property name="java.specification.version" value="25"/>
+<property name="java.vendor" value="Azul Systems, Inc."/>
+<property name="java.vendor.url" value="http://www.azul.com/"/>
+<property name="java.vendor.url.bug" value="http://www.azul.com/support/"/>
+<property name="java.vendor.version" value="Zulu25.30+17-CA"/>
+<property name="java.version" value="25.0.1"/>
+<property name="java.version.date" value="2025-10-21"/>
+<property name="java.vm.compressedOopsMode" value="Zero based"/>
+<property name="java.vm.info" value="mixed mode, sharing"/>
+<property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+<property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+<property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+<property name="java.vm.specification.version" value="25"/>
+<property name="java.vm.vendor" value="Azul Systems, Inc."/>
+<property name="java.vm.version" value="25.0.1+8-LTS"/>
+<property name="jdk.debug" value="release"/>
+<property name="jdk.module.path" value=".javafx/lib"/>
+<property name="line.separator" value="
+"/>
+<property name="native.encoding" value="UTF-8"/>
+<property name="os.arch" value="aarch64"/>
+<property name="os.name" value="Mac OS X"/>
+<property name="os.version" value="26.3"/>
+<property name="path.separator" value=":"/>
+<property name="stderr.encoding" value="UTF-8"/>
+<property name="stdin.encoding" value="UTF-8"/>
+<property name="stdout.encoding" value="UTF-8"/>
+<property name="sun.arch.data.model" value="64"/>
+<property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/zulu-25.jdk/Contents/Home/lib"/>
+<property name="sun.cpu.endian" value="little"/>
+<property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+<property name="sun.java.command" value="org.junit.platform.console.ConsoleLauncher --scan-class-path --class-path /Users/sigm/Study/Institut/6semestr/OOP_Java/Project/bin:/Users/sigm/Study/Institut/6semestr/OOP_Java/Project/lib/gson-2.10.1.jar:/Users/sigm/Study/Institut/6semestr/OOP_Java/Project/lib/sqlite-jdbc-3.45.1.0.jar:/Users/sigm/Study/Institut/6semestr/OOP_Java/Project/lib/slf4j-api-2.0.12.jar:/Users/sigm/Study/Institut/6semestr/OOP_Java/Project/lib/slf4j-nop-2.0.12.jar:/Users/sigm/Study/Institut/6semestr/OOP_Java/Project/lib/postgresql-42.7.4.jar:/Users/sigm/Study/Institut/6semestr/OOP_Java/Project/tests/classes --details=tree --disable-banner --reports-dir /Users/sigm/Study/Institut/6semestr/OOP_Java/Project/tests/reports/junit-xml-20260325_000041"/>
+<property name="sun.java.launcher" value="SUN_STANDARD"/>
+<property name="sun.jnu.encoding" value="UTF-8"/>
+<property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+<property name="todolist.disableAudio" value="true"/>
+<property name="user.country" value="RU"/>
+<property name="user.dir" value="/Users/sigm/Study/Institut/6semestr/OOP_Java/Project"/>
+<property name="user.home" value="/Users/sigm"/>
+<property name="user.language" value="ru"/>
+<property name="user.name" value="sigm"/>
+<property name="user.timezone" value="Europe/Moscow"/>
+</properties>
+<testcase name="testSetMasterVolume()" classname="unit.util.AudioManagerTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.util.AudioManagerTest]/[method:testSetMasterVolume()]
+display-name: Установка громкости
+]]></system-out>
+</testcase>
+<testcase name="testDefaultSqliteConfig()" classname="unit.repository.DatabaseConfigTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.repository.DatabaseConfigTest]/[method:testDefaultSqliteConfig()]
+display-name: SQLite конфиг используется по умолчанию
+]]></system-out>
+</testcase>
+<testcase name="testGetColor(Priority)[3]" classname="unit.model.PriorityTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.PriorityTest]/[test-template:testGetColor(model.Priority)]/[test-template-invocation:#3]
+display-name: [3] NORMAL
+]]></system-out>
+</testcase>
+<testcase name="testEqualsAndHashCode()" classname="unit.model.TaskTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskTest]/[method:testEqualsAndHashCode()]
+display-name: Проверка equals() и hashCode()
+]]></system-out>
+</testcase>
+<testcase name="testLoadFromNonExistentFile()" classname="integration.JsonIntegrationTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:integration.JsonIntegrationTest]/[method:testLoadFromNonExistentFile()]
+display-name: Загрузка из несуществующего файла
+]]></system-out>
+</testcase>
+<testcase name="testCustomConfigRequiresJdbcUrlAndDriver()" classname="unit.repository.DatabaseConfigTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.repository.DatabaseConfigTest]/[method:testCustomConfigRequiresJdbcUrlAndDriver()]
+display-name: Custom JDBC без URL и драйвера валидироваться не должен
+]]></system-out>
+</testcase>
+<testcase name="testOverdueUpdateOnCompletion()" classname="unit.model.TaskManagerTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskManagerTest]/[method:testOverdueUpdateOnCompletion()]
+display-name: Проверка обновления просроченности при изменении статуса
+]]></system-out>
+</testcase>
+<testcase name="testGetColor(Priority)[1]" classname="unit.model.PriorityTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.PriorityTest]/[test-template:testGetColor(model.Priority)]/[test-template-invocation:#1]
+display-name: [1] URGENT
+]]></system-out>
+</testcase>
+<testcase name="testGetColor(Priority)[2]" classname="unit.model.PriorityTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.PriorityTest]/[test-template:testGetColor(model.Priority)]/[test-template-invocation:#2]
+display-name: [2] IMPORTANT
+]]></system-out>
+</testcase>
+<testcase name="testTimeRemaining()" classname="unit.viewmodel.TaskViewModelTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.viewmodel.TaskViewModelTest]/[method:testTimeRemaining()]
+display-name: Расчет оставшегося времени
+]]></system-out>
+</testcase>
+<testcase name="testGetOverdueTaskCount()" classname="unit.model.TaskManagerTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskManagerTest]/[method:testGetOverdueTaskCount()]
+display-name: Получение количества просроченных задач
+]]></system-out>
+</testcase>
+<testcase name="testTwoWayBindingModelToViewModel()" classname="unit.viewmodel.TaskViewModelTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.viewmodel.TaskViewModelTest]/[method:testTwoWayBindingModelToViewModel()]
+display-name: Двусторонняя привязка свойств - изменение Model
+]]></system-out>
+</testcase>
+<testcase name="testCalendarTabContainsExpectedControls()" classname="gui.MainViewStructureTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:gui.MainViewStructureTest]/[method:testCalendarTabContainsExpectedControls()]
+display-name: Календарная вкладка содержит выбор даты и список задач
+]]></system-out>
+</testcase>
+<testcase name="testRemoveTaskFromFile()" classname="integration.JsonIntegrationTest" time="0.005">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:integration.JsonIntegrationTest]/[method:testRemoveTaskFromFile()]
+display-name: Удаление задачи из файла
+]]></system-out>
+</testcase>
+<testcase name="testClearAllTasks()" classname="util.JsonUtilTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:util.JsonUtilTest]/[method:testClearAllTasks()]
+display-name: testClearAllTasks()
+]]></system-out>
+</testcase>
+<testcase name="testFormattedDates()" classname="unit.model.TaskTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskTest]/[method:testFormattedDates()]
+display-name: Форматирование дат для отображения
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameValid(String)[1]" classname="unit.model.PriorityTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.PriorityTest]/[test-template:testFromDisplayNameValid(java.lang.String)]/[test-template-invocation:#1]
+display-name: [1] Срочно
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameValid(String)[2]" classname="unit.model.PriorityTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.PriorityTest]/[test-template:testFromDisplayNameValid(java.lang.String)]/[test-template-invocation:#2]
+display-name: [2] срочно
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameValid(String)[7]" classname="unit.model.PriorityTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.PriorityTest]/[test-template:testFromDisplayNameValid(java.lang.String)]/[test-template-invocation:#7]
+display-name: [7] желательно
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameInvalid(String)[3]" classname="unit.model.PriorityTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.PriorityTest]/[test-template:testFromDisplayNameInvalid(java.lang.String)]/[test-template-invocation:#3]
+display-name: [3] high
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameInvalid(String)[2]" classname="unit.model.PriorityTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.PriorityTest]/[test-template:testFromDisplayNameInvalid(java.lang.String)]/[test-template-invocation:#2]
+display-name: [2] неизвестно
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameInvalid(String)[5]" classname="unit.model.PriorityTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.PriorityTest]/[test-template:testFromDisplayNameInvalid(java.lang.String)]/[test-template-invocation:#5]
+display-name: [5] 123
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameInvalid(String)[4]" classname="unit.model.PriorityTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.PriorityTest]/[test-template:testFromDisplayNameInvalid(java.lang.String)]/[test-template-invocation:#4]
+display-name: [4] low
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameValid(String)[3]" classname="unit.model.PriorityTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.PriorityTest]/[test-template:testFromDisplayNameValid(java.lang.String)]/[test-template-invocation:#3]
+display-name: [3] СРОЧНО
+]]></system-out>
+</testcase>
+<testcase name="testFormattedDates()" classname="unit.viewmodel.TaskViewModelTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.viewmodel.TaskViewModelTest]/[method:testFormattedDates()]
+display-name: Форматирование дат для отображения
+]]></system-out>
+</testcase>
+<testcase name="testAutomaticOverdueCheck()" classname="unit.model.TaskManagerTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskManagerTest]/[method:testAutomaticOverdueCheck()]
+display-name: Автоматическая проверка просроченности
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameValid(String)[4]" classname="unit.model.PriorityTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.PriorityTest]/[test-template:testFromDisplayNameValid(java.lang.String)]/[test-template-invocation:#4]
+display-name: [4] Важно
+]]></system-out>
+</testcase>
+<testcase name="testEqualsAndHashCode()" classname="unit.viewmodel.TaskViewModelTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.viewmodel.TaskViewModelTest]/[method:testEqualsAndHashCode()]
+display-name: Проверка equals() и hashCode()
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameValid(String)[5]" classname="unit.model.PriorityTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.PriorityTest]/[test-template:testFromDisplayNameValid(java.lang.String)]/[test-template-invocation:#5]
+display-name: [5] важно
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameInvalid(String)[1]" classname="unit.model.PriorityTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.PriorityTest]/[test-template:testFromDisplayNameInvalid(java.lang.String)]/[test-template-invocation:#1]
+display-name: [1] 
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameValid(String)[6]" classname="unit.model.PriorityTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.PriorityTest]/[test-template:testFromDisplayNameValid(java.lang.String)]/[test-template-invocation:#6]
+display-name: [6] Желательно
+]]></system-out>
+</testcase>
+<testcase name="testPriorityComparison()" classname="unit.model.PriorityTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.PriorityTest]/[method:testPriorityComparison()]
+display-name: Проверка сравнения приоритетов
+]]></system-out>
+</testcase>
+<testcase name="testPostgresqlConfig()" classname="unit.repository.DatabaseConfigTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.repository.DatabaseConfigTest]/[method:testPostgresqlConfig()]
+display-name: PostgreSQL конфиг собирает JDBC URL и credentials
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameInvalid(String)[6]" classname="unit.model.PriorityTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.PriorityTest]/[test-template:testFromDisplayNameInvalid(java.lang.String)]/[test-template-invocation:#6]
+display-name: [6] приоритет
+]]></system-out>
+</testcase>
+<testcase name="testSingletonPattern()" classname="unit.util.AudioManagerTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.util.AudioManagerTest]/[method:testSingletonPattern()]
+display-name: Проверка паттерна Singleton
+]]></system-out>
+</testcase>
+<testcase name="testJsonEscape()" classname="unit.model.TaskTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskTest]/[method:testJsonEscape()]
+display-name: Экранирование специальных символов в JSON
+]]></system-out>
+</testcase>
+<testcase name="testReturnedListsImmutability()" classname="unit.model.TaskManagerTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskManagerTest]/[method:testReturnedListsImmutability()]
+display-name: Проверка неизменяемости возвращаемых списков
+]]></system-out>
+</testcase>
+<testcase name="testDisplayNames()" classname="unit.viewmodel.TaskViewModelTest" time="0.004">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.viewmodel.TaskViewModelTest]/[method:testDisplayNames()]
+display-name: Получение отображаемых имен приоритета и категории
+]]></system-out>
+</testcase>
+<testcase name="testDisplayNameUniqueness()" classname="unit.model.CategoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.CategoryTest]/[method:testDisplayNameUniqueness()]
+display-name: Проверка уникальности отображаемых имен
+]]></system-out>
+</testcase>
+<testcase name="testEnableDisableSounds()" classname="unit.util.AudioManagerTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.util.AudioManagerTest]/[method:testEnableDisableSounds()]
+display-name: testEnableDisableSounds()
+]]></system-out>
+</testcase>
+<testcase name="testDataIntegrityAfterMultipleOperations()" classname="integration.JsonIntegrationTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:integration.JsonIntegrationTest]/[method:testDataIntegrityAfterMultipleOperations()]
+display-name: Целостность данных после нескольких операций
+]]></system-out>
+</testcase>
+<testcase name="testToJsonString()" classname="unit.model.TaskTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskTest]/[method:testToJsonString()]
+display-name: Проверка метода toJsonString()
+]]></system-out>
+</testcase>
+<testcase name="testOverdueCheck()" classname="unit.model.TaskTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskTest]/[method:testOverdueCheck()]
+display-name: Проверка просроченности задачи
+]]></system-out>
+</testcase>
+<testcase name="testToString()" classname="unit.model.TaskTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskTest]/[method:testToString()]
+display-name: Проверка toString()
+]]></system-out>
+</testcase>
+<testcase name="testSaveEmptyList()" classname="integration.JsonIntegrationTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:integration.JsonIntegrationTest]/[method:testSaveEmptyList()]
+display-name: Сохранение пустого списка задач
+]]></system-out>
+</testcase>
+<testcase name="testColors()" classname="unit.viewmodel.TaskViewModelTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.viewmodel.TaskViewModelTest]/[method:testColors()]
+display-name: Получение цветов приоритета и категории
+]]></system-out>
+</testcase>
+<testcase name="testGetAvailableSounds()" classname="unit.util.AudioManagerTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.util.AudioManagerTest]/[method:testGetAvailableSounds()]
+display-name: Получение списка доступных звуков
+]]></system-out>
+</testcase>
+<testcase name="testTaskFromJson()" classname="unit.model.TaskTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskTest]/[method:testTaskFromJson()]
+display-name: Парсинг задачи из JSON строки
+]]></system-out>
+</testcase>
+<testcase name="testSetters()" classname="unit.model.TaskTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskTest]/[method:testSetters()]
+display-name: Проверка сеттеров
+]]></system-out>
+</testcase>
+<testcase name="testPriorityIconName()" classname="unit.viewmodel.TaskViewModelTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.viewmodel.TaskViewModelTest]/[method:testPriorityIconName()]
+display-name: Получение имени иконки приоритета
+]]></system-out>
+</testcase>
+<testcase name="testOverdueUpdateOnTimeChange()" classname="unit.model.TaskTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskTest]/[method:testOverdueUpdateOnTimeChange()]
+display-name: Проверка обновления просроченности при изменении времени
+]]></system-out>
+</testcase>
+<testcase name="testSearchTasks()" classname="unit.model.TaskManagerTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskManagerTest]/[method:testSearchTasks()]
+display-name: Поиск задач по тексту (регистронезависимый)
+]]></system-out>
+</testcase>
+<testcase name="testAddSingleTask()" classname="util.JsonUtilTest" time="0.02">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:util.JsonUtilTest]/[method:testAddSingleTask()]
+display-name: testAddSingleTask()
+]]></system-out>
+</testcase>
+<testcase name="testMultipleCalls()" classname="unit.util.AudioManagerTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.util.AudioManagerTest]/[method:testMultipleCalls()]
+display-name: Проверка многократного вызова методов
+]]></system-out>
+</testcase>
+<testcase name="testLoadTasks()" classname="unit.model.TaskManagerTest" time="0.004">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskManagerTest]/[method:testLoadTasks()]
+display-name: Загрузка списка задач
+]]></system-out>
+</testcase>
+<testcase name="testPlaySoundsWhenDisabled()" classname="unit.util.AudioManagerTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.util.AudioManagerTest]/[method:testPlaySoundsWhenDisabled()]
+display-name: Воспроизведение звуков при выключенных звуках
+]]></system-out>
+</testcase>
+<testcase name="testGetTask()" classname="unit.viewmodel.TaskViewModelTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.viewmodel.TaskViewModelTest]/[method:testGetTask()]
+display-name: Получение базовой модели задачи
+]]></system-out>
+</testcase>
+<testcase name="testAddMultipleTasks()" classname="unit.model.TaskManagerTest" time="0.702">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskManagerTest]/[method:testAddMultipleTasks()]
+display-name: Добавление нескольких задач
+]]></system-out>
+</testcase>
+<testcase name="testLoadEmptyList()" classname="util.JsonUtilTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:util.JsonUtilTest]/[method:testLoadEmptyList()]
+display-name: testLoadEmptyList()
+]]></system-out>
+</testcase>
+<testcase name="testDateFormatInJson()" classname="integration.JsonIntegrationTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:integration.JsonIntegrationTest]/[method:testDateFormatInJson()]
+display-name: Проверка формата дат при сериализации/десериализации
+]]></system-out>
+</testcase>
+<testcase name="testStatusText()" classname="unit.viewmodel.TaskViewModelTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.viewmodel.TaskViewModelTest]/[method:testStatusText()]
+display-name: Получение статуса задачи в виде строки
+]]></system-out>
+</testcase>
+<testcase name="testDialogButtonsHaveExpectedActions()" classname="gui.NewTaskDialogGuiTest" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:gui.NewTaskDialogGuiTest]/[method:testDialogButtonsHaveExpectedActions()]
+display-name: Кнопки диалога привязаны к ожидаемым обработчикам
+]]></system-out>
+</testcase>
+<testcase name="testAllValuesExist()" classname="unit.model.PriorityTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.PriorityTest]/[method:testAllValuesExist()]
+display-name: Проверка всех значений перечисления
+]]></system-out>
+</testcase>
+<testcase name="testTaskWithEmptyTitle()" classname="unit.model.TaskTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskTest]/[method:testTaskWithEmptyTitle()]
+display-name: Создание задачи с пустым заголовком
+]]></system-out>
+</testcase>
+<testcase name="testMarkAsCompleted()" classname="unit.model.TaskManagerTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskManagerTest]/[method:testMarkAsCompleted()]
+display-name: Отметка задачи как выполненной
+]]></system-out>
+</testcase>
+<testcase name="testAllValuesExist()" classname="unit.model.CategoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.CategoryTest]/[method:testAllValuesExist()]
+display-name: Проверка всех значений перечисления
+]]></system-out>
+</testcase>
+<testcase name="testStopAllSounds()" classname="unit.util.AudioManagerTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.util.AudioManagerTest]/[method:testStopAllSounds()]
+display-name: Остановка всех звуков
+]]></system-out>
+</testcase>
+<testcase name="testAddTask()" classname="unit.model.TaskManagerTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskManagerTest]/[method:testAddTask()]
+display-name: Добавление задачи в менеджер
+]]></system-out>
+</testcase>
+<testcase name="testGetTaskCount()" classname="unit.model.TaskManagerTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskManagerTest]/[method:testGetTaskCount()]
+display-name: Получение количества задач
+]]></system-out>
+</testcase>
+<testcase name="testHasAudioFiles()" classname="unit.util.AudioManagerTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.util.AudioManagerTest]/[method:testHasAudioFiles()]
+display-name: Проверка наличия аудио файлов
+]]></system-out>
+</testcase>
+<testcase name="testRemoveNonExistentTask()" classname="util.JsonUtilTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:util.JsonUtilTest]/[method:testRemoveNonExistentTask()]
+display-name: testRemoveNonExistentTask()
+]]></system-out>
+</testcase>
+<testcase name="testCompletedStatus(boolean)[2]" classname="unit.model.TaskTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskTest]/[test-template:testCompletedStatus(boolean)]/[test-template-invocation:#2]
+display-name: [2] false
+]]></system-out>
+</testcase>
+<testcase name="testCompletedStatus(boolean)[1]" classname="unit.model.TaskTest" time="0.006">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskTest]/[test-template:testCompletedStatus(boolean)]/[test-template-invocation:#1]
+display-name: [1] true
+]]></system-out>
+</testcase>
+<testcase name="testWithoutAudioFiles()" classname="unit.util.AudioManagerTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.util.AudioManagerTest]/[method:testWithoutAudioFiles()]
+display-name: Тестирование методов без реальных аудио файлов
+]]></system-out>
+</testcase>
+<testcase name="testUpdateTaskInFile()" classname="integration.JsonIntegrationTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:integration.JsonIntegrationTest]/[method:testUpdateTaskInFile()]
+display-name: Обновление задачи в файле
+]]></system-out>
+</testcase>
+<testcase name="testDialogContainsCoreControls()" classname="gui.NewTaskDialogGuiTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:gui.NewTaskDialogGuiTest]/[method:testDialogContainsCoreControls()]
+display-name: Диалог создания задачи содержит основные поля формы
+]]></system-out>
+</testcase>
+<testcase name="testGetDisplayName(Category)[1]" classname="unit.model.CategoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.CategoryTest]/[test-template:testGetDisplayName(model.Category)]/[test-template-invocation:#1]
+display-name: [1] WORK
+]]></system-out>
+</testcase>
+<testcase name="testGetDisplayName(Category)[2]" classname="unit.model.CategoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.CategoryTest]/[test-template:testGetDisplayName(model.Category)]/[test-template-invocation:#2]
+display-name: [2] HOME
+]]></system-out>
+</testcase>
+<testcase name="testGetDisplayName(Category)[3]" classname="unit.model.CategoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.CategoryTest]/[test-template:testGetDisplayName(model.Category)]/[test-template-invocation:#3]
+display-name: [3] STUDY
+]]></system-out>
+</testcase>
+<testcase name="testGetDisplayName(Category)[4]" classname="unit.model.CategoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.CategoryTest]/[test-template:testGetDisplayName(model.Category)]/[test-template-invocation:#4]
+display-name: [4] OTHER
+]]></system-out>
+</testcase>
+<testcase name="testPlaySoundsWhenEnabled()" classname="unit.util.AudioManagerTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.util.AudioManagerTest]/[method:testPlaySoundsWhenEnabled()]
+display-name: Воспроизведение звуков при включенных звуках
+]]></system-out>
+</testcase>
+<testcase name="testRemoveTaskById()" classname="unit.model.TaskManagerTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskManagerTest]/[method:testRemoveTaskById()]
+display-name: Удаление задачи по ID
+]]></system-out>
+</testcase>
+<testcase name="testIdGeneration()" classname="unit.model.TaskTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskTest]/[method:testIdGeneration()]
+display-name: Автоматическая генерация ID
+]]></system-out>
+</testcase>
+<testcase name="testGetColor(Category)[3]" classname="unit.model.CategoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.CategoryTest]/[test-template:testGetColor(model.Category)]/[test-template-invocation:#3]
+display-name: [3] STUDY
+]]></system-out>
+</testcase>
+<testcase name="testViewModelCreation()" classname="unit.viewmodel.TaskViewModelTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.viewmodel.TaskViewModelTest]/[method:testViewModelCreation()]
+display-name: Создание ViewModel из модели Task
+]]></system-out>
+</testcase>
+<testcase name="testSingletonPattern()" classname="unit.model.TaskManagerTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskManagerTest]/[method:testSingletonPattern()]
+display-name: Проверка паттерна Singleton
+]]></system-out>
+</testcase>
+<testcase name="testGetColor(Category)[4]" classname="unit.model.CategoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.CategoryTest]/[test-template:testGetColor(model.Category)]/[test-template-invocation:#4]
+display-name: [4] OTHER
+]]></system-out>
+</testcase>
+<testcase name="testSaveAndLoadMultipleTasks()" classname="util.JsonUtilTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:util.JsonUtilTest]/[method:testSaveAndLoadMultipleTasks()]
+display-name: testSaveAndLoadMultipleTasks()
+]]></system-out>
+</testcase>
+<testcase name="testGetColor(Category)[1]" classname="unit.model.CategoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.CategoryTest]/[test-template:testGetColor(model.Category)]/[test-template-invocation:#1]
+display-name: [1] WORK
+]]></system-out>
+</testcase>
+<testcase name="testGetColor(Category)[2]" classname="unit.model.CategoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.CategoryTest]/[test-template:testGetColor(model.Category)]/[test-template-invocation:#2]
+display-name: [2] HOME
+]]></system-out>
+</testcase>
+<testcase name="testSearchWithEmptyQuery()" classname="unit.model.TaskManagerTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskManagerTest]/[method:testSearchWithEmptyQuery()]
+display-name: Поиск по пустому запросу
+]]></system-out>
+</testcase>
+<testcase name="testJavaFXProperties()" classname="unit.viewmodel.TaskViewModelTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.viewmodel.TaskViewModelTest]/[method:testJavaFXProperties()]
+display-name: Проверка свойств JavaFX
+]]></system-out>
+</testcase>
+<testcase name="testTaskWithNullPriorityAndCategory()" classname="unit.model.TaskTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskTest]/[method:testTaskWithNullPriorityAndCategory()]
+display-name: Создание задачи с null приоритетом и категорией
+]]></system-out>
+</testcase>
+<testcase name="testClearAllTasks()" classname="unit.model.TaskManagerTest" time="0.005">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskManagerTest]/[method:testClearAllTasks()]
+display-name: Очистка всех задач
+]]></system-out>
+</testcase>
+<testcase name="testFullSaveLoadCycle()" classname="integration.JsonIntegrationTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:integration.JsonIntegrationTest]/[method:testFullSaveLoadCycle()]
+display-name: Полный цикл: создание → сохранение → загрузка → проверка
+]]></system-out>
+</testcase>
+<testcase name="testCategoryComparison()" classname="unit.model.CategoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.CategoryTest]/[method:testCategoryComparison()]
+display-name: Проверка сравнения категорий
+]]></system-out>
+</testcase>
+<testcase name="testTwoWayBindingViewModelToModel()" classname="unit.viewmodel.TaskViewModelTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.viewmodel.TaskViewModelTest]/[method:testTwoWayBindingViewModelToModel()]
+display-name: Двусторонняя привязка свойств - изменение ViewModel
+]]></system-out>
+</testcase>
+<testcase name="testMarkNonExistentAsCompleted()" classname="unit.model.TaskManagerTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskManagerTest]/[method:testMarkNonExistentAsCompleted()]
+display-name: Отметка несуществующей задачи как выполненной
+]]></system-out>
+</testcase>
+<testcase name="testLoadFromInvalidJsonFile()" classname="integration.JsonIntegrationTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:integration.JsonIntegrationTest]/[method:testLoadFromInvalidJsonFile()]
+display-name: Загрузка из файла с некорректным JSON
+]]></system-out>
+</testcase>
+<testcase name="testDispose()" classname="unit.util.AudioManagerTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.util.AudioManagerTest]/[method:testDispose()]
+display-name: Освобождение ресурсов
+]]></system-out>
+</testcase>
+<testcase name="testAddTaskToExistingFile()" classname="integration.JsonIntegrationTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:integration.JsonIntegrationTest]/[method:testAddTaskToExistingFile()]
+display-name: Добавление задачи к существующим
+]]></system-out>
+</testcase>
+<testcase name="testOverdueUpdate()" classname="unit.viewmodel.TaskViewModelTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.viewmodel.TaskViewModelTest]/[method:testOverdueUpdate()]
+display-name: Обновление ViewModel при изменении статуса просроченности
+]]></system-out>
+</testcase>
+<testcase name="testExportTasks()" classname="util.JsonUtilTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:util.JsonUtilTest]/[method:testExportTasks()]
+display-name: testExportTasks()
+]]></system-out>
+</testcase>
+<testcase name="testGetTasksByCompletion()" classname="unit.model.TaskManagerTest" time="0.004">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskManagerTest]/[method:testGetTasksByCompletion()]
+display-name: Получение задач по статусу выполнения
+]]></system-out>
+</testcase>
+<testcase name="testRemoveNonExistentTask()" classname="unit.model.TaskManagerTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskManagerTest]/[method:testRemoveNonExistentTask()]
+display-name: Удаление несуществующей задачи
+]]></system-out>
+</testcase>
+<testcase name="testGetIconName()" classname="unit.model.PriorityTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.PriorityTest]/[method:testGetIconName()]
+display-name: Проверка имени иконки
+]]></system-out>
+</testcase>
+<testcase name="testGetDisplayName(Priority)[1]" classname="unit.model.PriorityTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.PriorityTest]/[test-template:testGetDisplayName(model.Priority)]/[test-template-invocation:#1]
+display-name: [1] URGENT
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameValid(String)[2]" classname="unit.model.CategoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.CategoryTest]/[test-template:testFromDisplayNameValid(java.lang.String)]/[test-template-invocation:#2]
+display-name: [2] работа
+]]></system-out>
+</testcase>
+<testcase name="testGetDisplayName(Priority)[2]" classname="unit.model.PriorityTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.PriorityTest]/[test-template:testGetDisplayName(model.Priority)]/[test-template-invocation:#2]
+display-name: [2] IMPORTANT
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameValid(String)[1]" classname="unit.model.CategoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.CategoryTest]/[test-template:testFromDisplayNameValid(java.lang.String)]/[test-template-invocation:#1]
+display-name: [1] Работа
+]]></system-out>
+</testcase>
+<testcase name="testGetDisplayName(Priority)[3]" classname="unit.model.PriorityTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.PriorityTest]/[test-template:testGetDisplayName(model.Priority)]/[test-template-invocation:#3]
+display-name: [3] NORMAL
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameValid(String)[4]" classname="unit.model.CategoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.CategoryTest]/[test-template:testFromDisplayNameValid(java.lang.String)]/[test-template-invocation:#4]
+display-name: [4] Дом
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameValid(String)[3]" classname="unit.model.CategoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.CategoryTest]/[test-template:testFromDisplayNameValid(java.lang.String)]/[test-template-invocation:#3]
+display-name: [3] РАБОТА
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameValid(String)[6]" classname="unit.model.CategoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.CategoryTest]/[test-template:testFromDisplayNameValid(java.lang.String)]/[test-template-invocation:#6]
+display-name: [6] Учёба
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameInvalid(String)[2]" classname="unit.model.CategoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.CategoryTest]/[test-template:testFromDisplayNameInvalid(java.lang.String)]/[test-template-invocation:#2]
+display-name: [2] неизвестно
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameValid(String)[5]" classname="unit.model.CategoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.CategoryTest]/[test-template:testFromDisplayNameValid(java.lang.String)]/[test-template-invocation:#5]
+display-name: [5] дом
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameInvalid(String)[3]" classname="unit.model.CategoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.CategoryTest]/[test-template:testFromDisplayNameInvalid(java.lang.String)]/[test-template-invocation:#3]
+display-name: [3] категория
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameValid(String)[8]" classname="unit.model.CategoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.CategoryTest]/[test-template:testFromDisplayNameValid(java.lang.String)]/[test-template-invocation:#8]
+display-name: [8] Другое
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameValid(String)[7]" classname="unit.model.CategoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.CategoryTest]/[test-template:testFromDisplayNameValid(java.lang.String)]/[test-template-invocation:#7]
+display-name: [7] учёба
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameInvalid(String)[1]" classname="unit.model.CategoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.CategoryTest]/[test-template:testFromDisplayNameInvalid(java.lang.String)]/[test-template-invocation:#1]
+display-name: [1] 
+]]></system-out>
+</testcase>
+<testcase name="testGetDefault()" classname="unit.model.PriorityTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.PriorityTest]/[method:testGetDefault()]
+display-name: Проверка приоритета по умолчанию
+]]></system-out>
+</testcase>
+<testcase name="testToString()" classname="unit.viewmodel.TaskViewModelTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.viewmodel.TaskViewModelTest]/[method:testToString()]
+display-name: Тестирование toString()
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameValid(String)[9]" classname="unit.model.CategoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.CategoryTest]/[test-template:testFromDisplayNameValid(java.lang.String)]/[test-template-invocation:#9]
+display-name: [9] другое
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameInvalid(String)[4]" classname="unit.model.CategoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.CategoryTest]/[test-template:testFromDisplayNameInvalid(java.lang.String)]/[test-template-invocation:#4]
+display-name: [4] 123
+]]></system-out>
+</testcase>
+<testcase name="testFromDisplayNameInvalid(String)[5]" classname="unit.model.CategoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.CategoryTest]/[test-template:testFromDisplayNameInvalid(java.lang.String)]/[test-template-invocation:#5]
+display-name: [5] test
+]]></system-out>
+</testcase>
+<testcase name="testTaskCreation()" classname="unit.model.TaskTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:unit.model.TaskTest]/[method:testTaskCreation()]
+display-name: Создание задачи с валидными данными
+]]></system-out>
+</testcase>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]
+display-name: JUnit Jupiter
+]]></system-out>
+</testsuite>

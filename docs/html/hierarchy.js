@@ -4,7 +4,10 @@ var hierarchy =
       [ "app.MainApp", "classapp_1_1_main_app.html", null ]
     ] ],
     [ "util.AudioManager", "classutil_1_1_audio_manager.html", null ],
+    [ "util.AuthService", "classutil_1_1_auth_service.html", null ],
     [ "model.Category", "enummodel_1_1_category.html", null ],
+    [ "util.DatabaseCli", "classutil_1_1_database_cli.html", null ],
+    [ "repository.DatabaseConfig", "classrepository_1_1_database_config.html", null ],
     [ "repository.DatabaseManager", "classrepository_1_1_database_manager.html", null ],
     [ "util.DatabaseMigrator", "classutil_1_1_database_migrator.html", null ],
     [ "util.EmailNotifier", "classutil_1_1_email_notifier.html", null ],
@@ -14,6 +17,7 @@ var hierarchy =
     [ "util.NotificationService", "classutil_1_1_notification_service.html", null ],
     [ "util.NotificationSettings", "classutil_1_1_notification_settings.html", null ],
     [ "util.PlatformUtil.OsFamily", "enumutil_1_1_platform_util_1_1_os_family.html", null ],
+    [ "util.PasswordUtil", "classutil_1_1_password_util.html", null ],
     [ "util.PathResolver", "classutil_1_1_path_resolver.html", null ],
     [ "util.PlatformUtil", "classutil_1_1_platform_util.html", null ],
     [ "model.Priority", "enummodel_1_1_priority.html", null ],
@@ -24,5 +28,8 @@ var hierarchy =
     [ "model.TaskManager", "classmodel_1_1_task_manager.html", null ],
     [ "util.TaskReminderService", "classutil_1_1_task_reminder_service.html", null ],
     [ "viewmodel.TaskViewModel", "classviewmodel_1_1_task_view_model.html", null ],
-    [ "util.ThemeManager", "classutil_1_1_theme_manager.html", null ]
+    [ "util.TestReportGenerator", "classutil_1_1_test_report_generator.html", null ],
+    [ "util.ThemeManager", "classutil_1_1_theme_manager.html", null ],
+    [ "repository.DatabaseConfig.Type", "enumrepository_1_1_database_config_1_1_type.html", null ],
+    [ "model.User", "classmodel_1_1_user.html", null ]
 ];

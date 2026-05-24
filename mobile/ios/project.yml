@@ -1,0 +1,21 @@
+name: ToDoListMobile
+options:
+  bundleIdPrefix: ru.chernov.todolist
+settings:
+  base:
+    SWIFT_VERSION: 5.0
+targets:
+  ToDoListMobile:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: ToDoListMobile
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: ru.chernov.todolist.mobile
+        INFOPLIST_FILE: ToDoListMobile/Info.plist
+        SUPPORTED_PLATFORMS: "iphoneos iphonesimulator"
+        TARGETED_DEVICE_FAMILY: "1,2"
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: ""

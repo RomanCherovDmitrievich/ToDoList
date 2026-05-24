@@ -4,6 +4,7 @@ import model.Task;
 import model.TaskManager;
 import model.Priority;
 import model.Category;
+import model.User;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.BeforeEach;
@@ -67,6 +68,7 @@ class TaskManagerTest {
     void tearDown() {
         // Очищаем после каждого теста
         taskManager.clearAllTasks();
+        taskManager.setCurrentUser(null);
     }
     
     @Test
@@ -101,6 +103,7 @@ class TaskManagerTest {
         
         assertEquals(3, taskManager.getAllTasks().size());
     }
+
     
     @Test
     @DisplayName("Удаление задачи по ID")
@@ -345,5 +348,31 @@ class TaskManagerTest {
         // После выполнения задача не должна считаться просроченной
         assertFalse(testTask2.isOverdue());
         assertEquals(0, taskManager.getOverdueTaskCount());
+    }
+
+    @Test
+    @DisplayName("При активном пользователе видны только его задачи")
+    void testCurrentUserSeesOnlyOwnTasks() {
+        testTask1.setOwnerUserId("user-1");
+        testTask2.setOwnerUserId("user-2");
+
+        taskManager.addTask(testTask1);
+        taskManager.addTask(testTask2);
+        taskManager.setCurrentUser(new User("user-1", "first", "first@example.com"));
+
+        List<Task> visible = taskManager.getAllTasks();
+        assertEquals(1, visible.size());
+        assertEquals("user-1", visible.get(0).getOwnerUserId());
+    }
+
+    @Test
+    @DisplayName("Старые задачи без владельца не пропадают после входа")
+    void testOrphanTasksRemainVisibleAfterLogin() {
+        taskManager.addTask(testTask1);
+        taskManager.setCurrentUser(new User("user-1", "first", "first@example.com"));
+
+        List<Task> visible = taskManager.getAllTasks();
+        assertEquals(1, visible.size());
+        assertEquals("user-1", visible.get(0).getOwnerUserId());
     }
 }

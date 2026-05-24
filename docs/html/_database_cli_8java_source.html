@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Умный планировщик задач (To-Do List): Исходный файл src/util/DatabaseCli.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">JavaFX ToDo-приложение с SQLite, уведомлениями и летней темой</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_database_cli_8java_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">DatabaseCli.java</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_database_cli_8java.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">package </span>util;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> model.Category;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">import</span> model.Priority;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> model.Task;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">import</span> repository.DatabaseConfig;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">import</span> repository.DatabaseManager;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">import</span> java.nio.file.Files;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">import</span> java.sql.Connection;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">import</span> java.sql.PreparedStatement;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">import</span> java.sql.ResultSet;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">import</span> java.sql.Statement;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">import</span> java.time.LocalDateTime;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">import</span> java.time.format.DateTimeFormatter;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classutil_1_1_database_cli.html">   20</a></span><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">class </span><a class="code hl_function" href="classutil_1_1_database_cli.html#a21980a8aadd20c5b52bbd300c2847a66">DatabaseCli</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classutil_1_1_database_cli.html#a13ec90064944173dce87976b2c3c68b4">   21</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String <a class="code hl_variable" href="classutil_1_1_database_cli.html#a13ec90064944173dce87976b2c3c68b4">PROBE_TABLE</a> = <span class="stringliteral">&quot;codex_connection_probe&quot;</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classutil_1_1_database_cli.html#a31afb018862179b5f3bf259b13c28792">   22</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> DateTimeFormatter <a class="code hl_variable" href="classutil_1_1_database_cli.html#a31afb018862179b5f3bf259b13c28792">PROBE_NOTE_TIME</a> = DateTimeFormatter.ofPattern(<span class="stringliteral">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classutil_1_1_database_cli.html#a22095927ea0103a541a869b88b00ae81">   24</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String[] <a class="code hl_variable" href="classutil_1_1_database_cli.html#a22095927ea0103a541a869b88b00ae81">ACTIONS</a> = {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="stringliteral">&quot;Подготовить&quot;</span>, <span class="stringliteral">&quot;Проверить&quot;</span>, <span class="stringliteral">&quot;Согласовать&quot;</span>, <span class="stringliteral">&quot;Отправить&quot;</span>,</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="stringliteral">&quot;Обновить&quot;</span>, <span class="stringliteral">&quot;Купить&quot;</span>, <span class="stringliteral">&quot;Позвонить&quot;</span>, <span class="stringliteral">&quot;Спланировать&quot;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    };</div>
+</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classutil_1_1_database_cli.html#a332e027a6b351183649ee29d4e04cdf1">   29</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String[] <a class="code hl_variable" href="classutil_1_1_database_cli.html#a332e027a6b351183649ee29d4e04cdf1">SUBJECTS</a> = {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="stringliteral">&quot;отчёт&quot;</span>, <span class="stringliteral">&quot;презентацию&quot;</span>, <span class="stringliteral">&quot;список покупок&quot;</span>, <span class="stringliteral">&quot;план встречи&quot;</span>,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="stringliteral">&quot;домашнее задание&quot;</span>, <span class="stringliteral">&quot;резюме&quot;</span>, <span class="stringliteral">&quot;календарь задач&quot;</span>, <span class="stringliteral">&quot;рабочий документ&quot;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    };</div>
+</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="};">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classutil_1_1_database_cli.html#a3ba18f8be06dc30fe47e40d6445c6a05">   34</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String[] <a class="code hl_variable" href="classutil_1_1_database_cli.html#a3ba18f8be06dc30fe47e40d6445c6a05">TAGS</a> = {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="stringliteral">&quot;Важно&quot;</span>, <span class="stringliteral">&quot;Срочно&quot;</span>, <span class="stringliteral">&quot;Работа&quot;</span>, <span class="stringliteral">&quot;Дом&quot;</span>, <span class="stringliteral">&quot;Учеба&quot;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    };</div>
+</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classutil_1_1_database_cli.html#a21980a8aadd20c5b52bbd300c2847a66">   38</a></span>    <span class="keyword">private</span> <a class="code hl_function" href="classutil_1_1_database_cli.html#a21980a8aadd20c5b52bbd300c2847a66">DatabaseCli</a>() {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
+</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classutil_1_1_database_cli.html#a71f8f6fb070d38d93606f081115edf69">   41</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classutil_1_1_database_cli.html#a71f8f6fb070d38d93606f081115edf69">main</a>(String[] args) {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordflow">if</span> (args.length == 0) {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <a class="code hl_function" href="classutil_1_1_database_cli.html#a5cfd5b212b94e8b33b08bbc89599a0bf">printUsage</a>();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="keywordflow">switch</span> (args[0].toLowerCase()) {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                <span class="keywordflow">case</span> <span class="stringliteral">&quot;probe&quot;</span> -&gt; <a class="code hl_function" href="classutil_1_1_database_cli.html#a8b28f660a281f658db4382a70065381c">runProbe</a>();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                <span class="keywordflow">case</span> <span class="stringliteral">&quot;seed&quot;</span> -&gt; <a class="code hl_function" href="classutil_1_1_database_cli.html#a005cafe083c9e1fa557954fe33847f52">runSeed</a>(args);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                <span class="keywordflow">default</span> -&gt; {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                    System.err.println(<span class="stringliteral">&quot;Unknown command: &quot;</span> + args[0]);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                    <a class="code hl_function" href="classutil_1_1_database_cli.html#a5cfd5b212b94e8b33b08bbc89599a0bf">printUsage</a>();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                    System.exit(1);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        } <span class="keywordflow">catch</span> (Exception e) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            System.err.println(<span class="stringliteral">&quot;Database CLI error: &quot;</span> + e.getMessage());</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            System.exit(1);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
+</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="foldopen" id="foldopen00063" data-start="{" data-end="}">
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classutil_1_1_database_cli.html#a8b28f660a281f658db4382a70065381c">   63</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classutil_1_1_database_cli.html#a8b28f660a281f658db4382a70065381c">runProbe</a>() throws Exception {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <a class="code hl_class" href="classrepository_1_1_database_config.html">DatabaseConfig</a> config = <a class="code hl_class" href="classrepository_1_1_database_config.html">DatabaseConfig</a>.<a class="code hl_function" href="classrepository_1_1_database_config.html#a4e9d6c7f878e393a494f9c9fac13f0a9">load</a>();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        config.<a class="code hl_function" href="classrepository_1_1_database_config.html#a0ad03838a65cc0d81aa5744e49445ef1">validate</a>();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        config.<a class="code hl_function" href="classrepository_1_1_database_config.html#a4210ed0a814b9aa2d0b1c12377895163">loadDriver</a>();</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">if</span> (config.<a class="code hl_function" href="classrepository_1_1_database_config.html#a10d0e3b2363ed38f49bfa62571b904cb">isSqlite</a>() &amp;&amp; config.<a class="code hl_function" href="classrepository_1_1_database_config.html#a7f1bd1a7d482f1576b5053380a70ddce">getSqlitePath</a>() != <span class="keyword">null</span> &amp;&amp; config.<a class="code hl_function" href="classrepository_1_1_database_config.html#a7f1bd1a7d482f1576b5053380a70ddce">getSqlitePath</a>().getParent() != <span class="keyword">null</span>) {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            Files.createDirectories(config.<a class="code hl_function" href="classrepository_1_1_database_config.html#a7f1bd1a7d482f1576b5053380a70ddce">getSqlitePath</a>().getParent());</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordflow">if</span> (config.<a class="code hl_function" href="classrepository_1_1_database_config.html#ae61320b64c79be14742b8b9d39d6435b">isCustom</a>()) {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalStateException(</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                <span class="stringliteral">&quot;Probe mode is implemented for SQLite/PostgreSQL only. For another DB engine, adapt SQL in DatabaseCli.&quot;</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            );</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        System.out.println(<span class="stringliteral">&quot;DB config: &quot;</span> + config.<a class="code hl_function" href="classrepository_1_1_database_config.html#a9c4a9f4428edde4c28b333c3b3951573">describe</a>());</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keywordflow">try</span> (Connection connection = config.<a class="code hl_function" href="classrepository_1_1_database_config.html#ab5871fda6f1f9a780cf4dcf674cd0986">openConnection</a>();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>             Statement statement = connection.createStatement()) {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            statement.execute(<a class="code hl_function" href="classutil_1_1_database_cli.html#acd3cb88dcec7ac48a5c35466645c92a0">createProbeTableSql</a>(config));</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        String note = <span class="stringliteral">&quot;probe from DatabaseCli at &quot;</span> + LocalDateTime.now().format(<a class="code hl_variable" href="classutil_1_1_database_cli.html#a31afb018862179b5f3bf259b13c28792">PROBE_NOTE_TIME</a>);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keywordflow">try</span> (Connection connection = config.<a class="code hl_function" href="classrepository_1_1_database_config.html#ab5871fda6f1f9a780cf4dcf674cd0986">openConnection</a>();</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>             PreparedStatement statement = connection.prepareStatement(</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                 <span class="stringliteral">&quot;INSERT INTO &quot;</span> + <a class="code hl_variable" href="classutil_1_1_database_cli.html#a13ec90064944173dce87976b2c3c68b4">PROBE_TABLE</a> + <span class="stringliteral">&quot;(note) VALUES (?)&quot;</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>             )) {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            statement.setString(1, note);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            statement.executeUpdate();</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keywordflow">try</span> (Connection connection = config.<a class="code hl_function" href="classrepository_1_1_database_config.html#ab5871fda6f1f9a780cf4dcf674cd0986">openConnection</a>();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>             Statement statement = connection.createStatement();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>             ResultSet rs = statement.executeQuery(</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                 <span class="stringliteral">&quot;SELECT id, note, created_at FROM &quot;</span> + <a class="code hl_variable" href="classutil_1_1_database_cli.html#a13ec90064944173dce87976b2c3c68b4">PROBE_TABLE</a> + <span class="stringliteral">&quot; ORDER BY id DESC LIMIT 3&quot;</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>             )) {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            System.out.println(<span class="stringliteral">&quot;Latest probe rows:&quot;</span>);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            <span class="keywordflow">while</span> (rs.next()) {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                System.out.printf(</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                    <span class="stringliteral">&quot;  id=%s | note=%s | created_at=%s%n&quot;</span>,</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                    rs.getString(<span class="stringliteral">&quot;id&quot;</span>),</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                    rs.getString(<span class="stringliteral">&quot;note&quot;</span>),</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                    rs.getString(<span class="stringliteral">&quot;created_at&quot;</span>)</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                );</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <span class="keywordflow">try</span> (Connection connection = config.<a class="code hl_function" href="classrepository_1_1_database_config.html#ab5871fda6f1f9a780cf4dcf674cd0986">openConnection</a>();</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>             Statement statement = connection.createStatement()) {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            statement.execute(<span class="stringliteral">&quot;DROP TABLE &quot;</span> + <a class="code hl_variable" href="classutil_1_1_database_cli.html#a13ec90064944173dce87976b2c3c68b4">PROBE_TABLE</a>);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        System.out.println(<span class="stringliteral">&quot;Probe completed successfully.&quot;</span>);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    }</div>
+</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="foldopen" id="foldopen00119" data-start="{" data-end="}">
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="classutil_1_1_database_cli.html#a005cafe083c9e1fa557954fe33847f52">  119</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classutil_1_1_database_cli.html#a005cafe083c9e1fa557954fe33847f52">runSeed</a>(String[] args) {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="keywordflow">if</span> (args.length &lt; 2) {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="stringliteral">&quot;Missing task count. Example: seed 1000&quot;</span>);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keywordtype">int</span> count = Integer.parseInt(args[1]);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <span class="keywordflow">if</span> (count &lt;= 0) {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="stringliteral">&quot;Task count must be greater than 0&quot;</span>);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <a class="code hl_class" href="classrepository_1_1_database_manager.html">DatabaseManager</a> databaseManager = <a class="code hl_class" href="classrepository_1_1_database_manager.html">DatabaseManager</a>.<a class="code hl_function" href="classrepository_1_1_database_manager.html#a2035f400cd8f5f503ea6f961de54d4ff">getInstance</a>();</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keywordflow">if</span> (!databaseManager.<a class="code hl_function" href="classrepository_1_1_database_manager.html#a7630fbddf538745ae29200a89bc065fd">isAvailable</a>()) {</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalStateException(</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                <span class="stringliteral">&quot;Database is not available. Check db.properties and JDBC drivers before seeding.&quot;</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            );</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        }</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        System.out.println(<span class="stringliteral">&quot;Seeding &quot;</span> + count + <span class="stringliteral">&quot; tasks into &quot;</span> + databaseManager.<a class="code hl_function" href="classrepository_1_1_database_manager.html#a66711347e3f14c2744116109f192e5a7">getConfig</a>().<a class="code hl_function" href="classrepository_1_1_database_config.html#a9c4a9f4428edde4c28b333c3b3951573">describe</a>());</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        LocalDateTime baseTime = LocalDateTime.now().withSecond(0).withNano(0);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; count; i++) {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            <a class="code hl_class" href="classmodel_1_1_task.html">Task</a> task = <a class="code hl_function" href="classutil_1_1_database_cli.html#adb911638e2306bc86db9e833657f3b59">generateTask</a>(i, baseTime);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            databaseManager.<a class="code hl_function" href="classrepository_1_1_database_manager.html#a6cb10a041d036be47596127942959f83">saveTask</a>(task);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            databaseManager.<a class="code hl_function" href="classrepository_1_1_database_manager.html#aec1b83da666eedf233e1427621910db8">addTagToTask</a>(task.<a class="code hl_function" href="classmodel_1_1_task.html#ad8dccd120a6f3e607f46f0c3765de3a5">getId</a>(), <a class="code hl_variable" href="classutil_1_1_database_cli.html#a3ba18f8be06dc30fe47e40d6445c6a05">TAGS</a>[i % <a class="code hl_variable" href="classutil_1_1_database_cli.html#a3ba18f8be06dc30fe47e40d6445c6a05">TAGS</a>.length]);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        }</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        System.out.println(<span class="stringliteral">&quot;Created &quot;</span> + count + <span class="stringliteral">&quot; tasks.&quot;</span>);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    }</div>
+</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="foldopen" id="foldopen00148" data-start="{" data-end="}">
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="classutil_1_1_database_cli.html#adb911638e2306bc86db9e833657f3b59">  148</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <a class="code hl_class" href="classmodel_1_1_task.html">Task</a> <a class="code hl_function" href="classutil_1_1_database_cli.html#adb911638e2306bc86db9e833657f3b59">generateTask</a>(<span class="keywordtype">int</span> index, LocalDateTime baseTime) {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        <a class="code hl_class" href="enummodel_1_1_priority.html">Priority</a> priority = <a class="code hl_class" href="enummodel_1_1_priority.html">Priority</a>.values()[index % <a class="code hl_class" href="enummodel_1_1_priority.html">Priority</a>.values().length];</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <a class="code hl_class" href="enummodel_1_1_category.html">Category</a> category = <a class="code hl_class" href="enummodel_1_1_category.html">Category</a>.values()[index % <a class="code hl_class" href="enummodel_1_1_category.html">Category</a>.values().length];</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        LocalDateTime start = baseTime.plusHours(index % 48).plusDays(index / 48);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        LocalDateTime end = start.plusMinutes(45 + (index % 6) * 15L);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        <a class="code hl_class" href="classmodel_1_1_task.html">Task</a> task = <span class="keyword">new</span> <a class="code hl_class" href="classmodel_1_1_task.html">Task</a>(</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            <a class="code hl_variable" href="classutil_1_1_database_cli.html#a22095927ea0103a541a869b88b00ae81">ACTIONS</a>[index % <a class="code hl_variable" href="classutil_1_1_database_cli.html#a22095927ea0103a541a869b88b00ae81">ACTIONS</a>.length] + <span class="stringliteral">&quot; &quot;</span> + <a class="code hl_variable" href="classutil_1_1_database_cli.html#a332e027a6b351183649ee29d4e04cdf1">SUBJECTS</a>[index % <a class="code hl_variable" href="classutil_1_1_database_cli.html#a332e027a6b351183649ee29d4e04cdf1">SUBJECTS</a>.length] + <span class="stringliteral">&quot; #&quot;</span> + (index + 1),</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            <span class="stringliteral">&quot;Автоматически созданная задача №&quot;</span> + (index + 1) + <span class="stringliteral">&quot; для проверки нагрузки и работы БД.&quot;</span>,</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            start,</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            end,</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            priority,</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            category</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        );</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        task.<a class="code hl_function" href="classmodel_1_1_task.html#a7db5ca31a1b8fc9bb8ddb84ea22c7adf">setSortIndex</a>(index + 1);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        task.<a class="code hl_function" href="classmodel_1_1_task.html#acbf938d98a6b9a8e72cdf04d200dfece">setReminderOffsetMinutes</a>((index % 4) * 15);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <span class="keywordflow">if</span> (index % 10 == 0) {</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            task.<a class="code hl_function" href="classmodel_1_1_task.html#a5e261c2bdd2250bb8fcbf52eae83517f">setRecurrenceRule</a>(<span class="stringliteral">&quot;DAILY&quot;</span>);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (index % 15 == 0) {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            task.<a class="code hl_function" href="classmodel_1_1_task.html#a5e261c2bdd2250bb8fcbf52eae83517f">setRecurrenceRule</a>(<span class="stringliteral">&quot;WEEKLY&quot;</span>);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        }</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        <span class="keywordflow">return</span> task;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    }</div>
+</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="foldopen" id="foldopen00174" data-start="{" data-end="}">
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="classutil_1_1_database_cli.html#acd3cb88dcec7ac48a5c35466645c92a0">  174</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> String <a class="code hl_function" href="classutil_1_1_database_cli.html#acd3cb88dcec7ac48a5c35466645c92a0">createProbeTableSql</a>(<a class="code hl_class" href="classrepository_1_1_database_config.html">DatabaseConfig</a> config) {</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <span class="keywordflow">if</span> (config.<a class="code hl_function" href="classrepository_1_1_database_config.html#a395cc8ecd621add2b161f95ad93e8f01">isPostgresql</a>()) {</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span><span class="stringliteral">&quot;</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="stringliteral">                CREATE TABLE IF NOT EXISTS codex_connection_probe (</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="stringliteral">                    id BIGSERIAL PRIMARY KEY,</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="stringliteral">                    note TEXT NOT NULL,</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="stringliteral">                    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span><span class="stringliteral">                )</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="stringliteral">                &quot;</span><span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        }</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span><span class="stringliteral">&quot;</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="stringliteral">            CREATE TABLE IF NOT EXISTS codex_connection_probe (</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="stringliteral">                id INTEGER PRIMARY KEY AUTOINCREMENT,</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="stringliteral">                note TEXT NOT NULL,</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="stringliteral">                created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="stringliteral">            )</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="stringliteral">            &quot;</span><span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    }</div>
+</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="foldopen" id="foldopen00194" data-start="{" data-end="}">
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="classutil_1_1_database_cli.html#a5cfd5b212b94e8b33b08bbc89599a0bf">  194</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classutil_1_1_database_cli.html#a5cfd5b212b94e8b33b08bbc89599a0bf">printUsage</a>() {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        System.out.println(<span class="stringliteral">&quot;Usage:&quot;</span>);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        System.out.println(<span class="stringliteral">&quot;  java util.DatabaseCli probe&quot;</span>);</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        System.out.println(<span class="stringliteral">&quot;  java util.DatabaseCli seed &lt;count&gt;&quot;</span>);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    }</div>
+</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>}</div>
+</div>
+<div class="ttc" id="aclassmodel_1_1_task_html"><div class="ttname"><a href="classmodel_1_1_task.html">model.Task</a></div><div class="ttdoc">Основной класс, представляющий задачу в приложении</div><div class="ttdef"><b>Определения</b> <a href="_task_8java_source.html#l00029">Task.java:29</a></div></div>
+<div class="ttc" id="aclassmodel_1_1_task_html_a5e261c2bdd2250bb8fcbf52eae83517f"><div class="ttname"><a href="classmodel_1_1_task.html#a5e261c2bdd2250bb8fcbf52eae83517f">model.Task.setRecurrenceRule</a></div><div class="ttdeci">void setRecurrenceRule(String recurrenceRule)</div><div class="ttdef"><b>Определения</b> <a href="_task_8java_source.html#l00378">Task.java:378</a></div></div>
+<div class="ttc" id="aclassmodel_1_1_task_html_a7db5ca31a1b8fc9bb8ddb84ea22c7adf"><div class="ttname"><a href="classmodel_1_1_task.html#a7db5ca31a1b8fc9bb8ddb84ea22c7adf">model.Task.setSortIndex</a></div><div class="ttdeci">void setSortIndex(int sortIndex)</div><div class="ttdef"><b>Определения</b> <a href="_task_8java_source.html#l00372">Task.java:372</a></div></div>
+<div class="ttc" id="aclassmodel_1_1_task_html_acbf938d98a6b9a8e72cdf04d200dfece"><div class="ttname"><a href="classmodel_1_1_task.html#acbf938d98a6b9a8e72cdf04d200dfece">model.Task.setReminderOffsetMinutes</a></div><div class="ttdeci">void setReminderOffsetMinutes(int reminderOffsetMinutes)</div><div class="ttdef"><b>Определения</b> <a href="_task_8java_source.html#l00386">Task.java:386</a></div></div>
+<div class="ttc" id="aclassmodel_1_1_task_html_ad8dccd120a6f3e607f46f0c3765de3a5"><div class="ttname"><a href="classmodel_1_1_task.html#ad8dccd120a6f3e607f46f0c3765de3a5">model.Task.getId</a></div><div class="ttdeci">String getId()</div><div class="ttdoc">Возвращает уникальный идентификатор задачи</div><div class="ttdef"><b>Определения</b> <a href="_task_8java_source.html#l00262">Task.java:262</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html"><div class="ttname"><a href="classrepository_1_1_database_config.html">repository.DatabaseConfig</a></div><div class="ttdoc">Настройки подключения к БД.</div><div class="ttdef"><b>Определения</b> <a href="_database_config_8java_source.html#l00019">DatabaseConfig.java:19</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a0ad03838a65cc0d81aa5744e49445ef1"><div class="ttname"><a href="classrepository_1_1_database_config.html#a0ad03838a65cc0d81aa5744e49445ef1">repository.DatabaseConfig.validate</a></div><div class="ttdeci">void validate()</div><div class="ttdef"><b>Определения</b> <a href="_database_config_8java_source.html#l00124">DatabaseConfig.java:124</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a10d0e3b2363ed38f49bfa62571b904cb"><div class="ttname"><a href="classrepository_1_1_database_config.html#a10d0e3b2363ed38f49bfa62571b904cb">repository.DatabaseConfig.isSqlite</a></div><div class="ttdeci">boolean isSqlite()</div><div class="ttdef"><b>Определения</b> <a href="_database_config_8java_source.html#l00244">DatabaseConfig.java:244</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a395cc8ecd621add2b161f95ad93e8f01"><div class="ttname"><a href="classrepository_1_1_database_config.html#a395cc8ecd621add2b161f95ad93e8f01">repository.DatabaseConfig.isPostgresql</a></div><div class="ttdeci">boolean isPostgresql()</div><div class="ttdef"><b>Определения</b> <a href="_database_config_8java_source.html#l00248">DatabaseConfig.java:248</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a4210ed0a814b9aa2d0b1c12377895163"><div class="ttname"><a href="classrepository_1_1_database_config.html#a4210ed0a814b9aa2d0b1c12377895163">repository.DatabaseConfig.loadDriver</a></div><div class="ttdeci">void loadDriver()</div><div class="ttdef"><b>Определения</b> <a href="_database_config_8java_source.html#l00158">DatabaseConfig.java:158</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a4e9d6c7f878e393a494f9c9fac13f0a9"><div class="ttname"><a href="classrepository_1_1_database_config.html#a4e9d6c7f878e393a494f9c9fac13f0a9">repository.DatabaseConfig.load</a></div><div class="ttdeci">static DatabaseConfig load()</div><div class="ttdef"><b>Определения</b> <a href="_database_config_8java_source.html#l00067">DatabaseConfig.java:67</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a7f1bd1a7d482f1576b5053380a70ddce"><div class="ttname"><a href="classrepository_1_1_database_config.html#a7f1bd1a7d482f1576b5053380a70ddce">repository.DatabaseConfig.getSqlitePath</a></div><div class="ttdeci">Path getSqlitePath()</div><div class="ttdef"><b>Определения</b> <a href="_database_config_8java_source.html#l00216">DatabaseConfig.java:216</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a9c4a9f4428edde4c28b333c3b3951573"><div class="ttname"><a href="classrepository_1_1_database_config.html#a9c4a9f4428edde4c28b333c3b3951573">repository.DatabaseConfig.describe</a></div><div class="ttdeci">String describe()</div><div class="ttdef"><b>Определения</b> <a href="_database_config_8java_source.html#l00200">DatabaseConfig.java:200</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_ab5871fda6f1f9a780cf4dcf674cd0986"><div class="ttname"><a href="classrepository_1_1_database_config.html#ab5871fda6f1f9a780cf4dcf674cd0986">repository.DatabaseConfig.openConnection</a></div><div class="ttdeci">Connection openConnection()</div><div class="ttdef"><b>Определения</b> <a href="_database_config_8java_source.html#l00149">DatabaseConfig.java:149</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_ae61320b64c79be14742b8b9d39d6435b"><div class="ttname"><a href="classrepository_1_1_database_config.html#ae61320b64c79be14742b8b9d39d6435b">repository.DatabaseConfig.isCustom</a></div><div class="ttdeci">boolean isCustom()</div><div class="ttdef"><b>Определения</b> <a href="_database_config_8java_source.html#l00252">DatabaseConfig.java:252</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_manager_html"><div class="ttname"><a href="classrepository_1_1_database_manager.html">repository.DatabaseManager</a></div><div class="ttdoc">SQLite DAO для задач и связанных таблиц.</div><div class="ttdef"><b>Определения</b> <a href="_database_manager_8java_source.html#l00025">DatabaseManager.java:25</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_manager_html_a2035f400cd8f5f503ea6f961de54d4ff"><div class="ttname"><a href="classrepository_1_1_database_manager.html#a2035f400cd8f5f503ea6f961de54d4ff">repository.DatabaseManager.getInstance</a></div><div class="ttdeci">static synchronized DatabaseManager getInstance()</div><div class="ttdef"><b>Определения</b> <a href="_database_manager_8java_source.html#l00036">DatabaseManager.java:36</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_manager_html_a66711347e3f14c2744116109f192e5a7"><div class="ttname"><a href="classrepository_1_1_database_manager.html#a66711347e3f14c2744116109f192e5a7">repository.DatabaseManager.getConfig</a></div><div class="ttdeci">synchronized DatabaseConfig getConfig()</div><div class="ttdef"><b>Определения</b> <a href="_database_manager_8java_source.html#l00920">DatabaseManager.java:920</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_manager_html_a6cb10a041d036be47596127942959f83"><div class="ttname"><a href="classrepository_1_1_database_manager.html#a6cb10a041d036be47596127942959f83">repository.DatabaseManager.saveTask</a></div><div class="ttdeci">synchronized void saveTask(Task task)</div><div class="ttdef"><b>Определения</b> <a href="_database_manager_8java_source.html#l00305">DatabaseManager.java:305</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_manager_html_a7630fbddf538745ae29200a89bc065fd"><div class="ttname"><a href="classrepository_1_1_database_manager.html#a7630fbddf538745ae29200a89bc065fd">repository.DatabaseManager.isAvailable</a></div><div class="ttdeci">synchronized boolean isAvailable()</div><div class="ttdef"><b>Определения</b> <a href="_database_manager_8java_source.html#l00924">DatabaseManager.java:924</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_manager_html_aec1b83da666eedf233e1427621910db8"><div class="ttname"><a href="classrepository_1_1_database_manager.html#aec1b83da666eedf233e1427621910db8">repository.DatabaseManager.addTagToTask</a></div><div class="ttdeci">synchronized void addTagToTask(String taskId, String tagName)</div><div class="ttdef"><b>Определения</b> <a href="_database_manager_8java_source.html#l00493">DatabaseManager.java:493</a></div></div>
+<div class="ttc" id="aclassutil_1_1_database_cli_html_a005cafe083c9e1fa557954fe33847f52"><div class="ttname"><a href="classutil_1_1_database_cli.html#a005cafe083c9e1fa557954fe33847f52">util.DatabaseCli.runSeed</a></div><div class="ttdeci">static void runSeed(String[] args)</div><div class="ttdef"><b>Определения</b> <a href="#l00119">DatabaseCli.java:119</a></div></div>
+<div class="ttc" id="aclassutil_1_1_database_cli_html_a13ec90064944173dce87976b2c3c68b4"><div class="ttname"><a href="classutil_1_1_database_cli.html#a13ec90064944173dce87976b2c3c68b4">util.DatabaseCli.PROBE_TABLE</a></div><div class="ttdeci">static final String PROBE_TABLE</div><div class="ttdef"><b>Определения</b> <a href="#l00021">DatabaseCli.java:21</a></div></div>
+<div class="ttc" id="aclassutil_1_1_database_cli_html_a21980a8aadd20c5b52bbd300c2847a66"><div class="ttname"><a href="classutil_1_1_database_cli.html#a21980a8aadd20c5b52bbd300c2847a66">util.DatabaseCli.DatabaseCli</a></div><div class="ttdeci">DatabaseCli()</div><div class="ttdef"><b>Определения</b> <a href="#l00038">DatabaseCli.java:38</a></div></div>
+<div class="ttc" id="aclassutil_1_1_database_cli_html_a22095927ea0103a541a869b88b00ae81"><div class="ttname"><a href="classutil_1_1_database_cli.html#a22095927ea0103a541a869b88b00ae81">util.DatabaseCli.ACTIONS</a></div><div class="ttdeci">static final String[] ACTIONS</div><div class="ttdef"><b>Определения</b> <a href="#l00024">DatabaseCli.java:24</a></div></div>
+<div class="ttc" id="aclassutil_1_1_database_cli_html_a31afb018862179b5f3bf259b13c28792"><div class="ttname"><a href="classutil_1_1_database_cli.html#a31afb018862179b5f3bf259b13c28792">util.DatabaseCli.PROBE_NOTE_TIME</a></div><div class="ttdeci">static final DateTimeFormatter PROBE_NOTE_TIME</div><div class="ttdef"><b>Определения</b> <a href="#l00022">DatabaseCli.java:22</a></div></div>
+<div class="ttc" id="aclassutil_1_1_database_cli_html_a332e027a6b351183649ee29d4e04cdf1"><div class="ttname"><a href="classutil_1_1_database_cli.html#a332e027a6b351183649ee29d4e04cdf1">util.DatabaseCli.SUBJECTS</a></div><div class="ttdeci">static final String[] SUBJECTS</div><div class="ttdef"><b>Определения</b> <a href="#l00029">DatabaseCli.java:29</a></div></div>
+<div class="ttc" id="aclassutil_1_1_database_cli_html_a3ba18f8be06dc30fe47e40d6445c6a05"><div class="ttname"><a href="classutil_1_1_database_cli.html#a3ba18f8be06dc30fe47e40d6445c6a05">util.DatabaseCli.TAGS</a></div><div class="ttdeci">static final String[] TAGS</div><div class="ttdef"><b>Определения</b> <a href="#l00034">DatabaseCli.java:34</a></div></div>
+<div class="ttc" id="aclassutil_1_1_database_cli_html_a5cfd5b212b94e8b33b08bbc89599a0bf"><div class="ttname"><a href="classutil_1_1_database_cli.html#a5cfd5b212b94e8b33b08bbc89599a0bf">util.DatabaseCli.printUsage</a></div><div class="ttdeci">static void printUsage()</div><div class="ttdef"><b>Определения</b> <a href="#l00194">DatabaseCli.java:194</a></div></div>
+<div class="ttc" id="aclassutil_1_1_database_cli_html_a71f8f6fb070d38d93606f081115edf69"><div class="ttname"><a href="classutil_1_1_database_cli.html#a71f8f6fb070d38d93606f081115edf69">util.DatabaseCli.main</a></div><div class="ttdeci">static void main(String[] args)</div><div class="ttdef"><b>Определения</b> <a href="#l00041">DatabaseCli.java:41</a></div></div>
+<div class="ttc" id="aclassutil_1_1_database_cli_html_a8b28f660a281f658db4382a70065381c"><div class="ttname"><a href="classutil_1_1_database_cli.html#a8b28f660a281f658db4382a70065381c">util.DatabaseCli.runProbe</a></div><div class="ttdeci">static void runProbe()</div><div class="ttdef"><b>Определения</b> <a href="#l00063">DatabaseCli.java:63</a></div></div>
+<div class="ttc" id="aclassutil_1_1_database_cli_html_acd3cb88dcec7ac48a5c35466645c92a0"><div class="ttname"><a href="classutil_1_1_database_cli.html#acd3cb88dcec7ac48a5c35466645c92a0">util.DatabaseCli.createProbeTableSql</a></div><div class="ttdeci">static String createProbeTableSql(DatabaseConfig config)</div><div class="ttdef"><b>Определения</b> <a href="#l00174">DatabaseCli.java:174</a></div></div>
+<div class="ttc" id="aclassutil_1_1_database_cli_html_adb911638e2306bc86db9e833657f3b59"><div class="ttname"><a href="classutil_1_1_database_cli.html#adb911638e2306bc86db9e833657f3b59">util.DatabaseCli.generateTask</a></div><div class="ttdeci">static Task generateTask(int index, LocalDateTime baseTime)</div><div class="ttdef"><b>Определения</b> <a href="#l00148">DatabaseCli.java:148</a></div></div>
+<div class="ttc" id="aenummodel_1_1_category_html"><div class="ttname"><a href="enummodel_1_1_category.html">model.Category</a></div><div class="ttdef"><b>Определения</b> <a href="_category_8java_source.html#l00026">Category.java:26</a></div></div>
+<div class="ttc" id="aenummodel_1_1_priority_html"><div class="ttname"><a href="enummodel_1_1_priority.html">model.Priority</a></div><div class="ttdef"><b>Определения</b> <a href="_priority_8java_source.html#l00027">Priority.java:27</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_b7878ad5ecbf2506f4125b9d34c97e45.html">util</a></li><li class="navelem"><a href="_database_cli_8java.html">DatabaseCli.java</a></li>
+    <li class="footer">Документация по Умный планировщик задач (To-Do List). Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

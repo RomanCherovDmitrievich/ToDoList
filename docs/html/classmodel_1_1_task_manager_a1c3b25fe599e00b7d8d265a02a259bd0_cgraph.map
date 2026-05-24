@@ -1,5 +1,7 @@
 <map id="model.TaskManager.getUpcomingTasks" name="model.TaskManager.getUpcomingTasks">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,224,46"/>
-<area shape="rect" id="Node000002" href="$classmodel_1_1_task.html#aafb825513f5c3287cb724ddf5943ec03" title="Возвращает время начала задачи" alt="" coords="272,13,439,38"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,23,259,26,253,26,224,28"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,27,224,68"/>
+<area shape="rect" id="Node000002" href="$classmodel_1_1_task.html#aafb825513f5c3287cb724ddf5943ec03" title="Возвращает время начала задачи" alt="" coords="277,5,444,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,32,264,29,259,30,225,37"/>
+<area shape="rect" id="Node000003" href="$classmodel_1_1_task_manager.html#ae82877909bc0c5bd650e29d830dd0133" title=" " alt="" coords="272,55,450,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="224,57,259,64,254,64,224,63"/>
 </map>

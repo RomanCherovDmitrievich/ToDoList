@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Умный планировщик задач (To-Do List): Файл src/repository/DatabaseConfig.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">JavaFX ToDo-приложение с SQLite, уведомлениями и летней темой</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_database_config_8java.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Файл DatabaseConfig.java</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>import util.PathResolver;</code><br />
+<code>import java.io.IOException;</code><br />
+<code>import java.io.InputStream;</code><br />
+<code>import java.nio.file.Files;</code><br />
+<code>import java.nio.file.Path;</code><br />
+<code>import java.nio.file.Paths;</code><br />
+<code>import java.sql.Connection;</code><br />
+<code>import java.sql.DriverManager;</code><br />
+<code>import java.sql.SQLException;</code><br />
+<code>import java.util.Objects;</code><br />
+<code>import java.util.Properties;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для DatabaseConfig.java:</div>
+<div class="dyncontent">
+<div class="center"><img src="_database_config_8java__incl.png" border="0" usemap="#asrc_2repository_2_database_config_8java" loading="lazy" alt=""/></div>
+<map name="asrc_2repository_2_database_config_8java" id="asrc_2repository_2_database_config_8java">
+<area shape="rect" title=" " alt="" coords="702,5,928,31"/>
+<area shape="rect" title=" " alt="" coords="5,79,127,105"/>
+<area shape="poly" title=" " alt="" coords="699,27,449,50,142,81,142,76,449,44,704,27"/>
+<area shape="rect" title=" " alt="" coords="150,79,286,105"/>
+<area shape="poly" title=" " alt="" coords="702,34,301,81,301,76,701,29"/>
+<area shape="rect" title=" " alt="" coords="310,79,444,105"/>
+<area shape="poly" title=" " alt="" coords="743,32,460,80,459,74,738,32"/>
+<area shape="rect" title=" " alt="" coords="468,79,587,105"/>
+<area shape="poly" title=" " alt="" coords="769,31,592,77,591,72,764,32"/>
+<area shape="rect" title=" " alt="" coords="611,79,729,105"/>
+<area shape="poly" title=" " alt="" coords="793,31,709,74,708,69,788,32"/>
+<area shape="rect" title=" " alt="" coords="753,79,878,105"/>
+<area shape="poly" title=" " alt="" coords="817,29,817,65,813,61,813,33"/>
+<area shape="rect" title=" " alt="" coords="902,79,1038,105"/>
+<area shape="poly" title=" " alt="" coords="842,29,933,72,927,72,841,34"/>
+<area shape="rect" title=" " alt="" coords="1062,79,1217,105"/>
+<area shape="poly" title=" " alt="" coords="871,29,1072,75,1067,75,870,34"/>
+<area shape="rect" title=" " alt="" coords="1241,79,1395,105"/>
+<area shape="poly" title=" " alt="" coords="901,29,1228,77,1223,77,901,34"/>
+<area shape="rect" title=" " alt="" coords="1419,79,1534,105"/>
+<area shape="poly" title=" " alt="" coords="929,26,1145,46,1406,79,1401,79,1145,52,929,31"/>
+<area shape="rect" title=" " alt="" coords="1559,79,1688,105"/>
+<area shape="poly" title=" " alt="" coords="929,24,1204,44,1546,79,1541,79,1204,49,929,29"/>
+</map>
+</div>
+</div>
+<p><a href="_database_config_8java_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:repository_2EDatabaseConfig" id="r_repository_2EDatabaseConfig"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrepository_1_1_database_config.html">repository.DatabaseConfig</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Настройки подключения к БД.  <a href="classrepository_1_1_database_config.html#details">Подробнее...</a><br /></td></tr>
+<tr class="memitem:repository_2EDatabaseConfig_2EType" id="r_repository_2EDatabaseConfig_2EType"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumrepository_1_1_database_config_1_1_type.html">repository.DatabaseConfig.Type</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Пакеты</h2></td></tr>
+<tr class="memitem:repository" id="r_repository"><td class="memItemLeft" align="right" valign="top">package &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerepository.html">repository</a></td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_37313c4da8135de6d5ca48a7dce7def7.html">repository</a></li><li class="navelem"><a href="_database_config_8java.html">DatabaseConfig.java</a></li>
+    <li class="footer">Документация по Умный планировщик задач (To-Do List). Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

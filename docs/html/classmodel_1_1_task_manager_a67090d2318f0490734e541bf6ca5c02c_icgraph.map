@@ -1,0 +1,13 @@
+<map id="model.TaskManager.visibleTasksSnapshot" name="model.TaskManager.visibleTasksSnapshot">
+<area shape="rect" id="Node000001" title=" " alt="" coords="772,67,951,107"/>
+<area shape="rect" id="Node000002" href="$classmodel_1_1_task_manager.html#aebc5940a309766edceeeaa6870679472" title=" " alt="" coords="530,37,704,78"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="754,74,705,71,705,65,760,74"/>
+<area shape="rect" id="Node000006" href="$classmodel_1_1_task_manager.html#a5b29448d047949d3ec60ddf77558a09a" title=" " alt="" coords="510,102,724,128"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="760,99,725,105,724,100,754,99"/>
+<area shape="rect" id="Node000003" href="$classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462" title=" " alt="" coords="253,5,462,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="512,45,463,41,463,36,517,45"/>
+<area shape="rect" id="Node000005" href="$classmodel_1_1_task_manager.html#a04d933100bf6f82eda40774a677c2472" title=" " alt="" coords="267,71,448,111"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="517,70,448,82,448,77,512,71"/>
+<area shape="rect" id="Node000004" href="$classutil_1_1_task_reminder_service.html#aadd0b77dafd4c390cbdf367b9654aa6c" title=" " alt="" coords="5,5,205,46"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="235,26,206,28,205,23,240,25"/>
+</map>

@@ -55,6 +55,24 @@ download_if_missing "$LIB_DIR/slf4j-api-2.0.12.jar" \
 download_if_missing "$LIB_DIR/slf4j-nop-2.0.12.jar" \
   "https://repo1.maven.org/maven2/org/slf4j/slf4j-nop/2.0.12/slf4j-nop-2.0.12.jar"
 
+download_if_missing "$LIB_DIR/postgresql-42.7.4.jar" \
+  "https://repo1.maven.org/maven2/org/postgresql/postgresql/42.7.4/postgresql-42.7.4.jar"
+
+download_if_missing "$LIB_DIR/mysql-connector-j-9.3.0.jar" \
+  "https://repo1.maven.org/maven2/com/mysql/mysql-connector-j/9.3.0/mysql-connector-j-9.3.0.jar"
+
+download_if_missing "$LIB_DIR/jakarta.mail-api-2.1.5.jar" \
+  "https://repo1.maven.org/maven2/jakarta/mail/jakarta.mail-api/2.1.5/jakarta.mail-api-2.1.5.jar"
+
+download_if_missing "$LIB_DIR/angus-mail-2.0.5.jar" \
+  "https://repo1.maven.org/maven2/org/eclipse/angus/angus-mail/2.0.5/angus-mail-2.0.5.jar"
+
+download_if_missing "$LIB_DIR/jakarta.activation-api-2.1.4.jar" \
+  "https://repo1.maven.org/maven2/jakarta/activation/jakarta.activation-api/2.1.4/jakarta.activation-api-2.1.4.jar"
+
+download_if_missing "$LIB_DIR/angus-activation-2.0.3.jar" \
+  "https://repo1.maven.org/maven2/org/eclipse/angus/angus-activation/2.0.3/angus-activation-2.0.3.jar"
+
 find_javafx_dir() {
   if [[ -n "${JAVAFX_HOME:-}" && -d "${JAVAFX_HOME}/lib" ]]; then
     echo "${JAVAFX_HOME}"
@@ -113,4 +131,5 @@ cat <<MSG
 
 Optional:
   export TODOLIST_AUDIO_DIR="/audio"
+  cp data/email.properties.example data/email.properties
 MSG

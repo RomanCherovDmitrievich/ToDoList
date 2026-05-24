@@ -1,0 +1,970 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Умный планировщик задач (To-Do List): Класс util.AuthService</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">JavaFX ToDo-приложение с SQLite, уведомлениями и летней темой</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classutil_1_1_auth_service.html','','classutil_1_1_auth_service-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс util.AuthService</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Сервис регистрации, входа и восстановления доступа.  
+ <a href="#details">Подробнее...</a></p>
+<div class="dynheader">
+Граф связей класса util.AuthService:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_auth_service__coll__graph.png" border="0" usemap="#autil_8_auth_service_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="autil_8_auth_service_coll__map" id="autil_8_auth_service_coll__map">
+<area shape="rect" title="Сервис регистрации, входа и восстановления доступа." alt="" coords="237,392,350,418"/>
+<area shape="rect" href="classutil_1_1_auth_service.html" title="Сервис регистрации, входа и восстановления доступа." alt="" coords="348,295,461,321"/>
+<area shape="poly" title=" " alt="" coords="382,330,309,394,307,389,377,332"/>
+<area shape="poly" title=" " alt="" coords="477,299,488,308,480,317,462,320,461,314,477,312,483,308,476,304"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html" title="SQLite DAO для задач и связанных таблиц." alt="" coords="15,199,202,224"/>
+<area shape="poly" title=" " alt="" coords="120,236,144,278,174,319,224,360,273,392,267,391,221,365,171,323,139,280,119,241"/>
+<area shape="poly" title=" " alt="" coords="161,227,369,293,365,297,161,232"/>
+<area shape="poly" title=" " alt="" coords="217,203,228,211,220,219,203,222,201,217,218,214,223,212,217,208"/>
+<area shape="rect" href="classrepository_1_1_database_config.html" title="Настройки подключения к БД." alt="" coords="21,102,196,128"/>
+<area shape="poly" title=" " alt="" coords="109,140,111,198,106,198,108,145"/>
+<area shape="rect" href="enumrepository_1_1_database_config_1_1_type.html" title=" " alt="" coords="5,5,212,31"/>
+<area shape="poly" title=" " alt="" coords="109,44,111,102,106,101,108,49"/>
+<area shape="rect" href="classutil_1_1_email_notifier.html" title=" " alt="" coords="315,199,432,224"/>
+<area shape="poly" title=" " alt="" coords="331,230,289,260,272,277,258,296,253,321,259,347,272,371,286,393,281,391,267,374,254,349,248,322,253,294,268,273,286,255,326,233"/>
+<area shape="poly" title=" " alt="" coords="376,238,383,270,397,296,392,294,378,272,373,242"/>
+<area shape="rect" href="classmodel_1_1_user.html" title="Данные учетной записи пользователя." alt="" coords="496,199,585,224"/>
+<area shape="poly" title=" " alt="" coords="565,233,574,247,579,269,578,288,570,305,556,323,534,342,509,358,455,381,400,396,351,403,351,398,399,391,453,376,506,353,530,338,552,319,566,303,573,287,574,270,569,249,563,238"/>
+<area shape="poly" title=" " alt="" coords="516,233,463,274,426,297,424,292,460,269,511,235"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a55a6b2e1c7c2fab4f631cfd4daf6f2ee" id="r_a55a6b2e1c7c2fab4f631cfd4daf6f2ee"><td class="memItemLeft" align="right" valign="top">record&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55a6b2e1c7c2fab4f631cfd4daf6f2ee">PasswordResetRequest</a> (boolean created, boolean delivered, String message, Path fallbackFile, LocalDateTime expiresAt)</td></tr>
+<tr class="memitem:a4e0dfbf8249cfa1a79ead0e47a79d217" id="r_a4e0dfbf8249cfa1a79ead0e47a79d217"><td class="memItemLeft" align="right" valign="top">synchronized boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e0dfbf8249cfa1a79ead0e47a79d217">hasUsers</a> ()</td></tr>
+<tr class="memitem:ae26dd69470f5783206c91519a3162f15" id="r_ae26dd69470f5783206c91519a3162f15"><td class="memItemLeft" align="right" valign="top">synchronized <a class="el" href="classmodel_1_1_user.html">User</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae26dd69470f5783206c91519a3162f15">getCurrentUser</a> ()</td></tr>
+<tr class="memitem:a61802db74e978c59bc3ca97ab1bc94cb" id="r_a61802db74e978c59bc3ca97ab1bc94cb"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61802db74e978c59bc3ca97ab1bc94cb">logout</a> ()</td></tr>
+<tr class="memitem:a2981a8f11aa3eea66cc1535be59ccd4f" id="r_a2981a8f11aa3eea66cc1535be59ccd4f"><td class="memItemLeft" align="right" valign="top">synchronized <a class="el" href="classmodel_1_1_user.html">User</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2981a8f11aa3eea66cc1535be59ccd4f">login</a> (String identifier, String password)</td></tr>
+<tr class="memitem:aa7ac2cb9c1d87ae03b3f3fb225e29f83" id="r_aa7ac2cb9c1d87ae03b3f3fb225e29f83"><td class="memItemLeft" align="right" valign="top">synchronized <a class="el" href="classmodel_1_1_user.html">User</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7ac2cb9c1d87ae03b3f3fb225e29f83">register</a> (String username, String email, String password)</td></tr>
+<tr class="memitem:a0a731f1763f7e69fdb2d259d25454a51" id="r_a0a731f1763f7e69fdb2d259d25454a51"><td class="memItemLeft" align="right" valign="top">synchronized <a class="el" href="#a55a6b2e1c7c2fab4f631cfd4daf6f2ee">PasswordResetRequest</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a731f1763f7e69fdb2d259d25454a51">requestPasswordReset</a> (String identifier)</td></tr>
+<tr class="memitem:a06a3fd96d0a20f45db5be40b24623346" id="r_a06a3fd96d0a20f45db5be40b24623346"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06a3fd96d0a20f45db5be40b24623346">resetPassword</a> (String identifier, String resetCode, String newPassword)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:a5255efccc63f594f7e83d14e5cf7e219" id="r_a5255efccc63f594f7e83d14e5cf7e219"><td class="memItemLeft" align="right" valign="top">static synchronized <a class="el" href="#a3bbea8df14e34cb04dc17f62dba57cd9">AuthService</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5255efccc63f594f7e83d14e5cf7e219">getInstance</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:a3bbea8df14e34cb04dc17f62dba57cd9" id="r_a3bbea8df14e34cb04dc17f62dba57cd9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bbea8df14e34cb04dc17f62dba57cd9">AuthService</a> ()</td></tr>
+<tr class="memitem:aaa61d005cb4314f064ef124f586181f6" id="r_aaa61d005cb4314f064ef124f586181f6"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa61d005cb4314f064ef124f586181f6">normalizeIdentifier</a> (String value)</td></tr>
+<tr class="memitem:af38b64389d77be2d26ccc655162f80b4" id="r_af38b64389d77be2d26ccc655162f80b4"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af38b64389d77be2d26ccc655162f80b4">normalizeUsername</a> (String username)</td></tr>
+<tr class="memitem:ae869ea9925d39546818a20e416377ac7" id="r_ae869ea9925d39546818a20e416377ac7"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae869ea9925d39546818a20e416377ac7">normalizeEmail</a> (String email)</td></tr>
+<tr class="memitem:af91a7aae05da2599c76bd93a30c1d9ee" id="r_af91a7aae05da2599c76bd93a30c1d9ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af91a7aae05da2599c76bd93a30c1d9ee">validatePassword</a> (String password, boolean strict)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:ac2ce84e9bbc9da31e84410e8f440beb3" id="r_ac2ce84e9bbc9da31e84410e8f440beb3"><td class="memItemLeft" align="right" valign="top">final <a class="el" href="classrepository_1_1_database_manager.html">DatabaseManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2ce84e9bbc9da31e84410e8f440beb3">dbManager</a></td></tr>
+<tr class="memitem:aef6a5161f1037d296a6c6c79389ae94b" id="r_aef6a5161f1037d296a6c6c79389ae94b"><td class="memItemLeft" align="right" valign="top">final <a class="el" href="classutil_1_1_email_notifier.html">EmailNotifier</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef6a5161f1037d296a6c6c79389ae94b">emailNotifier</a></td></tr>
+<tr class="memitem:a47c275550fa5bfda17bd816c42bc467b" id="r_a47c275550fa5bfda17bd816c42bc467b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmodel_1_1_user.html">User</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47c275550fa5bfda17bd816c42bc467b">currentUser</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Закрытые статические данные</h2></td></tr>
+<tr class="memitem:ae550f4b982c0d16c608cfa36deffaab2" id="r_ae550f4b982c0d16c608cfa36deffaab2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="#a3bbea8df14e34cb04dc17f62dba57cd9">AuthService</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae550f4b982c0d16c608cfa36deffaab2">instance</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Сервис регистрации, входа и восстановления доступа. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_auth_service_8java_source.html">AuthService.java</a> строка <a class="el" href="_auth_service_8java_source.html#l00014">14</a></p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="a3bbea8df14e34cb04dc17f62dba57cd9" name="a3bbea8df14e34cb04dc17f62dba57cd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bbea8df14e34cb04dc17f62dba57cd9">&#9670;&#160;</a></span>AuthService()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">util.AuthService.AuthService </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_auth_service_8java_source.html">AuthService.java</a> строка <a class="el" href="_auth_service_8java_source.html#l00030">30</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_database_manager_8java_source.html#l00036">repository.DatabaseManager.getInstance()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_auth_service_8java_source.html#l00035">getInstance()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_auth_service_a3bbea8df14e34cb04dc17f62dba57cd9_cgraph.png" border="0" usemap="#aclassutil_1_1_auth_service_a3bbea8df14e34cb04dc17f62dba57cd9_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_auth_service_a3bbea8df14e34cb04dc17f62dba57cd9_cgraph" id="aclassutil_1_1_auth_service_a3bbea8df14e34cb04dc17f62dba57cd9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,177,194,202"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a2035f400cd8f5f503ea6f961de54d4ff" title=" " alt="" coords="242,169,449,210"/>
+<area shape="poly" title=" " alt="" coords="193,187,228,188,224,191,196,192"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#adff3d0488b1f5e07b737c8028fd61b38" title=" " alt="" coords="497,169,686,210"/>
+<area shape="poly" title=" " alt="" coords="449,187,484,189,479,191,451,192"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#ad56b237e4e259b99a77f8c2b5d9a49db" title=" " alt="" coords="734,169,971,210"/>
+<area shape="poly" title=" " alt="" coords="686,187,721,189,716,191,688,192"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a0f0fdcc1c89621e54aba873524c8785c" title=" " alt="" coords="1022,5,1248,46"/>
+<area shape="poly" title=" " alt="" coords="873,167,934,112,974,83,1017,57,1036,51,1031,53,1020,61,977,87,938,116,876,171"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#ab11cedc68f3e40fa74cd71dcd3c28d47" title=" " alt="" coords="1021,71,1248,111"/>
+<area shape="poly" title=" " alt="" coords="902,166,1018,122,1046,115,1041,117,1020,127,904,171"/>
+<area shape="rect" href="classutil_1_1_path_resolver.html#abd3fe2993d257c6e777a1303a872be26" title=" " alt="" coords="1592,317,1779,342"/>
+<area shape="poly" title=" " alt="" coords="898,208,956,231,1019,251,1094,267,1157,277,1267,285,1378,289,1519,302,1590,314,1584,314,1518,307,1377,295,1267,291,1157,282,1093,272,1018,256,954,236,898,213"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a4e9d6c7f878e393a494f9c9fac13f0a9" title=" " alt="" coords="1034,402,1236,428"/>
+<area shape="poly" title=" " alt="" coords="880,208,1108,392,1103,392,879,213"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a104e5dac8b06b56fb358902e183b3711" title=" " alt="" coords="1019,201,1251,242"/>
+<area shape="poly" title=" " alt="" coords="971,200,1006,206,1001,207,972,206"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a12107d0489c1b18ad4e574a1f5fc1a36" title=" " alt="" coords="1026,136,1244,177"/>
+<area shape="poly" title=" " alt="" coords="970,173,1013,170,1008,172,972,178"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a7407642e97a424de9bab9605699b577f" title=" " alt="" coords="1304,136,1514,177"/>
+<area shape="poly" title=" " alt="" coords="1219,44,1252,57,1314,90,1370,127,1364,127,1312,94,1250,61,1219,49"/>
+<area shape="rect" href="classutil_1_1_platform_util.html#ae1f7127305756e82c242eea124934f5b" title=" " alt="" coords="1853,317,2021,342"/>
+<area shape="poly" title=" " alt="" coords="1780,327,1840,329,1834,330,1780,332"/>
+<area shape="rect" href="classutil_1_1_platform_util.html#ab3325e5522d5be0de30703ddc160f076" title=" " alt="" coords="2069,317,2235,342"/>
+<area shape="poly" title=" " alt="" coords="2021,327,2056,329,2051,330,2022,332"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#ab59426f01c5b94e12686f41d18b2e0ba" title=" " alt="" coords="1304,481,1513,522"/>
+<area shape="poly" title=" " alt="" coords="1178,426,1330,476,1325,476,1178,431"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a35691da1978472d524abd32ca05acbf3" title=" " alt="" coords="1596,425,1775,466"/>
+<area shape="poly" title=" " alt="" coords="1236,418,1584,440,1578,440,1236,423"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a54be8ad7883587920d91f2ce979fa3b9" title=" " alt="" coords="1306,547,1511,587"/>
+<area shape="poly" title=" " alt="" coords="1152,426,1214,477,1256,506,1300,531,1317,541,1312,540,1298,536,1253,510,1211,481,1150,431"/>
+<area shape="rect" href="classutil_1_1_path_resolver.html#a376f308eeac83f51017c8f2be40a09ab" title=" " alt="" coords="1310,367,1508,407"/>
+<area shape="poly" title=" " alt="" coords="1236,402,1296,398,1291,399,1237,407"/>
+<area shape="rect" href="classutil_1_1_path_resolver.html#a50961f05bdf2c5652e65d92495c625ba" title=" " alt="" coords="1299,317,1518,342"/>
+<area shape="poly" title=" " alt="" coords="1168,399,1298,352,1327,347,1332,346,1300,358,1170,404"/>
+<area shape="poly" title=" " alt="" coords="1493,543,1517,531,1531,519,1540,506,1549,493,1565,479,1581,473,1586,472,1568,484,1553,496,1545,509,1535,523,1520,536,1495,549"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a69aeb61182c8f6f4ccb5b924c424de02" title=" " alt="" coords="1568,609,1803,634"/>
+<area shape="poly" title=" " alt="" coords="1512,585,1604,605,1599,605,1511,590"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a36e82cbf84ceab1f8059de8ef510da3a" title=" " alt="" coords="1566,658,1805,684"/>
+<area shape="poly" title=" " alt="" coords="1445,585,1501,616,1567,644,1591,654,1586,654,1565,650,1499,621,1444,591"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a69f8eeab7280768eee8545d4371aeb9c" title=" " alt="" coords="1584,494,1787,520"/>
+<area shape="poly" title=" " alt="" coords="1504,543,1566,530,1604,524,1609,523,1567,535,1505,549"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a4b5dc5dd91254df1efacc26898e26caf" title=" " alt="" coords="1575,544,1796,585"/>
+<area shape="poly" title=" " alt="" coords="1511,563,1563,565,1557,566,1511,569"/>
+<area shape="poly" title=" " alt="" coords="1508,364,1608,346,1602,347,1509,369"/>
+<area shape="poly" title=" " alt="" coords="1518,327,1579,329,1574,330,1519,332"/>
+<area shape="poly" title=" " alt="" coords="1222,198,1308,180,1303,182,1224,203"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a5064218a919dd69acd414dbd02ee0cf9" title=" " alt="" coords="1302,201,1516,242"/>
+<area shape="poly" title=" " alt="" coords="1251,219,1289,221,1283,222,1252,224"/>
+<area shape="poly" title=" " alt="" coords="1244,154,1290,156,1285,157,1245,159"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_auth_service_a3bbea8df14e34cb04dc17f62dba57cd9_icgraph.png" border="0" usemap="#aclassutil_1_1_auth_service_a3bbea8df14e34cb04dc17f62dba57cd9_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_auth_service_a3bbea8df14e34cb04dc17f62dba57cd9_icgraph" id="aclassutil_1_1_auth_service_a3bbea8df14e34cb04dc17f62dba57cd9_icgraph">
+<area shape="rect" title=" " alt="" coords="239,5,427,31"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a5255efccc63f594f7e83d14e5cf7e219" title=" " alt="" coords="5,5,191,31"/>
+<area shape="poly" title=" " alt="" coords="220,18,191,21,191,16,226,18"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="ae26dd69470f5783206c91519a3162f15" name="ae26dd69470f5783206c91519a3162f15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae26dd69470f5783206c91519a3162f15">&#9670;&#160;</a></span>getCurrentUser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized <a class="el" href="classmodel_1_1_user.html">User</a> util.AuthService.getCurrentUser </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_auth_service_8java_source.html">AuthService.java</a> строка <a class="el" href="_auth_service_8java_source.html#l00046">46</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_auth_service_8java_source.html#l00028">currentUser</a>.</p>
+
+</div>
+</div>
+<a id="a5255efccc63f594f7e83d14e5cf7e219" name="a5255efccc63f594f7e83d14e5cf7e219"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5255efccc63f594f7e83d14e5cf7e219">&#9670;&#160;</a></span>getInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized <a class="el" href="#a3bbea8df14e34cb04dc17f62dba57cd9">AuthService</a> util.AuthService.getInstance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_auth_service_8java_source.html">AuthService.java</a> строка <a class="el" href="_auth_service_8java_source.html#l00035">35</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_auth_service_8java_source.html#l00030">AuthService()</a> и <a class="el" href="_auth_service_8java_source.html#l00024">instance</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_auth_service_a5255efccc63f594f7e83d14e5cf7e219_cgraph.png" border="0" usemap="#aclassutil_1_1_auth_service_a5255efccc63f594f7e83d14e5cf7e219_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_auth_service_a5255efccc63f594f7e83d14e5cf7e219_cgraph" id="aclassutil_1_1_auth_service_a5255efccc63f594f7e83d14e5cf7e219_cgraph">
+<area shape="rect" title=" " alt="" coords="5,177,191,202"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a3bbea8df14e34cb04dc17f62dba57cd9" title=" " alt="" coords="239,177,427,202"/>
+<area shape="poly" title=" " alt="" coords="190,187,225,188,221,191,192,192"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a2035f400cd8f5f503ea6f961de54d4ff" title=" " alt="" coords="475,169,682,210"/>
+<area shape="poly" title=" " alt="" coords="426,187,462,189,457,191,429,192"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#adff3d0488b1f5e07b737c8028fd61b38" title=" " alt="" coords="730,169,920,210"/>
+<area shape="poly" title=" " alt="" coords="682,187,717,189,712,191,684,192"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#ad56b237e4e259b99a77f8c2b5d9a49db" title=" " alt="" coords="968,169,1204,210"/>
+<area shape="poly" title=" " alt="" coords="920,187,955,189,950,190,921,192"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a0f0fdcc1c89621e54aba873524c8785c" title=" " alt="" coords="1256,5,1481,46"/>
+<area shape="poly" title=" " alt="" coords="1106,167,1168,112,1208,83,1251,57,1269,51,1264,53,1253,61,1211,87,1171,116,1109,171"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#ab11cedc68f3e40fa74cd71dcd3c28d47" title=" " alt="" coords="1254,71,1482,111"/>
+<area shape="poly" title=" " alt="" coords="1135,166,1251,122,1279,115,1274,117,1253,127,1137,171"/>
+<area shape="rect" href="classutil_1_1_path_resolver.html#abd3fe2993d257c6e777a1303a872be26" title=" " alt="" coords="1825,317,2012,342"/>
+<area shape="poly" title=" " alt="" coords="1131,208,1189,231,1253,251,1327,267,1391,277,1500,285,1611,289,1752,302,1823,314,1818,314,1751,307,1611,295,1500,291,1390,282,1326,272,1251,256,1187,236,1131,213"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a4e9d6c7f878e393a494f9c9fac13f0a9" title=" " alt="" coords="1267,402,1469,428"/>
+<area shape="poly" title=" " alt="" coords="1114,208,1341,392,1336,392,1112,213"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a104e5dac8b06b56fb358902e183b3711" title=" " alt="" coords="1252,201,1484,242"/>
+<area shape="poly" title=" " alt="" coords="1204,200,1239,206,1234,207,1205,206"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a12107d0489c1b18ad4e574a1f5fc1a36" title=" " alt="" coords="1260,136,1477,177"/>
+<area shape="poly" title=" " alt="" coords="1204,173,1246,170,1241,172,1205,178"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a7407642e97a424de9bab9605699b577f" title=" " alt="" coords="1537,136,1747,177"/>
+<area shape="poly" title=" " alt="" coords="1452,44,1485,57,1548,90,1603,127,1598,127,1545,94,1483,61,1452,49"/>
+<area shape="rect" href="classutil_1_1_platform_util.html#ae1f7127305756e82c242eea124934f5b" title=" " alt="" coords="2086,317,2254,342"/>
+<area shape="poly" title=" " alt="" coords="2013,327,2073,329,2068,330,2013,332"/>
+<area shape="rect" href="classutil_1_1_platform_util.html#ab3325e5522d5be0de30703ddc160f076" title=" " alt="" coords="2302,317,2469,342"/>
+<area shape="poly" title=" " alt="" coords="2255,327,2290,329,2284,330,2255,332"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#ab59426f01c5b94e12686f41d18b2e0ba" title=" " alt="" coords="1537,481,1747,522"/>
+<area shape="poly" title=" " alt="" coords="1412,426,1564,476,1558,476,1411,431"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a35691da1978472d524abd32ca05acbf3" title=" " alt="" coords="1830,425,2008,466"/>
+<area shape="poly" title=" " alt="" coords="1469,418,1817,440,1812,440,1469,423"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a54be8ad7883587920d91f2ce979fa3b9" title=" " alt="" coords="1540,547,1744,587"/>
+<area shape="poly" title=" " alt="" coords="1385,426,1448,477,1489,506,1534,531,1550,541,1545,540,1531,536,1486,510,1444,481,1383,431"/>
+<area shape="rect" href="classutil_1_1_path_resolver.html#a376f308eeac83f51017c8f2be40a09ab" title=" " alt="" coords="1543,367,1741,407"/>
+<area shape="poly" title=" " alt="" coords="1469,402,1530,398,1524,399,1470,407"/>
+<area shape="rect" href="classutil_1_1_path_resolver.html#a50961f05bdf2c5652e65d92495c625ba" title=" " alt="" coords="1532,317,1752,342"/>
+<area shape="poly" title=" " alt="" coords="1401,399,1532,352,1560,347,1565,346,1533,358,1403,404"/>
+<area shape="poly" title=" " alt="" coords="1727,543,1750,531,1765,519,1773,506,1783,493,1798,479,1814,473,1819,472,1801,484,1787,496,1778,509,1769,523,1753,536,1728,549"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a69aeb61182c8f6f4ccb5b924c424de02" title=" " alt="" coords="1802,609,2036,634"/>
+<area shape="poly" title=" " alt="" coords="1745,585,1838,605,1832,605,1744,590"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a36e82cbf84ceab1f8059de8ef510da3a" title=" " alt="" coords="1800,658,2038,684"/>
+<area shape="poly" title=" " alt="" coords="1678,585,1735,616,1801,644,1825,654,1819,654,1799,650,1732,621,1677,591"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a69f8eeab7280768eee8545d4371aeb9c" title=" " alt="" coords="1817,494,2020,520"/>
+<area shape="poly" title=" " alt="" coords="1737,543,1799,530,1837,524,1842,523,1800,535,1738,549"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a4b5dc5dd91254df1efacc26898e26caf" title=" " alt="" coords="1809,544,2029,585"/>
+<area shape="poly" title=" " alt="" coords="1745,563,1796,565,1791,566,1745,569"/>
+<area shape="poly" title=" " alt="" coords="1741,364,1836,347,1841,346,1742,369"/>
+<area shape="poly" title=" " alt="" coords="1752,327,1812,329,1807,330,1752,332"/>
+<area shape="poly" title=" " alt="" coords="1456,198,1541,180,1536,182,1457,203"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a5064218a919dd69acd414dbd02ee0cf9" title=" " alt="" coords="1535,201,1749,242"/>
+<area shape="poly" title=" " alt="" coords="1485,219,1522,221,1517,222,1485,224"/>
+<area shape="poly" title=" " alt="" coords="1477,154,1524,156,1519,157,1478,159"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4e0dfbf8249cfa1a79ead0e47a79d217" name="a4e0dfbf8249cfa1a79ead0e47a79d217"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e0dfbf8249cfa1a79ead0e47a79d217">&#9670;&#160;</a></span>hasUsers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized boolean util.AuthService.hasUsers </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_auth_service_8java_source.html">AuthService.java</a> строка <a class="el" href="_auth_service_8java_source.html#l00042">42</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_auth_service_8java_source.html#l00026">dbManager</a>.</p>
+
+</div>
+</div>
+<a id="a2981a8f11aa3eea66cc1535be59ccd4f" name="a2981a8f11aa3eea66cc1535be59ccd4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2981a8f11aa3eea66cc1535be59ccd4f">&#9670;&#160;</a></span>login()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized <a class="el" href="classmodel_1_1_user.html">User</a> util.AuthService.login </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>identifier</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>password</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_auth_service_8java_source.html">AuthService.java</a> строка <a class="el" href="_auth_service_8java_source.html#l00054">54</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_auth_service_8java_source.html#l00028">currentUser</a>, <a class="el" href="_auth_service_8java_source.html#l00026">dbManager</a>, <a class="el" href="_user_8java_source.html#l00057">model.User.getPasswordHash()</a>, <a class="el" href="_user_8java_source.html#l00061">model.User.getPasswordSalt()</a>, <a class="el" href="_auth_service_8java_source.html#l00172">normalizeIdentifier()</a>, <a class="el" href="_auth_service_8java_source.html#l00198">validatePassword()</a> и <a class="el" href="_password_util_8java_source.html#l00046">util.PasswordUtil.verifyPassword()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_auth_service_a2981a8f11aa3eea66cc1535be59ccd4f_cgraph.png" border="0" usemap="#aclassutil_1_1_auth_service_a2981a8f11aa3eea66cc1535be59ccd4f_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_auth_service_a2981a8f11aa3eea66cc1535be59ccd4f_cgraph" id="aclassutil_1_1_auth_service_a2981a8f11aa3eea66cc1535be59ccd4f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,112,150,138"/>
+<area shape="rect" href="classmodel_1_1_user.html#ac8e7ad45a0401a253cb6517f2cba9319" title=" " alt="" coords="198,5,396,31"/>
+<area shape="poly" title=" " alt="" coords="92,110,137,75,196,40,215,35,210,38,199,45,140,79,96,113"/>
+<area shape="rect" href="classmodel_1_1_user.html#a06f3cac0de7d8f2ea3f1d6f99d589088" title=" " alt="" coords="202,55,392,80"/>
+<area shape="poly" title=" " alt="" coords="127,109,197,90,231,83,226,86,198,95,130,114"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#aaa61d005cb4314f064ef124f586181f6" title=" " alt="" coords="210,104,384,145"/>
+<area shape="poly" title=" " alt="" coords="149,122,197,124,192,126,151,127"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#af91a7aae05da2599c76bd93a30c1d9ee" title=" " alt="" coords="216,170,378,210"/>
+<area shape="poly" title=" " alt="" coords="123,136,214,163,209,166,123,141"/>
+<area shape="rect" href="classutil_1_1_password_util.html#a861cf6cc6fc92f3ecb1779fe24d57b23" title=" " alt="" coords="219,235,375,276"/>
+<area shape="poly" title=" " alt="" coords="92,136,138,177,199,220,213,229,208,228,196,224,135,181,91,141"/>
+<area shape="rect" href="classutil_1_1_password_util.html#a2309f3210c9c229ac43b5b28bf281abc" title=" " alt="" coords="444,243,654,268"/>
+<area shape="poly" title=" " alt="" coords="375,253,431,255,426,256,376,258"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a61802db74e978c59bc3ca97ab1bc94cb" name="a61802db74e978c59bc3ca97ab1bc94cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61802db74e978c59bc3ca97ab1bc94cb">&#9670;&#160;</a></span>logout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void util.AuthService.logout </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_auth_service_8java_source.html">AuthService.java</a> строка <a class="el" href="_auth_service_8java_source.html#l00050">50</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_auth_service_8java_source.html#l00028">currentUser</a>.</p>
+
+</div>
+</div>
+<a id="ae869ea9925d39546818a20e416377ac7" name="ae869ea9925d39546818a20e416377ac7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae869ea9925d39546818a20e416377ac7">&#9670;&#160;</a></span>normalizeEmail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String util.AuthService.normalizeEmail </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>email</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_auth_service_8java_source.html">AuthService.java</a> строка <a class="el" href="_auth_service_8java_source.html#l00187">187</a></p>
+
+<p class="reference">Используется в <a class="el" href="_auth_service_8java_source.html#l00067">register()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_auth_service_ae869ea9925d39546818a20e416377ac7_icgraph.png" border="0" usemap="#aclassutil_1_1_auth_service_ae869ea9925d39546818a20e416377ac7_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_auth_service_ae869ea9925d39546818a20e416377ac7_icgraph" id="aclassutil_1_1_auth_service_ae869ea9925d39546818a20e416377ac7_icgraph">
+<area shape="rect" title=" " alt="" coords="214,5,387,46"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#aa7ac2cb9c1d87ae03b3f3fb225e29f83" title=" " alt="" coords="5,13,166,38"/>
+<area shape="poly" title=" " alt="" coords="196,26,166,28,166,23,201,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaa61d005cb4314f064ef124f586181f6" name="aaa61d005cb4314f064ef124f586181f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa61d005cb4314f064ef124f586181f6">&#9670;&#160;</a></span>normalizeIdentifier()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String util.AuthService.normalizeIdentifier </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_auth_service_8java_source.html">AuthService.java</a> строка <a class="el" href="_auth_service_8java_source.html#l00172">172</a></p>
+
+<p class="reference">Используется в <a class="el" href="_auth_service_8java_source.html#l00054">login()</a>, <a class="el" href="_auth_service_8java_source.html#l00179">normalizeUsername()</a>, <a class="el" href="_auth_service_8java_source.html#l00092">requestPasswordReset()</a> и <a class="el" href="_auth_service_8java_source.html#l00142">resetPassword()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_auth_service_aaa61d005cb4314f064ef124f586181f6_icgraph.png" border="0" usemap="#aclassutil_1_1_auth_service_aaa61d005cb4314f064ef124f586181f6_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_auth_service_aaa61d005cb4314f064ef124f586181f6_icgraph" id="aclassutil_1_1_auth_service_aaa61d005cb4314f064ef124f586181f6_icgraph">
+<area shape="rect" title=" " alt="" coords="466,88,639,129"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a2981a8f11aa3eea66cc1535be59ccd4f" title=" " alt="" coords="244,5,388,31"/>
+<area shape="poly" title=" " alt="" coords="498,81,417,46,379,34,379,29,419,41,504,81"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#af38b64389d77be2d26ccc655162f80b4" title=" " alt="" coords="229,55,402,96"/>
+<area shape="poly" title=" " alt="" coords="448,95,403,90,403,85,453,94"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a0a731f1763f7e69fdb2d259d25454a51" title=" " alt="" coords="236,120,396,161"/>
+<area shape="poly" title=" " alt="" coords="448,123,397,133,396,127,453,122"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a06a3fd96d0a20f45db5be40b24623346" title=" " alt="" coords="214,185,418,211"/>
+<area shape="poly" title=" " alt="" coords="502,136,419,175,380,187,379,182,417,170,497,137"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#aa7ac2cb9c1d87ae03b3f3fb225e29f83" title=" " alt="" coords="5,63,166,88"/>
+<area shape="poly" title=" " alt="" coords="211,77,167,78,165,73,216,74"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af38b64389d77be2d26ccc655162f80b4" name="af38b64389d77be2d26ccc655162f80b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af38b64389d77be2d26ccc655162f80b4">&#9670;&#160;</a></span>normalizeUsername()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String util.AuthService.normalizeUsername </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>username</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_auth_service_8java_source.html">AuthService.java</a> строка <a class="el" href="_auth_service_8java_source.html#l00179">179</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_auth_service_8java_source.html#l00172">normalizeIdentifier()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_auth_service_8java_source.html#l00067">register()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_auth_service_af38b64389d77be2d26ccc655162f80b4_cgraph.png" border="0" usemap="#aclassutil_1_1_auth_service_af38b64389d77be2d26ccc655162f80b4_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_auth_service_af38b64389d77be2d26ccc655162f80b4_cgraph" id="aclassutil_1_1_auth_service_af38b64389d77be2d26ccc655162f80b4_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,179,46"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#aaa61d005cb4314f064ef124f586181f6" title=" " alt="" coords="227,5,400,46"/>
+<area shape="poly" title=" " alt="" coords="179,23,214,25,208,26,179,28"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_auth_service_af38b64389d77be2d26ccc655162f80b4_icgraph.png" border="0" usemap="#aclassutil_1_1_auth_service_af38b64389d77be2d26ccc655162f80b4_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_auth_service_af38b64389d77be2d26ccc655162f80b4_icgraph" id="aclassutil_1_1_auth_service_af38b64389d77be2d26ccc655162f80b4_icgraph">
+<area shape="rect" title=" " alt="" coords="214,5,387,46"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#aa7ac2cb9c1d87ae03b3f3fb225e29f83" title=" " alt="" coords="5,13,166,38"/>
+<area shape="poly" title=" " alt="" coords="196,26,166,28,166,23,201,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a55a6b2e1c7c2fab4f631cfd4daf6f2ee" name="a55a6b2e1c7c2fab4f631cfd4daf6f2ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55a6b2e1c7c2fab4f631cfd4daf6f2ee">&#9670;&#160;</a></span>PasswordResetRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">record util.AuthService.PasswordResetRequest </td>
+          <td>(</td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>created</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>delivered</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>message</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Path</td>          <td class="paramname"><span class="paramname"><em>fallbackFile</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LocalDateTime</td>          <td class="paramname"><span class="paramname"><em>expiresAt</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_auth_service_8java_source.html">AuthService.java</a> строка <a class="el" href="_auth_service_8java_source.html#l00015">15</a></p>
+
+<p class="reference">Используется в <a class="el" href="_auth_service_8java_source.html#l00092">requestPasswordReset()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_auth_service_a55a6b2e1c7c2fab4f631cfd4daf6f2ee_icgraph.png" border="0" usemap="#aclassutil_1_1_auth_service_a55a6b2e1c7c2fab4f631cfd4daf6f2ee_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_auth_service_a55a6b2e1c7c2fab4f631cfd4daf6f2ee_icgraph" id="aclassutil_1_1_auth_service_a55a6b2e1c7c2fab4f631cfd4daf6f2ee_icgraph">
+<area shape="rect" title=" " alt="" coords="214,5,389,46"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a0a731f1763f7e69fdb2d259d25454a51" title=" " alt="" coords="5,5,166,46"/>
+<area shape="poly" title=" " alt="" coords="196,26,166,28,166,23,201,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa7ac2cb9c1d87ae03b3f3fb225e29f83" name="aa7ac2cb9c1d87ae03b3f3fb225e29f83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7ac2cb9c1d87ae03b3f3fb225e29f83">&#9670;&#160;</a></span>register()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized <a class="el" href="classmodel_1_1_user.html">User</a> util.AuthService.register </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>username</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>email</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>password</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_auth_service_8java_source.html">AuthService.java</a> строка <a class="el" href="_auth_service_8java_source.html#l00067">67</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_auth_service_8java_source.html#l00028">currentUser</a>, <a class="el" href="_auth_service_8java_source.html#l00026">dbManager</a>, <a class="el" href="_password_util_8java_source.html#l00022">util.PasswordUtil.generateSalt()</a>, <a class="el" href="_password_util_8java_source.html#l00028">util.PasswordUtil.hashPassword()</a>, <a class="el" href="_auth_service_8java_source.html#l00187">normalizeEmail()</a>, <a class="el" href="_auth_service_8java_source.html#l00179">normalizeUsername()</a> и <a class="el" href="_auth_service_8java_source.html#l00198">validatePassword()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_auth_service_aa7ac2cb9c1d87ae03b3f3fb225e29f83_cgraph.png" border="0" usemap="#aclassutil_1_1_auth_service_aa7ac2cb9c1d87ae03b3f3fb225e29f83_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_auth_service_aa7ac2cb9c1d87ae03b3f3fb225e29f83_cgraph" id="aclassutil_1_1_auth_service_aa7ac2cb9c1d87ae03b3f3fb225e29f83_cgraph">
+<area shape="rect" title=" " alt="" coords="5,112,166,138"/>
+<area shape="rect" href="classutil_1_1_password_util.html#a2b27cbbf02fb6dd431a9cbf59872cdfd" title=" " alt="" coords="220,5,418,31"/>
+<area shape="poly" title=" " alt="" coords="101,110,149,75,213,40,232,34,228,37,215,45,152,79,105,114"/>
+<area shape="rect" href="classutil_1_1_password_util.html#a2309f3210c9c229ac43b5b28bf281abc" title=" " alt="" coords="214,55,424,80"/>
+<area shape="poly" title=" " alt="" coords="139,109,213,90,250,83,245,86,214,95,141,114"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#ae869ea9925d39546818a20e416377ac7" title=" " alt="" coords="232,104,406,145"/>
+<area shape="poly" title=" " alt="" coords="166,122,219,124,214,126,167,127"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#af38b64389d77be2d26ccc655162f80b4" title=" " alt="" coords="232,170,406,210"/>
+<area shape="poly" title=" " alt="" coords="134,136,231,164,227,166,134,141"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#af91a7aae05da2599c76bd93a30c1d9ee" title=" " alt="" coords="238,235,400,276"/>
+<area shape="poly" title=" " alt="" coords="101,136,150,177,215,220,231,229,225,229,212,224,147,181,100,141"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#aaa61d005cb4314f064ef124f586181f6" title=" " alt="" coords="472,170,645,210"/>
+<area shape="poly" title=" " alt="" coords="406,188,459,190,454,190,406,193"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0a731f1763f7e69fdb2d259d25454a51" name="a0a731f1763f7e69fdb2d259d25454a51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a731f1763f7e69fdb2d259d25454a51">&#9670;&#160;</a></span>requestPasswordReset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized <a class="el" href="#a55a6b2e1c7c2fab4f631cfd4daf6f2ee">PasswordResetRequest</a> util.AuthService.requestPasswordReset </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>identifier</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_auth_service_8java_source.html">AuthService.java</a> строка <a class="el" href="_auth_service_8java_source.html#l00092">92</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_auth_service_8java_source.html#l00026">dbManager</a>, <a class="el" href="_auth_service_8java_source.html#l00027">emailNotifier</a>, <a class="el" href="_password_util_8java_source.html#l00054">util.PasswordUtil.generateResetCode()</a>, <a class="el" href="_user_8java_source.html#l00053">model.User.getEmail()</a>, <a class="el" href="_user_8java_source.html#l00045">model.User.getId()</a>, <a class="el" href="_path_resolver_8java_source.html#l00068">util.PathResolver.getNotificationsLog()</a>, <a class="el" href="_user_8java_source.html#l00049">model.User.getUsername()</a>, <a class="el" href="_user_8java_source.html#l00081">model.User.hasEmail()</a>, <a class="el" href="_auth_service_8java_source.html#l00172">normalizeIdentifier()</a> и <a class="el" href="_auth_service_8java_source.html#l00015">PasswordResetRequest()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_auth_service_a0a731f1763f7e69fdb2d259d25454a51_cgraph.png" border="0" usemap="#aclassutil_1_1_auth_service_a0a731f1763f7e69fdb2d259d25454a51_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_auth_service_a0a731f1763f7e69fdb2d259d25454a51_cgraph" id="aclassutil_1_1_auth_service_a0a731f1763f7e69fdb2d259d25454a51_cgraph">
+<area shape="rect" title=" " alt="" coords="5,187,166,227"/>
+<area shape="rect" href="classutil_1_1_password_util.html#a69eff8ee764c3e62cb7fd4be9c4d2e9b" title=" " alt="" coords="245,5,419,46"/>
+<area shape="poly" title=" " alt="" coords="96,185,142,121,174,85,212,55,232,47,229,50,215,60,178,89,146,124,101,188"/>
+<area shape="rect" href="classmodel_1_1_user.html#a6e21aef79f65d6b31cef1732a94b5f39" title=" " alt="" coords="261,70,403,96"/>
+<area shape="poly" title=" " alt="" coords="105,185,151,143,181,122,213,105,247,94,243,97,215,109,184,127,155,148,109,188"/>
+<area shape="rect" href="classmodel_1_1_user.html#abd58b71654ebe63e1bee16a382e64fa8" title=" " alt="" coords="272,120,392,145"/>
+<area shape="poly" title=" " alt="" coords="132,184,213,154,259,144,254,147,214,159,135,188"/>
+<area shape="rect" href="classutil_1_1_path_resolver.html#ab88418dd91edd05d4458f1fce2f32afa" title=" " alt="" coords="214,169,450,194"/>
+<area shape="poly" title=" " alt="" coords="165,196,200,194,196,197,167,201"/>
+<area shape="rect" href="classmodel_1_1_user.html#a964ba13bb99d3bd7ab7c342a9c03bc46" title=" " alt="" coords="247,218,416,244"/>
+<area shape="poly" title=" " alt="" coords="166,212,234,220,229,223,167,217"/>
+<area shape="rect" href="classmodel_1_1_user.html#ad22e1df8acb20efdba9f9e254d80a931" title=" " alt="" coords="259,268,404,293"/>
+<area shape="poly" title=" " alt="" coords="135,225,214,254,247,264,242,265,213,259,135,231"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#aaa61d005cb4314f064ef124f586181f6" title=" " alt="" coords="245,317,418,358"/>
+<area shape="poly" title=" " alt="" coords="108,225,156,265,215,303,233,313,228,314,212,308,153,269,108,230"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a55a6b2e1c7c2fab4f631cfd4daf6f2ee" title=" " alt="" coords="244,383,420,423"/>
+<area shape="poly" title=" " alt="" coords="98,225,144,296,177,335,215,367,233,379,228,379,212,372,173,339,140,299,96,230"/>
+<area shape="rect" href="classutil_1_1_path_resolver.html#abd3fe2993d257c6e777a1303a872be26" title=" " alt="" coords="498,169,685,194"/>
+<area shape="poly" title=" " alt="" coords="450,179,485,181,480,182,451,184"/>
+<area shape="rect" href="classutil_1_1_platform_util.html#ae1f7127305756e82c242eea124934f5b" title=" " alt="" coords="733,169,902,194"/>
+<area shape="poly" title=" " alt="" coords="685,179,721,181,715,182,686,184"/>
+<area shape="rect" href="classutil_1_1_platform_util.html#ab3325e5522d5be0de30703ddc160f076" title=" " alt="" coords="950,169,1116,194"/>
+<area shape="poly" title=" " alt="" coords="902,179,937,181,932,182,903,184"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a06a3fd96d0a20f45db5be40b24623346" name="a06a3fd96d0a20f45db5be40b24623346"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06a3fd96d0a20f45db5be40b24623346">&#9670;&#160;</a></span>resetPassword()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void util.AuthService.resetPassword </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>identifier</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>resetCode</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>newPassword</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_auth_service_8java_source.html">AuthService.java</a> строка <a class="el" href="_auth_service_8java_source.html#l00142">142</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_auth_service_8java_source.html#l00026">dbManager</a>, <a class="el" href="_password_util_8java_source.html#l00022">util.PasswordUtil.generateSalt()</a>, <a class="el" href="_user_8java_source.html#l00045">model.User.getId()</a>, <a class="el" href="_user_8java_source.html#l00073">model.User.getResetCode()</a>, <a class="el" href="_user_8java_source.html#l00077">model.User.getResetCodeExpiresAt()</a>, <a class="el" href="_password_util_8java_source.html#l00028">util.PasswordUtil.hashPassword()</a>, <a class="el" href="_auth_service_8java_source.html#l00172">normalizeIdentifier()</a> и <a class="el" href="_auth_service_8java_source.html#l00198">validatePassword()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_auth_service_a06a3fd96d0a20f45db5be40b24623346_cgraph.png" border="0" usemap="#aclassutil_1_1_auth_service_a06a3fd96d0a20f45db5be40b24623346_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_auth_service_a06a3fd96d0a20f45db5be40b24623346_cgraph" id="aclassutil_1_1_auth_service_a06a3fd96d0a20f45db5be40b24623346_cgraph">
+<area shape="rect" title=" " alt="" coords="5,153,210,179"/>
+<area shape="rect" href="classutil_1_1_password_util.html#a2b27cbbf02fb6dd431a9cbf59872cdfd" title=" " alt="" coords="275,5,472,31"/>
+<area shape="poly" title=" " alt="" coords="118,151,174,97,213,66,256,40,273,35,269,38,259,45,216,70,178,101,122,155"/>
+<area shape="rect" href="classmodel_1_1_user.html#abd58b71654ebe63e1bee16a382e64fa8" title=" " alt="" coords="314,55,434,80"/>
+<area shape="poly" title=" " alt="" coords="129,151,186,120,257,89,301,79,296,81,259,94,188,125,132,155"/>
+<area shape="rect" href="classmodel_1_1_user.html#ac2c3edcf7b03bfb143c5999a6a932472" title=" " alt="" coords="286,104,462,130"/>
+<area shape="poly" title=" " alt="" coords="180,150,288,131,284,135,182,155"/>
+<area shape="rect" href="classmodel_1_1_user.html#aa66aa30c479633f703963421b3d902c8" title=" " alt="" coords="258,153,490,179"/>
+<area shape="poly" title=" " alt="" coords="209,164,244,165,240,167,211,169"/>
+<area shape="rect" href="classutil_1_1_password_util.html#a2309f3210c9c229ac43b5b28bf281abc" title=" " alt="" coords="269,203,479,228"/>
+<area shape="poly" title=" " alt="" coords="181,177,288,198,283,201,181,182"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#aaa61d005cb4314f064ef124f586181f6" title=" " alt="" coords="287,252,460,293"/>
+<area shape="poly" title=" " alt="" coords="132,177,189,207,259,238,278,247,273,248,257,243,187,212,132,182"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#af91a7aae05da2599c76bd93a30c1d9ee" title=" " alt="" coords="293,318,455,358"/>
+<area shape="poly" title=" " alt="" coords="120,177,176,238,215,273,259,303,281,315,276,315,256,307,212,277,172,241,119,182"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af91a7aae05da2599c76bd93a30c1d9ee" name="af91a7aae05da2599c76bd93a30c1d9ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af91a7aae05da2599c76bd93a30c1d9ee">&#9670;&#160;</a></span>validatePassword()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void util.AuthService.validatePassword </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>password</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>strict</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_auth_service_8java_source.html">AuthService.java</a> строка <a class="el" href="_auth_service_8java_source.html#l00198">198</a></p>
+
+<p class="reference">Используется в <a class="el" href="_auth_service_8java_source.html#l00054">login()</a>, <a class="el" href="_auth_service_8java_source.html#l00067">register()</a> и <a class="el" href="_auth_service_8java_source.html#l00142">resetPassword()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_auth_service_af91a7aae05da2599c76bd93a30c1d9ee_icgraph.png" border="0" usemap="#aclassutil_1_1_auth_service_af91a7aae05da2599c76bd93a30c1d9ee_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_auth_service_af91a7aae05da2599c76bd93a30c1d9ee_icgraph" id="aclassutil_1_1_auth_service_af91a7aae05da2599c76bd93a30c1d9ee_icgraph">
+<area shape="rect" title=" " alt="" coords="258,47,420,88"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a2981a8f11aa3eea66cc1535be59ccd4f" title=" " alt="" coords="35,5,180,31"/>
+<area shape="poly" title=" " alt="" coords="240,48,171,34,171,29,245,46"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#aa7ac2cb9c1d87ae03b3f3fb225e29f83" title=" " alt="" coords="27,55,188,80"/>
+<area shape="poly" title=" " alt="" coords="240,68,188,70,188,65,245,67"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a06a3fd96d0a20f45db5be40b24623346" title=" " alt="" coords="5,104,210,130"/>
+<area shape="poly" title=" " alt="" coords="245,88,172,106,171,101,240,88"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="a47c275550fa5bfda17bd816c42bc467b" name="a47c275550fa5bfda17bd816c42bc467b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47c275550fa5bfda17bd816c42bc467b">&#9670;&#160;</a></span>currentUser</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmodel_1_1_user.html">User</a> util.AuthService.currentUser</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_auth_service_8java_source.html">AuthService.java</a> строка <a class="el" href="_auth_service_8java_source.html#l00028">28</a></p>
+
+<p class="reference">Используется в <a class="el" href="_auth_service_8java_source.html#l00046">getCurrentUser()</a>, <a class="el" href="_auth_service_8java_source.html#l00054">login()</a>, <a class="el" href="_auth_service_8java_source.html#l00050">logout()</a> и <a class="el" href="_auth_service_8java_source.html#l00067">register()</a>.</p>
+
+</div>
+</div>
+<a id="ac2ce84e9bbc9da31e84410e8f440beb3" name="ac2ce84e9bbc9da31e84410e8f440beb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2ce84e9bbc9da31e84410e8f440beb3">&#9670;&#160;</a></span>dbManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="classrepository_1_1_database_manager.html">DatabaseManager</a> util.AuthService.dbManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_auth_service_8java_source.html">AuthService.java</a> строка <a class="el" href="_auth_service_8java_source.html#l00026">26</a></p>
+
+<p class="reference">Используется в <a class="el" href="_auth_service_8java_source.html#l00042">hasUsers()</a>, <a class="el" href="_auth_service_8java_source.html#l00054">login()</a>, <a class="el" href="_auth_service_8java_source.html#l00067">register()</a>, <a class="el" href="_auth_service_8java_source.html#l00092">requestPasswordReset()</a> и <a class="el" href="_auth_service_8java_source.html#l00142">resetPassword()</a>.</p>
+
+</div>
+</div>
+<a id="aef6a5161f1037d296a6c6c79389ae94b" name="aef6a5161f1037d296a6c6c79389ae94b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef6a5161f1037d296a6c6c79389ae94b">&#9670;&#160;</a></span>emailNotifier</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="classutil_1_1_email_notifier.html">EmailNotifier</a> util.AuthService.emailNotifier</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_auth_service_8java_source.html">AuthService.java</a> строка <a class="el" href="_auth_service_8java_source.html#l00027">27</a></p>
+
+<p class="reference">Используется в <a class="el" href="_auth_service_8java_source.html#l00092">requestPasswordReset()</a>.</p>
+
+</div>
+</div>
+<a id="ae550f4b982c0d16c608cfa36deffaab2" name="ae550f4b982c0d16c608cfa36deffaab2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae550f4b982c0d16c608cfa36deffaab2">&#9670;&#160;</a></span>instance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a3bbea8df14e34cb04dc17f62dba57cd9">AuthService</a> util.AuthService.instance</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_auth_service_8java_source.html">AuthService.java</a> строка <a class="el" href="_auth_service_8java_source.html#l00024">24</a></p>
+
+<p class="reference">Используется в <a class="el" href="_auth_service_8java_source.html#l00035">getInstance()</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>src/util/<a class="el" href="_auth_service_8java_source.html">AuthService.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespaceutil.html">util</a></li><li class="navelem"><a href="classutil_1_1_auth_service.html">AuthService</a></li>
+    <li class="footer">Документация по Умный планировщик задач (To-Do List). Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

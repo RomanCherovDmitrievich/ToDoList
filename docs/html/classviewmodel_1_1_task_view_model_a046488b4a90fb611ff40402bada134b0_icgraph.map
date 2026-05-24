@@ -1,18 +1,21 @@
 <map id="viewmodel.TaskViewModel.getDescription" name="viewmodel.TaskViewModel.getDescription">
-<area shape="rect" id="Node000001" title="Возвращает описание задачи" alt="" coords="944,71,1145,111"/>
+<area shape="rect" id="Node000001" title="Возвращает описание задачи" alt="" coords="944,107,1145,147"/>
 <area shape="rect" id="Node000002" href="$classview_1_1_main_controller.html#acdde80c44920e4098b097591f9741392" title=" " alt="" coords="696,21,878,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="932,67,848,50,848,44,938,67"/>
-<area shape="rect" id="Node000004" href="$classview_1_1_main_controller.html#aafdc8cce09c744e950691a2c00408f27" title=" " alt="" coords="678,78,896,104"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="925,91,896,94,896,88,931,91"/>
-<area shape="rect" id="Node000008" href="$classview_1_1_main_controller.html#ac915bbe5e6b1d345251530fb2359e3c8" title=" " alt="" coords="238,133,407,174"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="931,112,896,119,629,142,407,154,407,148,628,137,895,114,926,112"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="974,100,895,72,830,50,830,44,897,67,980,101"/>
+<area shape="rect" id="Node000004" href="$classview_1_1_main_controller.html#aafdc8cce09c744e950691a2c00408f27" title=" " alt="" coords="678,82,896,108"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="925,113,896,111,896,106,931,113"/>
+<area shape="rect" id="Node000008" href="$classview_1_1_main_controller.html#ae52fbdd5164aefc0170ae4b650492e0c" title=" " alt="" coords="458,136,627,177"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="926,134,628,154,628,149,931,133"/>
+<area shape="rect" id="Node000009" href="$classview_1_1_main_controller.html#ac915bbe5e6b1d345251530fb2359e3c8" title=" " alt="" coords="238,193,407,234"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="931,147,896,155,764,175,631,191,407,211,407,205,630,186,763,170,895,150,926,147"/>
 <area shape="rect" id="Node000003" href="$classview_1_1_main_controller.html#a76d42bd03f97bfeaaaa738d6b9db53e6" title=" " alt="" coords="455,5,630,46"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="678,30,631,31,630,26,683,30"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="678,31,631,31,630,26,683,30"/>
 <area shape="rect" id="Node000005" href="$classview_1_1_main_controller.html#a157c635caf5c9cc208923226f28274e0" title=" " alt="" coords="460,71,625,111"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="660,91,626,94,625,88,665,91"/>
-<area shape="rect" id="Node000006" href="$classview_1_1_main_controller.html#a35f2a1470868c1e281d8750ab39baa5f" title=" " alt="" coords="238,68,407,109"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="442,90,408,92,407,87,448,90"/>
-<area shape="rect" id="Node000007" href="$classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,109,190,134"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="219,104,189,111,188,106,225,102"/>
-<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="219,140,190,137,190,132,225,139"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="660,93,626,95,625,90,665,93"/>
+<area shape="rect" id="Node000006" href="$classview_1_1_main_controller.html#a35f2a1470868c1e281d8750ab39baa5f" title=" " alt="" coords="238,75,407,115"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="442,93,408,96,407,91,448,92"/>
+<area shape="rect" id="Node000007" href="$classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="5,144,190,169"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="228,121,148,145,146,140,233,119"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="441,159,190,159,190,154,444,154"/>
+<area shape="poly" id="edge10_Node000009_Node000007" title=" " alt="" coords="223,190,151,172,151,167,228,188"/>
 </map>

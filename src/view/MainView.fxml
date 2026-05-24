@@ -42,6 +42,8 @@
                 <Button fx:id="sortByPriorityButton" text="По приоритету" onAction="#sortByPriority"/>
                 <Button fx:id="focusButton" text="Фокус дня" onAction="#handleFocusMode" styleClass="btn-accent"/>
                 <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="currentUserLabel" text="Гость" styleClass="field-label"/>
+                <Button fx:id="switchUserButton" text="Сменить пользователя" onAction="#handleSwitchUser" styleClass="btn-neutral"/>
                 <Button text="Выход" onAction="#handleExit" styleClass="btn-neutral"/>
             </HBox>
         </VBox>
@@ -68,29 +70,37 @@
                     </VBox>
                 </Tab>
                 <Tab text="Календарь">
-                    <BorderPane>
-                        <left>
-                            <VBox spacing="10" styleClass="table-box" BorderPane.alignment="CENTER_LEFT">
-                                <padding>
-                                    <Insets top="12" right="12" bottom="12" left="18"/>
-                                </padding>
-                                <Label text="Выберите дату" styleClass="field-label"/>
-                                <DatePicker fx:id="calendarPicker" onAction="#handleCalendarDateChange"/>
-                                <Button fx:id="calendarAddButton" text="Добавить задачу" onAction="#handleAddTaskForDate"/>
-                                <Button fx:id="calendarExportButton" text="Экспортировать в .ics" onAction="#handleExportCalendar"/>
-                                <Label fx:id="calendarSummaryLabel" text="" wrapText="true"/>
+                    <VBox spacing="12" styleClass="table-box">
+                        <padding>
+                            <Insets top="12" right="18" bottom="12" left="18"/>
+                        </padding>
+
+                        <HBox spacing="12" alignment="CENTER_LEFT">
+                            <VBox spacing="2">
+                                <Label text="Календарь задач" styleClass="app-title"/>
+                                <Label fx:id="calendarSummaryLabel" text="" wrapText="true" styleClass="insight-label"/>
                             </VBox>
-                        </left>
-                        <center>
-                            <VBox spacing="8" styleClass="table-box" BorderPane.alignment="CENTER">
-                                <padding>
-                                    <Insets top="12" right="18" bottom="12" left="12"/>
-                                </padding>
-                                <Label text="Задачи на дату" styleClass="field-label"/>
-                                <ListView fx:id="calendarTaskList" VBox.vgrow="ALWAYS"/>
-                            </VBox>
-                        </center>
-                    </BorderPane>
+                            <Region HBox.hgrow="ALWAYS"/>
+                            <Button text="Сегодня" onAction="#handleCalendarToday" styleClass="btn-accent"/>
+                            <Button text="◀" onAction="#handleCalendarPreviousMonth"/>
+                            <Label fx:id="calendarMonthLabel" text="Март 2026" styleClass="field-label"/>
+                            <Button text="▶" onAction="#handleCalendarNextMonth"/>
+                            <DatePicker fx:id="calendarPicker" onAction="#handleCalendarDateChange"/>
+                            <Button fx:id="calendarAddButton" text="Добавить задачу" onAction="#handleAddTaskForDate"/>
+                            <Button fx:id="calendarExportButton" text="Экспортировать в .ics" onAction="#handleExportCalendar"/>
+                        </HBox>
+
+                        <GridPane fx:id="calendarWeekHeader" hgap="8" styleClass="calendar-week-header"/>
+                        <GridPane fx:id="calendarMonthGrid" hgap="8" vgap="8" VBox.vgrow="ALWAYS" styleClass="calendar-month-grid"/>
+
+                        <VBox spacing="8" styleClass="calendar-day-panel">
+                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                <Label fx:id="calendarSelectedDateLabel" text="Задачи на выбранный день" styleClass="field-label"/>
+                                <Region HBox.hgrow="ALWAYS"/>
+                            </HBox>
+                            <ListView fx:id="calendarTaskList" VBox.vgrow="ALWAYS"/>
+                        </VBox>
+                    </VBox>
                 </Tab>
                 <Tab text="Статистика">
                     <ScrollPane fitToWidth="true" fitToHeight="true">

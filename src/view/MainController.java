@@ -6,8 +6,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.HPos;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
@@ -18,6 +22,7 @@ import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
@@ -25,11 +30,13 @@ import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
@@ -46,12 +53,17 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.TransferMode;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
+import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.stage.Window;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
 
@@ -59,8 +71,11 @@ import model.Category;
 import model.Priority;
 import model.Task;
 import model.TaskManager;
+import model.User;
 import repository.DatabaseManager;
 import util.AudioManager;
+import util.AuthService;
+import util.EmailNotifier;
 import util.NotificationSettings;
 import util.PathResolver;
 import util.TaskReminderService;
@@ -70,10 +85,13 @@ import viewmodel.TaskViewModel;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
+import java.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -117,10 +135,16 @@ public class MainController {
     @FXML private Label appTitleLabel;
     @FXML private Label statusLabel;
     @FXML private Label insightLabel;
+    @FXML private Label currentUserLabel;
+    @FXML private Button switchUserButton;
 
     @FXML private DatePicker calendarPicker;
     @FXML private Button calendarAddButton;
     @FXML private Button calendarExportButton;
+    @FXML private Label calendarMonthLabel;
+    @FXML private GridPane calendarWeekHeader;
+    @FXML private GridPane calendarMonthGrid;
+    @FXML private Label calendarSelectedDateLabel;
     @FXML private ListView<TaskViewModel> calendarTaskList;
     @FXML private Label calendarSummaryLabel;
 
@@ -153,6 +177,7 @@ public class MainController {
     private final AudioManager audioManager = AudioManager.getInstance();
     private final TaskReminderService reminderService = TaskReminderService.getInstance();
     private final DatabaseManager dbManager = DatabaseManager.getInstance();
+    private final AuthService authService = AuthService.getInstance();
 
     private final ObservableList<TaskViewModel> taskList = FXCollections.observableArrayList();
     private FilteredList<TaskViewModel> filteredTasks;
@@ -167,9 +192,18 @@ public class MainController {
     private ListView<String> widgetListView;
     private final ObservableList<String> widgetItems = FXCollections.observableArrayList();
 
+    private YearMonth displayedMonth = YearMonth.now();
+
+    private static final Locale RU_LOCALE = Locale.forLanguageTag("ru-RU");
+    private static final DateTimeFormatter CALENDAR_MONTH_FORMATTER =
+        DateTimeFormatter.ofPattern("LLLL yyyy", RU_LOCALE);
+    private static final DateTimeFormatter CALENDAR_SELECTED_DATE_FORMATTER =
+        DateTimeFormatter.ofPattern("EEEE, d MMMM yyyy", RU_LOCALE);
+
     @FXML
     public void initialize() {
         appTitleLabel.setText("ToDoList");
+        currentUserLabel.setText("Аккаунт не выбран");
 
         setupTableColumns();
         setupTableDataFlow();
@@ -183,15 +217,23 @@ public class MainController {
         setupMusicSettings();
         setupWidgetSettings();
 
-        loadTasks();
-        refreshAllViews();
+        Platform.runLater(() -> {
+            if (!ensureAuthenticated()) {
+                handleExit();
+                return;
+            }
 
-        audioManager.refreshPlaylist();
-        audioCountLabel.setText("Треков: " + audioManager.getAudioFilesCount());
-        if (musicEnabledCheck.isSelected()) {
-            audioManager.startPlaylist();
-        }
-        reminderService.start();
+            loadTasks();
+            refreshAllViews();
+            updateCurrentUserBadge();
+
+            audioManager.refreshPlaylist();
+            audioCountLabel.setText("Треков: " + audioManager.getAudioFilesCount());
+            if (musicEnabledCheck.isSelected()) {
+                audioManager.startPlaylist();
+            }
+            reminderService.start();
+        });
     }
 
     private void setupTableColumns() {
@@ -543,23 +585,182 @@ public class MainController {
     }
 
     private void setupCalendarTab() {
-        calendarPicker.setValue(LocalDate.now());
+        LocalDate today = LocalDate.now();
+        displayedMonth = YearMonth.from(today);
+        calendarPicker.setValue(today);
+        buildCalendarWeekHeader();
         calendarTaskList.setCellFactory(list -> new ListCell<>() {
             @Override
             protected void updateItem(TaskViewModel item, boolean empty) {
                 super.updateItem(item, empty);
                 if (empty || item == null) {
                     setText(null);
+                    setGraphic(null);
                     return;
                 }
-                String text = String.format("%s — %s (%s)",
-                    item.getFormattedStartTime(),
-                    item.getTitle(),
-                    item.getPriorityDisplay());
-                setText(text);
+                Label title = new Label(item.getTitle());
+                title.getStyleClass().add("calendar-task-title");
+                title.setWrapText(true);
+
+                Label meta = new Label(String.format(
+                    "%s - %s  |  %s  |  %s",
+                    item.getStartTime().format(DateTimeFormatter.ofPattern("HH:mm")),
+                    item.getEndTime().format(DateTimeFormatter.ofPattern("HH:mm")),
+                    item.getPriorityDisplay(),
+                    item.getCategoryDisplay()
+                ));
+                meta.getStyleClass().add("calendar-task-meta");
+
+                Label description = new Label(item.getDescription().isBlank()
+                    ? "Без описания"
+                    : item.getDescription());
+                description.getStyleClass().add("calendar-task-description");
+                description.setWrapText(true);
+
+                VBox content = new VBox(4, title, meta, description);
+                content.getStyleClass().add("calendar-task-card");
+                setText(null);
+                setGraphic(content);
             }
         });
         updateCalendarView();
+    }
+
+    private void buildCalendarWeekHeader() {
+        calendarWeekHeader.getChildren().clear();
+        calendarWeekHeader.getColumnConstraints().clear();
+
+        for (int i = 0; i < 7; i++) {
+            ColumnConstraints constraints = new ColumnConstraints();
+            constraints.setPercentWidth(100.0 / 7.0);
+            constraints.setHalignment(HPos.CENTER);
+            constraints.setHgrow(javafx.scene.layout.Priority.ALWAYS);
+            calendarWeekHeader.getColumnConstraints().add(constraints);
+        }
+
+        DayOfWeek[] days = {
+            DayOfWeek.MONDAY,
+            DayOfWeek.TUESDAY,
+            DayOfWeek.WEDNESDAY,
+            DayOfWeek.THURSDAY,
+            DayOfWeek.FRIDAY,
+            DayOfWeek.SATURDAY,
+            DayOfWeek.SUNDAY
+        };
+
+        for (int i = 0; i < days.length; i++) {
+            Label label = new Label(days[i].getDisplayName(TextStyle.SHORT_STANDALONE, RU_LOCALE));
+            label.getStyleClass().add("calendar-weekday-label");
+            label.setMaxWidth(Double.MAX_VALUE);
+            label.setAlignment(Pos.CENTER);
+            calendarWeekHeader.add(label, i, 0);
+        }
+    }
+
+    private void renderCalendarGrid() {
+        calendarMonthGrid.getChildren().clear();
+        calendarMonthGrid.getColumnConstraints().clear();
+        calendarMonthGrid.getRowConstraints().clear();
+
+        for (int i = 0; i < 7; i++) {
+            ColumnConstraints constraints = new ColumnConstraints();
+            constraints.setPercentWidth(100.0 / 7.0);
+            constraints.setHgrow(javafx.scene.layout.Priority.ALWAYS);
+            calendarMonthGrid.getColumnConstraints().add(constraints);
+        }
+        for (int row = 0; row < 6; row++) {
+            RowConstraints constraints = new RowConstraints();
+            constraints.setPercentHeight(100.0 / 6.0);
+            constraints.setVgrow(javafx.scene.layout.Priority.ALWAYS);
+            calendarMonthGrid.getRowConstraints().add(constraints);
+        }
+
+        LocalDate selectedDate = calendarPicker.getValue() == null ? LocalDate.now() : calendarPicker.getValue();
+        displayedMonth = YearMonth.from(selectedDate);
+        calendarMonthLabel.setText(capitalize(displayedMonth.format(CALENDAR_MONTH_FORMATTER)));
+
+        LocalDate firstDayOfMonth = displayedMonth.atDay(1);
+        LocalDate gridStart = firstDayOfMonth.with(DayOfWeek.MONDAY);
+        if (gridStart.isAfter(firstDayOfMonth)) {
+            gridStart = gridStart.minusWeeks(1);
+        }
+
+        for (int index = 0; index < 42; index++) {
+            LocalDate cellDate = gridStart.plusDays(index);
+            VBox cell = buildCalendarDayCell(cellDate, selectedDate, findTasksForDate(cellDate));
+            calendarMonthGrid.add(cell, index % 7, index / 7);
+        }
+    }
+
+    private VBox buildCalendarDayCell(LocalDate cellDate, LocalDate selectedDate, List<TaskViewModel> matches) {
+        Label dayNumber = new Label(String.valueOf(cellDate.getDayOfMonth()));
+        dayNumber.getStyleClass().add("calendar-day-number");
+
+        HBox header = new HBox(dayNumber);
+        header.setAlignment(Pos.CENTER_LEFT);
+
+        if (!matches.isEmpty()) {
+            Label counter = new Label(String.valueOf(matches.size()));
+            counter.getStyleClass().add("calendar-day-counter");
+            Region spacer = new Region();
+            HBox.setHgrow(spacer, javafx.scene.layout.Priority.ALWAYS);
+            header.getChildren().addAll(spacer, counter);
+        }
+
+        VBox cell = new VBox(6);
+        cell.getChildren().add(header);
+        cell.getStyleClass().add("calendar-day-cell");
+        cell.setFillWidth(true);
+        cell.setPadding(new Insets(10));
+        cell.setMinHeight(118);
+
+        if (!YearMonth.from(cellDate).equals(displayedMonth)) {
+            cell.getStyleClass().add("calendar-day-cell-muted");
+        }
+        if (LocalDate.now().equals(cellDate)) {
+            cell.getStyleClass().add("calendar-day-cell-today");
+        }
+        if (selectedDate.equals(cellDate)) {
+            cell.getStyleClass().add("calendar-day-cell-selected");
+        }
+
+        int previewCount = Math.min(matches.size(), 2);
+        for (int i = 0; i < previewCount; i++) {
+            TaskViewModel task = matches.get(i);
+            Label chip = new Label(task.getTitle());
+            chip.getStyleClass().add("calendar-task-chip");
+            if (task.isCompleted()) {
+                chip.getStyleClass().add("calendar-task-chip-completed");
+            } else if (task.isOverdue()) {
+                chip.getStyleClass().add("calendar-task-chip-overdue");
+            }
+            chip.setWrapText(true);
+            cell.getChildren().add(chip);
+        }
+
+        if (matches.size() > previewCount) {
+            Label moreLabel = new Label("+" + (matches.size() - previewCount) + " еще");
+            moreLabel.getStyleClass().add("calendar-day-more");
+            cell.getChildren().add(moreLabel);
+        }
+
+        Region spacer = new Region();
+        VBox.setVgrow(spacer, javafx.scene.layout.Priority.ALWAYS);
+        cell.getChildren().add(spacer);
+
+        cell.setOnMouseClicked(event -> {
+            calendarPicker.setValue(cellDate);
+            handleCalendarDateChange();
+        });
+        return cell;
+    }
+
+    private List<TaskViewModel> findTasksForDate(LocalDate date) {
+        return taskList.stream()
+            .filter(task -> task.getStartTime().toLocalDate().equals(date)
+                || task.getEndTime().toLocalDate().equals(date))
+            .sorted(Comparator.comparing(TaskViewModel::getStartTime))
+            .collect(Collectors.toList());
     }
 
     private void setupStatsTab() {
@@ -648,6 +849,313 @@ public class MainController {
 
         if (enabled) {
             Platform.runLater(this::showWidget);
+        }
+    }
+
+    private boolean ensureAuthenticated() {
+        if (authService.getCurrentUser() != null) {
+            taskManager.setCurrentUser(authService.getCurrentUser());
+            return true;
+        }
+
+        if (!authService.hasUsers()) {
+            User bootstrapUser = showRegistrationDialog(true);
+            if (bootstrapUser == null) {
+                return false;
+            }
+            taskManager.setCurrentUser(bootstrapUser);
+            return true;
+        }
+
+        User user = showLoginDialog();
+        if (user == null) {
+            return false;
+        }
+        taskManager.setCurrentUser(user);
+        return true;
+    }
+
+    private User showLoginDialog() {
+        while (true) {
+            Dialog<ButtonType> dialog = new Dialog<>();
+            dialog.setTitle("Вход в аккаунт");
+            dialog.setHeaderText("Введите логин или email и пароль");
+            initDialogOwner(dialog);
+
+            ButtonType loginType = new ButtonType("Войти", ButtonBar.ButtonData.OK_DONE);
+            ButtonType registerType = new ButtonType("Регистрация", ButtonBar.ButtonData.LEFT);
+            ButtonType resetType = new ButtonType("Забыли пароль", ButtonBar.ButtonData.HELP);
+            dialog.getDialogPane().getButtonTypes().addAll(loginType, registerType, resetType, ButtonType.CANCEL);
+
+            TextField identifierField = new TextField();
+            identifierField.setPromptText("login или email");
+            PasswordField passwordField = new PasswordField();
+            passwordField.setPromptText("Пароль");
+            Label errorLabel = new Label();
+            errorLabel.setWrapText(true);
+            errorLabel.setTextFill(Color.web("#c0392b"));
+
+            GridPane content = createFormGrid();
+            content.add(new Label("Логин / email"), 0, 0);
+            content.add(identifierField, 1, 0);
+            content.add(new Label("Пароль"), 0, 1);
+            content.add(passwordField, 1, 1);
+            content.add(errorLabel, 0, 2, 2, 1);
+            dialog.getDialogPane().setContent(content);
+
+            User[] authenticatedUser = new User[1];
+            Button loginButton = (Button) dialog.getDialogPane().lookupButton(loginType);
+            loginButton.addEventFilter(ActionEvent.ACTION, event -> {
+                try {
+                    authenticatedUser[0] = authService.login(identifierField.getText(), passwordField.getText());
+                } catch (IllegalArgumentException e) {
+                    errorLabel.setText(e.getMessage());
+                    event.consume();
+                }
+            });
+
+            Optional<ButtonType> result = dialog.showAndWait();
+            if (result.isEmpty() || result.get() == ButtonType.CANCEL) {
+                return null;
+            }
+            if (result.get() == registerType) {
+                User createdUser = showRegistrationDialog(false);
+                if (createdUser != null) {
+                    return createdUser;
+                }
+                continue;
+            }
+            if (result.get() == resetType) {
+                String identifier = showPasswordResetRequestDialog();
+                if (identifier != null) {
+                    showPasswordResetConfirmDialog(identifier);
+                }
+                continue;
+            }
+            if (authenticatedUser[0] != null) {
+                return authenticatedUser[0];
+            }
+        }
+    }
+
+    private User showRegistrationDialog(boolean firstAccount) {
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.setTitle(firstAccount ? "Первый аккаунт" : "Регистрация");
+        dialog.setHeaderText(firstAccount
+            ? "Создайте первый аккаунт для работы с приложением"
+            : "Создайте новый пользовательский аккаунт");
+        initDialogOwner(dialog);
+
+        ButtonType createType = new ButtonType(firstAccount ? "Создать аккаунт" : "Зарегистрировать", ButtonBar.ButtonData.OK_DONE);
+        dialog.getDialogPane().getButtonTypes().addAll(createType, ButtonType.CANCEL);
+
+        TextField usernameField = new TextField();
+        usernameField.setPromptText("login");
+        TextField emailField = new TextField();
+        emailField.setPromptText("user@example.com");
+        PasswordField passwordField = new PasswordField();
+        passwordField.setPromptText("Минимум 6 символов");
+        PasswordField confirmField = new PasswordField();
+        confirmField.setPromptText("Повторите пароль");
+        Label errorLabel = new Label();
+        errorLabel.setWrapText(true);
+        errorLabel.setTextFill(Color.web("#c0392b"));
+        Label infoLabel = new Label("Если почта указана, приложение попробует отправить письмо о регистрации.");
+        infoLabel.setWrapText(true);
+
+        GridPane content = createFormGrid();
+        content.add(new Label("Логин"), 0, 0);
+        content.add(usernameField, 1, 0);
+        content.add(new Label("Email"), 0, 1);
+        content.add(emailField, 1, 1);
+        content.add(new Label("Пароль"), 0, 2);
+        content.add(passwordField, 1, 2);
+        content.add(new Label("Повтор пароля"), 0, 3);
+        content.add(confirmField, 1, 3);
+        content.add(infoLabel, 0, 4, 2, 1);
+        content.add(errorLabel, 0, 5, 2, 1);
+        dialog.getDialogPane().setContent(content);
+
+        User[] createdUser = new User[1];
+        EmailNotifier.DeliveryResult[] registrationDelivery = new EmailNotifier.DeliveryResult[1];
+        Button createButton = (Button) dialog.getDialogPane().lookupButton(createType);
+        createButton.addEventFilter(ActionEvent.ACTION, event -> {
+            if (!passwordField.getText().equals(confirmField.getText())) {
+                errorLabel.setText("Пароли не совпадают.");
+                event.consume();
+                return;
+            }
+            try {
+                createdUser[0] = authService.register(
+                    usernameField.getText(),
+                    emailField.getText(),
+                    passwordField.getText()
+                );
+                if (createdUser[0] != null && createdUser[0].hasEmail()) {
+                    registrationDelivery[0] = authService.sendRegistrationEmail(createdUser[0]);
+                }
+            } catch (IllegalArgumentException e) {
+                errorLabel.setText(e.getMessage());
+                event.consume();
+            }
+        });
+
+        Optional<ButtonType> result = dialog.showAndWait();
+        if (result.isPresent() && result.get() == createType) {
+            if (registrationDelivery[0] != null) {
+                showEmailDeliveryInfo("Регистрация", "Аккаунт создан", registrationDelivery[0]);
+            }
+            return createdUser[0];
+        }
+        return null;
+    }
+
+    private String showPasswordResetRequestDialog() {
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.setTitle("Восстановление доступа");
+        dialog.setHeaderText("Укажите логин или email аккаунта");
+        initDialogOwner(dialog);
+
+        ButtonType requestType = new ButtonType("Отправить код", ButtonBar.ButtonData.OK_DONE);
+        dialog.getDialogPane().getButtonTypes().addAll(requestType, ButtonType.CANCEL);
+
+        TextField identifierField = new TextField();
+        identifierField.setPromptText("login или email");
+        Label infoLabel = new Label(
+            "Код будет отправлен на почту, если она указана в аккаунте. " +
+            "Если автоматическая отправка недоступна, код сохранится в лог уведомлений."
+        );
+        infoLabel.setWrapText(true);
+
+        VBox content = new VBox(10, identifierField, infoLabel);
+        dialog.getDialogPane().setContent(content);
+
+        Button requestButton = (Button) dialog.getDialogPane().lookupButton(requestType);
+        requestButton.addEventFilter(ActionEvent.ACTION, event -> {
+            try {
+                AuthService.PasswordResetRequest request = authService.requestPasswordReset(identifierField.getText());
+                if (!request.created()) {
+                    showAlert(Alert.AlertType.WARNING, "Восстановление доступа", "Код не создан", request.message());
+                    event.consume();
+                    return;
+                }
+                String details = request.fallbackFile() == null
+                    ? request.message()
+                    : request.message() + "\nФайл: " + request.fallbackFile().toAbsolutePath();
+                showAlert(
+                    request.delivered() ? Alert.AlertType.INFORMATION : Alert.AlertType.WARNING,
+                    "Восстановление доступа",
+                    request.delivered() ? "Код отправлен" : "Код создан, но письмо не отправлено автоматически",
+                    details
+                );
+            } catch (IllegalArgumentException e) {
+                showAlert(Alert.AlertType.WARNING, "Восстановление доступа", "Ошибка", e.getMessage());
+                event.consume();
+            }
+        });
+
+        Optional<ButtonType> result = dialog.showAndWait();
+        if (result.isPresent() && result.get() == requestType) {
+            return identifierField.getText();
+        }
+        return null;
+    }
+
+    private void showPasswordResetConfirmDialog(String identifier) {
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.setTitle("Подтверждение сброса");
+        dialog.setHeaderText("Введите код из письма и новый пароль");
+        initDialogOwner(dialog);
+
+        ButtonType resetType = new ButtonType("Сменить пароль", ButtonBar.ButtonData.OK_DONE);
+        dialog.getDialogPane().getButtonTypes().addAll(resetType, ButtonType.CANCEL);
+
+        TextField identifierField = new TextField(identifier == null ? "" : identifier);
+        PasswordField codeField = new PasswordField();
+        codeField.setPromptText("Код восстановления");
+        PasswordField newPasswordField = new PasswordField();
+        newPasswordField.setPromptText("Новый пароль");
+        PasswordField confirmField = new PasswordField();
+        confirmField.setPromptText("Повторите новый пароль");
+        Label errorLabel = new Label();
+        errorLabel.setWrapText(true);
+        errorLabel.setTextFill(Color.web("#c0392b"));
+
+        GridPane content = createFormGrid();
+        content.add(new Label("Логин / email"), 0, 0);
+        content.add(identifierField, 1, 0);
+        content.add(new Label("Код"), 0, 1);
+        content.add(codeField, 1, 1);
+        content.add(new Label("Новый пароль"), 0, 2);
+        content.add(newPasswordField, 1, 2);
+        content.add(new Label("Повтор"), 0, 3);
+        content.add(confirmField, 1, 3);
+        content.add(errorLabel, 0, 4, 2, 1);
+        dialog.getDialogPane().setContent(content);
+
+        Button resetButton = (Button) dialog.getDialogPane().lookupButton(resetType);
+        resetButton.addEventFilter(ActionEvent.ACTION, event -> {
+            if (!newPasswordField.getText().equals(confirmField.getText())) {
+                errorLabel.setText("Пароли не совпадают.");
+                event.consume();
+                return;
+            }
+            try {
+                authService.resetPassword(identifierField.getText(), codeField.getText(), newPasswordField.getText());
+                showAlert(Alert.AlertType.INFORMATION, "Восстановление доступа", "Пароль обновлен",
+                    "Теперь можно войти по логину или email с новым паролем.");
+            } catch (IllegalArgumentException e) {
+                errorLabel.setText(e.getMessage());
+                event.consume();
+            }
+        });
+
+        dialog.showAndWait();
+    }
+
+    private void updateCurrentUserBadge() {
+        User currentUser = taskManager.getCurrentUser();
+        if (currentUser == null) {
+            currentUserLabel.setText("Аккаунт не выбран");
+            return;
+        }
+        currentUserLabel.setText("Пользователь: " + currentUser.getDisplayName());
+    }
+
+    private void showEmailDeliveryInfo(String title, String header, EmailNotifier.DeliveryResult delivery) {
+        if (delivery == null) {
+            return;
+        }
+        String details = delivery.fallbackFile() == null
+            ? delivery.message()
+            : delivery.message() + "\nФайл: " + delivery.fallbackFile().toAbsolutePath();
+        showAlert(
+            delivery.delivered() ? Alert.AlertType.INFORMATION : Alert.AlertType.WARNING,
+            title,
+            header,
+            details
+        );
+    }
+
+    private GridPane createFormGrid() {
+        GridPane grid = new GridPane();
+        grid.setHgap(12);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(8, 0, 0, 0));
+
+        ColumnConstraints left = new ColumnConstraints();
+        left.setPercentWidth(35);
+        ColumnConstraints right = new ColumnConstraints();
+        right.setPercentWidth(65);
+        right.setHgrow(javafx.scene.layout.Priority.ALWAYS);
+        grid.getColumnConstraints().addAll(left, right);
+        return grid;
+    }
+
+    private void initDialogOwner(Dialog<?> dialog) {
+        Window owner = taskTable == null || taskTable.getScene() == null ? null : taskTable.getScene().getWindow();
+        if (owner != null) {
+            dialog.initOwner(owner);
         }
     }
 
@@ -862,7 +1370,53 @@ public class MainController {
 
     @FXML
     private void handleCalendarDateChange() {
+        if (calendarPicker.getValue() != null) {
+            displayedMonth = YearMonth.from(calendarPicker.getValue());
+        }
         updateCalendarView();
+    }
+
+    @FXML
+    private void handleCalendarToday() {
+        calendarPicker.setValue(LocalDate.now());
+        displayedMonth = YearMonth.now();
+        updateCalendarView();
+    }
+
+    @FXML
+    private void handleCalendarPreviousMonth() {
+        displayedMonth = displayedMonth.minusMonths(1);
+        LocalDate targetDate = displayedMonth.atDay(Math.min(
+            calendarPicker.getValue() == null ? 1 : calendarPicker.getValue().getDayOfMonth(),
+            displayedMonth.lengthOfMonth()
+        ));
+        calendarPicker.setValue(targetDate);
+        updateCalendarView();
+    }
+
+    @FXML
+    private void handleCalendarNextMonth() {
+        displayedMonth = displayedMonth.plusMonths(1);
+        LocalDate targetDate = displayedMonth.atDay(Math.min(
+            calendarPicker.getValue() == null ? 1 : calendarPicker.getValue().getDayOfMonth(),
+            displayedMonth.lengthOfMonth()
+        ));
+        calendarPicker.setValue(targetDate);
+        updateCalendarView();
+    }
+
+    @FXML
+    private void handleSwitchUser() {
+        authService.logout();
+        taskManager.setCurrentUser(null);
+        taskList.clear();
+        if (!ensureAuthenticated()) {
+            handleExit();
+            return;
+        }
+        loadTasks();
+        refreshAllViews();
+        updateCurrentUserBadge();
     }
 
     @FXML
@@ -931,6 +1485,7 @@ public class MainController {
     }
 
     private void refreshAllViews() {
+        updateCurrentUserBadge();
         updateStatusLabel();
         updateInsightLabel();
         updateStatisticsCharts();
@@ -1002,14 +1557,23 @@ public class MainController {
             return;
         }
         LocalDate date = calendarPicker.getValue();
-        List<TaskViewModel> matches = taskList.stream()
-            .filter(task -> task.getStartTime().toLocalDate().equals(date)
-                || task.getEndTime().toLocalDate().equals(date))
-            .sorted(Comparator.comparing(TaskViewModel::getStartTime))
-            .collect(Collectors.toList());
+        List<TaskViewModel> matches = findTasksForDate(date);
 
         calendarTaskList.setItems(FXCollections.observableArrayList(matches));
-        calendarSummaryLabel.setText("Задач: " + matches.size());
+        calendarSelectedDateLabel.setText("Задачи на " + capitalize(date.format(CALENDAR_SELECTED_DATE_FORMATTER)));
+
+        long monthTaskCount = taskList.stream()
+            .filter(task -> YearMonth.from(task.getStartTime()).equals(displayedMonth)
+                || YearMonth.from(task.getEndTime()).equals(displayedMonth))
+            .count();
+
+        calendarSummaryLabel.setText(String.format(
+            "Месяц: %s  |  Задач в месяце: %d  |  На выбранный день: %d",
+            capitalize(displayedMonth.format(CALENDAR_MONTH_FORMATTER)),
+            monthTaskCount,
+            matches.size()
+        ));
+        renderCalendarGrid();
     }
 
     private void reloadTasksFromManager() {
@@ -1379,6 +1943,13 @@ public class MainController {
         int g = (int) Math.round(color.getGreen() * 255);
         int b = (int) Math.round(color.getBlue() * 255);
         return String.format("#%02x%02x%02x", r, g, b);
+    }
+
+    private String capitalize(String value) {
+        if (value == null || value.isBlank()) {
+            return "";
+        }
+        return value.substring(0, 1).toUpperCase(RU_LOCALE) + value.substring(1);
     }
 
     private double parseDouble(String value, double fallback) {

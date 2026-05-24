@@ -1,0 +1,2201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Умный планировщик задач (To-Do List): Класс repository.DatabaseConfig</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">JavaFX ToDo-приложение с SQLite, уведомлениями и летней темой</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classrepository_1_1_database_config.html','','classrepository_1_1_database_config-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс repository.DatabaseConfig</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Настройки подключения к БД.  
+ <a href="#details">Подробнее...</a></p>
+<div class="dynheader">
+Граф связей класса repository.DatabaseConfig:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrepository_1_1_database_config__coll__graph.png" border="0" usemap="#arepository_8_database_config_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="arepository_8_database_config_coll__map" id="arepository_8_database_config_coll__map">
+<area shape="rect" title="Настройки подключения к БД." alt="" coords="21,102,196,128"/>
+<area shape="rect" href="enumrepository_1_1_database_config_1_1_type.html" title=" " alt="" coords="5,5,212,31"/>
+<area shape="poly" title=" " alt="" coords="111,45,111,102,106,101,106,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:Type" id="r_Type"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumrepository_1_1_database_config_1_1_type.html">Type</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a0ad03838a65cc0d81aa5744e49445ef1" id="r_a0ad03838a65cc0d81aa5744e49445ef1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ad03838a65cc0d81aa5744e49445ef1">validate</a> ()</td></tr>
+<tr class="memitem:ab5871fda6f1f9a780cf4dcf674cd0986" id="r_ab5871fda6f1f9a780cf4dcf674cd0986"><td class="memItemLeft" align="right" valign="top">Connection&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5871fda6f1f9a780cf4dcf674cd0986">openConnection</a> ()  throws SQLException </td></tr>
+<tr class="memitem:a4210ed0a814b9aa2d0b1c12377895163" id="r_a4210ed0a814b9aa2d0b1c12377895163"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4210ed0a814b9aa2d0b1c12377895163">loadDriver</a> ()  throws ClassNotFoundException </td></tr>
+<tr class="memitem:a9d73ac86e1e24822a5fdc5946aeb9adb" id="r_a9d73ac86e1e24822a5fdc5946aeb9adb"><td class="memItemLeft" align="right" valign="top">Properties&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d73ac86e1e24822a5fdc5946aeb9adb">getConnectionProperties</a> ()</td></tr>
+<tr class="memitem:a0633e0cbfcc748e355c055233dfbba50" id="r_a0633e0cbfcc748e355c055233dfbba50"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0633e0cbfcc748e355c055233dfbba50">getJdbcUrl</a> ()</td></tr>
+<tr class="memitem:a6f6ee0a0b912b6063df56dc7c84cd547" id="r_a6f6ee0a0b912b6063df56dc7c84cd547"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f6ee0a0b912b6063df56dc7c84cd547">getDriverClass</a> ()</td></tr>
+<tr class="memitem:a9c4a9f4428edde4c28b333c3b3951573" id="r_a9c4a9f4428edde4c28b333c3b3951573"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c4a9f4428edde4c28b333c3b3951573">describe</a> ()</td></tr>
+<tr class="memitem:ad83567e4c34a8f0274943ac211e94d31" id="r_ad83567e4c34a8f0274943ac211e94d31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumrepository_1_1_database_config_1_1_type.html">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad83567e4c34a8f0274943ac211e94d31">getType</a> ()</td></tr>
+<tr class="memitem:a476577d1a3e007f3cf581029ee59b32c" id="r_a476577d1a3e007f3cf581029ee59b32c"><td class="memItemLeft" align="right" valign="top">Path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a476577d1a3e007f3cf581029ee59b32c">getConfigFile</a> ()</td></tr>
+<tr class="memitem:a7f1bd1a7d482f1576b5053380a70ddce" id="r_a7f1bd1a7d482f1576b5053380a70ddce"><td class="memItemLeft" align="right" valign="top">Path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f1bd1a7d482f1576b5053380a70ddce">getSqlitePath</a> ()</td></tr>
+<tr class="memitem:aec62e8bcb5c3175fe3f77052d8ec3040" id="r_aec62e8bcb5c3175fe3f77052d8ec3040"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec62e8bcb5c3175fe3f77052d8ec3040">getHost</a> ()</td></tr>
+<tr class="memitem:aacd1135a189c5840eb8850a92147e5f0" id="r_aacd1135a189c5840eb8850a92147e5f0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aacd1135a189c5840eb8850a92147e5f0">getPort</a> ()</td></tr>
+<tr class="memitem:acdf02be2ca0ac3896d3e85f95809ced6" id="r_acdf02be2ca0ac3896d3e85f95809ced6"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acdf02be2ca0ac3896d3e85f95809ced6">getDatabaseName</a> ()</td></tr>
+<tr class="memitem:aa0ad346841560fe5e82d290bef810fb2" id="r_aa0ad346841560fe5e82d290bef810fb2"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0ad346841560fe5e82d290bef810fb2">getUsername</a> ()</td></tr>
+<tr class="memitem:a3ae49d96b9cf80e8a83d9ab0db1a0c5a" id="r_a3ae49d96b9cf80e8a83d9ab0db1a0c5a"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ae49d96b9cf80e8a83d9ab0db1a0c5a">getPassword</a> ()</td></tr>
+<tr class="memitem:afe03502cca1abb0b07771c1dc502e4d3" id="r_afe03502cca1abb0b07771c1dc502e4d3"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe03502cca1abb0b07771c1dc502e4d3">getSslMode</a> ()</td></tr>
+<tr class="memitem:a10d0e3b2363ed38f49bfa62571b904cb" id="r_a10d0e3b2363ed38f49bfa62571b904cb"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10d0e3b2363ed38f49bfa62571b904cb">isSqlite</a> ()</td></tr>
+<tr class="memitem:a395cc8ecd621add2b161f95ad93e8f01" id="r_a395cc8ecd621add2b161f95ad93e8f01"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a395cc8ecd621add2b161f95ad93e8f01">isPostgresql</a> ()</td></tr>
+<tr class="memitem:ae61320b64c79be14742b8b9d39d6435b" id="r_ae61320b64c79be14742b8b9d39d6435b"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae61320b64c79be14742b8b9d39d6435b">isCustom</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:a4e9d6c7f878e393a494f9c9fac13f0a9" id="r_a4e9d6c7f878e393a494f9c9fac13f0a9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="#a35691da1978472d524abd32ca05acbf3">DatabaseConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e9d6c7f878e393a494f9c9fac13f0a9">load</a> ()</td></tr>
+<tr class="memitem:a54be8ad7883587920d91f2ce979fa3b9" id="r_a54be8ad7883587920d91f2ce979fa3b9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="#a35691da1978472d524abd32ca05acbf3">DatabaseConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54be8ad7883587920d91f2ce979fa3b9">fromProperties</a> (Properties properties, Path <a class="el" href="#a556fb7c180de431475f12b3623efa4e5">configFile</a>, Path defaultSqlitePath)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:a35691da1978472d524abd32ca05acbf3" id="r_a35691da1978472d524abd32ca05acbf3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35691da1978472d524abd32ca05acbf3">DatabaseConfig</a> (<a class="el" href="enumrepository_1_1_database_config_1_1_type.html">Type</a> <a class="el" href="#a3689fd115d888fba100900aedcdac987">type</a>, Path <a class="el" href="#a556fb7c180de431475f12b3623efa4e5">configFile</a>, Path <a class="el" href="#a99dc880412bf37e410a8e7fae965ae7c">sqlitePath</a>, String <a class="el" href="#a0b91d1ea345d6c04fa6956514e1e5611">host</a>, int <a class="el" href="#a04096b42ef429a4a507b2a1239a883cf">port</a>, String <a class="el" href="#aaaf20009709c64cc5bdf4d91d65d76b6">databaseName</a>, String <a class="el" href="#a33a522128bc8b400395422b23443c39c">username</a>, String <a class="el" href="#ac61557a53ef53513ceceeebe3153fe10">password</a>, String <a class="el" href="#a697990acd2d137850ccb6dd22562d8a9">jdbcUrl</a>, String <a class="el" href="#a87b5809c5e333307cca3810a1b65f158">driverClass</a>, String <a class="el" href="#a070b891be3ea22e197e203dacb41b50e">sslMode</a>)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-methods" class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Закрытые статические члены</h2></td></tr>
+<tr class="memitem:ab59426f01c5b94e12686f41d18b2e0ba" id="r_ab59426f01c5b94e12686f41d18b2e0ba"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab59426f01c5b94e12686f41d18b2e0ba">applyEnvironmentOverride</a> (Properties properties, String propertyKey, String envKey)</td></tr>
+<tr class="memitem:a69f8eeab7280768eee8545d4371aeb9c" id="r_a69f8eeab7280768eee8545d4371aeb9c"><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69f8eeab7280768eee8545d4371aeb9c">read</a> (Properties properties, String key, String defaultValue)</td></tr>
+<tr class="memitem:a36e82cbf84ceab1f8059de8ef510da3a" id="r_a36e82cbf84ceab1f8059de8ef510da3a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="enumrepository_1_1_database_config_1_1_type.html">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36e82cbf84ceab1f8059de8ef510da3a">parseType</a> (String value)</td></tr>
+<tr class="memitem:a69aeb61182c8f6f4ccb5b924c424de02" id="r_a69aeb61182c8f6f4ccb5b924c424de02"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69aeb61182c8f6f4ccb5b924c424de02">parsePort</a> (String value, int defaultValue)</td></tr>
+<tr class="memitem:a4b5dc5dd91254df1efacc26898e26caf" id="r_a4b5dc5dd91254df1efacc26898e26caf"><td class="memItemLeft" align="right" valign="top">static Path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b5dc5dd91254df1efacc26898e26caf">resolveSqlitePath</a> (String configuredPath, Path defaultPath)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:a3689fd115d888fba100900aedcdac987" id="r_a3689fd115d888fba100900aedcdac987"><td class="memItemLeft" align="right" valign="top">final <a class="el" href="enumrepository_1_1_database_config_1_1_type.html">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3689fd115d888fba100900aedcdac987">type</a></td></tr>
+<tr class="memitem:a556fb7c180de431475f12b3623efa4e5" id="r_a556fb7c180de431475f12b3623efa4e5"><td class="memItemLeft" align="right" valign="top">final Path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a556fb7c180de431475f12b3623efa4e5">configFile</a></td></tr>
+<tr class="memitem:a99dc880412bf37e410a8e7fae965ae7c" id="r_a99dc880412bf37e410a8e7fae965ae7c"><td class="memItemLeft" align="right" valign="top">final Path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99dc880412bf37e410a8e7fae965ae7c">sqlitePath</a></td></tr>
+<tr class="memitem:a0b91d1ea345d6c04fa6956514e1e5611" id="r_a0b91d1ea345d6c04fa6956514e1e5611"><td class="memItemLeft" align="right" valign="top">final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b91d1ea345d6c04fa6956514e1e5611">host</a></td></tr>
+<tr class="memitem:a04096b42ef429a4a507b2a1239a883cf" id="r_a04096b42ef429a4a507b2a1239a883cf"><td class="memItemLeft" align="right" valign="top">final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04096b42ef429a4a507b2a1239a883cf">port</a></td></tr>
+<tr class="memitem:aaaf20009709c64cc5bdf4d91d65d76b6" id="r_aaaf20009709c64cc5bdf4d91d65d76b6"><td class="memItemLeft" align="right" valign="top">final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaaf20009709c64cc5bdf4d91d65d76b6">databaseName</a></td></tr>
+<tr class="memitem:a33a522128bc8b400395422b23443c39c" id="r_a33a522128bc8b400395422b23443c39c"><td class="memItemLeft" align="right" valign="top">final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33a522128bc8b400395422b23443c39c">username</a></td></tr>
+<tr class="memitem:ac61557a53ef53513ceceeebe3153fe10" id="r_ac61557a53ef53513ceceeebe3153fe10"><td class="memItemLeft" align="right" valign="top">final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac61557a53ef53513ceceeebe3153fe10">password</a></td></tr>
+<tr class="memitem:a697990acd2d137850ccb6dd22562d8a9" id="r_a697990acd2d137850ccb6dd22562d8a9"><td class="memItemLeft" align="right" valign="top">final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a697990acd2d137850ccb6dd22562d8a9">jdbcUrl</a></td></tr>
+<tr class="memitem:a87b5809c5e333307cca3810a1b65f158" id="r_a87b5809c5e333307cca3810a1b65f158"><td class="memItemLeft" align="right" valign="top">final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87b5809c5e333307cca3810a1b65f158">driverClass</a></td></tr>
+<tr class="memitem:a070b891be3ea22e197e203dacb41b50e" id="r_a070b891be3ea22e197e203dacb41b50e"><td class="memItemLeft" align="right" valign="top">final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a070b891be3ea22e197e203dacb41b50e">sslMode</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Закрытые статические данные</h2></td></tr>
+<tr class="memitem:a26b491886042cb28b36c593685971fad" id="r_a26b491886042cb28b36c593685971fad"><td class="memItemLeft" align="right" valign="top">static final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26b491886042cb28b36c593685971fad">SQLITE_DRIVER</a> = &quot;org.sqlite.JDBC&quot;</td></tr>
+<tr class="memitem:a15fbaa9c00c0531fd484dcaed55bf481" id="r_a15fbaa9c00c0531fd484dcaed55bf481"><td class="memItemLeft" align="right" valign="top">static final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15fbaa9c00c0531fd484dcaed55bf481">POSTGRES_DRIVER</a> = &quot;org.postgresql.Driver&quot;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Настройки подключения к БД. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00019">19</a></p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="a35691da1978472d524abd32ca05acbf3" name="a35691da1978472d524abd32ca05acbf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35691da1978472d524abd32ca05acbf3">&#9670;&#160;</a></span>DatabaseConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">repository.DatabaseConfig.DatabaseConfig </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumrepository_1_1_database_config_1_1_type.html">Type</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Path</td>          <td class="paramname"><span class="paramname"><em>configFile</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Path</td>          <td class="paramname"><span class="paramname"><em>sqlitePath</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>host</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>port</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>databaseName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>username</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>password</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>jdbcUrl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>driverClass</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>sslMode</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00041">41</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_database_config_8java_source.html#l00030">configFile</a>, <a class="el" href="_database_config_8java_source.html#l00034">databaseName</a>, <a class="el" href="_database_config_8java_source.html#l00038">driverClass</a>, <a class="el" href="_database_config_8java_source.html#l00032">host</a>, <a class="el" href="_database_config_8java_source.html#l00037">jdbcUrl</a>, <a class="el" href="_database_config_8java_source.html#l00036">password</a>, <a class="el" href="_database_config_8java_source.html#l00033">port</a>, <a class="el" href="_database_config_8java_source.html#l00031">sqlitePath</a>, <a class="el" href="_database_config_8java_source.html#l00039">sslMode</a>, <a class="el" href="_database_config_8java_source.html#l00029">type</a> и <a class="el" href="_database_config_8java_source.html#l00035">username</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_database_config_8java_source.html#l00093">fromProperties()</a> и <a class="el" href="_database_config_8java_source.html#l00067">load()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrepository_1_1_database_config_a35691da1978472d524abd32ca05acbf3_icgraph.png" border="0" usemap="#aclassrepository_1_1_database_config_a35691da1978472d524abd32ca05acbf3_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassrepository_1_1_database_config_a35691da1978472d524abd32ca05acbf3_icgraph" id="aclassrepository_1_1_database_config_a35691da1978472d524abd32ca05acbf3_icgraph">
+<area shape="rect" title=" " alt="" coords="2609,438,2787,479"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a54be8ad7883587920d91f2ce979fa3b9" title=" " alt="" coords="2356,409,2561,449"/>
+<area shape="poly" title=" " alt="" coords="2590,446,2561,444,2561,439,2596,446"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a4e9d6c7f878e393a494f9c9fac13f0a9" title=" " alt="" coords="2106,446,2308,471"/>
+<area shape="poly" title=" " alt="" coords="2590,461,2561,464,2356,464,2309,463,2309,458,2356,458,2561,458,2595,461"/>
+<area shape="poly" title=" " alt="" coords="2344,443,2309,449,2309,444,2338,443"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#ad56b237e4e259b99a77f8c2b5d9a49db" title=" " alt="" coords="1822,387,2058,428"/>
+<area shape="poly" title=" " alt="" coords="2118,442,2051,431,2051,426,2123,442"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a8b28f660a281f658db4382a70065381c" title=" " alt="" coords="1594,474,1764,499"/>
+<area shape="poly" title=" " alt="" coords="2088,465,1765,485,1764,479,2094,464"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#adff3d0488b1f5e07b737c8028fd61b38" title=" " alt="" coords="1584,365,1774,405"/>
+<area shape="poly" title=" " alt="" coords="1803,396,1774,396,1774,391,1809,396"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a2035f400cd8f5f503ea6f961de54d4ff" title=" " alt="" coords="1329,291,1536,332"/>
+<area shape="poly" title=" " alt="" coords="1591,360,1504,335,1504,330,1597,360"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a3bbea8df14e34cb04dc17f62dba57cd9" title=" " alt="" coords="1064,90,1252,115"/>
+<area shape="poly" title=" " alt="" coords="1411,277,1389,244,1359,203,1322,163,1280,130,1252,117,1252,112,1282,126,1326,159,1363,199,1393,241,1416,279"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a34362d012dac2e981674eb3b74cc2004" title="Экспортирует задачи из базы данных в JSON." alt="" coords="1066,139,1250,180"/>
+<area shape="poly" title=" " alt="" coords="1397,280,1345,238,1280,195,1250,183,1251,178,1282,191,1348,233,1403,281"/>
+<area shape="rect" href="classutil_1_1_theme_manager.html#a2c5933297ff3dd3af83560dcfc759dc5" title=" " alt="" coords="779,373,975,413"/>
+<area shape="poly" title=" " alt="" coords="1378,338,1331,360,1282,374,1202,388,1121,396,976,399,975,394,1121,390,1201,383,1280,369,1329,355,1373,340"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a2cd3b65bd29af3b855f653a323e2b2f5" title=" " alt="" coords="1064,319,1252,360"/>
+<area shape="poly" title=" " alt="" coords="1311,324,1253,333,1252,328,1316,324"/>
+<area shape="rect" href="classutil_1_1_notification_settings.html#a10f7651faed4b44cf764ad6bd0542ced" title=" " alt="" coords="522,42,707,67"/>
+<area shape="poly" title=" " alt="" coords="1418,275,1399,230,1370,174,1331,121,1307,98,1280,79,1241,60,1201,44,1116,22,1029,11,943,8,861,13,786,22,669,44,667,39,785,16,860,8,943,3,1030,5,1117,17,1203,39,1243,55,1282,75,1310,94,1335,117,1375,172,1404,228,1423,278"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a462520e06be58bc2d42fe6bef64c68ff" title="Мигрирует задачи из JSON в базу данных" alt="" coords="1062,205,1254,245"/>
+<area shape="poly" title=" " alt="" coords="1361,285,1280,260,1243,249,1243,243,1282,255,1366,286"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a005cafe083c9e1fa557954fe33847f52" title=" " alt="" coords="1075,491,1241,517"/>
+<area shape="poly" title=" " alt="" coords="1413,344,1359,414,1323,449,1282,478,1242,495,1240,490,1280,473,1320,445,1355,410,1408,346"/>
+<area shape="rect" href="classutil_1_1_theme_manager.html#ae47e320d429579bb11e84414d318f641" title=" " alt="" coords="1061,438,1254,463"/>
+<area shape="poly" title=" " alt="" coords="1398,341,1344,382,1282,418,1222,440,1221,434,1280,413,1341,378,1393,343"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a11687638f060b50427b94a0778df07b8" title="Синхронизирует данные между JSON и БД" alt="" coords="1035,270,1281,295"/>
+<area shape="poly" title=" " alt="" coords="1311,299,1282,298,1281,293,1316,299"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a5255efccc63f594f7e83d14e5cf7e219" title=" " alt="" coords="784,90,970,115"/>
+<area shape="poly" title=" " alt="" coords="1045,103,971,105,970,100,1050,102"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a703826c15e609176f3da25d6ce8f755d" title="Точка входа для запуска миграции из командной строки" alt="" coords="789,208,965,234"/>
+<area shape="poly" title=" " alt="" coords="1048,184,940,210,938,205,1053,182"/>
+<area shape="rect" href="classview_1_1_main_controller.html#acb8e00ddc7401d25f6975bd5118a6bee" title=" " alt="" coords="273,461,442,501"/>
+<area shape="poly" title=" " alt="" coords="761,413,443,469,442,464,766,411"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ab96d9e00350796e450dd564252136874" title=" " alt="" coords="530,313,699,353"/>
+<area shape="poly" title=" " alt="" coords="767,369,699,355,699,350,773,369"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a47878f33c1c0458f442d9b3f93bedf06" title=" " alt="" coords="551,378,678,403"/>
+<area shape="poly" title=" " alt="" coords="761,392,679,394,679,388,766,392"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="13,320,197,346"/>
+<area shape="poly" title=" " alt="" coords="294,454,251,433,180,388,125,349,125,344,183,383,254,428,299,453"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aa6adc26184a175f0ddf6030f0c24d046" title=" " alt="" coords="270,378,445,419"/>
+<area shape="poly" title=" " alt="" coords="515,359,441,380,439,375,520,357"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a832ae34bcb138f8090bf8213f1f97de9" title=" " alt="" coords="273,313,442,353"/>
+<area shape="poly" title=" " alt="" coords="512,334,443,336,442,331,517,332"/>
+<area shape="poly" title=" " alt="" coords="255,334,199,336,197,331,260,332"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#aa8a86d1ff2433a9cf9d28018a67581ae" title=" " alt="" coords="785,307,969,348"/>
+<area shape="poly" title=" " alt="" coords="1045,335,969,334,969,329,1051,335"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c" title=" " alt="" coords="767,258,987,283"/>
+<area shape="poly" title=" " alt="" coords="1060,315,986,298,937,287,937,281,987,293,1065,315"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea" title=" " alt="" coords="510,214,719,239"/>
+<area shape="poly" title=" " alt="" coords="779,255,696,243,695,237,784,254"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462" title=" " alt="" coords="253,99,462,140"/>
+<area shape="poly" title=" " alt="" coords="573,206,522,181,461,154,432,143,431,138,463,149,524,176,579,206"/>
+<area shape="rect" href="classapp_1_1_main_app.html#acbf781550cefac29e6c8ecbdd2b38904" title=" " alt="" coords="298,263,416,289"/>
+<area shape="poly" title=" " alt="" coords="527,244,418,267,416,262,531,242"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a9788978994366c880434d9cc05a21cb1" title=" " alt="" coords="293,164,422,190"/>
+<area shape="poly" title=" " alt="" coords="526,211,423,192,422,187,531,209"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834" title=" " alt="" coords="294,214,420,239"/>
+<area shape="poly" title=" " alt="" coords="492,227,422,229,420,224,497,225"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#aadd0b77dafd4c390cbdf367b9654aa6c" title=" " alt="" coords="5,99,205,140"/>
+<area shape="poly" title=" " alt="" coords="235,121,207,122,204,117,239,118"/>
+<area shape="poly" title=" " alt="" coords="545,73,442,101,439,96,549,70"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afba699a59966cda24b9998995a17c94d" title=" " alt="" coords="273,34,442,75"/>
+<area shape="poly" title=" " alt="" coords="505,56,443,57,441,52,510,53"/>
+<area shape="poly" title=" " alt="" coords="258,85,255,90,228,126,188,193,116,321,111,318,183,190,224,123,251,86,261,81"/>
+<area shape="poly" title=" " alt="" coords="1044,224,966,225,965,220,1049,223"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a71f8f6fb070d38d93606f081115edf69" title=" " alt="" coords="804,552,950,578"/>
+<area shape="poly" title=" " alt="" coords="1083,520,940,554,939,549,1078,521"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ab77fd01a8289a0c6016f8bc612157056" title=" " alt="" coords="793,487,961,528"/>
+<area shape="poly" title=" " alt="" coords="1079,467,962,493,961,488,1074,467"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ad805604b0d662e806bc73402d9fa82b6" title=" " alt="" coords="527,478,702,519"/>
+<area shape="poly" title=" " alt="" coords="1043,455,912,466,768,478,703,487,702,482,767,473,912,461,1048,455"/>
+<area shape="poly" title=" " alt="" coords="780,525,650,540,579,540,510,533,457,521,409,505,409,499,458,516,510,528,579,535,650,535,775,526"/>
+<area shape="poly" title=" " alt="" coords="775,504,703,504,703,499,780,504"/>
+<area shape="poly" title=" " alt="" coords="509,492,443,490,443,484,514,491"/>
+<area shape="poly" title=" " alt="" coords="1072,266,1034,260,986,248,940,237,940,232,987,243,1035,255,1077,266"/>
+<area shape="poly" title=" " alt="" coords="1581,497,1281,532,951,562,951,556,1281,526,1576,498"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="ab59426f01c5b94e12686f41d18b2e0ba" name="ab59426f01c5b94e12686f41d18b2e0ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab59426f01c5b94e12686f41d18b2e0ba">&#9670;&#160;</a></span>applyEnvironmentOverride()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void repository.DatabaseConfig.applyEnvironmentOverride </td>
+          <td>(</td>
+          <td class="paramtype">Properties</td>          <td class="paramname"><span class="paramname"><em>properties</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>propertyKey</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>envKey</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00256">256</a></p>
+
+<p class="reference">Используется в <a class="el" href="_database_config_8java_source.html#l00067">load()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrepository_1_1_database_config_ab59426f01c5b94e12686f41d18b2e0ba_icgraph.png" border="0" usemap="#aclassrepository_1_1_database_config_ab59426f01c5b94e12686f41d18b2e0ba_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassrepository_1_1_database_config_ab59426f01c5b94e12686f41d18b2e0ba_icgraph" id="aclassrepository_1_1_database_config_ab59426f01c5b94e12686f41d18b2e0ba_icgraph">
+<area shape="rect" title=" " alt="" coords="2356,438,2566,479"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a4e9d6c7f878e393a494f9c9fac13f0a9" title=" " alt="" coords="2106,446,2308,471"/>
+<area shape="poly" title=" " alt="" coords="2338,459,2309,461,2309,456,2343,458"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#ad56b237e4e259b99a77f8c2b5d9a49db" title=" " alt="" coords="1822,409,2058,449"/>
+<area shape="poly" title=" " alt="" coords="2088,446,2058,445,2058,439,2093,446"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a8b28f660a281f658db4382a70065381c" title=" " alt="" coords="1594,474,1764,499"/>
+<area shape="poly" title=" " alt="" coords="2088,465,1765,485,1764,479,2094,464"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#adff3d0488b1f5e07b737c8028fd61b38" title=" " alt="" coords="1584,365,1774,405"/>
+<area shape="poly" title=" " alt="" coords="1804,407,1774,404,1774,398,1809,407"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a2035f400cd8f5f503ea6f961de54d4ff" title=" " alt="" coords="1329,291,1536,332"/>
+<area shape="poly" title=" " alt="" coords="1591,360,1504,335,1504,330,1597,360"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a3bbea8df14e34cb04dc17f62dba57cd9" title=" " alt="" coords="1064,90,1252,115"/>
+<area shape="poly" title=" " alt="" coords="1411,277,1389,244,1359,203,1322,163,1280,130,1252,117,1252,112,1282,126,1326,159,1363,199,1393,241,1416,279"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a34362d012dac2e981674eb3b74cc2004" title="Экспортирует задачи из базы данных в JSON." alt="" coords="1066,139,1250,180"/>
+<area shape="poly" title=" " alt="" coords="1397,280,1345,238,1280,195,1250,183,1251,178,1282,191,1348,233,1403,281"/>
+<area shape="rect" href="classutil_1_1_theme_manager.html#a2c5933297ff3dd3af83560dcfc759dc5" title=" " alt="" coords="779,373,975,413"/>
+<area shape="poly" title=" " alt="" coords="1378,338,1331,360,1282,374,1202,388,1121,396,976,399,975,394,1121,390,1201,383,1280,369,1329,355,1373,340"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a2cd3b65bd29af3b855f653a323e2b2f5" title=" " alt="" coords="1064,319,1252,360"/>
+<area shape="poly" title=" " alt="" coords="1311,324,1253,333,1252,328,1316,324"/>
+<area shape="rect" href="classutil_1_1_notification_settings.html#a10f7651faed4b44cf764ad6bd0542ced" title=" " alt="" coords="522,42,707,67"/>
+<area shape="poly" title=" " alt="" coords="1418,275,1399,230,1370,174,1331,121,1307,98,1280,79,1241,60,1201,44,1116,22,1029,11,943,8,861,13,786,22,669,44,667,39,785,16,860,8,943,3,1030,5,1117,17,1203,39,1243,55,1282,75,1310,94,1335,117,1375,172,1404,228,1423,278"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a462520e06be58bc2d42fe6bef64c68ff" title="Мигрирует задачи из JSON в базу данных" alt="" coords="1062,205,1254,245"/>
+<area shape="poly" title=" " alt="" coords="1361,285,1280,260,1243,249,1243,243,1282,255,1366,286"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a005cafe083c9e1fa557954fe33847f52" title=" " alt="" coords="1075,491,1241,517"/>
+<area shape="poly" title=" " alt="" coords="1413,344,1359,414,1323,449,1282,478,1242,495,1240,490,1280,473,1320,445,1355,410,1408,346"/>
+<area shape="rect" href="classutil_1_1_theme_manager.html#ae47e320d429579bb11e84414d318f641" title=" " alt="" coords="1061,438,1254,463"/>
+<area shape="poly" title=" " alt="" coords="1398,341,1344,382,1282,418,1222,440,1221,434,1280,413,1341,378,1393,343"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a11687638f060b50427b94a0778df07b8" title="Синхронизирует данные между JSON и БД" alt="" coords="1035,270,1281,295"/>
+<area shape="poly" title=" " alt="" coords="1311,299,1282,298,1281,293,1316,299"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a5255efccc63f594f7e83d14e5cf7e219" title=" " alt="" coords="784,90,970,115"/>
+<area shape="poly" title=" " alt="" coords="1045,103,971,105,970,100,1050,102"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a703826c15e609176f3da25d6ce8f755d" title="Точка входа для запуска миграции из командной строки" alt="" coords="789,208,965,234"/>
+<area shape="poly" title=" " alt="" coords="1048,184,940,210,938,205,1053,182"/>
+<area shape="rect" href="classview_1_1_main_controller.html#acb8e00ddc7401d25f6975bd5118a6bee" title=" " alt="" coords="273,461,442,501"/>
+<area shape="poly" title=" " alt="" coords="761,413,443,469,442,464,766,411"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ab96d9e00350796e450dd564252136874" title=" " alt="" coords="530,313,699,353"/>
+<area shape="poly" title=" " alt="" coords="767,369,699,355,699,350,773,369"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a47878f33c1c0458f442d9b3f93bedf06" title=" " alt="" coords="551,378,678,403"/>
+<area shape="poly" title=" " alt="" coords="761,392,679,394,679,388,766,392"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="13,320,197,346"/>
+<area shape="poly" title=" " alt="" coords="294,454,251,433,180,388,125,349,125,344,183,383,254,428,299,453"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aa6adc26184a175f0ddf6030f0c24d046" title=" " alt="" coords="270,378,445,419"/>
+<area shape="poly" title=" " alt="" coords="515,359,441,380,439,375,520,357"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a832ae34bcb138f8090bf8213f1f97de9" title=" " alt="" coords="273,313,442,353"/>
+<area shape="poly" title=" " alt="" coords="512,334,443,336,442,331,517,332"/>
+<area shape="poly" title=" " alt="" coords="255,334,199,336,197,331,260,332"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#aa8a86d1ff2433a9cf9d28018a67581ae" title=" " alt="" coords="785,307,969,348"/>
+<area shape="poly" title=" " alt="" coords="1045,335,969,334,969,329,1051,335"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c" title=" " alt="" coords="767,258,987,283"/>
+<area shape="poly" title=" " alt="" coords="1060,315,986,298,937,287,937,281,987,293,1065,315"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea" title=" " alt="" coords="510,214,719,239"/>
+<area shape="poly" title=" " alt="" coords="779,255,696,243,695,237,784,254"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462" title=" " alt="" coords="253,99,462,140"/>
+<area shape="poly" title=" " alt="" coords="573,206,522,181,461,154,432,143,431,138,463,149,524,176,579,206"/>
+<area shape="rect" href="classapp_1_1_main_app.html#acbf781550cefac29e6c8ecbdd2b38904" title=" " alt="" coords="298,263,416,289"/>
+<area shape="poly" title=" " alt="" coords="527,244,418,267,416,262,531,242"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a9788978994366c880434d9cc05a21cb1" title=" " alt="" coords="293,164,422,190"/>
+<area shape="poly" title=" " alt="" coords="526,211,423,192,422,187,531,209"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834" title=" " alt="" coords="294,214,420,239"/>
+<area shape="poly" title=" " alt="" coords="492,227,422,229,420,224,497,225"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#aadd0b77dafd4c390cbdf367b9654aa6c" title=" " alt="" coords="5,99,205,140"/>
+<area shape="poly" title=" " alt="" coords="235,121,207,122,204,117,239,118"/>
+<area shape="poly" title=" " alt="" coords="545,73,442,101,439,96,549,70"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afba699a59966cda24b9998995a17c94d" title=" " alt="" coords="273,34,442,75"/>
+<area shape="poly" title=" " alt="" coords="505,56,443,57,441,52,510,53"/>
+<area shape="poly" title=" " alt="" coords="258,85,255,90,228,126,188,193,116,321,111,318,183,190,224,123,251,86,261,81"/>
+<area shape="poly" title=" " alt="" coords="1044,224,966,225,965,220,1049,223"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a71f8f6fb070d38d93606f081115edf69" title=" " alt="" coords="804,552,950,578"/>
+<area shape="poly" title=" " alt="" coords="1083,520,940,554,939,549,1078,521"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ab77fd01a8289a0c6016f8bc612157056" title=" " alt="" coords="793,487,961,528"/>
+<area shape="poly" title=" " alt="" coords="1079,467,962,493,961,488,1074,467"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ad805604b0d662e806bc73402d9fa82b6" title=" " alt="" coords="527,478,702,519"/>
+<area shape="poly" title=" " alt="" coords="1043,455,912,466,768,478,703,487,702,482,767,473,912,461,1048,455"/>
+<area shape="poly" title=" " alt="" coords="780,525,650,540,579,540,510,533,457,521,409,505,409,499,458,516,510,528,579,535,650,535,775,526"/>
+<area shape="poly" title=" " alt="" coords="775,504,703,504,703,499,780,504"/>
+<area shape="poly" title=" " alt="" coords="509,492,443,490,443,484,514,491"/>
+<area shape="poly" title=" " alt="" coords="1072,266,1034,260,986,248,940,237,940,232,987,243,1035,255,1077,266"/>
+<area shape="poly" title=" " alt="" coords="1581,497,1281,532,951,562,951,556,1281,526,1576,498"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9c4a9f4428edde4c28b333c3b3951573" name="a9c4a9f4428edde4c28b333c3b3951573"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c4a9f4428edde4c28b333c3b3951573">&#9670;&#160;</a></span>describe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String repository.DatabaseConfig.describe </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00200">200</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_database_config_8java_source.html#l00034">databaseName</a>, <a class="el" href="_database_config_8java_source.html#l00032">host</a>, <a class="el" href="_database_config_8java_source.html#l00037">jdbcUrl</a>, <a class="el" href="_database_config_8java_source.html#l00033">port</a>, <a class="el" href="_database_config_8java_source.html#l00031">sqlitePath</a>, <a class="el" href="_database_config_8java_source.html#l00039">sslMode</a> и <a class="el" href="_database_config_8java_source.html#l00029">type</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_database_cli_8java_source.html#l00063">util.DatabaseCli.runProbe()</a> и <a class="el" href="_database_cli_8java_source.html#l00119">util.DatabaseCli.runSeed()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrepository_1_1_database_config_a9c4a9f4428edde4c28b333c3b3951573_icgraph.png" border="0" usemap="#aclassrepository_1_1_database_config_a9c4a9f4428edde4c28b333c3b3951573_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassrepository_1_1_database_config_a9c4a9f4428edde4c28b333c3b3951573_icgraph" id="aclassrepository_1_1_database_config_a9c4a9f4428edde4c28b333c3b3951573_icgraph">
+<area shape="rect" title=" " alt="" coords="418,31,645,56"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a8b28f660a281f658db4382a70065381c" title=" " alt="" coords="200,5,370,31"/>
+<area shape="poly" title=" " alt="" coords="400,30,370,30,370,24,405,30"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a005cafe083c9e1fa557954fe33847f52" title=" " alt="" coords="202,55,368,80"/>
+<area shape="poly" title=" " alt="" coords="405,56,369,62,368,57,400,56"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a71f8f6fb070d38d93606f081115edf69" title=" " alt="" coords="5,31,152,56"/>
+<area shape="poly" title=" " alt="" coords="182,31,152,37,151,32,187,30"/>
+<area shape="poly" title=" " alt="" coords="184,56,152,55,152,49,189,56"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a54be8ad7883587920d91f2ce979fa3b9" name="a54be8ad7883587920d91f2ce979fa3b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54be8ad7883587920d91f2ce979fa3b9">&#9670;&#160;</a></span>fromProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a35691da1978472d524abd32ca05acbf3">DatabaseConfig</a> repository.DatabaseConfig.fromProperties </td>
+          <td>(</td>
+          <td class="paramtype">Properties</td>          <td class="paramname"><span class="paramname"><em>properties</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Path</td>          <td class="paramname"><span class="paramname"><em>configFile</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Path</td>          <td class="paramname"><span class="paramname"><em>defaultSqlitePath</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00093">93</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_database_config_8java_source.html#l00030">configFile</a>, <a class="el" href="_database_config_8java_source.html#l00041">DatabaseConfig()</a>, <a class="el" href="_database_config_8java_source.html#l00034">databaseName</a>, <a class="el" href="_database_config_8java_source.html#l00038">driverClass</a>, <a class="el" href="_database_config_8java_source.html#l00032">host</a>, <a class="el" href="_database_config_8java_source.html#l00037">jdbcUrl</a>, <a class="el" href="_database_config_8java_source.html#l00277">parsePort()</a>, <a class="el" href="_database_config_8java_source.html#l00267">parseType()</a>, <a class="el" href="_database_config_8java_source.html#l00036">password</a>, <a class="el" href="_database_config_8java_source.html#l00033">port</a>, <a class="el" href="_database_config_8java_source.html#l00022">repository.DatabaseConfig.Type.POSTGRESQL</a>, <a class="el" href="_database_config_8java_source.html#l00263">read()</a>, <a class="el" href="_database_config_8java_source.html#l00284">resolveSqlitePath()</a>, <a class="el" href="_database_config_8java_source.html#l00031">sqlitePath</a>, <a class="el" href="_database_config_8java_source.html#l00039">sslMode</a>, <a class="el" href="_database_config_8java_source.html#l00029">type</a> и <a class="el" href="_database_config_8java_source.html#l00035">username</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_database_config_8java_source.html#l00067">load()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrepository_1_1_database_config_a54be8ad7883587920d91f2ce979fa3b9_cgraph.png" border="0" usemap="#aclassrepository_1_1_database_config_a54be8ad7883587920d91f2ce979fa3b9_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassrepository_1_1_database_config_a54be8ad7883587920d91f2ce979fa3b9_cgraph" id="aclassrepository_1_1_database_config_a54be8ad7883587920d91f2ce979fa3b9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,112,210,153"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a35691da1978472d524abd32ca05acbf3" title=" " alt="" coords="288,5,466,46"/>
+<area shape="poly" title=" " alt="" coords="144,109,196,82,257,55,278,50,274,53,259,60,199,87,147,114"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a69aeb61182c8f6f4ccb5b924c424de02" title=" " alt="" coords="260,70,494,96"/>
+<area shape="poly" title=" " alt="" coords="209,111,290,98,285,100,211,116"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a36e82cbf84ceab1f8059de8ef510da3a" title=" " alt="" coords="258,120,496,145"/>
+<area shape="poly" title=" " alt="" coords="209,130,245,132,240,133,211,135"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a69f8eeab7280768eee8545d4371aeb9c" title=" " alt="" coords="275,169,478,194"/>
+<area shape="poly" title=" " alt="" coords="210,148,290,165,285,166,210,154"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a4b5dc5dd91254df1efacc26898e26caf" title=" " alt="" coords="267,219,487,259"/>
+<area shape="poly" title=" " alt="" coords="146,151,199,178,259,205,279,214,273,213,257,209,196,183,145,156"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrepository_1_1_database_config_a54be8ad7883587920d91f2ce979fa3b9_icgraph.png" border="0" usemap="#aclassrepository_1_1_database_config_a54be8ad7883587920d91f2ce979fa3b9_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassrepository_1_1_database_config_a54be8ad7883587920d91f2ce979fa3b9_icgraph" id="aclassrepository_1_1_database_config_a54be8ad7883587920d91f2ce979fa3b9_icgraph">
+<area shape="rect" title=" " alt="" coords="2356,438,2561,479"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a4e9d6c7f878e393a494f9c9fac13f0a9" title=" " alt="" coords="2106,446,2308,471"/>
+<area shape="poly" title=" " alt="" coords="2338,459,2309,461,2309,456,2344,458"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#ad56b237e4e259b99a77f8c2b5d9a49db" title=" " alt="" coords="1822,409,2058,449"/>
+<area shape="poly" title=" " alt="" coords="2088,446,2058,445,2058,439,2093,446"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a8b28f660a281f658db4382a70065381c" title=" " alt="" coords="1594,474,1764,499"/>
+<area shape="poly" title=" " alt="" coords="2088,465,1765,485,1764,479,2094,464"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#adff3d0488b1f5e07b737c8028fd61b38" title=" " alt="" coords="1584,365,1774,405"/>
+<area shape="poly" title=" " alt="" coords="1804,407,1774,404,1774,398,1809,407"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a2035f400cd8f5f503ea6f961de54d4ff" title=" " alt="" coords="1329,291,1536,332"/>
+<area shape="poly" title=" " alt="" coords="1591,360,1504,335,1504,330,1597,360"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a3bbea8df14e34cb04dc17f62dba57cd9" title=" " alt="" coords="1064,90,1252,115"/>
+<area shape="poly" title=" " alt="" coords="1411,277,1389,244,1359,203,1322,163,1280,130,1252,117,1252,112,1282,126,1326,159,1363,199,1393,241,1416,279"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a34362d012dac2e981674eb3b74cc2004" title="Экспортирует задачи из базы данных в JSON." alt="" coords="1066,139,1250,180"/>
+<area shape="poly" title=" " alt="" coords="1397,280,1345,238,1280,195,1250,183,1251,178,1282,191,1348,233,1403,281"/>
+<area shape="rect" href="classutil_1_1_theme_manager.html#a2c5933297ff3dd3af83560dcfc759dc5" title=" " alt="" coords="779,373,975,413"/>
+<area shape="poly" title=" " alt="" coords="1378,338,1331,360,1282,374,1202,388,1121,396,976,399,975,394,1121,390,1201,383,1280,369,1329,355,1373,340"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a2cd3b65bd29af3b855f653a323e2b2f5" title=" " alt="" coords="1064,319,1252,360"/>
+<area shape="poly" title=" " alt="" coords="1311,324,1253,333,1252,328,1316,324"/>
+<area shape="rect" href="classutil_1_1_notification_settings.html#a10f7651faed4b44cf764ad6bd0542ced" title=" " alt="" coords="522,42,707,67"/>
+<area shape="poly" title=" " alt="" coords="1418,275,1399,230,1370,174,1331,121,1307,98,1280,79,1241,60,1201,44,1116,22,1029,11,943,8,861,13,786,22,669,44,667,39,785,16,860,8,943,3,1030,5,1117,17,1203,39,1243,55,1282,75,1310,94,1335,117,1375,172,1404,228,1423,278"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a462520e06be58bc2d42fe6bef64c68ff" title="Мигрирует задачи из JSON в базу данных" alt="" coords="1062,205,1254,245"/>
+<area shape="poly" title=" " alt="" coords="1361,285,1280,260,1243,249,1243,243,1282,255,1366,286"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a005cafe083c9e1fa557954fe33847f52" title=" " alt="" coords="1075,491,1241,517"/>
+<area shape="poly" title=" " alt="" coords="1413,344,1359,414,1323,449,1282,478,1242,495,1240,490,1280,473,1320,445,1355,410,1408,346"/>
+<area shape="rect" href="classutil_1_1_theme_manager.html#ae47e320d429579bb11e84414d318f641" title=" " alt="" coords="1061,438,1254,463"/>
+<area shape="poly" title=" " alt="" coords="1398,341,1344,382,1282,418,1222,440,1221,434,1280,413,1341,378,1393,343"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a11687638f060b50427b94a0778df07b8" title="Синхронизирует данные между JSON и БД" alt="" coords="1035,270,1281,295"/>
+<area shape="poly" title=" " alt="" coords="1311,299,1282,298,1281,293,1316,299"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a5255efccc63f594f7e83d14e5cf7e219" title=" " alt="" coords="784,90,970,115"/>
+<area shape="poly" title=" " alt="" coords="1045,103,971,105,970,100,1050,102"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a703826c15e609176f3da25d6ce8f755d" title="Точка входа для запуска миграции из командной строки" alt="" coords="789,208,965,234"/>
+<area shape="poly" title=" " alt="" coords="1048,184,940,210,938,205,1053,182"/>
+<area shape="rect" href="classview_1_1_main_controller.html#acb8e00ddc7401d25f6975bd5118a6bee" title=" " alt="" coords="273,461,442,501"/>
+<area shape="poly" title=" " alt="" coords="761,413,443,469,442,464,766,411"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ab96d9e00350796e450dd564252136874" title=" " alt="" coords="530,313,699,353"/>
+<area shape="poly" title=" " alt="" coords="767,369,699,355,699,350,773,369"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a47878f33c1c0458f442d9b3f93bedf06" title=" " alt="" coords="551,378,678,403"/>
+<area shape="poly" title=" " alt="" coords="761,392,679,394,679,388,766,392"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="13,320,197,346"/>
+<area shape="poly" title=" " alt="" coords="294,454,251,433,180,388,125,349,125,344,183,383,254,428,299,453"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aa6adc26184a175f0ddf6030f0c24d046" title=" " alt="" coords="270,378,445,419"/>
+<area shape="poly" title=" " alt="" coords="515,359,441,380,439,375,520,357"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a832ae34bcb138f8090bf8213f1f97de9" title=" " alt="" coords="273,313,442,353"/>
+<area shape="poly" title=" " alt="" coords="512,334,443,336,442,331,517,332"/>
+<area shape="poly" title=" " alt="" coords="255,334,199,336,197,331,260,332"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#aa8a86d1ff2433a9cf9d28018a67581ae" title=" " alt="" coords="785,307,969,348"/>
+<area shape="poly" title=" " alt="" coords="1045,335,969,334,969,329,1051,335"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c" title=" " alt="" coords="767,258,987,283"/>
+<area shape="poly" title=" " alt="" coords="1060,315,986,298,937,287,937,281,987,293,1065,315"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea" title=" " alt="" coords="510,214,719,239"/>
+<area shape="poly" title=" " alt="" coords="779,255,696,243,695,237,784,254"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462" title=" " alt="" coords="253,99,462,140"/>
+<area shape="poly" title=" " alt="" coords="573,206,522,181,461,154,432,143,431,138,463,149,524,176,579,206"/>
+<area shape="rect" href="classapp_1_1_main_app.html#acbf781550cefac29e6c8ecbdd2b38904" title=" " alt="" coords="298,263,416,289"/>
+<area shape="poly" title=" " alt="" coords="527,244,418,267,416,262,531,242"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a9788978994366c880434d9cc05a21cb1" title=" " alt="" coords="293,164,422,190"/>
+<area shape="poly" title=" " alt="" coords="526,211,423,192,422,187,531,209"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834" title=" " alt="" coords="294,214,420,239"/>
+<area shape="poly" title=" " alt="" coords="492,227,422,229,420,224,497,225"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#aadd0b77dafd4c390cbdf367b9654aa6c" title=" " alt="" coords="5,99,205,140"/>
+<area shape="poly" title=" " alt="" coords="235,121,207,122,204,117,239,118"/>
+<area shape="poly" title=" " alt="" coords="545,73,442,101,439,96,549,70"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afba699a59966cda24b9998995a17c94d" title=" " alt="" coords="273,34,442,75"/>
+<area shape="poly" title=" " alt="" coords="505,56,443,57,441,52,510,53"/>
+<area shape="poly" title=" " alt="" coords="258,85,255,90,228,126,188,193,116,321,111,318,183,190,224,123,251,86,261,81"/>
+<area shape="poly" title=" " alt="" coords="1044,224,966,225,965,220,1049,223"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a71f8f6fb070d38d93606f081115edf69" title=" " alt="" coords="804,552,950,578"/>
+<area shape="poly" title=" " alt="" coords="1083,520,940,554,939,549,1078,521"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ab77fd01a8289a0c6016f8bc612157056" title=" " alt="" coords="793,487,961,528"/>
+<area shape="poly" title=" " alt="" coords="1079,467,962,493,961,488,1074,467"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ad805604b0d662e806bc73402d9fa82b6" title=" " alt="" coords="527,478,702,519"/>
+<area shape="poly" title=" " alt="" coords="1043,455,912,466,768,478,703,487,702,482,767,473,912,461,1048,455"/>
+<area shape="poly" title=" " alt="" coords="780,525,650,540,579,540,510,533,457,521,409,505,409,499,458,516,510,528,579,535,650,535,775,526"/>
+<area shape="poly" title=" " alt="" coords="775,504,703,504,703,499,780,504"/>
+<area shape="poly" title=" " alt="" coords="509,492,443,490,443,484,514,491"/>
+<area shape="poly" title=" " alt="" coords="1072,266,1034,260,986,248,940,237,940,232,987,243,1035,255,1077,266"/>
+<area shape="poly" title=" " alt="" coords="1581,497,1281,532,951,562,951,556,1281,526,1576,498"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a476577d1a3e007f3cf581029ee59b32c" name="a476577d1a3e007f3cf581029ee59b32c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a476577d1a3e007f3cf581029ee59b32c">&#9670;&#160;</a></span>getConfigFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Path repository.DatabaseConfig.getConfigFile </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00212">212</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_database_config_8java_source.html#l00030">configFile</a>.</p>
+
+</div>
+</div>
+<a id="a9d73ac86e1e24822a5fdc5946aeb9adb" name="a9d73ac86e1e24822a5fdc5946aeb9adb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d73ac86e1e24822a5fdc5946aeb9adb">&#9670;&#160;</a></span>getConnectionProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Properties repository.DatabaseConfig.getConnectionProperties </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00162">162</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_database_config_8java_source.html#l00036">password</a> и <a class="el" href="_database_config_8java_source.html#l00035">username</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_database_config_8java_source.html#l00149">openConnection()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrepository_1_1_database_config_a9d73ac86e1e24822a5fdc5946aeb9adb_icgraph.png" border="0" usemap="#aclassrepository_1_1_database_config_a9d73ac86e1e24822a5fdc5946aeb9adb_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassrepository_1_1_database_config_a9d73ac86e1e24822a5fdc5946aeb9adb_icgraph" id="aclassrepository_1_1_database_config_a9d73ac86e1e24822a5fdc5946aeb9adb_icgraph">
+<area shape="rect" title=" " alt="" coords="672,5,869,46"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#ab5871fda6f1f9a780cf4dcf674cd0986" title=" " alt="" coords="418,5,624,46"/>
+<area shape="poly" title=" " alt="" coords="654,26,625,28,625,23,659,26"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a8b28f660a281f658db4382a70065381c" title=" " alt="" coords="200,13,370,38"/>
+<area shape="poly" title=" " alt="" coords="400,26,370,28,370,23,405,26"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a71f8f6fb070d38d93606f081115edf69" title=" " alt="" coords="5,13,152,38"/>
+<area shape="poly" title=" " alt="" coords="182,26,152,28,152,23,187,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acdf02be2ca0ac3896d3e85f95809ced6" name="acdf02be2ca0ac3896d3e85f95809ced6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdf02be2ca0ac3896d3e85f95809ced6">&#9670;&#160;</a></span>getDatabaseName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String repository.DatabaseConfig.getDatabaseName </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00228">228</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_database_config_8java_source.html#l00034">databaseName</a>.</p>
+
+</div>
+</div>
+<a id="a6f6ee0a0b912b6063df56dc7c84cd547" name="a6f6ee0a0b912b6063df56dc7c84cd547"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f6ee0a0b912b6063df56dc7c84cd547">&#9670;&#160;</a></span>getDriverClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String repository.DatabaseConfig.getDriverClass </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00192">192</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_database_config_8java_source.html#l00038">driverClass</a>, <a class="el" href="_database_config_8java_source.html#l00027">POSTGRES_DRIVER</a>, <a class="el" href="_database_config_8java_source.html#l00026">SQLITE_DRIVER</a> и <a class="el" href="_database_config_8java_source.html#l00029">type</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_database_config_8java_source.html#l00158">loadDriver()</a> и <a class="el" href="_database_config_8java_source.html#l00124">validate()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrepository_1_1_database_config_a6f6ee0a0b912b6063df56dc7c84cd547_icgraph.png" border="0" usemap="#aclassrepository_1_1_database_config_a6f6ee0a0b912b6063df56dc7c84cd547_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassrepository_1_1_database_config_a6f6ee0a0b912b6063df56dc7c84cd547_icgraph" id="aclassrepository_1_1_database_config_a6f6ee0a0b912b6063df56dc7c84cd547_icgraph">
+<area shape="rect" title=" " alt="" coords="689,35,886,75"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a4210ed0a814b9aa2d0b1c12377895163" title=" " alt="" coords="428,5,631,46"/>
+<area shape="poly" title=" " alt="" coords="671,42,631,40,631,35,676,42"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a0ad03838a65cc0d81aa5744e49445ef1" title=" " alt="" coords="418,70,641,96"/>
+<area shape="poly" title=" " alt="" coords="677,67,642,74,641,68,671,68"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a8b28f660a281f658db4382a70065381c" title=" " alt="" coords="200,42,370,68"/>
+<area shape="poly" title=" " alt="" coords="411,40,371,47,370,42,416,39"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a71f8f6fb070d38d93606f081115edf69" title=" " alt="" coords="5,42,152,68"/>
+<area shape="poly" title=" " alt="" coords="182,55,152,58,152,52,187,55"/>
+<area shape="poly" title=" " alt="" coords="400,68,370,67,371,62,405,68"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aec62e8bcb5c3175fe3f77052d8ec3040" name="aec62e8bcb5c3175fe3f77052d8ec3040"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec62e8bcb5c3175fe3f77052d8ec3040">&#9670;&#160;</a></span>getHost()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String repository.DatabaseConfig.getHost </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00220">220</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_database_config_8java_source.html#l00032">host</a>.</p>
+
+</div>
+</div>
+<a id="a0633e0cbfcc748e355c055233dfbba50" name="a0633e0cbfcc748e355c055233dfbba50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0633e0cbfcc748e355c055233dfbba50">&#9670;&#160;</a></span>getJdbcUrl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String repository.DatabaseConfig.getJdbcUrl </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00173">173</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_database_config_8java_source.html#l00034">databaseName</a>, <a class="el" href="_database_config_8java_source.html#l00032">host</a>, <a class="el" href="_database_config_8java_source.html#l00037">jdbcUrl</a>, <a class="el" href="_database_config_8java_source.html#l00033">port</a>, <a class="el" href="_database_config_8java_source.html#l00031">sqlitePath</a>, <a class="el" href="_database_config_8java_source.html#l00039">sslMode</a> и <a class="el" href="_database_config_8java_source.html#l00029">type</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_database_config_8java_source.html#l00149">openConnection()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrepository_1_1_database_config_a0633e0cbfcc748e355c055233dfbba50_icgraph.png" border="0" usemap="#aclassrepository_1_1_database_config_a0633e0cbfcc748e355c055233dfbba50_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassrepository_1_1_database_config_a0633e0cbfcc748e355c055233dfbba50_icgraph" id="aclassrepository_1_1_database_config_a0633e0cbfcc748e355c055233dfbba50_icgraph">
+<area shape="rect" title=" " alt="" coords="672,5,869,46"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#ab5871fda6f1f9a780cf4dcf674cd0986" title=" " alt="" coords="418,5,624,46"/>
+<area shape="poly" title=" " alt="" coords="654,26,625,28,625,23,659,26"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a8b28f660a281f658db4382a70065381c" title=" " alt="" coords="200,13,370,38"/>
+<area shape="poly" title=" " alt="" coords="400,26,370,28,370,23,405,26"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a71f8f6fb070d38d93606f081115edf69" title=" " alt="" coords="5,13,152,38"/>
+<area shape="poly" title=" " alt="" coords="182,26,152,28,152,23,187,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3ae49d96b9cf80e8a83d9ab0db1a0c5a" name="a3ae49d96b9cf80e8a83d9ab0db1a0c5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ae49d96b9cf80e8a83d9ab0db1a0c5a">&#9670;&#160;</a></span>getPassword()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String repository.DatabaseConfig.getPassword </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00236">236</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_database_config_8java_source.html#l00036">password</a>.</p>
+
+</div>
+</div>
+<a id="aacd1135a189c5840eb8850a92147e5f0" name="aacd1135a189c5840eb8850a92147e5f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacd1135a189c5840eb8850a92147e5f0">&#9670;&#160;</a></span>getPort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int repository.DatabaseConfig.getPort </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00224">224</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_database_config_8java_source.html#l00033">port</a>.</p>
+
+</div>
+</div>
+<a id="a7f1bd1a7d482f1576b5053380a70ddce" name="a7f1bd1a7d482f1576b5053380a70ddce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f1bd1a7d482f1576b5053380a70ddce">&#9670;&#160;</a></span>getSqlitePath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Path repository.DatabaseConfig.getSqlitePath </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00216">216</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_database_config_8java_source.html#l00031">sqlitePath</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_database_cli_8java_source.html#l00063">util.DatabaseCli.runProbe()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrepository_1_1_database_config_a7f1bd1a7d482f1576b5053380a70ddce_icgraph.png" border="0" usemap="#aclassrepository_1_1_database_config_a7f1bd1a7d482f1576b5053380a70ddce_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassrepository_1_1_database_config_a7f1bd1a7d482f1576b5053380a70ddce_icgraph" id="aclassrepository_1_1_database_config_a7f1bd1a7d482f1576b5053380a70ddce_icgraph">
+<area shape="rect" title=" " alt="" coords="418,5,614,46"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a8b28f660a281f658db4382a70065381c" title=" " alt="" coords="200,13,370,38"/>
+<area shape="poly" title=" " alt="" coords="400,26,371,28,371,23,405,26"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a71f8f6fb070d38d93606f081115edf69" title=" " alt="" coords="5,13,152,38"/>
+<area shape="poly" title=" " alt="" coords="182,26,152,28,152,23,187,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afe03502cca1abb0b07771c1dc502e4d3" name="afe03502cca1abb0b07771c1dc502e4d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe03502cca1abb0b07771c1dc502e4d3">&#9670;&#160;</a></span>getSslMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String repository.DatabaseConfig.getSslMode </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00240">240</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_database_config_8java_source.html#l00039">sslMode</a>.</p>
+
+</div>
+</div>
+<a id="ad83567e4c34a8f0274943ac211e94d31" name="ad83567e4c34a8f0274943ac211e94d31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad83567e4c34a8f0274943ac211e94d31">&#9670;&#160;</a></span>getType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumrepository_1_1_database_config_1_1_type.html">Type</a> repository.DatabaseConfig.getType </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00208">208</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_database_config_8java_source.html#l00029">type</a>.</p>
+
+</div>
+</div>
+<a id="aa0ad346841560fe5e82d290bef810fb2" name="aa0ad346841560fe5e82d290bef810fb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0ad346841560fe5e82d290bef810fb2">&#9670;&#160;</a></span>getUsername()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String repository.DatabaseConfig.getUsername </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00232">232</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_database_config_8java_source.html#l00035">username</a>.</p>
+
+</div>
+</div>
+<a id="ae61320b64c79be14742b8b9d39d6435b" name="ae61320b64c79be14742b8b9d39d6435b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae61320b64c79be14742b8b9d39d6435b">&#9670;&#160;</a></span>isCustom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean repository.DatabaseConfig.isCustom </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00252">252</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_database_config_8java_source.html#l00023">repository.DatabaseConfig.Type.CUSTOM</a> и <a class="el" href="_database_config_8java_source.html#l00029">type</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_database_cli_8java_source.html#l00063">util.DatabaseCli.runProbe()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrepository_1_1_database_config_ae61320b64c79be14742b8b9d39d6435b_icgraph.png" border="0" usemap="#aclassrepository_1_1_database_config_ae61320b64c79be14742b8b9d39d6435b_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassrepository_1_1_database_config_ae61320b64c79be14742b8b9d39d6435b_icgraph" id="aclassrepository_1_1_database_config_ae61320b64c79be14742b8b9d39d6435b_icgraph">
+<area shape="rect" title=" " alt="" coords="418,5,606,46"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a8b28f660a281f658db4382a70065381c" title=" " alt="" coords="200,13,370,38"/>
+<area shape="poly" title=" " alt="" coords="400,26,371,28,371,23,405,26"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a71f8f6fb070d38d93606f081115edf69" title=" " alt="" coords="5,13,152,38"/>
+<area shape="poly" title=" " alt="" coords="182,26,152,28,152,23,187,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a395cc8ecd621add2b161f95ad93e8f01" name="a395cc8ecd621add2b161f95ad93e8f01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a395cc8ecd621add2b161f95ad93e8f01">&#9670;&#160;</a></span>isPostgresql()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean repository.DatabaseConfig.isPostgresql </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00248">248</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_database_config_8java_source.html#l00022">repository.DatabaseConfig.Type.POSTGRESQL</a> и <a class="el" href="_database_config_8java_source.html#l00029">type</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_database_cli_8java_source.html#l00174">util.DatabaseCli.createProbeTableSql()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrepository_1_1_database_config_a395cc8ecd621add2b161f95ad93e8f01_icgraph.png" border="0" usemap="#aclassrepository_1_1_database_config_a395cc8ecd621add2b161f95ad93e8f01_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassrepository_1_1_database_config_a395cc8ecd621add2b161f95ad93e8f01_icgraph" id="aclassrepository_1_1_database_config_a395cc8ecd621add2b161f95ad93e8f01_icgraph">
+<area shape="rect" title=" " alt="" coords="654,5,843,46"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#acd3cb88dcec7ac48a5c35466645c92a0" title=" " alt="" coords="418,5,606,46"/>
+<area shape="poly" title=" " alt="" coords="636,26,607,28,607,23,641,26"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a8b28f660a281f658db4382a70065381c" title=" " alt="" coords="200,13,370,38"/>
+<area shape="poly" title=" " alt="" coords="400,26,371,28,371,23,405,26"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a71f8f6fb070d38d93606f081115edf69" title=" " alt="" coords="5,13,152,38"/>
+<area shape="poly" title=" " alt="" coords="182,26,152,28,152,23,187,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a10d0e3b2363ed38f49bfa62571b904cb" name="a10d0e3b2363ed38f49bfa62571b904cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10d0e3b2363ed38f49bfa62571b904cb">&#9670;&#160;</a></span>isSqlite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean repository.DatabaseConfig.isSqlite </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00244">244</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_database_config_8java_source.html#l00021">repository.DatabaseConfig.Type.SQLITE</a> и <a class="el" href="_database_config_8java_source.html#l00029">type</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_database_cli_8java_source.html#l00063">util.DatabaseCli.runProbe()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrepository_1_1_database_config_a10d0e3b2363ed38f49bfa62571b904cb_icgraph.png" border="0" usemap="#aclassrepository_1_1_database_config_a10d0e3b2363ed38f49bfa62571b904cb_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassrepository_1_1_database_config_a10d0e3b2363ed38f49bfa62571b904cb_icgraph" id="aclassrepository_1_1_database_config_a10d0e3b2363ed38f49bfa62571b904cb_icgraph">
+<area shape="rect" title=" " alt="" coords="418,5,606,46"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a8b28f660a281f658db4382a70065381c" title=" " alt="" coords="200,13,370,38"/>
+<area shape="poly" title=" " alt="" coords="400,26,371,28,371,23,405,26"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a71f8f6fb070d38d93606f081115edf69" title=" " alt="" coords="5,13,152,38"/>
+<area shape="poly" title=" " alt="" coords="182,26,152,28,152,23,187,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4e9d6c7f878e393a494f9c9fac13f0a9" name="a4e9d6c7f878e393a494f9c9fac13f0a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e9d6c7f878e393a494f9c9fac13f0a9">&#9670;&#160;</a></span>load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a35691da1978472d524abd32ca05acbf3">DatabaseConfig</a> repository.DatabaseConfig.load </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00067">67</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_database_config_8java_source.html#l00256">applyEnvironmentOverride()</a>, <a class="el" href="_database_config_8java_source.html#l00030">configFile</a>, <a class="el" href="_database_config_8java_source.html#l00041">DatabaseConfig()</a>, <a class="el" href="_database_config_8java_source.html#l00093">fromProperties()</a>, <a class="el" href="_path_resolver_8java_source.html#l00060">util.PathResolver.getDatabaseConfigFile()</a> и <a class="el" href="_path_resolver_8java_source.html#l00056">util.PathResolver.getDatabaseFile()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_database_manager_8java_source.html#l00043">repository.DatabaseManager.initializeDatabase()</a> и <a class="el" href="_database_cli_8java_source.html#l00063">util.DatabaseCli.runProbe()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrepository_1_1_database_config_a4e9d6c7f878e393a494f9c9fac13f0a9_cgraph.png" border="0" usemap="#aclassrepository_1_1_database_config_a4e9d6c7f878e393a494f9c9fac13f0a9_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassrepository_1_1_database_config_a4e9d6c7f878e393a494f9c9fac13f0a9_cgraph" id="aclassrepository_1_1_database_config_a4e9d6c7f878e393a494f9c9fac13f0a9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,128,208,153"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#ab59426f01c5b94e12686f41d18b2e0ba" title=" " alt="" coords="261,5,470,46"/>
+<area shape="poly" title=" " alt="" coords="130,125,186,95,255,62,289,50,285,53,257,67,189,99,133,129"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a35691da1978472d524abd32ca05acbf3" title=" " alt="" coords="553,8,731,49"/>
+<area shape="poly" title=" " alt="" coords="168,124,255,106,539,47,536,52,256,111,170,129"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a54be8ad7883587920d91f2ce979fa3b9" title=" " alt="" coords="263,120,468,161"/>
+<area shape="poly" title=" " alt="" coords="207,138,250,139,245,141,209,143"/>
+<area shape="rect" href="classutil_1_1_path_resolver.html#a376f308eeac83f51017c8f2be40a09ab" title=" " alt="" coords="266,191,464,231"/>
+<area shape="poly" title=" " alt="" coords="157,151,276,185,271,187,157,156"/>
+<area shape="rect" href="classutil_1_1_path_resolver.html#a50961f05bdf2c5652e65d92495c625ba" title=" " alt="" coords="256,266,475,292"/>
+<area shape="poly" title=" " alt="" coords="124,151,182,194,257,241,302,261,297,261,254,245,179,199,123,156"/>
+<area shape="poly" title=" " alt="" coords="436,117,474,99,487,89,497,79,507,68,522,58,541,52,537,54,524,63,510,72,501,82,491,93,476,104,438,122"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a69aeb61182c8f6f4ccb5b924c424de02" title=" " alt="" coords="525,73,759,98"/>
+<area shape="poly" title=" " alt="" coords="467,118,561,101,556,103,469,123"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a36e82cbf84ceab1f8059de8ef510da3a" title=" " alt="" coords="523,122,761,148"/>
+<area shape="poly" title=" " alt="" coords="468,136,510,137,505,138,468,141"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a69f8eeab7280768eee8545d4371aeb9c" title=" " alt="" coords="540,172,744,197"/>
+<area shape="poly" title=" " alt="" coords="468,154,545,168,539,169,468,159"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a4b5dc5dd91254df1efacc26898e26caf" title=" " alt="" coords="532,221,752,262"/>
+<area shape="poly" title=" " alt="" coords="433,159,476,177,500,192,524,207,540,216,535,215,522,212,497,197,474,181,433,164"/>
+<area shape="rect" href="classutil_1_1_path_resolver.html#abd3fe2993d257c6e777a1303a872be26" title=" " alt="" coords="548,286,736,312"/>
+<area shape="poly" title=" " alt="" coords="421,229,476,251,524,271,556,282,550,282,522,276,474,256,420,234"/>
+<area shape="rect" href="classutil_1_1_platform_util.html#ae1f7127305756e82c242eea124934f5b" title=" " alt="" coords="809,286,978,312"/>
+<area shape="poly" title=" " alt="" coords="736,296,796,299,791,299,736,302"/>
+<area shape="rect" href="classutil_1_1_platform_util.html#ab3325e5522d5be0de30703ddc160f076" title=" " alt="" coords="1026,286,1192,312"/>
+<area shape="poly" title=" " alt="" coords="978,296,1013,299,1008,299,978,302"/>
+<area shape="poly" title=" " alt="" coords="475,284,536,291,530,291,475,290"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrepository_1_1_database_config_a4e9d6c7f878e393a494f9c9fac13f0a9_icgraph.png" border="0" usemap="#aclassrepository_1_1_database_config_a4e9d6c7f878e393a494f9c9fac13f0a9_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassrepository_1_1_database_config_a4e9d6c7f878e393a494f9c9fac13f0a9_icgraph" id="aclassrepository_1_1_database_config_a4e9d6c7f878e393a494f9c9fac13f0a9_icgraph">
+<area shape="rect" title=" " alt="" coords="2106,446,2308,471"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#ad56b237e4e259b99a77f8c2b5d9a49db" title=" " alt="" coords="1822,409,2058,449"/>
+<area shape="poly" title=" " alt="" coords="2088,446,2058,445,2058,439,2093,446"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a8b28f660a281f658db4382a70065381c" title=" " alt="" coords="1594,474,1764,499"/>
+<area shape="poly" title=" " alt="" coords="2088,465,1765,485,1764,479,2094,464"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#adff3d0488b1f5e07b737c8028fd61b38" title=" " alt="" coords="1584,365,1774,405"/>
+<area shape="poly" title=" " alt="" coords="1804,407,1774,404,1774,398,1809,407"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a2035f400cd8f5f503ea6f961de54d4ff" title=" " alt="" coords="1329,291,1536,332"/>
+<area shape="poly" title=" " alt="" coords="1591,360,1504,335,1504,330,1597,360"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a3bbea8df14e34cb04dc17f62dba57cd9" title=" " alt="" coords="1064,90,1252,115"/>
+<area shape="poly" title=" " alt="" coords="1411,277,1389,244,1359,203,1322,163,1280,130,1252,117,1252,112,1282,126,1326,159,1363,199,1393,241,1416,279"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a34362d012dac2e981674eb3b74cc2004" title="Экспортирует задачи из базы данных в JSON." alt="" coords="1066,139,1250,180"/>
+<area shape="poly" title=" " alt="" coords="1397,280,1345,238,1280,195,1250,183,1251,178,1282,191,1348,233,1403,281"/>
+<area shape="rect" href="classutil_1_1_theme_manager.html#a2c5933297ff3dd3af83560dcfc759dc5" title=" " alt="" coords="779,373,975,413"/>
+<area shape="poly" title=" " alt="" coords="1378,338,1331,360,1282,374,1202,388,1121,396,976,399,975,394,1121,390,1201,383,1280,369,1329,355,1373,340"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a2cd3b65bd29af3b855f653a323e2b2f5" title=" " alt="" coords="1064,319,1252,360"/>
+<area shape="poly" title=" " alt="" coords="1311,324,1253,333,1252,328,1316,324"/>
+<area shape="rect" href="classutil_1_1_notification_settings.html#a10f7651faed4b44cf764ad6bd0542ced" title=" " alt="" coords="522,42,707,67"/>
+<area shape="poly" title=" " alt="" coords="1418,275,1399,230,1370,174,1331,121,1307,98,1280,79,1241,60,1201,44,1116,22,1029,11,943,8,861,13,786,22,669,44,667,39,785,16,860,8,943,3,1030,5,1117,17,1203,39,1243,55,1282,75,1310,94,1335,117,1375,172,1404,228,1423,278"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a462520e06be58bc2d42fe6bef64c68ff" title="Мигрирует задачи из JSON в базу данных" alt="" coords="1062,205,1254,245"/>
+<area shape="poly" title=" " alt="" coords="1361,285,1280,260,1243,249,1243,243,1282,255,1366,286"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a005cafe083c9e1fa557954fe33847f52" title=" " alt="" coords="1075,491,1241,517"/>
+<area shape="poly" title=" " alt="" coords="1413,344,1359,414,1323,449,1282,478,1242,495,1240,490,1280,473,1320,445,1355,410,1408,346"/>
+<area shape="rect" href="classutil_1_1_theme_manager.html#ae47e320d429579bb11e84414d318f641" title=" " alt="" coords="1061,438,1254,463"/>
+<area shape="poly" title=" " alt="" coords="1398,341,1344,382,1282,418,1222,440,1221,434,1280,413,1341,378,1393,343"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a11687638f060b50427b94a0778df07b8" title="Синхронизирует данные между JSON и БД" alt="" coords="1035,270,1281,295"/>
+<area shape="poly" title=" " alt="" coords="1311,299,1282,298,1281,293,1316,299"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a5255efccc63f594f7e83d14e5cf7e219" title=" " alt="" coords="784,90,970,115"/>
+<area shape="poly" title=" " alt="" coords="1045,103,971,105,970,100,1050,102"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a703826c15e609176f3da25d6ce8f755d" title="Точка входа для запуска миграции из командной строки" alt="" coords="789,208,965,234"/>
+<area shape="poly" title=" " alt="" coords="1048,184,940,210,938,205,1053,182"/>
+<area shape="rect" href="classview_1_1_main_controller.html#acb8e00ddc7401d25f6975bd5118a6bee" title=" " alt="" coords="273,461,442,501"/>
+<area shape="poly" title=" " alt="" coords="761,413,443,469,442,464,766,411"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ab96d9e00350796e450dd564252136874" title=" " alt="" coords="530,313,699,353"/>
+<area shape="poly" title=" " alt="" coords="767,369,699,355,699,350,773,369"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a47878f33c1c0458f442d9b3f93bedf06" title=" " alt="" coords="551,378,678,403"/>
+<area shape="poly" title=" " alt="" coords="761,392,679,394,679,388,766,392"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="13,320,197,346"/>
+<area shape="poly" title=" " alt="" coords="294,454,251,433,180,388,125,349,125,344,183,383,254,428,299,453"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aa6adc26184a175f0ddf6030f0c24d046" title=" " alt="" coords="270,378,445,419"/>
+<area shape="poly" title=" " alt="" coords="515,359,441,380,439,375,520,357"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a832ae34bcb138f8090bf8213f1f97de9" title=" " alt="" coords="273,313,442,353"/>
+<area shape="poly" title=" " alt="" coords="512,334,443,336,442,331,517,332"/>
+<area shape="poly" title=" " alt="" coords="255,334,199,336,197,331,260,332"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#aa8a86d1ff2433a9cf9d28018a67581ae" title=" " alt="" coords="785,307,969,348"/>
+<area shape="poly" title=" " alt="" coords="1045,335,969,334,969,329,1051,335"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c" title=" " alt="" coords="767,258,987,283"/>
+<area shape="poly" title=" " alt="" coords="1060,315,986,298,937,287,937,281,987,293,1065,315"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea" title=" " alt="" coords="510,214,719,239"/>
+<area shape="poly" title=" " alt="" coords="779,255,696,243,695,237,784,254"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462" title=" " alt="" coords="253,99,462,140"/>
+<area shape="poly" title=" " alt="" coords="573,206,522,181,461,154,432,143,431,138,463,149,524,176,579,206"/>
+<area shape="rect" href="classapp_1_1_main_app.html#acbf781550cefac29e6c8ecbdd2b38904" title=" " alt="" coords="298,263,416,289"/>
+<area shape="poly" title=" " alt="" coords="527,244,418,267,416,262,531,242"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a9788978994366c880434d9cc05a21cb1" title=" " alt="" coords="293,164,422,190"/>
+<area shape="poly" title=" " alt="" coords="526,211,423,192,422,187,531,209"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834" title=" " alt="" coords="294,214,420,239"/>
+<area shape="poly" title=" " alt="" coords="492,227,422,229,420,224,497,225"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#aadd0b77dafd4c390cbdf367b9654aa6c" title=" " alt="" coords="5,99,205,140"/>
+<area shape="poly" title=" " alt="" coords="235,121,207,122,204,117,239,118"/>
+<area shape="poly" title=" " alt="" coords="545,73,442,101,439,96,549,70"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afba699a59966cda24b9998995a17c94d" title=" " alt="" coords="273,34,442,75"/>
+<area shape="poly" title=" " alt="" coords="505,56,443,57,441,52,510,53"/>
+<area shape="poly" title=" " alt="" coords="258,85,255,90,228,126,188,193,116,321,111,318,183,190,224,123,251,86,261,81"/>
+<area shape="poly" title=" " alt="" coords="1044,224,966,225,965,220,1049,223"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a71f8f6fb070d38d93606f081115edf69" title=" " alt="" coords="804,552,950,578"/>
+<area shape="poly" title=" " alt="" coords="1083,520,940,554,939,549,1078,521"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ab77fd01a8289a0c6016f8bc612157056" title=" " alt="" coords="793,487,961,528"/>
+<area shape="poly" title=" " alt="" coords="1079,467,962,493,961,488,1074,467"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ad805604b0d662e806bc73402d9fa82b6" title=" " alt="" coords="527,478,702,519"/>
+<area shape="poly" title=" " alt="" coords="1043,455,912,466,768,478,703,487,702,482,767,473,912,461,1048,455"/>
+<area shape="poly" title=" " alt="" coords="780,525,650,540,579,540,510,533,457,521,409,505,409,499,458,516,510,528,579,535,650,535,775,526"/>
+<area shape="poly" title=" " alt="" coords="775,504,703,504,703,499,780,504"/>
+<area shape="poly" title=" " alt="" coords="509,492,443,490,443,484,514,491"/>
+<area shape="poly" title=" " alt="" coords="1072,266,1034,260,986,248,940,237,940,232,987,243,1035,255,1077,266"/>
+<area shape="poly" title=" " alt="" coords="1581,497,1281,532,951,562,951,556,1281,526,1576,498"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4210ed0a814b9aa2d0b1c12377895163" name="a4210ed0a814b9aa2d0b1c12377895163"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4210ed0a814b9aa2d0b1c12377895163">&#9670;&#160;</a></span>loadDriver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void repository.DatabaseConfig.loadDriver </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> throws ClassNotFoundException</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00158">158</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_database_config_8java_source.html#l00192">getDriverClass()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_database_cli_8java_source.html#l00063">util.DatabaseCli.runProbe()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrepository_1_1_database_config_a4210ed0a814b9aa2d0b1c12377895163_cgraph.png" border="0" usemap="#aclassrepository_1_1_database_config_a4210ed0a814b9aa2d0b1c12377895163_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassrepository_1_1_database_config_a4210ed0a814b9aa2d0b1c12377895163_cgraph" id="aclassrepository_1_1_database_config_a4210ed0a814b9aa2d0b1c12377895163_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,208,46"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a6f6ee0a0b912b6063df56dc7c84cd547" title=" " alt="" coords="256,5,452,46"/>
+<area shape="poly" title=" " alt="" coords="208,23,243,26,237,26,208,28"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrepository_1_1_database_config_a4210ed0a814b9aa2d0b1c12377895163_icgraph.png" border="0" usemap="#aclassrepository_1_1_database_config_a4210ed0a814b9aa2d0b1c12377895163_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassrepository_1_1_database_config_a4210ed0a814b9aa2d0b1c12377895163_icgraph" id="aclassrepository_1_1_database_config_a4210ed0a814b9aa2d0b1c12377895163_icgraph">
+<area shape="rect" title=" " alt="" coords="418,5,620,46"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a8b28f660a281f658db4382a70065381c" title=" " alt="" coords="200,13,370,38"/>
+<area shape="poly" title=" " alt="" coords="400,26,371,28,371,23,405,26"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a71f8f6fb070d38d93606f081115edf69" title=" " alt="" coords="5,13,152,38"/>
+<area shape="poly" title=" " alt="" coords="182,26,152,28,152,23,187,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab5871fda6f1f9a780cf4dcf674cd0986" name="ab5871fda6f1f9a780cf4dcf674cd0986"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5871fda6f1f9a780cf4dcf674cd0986">&#9670;&#160;</a></span>openConnection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Connection repository.DatabaseConfig.openConnection </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> throws SQLException</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00149">149</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_database_config_8java_source.html#l00162">getConnectionProperties()</a> и <a class="el" href="_database_config_8java_source.html#l00173">getJdbcUrl()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_database_cli_8java_source.html#l00063">util.DatabaseCli.runProbe()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrepository_1_1_database_config_ab5871fda6f1f9a780cf4dcf674cd0986_cgraph.png" border="0" usemap="#aclassrepository_1_1_database_config_ab5871fda6f1f9a780cf4dcf674cd0986_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassrepository_1_1_database_config_ab5871fda6f1f9a780cf4dcf674cd0986_cgraph" id="aclassrepository_1_1_database_config_ab5871fda6f1f9a780cf4dcf674cd0986_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,212,79"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a9d73ac86e1e24822a5fdc5946aeb9adb" title=" " alt="" coords="260,5,456,46"/>
+<area shape="poly" title=" " alt="" coords="212,43,247,40,242,41,213,48"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a0633e0cbfcc748e355c055233dfbba50" title=" " alt="" coords="260,71,456,111"/>
+<area shape="poly" title=" " alt="" coords="212,70,247,76,242,77,212,75"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrepository_1_1_database_config_ab5871fda6f1f9a780cf4dcf674cd0986_icgraph.png" border="0" usemap="#aclassrepository_1_1_database_config_ab5871fda6f1f9a780cf4dcf674cd0986_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassrepository_1_1_database_config_ab5871fda6f1f9a780cf4dcf674cd0986_icgraph" id="aclassrepository_1_1_database_config_ab5871fda6f1f9a780cf4dcf674cd0986_icgraph">
+<area shape="rect" title=" " alt="" coords="418,5,624,46"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a8b28f660a281f658db4382a70065381c" title=" " alt="" coords="200,13,370,38"/>
+<area shape="poly" title=" " alt="" coords="400,26,370,28,370,23,405,26"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a71f8f6fb070d38d93606f081115edf69" title=" " alt="" coords="5,13,152,38"/>
+<area shape="poly" title=" " alt="" coords="182,26,152,28,152,23,187,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a69aeb61182c8f6f4ccb5b924c424de02" name="a69aeb61182c8f6f4ccb5b924c424de02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69aeb61182c8f6f4ccb5b924c424de02">&#9670;&#160;</a></span>parsePort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int repository.DatabaseConfig.parsePort </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00277">277</a></p>
+
+<p class="reference">Используется в <a class="el" href="_database_config_8java_source.html#l00093">fromProperties()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrepository_1_1_database_config_a69aeb61182c8f6f4ccb5b924c424de02_icgraph.png" border="0" usemap="#aclassrepository_1_1_database_config_a69aeb61182c8f6f4ccb5b924c424de02_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassrepository_1_1_database_config_a69aeb61182c8f6f4ccb5b924c424de02_icgraph" id="aclassrepository_1_1_database_config_a69aeb61182c8f6f4ccb5b924c424de02_icgraph">
+<area shape="rect" title=" " alt="" coords="2609,446,2843,471"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a54be8ad7883587920d91f2ce979fa3b9" title=" " alt="" coords="2356,438,2561,479"/>
+<area shape="poly" title=" " alt="" coords="2590,459,2561,461,2561,456,2596,458"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a4e9d6c7f878e393a494f9c9fac13f0a9" title=" " alt="" coords="2106,446,2308,471"/>
+<area shape="poly" title=" " alt="" coords="2338,459,2309,461,2309,456,2344,458"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#ad56b237e4e259b99a77f8c2b5d9a49db" title=" " alt="" coords="1822,409,2058,449"/>
+<area shape="poly" title=" " alt="" coords="2088,446,2058,445,2058,439,2093,446"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a8b28f660a281f658db4382a70065381c" title=" " alt="" coords="1594,474,1764,499"/>
+<area shape="poly" title=" " alt="" coords="2088,465,1765,485,1764,479,2094,464"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#adff3d0488b1f5e07b737c8028fd61b38" title=" " alt="" coords="1584,365,1774,405"/>
+<area shape="poly" title=" " alt="" coords="1804,407,1774,404,1774,398,1809,407"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a2035f400cd8f5f503ea6f961de54d4ff" title=" " alt="" coords="1329,291,1536,332"/>
+<area shape="poly" title=" " alt="" coords="1591,360,1504,335,1504,330,1597,360"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a3bbea8df14e34cb04dc17f62dba57cd9" title=" " alt="" coords="1064,90,1252,115"/>
+<area shape="poly" title=" " alt="" coords="1411,277,1389,244,1359,203,1322,163,1280,130,1252,117,1252,112,1282,126,1326,159,1363,199,1393,241,1416,279"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a34362d012dac2e981674eb3b74cc2004" title="Экспортирует задачи из базы данных в JSON." alt="" coords="1066,139,1250,180"/>
+<area shape="poly" title=" " alt="" coords="1397,280,1345,238,1280,195,1250,183,1251,178,1282,191,1348,233,1403,281"/>
+<area shape="rect" href="classutil_1_1_theme_manager.html#a2c5933297ff3dd3af83560dcfc759dc5" title=" " alt="" coords="779,373,975,413"/>
+<area shape="poly" title=" " alt="" coords="1378,338,1331,360,1282,374,1202,388,1121,396,976,399,975,394,1121,390,1201,383,1280,369,1329,355,1373,340"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a2cd3b65bd29af3b855f653a323e2b2f5" title=" " alt="" coords="1064,319,1252,360"/>
+<area shape="poly" title=" " alt="" coords="1311,324,1253,333,1252,328,1316,324"/>
+<area shape="rect" href="classutil_1_1_notification_settings.html#a10f7651faed4b44cf764ad6bd0542ced" title=" " alt="" coords="522,42,707,67"/>
+<area shape="poly" title=" " alt="" coords="1418,275,1399,230,1370,174,1331,121,1307,98,1280,79,1241,60,1201,44,1116,22,1029,11,943,8,861,13,786,22,669,44,667,39,785,16,860,8,943,3,1030,5,1117,17,1203,39,1243,55,1282,75,1310,94,1335,117,1375,172,1404,228,1423,278"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a462520e06be58bc2d42fe6bef64c68ff" title="Мигрирует задачи из JSON в базу данных" alt="" coords="1062,205,1254,245"/>
+<area shape="poly" title=" " alt="" coords="1361,285,1280,260,1243,249,1243,243,1282,255,1366,286"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a005cafe083c9e1fa557954fe33847f52" title=" " alt="" coords="1075,491,1241,517"/>
+<area shape="poly" title=" " alt="" coords="1413,344,1359,414,1323,449,1282,478,1242,495,1240,490,1280,473,1320,445,1355,410,1408,346"/>
+<area shape="rect" href="classutil_1_1_theme_manager.html#ae47e320d429579bb11e84414d318f641" title=" " alt="" coords="1061,438,1254,463"/>
+<area shape="poly" title=" " alt="" coords="1398,341,1344,382,1282,418,1222,440,1221,434,1280,413,1341,378,1393,343"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a11687638f060b50427b94a0778df07b8" title="Синхронизирует данные между JSON и БД" alt="" coords="1035,270,1281,295"/>
+<area shape="poly" title=" " alt="" coords="1311,299,1282,298,1281,293,1316,299"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a5255efccc63f594f7e83d14e5cf7e219" title=" " alt="" coords="784,90,970,115"/>
+<area shape="poly" title=" " alt="" coords="1045,103,971,105,970,100,1050,102"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a703826c15e609176f3da25d6ce8f755d" title="Точка входа для запуска миграции из командной строки" alt="" coords="789,208,965,234"/>
+<area shape="poly" title=" " alt="" coords="1048,184,940,210,938,205,1053,182"/>
+<area shape="rect" href="classview_1_1_main_controller.html#acb8e00ddc7401d25f6975bd5118a6bee" title=" " alt="" coords="273,461,442,501"/>
+<area shape="poly" title=" " alt="" coords="761,413,443,469,442,464,766,411"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ab96d9e00350796e450dd564252136874" title=" " alt="" coords="530,313,699,353"/>
+<area shape="poly" title=" " alt="" coords="767,369,699,355,699,350,773,369"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a47878f33c1c0458f442d9b3f93bedf06" title=" " alt="" coords="551,378,678,403"/>
+<area shape="poly" title=" " alt="" coords="761,392,679,394,679,388,766,392"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="13,320,197,346"/>
+<area shape="poly" title=" " alt="" coords="294,454,251,433,180,388,125,349,125,344,183,383,254,428,299,453"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aa6adc26184a175f0ddf6030f0c24d046" title=" " alt="" coords="270,378,445,419"/>
+<area shape="poly" title=" " alt="" coords="515,359,441,380,439,375,520,357"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a832ae34bcb138f8090bf8213f1f97de9" title=" " alt="" coords="273,313,442,353"/>
+<area shape="poly" title=" " alt="" coords="512,334,443,336,442,331,517,332"/>
+<area shape="poly" title=" " alt="" coords="255,334,199,336,197,331,260,332"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#aa8a86d1ff2433a9cf9d28018a67581ae" title=" " alt="" coords="785,307,969,348"/>
+<area shape="poly" title=" " alt="" coords="1045,335,969,334,969,329,1051,335"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c" title=" " alt="" coords="767,258,987,283"/>
+<area shape="poly" title=" " alt="" coords="1060,315,986,298,937,287,937,281,987,293,1065,315"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea" title=" " alt="" coords="510,214,719,239"/>
+<area shape="poly" title=" " alt="" coords="779,255,696,243,695,237,784,254"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462" title=" " alt="" coords="253,99,462,140"/>
+<area shape="poly" title=" " alt="" coords="573,206,522,181,461,154,432,143,431,138,463,149,524,176,579,206"/>
+<area shape="rect" href="classapp_1_1_main_app.html#acbf781550cefac29e6c8ecbdd2b38904" title=" " alt="" coords="298,263,416,289"/>
+<area shape="poly" title=" " alt="" coords="527,244,418,267,416,262,531,242"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a9788978994366c880434d9cc05a21cb1" title=" " alt="" coords="293,164,422,190"/>
+<area shape="poly" title=" " alt="" coords="526,211,423,192,422,187,531,209"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834" title=" " alt="" coords="294,214,420,239"/>
+<area shape="poly" title=" " alt="" coords="492,227,422,229,420,224,497,225"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#aadd0b77dafd4c390cbdf367b9654aa6c" title=" " alt="" coords="5,99,205,140"/>
+<area shape="poly" title=" " alt="" coords="235,121,207,122,204,117,239,118"/>
+<area shape="poly" title=" " alt="" coords="545,73,442,101,439,96,549,70"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afba699a59966cda24b9998995a17c94d" title=" " alt="" coords="273,34,442,75"/>
+<area shape="poly" title=" " alt="" coords="505,56,443,57,441,52,510,53"/>
+<area shape="poly" title=" " alt="" coords="258,85,255,90,228,126,188,193,116,321,111,318,183,190,224,123,251,86,261,81"/>
+<area shape="poly" title=" " alt="" coords="1044,224,966,225,965,220,1049,223"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a71f8f6fb070d38d93606f081115edf69" title=" " alt="" coords="804,552,950,578"/>
+<area shape="poly" title=" " alt="" coords="1083,520,940,554,939,549,1078,521"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ab77fd01a8289a0c6016f8bc612157056" title=" " alt="" coords="793,487,961,528"/>
+<area shape="poly" title=" " alt="" coords="1079,467,962,493,961,488,1074,467"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ad805604b0d662e806bc73402d9fa82b6" title=" " alt="" coords="527,478,702,519"/>
+<area shape="poly" title=" " alt="" coords="1043,455,912,466,768,478,703,487,702,482,767,473,912,461,1048,455"/>
+<area shape="poly" title=" " alt="" coords="780,525,650,540,579,540,510,533,457,521,409,505,409,499,458,516,510,528,579,535,650,535,775,526"/>
+<area shape="poly" title=" " alt="" coords="775,504,703,504,703,499,780,504"/>
+<area shape="poly" title=" " alt="" coords="509,492,443,490,443,484,514,491"/>
+<area shape="poly" title=" " alt="" coords="1072,266,1034,260,986,248,940,237,940,232,987,243,1035,255,1077,266"/>
+<area shape="poly" title=" " alt="" coords="1581,497,1281,532,951,562,951,556,1281,526,1576,498"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a36e82cbf84ceab1f8059de8ef510da3a" name="a36e82cbf84ceab1f8059de8ef510da3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36e82cbf84ceab1f8059de8ef510da3a">&#9670;&#160;</a></span>parseType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumrepository_1_1_database_config_1_1_type.html">Type</a> repository.DatabaseConfig.parseType </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00267">267</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_database_config_8java_source.html#l00023">repository.DatabaseConfig.Type.CUSTOM</a>, <a class="el" href="_database_config_8java_source.html#l00022">repository.DatabaseConfig.Type.POSTGRESQL</a> и <a class="el" href="_database_config_8java_source.html#l00021">repository.DatabaseConfig.Type.SQLITE</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_database_config_8java_source.html#l00093">fromProperties()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrepository_1_1_database_config_a36e82cbf84ceab1f8059de8ef510da3a_icgraph.png" border="0" usemap="#aclassrepository_1_1_database_config_a36e82cbf84ceab1f8059de8ef510da3a_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassrepository_1_1_database_config_a36e82cbf84ceab1f8059de8ef510da3a_icgraph" id="aclassrepository_1_1_database_config_a36e82cbf84ceab1f8059de8ef510da3a_icgraph">
+<area shape="rect" title=" " alt="" coords="2609,446,2847,471"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a54be8ad7883587920d91f2ce979fa3b9" title=" " alt="" coords="2356,438,2561,479"/>
+<area shape="poly" title=" " alt="" coords="2591,459,2561,461,2561,456,2596,458"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a4e9d6c7f878e393a494f9c9fac13f0a9" title=" " alt="" coords="2106,446,2308,471"/>
+<area shape="poly" title=" " alt="" coords="2338,459,2309,461,2309,456,2344,458"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#ad56b237e4e259b99a77f8c2b5d9a49db" title=" " alt="" coords="1822,409,2058,449"/>
+<area shape="poly" title=" " alt="" coords="2088,446,2058,445,2058,439,2093,446"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a8b28f660a281f658db4382a70065381c" title=" " alt="" coords="1594,474,1764,499"/>
+<area shape="poly" title=" " alt="" coords="2088,465,1765,485,1764,479,2094,464"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#adff3d0488b1f5e07b737c8028fd61b38" title=" " alt="" coords="1584,365,1774,405"/>
+<area shape="poly" title=" " alt="" coords="1804,407,1774,404,1774,398,1809,407"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a2035f400cd8f5f503ea6f961de54d4ff" title=" " alt="" coords="1329,291,1536,332"/>
+<area shape="poly" title=" " alt="" coords="1591,360,1504,335,1504,330,1597,360"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a3bbea8df14e34cb04dc17f62dba57cd9" title=" " alt="" coords="1064,90,1252,115"/>
+<area shape="poly" title=" " alt="" coords="1411,277,1389,244,1359,203,1322,163,1280,130,1252,117,1252,112,1282,126,1326,159,1363,199,1393,241,1416,279"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a34362d012dac2e981674eb3b74cc2004" title="Экспортирует задачи из базы данных в JSON." alt="" coords="1066,139,1250,180"/>
+<area shape="poly" title=" " alt="" coords="1397,280,1345,238,1280,195,1250,183,1251,178,1282,191,1348,233,1403,281"/>
+<area shape="rect" href="classutil_1_1_theme_manager.html#a2c5933297ff3dd3af83560dcfc759dc5" title=" " alt="" coords="779,373,975,413"/>
+<area shape="poly" title=" " alt="" coords="1378,338,1331,360,1282,374,1202,388,1121,396,976,399,975,394,1121,390,1201,383,1280,369,1329,355,1373,340"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a2cd3b65bd29af3b855f653a323e2b2f5" title=" " alt="" coords="1064,319,1252,360"/>
+<area shape="poly" title=" " alt="" coords="1311,324,1253,333,1252,328,1316,324"/>
+<area shape="rect" href="classutil_1_1_notification_settings.html#a10f7651faed4b44cf764ad6bd0542ced" title=" " alt="" coords="522,42,707,67"/>
+<area shape="poly" title=" " alt="" coords="1418,275,1399,230,1370,174,1331,121,1307,98,1280,79,1241,60,1201,44,1116,22,1029,11,943,8,861,13,786,22,669,44,667,39,785,16,860,8,943,3,1030,5,1117,17,1203,39,1243,55,1282,75,1310,94,1335,117,1375,172,1404,228,1423,278"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a462520e06be58bc2d42fe6bef64c68ff" title="Мигрирует задачи из JSON в базу данных" alt="" coords="1062,205,1254,245"/>
+<area shape="poly" title=" " alt="" coords="1361,285,1280,260,1243,249,1243,243,1282,255,1366,286"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a005cafe083c9e1fa557954fe33847f52" title=" " alt="" coords="1075,491,1241,517"/>
+<area shape="poly" title=" " alt="" coords="1413,344,1359,414,1323,449,1282,478,1242,495,1240,490,1280,473,1320,445,1355,410,1408,346"/>
+<area shape="rect" href="classutil_1_1_theme_manager.html#ae47e320d429579bb11e84414d318f641" title=" " alt="" coords="1061,438,1254,463"/>
+<area shape="poly" title=" " alt="" coords="1398,341,1344,382,1282,418,1222,440,1221,434,1280,413,1341,378,1393,343"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a11687638f060b50427b94a0778df07b8" title="Синхронизирует данные между JSON и БД" alt="" coords="1035,270,1281,295"/>
+<area shape="poly" title=" " alt="" coords="1311,299,1282,298,1281,293,1316,299"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a5255efccc63f594f7e83d14e5cf7e219" title=" " alt="" coords="784,90,970,115"/>
+<area shape="poly" title=" " alt="" coords="1045,103,971,105,970,100,1050,102"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a703826c15e609176f3da25d6ce8f755d" title="Точка входа для запуска миграции из командной строки" alt="" coords="789,208,965,234"/>
+<area shape="poly" title=" " alt="" coords="1048,184,940,210,938,205,1053,182"/>
+<area shape="rect" href="classview_1_1_main_controller.html#acb8e00ddc7401d25f6975bd5118a6bee" title=" " alt="" coords="273,461,442,501"/>
+<area shape="poly" title=" " alt="" coords="761,413,443,469,442,464,766,411"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ab96d9e00350796e450dd564252136874" title=" " alt="" coords="530,313,699,353"/>
+<area shape="poly" title=" " alt="" coords="767,369,699,355,699,350,773,369"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a47878f33c1c0458f442d9b3f93bedf06" title=" " alt="" coords="551,378,678,403"/>
+<area shape="poly" title=" " alt="" coords="761,392,679,394,679,388,766,392"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="13,320,197,346"/>
+<area shape="poly" title=" " alt="" coords="294,454,251,433,180,388,125,349,125,344,183,383,254,428,299,453"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aa6adc26184a175f0ddf6030f0c24d046" title=" " alt="" coords="270,378,445,419"/>
+<area shape="poly" title=" " alt="" coords="515,359,441,380,439,375,520,357"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a832ae34bcb138f8090bf8213f1f97de9" title=" " alt="" coords="273,313,442,353"/>
+<area shape="poly" title=" " alt="" coords="512,334,443,336,442,331,517,332"/>
+<area shape="poly" title=" " alt="" coords="255,334,199,336,197,331,260,332"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#aa8a86d1ff2433a9cf9d28018a67581ae" title=" " alt="" coords="785,307,969,348"/>
+<area shape="poly" title=" " alt="" coords="1045,335,969,334,969,329,1051,335"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c" title=" " alt="" coords="767,258,987,283"/>
+<area shape="poly" title=" " alt="" coords="1060,315,986,298,937,287,937,281,987,293,1065,315"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea" title=" " alt="" coords="510,214,719,239"/>
+<area shape="poly" title=" " alt="" coords="779,255,696,243,695,237,784,254"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462" title=" " alt="" coords="253,99,462,140"/>
+<area shape="poly" title=" " alt="" coords="573,206,522,181,461,154,432,143,431,138,463,149,524,176,579,206"/>
+<area shape="rect" href="classapp_1_1_main_app.html#acbf781550cefac29e6c8ecbdd2b38904" title=" " alt="" coords="298,263,416,289"/>
+<area shape="poly" title=" " alt="" coords="527,244,418,267,416,262,531,242"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a9788978994366c880434d9cc05a21cb1" title=" " alt="" coords="293,164,422,190"/>
+<area shape="poly" title=" " alt="" coords="526,211,423,192,422,187,531,209"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834" title=" " alt="" coords="294,214,420,239"/>
+<area shape="poly" title=" " alt="" coords="492,227,422,229,420,224,497,225"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#aadd0b77dafd4c390cbdf367b9654aa6c" title=" " alt="" coords="5,99,205,140"/>
+<area shape="poly" title=" " alt="" coords="235,121,207,122,204,117,239,118"/>
+<area shape="poly" title=" " alt="" coords="545,73,442,101,439,96,549,70"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afba699a59966cda24b9998995a17c94d" title=" " alt="" coords="273,34,442,75"/>
+<area shape="poly" title=" " alt="" coords="505,56,443,57,441,52,510,53"/>
+<area shape="poly" title=" " alt="" coords="258,85,255,90,228,126,188,193,116,321,111,318,183,190,224,123,251,86,261,81"/>
+<area shape="poly" title=" " alt="" coords="1044,224,966,225,965,220,1049,223"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a71f8f6fb070d38d93606f081115edf69" title=" " alt="" coords="804,552,950,578"/>
+<area shape="poly" title=" " alt="" coords="1083,520,940,554,939,549,1078,521"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ab77fd01a8289a0c6016f8bc612157056" title=" " alt="" coords="793,487,961,528"/>
+<area shape="poly" title=" " alt="" coords="1079,467,962,493,961,488,1074,467"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ad805604b0d662e806bc73402d9fa82b6" title=" " alt="" coords="527,478,702,519"/>
+<area shape="poly" title=" " alt="" coords="1043,455,912,466,768,478,703,487,702,482,767,473,912,461,1048,455"/>
+<area shape="poly" title=" " alt="" coords="780,525,650,540,579,540,510,533,457,521,409,505,409,499,458,516,510,528,579,535,650,535,775,526"/>
+<area shape="poly" title=" " alt="" coords="775,504,703,504,703,499,780,504"/>
+<area shape="poly" title=" " alt="" coords="509,492,443,490,443,484,514,491"/>
+<area shape="poly" title=" " alt="" coords="1072,266,1034,260,986,248,940,237,940,232,987,243,1035,255,1077,266"/>
+<area shape="poly" title=" " alt="" coords="1581,497,1281,532,951,562,951,556,1281,526,1576,498"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a69f8eeab7280768eee8545d4371aeb9c" name="a69f8eeab7280768eee8545d4371aeb9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69f8eeab7280768eee8545d4371aeb9c">&#9670;&#160;</a></span>read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String repository.DatabaseConfig.read </td>
+          <td>(</td>
+          <td class="paramtype">Properties</td>          <td class="paramname"><span class="paramname"><em>properties</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00263">263</a></p>
+
+<p class="reference">Используется в <a class="el" href="_database_config_8java_source.html#l00093">fromProperties()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrepository_1_1_database_config_a69f8eeab7280768eee8545d4371aeb9c_icgraph.png" border="0" usemap="#aclassrepository_1_1_database_config_a69f8eeab7280768eee8545d4371aeb9c_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassrepository_1_1_database_config_a69f8eeab7280768eee8545d4371aeb9c_icgraph" id="aclassrepository_1_1_database_config_a69f8eeab7280768eee8545d4371aeb9c_icgraph">
+<area shape="rect" title=" " alt="" coords="2609,446,2812,471"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a54be8ad7883587920d91f2ce979fa3b9" title=" " alt="" coords="2356,438,2561,479"/>
+<area shape="poly" title=" " alt="" coords="2590,459,2561,461,2561,456,2596,458"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a4e9d6c7f878e393a494f9c9fac13f0a9" title=" " alt="" coords="2106,446,2308,471"/>
+<area shape="poly" title=" " alt="" coords="2338,459,2309,461,2309,456,2344,458"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#ad56b237e4e259b99a77f8c2b5d9a49db" title=" " alt="" coords="1822,409,2058,449"/>
+<area shape="poly" title=" " alt="" coords="2088,446,2058,445,2058,439,2093,446"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a8b28f660a281f658db4382a70065381c" title=" " alt="" coords="1594,474,1764,499"/>
+<area shape="poly" title=" " alt="" coords="2088,465,1765,485,1764,479,2094,464"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#adff3d0488b1f5e07b737c8028fd61b38" title=" " alt="" coords="1584,365,1774,405"/>
+<area shape="poly" title=" " alt="" coords="1804,407,1774,404,1774,398,1809,407"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a2035f400cd8f5f503ea6f961de54d4ff" title=" " alt="" coords="1329,291,1536,332"/>
+<area shape="poly" title=" " alt="" coords="1591,360,1504,335,1504,330,1597,360"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a3bbea8df14e34cb04dc17f62dba57cd9" title=" " alt="" coords="1064,90,1252,115"/>
+<area shape="poly" title=" " alt="" coords="1411,277,1389,244,1359,203,1322,163,1280,130,1252,117,1252,112,1282,126,1326,159,1363,199,1393,241,1416,279"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a34362d012dac2e981674eb3b74cc2004" title="Экспортирует задачи из базы данных в JSON." alt="" coords="1066,139,1250,180"/>
+<area shape="poly" title=" " alt="" coords="1397,280,1345,238,1280,195,1250,183,1251,178,1282,191,1348,233,1403,281"/>
+<area shape="rect" href="classutil_1_1_theme_manager.html#a2c5933297ff3dd3af83560dcfc759dc5" title=" " alt="" coords="779,373,975,413"/>
+<area shape="poly" title=" " alt="" coords="1378,338,1331,360,1282,374,1202,388,1121,396,976,399,975,394,1121,390,1201,383,1280,369,1329,355,1373,340"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a2cd3b65bd29af3b855f653a323e2b2f5" title=" " alt="" coords="1064,319,1252,360"/>
+<area shape="poly" title=" " alt="" coords="1311,324,1253,333,1252,328,1316,324"/>
+<area shape="rect" href="classutil_1_1_notification_settings.html#a10f7651faed4b44cf764ad6bd0542ced" title=" " alt="" coords="522,42,707,67"/>
+<area shape="poly" title=" " alt="" coords="1418,275,1399,230,1370,174,1331,121,1307,98,1280,79,1241,60,1201,44,1116,22,1029,11,943,8,861,13,786,22,669,44,667,39,785,16,860,8,943,3,1030,5,1117,17,1203,39,1243,55,1282,75,1310,94,1335,117,1375,172,1404,228,1423,278"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a462520e06be58bc2d42fe6bef64c68ff" title="Мигрирует задачи из JSON в базу данных" alt="" coords="1062,205,1254,245"/>
+<area shape="poly" title=" " alt="" coords="1361,285,1280,260,1243,249,1243,243,1282,255,1366,286"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a005cafe083c9e1fa557954fe33847f52" title=" " alt="" coords="1075,491,1241,517"/>
+<area shape="poly" title=" " alt="" coords="1413,344,1359,414,1323,449,1282,478,1242,495,1240,490,1280,473,1320,445,1355,410,1408,346"/>
+<area shape="rect" href="classutil_1_1_theme_manager.html#ae47e320d429579bb11e84414d318f641" title=" " alt="" coords="1061,438,1254,463"/>
+<area shape="poly" title=" " alt="" coords="1398,341,1344,382,1282,418,1222,440,1221,434,1280,413,1341,378,1393,343"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a11687638f060b50427b94a0778df07b8" title="Синхронизирует данные между JSON и БД" alt="" coords="1035,270,1281,295"/>
+<area shape="poly" title=" " alt="" coords="1311,299,1282,298,1281,293,1316,299"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a5255efccc63f594f7e83d14e5cf7e219" title=" " alt="" coords="784,90,970,115"/>
+<area shape="poly" title=" " alt="" coords="1045,103,971,105,970,100,1050,102"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a703826c15e609176f3da25d6ce8f755d" title="Точка входа для запуска миграции из командной строки" alt="" coords="789,208,965,234"/>
+<area shape="poly" title=" " alt="" coords="1048,184,940,210,938,205,1053,182"/>
+<area shape="rect" href="classview_1_1_main_controller.html#acb8e00ddc7401d25f6975bd5118a6bee" title=" " alt="" coords="273,461,442,501"/>
+<area shape="poly" title=" " alt="" coords="761,413,443,469,442,464,766,411"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ab96d9e00350796e450dd564252136874" title=" " alt="" coords="530,313,699,353"/>
+<area shape="poly" title=" " alt="" coords="767,369,699,355,699,350,773,369"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a47878f33c1c0458f442d9b3f93bedf06" title=" " alt="" coords="551,378,678,403"/>
+<area shape="poly" title=" " alt="" coords="761,392,679,394,679,388,766,392"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="13,320,197,346"/>
+<area shape="poly" title=" " alt="" coords="294,454,251,433,180,388,125,349,125,344,183,383,254,428,299,453"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aa6adc26184a175f0ddf6030f0c24d046" title=" " alt="" coords="270,378,445,419"/>
+<area shape="poly" title=" " alt="" coords="515,359,441,380,439,375,520,357"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a832ae34bcb138f8090bf8213f1f97de9" title=" " alt="" coords="273,313,442,353"/>
+<area shape="poly" title=" " alt="" coords="512,334,443,336,442,331,517,332"/>
+<area shape="poly" title=" " alt="" coords="255,334,199,336,197,331,260,332"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#aa8a86d1ff2433a9cf9d28018a67581ae" title=" " alt="" coords="785,307,969,348"/>
+<area shape="poly" title=" " alt="" coords="1045,335,969,334,969,329,1051,335"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c" title=" " alt="" coords="767,258,987,283"/>
+<area shape="poly" title=" " alt="" coords="1060,315,986,298,937,287,937,281,987,293,1065,315"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea" title=" " alt="" coords="510,214,719,239"/>
+<area shape="poly" title=" " alt="" coords="779,255,696,243,695,237,784,254"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462" title=" " alt="" coords="253,99,462,140"/>
+<area shape="poly" title=" " alt="" coords="573,206,522,181,461,154,432,143,431,138,463,149,524,176,579,206"/>
+<area shape="rect" href="classapp_1_1_main_app.html#acbf781550cefac29e6c8ecbdd2b38904" title=" " alt="" coords="298,263,416,289"/>
+<area shape="poly" title=" " alt="" coords="527,244,418,267,416,262,531,242"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a9788978994366c880434d9cc05a21cb1" title=" " alt="" coords="293,164,422,190"/>
+<area shape="poly" title=" " alt="" coords="526,211,423,192,422,187,531,209"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834" title=" " alt="" coords="294,214,420,239"/>
+<area shape="poly" title=" " alt="" coords="492,227,422,229,420,224,497,225"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#aadd0b77dafd4c390cbdf367b9654aa6c" title=" " alt="" coords="5,99,205,140"/>
+<area shape="poly" title=" " alt="" coords="235,121,207,122,204,117,239,118"/>
+<area shape="poly" title=" " alt="" coords="545,73,442,101,439,96,549,70"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afba699a59966cda24b9998995a17c94d" title=" " alt="" coords="273,34,442,75"/>
+<area shape="poly" title=" " alt="" coords="505,56,443,57,441,52,510,53"/>
+<area shape="poly" title=" " alt="" coords="258,85,255,90,228,126,188,193,116,321,111,318,183,190,224,123,251,86,261,81"/>
+<area shape="poly" title=" " alt="" coords="1044,224,966,225,965,220,1049,223"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a71f8f6fb070d38d93606f081115edf69" title=" " alt="" coords="804,552,950,578"/>
+<area shape="poly" title=" " alt="" coords="1083,520,940,554,939,549,1078,521"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ab77fd01a8289a0c6016f8bc612157056" title=" " alt="" coords="793,487,961,528"/>
+<area shape="poly" title=" " alt="" coords="1079,467,962,493,961,488,1074,467"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ad805604b0d662e806bc73402d9fa82b6" title=" " alt="" coords="527,478,702,519"/>
+<area shape="poly" title=" " alt="" coords="1043,455,912,466,768,478,703,487,702,482,767,473,912,461,1048,455"/>
+<area shape="poly" title=" " alt="" coords="780,525,650,540,579,540,510,533,457,521,409,505,409,499,458,516,510,528,579,535,650,535,775,526"/>
+<area shape="poly" title=" " alt="" coords="775,504,703,504,703,499,780,504"/>
+<area shape="poly" title=" " alt="" coords="509,492,443,490,443,484,514,491"/>
+<area shape="poly" title=" " alt="" coords="1072,266,1034,260,986,248,940,237,940,232,987,243,1035,255,1077,266"/>
+<area shape="poly" title=" " alt="" coords="1581,497,1281,532,951,562,951,556,1281,526,1576,498"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4b5dc5dd91254df1efacc26898e26caf" name="a4b5dc5dd91254df1efacc26898e26caf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b5dc5dd91254df1efacc26898e26caf">&#9670;&#160;</a></span>resolveSqlitePath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Path repository.DatabaseConfig.resolveSqlitePath </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>configuredPath</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Path</td>          <td class="paramname"><span class="paramname"><em>defaultPath</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00284">284</a></p>
+
+<p class="reference">Используется в <a class="el" href="_database_config_8java_source.html#l00093">fromProperties()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrepository_1_1_database_config_a4b5dc5dd91254df1efacc26898e26caf_icgraph.png" border="0" usemap="#aclassrepository_1_1_database_config_a4b5dc5dd91254df1efacc26898e26caf_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassrepository_1_1_database_config_a4b5dc5dd91254df1efacc26898e26caf_icgraph" id="aclassrepository_1_1_database_config_a4b5dc5dd91254df1efacc26898e26caf_icgraph">
+<area shape="rect" title=" " alt="" coords="2609,438,2829,479"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a54be8ad7883587920d91f2ce979fa3b9" title=" " alt="" coords="2356,438,2561,479"/>
+<area shape="poly" title=" " alt="" coords="2590,459,2561,461,2561,456,2596,458"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a4e9d6c7f878e393a494f9c9fac13f0a9" title=" " alt="" coords="2106,446,2308,471"/>
+<area shape="poly" title=" " alt="" coords="2338,459,2309,461,2309,456,2344,458"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#ad56b237e4e259b99a77f8c2b5d9a49db" title=" " alt="" coords="1822,409,2058,449"/>
+<area shape="poly" title=" " alt="" coords="2088,446,2058,445,2058,439,2093,446"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a8b28f660a281f658db4382a70065381c" title=" " alt="" coords="1594,474,1764,499"/>
+<area shape="poly" title=" " alt="" coords="2088,465,1765,485,1764,479,2094,464"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#adff3d0488b1f5e07b737c8028fd61b38" title=" " alt="" coords="1584,365,1774,405"/>
+<area shape="poly" title=" " alt="" coords="1804,407,1774,404,1774,398,1809,407"/>
+<area shape="rect" href="classrepository_1_1_database_manager.html#a2035f400cd8f5f503ea6f961de54d4ff" title=" " alt="" coords="1329,291,1536,332"/>
+<area shape="poly" title=" " alt="" coords="1591,360,1504,335,1504,330,1597,360"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a3bbea8df14e34cb04dc17f62dba57cd9" title=" " alt="" coords="1064,90,1252,115"/>
+<area shape="poly" title=" " alt="" coords="1411,277,1389,244,1359,203,1322,163,1280,130,1252,117,1252,112,1282,126,1326,159,1363,199,1393,241,1416,279"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a34362d012dac2e981674eb3b74cc2004" title="Экспортирует задачи из базы данных в JSON." alt="" coords="1066,139,1250,180"/>
+<area shape="poly" title=" " alt="" coords="1397,280,1345,238,1280,195,1250,183,1251,178,1282,191,1348,233,1403,281"/>
+<area shape="rect" href="classutil_1_1_theme_manager.html#a2c5933297ff3dd3af83560dcfc759dc5" title=" " alt="" coords="779,373,975,413"/>
+<area shape="poly" title=" " alt="" coords="1378,338,1331,360,1282,374,1202,388,1121,396,976,399,975,394,1121,390,1201,383,1280,369,1329,355,1373,340"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a2cd3b65bd29af3b855f653a323e2b2f5" title=" " alt="" coords="1064,319,1252,360"/>
+<area shape="poly" title=" " alt="" coords="1311,324,1253,333,1252,328,1316,324"/>
+<area shape="rect" href="classutil_1_1_notification_settings.html#a10f7651faed4b44cf764ad6bd0542ced" title=" " alt="" coords="522,42,707,67"/>
+<area shape="poly" title=" " alt="" coords="1418,275,1399,230,1370,174,1331,121,1307,98,1280,79,1241,60,1201,44,1116,22,1029,11,943,8,861,13,786,22,669,44,667,39,785,16,860,8,943,3,1030,5,1117,17,1203,39,1243,55,1282,75,1310,94,1335,117,1375,172,1404,228,1423,278"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a462520e06be58bc2d42fe6bef64c68ff" title="Мигрирует задачи из JSON в базу данных" alt="" coords="1062,205,1254,245"/>
+<area shape="poly" title=" " alt="" coords="1361,285,1280,260,1243,249,1243,243,1282,255,1366,286"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a005cafe083c9e1fa557954fe33847f52" title=" " alt="" coords="1075,491,1241,517"/>
+<area shape="poly" title=" " alt="" coords="1413,344,1359,414,1323,449,1282,478,1242,495,1240,490,1280,473,1320,445,1355,410,1408,346"/>
+<area shape="rect" href="classutil_1_1_theme_manager.html#ae47e320d429579bb11e84414d318f641" title=" " alt="" coords="1061,438,1254,463"/>
+<area shape="poly" title=" " alt="" coords="1398,341,1344,382,1282,418,1222,440,1221,434,1280,413,1341,378,1393,343"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a11687638f060b50427b94a0778df07b8" title="Синхронизирует данные между JSON и БД" alt="" coords="1035,270,1281,295"/>
+<area shape="poly" title=" " alt="" coords="1311,299,1282,298,1281,293,1316,299"/>
+<area shape="rect" href="classutil_1_1_auth_service.html#a5255efccc63f594f7e83d14e5cf7e219" title=" " alt="" coords="784,90,970,115"/>
+<area shape="poly" title=" " alt="" coords="1045,103,971,105,970,100,1050,102"/>
+<area shape="rect" href="classutil_1_1_database_migrator.html#a703826c15e609176f3da25d6ce8f755d" title="Точка входа для запуска миграции из командной строки" alt="" coords="789,208,965,234"/>
+<area shape="poly" title=" " alt="" coords="1048,184,940,210,938,205,1053,182"/>
+<area shape="rect" href="classview_1_1_main_controller.html#acb8e00ddc7401d25f6975bd5118a6bee" title=" " alt="" coords="273,461,442,501"/>
+<area shape="poly" title=" " alt="" coords="761,413,443,469,442,464,766,411"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ab96d9e00350796e450dd564252136874" title=" " alt="" coords="530,313,699,353"/>
+<area shape="poly" title=" " alt="" coords="767,369,699,355,699,350,773,369"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a47878f33c1c0458f442d9b3f93bedf06" title=" " alt="" coords="551,378,678,403"/>
+<area shape="poly" title=" " alt="" coords="761,392,679,394,679,388,766,392"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ace0c2bdaa74f6158c7d2b1856fcb99fd" title=" " alt="" coords="13,320,197,346"/>
+<area shape="poly" title=" " alt="" coords="294,454,251,433,180,388,125,349,125,344,183,383,254,428,299,453"/>
+<area shape="rect" href="classview_1_1_main_controller.html#aa6adc26184a175f0ddf6030f0c24d046" title=" " alt="" coords="270,378,445,419"/>
+<area shape="poly" title=" " alt="" coords="515,359,441,380,439,375,520,357"/>
+<area shape="rect" href="classview_1_1_main_controller.html#a832ae34bcb138f8090bf8213f1f97de9" title=" " alt="" coords="273,313,442,353"/>
+<area shape="poly" title=" " alt="" coords="512,334,443,336,442,331,517,332"/>
+<area shape="poly" title=" " alt="" coords="255,334,199,336,197,331,260,332"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#aa8a86d1ff2433a9cf9d28018a67581ae" title=" " alt="" coords="785,307,969,348"/>
+<area shape="poly" title=" " alt="" coords="1045,335,969,334,969,329,1051,335"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c" title=" " alt="" coords="767,258,987,283"/>
+<area shape="poly" title=" " alt="" coords="1060,315,986,298,937,287,937,281,987,293,1065,315"/>
+<area shape="rect" href="classmodel_1_1_task_manager.html#a25e2f8d72d281275facbc0e9badb47ea" title=" " alt="" coords="510,214,719,239"/>
+<area shape="poly" title=" " alt="" coords="779,255,696,243,695,237,784,254"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#a7268b2ddd5e9c929a726d52ae7d93462" title=" " alt="" coords="253,99,462,140"/>
+<area shape="poly" title=" " alt="" coords="573,206,522,181,461,154,432,143,431,138,463,149,524,176,579,206"/>
+<area shape="rect" href="classapp_1_1_main_app.html#acbf781550cefac29e6c8ecbdd2b38904" title=" " alt="" coords="298,263,416,289"/>
+<area shape="poly" title=" " alt="" coords="527,244,418,267,416,262,531,242"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a9788978994366c880434d9cc05a21cb1" title=" " alt="" coords="293,164,422,190"/>
+<area shape="poly" title=" " alt="" coords="526,211,423,192,422,187,531,209"/>
+<area shape="rect" href="classapp_1_1_main_app.html#a81713cb9b4148cc9775e965fc14a1834" title=" " alt="" coords="294,214,420,239"/>
+<area shape="poly" title=" " alt="" coords="492,227,422,229,420,224,497,225"/>
+<area shape="rect" href="classutil_1_1_task_reminder_service.html#aadd0b77dafd4c390cbdf367b9654aa6c" title=" " alt="" coords="5,99,205,140"/>
+<area shape="poly" title=" " alt="" coords="235,121,207,122,204,117,239,118"/>
+<area shape="poly" title=" " alt="" coords="545,73,442,101,439,96,549,70"/>
+<area shape="rect" href="classview_1_1_main_controller.html#afba699a59966cda24b9998995a17c94d" title=" " alt="" coords="273,34,442,75"/>
+<area shape="poly" title=" " alt="" coords="505,56,443,57,441,52,510,53"/>
+<area shape="poly" title=" " alt="" coords="258,85,255,90,228,126,188,193,116,321,111,318,183,190,224,123,251,86,261,81"/>
+<area shape="poly" title=" " alt="" coords="1044,224,966,225,965,220,1049,223"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a71f8f6fb070d38d93606f081115edf69" title=" " alt="" coords="804,552,950,578"/>
+<area shape="poly" title=" " alt="" coords="1083,520,940,554,939,549,1078,521"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ab77fd01a8289a0c6016f8bc612157056" title=" " alt="" coords="793,487,961,528"/>
+<area shape="poly" title=" " alt="" coords="1079,467,962,493,961,488,1074,467"/>
+<area shape="rect" href="classview_1_1_main_controller.html#ad805604b0d662e806bc73402d9fa82b6" title=" " alt="" coords="527,478,702,519"/>
+<area shape="poly" title=" " alt="" coords="1043,455,912,466,768,478,703,487,702,482,767,473,912,461,1048,455"/>
+<area shape="poly" title=" " alt="" coords="780,525,650,540,579,540,510,533,457,521,409,505,409,499,458,516,510,528,579,535,650,535,775,526"/>
+<area shape="poly" title=" " alt="" coords="775,504,703,504,703,499,780,504"/>
+<area shape="poly" title=" " alt="" coords="509,492,443,490,443,484,514,491"/>
+<area shape="poly" title=" " alt="" coords="1072,266,1034,260,986,248,940,237,940,232,987,243,1035,255,1077,266"/>
+<area shape="poly" title=" " alt="" coords="1581,497,1281,532,951,562,951,556,1281,526,1576,498"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0ad03838a65cc0d81aa5744e49445ef1" name="a0ad03838a65cc0d81aa5744e49445ef1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ad03838a65cc0d81aa5744e49445ef1">&#9670;&#160;</a></span>validate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void repository.DatabaseConfig.validate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00124">124</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_database_config_8java_source.html#l00030">configFile</a>, <a class="el" href="_database_config_8java_source.html#l00034">databaseName</a>, <a class="el" href="_database_config_8java_source.html#l00192">getDriverClass()</a>, <a class="el" href="_database_config_8java_source.html#l00032">host</a>, <a class="el" href="_database_config_8java_source.html#l00037">jdbcUrl</a>, <a class="el" href="_database_config_8java_source.html#l00031">sqlitePath</a>, <a class="el" href="_database_config_8java_source.html#l00029">type</a> и <a class="el" href="_database_config_8java_source.html#l00035">username</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_database_cli_8java_source.html#l00063">util.DatabaseCli.runProbe()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrepository_1_1_database_config_a0ad03838a65cc0d81aa5744e49445ef1_cgraph.png" border="0" usemap="#aclassrepository_1_1_database_config_a0ad03838a65cc0d81aa5744e49445ef1_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassrepository_1_1_database_config_a0ad03838a65cc0d81aa5744e49445ef1_cgraph" id="aclassrepository_1_1_database_config_a0ad03838a65cc0d81aa5744e49445ef1_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,229,38"/>
+<area shape="rect" href="classrepository_1_1_database_config.html#a6f6ee0a0b912b6063df56dc7c84cd547" title=" " alt="" coords="277,5,473,46"/>
+<area shape="poly" title=" " alt="" coords="229,23,263,26,258,26,229,28"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrepository_1_1_database_config_a0ad03838a65cc0d81aa5744e49445ef1_icgraph.png" border="0" usemap="#aclassrepository_1_1_database_config_a0ad03838a65cc0d81aa5744e49445ef1_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassrepository_1_1_database_config_a0ad03838a65cc0d81aa5744e49445ef1_icgraph" id="aclassrepository_1_1_database_config_a0ad03838a65cc0d81aa5744e49445ef1_icgraph">
+<area shape="rect" title=" " alt="" coords="418,5,641,31"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a8b28f660a281f658db4382a70065381c" title=" " alt="" coords="200,5,370,31"/>
+<area shape="poly" title=" " alt="" coords="400,18,370,21,370,16,405,18"/>
+<area shape="rect" href="classutil_1_1_database_cli.html#a71f8f6fb070d38d93606f081115edf69" title=" " alt="" coords="5,5,152,31"/>
+<area shape="poly" title=" " alt="" coords="182,18,152,21,152,16,187,18"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="a556fb7c180de431475f12b3623efa4e5" name="a556fb7c180de431475f12b3623efa4e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a556fb7c180de431475f12b3623efa4e5">&#9670;&#160;</a></span>configFile</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final Path repository.DatabaseConfig.configFile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00030">30</a></p>
+
+<p class="reference">Используется в <a class="el" href="_database_config_8java_source.html#l00041">DatabaseConfig()</a>, <a class="el" href="_database_config_8java_source.html#l00093">fromProperties()</a>, <a class="el" href="_database_config_8java_source.html#l00212">getConfigFile()</a>, <a class="el" href="_database_config_8java_source.html#l00067">load()</a> и <a class="el" href="_database_config_8java_source.html#l00124">validate()</a>.</p>
+
+</div>
+</div>
+<a id="aaaf20009709c64cc5bdf4d91d65d76b6" name="aaaf20009709c64cc5bdf4d91d65d76b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaf20009709c64cc5bdf4d91d65d76b6">&#9670;&#160;</a></span>databaseName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String repository.DatabaseConfig.databaseName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00034">34</a></p>
+
+<p class="reference">Используется в <a class="el" href="_database_config_8java_source.html#l00041">DatabaseConfig()</a>, <a class="el" href="_database_config_8java_source.html#l00200">describe()</a>, <a class="el" href="_database_config_8java_source.html#l00093">fromProperties()</a>, <a class="el" href="_database_config_8java_source.html#l00228">getDatabaseName()</a>, <a class="el" href="_database_config_8java_source.html#l00173">getJdbcUrl()</a> и <a class="el" href="_database_config_8java_source.html#l00124">validate()</a>.</p>
+
+</div>
+</div>
+<a id="a87b5809c5e333307cca3810a1b65f158" name="a87b5809c5e333307cca3810a1b65f158"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87b5809c5e333307cca3810a1b65f158">&#9670;&#160;</a></span>driverClass</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String repository.DatabaseConfig.driverClass</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00038">38</a></p>
+
+<p class="reference">Используется в <a class="el" href="_database_config_8java_source.html#l00041">DatabaseConfig()</a>, <a class="el" href="_database_config_8java_source.html#l00093">fromProperties()</a> и <a class="el" href="_database_config_8java_source.html#l00192">getDriverClass()</a>.</p>
+
+</div>
+</div>
+<a id="a0b91d1ea345d6c04fa6956514e1e5611" name="a0b91d1ea345d6c04fa6956514e1e5611"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b91d1ea345d6c04fa6956514e1e5611">&#9670;&#160;</a></span>host</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String repository.DatabaseConfig.host</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00032">32</a></p>
+
+<p class="reference">Используется в <a class="el" href="_database_config_8java_source.html#l00041">DatabaseConfig()</a>, <a class="el" href="_database_config_8java_source.html#l00200">describe()</a>, <a class="el" href="_database_config_8java_source.html#l00093">fromProperties()</a>, <a class="el" href="_database_config_8java_source.html#l00220">getHost()</a>, <a class="el" href="_database_config_8java_source.html#l00173">getJdbcUrl()</a> и <a class="el" href="_database_config_8java_source.html#l00124">validate()</a>.</p>
+
+</div>
+</div>
+<a id="a697990acd2d137850ccb6dd22562d8a9" name="a697990acd2d137850ccb6dd22562d8a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a697990acd2d137850ccb6dd22562d8a9">&#9670;&#160;</a></span>jdbcUrl</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String repository.DatabaseConfig.jdbcUrl</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00037">37</a></p>
+
+<p class="reference">Используется в <a class="el" href="_database_config_8java_source.html#l00041">DatabaseConfig()</a>, <a class="el" href="_database_config_8java_source.html#l00200">describe()</a>, <a class="el" href="_database_config_8java_source.html#l00093">fromProperties()</a>, <a class="el" href="_database_config_8java_source.html#l00173">getJdbcUrl()</a> и <a class="el" href="_database_config_8java_source.html#l00124">validate()</a>.</p>
+
+</div>
+</div>
+<a id="ac61557a53ef53513ceceeebe3153fe10" name="ac61557a53ef53513ceceeebe3153fe10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac61557a53ef53513ceceeebe3153fe10">&#9670;&#160;</a></span>password</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String repository.DatabaseConfig.password</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00036">36</a></p>
+
+<p class="reference">Используется в <a class="el" href="_database_config_8java_source.html#l00041">DatabaseConfig()</a>, <a class="el" href="_database_config_8java_source.html#l00093">fromProperties()</a>, <a class="el" href="_database_config_8java_source.html#l00162">getConnectionProperties()</a> и <a class="el" href="_database_config_8java_source.html#l00236">getPassword()</a>.</p>
+
+</div>
+</div>
+<a id="a04096b42ef429a4a507b2a1239a883cf" name="a04096b42ef429a4a507b2a1239a883cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04096b42ef429a4a507b2a1239a883cf">&#9670;&#160;</a></span>port</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final int repository.DatabaseConfig.port</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00033">33</a></p>
+
+<p class="reference">Используется в <a class="el" href="_database_config_8java_source.html#l00041">DatabaseConfig()</a>, <a class="el" href="_database_config_8java_source.html#l00200">describe()</a>, <a class="el" href="_database_config_8java_source.html#l00093">fromProperties()</a>, <a class="el" href="_database_config_8java_source.html#l00173">getJdbcUrl()</a> и <a class="el" href="_database_config_8java_source.html#l00224">getPort()</a>.</p>
+
+</div>
+</div>
+<a id="a15fbaa9c00c0531fd484dcaed55bf481" name="a15fbaa9c00c0531fd484dcaed55bf481"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15fbaa9c00c0531fd484dcaed55bf481">&#9670;&#160;</a></span>POSTGRES_DRIVER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String repository.DatabaseConfig.POSTGRES_DRIVER = &quot;org.postgresql.Driver&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00027">27</a></p>
+
+<p class="reference">Используется в <a class="el" href="_database_config_8java_source.html#l00192">getDriverClass()</a>.</p>
+
+</div>
+</div>
+<a id="a26b491886042cb28b36c593685971fad" name="a26b491886042cb28b36c593685971fad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26b491886042cb28b36c593685971fad">&#9670;&#160;</a></span>SQLITE_DRIVER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String repository.DatabaseConfig.SQLITE_DRIVER = &quot;org.sqlite.JDBC&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00026">26</a></p>
+
+<p class="reference">Используется в <a class="el" href="_database_config_8java_source.html#l00192">getDriverClass()</a>.</p>
+
+</div>
+</div>
+<a id="a99dc880412bf37e410a8e7fae965ae7c" name="a99dc880412bf37e410a8e7fae965ae7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99dc880412bf37e410a8e7fae965ae7c">&#9670;&#160;</a></span>sqlitePath</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final Path repository.DatabaseConfig.sqlitePath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00031">31</a></p>
+
+<p class="reference">Используется в <a class="el" href="_database_config_8java_source.html#l00041">DatabaseConfig()</a>, <a class="el" href="_database_config_8java_source.html#l00200">describe()</a>, <a class="el" href="_database_config_8java_source.html#l00093">fromProperties()</a>, <a class="el" href="_database_config_8java_source.html#l00173">getJdbcUrl()</a>, <a class="el" href="_database_config_8java_source.html#l00216">getSqlitePath()</a> и <a class="el" href="_database_config_8java_source.html#l00124">validate()</a>.</p>
+
+</div>
+</div>
+<a id="a070b891be3ea22e197e203dacb41b50e" name="a070b891be3ea22e197e203dacb41b50e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a070b891be3ea22e197e203dacb41b50e">&#9670;&#160;</a></span>sslMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String repository.DatabaseConfig.sslMode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00039">39</a></p>
+
+<p class="reference">Используется в <a class="el" href="_database_config_8java_source.html#l00041">DatabaseConfig()</a>, <a class="el" href="_database_config_8java_source.html#l00200">describe()</a>, <a class="el" href="_database_config_8java_source.html#l00093">fromProperties()</a>, <a class="el" href="_database_config_8java_source.html#l00173">getJdbcUrl()</a> и <a class="el" href="_database_config_8java_source.html#l00240">getSslMode()</a>.</p>
+
+</div>
+</div>
+<a id="a3689fd115d888fba100900aedcdac987" name="a3689fd115d888fba100900aedcdac987"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3689fd115d888fba100900aedcdac987">&#9670;&#160;</a></span>type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="enumrepository_1_1_database_config_1_1_type.html">Type</a> repository.DatabaseConfig.type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00029">29</a></p>
+
+<p class="reference">Используется в <a class="el" href="_database_config_8java_source.html#l00041">DatabaseConfig()</a>, <a class="el" href="_database_config_8java_source.html#l00200">describe()</a>, <a class="el" href="_database_config_8java_source.html#l00093">fromProperties()</a>, <a class="el" href="_database_config_8java_source.html#l00192">getDriverClass()</a>, <a class="el" href="_database_config_8java_source.html#l00173">getJdbcUrl()</a>, <a class="el" href="_database_config_8java_source.html#l00208">getType()</a>, <a class="el" href="_database_config_8java_source.html#l00252">isCustom()</a>, <a class="el" href="_database_config_8java_source.html#l00248">isPostgresql()</a>, <a class="el" href="_database_config_8java_source.html#l00244">isSqlite()</a> и <a class="el" href="_database_config_8java_source.html#l00124">validate()</a>.</p>
+
+</div>
+</div>
+<a id="a33a522128bc8b400395422b23443c39c" name="a33a522128bc8b400395422b23443c39c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33a522128bc8b400395422b23443c39c">&#9670;&#160;</a></span>username</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String repository.DatabaseConfig.username</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a> строка <a class="el" href="_database_config_8java_source.html#l00035">35</a></p>
+
+<p class="reference">Используется в <a class="el" href="_database_config_8java_source.html#l00041">DatabaseConfig()</a>, <a class="el" href="_database_config_8java_source.html#l00093">fromProperties()</a>, <a class="el" href="_database_config_8java_source.html#l00162">getConnectionProperties()</a>, <a class="el" href="_database_config_8java_source.html#l00232">getUsername()</a> и <a class="el" href="_database_config_8java_source.html#l00124">validate()</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>src/repository/<a class="el" href="_database_config_8java_source.html">DatabaseConfig.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacerepository.html">repository</a></li><li class="navelem"><a href="classrepository_1_1_database_config.html">DatabaseConfig</a></li>
+    <li class="footer">Документация по Умный планировщик задач (To-Do List). Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

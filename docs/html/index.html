@@ -94,30 +94,35 @@ $(function(){initNavTree('index.html','',''); });
 <div class="contents">
 <div class="textblock"><h1 class="doxsection"><a class="anchor" id="intro_sec"></a>
 О проекте</h1>
-<p>Десктопное JavaFX-приложение для управления задачами с SQLite-хранилищем, системными уведомлениями, календарём и фоновой музыкой.</p>
+<p>Десктопное JavaFX-приложение для управления задачами с локальным SQLite и серверным PostgreSQL, пользовательскими аккаунтами, системными уведомлениями, большим календарём и фоновой музыкой.</p>
 <h1 class="doxsection"><a class="anchor" id="architecture_sec"></a>
 Архитектура</h1>
 <ul>
 <li>app: запуск JavaFX приложения</li>
 <li>view/viewmodel: UI и представление данных</li>
 <li>model: сущности и бизнес-логика</li>
-<li>repository: доступ к SQLite</li>
-<li>util: JSON, аудио, уведомления, напоминания, темы</li>
+<li>repository: доступ к SQLite/PostgreSQL и миграции схемы</li>
+<li>util: JSON, аудио, уведомления, напоминания, темы, CLI-утилиты</li>
 </ul>
 <h1 class="doxsection"><a class="anchor" id="db_sec"></a>
 База данных</h1>
-<p>Используется SQLite с 5+ таблицами. Подробности: <a class="el" href="database_schema_page.html">Схема Базы Данных</a></p>
+<p>Поддерживаются SQLite и PostgreSQL. Подробности: <a class="el" href="database_schema_page.html">Схема Базы Данных</a></p>
 <h1 class="doxsection"><a class="anchor" id="features_sec"></a>
 Ключевые возможности</h1>
 <ul>
 <li>CRUD задач, фильтрация, сортировка и ручной порядок</li>
+<li>Авторизация по логину/email и парольному хешу</li>
+<li>Разделение задач по пользователям</li>
+<li>Восстановление доступа по email-коду</li>
 <li>Редактирование задач на месте и контекстные действия</li>
 <li>Системные уведомления о старте/просрочке задач</li>
-<li>Календарь + экспорт в .ics</li>
+<li>Большой месячный календарь + список задач на день + экспорт в .ics</li>
 <li>Темы (Summer/Dark/Ocean/Custom)</li>
 <li>Циклический плейлист из папки /audio</li>
 <li>Функция "Фокус дня" (топ-3 приоритетных задачи)</li>
-<li>Кроссплатформенные скрипты setup/run/package </li>
+<li>Кроссплатформенные скрипты setup/run/package</li>
+<li>Скрипты <span class="tt">test_db_connection.sh</span> и <span class="tt">fill_tasks.sh</span> для проверки БД и генерации данных</li>
+<li>Отдельный план мобильного переноса: <span class="tt">phone.md</span> </li>
 </ul>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>

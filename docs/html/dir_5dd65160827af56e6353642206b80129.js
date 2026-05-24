@@ -4,5 +4,6 @@ var dir_5dd65160827af56e6353642206b80129 =
     [ "Priority.java", "_priority_8java.html", "_priority_8java" ],
     [ "Tag.java", "_tag_8java.html", "_tag_8java" ],
     [ "Task.java", "_task_8java.html", "_task_8java" ],
-    [ "TaskManager.java", "_task_manager_8java.html", "_task_manager_8java" ]
+    [ "TaskManager.java", "_task_manager_8java.html", "_task_manager_8java" ],
+    [ "User.java", "_user_8java.html", "_user_8java" ]
 ];

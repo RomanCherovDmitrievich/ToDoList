@@ -1,0 +1,2087 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Report - ToDo List</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --bg: #f5efe6;
+            --panel: rgba(255, 255, 255, 0.88);
+            --panel-strong: #fffdf8;
+            --text: #1f2933;
+            --muted: #5b6877;
+            --line: rgba(31, 41, 51, 0.12);
+            --accent: #0f766e;
+            --accent-2: #f97316;
+            --passed-bg: #dcfce7;
+            --passed-text: #166534;
+            --failed-bg: #fee2e2;
+            --failed-text: #991b1b;
+            --skipped-bg: #fef3c7;
+            --skipped-text: #92400e;
+            --shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: "Segoe UI", "SF Pro Display", Arial, sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(15, 118, 110, 0.12), transparent 28%),
+                radial-gradient(circle at top right, rgba(249, 115, 22, 0.16), transparent 24%),
+                linear-gradient(180deg, #f7f2e9 0%, #f5efe6 48%, #f2ece4 100%);
+        }
+        .page {
+            max-width: 1360px;
+            margin: 0 auto;
+            padding: 32px 24px 40px;
+        }
+        .hero {
+            background: linear-gradient(135deg, rgba(15, 118, 110, 0.96), rgba(8, 145, 178, 0.9));
+            color: white;
+            border-radius: 28px;
+            padding: 32px;
+            box-shadow: var(--shadow);
+        }
+        .hero h1 {
+            margin: 0 0 8px;
+            font-size: clamp(28px, 4vw, 42px);
+        }
+        .hero p {
+            margin: 0;
+            max-width: 760px;
+            color: rgba(255, 255, 255, 0.88);
+            line-height: 1.5;
+        }
+        .hero-meta {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 18px;
+        }
+        .meta-chip {
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.16);
+            backdrop-filter: blur(10px);
+            font-size: 14px;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .card {
+            background: var(--panel);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.55);
+            border-radius: 22px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+        }
+        .card strong {
+            display: block;
+            color: var(--muted);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        .card .value {
+            margin-top: 10px;
+            font-size: 34px;
+            font-weight: 700;
+        }
+        .success-ring {
+            height: 10px;
+            margin-top: 16px;
+            border-radius: 999px;
+            background: rgba(15, 118, 110, 0.12);
+            overflow: hidden;
+        }
+        .success-ring span {
+            display: block;
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), #14b8a6);
+            border-radius: inherit;
+        }
+        .section {
+            margin-top: 24px;
+        }
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: end;
+            margin-bottom: 12px;
+        }
+        .section-header h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .section-header p {
+            margin: 6px 0 0;
+            color: var(--muted);
+        }
+        .issues-grid, .suite-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .issue-card, .suite-card {
+            background: var(--panel);
+            border: 1px solid rgba(255,255,255,0.55);
+            border-radius: 22px;
+            padding: 18px;
+            box-shadow: var(--shadow);
+        }
+        .issue-card.failed, .issue-card.error {
+            border-color: rgba(239, 68, 68, 0.24);
+        }
+        .issue-head {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: center;
+        }
+        .issue-card h3, .suite-card h3 {
+            margin: 14px 0 6px;
+            font-size: 18px;
+        }
+        .issue-suite {
+            margin: 0 0 12px;
+            color: var(--muted);
+        }
+        .suite-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: var(--muted);
+        }
+        .toolbar {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+            margin: 12px 0 16px;
+        }
+        .search {
+            flex: 1 1 260px;
+            min-width: 240px;
+            padding: 12px 14px;
+            border-radius: 14px;
+            border: 1px solid var(--line);
+            background: rgba(255,255,255,0.84);
+            font: inherit;
+        }
+        .filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            border: 0;
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.06);
+            color: var(--text);
+            cursor: pointer;
+            font: inherit;
+        }
+        .filter-btn.active {
+            background: var(--accent);
+            color: white;
+        }
+        .table-wrap {
+            overflow: auto;
+            background: var(--panel-strong);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255,255,255,0.55);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--line);
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            position: sticky;
+            top: 0;
+            background: rgba(250, 248, 244, 0.96);
+            z-index: 1;
+        }
+        .test-name {
+            font-weight: 700;
+        }
+        .test-suite {
+            margin-top: 4px;
+            font-size: 13px;
+            color: var(--muted);
+        }
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 13px;
+        }
+        .passed { background: var(--passed-bg); color: var(--passed-text); }
+        .failed, .error { background: var(--failed-bg); color: var(--failed-text); }
+        .skipped { background: var(--skipped-bg); color: var(--skipped-text); }
+        pre {
+            white-space: pre-wrap;
+            margin: 0;
+            font: 12px/1.5 "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            color: #0f172a;
+        }
+        details.logs {
+            margin-top: 24px;
+            background: var(--panel);
+            border-radius: 22px;
+            padding: 18px 20px;
+            box-shadow: var(--shadow);
+        }
+        details summary {
+            cursor: pointer;
+            font-weight: 700;
+        }
+        .hidden {
+            display: none;
+        }
+        @media (max-width: 780px) {
+            .page { padding: 20px 14px 30px; }
+            .hero { padding: 24px 20px; }
+            th, td { padding: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <section class="hero">
+            <h1>Отчет по тестам ToDoList</h1>
+            <p>Наглядная сводка по последнему прогону: общая стабильность, проблемные сценарии, детализация по тестовым классам и полный лог запуска в одном HTML-файле.</p>
+            <div class="hero-meta">
+                <span class="meta-chip">Сформирован: 2026-04-15 18:06:17</span>
+                <span class="meta-chip">Тестов: 135</span>
+                <span class="meta-chip">Успешность: 100%</span>
+                <span class="meta-chip">Время: 0,841 s</span>
+            </div>
+        </section>
+
+        <section class="stats">
+            <article class="card">
+                <strong>Всего тестов</strong>
+                <div class="value">135</div>
+            </article>
+            <article class="card">
+                <strong>Успешно</strong>
+                <div class="value">135</div>
+            </article>
+            <article class="card">
+                <strong>Ошибки</strong>
+                <div class="value">0</div>
+            </article>
+            <article class="card">
+                <strong>Пропущено</strong>
+                <div class="value">0</div>
+            </article>
+            <article class="card">
+                <strong>Успешность</strong>
+                <div class="value">100%</div>
+                <div class="success-ring"><span style="width:100%"></span></div>
+            </article>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div>
+                    <h2>Проблемные тесты</h2>
+                    <p>Сначала показываются сбои и пропуски, чтобы разработчик сразу видел, что требует внимания.</p>
+                </div>
+            </div>
+            <div class="issues-grid">
+                <article class="issue-card passed">
+    <div class="issue-head">
+        <span class="status-pill passed">PASSED</span>
+    </div>
+    <h3>Все тесты завершились успешно</h3>
+    <p class="issue-suite">Проблемных сценариев в этой сборке не найдено.</p>
+</article>
+
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div>
+                    <h2>Сводка по классам</h2>
+                    <p>Быстрый обзор того, какие наборы тестов прошли стабильно, а какие дали сбой.</p>
+                </div>
+            </div>
+            <div class="suite-grid">
+                <article class="suite-card">
+    <h3>gui.MainViewStructureTest</h3>
+    <div class="suite-stats">
+        <span>Всего: 1</span>
+        <span>OK: 1</span>
+        <span>Ошибки: 0</span>
+        <span>Пропуски: 0</span>
+        <span>Время: 0,022 s</span>
+    </div>
+</article>
+<article class="suite-card">
+    <h3>gui.NewTaskDialogGuiTest</h3>
+    <div class="suite-stats">
+        <span>Всего: 2</span>
+        <span>OK: 2</span>
+        <span>Ошибки: 0</span>
+        <span>Пропуски: 0</span>
+        <span>Время: 0,003 s</span>
+    </div>
+</article>
+<article class="suite-card">
+    <h3>integration.JsonIntegrationTest</h3>
+    <div class="suite-stats">
+        <span>Всего: 9</span>
+        <span>OK: 9</span>
+        <span>Ошибки: 0</span>
+        <span>Пропуски: 0</span>
+        <span>Время: 0,017 s</span>
+    </div>
+</article>
+<article class="suite-card">
+    <h3>unit.model.CategoryTest</h3>
+    <div class="suite-stats">
+        <span>Всего: 25</span>
+        <span>OK: 25</span>
+        <span>Ошибки: 0</span>
+        <span>Пропуски: 0</span>
+        <span>Время: 0,000 s</span>
+    </div>
+</article>
+<article class="suite-card">
+    <h3>unit.model.PriorityTest</h3>
+    <div class="suite-stats">
+        <span>Всего: 23</span>
+        <span>OK: 23</span>
+        <span>Ошибки: 0</span>
+        <span>Пропуски: 0</span>
+        <span>Время: 0,000 s</span>
+    </div>
+</article>
+<article class="suite-card">
+    <h3>unit.model.TaskManagerTest</h3>
+    <div class="suite-stats">
+        <span>Всего: 18</span>
+        <span>OK: 18</span>
+        <span>Ошибки: 0</span>
+        <span>Пропуски: 0</span>
+        <span>Время: 0,318 s</span>
+    </div>
+</article>
+<article class="suite-card">
+    <h3>unit.model.TaskTest</h3>
+    <div class="suite-stats">
+        <span>Всего: 15</span>
+        <span>OK: 15</span>
+        <span>Ошибки: 0</span>
+        <span>Пропуски: 0</span>
+        <span>Время: 0,006 s</span>
+    </div>
+</article>
+<article class="suite-card">
+    <h3>unit.repository.DatabaseConfigTest</h3>
+    <div class="suite-stats">
+        <span>Всего: 3</span>
+        <span>OK: 3</span>
+        <span>Ошибки: 0</span>
+        <span>Пропуски: 0</span>
+        <span>Время: 0,000 s</span>
+    </div>
+</article>
+<article class="suite-card">
+    <h3>unit.util.AudioManagerTest</h3>
+    <div class="suite-stats">
+        <span>Всего: 11</span>
+        <span>OK: 11</span>
+        <span>Ошибки: 0</span>
+        <span>Пропуски: 0</span>
+        <span>Время: 0,002 s</span>
+    </div>
+</article>
+<article class="suite-card">
+    <h3>unit.util.AuthServiceTest</h3>
+    <div class="suite-stats">
+        <span>Всего: 2</span>
+        <span>OK: 2</span>
+        <span>Ошибки: 0</span>
+        <span>Пропуски: 0</span>
+        <span>Время: 0,158 s</span>
+    </div>
+</article>
+<article class="suite-card">
+    <h3>unit.util.EmailConfigTest</h3>
+    <div class="suite-stats">
+        <span>Всего: 1</span>
+        <span>OK: 1</span>
+        <span>Ошибки: 0</span>
+        <span>Пропуски: 0</span>
+        <span>Время: 0,000 s</span>
+    </div>
+</article>
+<article class="suite-card">
+    <h3>unit.util.EmailNotifierTest</h3>
+    <div class="suite-stats">
+        <span>Всего: 3</span>
+        <span>OK: 3</span>
+        <span>Ошибки: 0</span>
+        <span>Пропуски: 0</span>
+        <span>Время: 0,001 s</span>
+    </div>
+</article>
+<article class="suite-card">
+    <h3>unit.util.PasswordUtilTest</h3>
+    <div class="suite-stats">
+        <span>Всего: 2</span>
+        <span>OK: 2</span>
+        <span>Ошибки: 0</span>
+        <span>Пропуски: 0</span>
+        <span>Время: 0,287 s</span>
+    </div>
+</article>
+<article class="suite-card">
+    <h3>unit.viewmodel.TaskViewModelTest</h3>
+    <div class="suite-stats">
+        <span>Всего: 14</span>
+        <span>OK: 14</span>
+        <span>Ошибки: 0</span>
+        <span>Пропуски: 0</span>
+        <span>Время: 0,004 s</span>
+    </div>
+</article>
+<article class="suite-card">
+    <h3>util.JsonUtilTest</h3>
+    <div class="suite-stats">
+        <span>Всего: 6</span>
+        <span>OK: 6</span>
+        <span>Ошибки: 0</span>
+        <span>Пропуски: 0</span>
+        <span>Время: 0,023 s</span>
+    </div>
+</article>
+
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div>
+                    <h2>Все тесты</h2>
+                    <p>Таблица поддерживает быстрый поиск и фильтрацию по статусу прямо в браузере.</p>
+                </div>
+            </div>
+            <div class="toolbar">
+                <input id="search" class="search" type="search" placeholder="Поиск по имени теста, классу или тексту ошибки">
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">Все</button>
+                    <button class="filter-btn" data-filter="passed">PASSED</button>
+                    <button class="filter-btn" data-filter="failed">FAILED</button>
+                    <button class="filter-btn" data-filter="error">ERROR</button>
+                    <button class="filter-btn" data-filter="skipped">SKIPPED</button>
+                </div>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Тест</th>
+                            <th>Описание</th>
+                            <th>Результат</th>
+                            <th>Время, с</th>
+                            <th>Причина ошибки</th>
+                        </tr>
+                    </thead>
+                    <tbody id="test-table-body">
+                        <tr data-status="passed" data-search="gui.mainviewstructuretest testcalendartabcontainsexpectedcontrols() ">
+    <td>
+        <div class="test-name">testCalendarTabContainsExpectedControls()</div>
+        <div class="test-suite">gui.MainViewStructureTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.022</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="gui.newtaskdialogguitest testdialogbuttonshaveexpectedactions() ">
+    <td>
+        <div class="test-name">testDialogButtonsHaveExpectedActions()</div>
+        <div class="test-suite">gui.NewTaskDialogGuiTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.001</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="gui.newtaskdialogguitest testdialogcontainscorecontrols() ">
+    <td>
+        <div class="test-name">testDialogContainsCoreControls()</div>
+        <div class="test-suite">gui.NewTaskDialogGuiTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.002</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="integration.jsonintegrationtest testaddtasktoexistingfile() ">
+    <td>
+        <div class="test-name">testAddTaskToExistingFile()</div>
+        <div class="test-suite">integration.JsonIntegrationTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.002</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="integration.jsonintegrationtest testdataintegrityaftermultipleoperations() ">
+    <td>
+        <div class="test-name">testDataIntegrityAfterMultipleOperations()</div>
+        <div class="test-suite">integration.JsonIntegrationTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.005</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="integration.jsonintegrationtest testdateformatinjson() ">
+    <td>
+        <div class="test-name">testDateFormatInJson()</div>
+        <div class="test-suite">integration.JsonIntegrationTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.001</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="integration.jsonintegrationtest testfullsaveloadcycle() ">
+    <td>
+        <div class="test-name">testFullSaveLoadCycle()</div>
+        <div class="test-suite">integration.JsonIntegrationTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.002</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="integration.jsonintegrationtest testloadfrominvalidjsonfile() ">
+    <td>
+        <div class="test-name">testLoadFromInvalidJsonFile()</div>
+        <div class="test-suite">integration.JsonIntegrationTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.001</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="integration.jsonintegrationtest testloadfromnonexistentfile() ">
+    <td>
+        <div class="test-name">testLoadFromNonExistentFile()</div>
+        <div class="test-suite">integration.JsonIntegrationTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="integration.jsonintegrationtest testremovetaskfromfile() ">
+    <td>
+        <div class="test-name">testRemoveTaskFromFile()</div>
+        <div class="test-suite">integration.JsonIntegrationTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.005</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="integration.jsonintegrationtest testsaveemptylist() ">
+    <td>
+        <div class="test-name">testSaveEmptyList()</div>
+        <div class="test-suite">integration.JsonIntegrationTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="integration.jsonintegrationtest testupdatetaskinfile() ">
+    <td>
+        <div class="test-name">testUpdateTaskInFile()</div>
+        <div class="test-suite">integration.JsonIntegrationTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.001</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.categorytest testallvaluesexist() ">
+    <td>
+        <div class="test-name">testAllValuesExist()</div>
+        <div class="test-suite">unit.model.CategoryTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.categorytest testcategorycomparison() ">
+    <td>
+        <div class="test-name">testCategoryComparison()</div>
+        <div class="test-suite">unit.model.CategoryTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.categorytest testdisplaynameuniqueness() ">
+    <td>
+        <div class="test-name">testDisplayNameUniqueness()</div>
+        <div class="test-suite">unit.model.CategoryTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.categorytest testfromdisplaynameinvalid(string)[1] ">
+    <td>
+        <div class="test-name">testFromDisplayNameInvalid(String)[1]</div>
+        <div class="test-suite">unit.model.CategoryTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.categorytest testfromdisplaynameinvalid(string)[2] ">
+    <td>
+        <div class="test-name">testFromDisplayNameInvalid(String)[2]</div>
+        <div class="test-suite">unit.model.CategoryTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.categorytest testfromdisplaynameinvalid(string)[3] ">
+    <td>
+        <div class="test-name">testFromDisplayNameInvalid(String)[3]</div>
+        <div class="test-suite">unit.model.CategoryTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.categorytest testfromdisplaynameinvalid(string)[4] ">
+    <td>
+        <div class="test-name">testFromDisplayNameInvalid(String)[4]</div>
+        <div class="test-suite">unit.model.CategoryTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.categorytest testfromdisplaynameinvalid(string)[5] ">
+    <td>
+        <div class="test-name">testFromDisplayNameInvalid(String)[5]</div>
+        <div class="test-suite">unit.model.CategoryTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.categorytest testfromdisplaynamevalid(string)[1] ">
+    <td>
+        <div class="test-name">testFromDisplayNameValid(String)[1]</div>
+        <div class="test-suite">unit.model.CategoryTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.categorytest testfromdisplaynamevalid(string)[2] ">
+    <td>
+        <div class="test-name">testFromDisplayNameValid(String)[2]</div>
+        <div class="test-suite">unit.model.CategoryTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.categorytest testfromdisplaynamevalid(string)[3] ">
+    <td>
+        <div class="test-name">testFromDisplayNameValid(String)[3]</div>
+        <div class="test-suite">unit.model.CategoryTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.categorytest testfromdisplaynamevalid(string)[4] ">
+    <td>
+        <div class="test-name">testFromDisplayNameValid(String)[4]</div>
+        <div class="test-suite">unit.model.CategoryTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.categorytest testfromdisplaynamevalid(string)[5] ">
+    <td>
+        <div class="test-name">testFromDisplayNameValid(String)[5]</div>
+        <div class="test-suite">unit.model.CategoryTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.categorytest testfromdisplaynamevalid(string)[6] ">
+    <td>
+        <div class="test-name">testFromDisplayNameValid(String)[6]</div>
+        <div class="test-suite">unit.model.CategoryTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.categorytest testfromdisplaynamevalid(string)[7] ">
+    <td>
+        <div class="test-name">testFromDisplayNameValid(String)[7]</div>
+        <div class="test-suite">unit.model.CategoryTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.categorytest testfromdisplaynamevalid(string)[8] ">
+    <td>
+        <div class="test-name">testFromDisplayNameValid(String)[8]</div>
+        <div class="test-suite">unit.model.CategoryTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.categorytest testfromdisplaynamevalid(string)[9] ">
+    <td>
+        <div class="test-name">testFromDisplayNameValid(String)[9]</div>
+        <div class="test-suite">unit.model.CategoryTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.categorytest testgetcolor(category)[1] ">
+    <td>
+        <div class="test-name">testGetColor(Category)[1]</div>
+        <div class="test-suite">unit.model.CategoryTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.categorytest testgetcolor(category)[2] ">
+    <td>
+        <div class="test-name">testGetColor(Category)[2]</div>
+        <div class="test-suite">unit.model.CategoryTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.categorytest testgetcolor(category)[3] ">
+    <td>
+        <div class="test-name">testGetColor(Category)[3]</div>
+        <div class="test-suite">unit.model.CategoryTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.categorytest testgetcolor(category)[4] ">
+    <td>
+        <div class="test-name">testGetColor(Category)[4]</div>
+        <div class="test-suite">unit.model.CategoryTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.categorytest testgetdisplayname(category)[1] ">
+    <td>
+        <div class="test-name">testGetDisplayName(Category)[1]</div>
+        <div class="test-suite">unit.model.CategoryTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.categorytest testgetdisplayname(category)[2] ">
+    <td>
+        <div class="test-name">testGetDisplayName(Category)[2]</div>
+        <div class="test-suite">unit.model.CategoryTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.categorytest testgetdisplayname(category)[3] ">
+    <td>
+        <div class="test-name">testGetDisplayName(Category)[3]</div>
+        <div class="test-suite">unit.model.CategoryTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.categorytest testgetdisplayname(category)[4] ">
+    <td>
+        <div class="test-name">testGetDisplayName(Category)[4]</div>
+        <div class="test-suite">unit.model.CategoryTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.prioritytest testallvaluesexist() ">
+    <td>
+        <div class="test-name">testAllValuesExist()</div>
+        <div class="test-suite">unit.model.PriorityTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.prioritytest testfromdisplaynameinvalid(string)[1] ">
+    <td>
+        <div class="test-name">testFromDisplayNameInvalid(String)[1]</div>
+        <div class="test-suite">unit.model.PriorityTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.prioritytest testfromdisplaynameinvalid(string)[2] ">
+    <td>
+        <div class="test-name">testFromDisplayNameInvalid(String)[2]</div>
+        <div class="test-suite">unit.model.PriorityTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.prioritytest testfromdisplaynameinvalid(string)[3] ">
+    <td>
+        <div class="test-name">testFromDisplayNameInvalid(String)[3]</div>
+        <div class="test-suite">unit.model.PriorityTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.prioritytest testfromdisplaynameinvalid(string)[4] ">
+    <td>
+        <div class="test-name">testFromDisplayNameInvalid(String)[4]</div>
+        <div class="test-suite">unit.model.PriorityTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.prioritytest testfromdisplaynameinvalid(string)[5] ">
+    <td>
+        <div class="test-name">testFromDisplayNameInvalid(String)[5]</div>
+        <div class="test-suite">unit.model.PriorityTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.prioritytest testfromdisplaynameinvalid(string)[6] ">
+    <td>
+        <div class="test-name">testFromDisplayNameInvalid(String)[6]</div>
+        <div class="test-suite">unit.model.PriorityTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.prioritytest testfromdisplaynamevalid(string)[1] ">
+    <td>
+        <div class="test-name">testFromDisplayNameValid(String)[1]</div>
+        <div class="test-suite">unit.model.PriorityTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.prioritytest testfromdisplaynamevalid(string)[2] ">
+    <td>
+        <div class="test-name">testFromDisplayNameValid(String)[2]</div>
+        <div class="test-suite">unit.model.PriorityTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.prioritytest testfromdisplaynamevalid(string)[3] ">
+    <td>
+        <div class="test-name">testFromDisplayNameValid(String)[3]</div>
+        <div class="test-suite">unit.model.PriorityTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.prioritytest testfromdisplaynamevalid(string)[4] ">
+    <td>
+        <div class="test-name">testFromDisplayNameValid(String)[4]</div>
+        <div class="test-suite">unit.model.PriorityTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.prioritytest testfromdisplaynamevalid(string)[5] ">
+    <td>
+        <div class="test-name">testFromDisplayNameValid(String)[5]</div>
+        <div class="test-suite">unit.model.PriorityTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.prioritytest testfromdisplaynamevalid(string)[6] ">
+    <td>
+        <div class="test-name">testFromDisplayNameValid(String)[6]</div>
+        <div class="test-suite">unit.model.PriorityTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.prioritytest testfromdisplaynamevalid(string)[7] ">
+    <td>
+        <div class="test-name">testFromDisplayNameValid(String)[7]</div>
+        <div class="test-suite">unit.model.PriorityTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.prioritytest testgetcolor(priority)[1] ">
+    <td>
+        <div class="test-name">testGetColor(Priority)[1]</div>
+        <div class="test-suite">unit.model.PriorityTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.prioritytest testgetcolor(priority)[2] ">
+    <td>
+        <div class="test-name">testGetColor(Priority)[2]</div>
+        <div class="test-suite">unit.model.PriorityTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.prioritytest testgetcolor(priority)[3] ">
+    <td>
+        <div class="test-name">testGetColor(Priority)[3]</div>
+        <div class="test-suite">unit.model.PriorityTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.prioritytest testgetdefault() ">
+    <td>
+        <div class="test-name">testGetDefault()</div>
+        <div class="test-suite">unit.model.PriorityTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.prioritytest testgetdisplayname(priority)[1] ">
+    <td>
+        <div class="test-name">testGetDisplayName(Priority)[1]</div>
+        <div class="test-suite">unit.model.PriorityTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.prioritytest testgetdisplayname(priority)[2] ">
+    <td>
+        <div class="test-name">testGetDisplayName(Priority)[2]</div>
+        <div class="test-suite">unit.model.PriorityTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.prioritytest testgetdisplayname(priority)[3] ">
+    <td>
+        <div class="test-name">testGetDisplayName(Priority)[3]</div>
+        <div class="test-suite">unit.model.PriorityTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.prioritytest testgeticonname() ">
+    <td>
+        <div class="test-name">testGetIconName()</div>
+        <div class="test-suite">unit.model.PriorityTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.prioritytest testprioritycomparison() ">
+    <td>
+        <div class="test-name">testPriorityComparison()</div>
+        <div class="test-suite">unit.model.PriorityTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.taskmanagertest testaddmultipletasks() ">
+    <td>
+        <div class="test-name">testAddMultipleTasks()</div>
+        <div class="test-suite">unit.model.TaskManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.288</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.taskmanagertest testaddtask() ">
+    <td>
+        <div class="test-name">testAddTask()</div>
+        <div class="test-suite">unit.model.TaskManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.001</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.taskmanagertest testautomaticoverduecheck() ">
+    <td>
+        <div class="test-name">testAutomaticOverdueCheck()</div>
+        <div class="test-suite">unit.model.TaskManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.001</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.taskmanagertest testclearalltasks() ">
+    <td>
+        <div class="test-name">testClearAllTasks()</div>
+        <div class="test-suite">unit.model.TaskManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.004</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.taskmanagertest testcurrentuserseesonlyowntasks() ">
+    <td>
+        <div class="test-name">testCurrentUserSeesOnlyOwnTasks()</div>
+        <div class="test-suite">unit.model.TaskManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.002</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.taskmanagertest testgetoverduetaskcount() ">
+    <td>
+        <div class="test-name">testGetOverdueTaskCount()</div>
+        <div class="test-suite">unit.model.TaskManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.002</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.taskmanagertest testgettaskcount() ">
+    <td>
+        <div class="test-name">testGetTaskCount()</div>
+        <div class="test-suite">unit.model.TaskManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.002</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.taskmanagertest testgettasksbycompletion() ">
+    <td>
+        <div class="test-name">testGetTasksByCompletion()</div>
+        <div class="test-suite">unit.model.TaskManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.002</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.taskmanagertest testloadtasks() ">
+    <td>
+        <div class="test-name">testLoadTasks()</div>
+        <div class="test-suite">unit.model.TaskManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.003</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.taskmanagertest testmarkascompleted() ">
+    <td>
+        <div class="test-name">testMarkAsCompleted()</div>
+        <div class="test-suite">unit.model.TaskManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.002</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.taskmanagertest testmarknonexistentascompleted() ">
+    <td>
+        <div class="test-name">testMarkNonExistentAsCompleted()</div>
+        <div class="test-suite">unit.model.TaskManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.taskmanagertest testoverdueupdateoncompletion() ">
+    <td>
+        <div class="test-name">testOverdueUpdateOnCompletion()</div>
+        <div class="test-suite">unit.model.TaskManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.002</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.taskmanagertest testremovenonexistenttask() ">
+    <td>
+        <div class="test-name">testRemoveNonExistentTask()</div>
+        <div class="test-suite">unit.model.TaskManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.001</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.taskmanagertest testremovetaskbyid() ">
+    <td>
+        <div class="test-name">testRemoveTaskById()</div>
+        <div class="test-suite">unit.model.TaskManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.001</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.taskmanagertest testreturnedlistsimmutability() ">
+    <td>
+        <div class="test-name">testReturnedListsImmutability()</div>
+        <div class="test-suite">unit.model.TaskManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.002</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.taskmanagertest testsearchtasks() ">
+    <td>
+        <div class="test-name">testSearchTasks()</div>
+        <div class="test-suite">unit.model.TaskManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.003</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.taskmanagertest testsearchwithemptyquery() ">
+    <td>
+        <div class="test-name">testSearchWithEmptyQuery()</div>
+        <div class="test-suite">unit.model.TaskManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.002</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.taskmanagertest testsingletonpattern() ">
+    <td>
+        <div class="test-name">testSingletonPattern()</div>
+        <div class="test-suite">unit.model.TaskManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.tasktest testcompletedstatus(boolean)[1] ">
+    <td>
+        <div class="test-name">testCompletedStatus(boolean)[1]</div>
+        <div class="test-suite">unit.model.TaskTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.006</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.tasktest testcompletedstatus(boolean)[2] ">
+    <td>
+        <div class="test-name">testCompletedStatus(boolean)[2]</div>
+        <div class="test-suite">unit.model.TaskTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.tasktest testequalsandhashcode() ">
+    <td>
+        <div class="test-name">testEqualsAndHashCode()</div>
+        <div class="test-suite">unit.model.TaskTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.tasktest testformatteddates() ">
+    <td>
+        <div class="test-name">testFormattedDates()</div>
+        <div class="test-suite">unit.model.TaskTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.tasktest testidgeneration() ">
+    <td>
+        <div class="test-name">testIdGeneration()</div>
+        <div class="test-suite">unit.model.TaskTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.tasktest testjsonescape() ">
+    <td>
+        <div class="test-name">testJsonEscape()</div>
+        <div class="test-suite">unit.model.TaskTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.tasktest testoverduecheck() ">
+    <td>
+        <div class="test-name">testOverdueCheck()</div>
+        <div class="test-suite">unit.model.TaskTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.tasktest testoverdueupdateontimechange() ">
+    <td>
+        <div class="test-name">testOverdueUpdateOnTimeChange()</div>
+        <div class="test-suite">unit.model.TaskTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.tasktest testsetters() ">
+    <td>
+        <div class="test-name">testSetters()</div>
+        <div class="test-suite">unit.model.TaskTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.tasktest testtaskcreation() ">
+    <td>
+        <div class="test-name">testTaskCreation()</div>
+        <div class="test-suite">unit.model.TaskTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.tasktest testtaskfromjson() ">
+    <td>
+        <div class="test-name">testTaskFromJson()</div>
+        <div class="test-suite">unit.model.TaskTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.tasktest testtaskwithemptytitle() ">
+    <td>
+        <div class="test-name">testTaskWithEmptyTitle()</div>
+        <div class="test-suite">unit.model.TaskTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.tasktest testtaskwithnullpriorityandcategory() ">
+    <td>
+        <div class="test-name">testTaskWithNullPriorityAndCategory()</div>
+        <div class="test-suite">unit.model.TaskTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.tasktest testtojsonstring() ">
+    <td>
+        <div class="test-name">testToJsonString()</div>
+        <div class="test-suite">unit.model.TaskTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.model.tasktest testtostring() ">
+    <td>
+        <div class="test-name">testToString()</div>
+        <div class="test-suite">unit.model.TaskTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.repository.databaseconfigtest testcustomconfigrequiresjdbcurlanddriver() ">
+    <td>
+        <div class="test-name">testCustomConfigRequiresJdbcUrlAndDriver()</div>
+        <div class="test-suite">unit.repository.DatabaseConfigTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.repository.databaseconfigtest testdefaultsqliteconfig() ">
+    <td>
+        <div class="test-name">testDefaultSqliteConfig()</div>
+        <div class="test-suite">unit.repository.DatabaseConfigTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.repository.databaseconfigtest testpostgresqlconfig() ">
+    <td>
+        <div class="test-name">testPostgresqlConfig()</div>
+        <div class="test-suite">unit.repository.DatabaseConfigTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.util.audiomanagertest testdispose() ">
+    <td>
+        <div class="test-name">testDispose()</div>
+        <div class="test-suite">unit.util.AudioManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.util.audiomanagertest testenabledisablesounds() ">
+    <td>
+        <div class="test-name">testEnableDisableSounds()</div>
+        <div class="test-suite">unit.util.AudioManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.util.audiomanagertest testgetavailablesounds() ">
+    <td>
+        <div class="test-name">testGetAvailableSounds()</div>
+        <div class="test-suite">unit.util.AudioManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.002</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.util.audiomanagertest testhasaudiofiles() ">
+    <td>
+        <div class="test-name">testHasAudioFiles()</div>
+        <div class="test-suite">unit.util.AudioManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.util.audiomanagertest testmultiplecalls() ">
+    <td>
+        <div class="test-name">testMultipleCalls()</div>
+        <div class="test-suite">unit.util.AudioManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.util.audiomanagertest testplaysoundswhendisabled() ">
+    <td>
+        <div class="test-name">testPlaySoundsWhenDisabled()</div>
+        <div class="test-suite">unit.util.AudioManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.util.audiomanagertest testplaysoundswhenenabled() ">
+    <td>
+        <div class="test-name">testPlaySoundsWhenEnabled()</div>
+        <div class="test-suite">unit.util.AudioManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.util.audiomanagertest testsetmastervolume() ">
+    <td>
+        <div class="test-name">testSetMasterVolume()</div>
+        <div class="test-suite">unit.util.AudioManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.util.audiomanagertest testsingletonpattern() ">
+    <td>
+        <div class="test-name">testSingletonPattern()</div>
+        <div class="test-suite">unit.util.AudioManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.util.audiomanagertest teststopallsounds() ">
+    <td>
+        <div class="test-name">testStopAllSounds()</div>
+        <div class="test-suite">unit.util.AudioManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.util.audiomanagertest testwithoutaudiofiles() ">
+    <td>
+        <div class="test-name">testWithoutAudioFiles()</div>
+        <div class="test-suite">unit.util.AudioManagerTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.util.authservicetest testregisterandlogin() ">
+    <td>
+        <div class="test-name">testRegisterAndLogin()</div>
+        <div class="test-suite">unit.util.AuthServiceTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.041</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.util.authservicetest testresetpasswordflow() ">
+    <td>
+        <div class="test-name">testResetPasswordFlow()</div>
+        <div class="test-suite">unit.util.AuthServiceTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.117</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.util.emailconfigtest testfromproperties() ">
+    <td>
+        <div class="test-name">testFromProperties()</div>
+        <div class="test-suite">unit.util.EmailConfigTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.util.emailnotifiertest testdisabledmodewritesoutbox() ">
+    <td>
+        <div class="test-name">testDisabledModeWritesOutbox()</div>
+        <div class="test-suite">unit.util.EmailNotifierTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.util.emailnotifiertest testmacusesmailappresult() ">
+    <td>
+        <div class="test-name">testMacUsesMailAppResult()</div>
+        <div class="test-suite">unit.util.EmailNotifierTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.001</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.util.emailnotifiertest testsmtptakespriorityinautomode() ">
+    <td>
+        <div class="test-name">testSmtpTakesPriorityInAutoMode()</div>
+        <div class="test-suite">unit.util.EmailNotifierTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.util.passwordutiltest testgenerateresetcode() ">
+    <td>
+        <div class="test-name">testGenerateResetCode()</div>
+        <div class="test-suite">unit.util.PasswordUtilTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.001</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.util.passwordutiltest testhashandverifypassword() ">
+    <td>
+        <div class="test-name">testHashAndVerifyPassword()</div>
+        <div class="test-suite">unit.util.PasswordUtilTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.286</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.viewmodel.taskviewmodeltest testcolors() ">
+    <td>
+        <div class="test-name">testColors()</div>
+        <div class="test-suite">unit.viewmodel.TaskViewModelTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.viewmodel.taskviewmodeltest testdisplaynames() ">
+    <td>
+        <div class="test-name">testDisplayNames()</div>
+        <div class="test-suite">unit.viewmodel.TaskViewModelTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.004</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.viewmodel.taskviewmodeltest testequalsandhashcode() ">
+    <td>
+        <div class="test-name">testEqualsAndHashCode()</div>
+        <div class="test-suite">unit.viewmodel.TaskViewModelTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.viewmodel.taskviewmodeltest testformatteddates() ">
+    <td>
+        <div class="test-name">testFormattedDates()</div>
+        <div class="test-suite">unit.viewmodel.TaskViewModelTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.viewmodel.taskviewmodeltest testgettask() ">
+    <td>
+        <div class="test-name">testGetTask()</div>
+        <div class="test-suite">unit.viewmodel.TaskViewModelTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.viewmodel.taskviewmodeltest testjavafxproperties() ">
+    <td>
+        <div class="test-name">testJavaFXProperties()</div>
+        <div class="test-suite">unit.viewmodel.TaskViewModelTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.viewmodel.taskviewmodeltest testoverdueupdate() ">
+    <td>
+        <div class="test-name">testOverdueUpdate()</div>
+        <div class="test-suite">unit.viewmodel.TaskViewModelTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.viewmodel.taskviewmodeltest testpriorityiconname() ">
+    <td>
+        <div class="test-name">testPriorityIconName()</div>
+        <div class="test-suite">unit.viewmodel.TaskViewModelTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.viewmodel.taskviewmodeltest teststatustext() ">
+    <td>
+        <div class="test-name">testStatusText()</div>
+        <div class="test-suite">unit.viewmodel.TaskViewModelTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.viewmodel.taskviewmodeltest testtimeremaining() ">
+    <td>
+        <div class="test-name">testTimeRemaining()</div>
+        <div class="test-suite">unit.viewmodel.TaskViewModelTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.viewmodel.taskviewmodeltest testtostring() ">
+    <td>
+        <div class="test-name">testToString()</div>
+        <div class="test-suite">unit.viewmodel.TaskViewModelTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.viewmodel.taskviewmodeltest testtwowaybindingmodeltoviewmodel() ">
+    <td>
+        <div class="test-name">testTwoWayBindingModelToViewModel()</div>
+        <div class="test-suite">unit.viewmodel.TaskViewModelTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.viewmodel.taskviewmodeltest testtwowaybindingviewmodeltomodel() ">
+    <td>
+        <div class="test-name">testTwoWayBindingViewModelToModel()</div>
+        <div class="test-suite">unit.viewmodel.TaskViewModelTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="unit.viewmodel.taskviewmodeltest testviewmodelcreation() ">
+    <td>
+        <div class="test-name">testViewModelCreation()</div>
+        <div class="test-suite">unit.viewmodel.TaskViewModelTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="util.jsonutiltest testaddsingletask() ">
+    <td>
+        <div class="test-name">testAddSingleTask()</div>
+        <div class="test-suite">util.JsonUtilTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.021</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="util.jsonutiltest testclearalltasks() ">
+    <td>
+        <div class="test-name">testClearAllTasks()</div>
+        <div class="test-suite">util.JsonUtilTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="util.jsonutiltest testexporttasks() ">
+    <td>
+        <div class="test-name">testExportTasks()</div>
+        <div class="test-suite">util.JsonUtilTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.001</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="util.jsonutiltest testloademptylist() ">
+    <td>
+        <div class="test-name">testLoadEmptyList()</div>
+        <div class="test-suite">util.JsonUtilTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="util.jsonutiltest testremovenonexistenttask() ">
+    <td>
+        <div class="test-name">testRemoveNonExistentTask()</div>
+        <div class="test-suite">util.JsonUtilTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0</td>
+    <td><pre></pre></td>
+</tr>
+<tr data-status="passed" data-search="util.jsonutiltest testsaveandloadmultipletasks() ">
+    <td>
+        <div class="test-name">testSaveAndLoadMultipleTasks()</div>
+        <div class="test-suite">util.JsonUtilTest</div>
+    </td>
+    <td>Тест завершился успешно.</td>
+    <td><span class="status-pill passed">PASSED</span></td>
+    <td>0.001</td>
+    <td><pre></pre></td>
+</tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <details class="logs">
+            <summary>Логи запуска</summary>
+            <pre>WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.sqlite.SQLiteJDBCLoader in an unnamed module (file:/Users/sigm/Study/Institut/6semestr/OOP_Java/Project/lib/sqlite-jdbc-3.45.1.0.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+Database ready: SQLite -&gt; /Users/sigm/Study/Institut/6semestr/OOP_Java/Project/tests/reports/runtime-data-20260415_180616/todolist.db
+[36m╷[0m
+[36m├─[0m [36mJUnit Jupiter[0m [32m✔[0m
+[36m│  ├─[0m [36mJsonUtilTest[0m [32m✔[0m
+[36m│  │  ├─[0m [34mtestAddSingleTask()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mtestClearAllTasks()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mtestRemoveNonExistentTask()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mtestSaveAndLoadMultipleTasks()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mtestExportTasks()[0m [32m✔[0m
+[36m│  │  └─[0m [34mtestLoadEmptyList()[0m [32m✔[0m
+[36m│  ├─[0m [36mТестирование TaskViewModel[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение отображаемых имен приоритета и категории[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение имени иконки приоритета[0m [32m✔[0m
+[36m│  │  ├─[0m [34mТестирование toString()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mОбновление ViewModel при изменении статуса просроченности[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение базовой модели задачи[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение статуса задачи в виде строки[0m [32m✔[0m
+[36m│  │  ├─[0m [34mРасчет оставшегося времени[0m [32m✔[0m
+[36m│  │  ├─[0m [34mСоздание ViewModel из модели Task[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка свойств JavaFX[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение цветов приоритета и категории[0m [32m✔[0m
+[36m│  │  ├─[0m [34mФорматирование дат для отображения[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка equals() и hashCode()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mДвусторонняя привязка свойств - изменение Model[0m [32m✔[0m
+[36m│  │  └─[0m [34mДвусторонняя привязка свойств - изменение ViewModel[0m [32m✔[0m
+[36m│  ├─[0m [36mПроверка структуры MainView.fxml[0m [32m✔[0m
+[36m│  │  └─[0m [34mГлавное окно содержит новые элементы календаря и аккаунта[0m [32m✔[0m
+[36m│  ├─[0m [36mТестирование AudioManager[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение списка доступных звуков[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка паттерна Singleton[0m [32m✔[0m
+[36m│  │  ├─[0m [34mВоспроизведение звуков при включенных звуках[0m [32m✔[0m
+[36m│  │  ├─[0m [34mОстановка всех звуков[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка наличия аудио файлов[0m [32m✔[0m
+[36m│  │  ├─[0m [34mtestEnableDisableSounds()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mТестирование методов без реальных аудио файлов[0m [32m✔[0m
+[36m│  │  ├─[0m [34mВоспроизведение звуков при выключенных звуках[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка многократного вызова методов[0m [32m✔[0m
+[36m│  │  ├─[0m [34mОсвобождение ресурсов[0m [32m✔[0m
+[36m│  │  └─[0m [34mУстановка громкости[0m [32m✔[0m
+[36m│  ├─[0m [36mJsonIntegrationTest[0m [32m✔[0m
+[36m│  │  ├─[0m [34mУдаление задачи из файла[0m [32m✔[0m
+[36m│  │  ├─[0m [34mОбновление задачи в файле[0m [32m✔[0m
+[36m│  │  ├─[0m [34mСохранение пустого списка задач[0m [32m✔[0m
+[36m│  │  ├─[0m [34mЦелостность данных после нескольких операций[0m [32m✔[0m
+[36m│  │  ├─[0m [34mЗагрузка из файла с некорректным JSON[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка формата дат при сериализации/десериализации[0m [32m✔[0m
+[36m│  │  ├─[0m [34mЗагрузка из несуществующего файла[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолный цикл: создание → сохранение → загрузка → проверка[0m [32m✔[0m
+[36m│  │  └─[0m [34mДобавление задачи к существующим[0m [32m✔[0m
+[36m│  ├─[0m [36mТестирование EmailNotifier[0m [32m✔[0m
+[36m│  │  ├─[0m [34mНа macOS при успехе используется Mail.app[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПри наличии SMTP-конфига используется SMTP[0m [32m✔[0m
+[36m│  │  └─[0m [34mОтключенный режим пишет письмо в outbox[0m [32m✔[0m
+[36m│  ├─[0m [36mТестирование Task[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПарсинг задачи из JSON строки[0m [32m✔[0m
+[36m│  │  ├─[0m [34mСоздание задачи с null приоритетом и категорией[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка toString()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mЭкранирование специальных символов в JSON[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка метода toJsonString()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mСоздание задачи с пустым заголовком[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка просроченности задачи[0m [32m✔[0m
+[36m│  │  ├─[0m [34mАвтоматическая генерация ID[0m [32m✔[0m
+[36m│  │  ├─[0m [36mПроверка статуса выполнения[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[1] true[0m [32m✔[0m
+[36m│  │  │  └─[0m [34m[2] false[0m [32m✔[0m
+[36m│  │  ├─[0m [34mСоздание задачи с валидными данными[0m [32m✔[0m
+[36m│  │  ├─[0m [34mФорматирование дат для отображения[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка equals() и hashCode()[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка сеттеров[0m [32m✔[0m
+[36m│  │  └─[0m [34mПроверка обновления просроченности при изменении времени[0m [32m✔[0m
+[36m│  ├─[0m [36mТестирование TaskManager[0m [32m✔[0m
+[36m│  │  ├─[0m [34mДобавление нескольких задач[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение задач по статусу выполнения[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПри активном пользователе видны только его задачи[0m [32m✔[0m
+[36m│  │  ├─[0m [34mДобавление задачи в менеджер[0m [32m✔[0m
+[36m│  │  ├─[0m [34mОчистка всех задач[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПоиск задач по тексту (регистронезависимый)[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка неизменяемости возвращаемых списков[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение количества просроченных задач[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПоиск по пустому запросу[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка паттерна Singleton[0m [32m✔[0m
+[36m│  │  ├─[0m [34mОтметка задачи как выполненной[0m [32m✔[0m
+[36m│  │  ├─[0m [34mОтметка несуществующей задачи как выполненной[0m [32m✔[0m
+[36m│  │  ├─[0m [34mУдаление несуществующей задачи[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка обновления просроченности при изменении статуса[0m [32m✔[0m
+[36m│  │  ├─[0m [34mУдаление задачи по ID[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПолучение количества задач[0m [32m✔[0m
+[36m│  │  ├─[0m [34mАвтоматическая проверка просроченности[0m [32m✔[0m
+[36m│  │  └─[0m [34mЗагрузка списка задач[0m [32m✔[0m
+[36m│  ├─[0m [36mТестирование Category[0m [32m✔[0m
+[36m│  │  ├─[0m [36mПреобразование строки в Category (регистронезависимое)[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[1] Работа[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[2] работа[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[3] РАБОТА[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[4] Дом[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[5] дом[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[6] Учёба[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[7] учёба[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[8] Другое[0m [32m✔[0m
+[36m│  │  │  └─[0m [34m[9] другое[0m [32m✔[0m
+[36m│  │  ├─[0m [36mПроверка цветов для всех категорий[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[1] WORK[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[2] HOME[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[3] STUDY[0m [32m✔[0m
+[36m│  │  │  └─[0m [34m[4] OTHER[0m [32m✔[0m
+[36m│  │  ├─[0m [36mПроверка отображаемых имен для всех категорий[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[1] WORK[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[2] HOME[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[3] STUDY[0m [32m✔[0m
+[36m│  │  │  └─[0m [34m[4] OTHER[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка уникальности отображаемых имен[0m [32m✔[0m
+[36m│  │  ├─[0m [34mПроверка сравнения категорий[0m [32m✔[0m
+[36m│  │  ├─[0m [36mПреобразование некорректной строки в Category[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[1] [0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[2] неизвестно[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[3] категория[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34m[4] 123[0m [32m✔[0m
+[36m│  │  │  └─[0m [34m[5] test[0m [32m✔[0m
+[36m│  │  └─[0m [34mПроверка всех значений перечисления[0m [32m✔[0m
+[36m│  ├─[0m [36mПроверка структуры NewTaskDialog.fxml[0m [32m✔[0m
+[36m│  │  ├─[0m [34mКнопки диалога привязаны к ожидаемым обработчикам[0m [32m✔[0m
+[36m│  │  └─[0m [34mДиалог создания задачи содержит основные поля формы[0m [32m✔[0m
+[36m│  ├─[0m [36mТестирование EmailConfig[0m [32m✔[0m
+[36m│  │  └─[0m [34mSMTP-конфиг корректно читается из properties[0m [32m✔[0m
+[36m│  ├─[0m [36mТестирование PasswordUtil[0m [32m✔[0m
+[36m│  │  ├─[0m [34mКод восстановления имеет ожидаемый формат[0m [32m✔[0m
+[36m│  │  └─[0m [34mПароль успешно хешируется и проверяется[0m [32m✔[0m
+[36m│  ├─[0m [36mТестирование DatabaseConfig[0m [32m✔[0m
+[36m│  │  ├─[0m [34mPostgreSQL конфиг собирает JDBC URL и credentials[0m [32m✔[0m
+[36m│  │  ├─[0m [34mSQLite конфиг используется по умолчанию[0m [32m✔[0m
+[36m│  │  └─[0m [34mCustom JDBC без URL и драйвера валидироваться не должен[0m [32m✔[0m
+[36m│  ├─[0m [36mТестирование AuthService[0m [32m✔[0m
+[36m│  │  ├─[0m [34mСброс пароля по коду восстановления[0m [32m✔[0m
+[36m│  │  └─[0m [34mРегистрация и вход по логину и email[0m [32m✔[0m
+[36m│  └─[0m [36mТестирование Priority[0m [32m✔[0m
+[36m│     ├─[0m [34mПроверка сравнения приоритетов[0m [32m✔[0m
+[36m│     ├─[0m [36mПреобразование строки в Priority (регистронезависимое)[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[1] Срочно[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[2] срочно[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[3] СРОЧНО[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[4] Важно[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[5] важно[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[6] Желательно[0m [32m✔[0m
+[36m│     │  └─[0m [34m[7] желательно[0m [32m✔[0m
+[36m│     ├─[0m [36mПроверка цветов для всех приоритетов[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[1] URGENT[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[2] IMPORTANT[0m [32m✔[0m
+[36m│     │  └─[0m [34m[3] NORMAL[0m [32m✔[0m
+[36m│     ├─[0m [36mПроверка отображаемых имен для всех приоритетов[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[1] URGENT[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[2] IMPORTANT[0m [32m✔[0m
+[36m│     │  └─[0m [34m[3] NORMAL[0m [32m✔[0m
+[36m│     ├─[0m [34mПроверка имени иконки[0m [32m✔[0m
+[36m│     ├─[0m [36mПреобразование некорректной строки в Priority[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[1] [0m [32m✔[0m
+[36m│     │  ├─[0m [34m[2] неизвестно[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[3] high[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[4] low[0m [32m✔[0m
+[36m│     │  ├─[0m [34m[5] 123[0m [32m✔[0m
+[36m│     │  └─[0m [34m[6] приоритет[0m [32m✔[0m
+[36m│     ├─[0m [34mПроверка всех значений перечисления[0m [32m✔[0m
+[36m│     └─[0m [34mПроверка приоритета по умолчанию[0m [32m✔[0m
+[36m├─[0m [36mJUnit Vintage[0m [32m✔[0m
+[36m└─[0m [36mJUnit Platform Suite[0m [32m✔[0m
+
+Test run finished after 973 ms
+[        27 containers found      ]
+[         0 containers skipped    ]
+[        27 containers started    ]
+[         0 containers aborted    ]
+[        27 containers successful ]
+[         0 containers failed     ]
+[       135 tests found           ]
+[         0 tests skipped         ]
+[       135 tests started         ]
+[         0 tests aborted         ]
+[       135 tests successful      ]
+[         0 tests failed          ]
+
+</pre>
+        </details>
+    </div>
+    <script>
+        const searchInput = document.getElementById('search');
+        const buttons = Array.from(document.querySelectorAll('.filter-btn'));
+        const rows = Array.from(document.querySelectorAll('#test-table-body tr'));
+        let activeFilter = 'all';
+
+        function applyFilters() {
+            const query = (searchInput.value || '').toLowerCase().trim();
+            rows.forEach((row) => {
+                const status = row.dataset.status || '';
+                const search = row.dataset.search || '';
+                const matchesFilter = activeFilter === 'all' || status === activeFilter;
+                const matchesQuery = !query || search.includes(query);
+                row.classList.toggle('hidden', !(matchesFilter && matchesQuery));
+            });
+        }
+
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+                activeFilter = button.dataset.filter;
+                buttons.forEach((candidate) => candidate.classList.toggle('active', candidate === button));
+                applyFilters();
+            });
+        });
+
+        searchInput.addEventListener('input', applyFilters);
+    </script>
+</body>
+</html>

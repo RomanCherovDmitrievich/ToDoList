@@ -1,5 +1,9 @@
 <map id="repository.DatabaseManager.searchTasks" name="repository.DatabaseManager.searchTasks">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,234,46"/>
-<area shape="rect" id="Node000002" href="$classrepository_1_1_database_manager.html#a79fcaa3ae166aa0a2bf2a62b60008da1" title=" " alt="" coords="282,5,503,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,23,269,26,264,26,234,28"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,234,79"/>
+<area shape="rect" id="Node000002" href="$classrepository_1_1_database_manager.html#a7407642e97a424de9bab9605699b577f" title=" " alt="" coords="287,5,498,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,42,274,40,269,41,235,48"/>
+<area shape="rect" id="Node000003" href="$classrepository_1_1_database_manager.html#a79fcaa3ae166aa0a2bf2a62b60008da1" title=" " alt="" coords="282,71,503,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="234,70,269,76,264,76,234,75"/>
+<area shape="rect" id="Node000004" href="$classmodel_1_1_task.html#a9a0a352d3f78fb40f17551736367b3f6" title=" " alt="" coords="551,78,738,104"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="503,88,538,91,533,91,504,94"/>
 </map>

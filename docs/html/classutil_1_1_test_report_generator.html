@@ -1,0 +1,503 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Умный планировщик задач (To-Do List): Класс util.TestReportGenerator</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">JavaFX ToDo-приложение с SQLite, уведомлениями и летней темой</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classutil_1_1_test_report_generator.html','','classutil_1_1_test_report_generator-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс util.TestReportGenerator</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Генератор простого HTML-отчета по JUnit XML.  
+ <a href="#details">Подробнее...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:a05c87b1a2498085c297eed75bfdccb08" id="r_a05c87b1a2498085c297eed75bfdccb08"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05c87b1a2498085c297eed75bfdccb08">main</a> (String[] args)  throws Exception </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:ac136faad7a90bb82696e9ac7d00cca85" id="r_ac136faad7a90bb82696e9ac7d00cca85"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac136faad7a90bb82696e9ac7d00cca85">TestReportGenerator</a> ()</td></tr>
+<tr class="memitem:a91cb0d7c846bd65f08d332a2f67e3ce0" id="r_a91cb0d7c846bd65f08d332a2f67e3ce0"><td class="memItemLeft" align="right" valign="top">record&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91cb0d7c846bd65f08d332a2f67e3ce0">TestCaseResult</a> (String className, String name, String duration, String status, String details)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-methods" class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Закрытые статические члены</h2></td></tr>
+<tr class="memitem:a0dc55e4b3874faf329934a64cf225d4d" id="r_a0dc55e4b3874faf329934a64cf225d4d"><td class="memItemLeft" align="right" valign="top">static List&lt; <a class="el" href="#a91cb0d7c846bd65f08d332a2f67e3ce0">TestCaseResult</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0dc55e4b3874faf329934a64cf225d4d">loadResults</a> (Path xmlDir)  throws Exception </td></tr>
+<tr class="memitem:a4dbbdf7fe6a8f4f8fcc15faeb6c9cd67" id="r_a4dbbdf7fe6a8f4f8fcc15faeb6c9cd67"><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4dbbdf7fe6a8f4f8fcc15faeb6c9cd67">extractDetails</a> (Element element)</td></tr>
+<tr class="memitem:aedc9777532388c0cb1c784fbfcba12d7" id="r_aedc9777532388c0cb1c784fbfcba12d7"><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aedc9777532388c0cb1c784fbfcba12d7">buildHtmlReport</a> (List&lt; <a class="el" href="#a91cb0d7c846bd65f08d332a2f67e3ce0">TestCaseResult</a> &gt; tests, Path logFile)  throws IOException </td></tr>
+<tr class="memitem:afcaebca7d5e871e09fc18307d4368fba" id="r_afcaebca7d5e871e09fc18307d4368fba"><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcaebca7d5e871e09fc18307d4368fba">escapeHtml</a> (String value)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Закрытые статические данные</h2></td></tr>
+<tr class="memitem:a5121b5aa2403473d94a0df0e62516333" id="r_a5121b5aa2403473d94a0df0e62516333"><td class="memItemLeft" align="right" valign="top">static final DateTimeFormatter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5121b5aa2403473d94a0df0e62516333">REPORT_TIME</a> = DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd HH:mm:ss&quot;)</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Генератор простого HTML-отчета по JUnit XML. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_test_report_generator_8java_source.html">TestReportGenerator.java</a> строка <a class="el" href="_test_report_generator_8java_source.html#l00021">21</a></p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="ac136faad7a90bb82696e9ac7d00cca85" name="ac136faad7a90bb82696e9ac7d00cca85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac136faad7a90bb82696e9ac7d00cca85">&#9670;&#160;</a></span>TestReportGenerator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">util.TestReportGenerator.TestReportGenerator </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_test_report_generator_8java_source.html">TestReportGenerator.java</a> строка <a class="el" href="_test_report_generator_8java_source.html#l00024">24</a></p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="aedc9777532388c0cb1c784fbfcba12d7" name="aedc9777532388c0cb1c784fbfcba12d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedc9777532388c0cb1c784fbfcba12d7">&#9670;&#160;</a></span>buildHtmlReport()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String util.TestReportGenerator.buildHtmlReport </td>
+          <td>(</td>
+          <td class="paramtype">List&lt; <a class="el" href="#a91cb0d7c846bd65f08d332a2f67e3ce0">TestCaseResult</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>tests</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Path</td>          <td class="paramname"><span class="paramname"><em>logFile</em></span>&#160;) throws IOException</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_test_report_generator_8java_source.html">TestReportGenerator.java</a> строка <a class="el" href="_test_report_generator_8java_source.html#l00104">104</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_test_report_generator_8java_source.html#l00198">escapeHtml()</a>, <a class="el" href="_test_report_generator_8java_source.html#l00022">REPORT_TIME</a> и <a class="el" href="_test_report_generator_8java_source.html#l00209">TestCaseResult()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_test_report_generator_8java_source.html#l00027">main()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_test_report_generator_aedc9777532388c0cb1c784fbfcba12d7_cgraph.png" border="0" usemap="#aclassutil_1_1_test_report_generator_aedc9777532388c0cb1c784fbfcba12d7_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_test_report_generator_aedc9777532388c0cb1c784fbfcba12d7_cgraph" id="aclassutil_1_1_test_report_generator_aedc9777532388c0cb1c784fbfcba12d7_cgraph">
+<area shape="rect" title=" " alt="" coords="5,27,199,68"/>
+<area shape="rect" href="classutil_1_1_test_report_generator.html#afcaebca7d5e871e09fc18307d4368fba" title=" " alt="" coords="247,5,483,31"/>
+<area shape="poly" title=" " alt="" coords="199,34,234,33,228,34,200,39"/>
+<area shape="rect" href="classutil_1_1_test_report_generator.html#a91cb0d7c846bd65f08d332a2f67e3ce0" title=" " alt="" coords="282,55,448,96"/>
+<area shape="poly" title=" " alt="" coords="199,55,269,65,264,65,199,60"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_test_report_generator_aedc9777532388c0cb1c784fbfcba12d7_icgraph.png" border="0" usemap="#aclassutil_1_1_test_report_generator_aedc9777532388c0cb1c784fbfcba12d7_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_test_report_generator_aedc9777532388c0cb1c784fbfcba12d7_icgraph" id="aclassutil_1_1_test_report_generator_aedc9777532388c0cb1c784fbfcba12d7_icgraph">
+<area shape="rect" title=" " alt="" coords="248,5,441,46"/>
+<area shape="rect" href="classutil_1_1_test_report_generator.html#a05c87b1a2498085c297eed75bfdccb08" title=" " alt="" coords="5,13,200,38"/>
+<area shape="poly" title=" " alt="" coords="229,26,200,28,200,23,235,26"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afcaebca7d5e871e09fc18307d4368fba" name="afcaebca7d5e871e09fc18307d4368fba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcaebca7d5e871e09fc18307d4368fba">&#9670;&#160;</a></span>escapeHtml()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String util.TestReportGenerator.escapeHtml </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_test_report_generator_8java_source.html">TestReportGenerator.java</a> строка <a class="el" href="_test_report_generator_8java_source.html#l00198">198</a></p>
+
+<p class="reference">Используется в <a class="el" href="_test_report_generator_8java_source.html#l00104">buildHtmlReport()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_test_report_generator_afcaebca7d5e871e09fc18307d4368fba_icgraph.png" border="0" usemap="#aclassutil_1_1_test_report_generator_afcaebca7d5e871e09fc18307d4368fba_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_test_report_generator_afcaebca7d5e871e09fc18307d4368fba_icgraph" id="aclassutil_1_1_test_report_generator_afcaebca7d5e871e09fc18307d4368fba_icgraph">
+<area shape="rect" title=" " alt="" coords="489,13,725,38"/>
+<area shape="rect" href="classutil_1_1_test_report_generator.html#aedc9777532388c0cb1c784fbfcba12d7" title=" " alt="" coords="248,5,441,46"/>
+<area shape="poly" title=" " alt="" coords="471,26,442,28,441,23,476,26"/>
+<area shape="rect" href="classutil_1_1_test_report_generator.html#a05c87b1a2498085c297eed75bfdccb08" title=" " alt="" coords="5,13,200,38"/>
+<area shape="poly" title=" " alt="" coords="229,26,200,28,200,23,235,26"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4dbbdf7fe6a8f4f8fcc15faeb6c9cd67" name="a4dbbdf7fe6a8f4f8fcc15faeb6c9cd67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dbbdf7fe6a8f4f8fcc15faeb6c9cd67">&#9670;&#160;</a></span>extractDetails()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String util.TestReportGenerator.extractDetails </td>
+          <td>(</td>
+          <td class="paramtype">Element</td>          <td class="paramname"><span class="paramname"><em>element</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_test_report_generator_8java_source.html">TestReportGenerator.java</a> строка <a class="el" href="_test_report_generator_8java_source.html#l00095">95</a></p>
+
+<p class="reference">Используется в <a class="el" href="_test_report_generator_8java_source.html#l00046">loadResults()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_test_report_generator_a4dbbdf7fe6a8f4f8fcc15faeb6c9cd67_icgraph.png" border="0" usemap="#aclassutil_1_1_test_report_generator_a4dbbdf7fe6a8f4f8fcc15faeb6c9cd67_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_test_report_generator_a4dbbdf7fe6a8f4f8fcc15faeb6c9cd67_icgraph" id="aclassutil_1_1_test_report_generator_a4dbbdf7fe6a8f4f8fcc15faeb6c9cd67_icgraph">
+<area shape="rect" title=" " alt="" coords="486,5,692,46"/>
+<area shape="rect" href="classutil_1_1_test_report_generator.html#a0dc55e4b3874faf329934a64cf225d4d" title=" " alt="" coords="248,5,438,46"/>
+<area shape="poly" title=" " alt="" coords="468,26,438,28,438,23,473,26"/>
+<area shape="rect" href="classutil_1_1_test_report_generator.html#a05c87b1a2498085c297eed75bfdccb08" title=" " alt="" coords="5,13,200,38"/>
+<area shape="poly" title=" " alt="" coords="229,26,200,28,200,23,235,26"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0dc55e4b3874faf329934a64cf225d4d" name="a0dc55e4b3874faf329934a64cf225d4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dc55e4b3874faf329934a64cf225d4d">&#9670;&#160;</a></span>loadResults()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="#a91cb0d7c846bd65f08d332a2f67e3ce0">TestCaseResult</a> &gt; util.TestReportGenerator.loadResults </td>
+          <td>(</td>
+          <td class="paramtype">Path</td>          <td class="paramname"><span class="paramname"><em>xmlDir</em></span></td><td>)</td>
+          <td> throws Exception</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_test_report_generator_8java_source.html">TestReportGenerator.java</a> строка <a class="el" href="_test_report_generator_8java_source.html#l00046">46</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_test_report_generator_8java_source.html#l00095">extractDetails()</a> и <a class="el" href="_test_report_generator_8java_source.html#l00209">TestCaseResult()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_test_report_generator_8java_source.html#l00027">main()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_test_report_generator_a0dc55e4b3874faf329934a64cf225d4d_cgraph.png" border="0" usemap="#aclassutil_1_1_test_report_generator_a0dc55e4b3874faf329934a64cf225d4d_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_test_report_generator_a0dc55e4b3874faf329934a64cf225d4d_cgraph" id="aclassutil_1_1_test_report_generator_a0dc55e4b3874faf329934a64cf225d4d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,196,79"/>
+<area shape="rect" href="classutil_1_1_test_report_generator.html#a4dbbdf7fe6a8f4f8fcc15faeb6c9cd67" title=" " alt="" coords="244,5,450,46"/>
+<area shape="poly" title=" " alt="" coords="195,44,231,41,225,42,197,49"/>
+<area shape="rect" href="classutil_1_1_test_report_generator.html#a91cb0d7c846bd65f08d332a2f67e3ce0" title=" " alt="" coords="264,71,430,111"/>
+<area shape="poly" title=" " alt="" coords="196,69,251,78,246,78,196,74"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_test_report_generator_a0dc55e4b3874faf329934a64cf225d4d_icgraph.png" border="0" usemap="#aclassutil_1_1_test_report_generator_a0dc55e4b3874faf329934a64cf225d4d_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_test_report_generator_a0dc55e4b3874faf329934a64cf225d4d_icgraph" id="aclassutil_1_1_test_report_generator_a0dc55e4b3874faf329934a64cf225d4d_icgraph">
+<area shape="rect" title=" " alt="" coords="248,5,438,46"/>
+<area shape="rect" href="classutil_1_1_test_report_generator.html#a05c87b1a2498085c297eed75bfdccb08" title=" " alt="" coords="5,13,200,38"/>
+<area shape="poly" title=" " alt="" coords="229,26,200,28,200,23,235,26"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a05c87b1a2498085c297eed75bfdccb08" name="a05c87b1a2498085c297eed75bfdccb08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05c87b1a2498085c297eed75bfdccb08">&#9670;&#160;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void util.TestReportGenerator.main </td>
+          <td>(</td>
+          <td class="paramtype">String[]</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td> throws Exception</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_test_report_generator_8java_source.html">TestReportGenerator.java</a> строка <a class="el" href="_test_report_generator_8java_source.html#l00027">27</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="_test_report_generator_8java_source.html#l00104">buildHtmlReport()</a> и <a class="el" href="_test_report_generator_8java_source.html#l00046">loadResults()</a>.</p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_test_report_generator_a05c87b1a2498085c297eed75bfdccb08_cgraph.png" border="0" usemap="#aclassutil_1_1_test_report_generator_a05c87b1a2498085c297eed75bfdccb08_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_test_report_generator_a05c87b1a2498085c297eed75bfdccb08_cgraph" id="aclassutil_1_1_test_report_generator_a05c87b1a2498085c297eed75bfdccb08_cgraph">
+<area shape="rect" title=" " alt="" coords="5,68,200,94"/>
+<area shape="rect" href="classutil_1_1_test_report_generator.html#aedc9777532388c0cb1c784fbfcba12d7" title=" " alt="" coords="248,27,441,68"/>
+<area shape="poly" title=" " alt="" coords="199,65,235,62,230,64,201,70"/>
+<area shape="rect" href="classutil_1_1_test_report_generator.html#a0dc55e4b3874faf329934a64cf225d4d" title=" " alt="" coords="249,92,440,133"/>
+<area shape="poly" title=" " alt="" coords="200,91,236,98,231,99,200,96"/>
+<area shape="rect" href="classutil_1_1_test_report_generator.html#afcaebca7d5e871e09fc18307d4368fba" title=" " alt="" coords="489,5,725,31"/>
+<area shape="poly" title=" " alt="" coords="441,34,476,33,471,34,442,39"/>
+<area shape="rect" href="classutil_1_1_test_report_generator.html#a91cb0d7c846bd65f08d332a2f67e3ce0" title=" " alt="" coords="524,55,690,96"/>
+<area shape="poly" title=" " alt="" coords="441,55,511,65,506,65,441,60"/>
+<area shape="poly" title=" " alt="" coords="440,97,506,90,512,89,440,102"/>
+<area shape="rect" href="classutil_1_1_test_report_generator.html#a4dbbdf7fe6a8f4f8fcc15faeb6c9cd67" title=" " alt="" coords="504,120,710,161"/>
+<area shape="poly" title=" " alt="" coords="440,120,491,128,486,128,440,126"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a91cb0d7c846bd65f08d332a2f67e3ce0" name="a91cb0d7c846bd65f08d332a2f67e3ce0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91cb0d7c846bd65f08d332a2f67e3ce0">&#9670;&#160;</a></span>TestCaseResult()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">record util.TestReportGenerator.TestCaseResult </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>className</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>duration</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>status</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>details</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_test_report_generator_8java_source.html">TestReportGenerator.java</a> строка <a class="el" href="_test_report_generator_8java_source.html#l00209">209</a></p>
+
+<p class="reference">Используется в <a class="el" href="_test_report_generator_8java_source.html#l00104">buildHtmlReport()</a> и <a class="el" href="_test_report_generator_8java_source.html#l00046">loadResults()</a>.</p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutil_1_1_test_report_generator_a91cb0d7c846bd65f08d332a2f67e3ce0_icgraph.png" border="0" usemap="#aclassutil_1_1_test_report_generator_a91cb0d7c846bd65f08d332a2f67e3ce0_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutil_1_1_test_report_generator_a91cb0d7c846bd65f08d332a2f67e3ce0_icgraph" id="aclassutil_1_1_test_report_generator_a91cb0d7c846bd65f08d332a2f67e3ce0_icgraph">
+<area shape="rect" title=" " alt="" coords="489,39,655,79"/>
+<area shape="rect" href="classutil_1_1_test_report_generator.html#aedc9777532388c0cb1c784fbfcba12d7" title=" " alt="" coords="248,5,441,46"/>
+<area shape="poly" title=" " alt="" coords="471,45,441,42,441,37,476,45"/>
+<area shape="rect" href="classutil_1_1_test_report_generator.html#a0dc55e4b3874faf329934a64cf225d4d" title=" " alt="" coords="249,71,440,111"/>
+<area shape="poly" title=" " alt="" coords="476,73,440,80,440,75,471,73"/>
+<area shape="rect" href="classutil_1_1_test_report_generator.html#a05c87b1a2498085c297eed75bfdccb08" title=" " alt="" coords="5,46,200,72"/>
+<area shape="poly" title=" " alt="" coords="230,42,201,48,200,43,235,40"/>
+<area shape="poly" title=" " alt="" coords="231,77,200,75,200,69,236,76"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="a5121b5aa2403473d94a0df0e62516333" name="a5121b5aa2403473d94a0df0e62516333"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5121b5aa2403473d94a0df0e62516333">&#9670;&#160;</a></span>REPORT_TIME</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final DateTimeFormatter util.TestReportGenerator.REPORT_TIME = DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd HH:mm:ss&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="_test_report_generator_8java_source.html">TestReportGenerator.java</a> строка <a class="el" href="_test_report_generator_8java_source.html#l00022">22</a></p>
+
+<p class="reference">Используется в <a class="el" href="_test_report_generator_8java_source.html#l00104">buildHtmlReport()</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>src/util/<a class="el" href="_test_report_generator_8java_source.html">TestReportGenerator.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespaceutil.html">util</a></li><li class="navelem"><a href="classutil_1_1_test_report_generator.html">TestReportGenerator</a></li>
+    <li class="footer">Документация по Умный планировщик задач (To-Do List). Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

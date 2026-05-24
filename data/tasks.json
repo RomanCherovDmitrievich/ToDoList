@@ -1,3 +1,4 @@
 [
-  {"id":"a11b68b2-cb74-471e-ba8b-11f2cd139036","title":"Краш","description":"Время","startTime":"2026-03-06T11:15:00","endTime":"2026-03-06T12:00:00","priority":"NORMAL","category":"HOME","completed":false,"overdue":false,"createdAt":"2026-03-06T11:10:50","sortIndex":1,"recurrenceRule":"NONE","reminderOffsetMinutes":2,"recurrenceEnd":""}
+  {"id":"026d6023-48f9-4fba-b75f-2edb7484aada","title":"asd","description":"asd","startTime":"2026-05-18T09:00:00","endTime":"2026-05-19T18:00:00","priority":"IMPORTANT","category":"OTHER","completed":false,"overdue":false,"createdAt":"2026-05-18T09:28:58","sortIndex":1,"ownerUserId":"41ee4da8-0566-4b41-832b-a6343be43fd2","recurrenceRule":"NONE","reminderOffsetMinutes":0,"recurrenceEnd":""},
+  {"id":"c9351183-bb2d-459a-82fc-faf473032019","title":"dsa","description":"dsa","startTime":"2026-05-18T09:00:00","endTime":"2026-05-19T18:00:00","priority":"IMPORTANT","category":"OTHER","completed":false,"overdue":false,"createdAt":"2026-05-18T09:29:05","sortIndex":2,"ownerUserId":"41ee4da8-0566-4b41-832b-a6343be43fd2","recurrenceRule":"NONE","reminderOffsetMinutes":0,"recurrenceEnd":""}
 ]

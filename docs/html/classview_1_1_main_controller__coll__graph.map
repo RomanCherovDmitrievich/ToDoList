@@ -1,31 +1,43 @@
 <map id="view.MainController" name="view.MainController">
-<area shape="rect" id="Node000001" title="Контроллер главного окна." alt="" coords="917,259,1052,285"/>
-<area shape="rect" id="Node000002" href="$classmodel_1_1_task_manager.html" title="Центральный менеджер задач (Singleton)." alt="" coords="602,132,740,158"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="743,160,768,168,877,214,962,259,957,259,875,219,766,173,743,165"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="639,115,650,108,671,106,690,108,702,114,705,124,699,134,696,130,700,123,698,118,689,113,671,111,652,113,642,119"/>
-<area shape="rect" id="Node000003" href="$classrepository_1_1_database_manager.html" title="SQLite DAO для задач и связанных таблиц." alt="" coords="225,52,411,78"/>
-<area shape="poly" id="edge12_Node000001_Node000003" title=" " alt="" coords="426,48,503,43,590,43,680,52,768,71,808,85,837,100,895,149,922,176,945,207,978,259,973,258,941,210,918,180,892,152,834,105,806,89,767,76,679,57,589,49,503,49,428,53"/>
-<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="393,79,613,131,608,133,393,85"/>
-<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="290,35,300,28,318,26,335,28,345,34,348,44,343,53,338,51,343,43,341,37,333,33,318,31,302,33,294,39"/>
-<area shape="rect" id="Node000004" href="$classutil_1_1_audio_manager.html" title="Менеджер аудио с циклическим плейлистом." alt="" coords="608,230,733,255"/>
-<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="749,247,920,265,915,266,749,252"/>
-<area shape="poly" id="edge6_Node000004_Node000004" title=" " alt="" coords="639,212,650,206,671,203,690,205,702,211,705,221,699,231,696,227,700,220,698,215,689,210,671,208,652,211,641,217"/>
-<area shape="rect" id="Node000005" href="$classutil_1_1_task_reminder_service.html" title="Периодически проверяет задачи и отправляет системные напоминания." alt="" coords="586,327,756,353"/>
-<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="748,321,919,286,924,285,749,326"/>
-<area shape="poly" id="edge8_Node000005_Node000005" title=" " alt="" coords="639,309,650,303,671,300,690,303,702,309,705,318,699,329,696,324,700,318,698,312,689,308,671,306,652,308,641,314"/>
-<area shape="rect" id="Node000006" href="$classutil_1_1_notification_service.html" title="Кроссплатформенный сервис системных уведомлений." alt="" coords="242,296,394,322"/>
-<area shape="poly" id="edge9_Node000005_Node000006" title=" " alt="" coords="409,314,588,332,583,333,410,320"/>
-<area shape="poly" id="edge10_Node000006_Node000006" title=" " alt="" coords="290,279,300,272,318,270,335,272,345,278,348,288,343,298,339,294,343,287,341,281,333,277,318,275,302,277,293,283"/>
-<area shape="rect" id="Node000007" href="$classutil_1_1_email_notifier.html" title=" " alt="" coords="259,350,376,375"/>
-<area shape="poly" id="edge11_Node000005_Node000007" title=" " alt="" coords="391,363,468,363,550,359,610,353,604,354,550,364,468,368,392,368"/>
-<area shape="rect" id="Node000008" href="$enumview_1_1_main_controller_1_1_sort_mode.html" title=" " alt="" coords="574,376,767,402"/>
-<area shape="poly" id="edge13_Node000001_Node000008" title=" " alt="" coords="782,372,838,358,892,338,935,311,967,286,972,284,938,315,895,343,839,363,783,377"/>
-<area shape="rect" id="Node000009" href="$classviewmodel_1_1_task_view_model.html" title="ViewModel для отображения задачи в пользовательском интерфейсе" alt="" coords="581,427,760,453"/>
-<area shape="poly" id="edge14_Node000001_Node000009" title=" " alt="" coords="775,435,835,423,865,412,892,398,922,372,946,340,976,286,980,283,951,343,926,376,895,402,867,417,837,428,776,440"/>
-<area shape="rect" id="Node000010" href="$classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении" alt="" coords="274,427,362,453"/>
-<area shape="poly" id="edge15_Node000009_Node000010" title=" " alt="" coords="378,437,583,440,578,440,378,442"/>
-<area shape="rect" id="Node000011" href="$enummodel_1_1_priority.html" title=" " alt="" coords="11,400,113,426"/>
-<area shape="poly" id="edge16_Node000010_Node000011" title=" " alt="" coords="128,417,275,433,271,437,128,423"/>
-<area shape="rect" id="Node000012" href="$enummodel_1_1_category.html" title=" " alt="" coords="5,454,119,479"/>
-<area shape="poly" id="edge17_Node000010_Node000012" title=" " alt="" coords="134,459,200,454,270,447,276,446,201,459,134,465"/>
+<area shape="rect" id="Node000001" title="Контроллер главного окна." alt="" coords="1266,297,1400,323"/>
+<area shape="rect" id="Node000002" href="$classmodel_1_1_task_manager.html" title="Центральный менеджер задач (Singleton)." alt="" coords="950,103,1088,128"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1096,131,1117,138,1183,172,1243,217,1288,258,1323,298,1318,296,1284,262,1240,221,1181,177,1115,143,1096,136"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="987,85,998,79,1019,76,1038,78,1050,84,1054,94,1048,104,1044,100,1048,93,1046,88,1037,83,1019,81,1000,84,990,90"/>
+<area shape="rect" id="Node000003" href="$classrepository_1_1_database_manager.html" title="SQLite DAO для задач и связанных таблиц." alt="" coords="573,93,759,119"/>
+<area shape="poly" id="edge15_Node000001_Node000003" title=" " alt="" coords="712,85,790,59,891,35,947,28,1004,26,1061,29,1116,41,1157,54,1187,70,1214,91,1244,122,1277,168,1302,217,1330,298,1326,296,1297,220,1272,170,1240,125,1211,95,1185,74,1155,59,1115,46,1060,35,1004,31,947,33,892,41,791,64,714,90"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="775,106,952,113,947,114,776,112"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="639,76,648,69,666,67,683,69,693,75,696,85,691,95,687,91,691,84,689,78,681,74,666,72,650,74,642,80"/>
+<area shape="rect" id="Node000011" href="$classutil_1_1_auth_service.html" title="Сервис регистрации, входа и восстановления доступа." alt="" coords="962,297,1076,323"/>
+<area shape="poly" id="edge18_Node000011_Node000003" title=" " alt="" coords="725,121,831,157,876,174,900,187,910,199,914,212,917,224,924,236,960,270,997,297,991,296,956,274,920,240,912,226,909,213,905,202,897,191,873,179,830,162,725,127"/>
+<area shape="rect" id="Node000004" href="$classrepository_1_1_database_config.html" title="Настройки подключения к БД." alt="" coords="293,93,467,119"/>
+<area shape="poly" id="edge5_Node000003_Node000004" title=" " alt="" coords="482,104,575,105,570,107,483,109"/>
+<area shape="rect" id="Node000005" href="$enumrepository_1_1_database_config_1_1_type.html" title=" " alt="" coords="5,93,212,119"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="226,104,294,105,290,108,228,108"/>
+<area shape="rect" id="Node000006" href="$classmodel_1_1_user.html" title="Данные учетной записи пользователя." alt="" coords="622,227,710,252"/>
+<area shape="poly" id="edge7_Node000002_Node000006" title=" " alt="" coords="726,237,825,230,868,222,897,210,907,194,908,177,909,158,920,139,947,126,952,123,924,143,915,159,914,177,912,196,900,214,870,227,825,235,727,242"/>
+<area shape="poly" id="edge20_Node000011_Node000006" title=" " alt="" coords="726,250,784,262,964,299,959,300,783,268,726,255"/>
+<area shape="rect" id="Node000007" href="$classutil_1_1_audio_manager.html" title="Менеджер аудио с циклическим плейлистом." alt="" coords="956,200,1082,226"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="1088,227,1116,236,1296,297,1291,297,1115,241,1088,233"/>
+<area shape="poly" id="edge9_Node000007_Node000007" title=" " alt="" coords="987,182,998,176,1019,173,1038,175,1050,182,1054,191,1048,202,1044,197,1048,191,1046,185,1037,181,1019,179,1000,181,990,187"/>
+<area shape="rect" id="Node000008" href="$classutil_1_1_task_reminder_service.html" title="Периодически проверяет задачи и отправляет системные напоминания." alt="" coords="934,395,1104,420"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="1077,387,1241,336,1286,324,1292,323,1242,341,1079,392"/>
+<area shape="poly" id="edge11_Node000008_Node000008" title=" " alt="" coords="988,377,998,371,1019,368,1038,370,1050,376,1054,386,1047,396,1044,392,1048,385,1046,380,1037,375,1019,373,1000,376,989,382"/>
+<area shape="rect" id="Node000009" href="$classutil_1_1_notification_service.html" title="Кроссплатформенный сервис системных уведомлений." alt="" coords="590,413,742,439"/>
+<area shape="poly" id="edge12_Node000008_Node000009" title=" " alt="" coords="758,426,898,422,940,421,935,421,899,428,758,431"/>
+<area shape="poly" id="edge13_Node000009_Node000009" title=" " alt="" coords="639,396,648,389,666,387,683,389,693,395,696,405,691,415,687,411,691,404,689,398,681,394,666,392,650,394,641,400"/>
+<area shape="rect" id="Node000010" href="$classutil_1_1_email_notifier.html" title=" " alt="" coords="608,311,725,336"/>
+<area shape="poly" id="edge14_Node000008_Node000010" title=" " alt="" coords="739,338,964,394,959,394,738,343"/>
+<area shape="poly" id="edge19_Node000011_Node000010" title=" " alt="" coords="740,320,898,316,964,314,959,315,898,321,741,325"/>
+<area shape="poly" id="edge16_Node000001_Node000011" title=" " alt="" coords="1091,307,1268,310,1263,310,1092,313"/>
+<area shape="poly" id="edge17_Node000011_Node000011" title=" " alt="" coords="987,280,998,273,1019,271,1038,273,1050,279,1054,289,1047,299,1044,295,1048,288,1046,283,1037,278,1019,276,1000,278,990,284"/>
+<area shape="rect" id="Node000012" href="$enumview_1_1_main_controller_1_1_sort_mode.html" title=" " alt="" coords="922,444,1116,470"/>
+<area shape="poly" id="edge21_Node000001_Node000012" title=" " alt="" coords="1126,437,1184,420,1240,395,1265,378,1287,358,1319,325,1324,322,1290,362,1268,382,1243,399,1186,425,1127,443"/>
+<area shape="rect" id="Node000013" href="$classviewmodel_1_1_task_view_model.html" title="ViewModel для отображения задачи в пользовательском интерфейсе" alt="" coords="929,495,1109,520"/>
+<area shape="poly" id="edge22_Node000001_Node000013" title=" " alt="" coords="1124,502,1184,489,1213,477,1240,462,1273,429,1298,390,1315,352,1326,325,1330,322,1320,354,1303,393,1277,433,1243,466,1216,482,1186,494,1124,507"/>
+<area shape="rect" id="Node000014" href="$classmodel_1_1_task.html" title="Основной класс, представляющий задачу в приложении" alt="" coords="622,495,710,520"/>
+<area shape="poly" id="edge23_Node000013_Node000014" title=" " alt="" coords="726,505,931,507,926,507,726,510"/>
+<area shape="rect" id="Node000015" href="$enummodel_1_1_priority.html" title=" " alt="" coords="329,521,430,547"/>
+<area shape="poly" id="edge24_Node000014_Node000015" title=" " alt="" coords="446,534,549,530,619,519,624,519,549,536,446,540"/>
+<area shape="rect" id="Node000016" href="$enummodel_1_1_category.html" title=" " alt="" coords="323,468,436,494"/>
+<area shape="poly" id="edge25_Node000014_Node000016" title=" " alt="" coords="452,485,624,503,619,504,452,490"/>
 </map>

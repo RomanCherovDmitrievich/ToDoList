@@ -10,6 +10,12 @@ TESTS_DIR="$PROJECT_ROOT/tests"
 CLASSES_DIR="$TESTS_DIR/classes"
 REPORTS_DIR="$TESTS_DIR/reports"
 LIB_DIR="$PROJECT_ROOT/lib"
+POSTGRES_JAR="$LIB_DIR/postgresql-42.7.4.jar"
+MYSQL_JAR="$LIB_DIR/mysql-connector-j-9.3.0.jar"
+MAIL_API_JAR="$LIB_DIR/jakarta.mail-api-2.1.5.jar"
+ANGUS_MAIL_JAR="$LIB_DIR/angus-mail-2.0.5.jar"
+ACTIVATION_API_JAR="$LIB_DIR/jakarta.activation-api-2.1.4.jar"
+ANGUS_ACTIVATION_JAR="$LIB_DIR/angus-activation-2.0.3.jar"
 
 JUNIT_VERSION="1.9.2"
 JUNIT_DIR="$TESTS_DIR/lib"
@@ -51,9 +57,17 @@ else
   CP_SEP=':'
 fi
 
-if [[ ! -f "$LIB_DIR/gson-2.10.1.jar" || ! -f "$LIB_DIR/sqlite-jdbc-3.45.1.0.jar" || ! -f "$LIB_DIR/slf4j-api-2.0.12.jar" || ! -f "$LIB_DIR/slf4j-nop-2.0.12.jar" ]]; then
+if [[ ! -f "$LIB_DIR/gson-2.10.1.jar" || ! -f "$LIB_DIR/sqlite-jdbc-3.45.1.0.jar" || ! -f "$LIB_DIR/slf4j-api-2.0.12.jar" || ! -f "$LIB_DIR/slf4j-nop-2.0.12.jar" || ! -f "$MAIL_API_JAR" || ! -f "$ANGUS_MAIL_JAR" || ! -f "$ACTIVATION_API_JAR" || ! -f "$ANGUS_ACTIVATION_JAR" ]]; then
   echo "[tests] Required jars missing in lib/. Run: ./scripts/setup.sh"
   exit 1
+fi
+
+APP_CLASSPATH="$BIN_DIR${CP_SEP}$LIB_DIR/gson-2.10.1.jar${CP_SEP}$LIB_DIR/sqlite-jdbc-3.45.1.0.jar${CP_SEP}$LIB_DIR/slf4j-api-2.0.12.jar${CP_SEP}$LIB_DIR/slf4j-nop-2.0.12.jar${CP_SEP}$MAIL_API_JAR${CP_SEP}$ANGUS_MAIL_JAR${CP_SEP}$ACTIVATION_API_JAR${CP_SEP}$ANGUS_ACTIVATION_JAR"
+if [[ -f "$POSTGRES_JAR" ]]; then
+  APP_CLASSPATH="${APP_CLASSPATH}${CP_SEP}$POSTGRES_JAR"
+fi
+if [[ -f "$MYSQL_JAR" ]]; then
+  APP_CLASSPATH="${APP_CLASSPATH}${CP_SEP}$MYSQL_JAR"
 fi
 
 if [[ ! -f "$JUNIT_JAR" ]]; then
@@ -82,11 +96,16 @@ echo "[tests] Compiling tests..."
 javac \
   --module-path "$JAVAFX_LIB" \
   --add-modules javafx.controls,javafx.fxml,javafx.media \
-  -cp "$BIN_DIR${CP_SEP}$JUNIT_JAR${CP_SEP}$LIB_DIR/gson-2.10.1.jar${CP_SEP}$LIB_DIR/sqlite-jdbc-3.45.1.0.jar${CP_SEP}$LIB_DIR/slf4j-api-2.0.12.jar${CP_SEP}$LIB_DIR/slf4j-nop-2.0.12.jar" \
+  -cp "$APP_CLASSPATH${CP_SEP}$CLASSES_DIR${CP_SEP}$JUNIT_JAR" \
   -d "$CLASSES_DIR" \
   @"$TEST_SOURCES_LIST"
 
-RESULTS_FILE="$REPORTS_DIR/test_results_$(date +%Y%m%d_%H%M%S).txt"
+TIMESTAMP="$(date +%Y%m%d_%H%M%S)"
+RESULTS_FILE="$REPORTS_DIR/test_results_${TIMESTAMP}.txt"
+XML_REPORT_DIR="$REPORTS_DIR/junit-xml-${TIMESTAMP}"
+HTML_REPORT_FILE="$REPORTS_DIR/test_report_${TIMESTAMP}.html"
+RUNTIME_DATA_DIR="$REPORTS_DIR/runtime-data-${TIMESTAMP}"
+mkdir -p "$RUNTIME_DATA_DIR"
 
 echo "[tests] Running JUnit..."
 
@@ -94,15 +113,28 @@ java \
   --module-path "$JAVAFX_LIB" \
   --add-modules javafx.controls,javafx.fxml,javafx.media \
   --enable-native-access=javafx.graphics \
-  -cp "$BIN_DIR${CP_SEP}$CLASSES_DIR${CP_SEP}$JUNIT_JAR${CP_SEP}$LIB_DIR/gson-2.10.1.jar${CP_SEP}$LIB_DIR/sqlite-jdbc-3.45.1.0.jar${CP_SEP}$LIB_DIR/slf4j-api-2.0.12.jar${CP_SEP}$LIB_DIR/slf4j-nop-2.0.12.jar" \
+  -Djava.awt.headless=true \
+  -Dtodolist.disableAudio=true \
+  -Dtodolist.email.mode=disabled \
+  -Dtodolist.dataDir="$RUNTIME_DATA_DIR" \
+  -cp "$APP_CLASSPATH${CP_SEP}$CLASSES_DIR${CP_SEP}$JUNIT_JAR" \
   org.junit.platform.console.ConsoleLauncher \
   --scan-class-path \
-  --class-path "$BIN_DIR${CP_SEP}$CLASSES_DIR" \
+  --class-path "$APP_CLASSPATH${CP_SEP}$CLASSES_DIR" \
   --details=tree \
   --disable-banner \
+  --reports-dir "$XML_REPORT_DIR" \
   2>&1 | tee "$RESULTS_FILE"
 
 EXIT_CODE=${PIPESTATUS[0]}
 
+java \
+  -cp "$BIN_DIR" \
+  util.TestReportGenerator \
+  "$XML_REPORT_DIR" \
+  "$HTML_REPORT_FILE" \
+  "$RESULTS_FILE"
+
 echo "[tests] Results: $RESULTS_FILE"
+echo "[tests] HTML report: $HTML_REPORT_FILE"
 exit $EXIT_CODE

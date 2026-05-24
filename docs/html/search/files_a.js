@@ -5,5 +5,6 @@ var searchData=
   ['taskmanager_2ejava_2',['TaskManager.java',['../_task_manager_8java.html',1,'']]],
   ['taskreminderservice_2ejava_3',['TaskReminderService.java',['../_task_reminder_service_8java.html',1,'']]],
   ['taskviewmodel_2ejava_4',['TaskViewModel.java',['../_task_view_model_8java.html',1,'']]],
-  ['thememanager_2ejava_5',['ThemeManager.java',['../_theme_manager_8java.html',1,'']]]
+  ['testreportgenerator_2ejava_5',['TestReportGenerator.java',['../_test_report_generator_8java.html',1,'']]],
+  ['thememanager_2ejava_6',['ThemeManager.java',['../_theme_manager_8java.html',1,'']]]
 ];

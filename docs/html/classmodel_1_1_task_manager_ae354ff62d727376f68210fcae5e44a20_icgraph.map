@@ -1,0 +1,7 @@
+<map id="model.TaskManager.isVisibleForCurrentUser" name="model.TaskManager.isVisibleForCurrentUser">
+<area shape="rect" id="Node000001" title=" " alt="" coords="266,27,456,68"/>
+<area shape="rect" id="Node000002" href="$classmodel_1_1_task_manager.html#aa35f43df9eb5e341eba6f55af23ca5f8" title=" " alt="" coords="5,5,218,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="248,35,218,33,218,28,253,34"/>
+<area shape="rect" id="Node000003" href="$classmodel_1_1_task_manager.html#a35be180c8d056573c7d6c8c9a6718f5a" title=" " alt="" coords="21,55,202,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="247,60,203,68,202,63,253,60"/>
+</map>

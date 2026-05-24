@@ -1,0 +1,15 @@
+RenderJob.run: internal exception
+java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/java.util.Arrays$ArrayList.get(Arrays.java:4225)
+	at java.base/java.util.Collections$UnmodifiableList.get(Collections.java:1505)
+	at javafx.graphics@25.0.2/com.sun.glass.ui.Screen.getMainScreen(Screen.java:56)
+	at javafx.graphics@25.0.2/com.sun.prism.mtl.MTLPipeline.getDefaultResourceFactory(MTLPipeline.java:79)
+	at javafx.graphics@25.0.2/com.sun.prism.GraphicsPipeline.getDefaultResourceFactory(GraphicsPipeline.java:155)
+	at javafx.graphics@25.0.2/com.sun.javafx.tk.quantum.QuantumRenderer.lambda$createResourceFactory$1(QuantumRenderer.java:155)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:369)
+	at javafx.graphics@25.0.2/com.sun.javafx.tk.RenderJob.run(RenderJob.java:58)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at javafx.graphics@25.0.2/com.sun.javafx.tk.quantum.QuantumRenderer$PipelineRunnable.run(QuantumRenderer.java:122)
+	at java.base/java.lang.Thread.run(Thread.java:1474)

@@ -1,0 +1,500 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Умный планировщик задач (To-Do List): Исходный файл src/repository/DatabaseConfig.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Умный планировщик задач (To-Do List)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">JavaFX ToDo-приложение с SQLite, уведомлениями и летней темой</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_database_config_8java_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">DatabaseConfig.java</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_database_config_8java.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="namespacerepository.html">    1</a></span><span class="keyword">package </span>repository;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> <a class="code hl_package" href="namespaceutil.html">util</a>.<a class="code hl_class" href="classutil_1_1_path_resolver.html">PathResolver</a>;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> java.io.IOException;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">import</span> java.io.InputStream;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">import</span> java.nio.file.Files;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">import</span> java.nio.file.Path;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">import</span> java.nio.file.Paths;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">import</span> java.sql.Connection;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">import</span> java.sql.DriverManager;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">import</span> java.sql.SQLException;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">import</span> java.util.Objects;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">import</span> java.util.Properties;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html">   19</a></span><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">class </span><a class="code hl_function" href="classrepository_1_1_database_config.html#a35691da1978472d524abd32ca05acbf3">DatabaseConfig</a> {</div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="enumrepository_1_1_database_config_1_1_type.html">   20</a></span>    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code hl_class" href="enumrepository_1_1_database_config_1_1_type.html">Type</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="enumrepository_1_1_database_config_1_1_type.html#a2da6c4e9390c72240575929c8b2b2e10">   21</a></span>        <a class="code hl_variable" href="enumrepository_1_1_database_config_1_1_type.html#a2da6c4e9390c72240575929c8b2b2e10">SQLITE</a>,</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="enumrepository_1_1_database_config_1_1_type.html#a5228a500b66b2d5e8eaa3e2d81b1cb62">   22</a></span>        <a class="code hl_variable" href="enumrepository_1_1_database_config_1_1_type.html#a5228a500b66b2d5e8eaa3e2d81b1cb62">POSTGRESQL</a>,</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="enumrepository_1_1_database_config_1_1_type.html#aeda722d8f1b481c5d4a444fc4b82a3b9">   23</a></span>        <a class="code hl_variable" href="enumrepository_1_1_database_config_1_1_type.html#aeda722d8f1b481c5d4a444fc4b82a3b9">CUSTOM</a></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
+</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a26b491886042cb28b36c593685971fad">   26</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String <a class="code hl_variable" href="classrepository_1_1_database_config.html#a26b491886042cb28b36c593685971fad">SQLITE_DRIVER</a> = <span class="stringliteral">&quot;org.sqlite.JDBC&quot;</span>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a15fbaa9c00c0531fd484dcaed55bf481">   27</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String <a class="code hl_variable" href="classrepository_1_1_database_config.html#a15fbaa9c00c0531fd484dcaed55bf481">POSTGRES_DRIVER</a> = <span class="stringliteral">&quot;org.postgresql.Driver&quot;</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a3689fd115d888fba100900aedcdac987">   29</a></span>    <span class="keyword">private</span> <span class="keyword">final</span> <a class="code hl_class" href="enumrepository_1_1_database_config_1_1_type.html">Type</a> <a class="code hl_variable" href="classrepository_1_1_database_config.html#a3689fd115d888fba100900aedcdac987">type</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a556fb7c180de431475f12b3623efa4e5">   30</a></span>    <span class="keyword">private</span> <span class="keyword">final</span> Path <a class="code hl_variable" href="classrepository_1_1_database_config.html#a556fb7c180de431475f12b3623efa4e5">configFile</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a99dc880412bf37e410a8e7fae965ae7c">   31</a></span>    <span class="keyword">private</span> <span class="keyword">final</span> Path <a class="code hl_variable" href="classrepository_1_1_database_config.html#a99dc880412bf37e410a8e7fae965ae7c">sqlitePath</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a0b91d1ea345d6c04fa6956514e1e5611">   32</a></span>    <span class="keyword">private</span> <span class="keyword">final</span> String <a class="code hl_variable" href="classrepository_1_1_database_config.html#a0b91d1ea345d6c04fa6956514e1e5611">host</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a04096b42ef429a4a507b2a1239a883cf">   33</a></span>    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classrepository_1_1_database_config.html#a04096b42ef429a4a507b2a1239a883cf">port</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#aaaf20009709c64cc5bdf4d91d65d76b6">   34</a></span>    <span class="keyword">private</span> <span class="keyword">final</span> String <a class="code hl_variable" href="classrepository_1_1_database_config.html#aaaf20009709c64cc5bdf4d91d65d76b6">databaseName</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a33a522128bc8b400395422b23443c39c">   35</a></span>    <span class="keyword">private</span> <span class="keyword">final</span> String <a class="code hl_variable" href="classrepository_1_1_database_config.html#a33a522128bc8b400395422b23443c39c">username</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#ac61557a53ef53513ceceeebe3153fe10">   36</a></span>    <span class="keyword">private</span> <span class="keyword">final</span> String <a class="code hl_variable" href="classrepository_1_1_database_config.html#ac61557a53ef53513ceceeebe3153fe10">password</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a697990acd2d137850ccb6dd22562d8a9">   37</a></span>    <span class="keyword">private</span> <span class="keyword">final</span> String <a class="code hl_variable" href="classrepository_1_1_database_config.html#a697990acd2d137850ccb6dd22562d8a9">jdbcUrl</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a87b5809c5e333307cca3810a1b65f158">   38</a></span>    <span class="keyword">private</span> <span class="keyword">final</span> String <a class="code hl_variable" href="classrepository_1_1_database_config.html#a87b5809c5e333307cca3810a1b65f158">driverClass</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a070b891be3ea22e197e203dacb41b50e">   39</a></span>    <span class="keyword">private</span> <span class="keyword">final</span> String <a class="code hl_variable" href="classrepository_1_1_database_config.html#a070b891be3ea22e197e203dacb41b50e">sslMode</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a35691da1978472d524abd32ca05acbf3">   41</a></span>    <span class="keyword">private</span> <a class="code hl_function" href="classrepository_1_1_database_config.html#a35691da1978472d524abd32ca05acbf3">DatabaseConfig</a>(</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <a class="code hl_class" href="enumrepository_1_1_database_config_1_1_type.html">Type</a> <a class="code hl_variable" href="classrepository_1_1_database_config.html#a3689fd115d888fba100900aedcdac987">type</a>,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        Path <a class="code hl_variable" href="classrepository_1_1_database_config.html#a556fb7c180de431475f12b3623efa4e5">configFile</a>,</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        Path <a class="code hl_variable" href="classrepository_1_1_database_config.html#a99dc880412bf37e410a8e7fae965ae7c">sqlitePath</a>,</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        String <a class="code hl_variable" href="classrepository_1_1_database_config.html#a0b91d1ea345d6c04fa6956514e1e5611">host</a>,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="classrepository_1_1_database_config.html#a04096b42ef429a4a507b2a1239a883cf">port</a>,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        String <a class="code hl_variable" href="classrepository_1_1_database_config.html#aaaf20009709c64cc5bdf4d91d65d76b6">databaseName</a>,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        String <a class="code hl_variable" href="classrepository_1_1_database_config.html#a33a522128bc8b400395422b23443c39c">username</a>,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        String <a class="code hl_variable" href="classrepository_1_1_database_config.html#ac61557a53ef53513ceceeebe3153fe10">password</a>,</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        String <a class="code hl_variable" href="classrepository_1_1_database_config.html#a697990acd2d137850ccb6dd22562d8a9">jdbcUrl</a>,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        String <a class="code hl_variable" href="classrepository_1_1_database_config.html#a87b5809c5e333307cca3810a1b65f158">driverClass</a>,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        String <a class="code hl_variable" href="classrepository_1_1_database_config.html#a070b891be3ea22e197e203dacb41b50e">sslMode</a></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    ) {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        this.type = <a class="code hl_variable" href="classrepository_1_1_database_config.html#a3689fd115d888fba100900aedcdac987">type</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        this.configFile = <a class="code hl_variable" href="classrepository_1_1_database_config.html#a556fb7c180de431475f12b3623efa4e5">configFile</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        this.sqlitePath = <a class="code hl_variable" href="classrepository_1_1_database_config.html#a99dc880412bf37e410a8e7fae965ae7c">sqlitePath</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        this.host = <a class="code hl_variable" href="classrepository_1_1_database_config.html#a0b91d1ea345d6c04fa6956514e1e5611">host</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        this.port = <a class="code hl_variable" href="classrepository_1_1_database_config.html#a04096b42ef429a4a507b2a1239a883cf">port</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        this.databaseName = <a class="code hl_variable" href="classrepository_1_1_database_config.html#aaaf20009709c64cc5bdf4d91d65d76b6">databaseName</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        this.username = <a class="code hl_variable" href="classrepository_1_1_database_config.html#a33a522128bc8b400395422b23443c39c">username</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        this.password = <a class="code hl_variable" href="classrepository_1_1_database_config.html#ac61557a53ef53513ceceeebe3153fe10">password</a>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        this.jdbcUrl = <a class="code hl_variable" href="classrepository_1_1_database_config.html#a697990acd2d137850ccb6dd22562d8a9">jdbcUrl</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        this.driverClass = <a class="code hl_variable" href="classrepository_1_1_database_config.html#a87b5809c5e333307cca3810a1b65f158">driverClass</a>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        this.sslMode = <a class="code hl_variable" href="classrepository_1_1_database_config.html#a070b891be3ea22e197e203dacb41b50e">sslMode</a>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
+</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a4e9d6c7f878e393a494f9c9fac13f0a9">   67</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <a class="code hl_function" href="classrepository_1_1_database_config.html#a35691da1978472d524abd32ca05acbf3">DatabaseConfig</a> <a class="code hl_function" href="classrepository_1_1_database_config.html#a4e9d6c7f878e393a494f9c9fac13f0a9">load</a>() {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        Path <a class="code hl_variable" href="classrepository_1_1_database_config.html#a556fb7c180de431475f12b3623efa4e5">configFile</a> = <a class="code hl_class" href="classutil_1_1_path_resolver.html">PathResolver</a>.<a class="code hl_function" href="classutil_1_1_path_resolver.html#a376f308eeac83f51017c8f2be40a09ab">getDatabaseConfigFile</a>();</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        Properties properties = <span class="keyword">new</span> Properties();</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">if</span> (Files.exists(<a class="code hl_variable" href="classrepository_1_1_database_config.html#a556fb7c180de431475f12b3623efa4e5">configFile</a>)) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="keywordflow">try</span> (InputStream input = Files.newInputStream(<a class="code hl_variable" href="classrepository_1_1_database_config.html#a556fb7c180de431475f12b3623efa4e5">configFile</a>)) {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                properties.load(input);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            } <span class="keywordflow">catch</span> (IOException e) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="stringliteral">&quot;Cannot read DB config: &quot;</span> + <a class="code hl_variable" href="classrepository_1_1_database_config.html#a556fb7c180de431475f12b3623efa4e5">configFile</a>, e);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <a class="code hl_function" href="classrepository_1_1_database_config.html#ab59426f01c5b94e12686f41d18b2e0ba">applyEnvironmentOverride</a>(properties, <span class="stringliteral">&quot;db.type&quot;</span>, <span class="stringliteral">&quot;TODOLIST_DB_TYPE&quot;</span>);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <a class="code hl_function" href="classrepository_1_1_database_config.html#ab59426f01c5b94e12686f41d18b2e0ba">applyEnvironmentOverride</a>(properties, <span class="stringliteral">&quot;db.sqlitePath&quot;</span>, <span class="stringliteral">&quot;TODOLIST_DB_SQLITE_PATH&quot;</span>);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <a class="code hl_function" href="classrepository_1_1_database_config.html#ab59426f01c5b94e12686f41d18b2e0ba">applyEnvironmentOverride</a>(properties, <span class="stringliteral">&quot;db.host&quot;</span>, <span class="stringliteral">&quot;TODOLIST_DB_HOST&quot;</span>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <a class="code hl_function" href="classrepository_1_1_database_config.html#ab59426f01c5b94e12686f41d18b2e0ba">applyEnvironmentOverride</a>(properties, <span class="stringliteral">&quot;db.port&quot;</span>, <span class="stringliteral">&quot;TODOLIST_DB_PORT&quot;</span>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <a class="code hl_function" href="classrepository_1_1_database_config.html#ab59426f01c5b94e12686f41d18b2e0ba">applyEnvironmentOverride</a>(properties, <span class="stringliteral">&quot;db.name&quot;</span>, <span class="stringliteral">&quot;TODOLIST_DB_NAME&quot;</span>);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <a class="code hl_function" href="classrepository_1_1_database_config.html#ab59426f01c5b94e12686f41d18b2e0ba">applyEnvironmentOverride</a>(properties, <span class="stringliteral">&quot;db.username&quot;</span>, <span class="stringliteral">&quot;TODOLIST_DB_USERNAME&quot;</span>);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <a class="code hl_function" href="classrepository_1_1_database_config.html#ab59426f01c5b94e12686f41d18b2e0ba">applyEnvironmentOverride</a>(properties, <span class="stringliteral">&quot;db.password&quot;</span>, <span class="stringliteral">&quot;TODOLIST_DB_PASSWORD&quot;</span>);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <a class="code hl_function" href="classrepository_1_1_database_config.html#ab59426f01c5b94e12686f41d18b2e0ba">applyEnvironmentOverride</a>(properties, <span class="stringliteral">&quot;db.jdbcUrl&quot;</span>, <span class="stringliteral">&quot;TODOLIST_DB_JDBC_URL&quot;</span>);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <a class="code hl_function" href="classrepository_1_1_database_config.html#ab59426f01c5b94e12686f41d18b2e0ba">applyEnvironmentOverride</a>(properties, <span class="stringliteral">&quot;db.driverClass&quot;</span>, <span class="stringliteral">&quot;TODOLIST_DB_DRIVER_CLASS&quot;</span>);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <a class="code hl_function" href="classrepository_1_1_database_config.html#ab59426f01c5b94e12686f41d18b2e0ba">applyEnvironmentOverride</a>(properties, <span class="stringliteral">&quot;db.sslMode&quot;</span>, <span class="stringliteral">&quot;TODOLIST_DB_SSL_MODE&quot;</span>);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classrepository_1_1_database_config.html#a54be8ad7883587920d91f2ce979fa3b9">fromProperties</a>(properties, <a class="code hl_variable" href="classrepository_1_1_database_config.html#a556fb7c180de431475f12b3623efa4e5">configFile</a>, <a class="code hl_class" href="classutil_1_1_path_resolver.html">PathResolver</a>.<a class="code hl_function" href="classutil_1_1_path_resolver.html#a50961f05bdf2c5652e65d92495c625ba">getDatabaseFile</a>());</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
+</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a54be8ad7883587920d91f2ce979fa3b9">   93</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <a class="code hl_function" href="classrepository_1_1_database_config.html#a35691da1978472d524abd32ca05acbf3">DatabaseConfig</a> <a class="code hl_function" href="classrepository_1_1_database_config.html#a54be8ad7883587920d91f2ce979fa3b9">fromProperties</a>(Properties properties, Path <a class="code hl_variable" href="classrepository_1_1_database_config.html#a556fb7c180de431475f12b3623efa4e5">configFile</a>, Path defaultSqlitePath) {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        Objects.requireNonNull(properties, <span class="stringliteral">&quot;properties&quot;</span>);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        Objects.requireNonNull(<a class="code hl_variable" href="classrepository_1_1_database_config.html#a556fb7c180de431475f12b3623efa4e5">configFile</a>, <span class="stringliteral">&quot;configFile&quot;</span>);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        Objects.requireNonNull(defaultSqlitePath, <span class="stringliteral">&quot;defaultSqlitePath&quot;</span>);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <a class="code hl_class" href="enumrepository_1_1_database_config_1_1_type.html">Type</a> <a class="code hl_variable" href="classrepository_1_1_database_config.html#a3689fd115d888fba100900aedcdac987">type</a> = <a class="code hl_function" href="classrepository_1_1_database_config.html#a36e82cbf84ceab1f8059de8ef510da3a">parseType</a>(<a class="code hl_function" href="classrepository_1_1_database_config.html#a69f8eeab7280768eee8545d4371aeb9c">read</a>(properties, <span class="stringliteral">&quot;db.type&quot;</span>, <span class="stringliteral">&quot;sqlite&quot;</span>));</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        Path <a class="code hl_variable" href="classrepository_1_1_database_config.html#a99dc880412bf37e410a8e7fae965ae7c">sqlitePath</a> = <a class="code hl_function" href="classrepository_1_1_database_config.html#a4b5dc5dd91254df1efacc26898e26caf">resolveSqlitePath</a>(<a class="code hl_function" href="classrepository_1_1_database_config.html#a69f8eeab7280768eee8545d4371aeb9c">read</a>(properties, <span class="stringliteral">&quot;db.sqlitePath&quot;</span>, <span class="stringliteral">&quot;&quot;</span>), defaultSqlitePath);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        String <a class="code hl_variable" href="classrepository_1_1_database_config.html#a0b91d1ea345d6c04fa6956514e1e5611">host</a> = <a class="code hl_function" href="classrepository_1_1_database_config.html#a69f8eeab7280768eee8545d4371aeb9c">read</a>(properties, <span class="stringliteral">&quot;db.host&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="classrepository_1_1_database_config.html#a04096b42ef429a4a507b2a1239a883cf">port</a> = <a class="code hl_function" href="classrepository_1_1_database_config.html#a69aeb61182c8f6f4ccb5b924c424de02">parsePort</a>(<a class="code hl_function" href="classrepository_1_1_database_config.html#a69f8eeab7280768eee8545d4371aeb9c">read</a>(properties, <span class="stringliteral">&quot;db.port&quot;</span>, <span class="stringliteral">&quot;&quot;</span>), <a class="code hl_variable" href="classrepository_1_1_database_config.html#a3689fd115d888fba100900aedcdac987">type</a> == <a class="code hl_class" href="enumrepository_1_1_database_config_1_1_type.html">Type</a>.<a class="code hl_variable" href="enumrepository_1_1_database_config_1_1_type.html#a5228a500b66b2d5e8eaa3e2d81b1cb62">POSTGRESQL</a> ? 5432 : 0);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        String <a class="code hl_variable" href="classrepository_1_1_database_config.html#aaaf20009709c64cc5bdf4d91d65d76b6">databaseName</a> = <a class="code hl_function" href="classrepository_1_1_database_config.html#a69f8eeab7280768eee8545d4371aeb9c">read</a>(properties, <span class="stringliteral">&quot;db.name&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        String <a class="code hl_variable" href="classrepository_1_1_database_config.html#a33a522128bc8b400395422b23443c39c">username</a> = <a class="code hl_function" href="classrepository_1_1_database_config.html#a69f8eeab7280768eee8545d4371aeb9c">read</a>(properties, <span class="stringliteral">&quot;db.username&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        String <a class="code hl_variable" href="classrepository_1_1_database_config.html#ac61557a53ef53513ceceeebe3153fe10">password</a> = <a class="code hl_function" href="classrepository_1_1_database_config.html#a69f8eeab7280768eee8545d4371aeb9c">read</a>(properties, <span class="stringliteral">&quot;db.password&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        String <a class="code hl_variable" href="classrepository_1_1_database_config.html#a697990acd2d137850ccb6dd22562d8a9">jdbcUrl</a> = <a class="code hl_function" href="classrepository_1_1_database_config.html#a69f8eeab7280768eee8545d4371aeb9c">read</a>(properties, <span class="stringliteral">&quot;db.jdbcUrl&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        String <a class="code hl_variable" href="classrepository_1_1_database_config.html#a87b5809c5e333307cca3810a1b65f158">driverClass</a> = <a class="code hl_function" href="classrepository_1_1_database_config.html#a69f8eeab7280768eee8545d4371aeb9c">read</a>(properties, <span class="stringliteral">&quot;db.driverClass&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        String <a class="code hl_variable" href="classrepository_1_1_database_config.html#a070b891be3ea22e197e203dacb41b50e">sslMode</a> = <a class="code hl_function" href="classrepository_1_1_database_config.html#a69f8eeab7280768eee8545d4371aeb9c">read</a>(properties, <span class="stringliteral">&quot;db.sslMode&quot;</span>, <span class="stringliteral">&quot;require&quot;</span>);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_function" href="classrepository_1_1_database_config.html#a35691da1978472d524abd32ca05acbf3">DatabaseConfig</a>(</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            <a class="code hl_variable" href="classrepository_1_1_database_config.html#a3689fd115d888fba100900aedcdac987">type</a>,</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            <a class="code hl_variable" href="classrepository_1_1_database_config.html#a556fb7c180de431475f12b3623efa4e5">configFile</a>.toAbsolutePath(),</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            <a class="code hl_variable" href="classrepository_1_1_database_config.html#a99dc880412bf37e410a8e7fae965ae7c">sqlitePath</a>,</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            <a class="code hl_variable" href="classrepository_1_1_database_config.html#a0b91d1ea345d6c04fa6956514e1e5611">host</a>,</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            <a class="code hl_variable" href="classrepository_1_1_database_config.html#a04096b42ef429a4a507b2a1239a883cf">port</a>,</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            <a class="code hl_variable" href="classrepository_1_1_database_config.html#aaaf20009709c64cc5bdf4d91d65d76b6">databaseName</a>,</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            <a class="code hl_variable" href="classrepository_1_1_database_config.html#a33a522128bc8b400395422b23443c39c">username</a>,</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            <a class="code hl_variable" href="classrepository_1_1_database_config.html#ac61557a53ef53513ceceeebe3153fe10">password</a>,</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            <a class="code hl_variable" href="classrepository_1_1_database_config.html#a697990acd2d137850ccb6dd22562d8a9">jdbcUrl</a>,</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            <a class="code hl_variable" href="classrepository_1_1_database_config.html#a87b5809c5e333307cca3810a1b65f158">driverClass</a>,</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            <a class="code hl_variable" href="classrepository_1_1_database_config.html#a070b891be3ea22e197e203dacb41b50e">sslMode</a></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        );</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    }</div>
+</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="foldopen" id="foldopen00124" data-start="{" data-end="}">
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a0ad03838a65cc0d81aa5744e49445ef1">  124</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classrepository_1_1_database_config.html#a0ad03838a65cc0d81aa5744e49445ef1">validate</a>() {</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <span class="keywordflow">switch</span> (<a class="code hl_variable" href="classrepository_1_1_database_config.html#a3689fd115d888fba100900aedcdac987">type</a>) {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            <span class="keywordflow">case</span> SQLITE -&gt; {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classrepository_1_1_database_config.html#a99dc880412bf37e410a8e7fae965ae7c">sqlitePath</a> == <span class="keyword">null</span>) {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                    <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="stringliteral">&quot;SQLite path is not configured&quot;</span>);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                }</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            <span class="keywordflow">case</span> POSTGRESQL -&gt; {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classrepository_1_1_database_config.html#a0b91d1ea345d6c04fa6956514e1e5611">host</a>.isBlank() || <a class="code hl_variable" href="classrepository_1_1_database_config.html#aaaf20009709c64cc5bdf4d91d65d76b6">databaseName</a>.isBlank() || <a class="code hl_variable" href="classrepository_1_1_database_config.html#a33a522128bc8b400395422b23443c39c">username</a>.isBlank()) {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                    <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalStateException(</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>                        <span class="stringliteral">&quot;PostgreSQL config is incomplete. Fill db.host, db.name and db.username in &quot;</span> + <a class="code hl_variable" href="classrepository_1_1_database_config.html#a556fb7c180de431475f12b3623efa4e5">configFile</a></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>                    );</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>                }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>            }</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            <span class="keywordflow">case</span> CUSTOM -&gt; {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classrepository_1_1_database_config.html#a697990acd2d137850ccb6dd22562d8a9">jdbcUrl</a>.isBlank() || <a class="code hl_function" href="classrepository_1_1_database_config.html#a6f6ee0a0b912b6063df56dc7c84cd547">getDriverClass</a>().isBlank()) {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                    <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalStateException(</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>                        <span class="stringliteral">&quot;Custom JDBC config is incomplete. Fill db.jdbcUrl and db.driverClass in &quot;</span> + <a class="code hl_variable" href="classrepository_1_1_database_config.html#a556fb7c180de431475f12b3623efa4e5">configFile</a></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                    );</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                }</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            }</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            <span class="keywordflow">default</span> -&gt; <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="stringliteral">&quot;Unsupported DB type: &quot;</span> + <a class="code hl_variable" href="classrepository_1_1_database_config.html#a3689fd115d888fba100900aedcdac987">type</a>);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        }</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    }</div>
+</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="foldopen" id="foldopen00149" data-start="{" data-end="}">
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#ab5871fda6f1f9a780cf4dcf674cd0986">  149</a></span>    <span class="keyword">public</span> Connection <a class="code hl_function" href="classrepository_1_1_database_config.html#ab5871fda6f1f9a780cf4dcf674cd0986">openConnection</a>() throws SQLException {</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        Properties connectionProperties = <a class="code hl_function" href="classrepository_1_1_database_config.html#a9d73ac86e1e24822a5fdc5946aeb9adb">getConnectionProperties</a>();</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        String resolvedJdbcUrl = <a class="code hl_function" href="classrepository_1_1_database_config.html#a0633e0cbfcc748e355c055233dfbba50">getJdbcUrl</a>();</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="keywordflow">if</span> (connectionProperties.isEmpty()) {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            <span class="keywordflow">return</span> DriverManager.getConnection(resolvedJdbcUrl);</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        }</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        <span class="keywordflow">return</span> DriverManager.getConnection(resolvedJdbcUrl, connectionProperties);</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    }</div>
+</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="foldopen" id="foldopen00158" data-start="{" data-end="}">
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a4210ed0a814b9aa2d0b1c12377895163">  158</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classrepository_1_1_database_config.html#a4210ed0a814b9aa2d0b1c12377895163">loadDriver</a>() throws ClassNotFoundException {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        Class.forName(<a class="code hl_function" href="classrepository_1_1_database_config.html#a6f6ee0a0b912b6063df56dc7c84cd547">getDriverClass</a>());</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    }</div>
+</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="foldopen" id="foldopen00162" data-start="{" data-end="}">
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a9d73ac86e1e24822a5fdc5946aeb9adb">  162</a></span>    <span class="keyword">public</span> Properties <a class="code hl_function" href="classrepository_1_1_database_config.html#a9d73ac86e1e24822a5fdc5946aeb9adb">getConnectionProperties</a>() {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        Properties properties = <span class="keyword">new</span> Properties();</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classrepository_1_1_database_config.html#a33a522128bc8b400395422b23443c39c">username</a>.isBlank()) {</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            properties.setProperty(<span class="stringliteral">&quot;user&quot;</span>, <a class="code hl_variable" href="classrepository_1_1_database_config.html#a33a522128bc8b400395422b23443c39c">username</a>);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        }</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classrepository_1_1_database_config.html#ac61557a53ef53513ceceeebe3153fe10">password</a>.isBlank()) {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            properties.setProperty(<span class="stringliteral">&quot;password&quot;</span>, <a class="code hl_variable" href="classrepository_1_1_database_config.html#ac61557a53ef53513ceceeebe3153fe10">password</a>);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        }</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <span class="keywordflow">return</span> properties;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    }</div>
+</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="foldopen" id="foldopen00173" data-start="{" data-end="}">
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a0633e0cbfcc748e355c055233dfbba50">  173</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classrepository_1_1_database_config.html#a0633e0cbfcc748e355c055233dfbba50">getJdbcUrl</a>() {</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        <span class="keywordflow">return</span> <span class="keywordflow">switch</span> (<a class="code hl_variable" href="classrepository_1_1_database_config.html#a3689fd115d888fba100900aedcdac987">type</a>) {</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            <span class="keywordflow">case</span> SQLITE -&gt; <span class="stringliteral">&quot;jdbc:sqlite:&quot;</span> + <a class="code hl_variable" href="classrepository_1_1_database_config.html#a99dc880412bf37e410a8e7fae965ae7c">sqlitePath</a>.toAbsolutePath();</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            <span class="keywordflow">case</span> POSTGRESQL -&gt; {</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                StringBuilder builder = <span class="keyword">new</span> StringBuilder(<span class="stringliteral">&quot;jdbc:postgresql://&quot;</span>)</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                    .append(<a class="code hl_variable" href="classrepository_1_1_database_config.html#a0b91d1ea345d6c04fa6956514e1e5611">host</a>)</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                    .append(<span class="stringliteral">&quot;:&quot;</span>)</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                    .append(<a class="code hl_variable" href="classrepository_1_1_database_config.html#a04096b42ef429a4a507b2a1239a883cf">port</a>)</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>                    .append(<span class="stringliteral">&quot;/&quot;</span>)</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                    .append(<a class="code hl_variable" href="classrepository_1_1_database_config.html#aaaf20009709c64cc5bdf4d91d65d76b6">databaseName</a>);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classrepository_1_1_database_config.html#a070b891be3ea22e197e203dacb41b50e">sslMode</a>.isBlank()) {</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                    builder.append(<span class="stringliteral">&quot;?sslmode=&quot;</span>).append(<a class="code hl_variable" href="classrepository_1_1_database_config.html#a070b891be3ea22e197e203dacb41b50e">sslMode</a>);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>                }</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>                yield builder.toString();</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>            }</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>            <span class="keywordflow">case</span> CUSTOM -&gt; <a class="code hl_variable" href="classrepository_1_1_database_config.html#a697990acd2d137850ccb6dd22562d8a9">jdbcUrl</a>;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        };</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    }</div>
+</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="foldopen" id="foldopen00192" data-start="{" data-end="}">
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a6f6ee0a0b912b6063df56dc7c84cd547">  192</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classrepository_1_1_database_config.html#a6f6ee0a0b912b6063df56dc7c84cd547">getDriverClass</a>() {</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        <span class="keywordflow">return</span> <span class="keywordflow">switch</span> (<a class="code hl_variable" href="classrepository_1_1_database_config.html#a3689fd115d888fba100900aedcdac987">type</a>) {</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>            <span class="keywordflow">case</span> SQLITE -&gt; <a class="code hl_variable" href="classrepository_1_1_database_config.html#a26b491886042cb28b36c593685971fad">SQLITE_DRIVER</a>;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>            <span class="keywordflow">case</span> POSTGRESQL -&gt; <a class="code hl_variable" href="classrepository_1_1_database_config.html#a15fbaa9c00c0531fd484dcaed55bf481">POSTGRES_DRIVER</a>;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>            <span class="keywordflow">case</span> CUSTOM -&gt; <a class="code hl_variable" href="classrepository_1_1_database_config.html#a87b5809c5e333307cca3810a1b65f158">driverClass</a>;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        };</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    }</div>
+</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="foldopen" id="foldopen00200" data-start="{" data-end="}">
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a9c4a9f4428edde4c28b333c3b3951573">  200</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classrepository_1_1_database_config.html#a9c4a9f4428edde4c28b333c3b3951573">describe</a>() {</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        <span class="keywordflow">return</span> <span class="keywordflow">switch</span> (<a class="code hl_variable" href="classrepository_1_1_database_config.html#a3689fd115d888fba100900aedcdac987">type</a>) {</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>            <span class="keywordflow">case</span> SQLITE -&gt; <span class="stringliteral">&quot;SQLite -&gt; &quot;</span> + <a class="code hl_variable" href="classrepository_1_1_database_config.html#a99dc880412bf37e410a8e7fae965ae7c">sqlitePath</a>.toAbsolutePath();</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>            <span class="keywordflow">case</span> POSTGRESQL -&gt; <span class="stringliteral">&quot;PostgreSQL -&gt; &quot;</span> + <a class="code hl_variable" href="classrepository_1_1_database_config.html#a0b91d1ea345d6c04fa6956514e1e5611">host</a> + <span class="stringliteral">&quot;:&quot;</span> + <a class="code hl_variable" href="classrepository_1_1_database_config.html#a04096b42ef429a4a507b2a1239a883cf">port</a> + <span class="stringliteral">&quot;/&quot;</span> + <a class="code hl_variable" href="classrepository_1_1_database_config.html#aaaf20009709c64cc5bdf4d91d65d76b6">databaseName</a> + <span class="stringliteral">&quot; (sslmode=&quot;</span> + <a class="code hl_variable" href="classrepository_1_1_database_config.html#a070b891be3ea22e197e203dacb41b50e">sslMode</a> + <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            <span class="keywordflow">case</span> CUSTOM -&gt; <span class="stringliteral">&quot;Custom JDBC -&gt; &quot;</span> + <a class="code hl_variable" href="classrepository_1_1_database_config.html#a697990acd2d137850ccb6dd22562d8a9">jdbcUrl</a>;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        };</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    }</div>
+</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="foldopen" id="foldopen00208" data-start="{" data-end="}">
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#ad83567e4c34a8f0274943ac211e94d31">  208</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="enumrepository_1_1_database_config_1_1_type.html">Type</a> <a class="code hl_function" href="classrepository_1_1_database_config.html#ad83567e4c34a8f0274943ac211e94d31">getType</a>() {</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classrepository_1_1_database_config.html#a3689fd115d888fba100900aedcdac987">type</a>;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    }</div>
+</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="foldopen" id="foldopen00212" data-start="{" data-end="}">
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a476577d1a3e007f3cf581029ee59b32c">  212</a></span>    <span class="keyword">public</span> Path <a class="code hl_function" href="classrepository_1_1_database_config.html#a476577d1a3e007f3cf581029ee59b32c">getConfigFile</a>() {</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classrepository_1_1_database_config.html#a556fb7c180de431475f12b3623efa4e5">configFile</a>;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    }</div>
+</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="foldopen" id="foldopen00216" data-start="{" data-end="}">
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a7f1bd1a7d482f1576b5053380a70ddce">  216</a></span>    <span class="keyword">public</span> Path <a class="code hl_function" href="classrepository_1_1_database_config.html#a7f1bd1a7d482f1576b5053380a70ddce">getSqlitePath</a>() {</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classrepository_1_1_database_config.html#a99dc880412bf37e410a8e7fae965ae7c">sqlitePath</a>;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    }</div>
+</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="foldopen" id="foldopen00220" data-start="{" data-end="}">
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#aec62e8bcb5c3175fe3f77052d8ec3040">  220</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classrepository_1_1_database_config.html#aec62e8bcb5c3175fe3f77052d8ec3040">getHost</a>() {</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classrepository_1_1_database_config.html#a0b91d1ea345d6c04fa6956514e1e5611">host</a>;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    }</div>
+</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
+<div class="foldopen" id="foldopen00224" data-start="{" data-end="}">
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#aacd1135a189c5840eb8850a92147e5f0">  224</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classrepository_1_1_database_config.html#aacd1135a189c5840eb8850a92147e5f0">getPort</a>() {</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classrepository_1_1_database_config.html#a04096b42ef429a4a507b2a1239a883cf">port</a>;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    }</div>
+</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="foldopen" id="foldopen00228" data-start="{" data-end="}">
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#acdf02be2ca0ac3896d3e85f95809ced6">  228</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classrepository_1_1_database_config.html#acdf02be2ca0ac3896d3e85f95809ced6">getDatabaseName</a>() {</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classrepository_1_1_database_config.html#aaaf20009709c64cc5bdf4d91d65d76b6">databaseName</a>;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    }</div>
+</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="foldopen" id="foldopen00232" data-start="{" data-end="}">
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#aa0ad346841560fe5e82d290bef810fb2">  232</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classrepository_1_1_database_config.html#aa0ad346841560fe5e82d290bef810fb2">getUsername</a>() {</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classrepository_1_1_database_config.html#a33a522128bc8b400395422b23443c39c">username</a>;</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    }</div>
+</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
+<div class="foldopen" id="foldopen00236" data-start="{" data-end="}">
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a3ae49d96b9cf80e8a83d9ab0db1a0c5a">  236</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classrepository_1_1_database_config.html#a3ae49d96b9cf80e8a83d9ab0db1a0c5a">getPassword</a>() {</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classrepository_1_1_database_config.html#ac61557a53ef53513ceceeebe3153fe10">password</a>;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    }</div>
+</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
+<div class="foldopen" id="foldopen00240" data-start="{" data-end="}">
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#afe03502cca1abb0b07771c1dc502e4d3">  240</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classrepository_1_1_database_config.html#afe03502cca1abb0b07771c1dc502e4d3">getSslMode</a>() {</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classrepository_1_1_database_config.html#a070b891be3ea22e197e203dacb41b50e">sslMode</a>;</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    }</div>
+</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
+<div class="foldopen" id="foldopen00244" data-start="{" data-end="}">
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a10d0e3b2363ed38f49bfa62571b904cb">  244</a></span>    <span class="keyword">public</span> <span class="keywordtype">boolean</span> <a class="code hl_function" href="classrepository_1_1_database_config.html#a10d0e3b2363ed38f49bfa62571b904cb">isSqlite</a>() {</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classrepository_1_1_database_config.html#a3689fd115d888fba100900aedcdac987">type</a> == <a class="code hl_class" href="enumrepository_1_1_database_config_1_1_type.html">Type</a>.<a class="code hl_variable" href="enumrepository_1_1_database_config_1_1_type.html#a2da6c4e9390c72240575929c8b2b2e10">SQLITE</a>;</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    }</div>
+</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
+<div class="foldopen" id="foldopen00248" data-start="{" data-end="}">
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a395cc8ecd621add2b161f95ad93e8f01">  248</a></span>    <span class="keyword">public</span> <span class="keywordtype">boolean</span> <a class="code hl_function" href="classrepository_1_1_database_config.html#a395cc8ecd621add2b161f95ad93e8f01">isPostgresql</a>() {</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classrepository_1_1_database_config.html#a3689fd115d888fba100900aedcdac987">type</a> == <a class="code hl_class" href="enumrepository_1_1_database_config_1_1_type.html">Type</a>.<a class="code hl_variable" href="enumrepository_1_1_database_config_1_1_type.html#a5228a500b66b2d5e8eaa3e2d81b1cb62">POSTGRESQL</a>;</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    }</div>
+</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span> </div>
+<div class="foldopen" id="foldopen00252" data-start="{" data-end="}">
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#ae61320b64c79be14742b8b9d39d6435b">  252</a></span>    <span class="keyword">public</span> <span class="keywordtype">boolean</span> <a class="code hl_function" href="classrepository_1_1_database_config.html#ae61320b64c79be14742b8b9d39d6435b">isCustom</a>() {</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classrepository_1_1_database_config.html#a3689fd115d888fba100900aedcdac987">type</a> == <a class="code hl_class" href="enumrepository_1_1_database_config_1_1_type.html">Type</a>.<a class="code hl_variable" href="enumrepository_1_1_database_config_1_1_type.html#aeda722d8f1b481c5d4a444fc4b82a3b9">CUSTOM</a>;</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    }</div>
+</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="foldopen" id="foldopen00256" data-start="{" data-end="}">
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#ab59426f01c5b94e12686f41d18b2e0ba">  256</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classrepository_1_1_database_config.html#ab59426f01c5b94e12686f41d18b2e0ba">applyEnvironmentOverride</a>(Properties properties, String propertyKey, String envKey) {</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>        String envValue = System.getenv(envKey);</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        <span class="keywordflow">if</span> (envValue != <span class="keyword">null</span> &amp;&amp; !envValue.isBlank()) {</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>            properties.setProperty(propertyKey, envValue);</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        }</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    }</div>
+</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
+<div class="foldopen" id="foldopen00263" data-start="{" data-end="}">
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a69f8eeab7280768eee8545d4371aeb9c">  263</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> String <a class="code hl_function" href="classrepository_1_1_database_config.html#a69f8eeab7280768eee8545d4371aeb9c">read</a>(Properties properties, String key, String defaultValue) {</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        <span class="keywordflow">return</span> properties.getProperty(key, defaultValue).trim();</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    }</div>
+</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
+<div class="foldopen" id="foldopen00267" data-start="{" data-end="}">
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a36e82cbf84ceab1f8059de8ef510da3a">  267</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <a class="code hl_class" href="enumrepository_1_1_database_config_1_1_type.html">Type</a> <a class="code hl_function" href="classrepository_1_1_database_config.html#a36e82cbf84ceab1f8059de8ef510da3a">parseType</a>(String value) {</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        String normalized = value.trim().toLowerCase();</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>        <span class="keywordflow">return</span> <span class="keywordflow">switch</span> (normalized) {</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>            <span class="keywordflow">case</span> <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;sqlite&quot;</span> -&gt; <a class="code hl_class" href="enumrepository_1_1_database_config_1_1_type.html">Type</a>.<a class="code hl_variable" href="enumrepository_1_1_database_config_1_1_type.html#a2da6c4e9390c72240575929c8b2b2e10">SQLITE</a>;</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>            <span class="keywordflow">case</span> <span class="stringliteral">&quot;postgres&quot;</span>, <span class="stringliteral">&quot;postgresql&quot;</span> -&gt; <a class="code hl_class" href="enumrepository_1_1_database_config_1_1_type.html">Type</a>.<a class="code hl_variable" href="enumrepository_1_1_database_config_1_1_type.html#a5228a500b66b2d5e8eaa3e2d81b1cb62">POSTGRESQL</a>;</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>            <span class="keywordflow">case</span> <span class="stringliteral">&quot;custom&quot;</span>, <span class="stringliteral">&quot;jdbc&quot;</span> -&gt; <a class="code hl_class" href="enumrepository_1_1_database_config_1_1_type.html">Type</a>.<a class="code hl_variable" href="enumrepository_1_1_database_config_1_1_type.html#aeda722d8f1b481c5d4a444fc4b82a3b9">CUSTOM</a>;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>            <span class="keywordflow">default</span> -&gt; <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="stringliteral">&quot;Unsupported db.type: &quot;</span> + value);</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        };</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    }</div>
+</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
+<div class="foldopen" id="foldopen00277" data-start="{" data-end="}">
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a69aeb61182c8f6f4ccb5b924c424de02">  277</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classrepository_1_1_database_config.html#a69aeb61182c8f6f4ccb5b924c424de02">parsePort</a>(String value, <span class="keywordtype">int</span> defaultValue) {</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        <span class="keywordflow">if</span> (value == <span class="keyword">null</span> || value.isBlank()) {</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>            <span class="keywordflow">return</span> defaultValue;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        }</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        <span class="keywordflow">return</span> Integer.parseInt(value.trim());</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    }</div>
+</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
+<div class="foldopen" id="foldopen00284" data-start="{" data-end="}">
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno"><a class="line" href="classrepository_1_1_database_config.html#a4b5dc5dd91254df1efacc26898e26caf">  284</a></span>    <span class="keyword">private</span> <span class="keyword">static</span> Path <a class="code hl_function" href="classrepository_1_1_database_config.html#a4b5dc5dd91254df1efacc26898e26caf">resolveSqlitePath</a>(String configuredPath, Path defaultPath) {</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>        <span class="keywordflow">if</span> (configuredPath == <span class="keyword">null</span> || configuredPath.isBlank()) {</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>            <span class="keywordflow">return</span> defaultPath.toAbsolutePath();</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>        }</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>        Path path = Paths.get(configuredPath.trim());</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        <span class="keywordflow">return</span> path.isAbsolute() ? path : path.toAbsolutePath();</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    }</div>
+</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>}</div>
+</div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a04096b42ef429a4a507b2a1239a883cf"><div class="ttname"><a href="classrepository_1_1_database_config.html#a04096b42ef429a4a507b2a1239a883cf">repository.DatabaseConfig.port</a></div><div class="ttdeci">final int port</div><div class="ttdef"><b>Определения</b> <a href="#l00033">DatabaseConfig.java:33</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a0633e0cbfcc748e355c055233dfbba50"><div class="ttname"><a href="classrepository_1_1_database_config.html#a0633e0cbfcc748e355c055233dfbba50">repository.DatabaseConfig.getJdbcUrl</a></div><div class="ttdeci">String getJdbcUrl()</div><div class="ttdef"><b>Определения</b> <a href="#l00173">DatabaseConfig.java:173</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a070b891be3ea22e197e203dacb41b50e"><div class="ttname"><a href="classrepository_1_1_database_config.html#a070b891be3ea22e197e203dacb41b50e">repository.DatabaseConfig.sslMode</a></div><div class="ttdeci">final String sslMode</div><div class="ttdef"><b>Определения</b> <a href="#l00039">DatabaseConfig.java:39</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a0ad03838a65cc0d81aa5744e49445ef1"><div class="ttname"><a href="classrepository_1_1_database_config.html#a0ad03838a65cc0d81aa5744e49445ef1">repository.DatabaseConfig.validate</a></div><div class="ttdeci">void validate()</div><div class="ttdef"><b>Определения</b> <a href="#l00124">DatabaseConfig.java:124</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a0b91d1ea345d6c04fa6956514e1e5611"><div class="ttname"><a href="classrepository_1_1_database_config.html#a0b91d1ea345d6c04fa6956514e1e5611">repository.DatabaseConfig.host</a></div><div class="ttdeci">final String host</div><div class="ttdef"><b>Определения</b> <a href="#l00032">DatabaseConfig.java:32</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a10d0e3b2363ed38f49bfa62571b904cb"><div class="ttname"><a href="classrepository_1_1_database_config.html#a10d0e3b2363ed38f49bfa62571b904cb">repository.DatabaseConfig.isSqlite</a></div><div class="ttdeci">boolean isSqlite()</div><div class="ttdef"><b>Определения</b> <a href="#l00244">DatabaseConfig.java:244</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a15fbaa9c00c0531fd484dcaed55bf481"><div class="ttname"><a href="classrepository_1_1_database_config.html#a15fbaa9c00c0531fd484dcaed55bf481">repository.DatabaseConfig.POSTGRES_DRIVER</a></div><div class="ttdeci">static final String POSTGRES_DRIVER</div><div class="ttdef"><b>Определения</b> <a href="#l00027">DatabaseConfig.java:27</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a26b491886042cb28b36c593685971fad"><div class="ttname"><a href="classrepository_1_1_database_config.html#a26b491886042cb28b36c593685971fad">repository.DatabaseConfig.SQLITE_DRIVER</a></div><div class="ttdeci">static final String SQLITE_DRIVER</div><div class="ttdef"><b>Определения</b> <a href="#l00026">DatabaseConfig.java:26</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a33a522128bc8b400395422b23443c39c"><div class="ttname"><a href="classrepository_1_1_database_config.html#a33a522128bc8b400395422b23443c39c">repository.DatabaseConfig.username</a></div><div class="ttdeci">final String username</div><div class="ttdef"><b>Определения</b> <a href="#l00035">DatabaseConfig.java:35</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a35691da1978472d524abd32ca05acbf3"><div class="ttname"><a href="classrepository_1_1_database_config.html#a35691da1978472d524abd32ca05acbf3">repository.DatabaseConfig.DatabaseConfig</a></div><div class="ttdeci">DatabaseConfig(Type type, Path configFile, Path sqlitePath, String host, int port, String databaseName, String username, String password, String jdbcUrl, String driverClass, String sslMode)</div><div class="ttdef"><b>Определения</b> <a href="#l00041">DatabaseConfig.java:41</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a3689fd115d888fba100900aedcdac987"><div class="ttname"><a href="classrepository_1_1_database_config.html#a3689fd115d888fba100900aedcdac987">repository.DatabaseConfig.type</a></div><div class="ttdeci">final Type type</div><div class="ttdef"><b>Определения</b> <a href="#l00029">DatabaseConfig.java:29</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a36e82cbf84ceab1f8059de8ef510da3a"><div class="ttname"><a href="classrepository_1_1_database_config.html#a36e82cbf84ceab1f8059de8ef510da3a">repository.DatabaseConfig.parseType</a></div><div class="ttdeci">static Type parseType(String value)</div><div class="ttdef"><b>Определения</b> <a href="#l00267">DatabaseConfig.java:267</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a395cc8ecd621add2b161f95ad93e8f01"><div class="ttname"><a href="classrepository_1_1_database_config.html#a395cc8ecd621add2b161f95ad93e8f01">repository.DatabaseConfig.isPostgresql</a></div><div class="ttdeci">boolean isPostgresql()</div><div class="ttdef"><b>Определения</b> <a href="#l00248">DatabaseConfig.java:248</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a3ae49d96b9cf80e8a83d9ab0db1a0c5a"><div class="ttname"><a href="classrepository_1_1_database_config.html#a3ae49d96b9cf80e8a83d9ab0db1a0c5a">repository.DatabaseConfig.getPassword</a></div><div class="ttdeci">String getPassword()</div><div class="ttdef"><b>Определения</b> <a href="#l00236">DatabaseConfig.java:236</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a4210ed0a814b9aa2d0b1c12377895163"><div class="ttname"><a href="classrepository_1_1_database_config.html#a4210ed0a814b9aa2d0b1c12377895163">repository.DatabaseConfig.loadDriver</a></div><div class="ttdeci">void loadDriver()</div><div class="ttdef"><b>Определения</b> <a href="#l00158">DatabaseConfig.java:158</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a476577d1a3e007f3cf581029ee59b32c"><div class="ttname"><a href="classrepository_1_1_database_config.html#a476577d1a3e007f3cf581029ee59b32c">repository.DatabaseConfig.getConfigFile</a></div><div class="ttdeci">Path getConfigFile()</div><div class="ttdef"><b>Определения</b> <a href="#l00212">DatabaseConfig.java:212</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a4b5dc5dd91254df1efacc26898e26caf"><div class="ttname"><a href="classrepository_1_1_database_config.html#a4b5dc5dd91254df1efacc26898e26caf">repository.DatabaseConfig.resolveSqlitePath</a></div><div class="ttdeci">static Path resolveSqlitePath(String configuredPath, Path defaultPath)</div><div class="ttdef"><b>Определения</b> <a href="#l00284">DatabaseConfig.java:284</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a4e9d6c7f878e393a494f9c9fac13f0a9"><div class="ttname"><a href="classrepository_1_1_database_config.html#a4e9d6c7f878e393a494f9c9fac13f0a9">repository.DatabaseConfig.load</a></div><div class="ttdeci">static DatabaseConfig load()</div><div class="ttdef"><b>Определения</b> <a href="#l00067">DatabaseConfig.java:67</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a54be8ad7883587920d91f2ce979fa3b9"><div class="ttname"><a href="classrepository_1_1_database_config.html#a54be8ad7883587920d91f2ce979fa3b9">repository.DatabaseConfig.fromProperties</a></div><div class="ttdeci">static DatabaseConfig fromProperties(Properties properties, Path configFile, Path defaultSqlitePath)</div><div class="ttdef"><b>Определения</b> <a href="#l00093">DatabaseConfig.java:93</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a556fb7c180de431475f12b3623efa4e5"><div class="ttname"><a href="classrepository_1_1_database_config.html#a556fb7c180de431475f12b3623efa4e5">repository.DatabaseConfig.configFile</a></div><div class="ttdeci">final Path configFile</div><div class="ttdef"><b>Определения</b> <a href="#l00030">DatabaseConfig.java:30</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a697990acd2d137850ccb6dd22562d8a9"><div class="ttname"><a href="classrepository_1_1_database_config.html#a697990acd2d137850ccb6dd22562d8a9">repository.DatabaseConfig.jdbcUrl</a></div><div class="ttdeci">final String jdbcUrl</div><div class="ttdef"><b>Определения</b> <a href="#l00037">DatabaseConfig.java:37</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a69aeb61182c8f6f4ccb5b924c424de02"><div class="ttname"><a href="classrepository_1_1_database_config.html#a69aeb61182c8f6f4ccb5b924c424de02">repository.DatabaseConfig.parsePort</a></div><div class="ttdeci">static int parsePort(String value, int defaultValue)</div><div class="ttdef"><b>Определения</b> <a href="#l00277">DatabaseConfig.java:277</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a69f8eeab7280768eee8545d4371aeb9c"><div class="ttname"><a href="classrepository_1_1_database_config.html#a69f8eeab7280768eee8545d4371aeb9c">repository.DatabaseConfig.read</a></div><div class="ttdeci">static String read(Properties properties, String key, String defaultValue)</div><div class="ttdef"><b>Определения</b> <a href="#l00263">DatabaseConfig.java:263</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a6f6ee0a0b912b6063df56dc7c84cd547"><div class="ttname"><a href="classrepository_1_1_database_config.html#a6f6ee0a0b912b6063df56dc7c84cd547">repository.DatabaseConfig.getDriverClass</a></div><div class="ttdeci">String getDriverClass()</div><div class="ttdef"><b>Определения</b> <a href="#l00192">DatabaseConfig.java:192</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a7f1bd1a7d482f1576b5053380a70ddce"><div class="ttname"><a href="classrepository_1_1_database_config.html#a7f1bd1a7d482f1576b5053380a70ddce">repository.DatabaseConfig.getSqlitePath</a></div><div class="ttdeci">Path getSqlitePath()</div><div class="ttdef"><b>Определения</b> <a href="#l00216">DatabaseConfig.java:216</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a87b5809c5e333307cca3810a1b65f158"><div class="ttname"><a href="classrepository_1_1_database_config.html#a87b5809c5e333307cca3810a1b65f158">repository.DatabaseConfig.driverClass</a></div><div class="ttdeci">final String driverClass</div><div class="ttdef"><b>Определения</b> <a href="#l00038">DatabaseConfig.java:38</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a99dc880412bf37e410a8e7fae965ae7c"><div class="ttname"><a href="classrepository_1_1_database_config.html#a99dc880412bf37e410a8e7fae965ae7c">repository.DatabaseConfig.sqlitePath</a></div><div class="ttdeci">final Path sqlitePath</div><div class="ttdef"><b>Определения</b> <a href="#l00031">DatabaseConfig.java:31</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a9c4a9f4428edde4c28b333c3b3951573"><div class="ttname"><a href="classrepository_1_1_database_config.html#a9c4a9f4428edde4c28b333c3b3951573">repository.DatabaseConfig.describe</a></div><div class="ttdeci">String describe()</div><div class="ttdef"><b>Определения</b> <a href="#l00200">DatabaseConfig.java:200</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_a9d73ac86e1e24822a5fdc5946aeb9adb"><div class="ttname"><a href="classrepository_1_1_database_config.html#a9d73ac86e1e24822a5fdc5946aeb9adb">repository.DatabaseConfig.getConnectionProperties</a></div><div class="ttdeci">Properties getConnectionProperties()</div><div class="ttdef"><b>Определения</b> <a href="#l00162">DatabaseConfig.java:162</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_aa0ad346841560fe5e82d290bef810fb2"><div class="ttname"><a href="classrepository_1_1_database_config.html#aa0ad346841560fe5e82d290bef810fb2">repository.DatabaseConfig.getUsername</a></div><div class="ttdeci">String getUsername()</div><div class="ttdef"><b>Определения</b> <a href="#l00232">DatabaseConfig.java:232</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_aaaf20009709c64cc5bdf4d91d65d76b6"><div class="ttname"><a href="classrepository_1_1_database_config.html#aaaf20009709c64cc5bdf4d91d65d76b6">repository.DatabaseConfig.databaseName</a></div><div class="ttdeci">final String databaseName</div><div class="ttdef"><b>Определения</b> <a href="#l00034">DatabaseConfig.java:34</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_aacd1135a189c5840eb8850a92147e5f0"><div class="ttname"><a href="classrepository_1_1_database_config.html#aacd1135a189c5840eb8850a92147e5f0">repository.DatabaseConfig.getPort</a></div><div class="ttdeci">int getPort()</div><div class="ttdef"><b>Определения</b> <a href="#l00224">DatabaseConfig.java:224</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_ab5871fda6f1f9a780cf4dcf674cd0986"><div class="ttname"><a href="classrepository_1_1_database_config.html#ab5871fda6f1f9a780cf4dcf674cd0986">repository.DatabaseConfig.openConnection</a></div><div class="ttdeci">Connection openConnection()</div><div class="ttdef"><b>Определения</b> <a href="#l00149">DatabaseConfig.java:149</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_ab59426f01c5b94e12686f41d18b2e0ba"><div class="ttname"><a href="classrepository_1_1_database_config.html#ab59426f01c5b94e12686f41d18b2e0ba">repository.DatabaseConfig.applyEnvironmentOverride</a></div><div class="ttdeci">static void applyEnvironmentOverride(Properties properties, String propertyKey, String envKey)</div><div class="ttdef"><b>Определения</b> <a href="#l00256">DatabaseConfig.java:256</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_ac61557a53ef53513ceceeebe3153fe10"><div class="ttname"><a href="classrepository_1_1_database_config.html#ac61557a53ef53513ceceeebe3153fe10">repository.DatabaseConfig.password</a></div><div class="ttdeci">final String password</div><div class="ttdef"><b>Определения</b> <a href="#l00036">DatabaseConfig.java:36</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_acdf02be2ca0ac3896d3e85f95809ced6"><div class="ttname"><a href="classrepository_1_1_database_config.html#acdf02be2ca0ac3896d3e85f95809ced6">repository.DatabaseConfig.getDatabaseName</a></div><div class="ttdeci">String getDatabaseName()</div><div class="ttdef"><b>Определения</b> <a href="#l00228">DatabaseConfig.java:228</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_ad83567e4c34a8f0274943ac211e94d31"><div class="ttname"><a href="classrepository_1_1_database_config.html#ad83567e4c34a8f0274943ac211e94d31">repository.DatabaseConfig.getType</a></div><div class="ttdeci">Type getType()</div><div class="ttdef"><b>Определения</b> <a href="#l00208">DatabaseConfig.java:208</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_ae61320b64c79be14742b8b9d39d6435b"><div class="ttname"><a href="classrepository_1_1_database_config.html#ae61320b64c79be14742b8b9d39d6435b">repository.DatabaseConfig.isCustom</a></div><div class="ttdeci">boolean isCustom()</div><div class="ttdef"><b>Определения</b> <a href="#l00252">DatabaseConfig.java:252</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_aec62e8bcb5c3175fe3f77052d8ec3040"><div class="ttname"><a href="classrepository_1_1_database_config.html#aec62e8bcb5c3175fe3f77052d8ec3040">repository.DatabaseConfig.getHost</a></div><div class="ttdeci">String getHost()</div><div class="ttdef"><b>Определения</b> <a href="#l00220">DatabaseConfig.java:220</a></div></div>
+<div class="ttc" id="aclassrepository_1_1_database_config_html_afe03502cca1abb0b07771c1dc502e4d3"><div class="ttname"><a href="classrepository_1_1_database_config.html#afe03502cca1abb0b07771c1dc502e4d3">repository.DatabaseConfig.getSslMode</a></div><div class="ttdeci">String getSslMode()</div><div class="ttdef"><b>Определения</b> <a href="#l00240">DatabaseConfig.java:240</a></div></div>
+<div class="ttc" id="aclassutil_1_1_path_resolver_html"><div class="ttname"><a href="classutil_1_1_path_resolver.html">util.PathResolver</a></div><div class="ttdef"><b>Определения</b> <a href="_path_resolver_8java_source.html#l00007">PathResolver.java:7</a></div></div>
+<div class="ttc" id="aclassutil_1_1_path_resolver_html_a376f308eeac83f51017c8f2be40a09ab"><div class="ttname"><a href="classutil_1_1_path_resolver.html#a376f308eeac83f51017c8f2be40a09ab">util.PathResolver.getDatabaseConfigFile</a></div><div class="ttdeci">static Path getDatabaseConfigFile()</div><div class="ttdef"><b>Определения</b> <a href="_path_resolver_8java_source.html#l00060">PathResolver.java:60</a></div></div>
+<div class="ttc" id="aclassutil_1_1_path_resolver_html_a50961f05bdf2c5652e65d92495c625ba"><div class="ttname"><a href="classutil_1_1_path_resolver.html#a50961f05bdf2c5652e65d92495c625ba">util.PathResolver.getDatabaseFile</a></div><div class="ttdeci">static Path getDatabaseFile()</div><div class="ttdef"><b>Определения</b> <a href="_path_resolver_8java_source.html#l00056">PathResolver.java:56</a></div></div>
+<div class="ttc" id="aenumrepository_1_1_database_config_1_1_type_html"><div class="ttname"><a href="enumrepository_1_1_database_config_1_1_type.html">repository.DatabaseConfig.Type</a></div><div class="ttdef"><b>Определения</b> <a href="#l00020">DatabaseConfig.java:20</a></div></div>
+<div class="ttc" id="aenumrepository_1_1_database_config_1_1_type_html_a2da6c4e9390c72240575929c8b2b2e10"><div class="ttname"><a href="enumrepository_1_1_database_config_1_1_type.html#a2da6c4e9390c72240575929c8b2b2e10">repository.DatabaseConfig.Type.SQLITE</a></div><div class="ttdeci">SQLITE</div><div class="ttdef"><b>Определения</b> <a href="#l00021">DatabaseConfig.java:21</a></div></div>
+<div class="ttc" id="aenumrepository_1_1_database_config_1_1_type_html_a5228a500b66b2d5e8eaa3e2d81b1cb62"><div class="ttname"><a href="enumrepository_1_1_database_config_1_1_type.html#a5228a500b66b2d5e8eaa3e2d81b1cb62">repository.DatabaseConfig.Type.POSTGRESQL</a></div><div class="ttdeci">POSTGRESQL</div><div class="ttdef"><b>Определения</b> <a href="#l00022">DatabaseConfig.java:22</a></div></div>
+<div class="ttc" id="aenumrepository_1_1_database_config_1_1_type_html_aeda722d8f1b481c5d4a444fc4b82a3b9"><div class="ttname"><a href="enumrepository_1_1_database_config_1_1_type.html#aeda722d8f1b481c5d4a444fc4b82a3b9">repository.DatabaseConfig.Type.CUSTOM</a></div><div class="ttdeci">CUSTOM</div><div class="ttdef"><b>Определения</b> <a href="#l00023">DatabaseConfig.java:23</a></div></div>
+<div class="ttc" id="anamespaceutil_html"><div class="ttname"><a href="namespaceutil.html">util</a></div><div class="ttdef"><b>Определения</b> <a href="_audio_manager_8java_source.html#l00001">AudioManager.java:1</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_37313c4da8135de6d5ca48a7dce7def7.html">repository</a></li><li class="navelem"><a href="_database_config_8java.html">DatabaseConfig.java</a></li>
+    <li class="footer">Документация по Умный планировщик задач (To-Do List). Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

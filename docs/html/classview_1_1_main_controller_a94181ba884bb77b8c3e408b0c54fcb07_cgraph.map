@@ -1,0 +1,20 @@
+<map id="view.MainController.showLoginDialog" name="view.MainController.showLoginDialog">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,98,174,138"/>
+<area shape="rect" id="Node000002" href="$classview_1_1_main_controller.html#ac1ad1d153428fbb3204f96666560cc8d" title=" " alt="" coords="470,32,643,73"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,95,156,53,187,33,221,18,254,10,288,5,356,4,421,12,481,27,476,28,420,18,356,10,288,10,255,15,223,23,190,38,159,58,112,99"/>
+<area shape="rect" id="Node000003" href="$classview_1_1_main_controller.html#ab945e89dc6cfbabed50d33e1e283f447" title=" " alt="" coords="480,122,634,162"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="163,136,222,147,284,152,348,154,466,151,461,152,348,159,284,158,221,153,163,142"/>
+<area shape="rect" id="Node000004" href="$classview_1_1_main_controller.html#a344d17fd6ec11d930f7854577a85c039" title=" " alt="" coords="223,98,420,138"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="173,115,210,117,205,119,174,121"/>
+<area shape="rect" id="Node000005" href="$classview_1_1_main_controller.html#a71fb5396fce903969ab02b38b70a6d98" title=" " alt="" coords="222,212,422,253"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="124,136,223,192,252,206,247,206,220,196,123,141"/>
+<area shape="rect" id="Node000007" href="$classview_1_1_main_controller.html#ae437209e46efe59332309df348c528fa" title=" " alt="" coords="238,32,406,73"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="163,95,234,76,230,79,165,100"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="396,95,469,77,464,79,398,100"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="421,125,467,132,461,133,421,131"/>
+<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="376,209,485,169,490,168,377,214"/>
+<area shape="rect" id="Node000006" href="$classview_1_1_main_controller.html#a6a3bddcd4ca5d681182e4db78ae9c3c8" title=" " alt="" coords="472,212,641,253"/>
+<area shape="poly" id="edge8_Node000005_Node000006" title=" " alt="" coords="423,230,460,233,454,233,423,235"/>
+<area shape="poly" id="edge10_Node000007_Node000002" title=" " alt="" coords="406,50,457,52,452,53,407,55"/>
+<area shape="poly" id="edge11_Node000007_Node000003" title=" " alt="" coords="387,71,423,84,497,115,492,116,421,88,387,76"/>
+</map>

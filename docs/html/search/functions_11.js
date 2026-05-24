@@ -5,10 +5,12 @@ var searchData=
   ['taskmanager_2',['TaskManager',['../classmodel_1_1_task_manager.html#a49a919d7e57b63860295ab705046937c',1,'model::TaskManager']]],
   ['taskreminderservice_3',['TaskReminderService',['../classutil_1_1_task_reminder_service.html#a596b567e69cbc3162c125350d1beedac',1,'util::TaskReminderService']]],
   ['taskviewmodel_4',['TaskViewModel',['../classviewmodel_1_1_task_view_model.html#a97b1077049d5d441d305aa75b0ca41a6',1,'viewmodel::TaskViewModel']]],
-  ['thememanager_5',['ThemeManager',['../classutil_1_1_theme_manager.html#a5fbd939adaab5230705627b889d2fa6b',1,'util::ThemeManager']]],
-  ['titleproperty_6',['titleProperty',['../classviewmodel_1_1_task_view_model.html#acae67880baf2c3c2f7b47810b572edd6',1,'viewmodel::TaskViewModel']]],
-  ['tohex_7',['toHex',['../classview_1_1_main_controller.html#a31b1ceac22f4d340a14486895c3ac939',1,'view::MainController']]],
-  ['tojsonstring_8',['toJsonString',['../classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf',1,'model::Task']]],
-  ['tominutes_9',['toMinutes',['../classview_1_1_main_controller.html#a67938bed9e445402cafc1d3871d4a8f7',1,'view.MainController.toMinutes()'],['../classview_1_1_new_task_controller.html#ae890d916299b13fa18117c3c18549fb7',1,'view.NewTaskController.toMinutes()']]],
-  ['tostring_10',['toString',['../classmodel_1_1_tag.html#a672625caf080ed91e02e844dd201d7fc',1,'model.Tag.toString()'],['../classmodel_1_1_task.html#a96557889dbc2c8c92c71ecd2381332bd',1,'model.Task.toString()'],['../classviewmodel_1_1_task_view_model.html#ad99556d90305e5cf07b1188055ee8477',1,'viewmodel.TaskViewModel.toString()']]]
+  ['testcaseresult_5',['TestCaseResult',['../classutil_1_1_test_report_generator.html#a91cb0d7c846bd65f08d332a2f67e3ce0',1,'util::TestReportGenerator']]],
+  ['testreportgenerator_6',['TestReportGenerator',['../classutil_1_1_test_report_generator.html#ac136faad7a90bb82696e9ac7d00cca85',1,'util::TestReportGenerator']]],
+  ['thememanager_7',['ThemeManager',['../classutil_1_1_theme_manager.html#a5fbd939adaab5230705627b889d2fa6b',1,'util::ThemeManager']]],
+  ['titleproperty_8',['titleProperty',['../classviewmodel_1_1_task_view_model.html#acae67880baf2c3c2f7b47810b572edd6',1,'viewmodel::TaskViewModel']]],
+  ['tohex_9',['toHex',['../classview_1_1_main_controller.html#a31b1ceac22f4d340a14486895c3ac939',1,'view::MainController']]],
+  ['tojsonstring_10',['toJsonString',['../classmodel_1_1_task.html#a4a39463630098008c8e7f1566d50fdcf',1,'model::Task']]],
+  ['tominutes_11',['toMinutes',['../classview_1_1_main_controller.html#a67938bed9e445402cafc1d3871d4a8f7',1,'view.MainController.toMinutes()'],['../classview_1_1_new_task_controller.html#ae890d916299b13fa18117c3c18549fb7',1,'view.NewTaskController.toMinutes()']]],
+  ['tostring_12',['toString',['../classmodel_1_1_tag.html#a672625caf080ed91e02e844dd201d7fc',1,'model.Tag.toString()'],['../classmodel_1_1_task.html#a96557889dbc2c8c92c71ecd2381332bd',1,'model.Task.toString()'],['../classviewmodel_1_1_task_view_model.html#ad99556d90305e5cf07b1188055ee8477',1,'viewmodel.TaskViewModel.toString()']]]
 ];

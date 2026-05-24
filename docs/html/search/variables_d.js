@@ -1,12 +1,20 @@
 var searchData=
 [
-  ['playlist_0',['playlist',['../classutil_1_1_audio_manager.html#a3d492b97915e0a9745c722e13fa58e27',1,'util::AudioManager']]],
-  ['popupenabled_1',['popupEnabled',['../classutil_1_1_notification_settings.html#ad82fcbcc4ee48423695b23eabf7924d9',1,'util::NotificationSettings']]],
-  ['prefilldate_2',['prefillDate',['../classview_1_1_new_task_controller.html#a9bfe43654d83beb5978a7292a673ab31',1,'view::NewTaskController']]],
-  ['primarystage_3',['primaryStage',['../classapp_1_1_main_app.html#afbe7794c7747dbb9041de396c018cac9',1,'app::MainApp']]],
-  ['priority_4',['PRIORITY',['../enumview_1_1_main_controller_1_1_sort_mode.html#a5710e1a7fb89400f6abe210afa36004e',1,'view::MainController::SortMode']]],
-  ['priority_5',['priority',['../classmodel_1_1_task.html#a130a669bee59c82b5dbc1bdc16ced301',1,'model.Task.priority'],['../classviewmodel_1_1_task_view_model.html#aceccd89ccf126f89b7235548b8586a5b',1,'viewmodel.TaskViewModel.priority']]],
-  ['prioritychart_6',['priorityChart',['../classview_1_1_main_controller.html#a3daa208a027eb471c84fe92b67b0c12b',1,'view::MainController']]],
-  ['prioritycolumn_7',['priorityColumn',['../classview_1_1_main_controller.html#a990ea6d6440ed941c68f1f51bd10f5dd',1,'view::MainController']]],
-  ['prioritycombo_8',['priorityCombo',['../classview_1_1_new_task_controller.html#a6dc26f7c93c7ce8bf0d829dbef97c7f1',1,'view::NewTaskController']]]
+  ['password_0',['password',['../classrepository_1_1_database_config.html#ac61557a53ef53513ceceeebe3153fe10',1,'repository::DatabaseConfig']]],
+  ['passwordhash_1',['passwordHash',['../classmodel_1_1_user.html#a24a164934e58312875e3d4c9e7003938',1,'model::User']]],
+  ['passwordsalt_2',['passwordSalt',['../classmodel_1_1_user.html#a6a9c695b2e7f32b26022ea0785676a20',1,'model::User']]],
+  ['playlist_3',['playlist',['../classutil_1_1_audio_manager.html#a3d492b97915e0a9745c722e13fa58e27',1,'util::AudioManager']]],
+  ['popupenabled_4',['popupEnabled',['../classutil_1_1_notification_settings.html#ad82fcbcc4ee48423695b23eabf7924d9',1,'util::NotificationSettings']]],
+  ['port_5',['port',['../classrepository_1_1_database_config.html#a04096b42ef429a4a507b2a1239a883cf',1,'repository::DatabaseConfig']]],
+  ['postgres_5fdriver_6',['POSTGRES_DRIVER',['../classrepository_1_1_database_config.html#a15fbaa9c00c0531fd484dcaed55bf481',1,'repository::DatabaseConfig']]],
+  ['postgresql_7',['POSTGRESQL',['../enumrepository_1_1_database_config_1_1_type.html#a5228a500b66b2d5e8eaa3e2d81b1cb62',1,'repository::DatabaseConfig::Type']]],
+  ['prefilldate_8',['prefillDate',['../classview_1_1_new_task_controller.html#a9bfe43654d83beb5978a7292a673ab31',1,'view::NewTaskController']]],
+  ['primarystage_9',['primaryStage',['../classapp_1_1_main_app.html#afbe7794c7747dbb9041de396c018cac9',1,'app::MainApp']]],
+  ['priority_10',['PRIORITY',['../enumview_1_1_main_controller_1_1_sort_mode.html#a5710e1a7fb89400f6abe210afa36004e',1,'view::MainController::SortMode']]],
+  ['priority_11',['priority',['../classmodel_1_1_task.html#a130a669bee59c82b5dbc1bdc16ced301',1,'model.Task.priority'],['../classviewmodel_1_1_task_view_model.html#aceccd89ccf126f89b7235548b8586a5b',1,'viewmodel.TaskViewModel.priority']]],
+  ['prioritychart_12',['priorityChart',['../classview_1_1_main_controller.html#a3daa208a027eb471c84fe92b67b0c12b',1,'view::MainController']]],
+  ['prioritycolumn_13',['priorityColumn',['../classview_1_1_main_controller.html#a990ea6d6440ed941c68f1f51bd10f5dd',1,'view::MainController']]],
+  ['prioritycombo_14',['priorityCombo',['../classview_1_1_new_task_controller.html#a6dc26f7c93c7ce8bf0d829dbef97c7f1',1,'view::NewTaskController']]],
+  ['probe_5fnote_5ftime_15',['PROBE_NOTE_TIME',['../classutil_1_1_database_cli.html#a31afb018862179b5f3bf259b13c28792',1,'util::DatabaseCli']]],
+  ['probe_5ftable_16',['PROBE_TABLE',['../classutil_1_1_database_cli.html#a13ec90064944173dce87976b2c3c68b4',1,'util::DatabaseCli']]]
 ];

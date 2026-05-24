@@ -6,11 +6,21 @@ import java.nio.file.Paths;
 
 public final class PathResolver {
     private static final String APP_DIR_NAME = "ToDoList";
+    private static final String DATA_DIR_PROPERTY = "todolist.dataDir";
+    private static final String DATA_DIR_ENV = "TODOLIST_DATA_DIR";
 
     private PathResolver() {
     }
 
     public static Path getDataDir() {
+        String overrideDir = System.getProperty(DATA_DIR_PROPERTY);
+        if (overrideDir == null || overrideDir.isBlank()) {
+            overrideDir = System.getenv(DATA_DIR_ENV);
+        }
+        if (overrideDir != null && !overrideDir.isBlank()) {
+            return Paths.get(overrideDir).toAbsolutePath();
+        }
+
         Path projectData = Paths.get("data");
         if (Files.isDirectory(projectData)) {
             return projectData.toAbsolutePath();
@@ -47,11 +57,19 @@ public final class PathResolver {
         return getDataDir().resolve("todolist.db");
     }
 
+    public static Path getDatabaseConfigFile() {
+        return getDataDir().resolve("db.properties");
+    }
+
     public static Path getTasksJsonFile() {
         return getDataDir().resolve("tasks.json");
     }
 
     public static Path getNotificationsLog() {
         return getDataDir().resolve("notifications_outbox.log");
+    }
+
+    public static Path getEmailConfigFile() {
+        return getDataDir().resolve("email.properties");
     }
 }

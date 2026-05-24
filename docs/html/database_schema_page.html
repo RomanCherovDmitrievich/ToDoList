@@ -94,11 +94,17 @@ $(function(){initNavTree('database_schema_page.html','',''); });
 <div class="contents">
 <div class="textblock"><h1 class="doxsection"><a class="anchor" id="database_overview"></a>
 Обзор</h1>
-<p>Проект использует SQLite-базу <span class="tt">todolist.db</span> в директории данных. Если папка <span class="tt">data/</span> существует рядом с проектом — используется она, иначе путь выбирается по ОС (macOS: <span class="tt">~/Library/Application Support/ToDoList</span>, RedOS/Linux: <span class="tt">~/.local/share/ToDoList</span>, Windows: <span class="tt">APPDATA%\\ToDoList</span>).</p>
+<p>Проект поддерживает два основных режима хранения:</p><ul>
+<li>SQLite: локальная база <span class="tt">todolist.db</span> в директории данных.</li>
+<li>PostgreSQL: серверное подключение через JDBC.</li>
+</ul>
+<p>Параметры подключения задаются в <span class="tt">data/db.properties</span> (шаблон: <span class="tt">data/db.properties.example</span>).</p>
+<p>Если папка <span class="tt">data/</span> существует рядом с проектом — для локальных файлов используется она, иначе путь выбирается по ОС (macOS: <span class="tt">~/Library/Application Support/ToDoList</span>, RedOS/Linux: <span class="tt">~/.local/share/ToDoList</span>, Windows: <span class="tt">APPDATA%\\ToDoList</span>).</p>
 <h1 class="doxsection"><a class="anchor" id="database_tables"></a>
 Таблицы</h1>
 <ol type="1">
-<li><span class="tt">tasks</span> — основная таблица задач (включая <span class="tt">sort_index</span>, <span class="tt">recurrence_rule</span>, <span class="tt">reminder_offset</span>, <span class="tt">recurrence_end</span>).</li>
+<li><span class="tt">users</span> — учетные записи пользователей, хеши паролей и коды восстановления.</li>
+<li><span class="tt">tasks</span> — основная таблица задач (включая <span class="tt">sort_index</span>, <span class="tt">owner_user_id</span>, <span class="tt">recurrence_rule</span>, <span class="tt">reminder_offset</span>, <span class="tt">recurrence_end</span>).</li>
 <li><span class="tt">tags</span> — словарь тегов.</li>
 <li><span class="tt">task_tags</span> — связь many-to-many между задачами и тегами.</li>
 <li><span class="tt">task_statistics</span> — аудит операций с задачами.</li>
@@ -106,10 +112,21 @@ $(function(){initNavTree('database_schema_page.html','',''); });
 </ol>
 <h1 class="doxsection"><a class="anchor" id="database_indexes"></a>
 Индексы</h1>
-<p>Индексы созданы для полей <span class="tt">completed</span>, <span class="tt">priority</span>, <span class="tt">category</span>, <span class="tt">end_time</span> и ключевых FK в <span class="tt">task_tags</span> и <span class="tt">task_statistics</span>.</p>
+<p>Индексы созданы для <span class="tt">users.username</span>, <span class="tt">users.email</span>, <span class="tt">tasks.completed</span>, <span class="tt">tasks.priority</span>, <span class="tt">tasks.category</span>, <span class="tt">tasks.end_time</span>, <span class="tt">tasks.owner_user_id</span> и ключевых FK в <span class="tt">task_tags</span> и <span class="tt">task_statistics</span>.</p>
 <h1 class="doxsection"><a class="anchor" id="database_file"></a>
 Где посмотреть SQL</h1>
-<p>Полный SQL-скрипт: <span class="tt">tables.sql</span> </p>
+<ul>
+<li>SQLite SQL-скрипт: <span class="tt">tables.sql</span></li>
+<li>JDBC-конфиг и URL: <span class="tt"><a class="el" href="classrepository_1_1_database_config.html" title="Настройки подключения к БД.">repository.DatabaseConfig</a></span></li>
+<li>Создание таблиц, миграции и UPSERT: <span class="tt"><a class="el" href="classrepository_1_1_database_manager.html" title="SQLite DAO для задач и связанных таблиц.">repository.DatabaseManager</a></span></li>
+<li>Проверка соединения и массовая генерация: <span class="tt"><a class="el" href="classutil_1_1_database_cli.html" title="CLI-утилита для проверки подключения и массового наполнения БД.">util.DatabaseCli</a></span></li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="database_cli"></a>
+Проверка соединения</h1>
+<p>Для ручной проверки БД используйте:</p><ul>
+<li><span class="tt">./scripts/test_db_connection.sh</span> — выполняет <span class="tt">CREATE TABLE</span>, <span class="tt">INSERT</span>, <span class="tt">SELECT</span>, <span class="tt">DROP</span></li>
+<li><span class="tt">./scripts/fill_tasks.sh 1000</span> — создаёт 1000 тестовых задач </li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
