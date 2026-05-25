@@ -13,8 +13,8 @@ out/
 lib/
 
 # === JavaFX SDK и нативные библиотеки ===
-javafx-sdk*/
-openjfx-*.zip
+#javafx-sdk*/
+#openjfx-*.zip
 *.dylib
 *.so
 *.dll
