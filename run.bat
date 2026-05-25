@@ -121,35 +121,45 @@ if not exist "%~1" (
 exit /b 0
 
 :resolve_java_home
+set "JAVA_EXE="
+set "JAVAC_EXE="
+
 if defined JAVA_HOME (
-    if exist "%JAVA_HOME%\bin\javac.exe" if exist "%JAVA_HOME%\bin\java.exe" (
-        set "JAVA_EXE=%JAVA_HOME%\bin\java.exe"
-        set "JAVAC_EXE=%JAVA_HOME%\bin\javac.exe"
-        exit /b 0
-    )
+    call :validate_java_home "%JAVA_HOME%"
+    if not errorlevel 1 exit /b 0
+    echo [run] Ignoring invalid JAVA_HOME: %JAVA_HOME%
+    set "JAVA_HOME="
 )
 
 for /f "delims=" %%F in ('where javac 2^>nul') do (
-    set "JAVAC_EXE=%%~fF"
-    goto :derive_java_home
+    call :derive_from_javac "%%~fF"
+    if not errorlevel 1 exit /b 0
 )
 
 call :search_java_home
 if defined JAVA_HOME (
-    set "JAVA_EXE=%JAVA_HOME%\bin\java.exe"
-    set "JAVAC_EXE=%JAVA_HOME%\bin\javac.exe"
-    exit /b 0
+    call :validate_java_home "%JAVA_HOME%"
+    if not errorlevel 1 exit /b 0
 )
 
 echo [run] JDK not found. Install full JDK 21+ and make sure javac.exe exists.
 exit /b 1
 
-:derive_java_home
-for %%I in ("%JAVAC_EXE%") do set "JAVA_BIN=%%~dpI"
-for %%I in ("%JAVA_BIN%..") do set "JAVA_HOME=%%~fI"
-set "JAVA_EXE=%JAVA_HOME%\bin\java.exe"
-if exist "%JAVAC_EXE%" if exist "%JAVA_EXE%" exit /b 0
-echo [run] Invalid JAVA_HOME detected.
+:derive_from_javac
+if not exist "%~1" exit /b 1
+for %%I in ("%~1") do set "JAVA_BIN=%%~dpI"
+for %%I in ("%JAVA_BIN%..") do set "CANDIDATE_JAVA_HOME=%%~fI"
+call :validate_java_home "%CANDIDATE_JAVA_HOME%"
+exit /b %ERRORLEVEL%
+
+:validate_java_home
+if "%~1"=="" exit /b 1
+if exist "%~1\bin\javac.exe" if exist "%~1\bin\java.exe" (
+    for %%I in ("%~1") do set "JAVA_HOME=%%~fI"
+    set "JAVA_EXE=%JAVA_HOME%\bin\java.exe"
+    set "JAVAC_EXE=%JAVA_HOME%\bin\javac.exe"
+    exit /b 0
+)
 exit /b 1
 
 :search_java_home
