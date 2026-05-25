@@ -1,0 +1,863 @@
+РАБОТА С БД В ПРОЕКТЕ TODOLIST
+================================
+
+Это файл-шпаргалка, по которому можно объяснить преподавателю, как в проекте
+реализована работа с базой данных: подключение, инициализация, загрузка,
+добавление, обновление, удаление задач и работа с пользователями.
+
+
+1. КРАТКАЯ ИДЕЯ АРХИТЕКТУРЫ
+---------------------------
+
+В проекте работа с БД разделена на несколько уровней:
+
+1. UI-уровень:
+   - `src/view/MainController.java`
+   - `src/view/NewTaskController.java`
+   Здесь пользователь нажимает кнопки, вводит данные и получает результат на экране.
+
+2. Бизнес-логика:
+   - `src/model/TaskManager.java`
+   - `src/util/AuthService.java`
+   Здесь решается, что делать с задачами и пользователями.
+
+3. Слой доступа к данным:
+   - `src/repository/TaskDao.java`
+   - `src/repository/DatabaseManager.java`
+   - `src/repository/SqlDialect.java`
+   Здесь находятся SQL-запросы, создание таблиц, миграции и запись/чтение из БД.
+
+4. Конфиг и подключение:
+   - `src/repository/DatabaseConfig.java`
+   - `src/repository/ConnectionFactory.java`
+   - `src/util/PathResolver.java`
+   Здесь определяется, к какой БД подключаться и как собрать JDBC URL.
+
+5. Резервное хранение:
+   - `src/util/JsonUtil.java`
+   Даже при работе с БД проект дополнительно сохраняет снимок задач в `tasks.json`.
+
+
+2. КАКАЯ БД ИСПОЛЬЗУЕТСЯ
+------------------------
+
+Тип БД выбирается в файле:
+- `data/db.properties`
+
+Главный параметр:
+- `db.type`
+
+Поддерживаемые режимы:
+- `sqlite`
+- `postgresql`
+- `mysql`
+- `firebird`
+- `custom`
+
+Сейчас по умолчанию проект настроен на SQLite:
+- файл: `data/db.properties`
+- строка вида: `db.type=sqlite`
+
+Также конфиг можно переопределить через переменные окружения:
+- `TODOLIST_DB_TYPE`
+- `TODOLIST_DB_SQLITE_PATH`
+- `TODOLIST_DB_HOST`
+- `TODOLIST_DB_PORT`
+- `TODOLIST_DB_NAME`
+- `TODOLIST_DB_USERNAME`
+- `TODOLIST_DB_PASSWORD`
+- `TODOLIST_DB_JDBC_URL`
+- `TODOLIST_DB_DRIVER_CLASS`
+- `TODOLIST_DB_SSL_MODE`
+
+Это реализовано в:
+- `src/repository/DatabaseConfig.java`
+- метод: `load()`
+
+
+3. ГДЕ ОПРЕДЕЛЯЕТСЯ ПУТЬ К ФАЙЛАМ ДАННЫХ
+---------------------------------------
+
+За пути отвечает:
+- `src/util/PathResolver.java`
+
+Основные методы:
+- `getDataDir()` — определяет папку данных приложения
+- `getDatabaseFile()` — путь к `todolist.db`
+- `getDatabaseConfigFile()` — путь к `db.properties`
+- `getTasksJsonFile()` — путь к `tasks.json`
+
+Логика такая:
+- если есть системное свойство `todolist.dataDir`, оно используется;
+- если есть переменная окружения `TODOLIST_DATA_DIR`, используется она;
+- иначе, если в проекте есть папка `data`, используется она;
+- иначе выбирается стандартная папка для ОС.
+
+
+4. ТОЧНАЯ ЦЕПОЧКА ПОДКЛЮЧЕНИЯ К БД
+----------------------------------
+
+Если преподаватель спросит: "Где у тебя реально открывается соединение?",
+нужно отвечать так:
+
+1. Инициализация БД стартует в:
+   - `src/repository/DatabaseManager.java`
+   - метод: `initializeDatabase()`
+
+2. Этот метод вызывает:
+   - `ConnectionFactory.open(config)`
+   - файл: `src/repository/ConnectionFactory.java`
+   - метод: `open(DatabaseConfig config)`
+
+3. `ConnectionFactory.open(...)` просто делегирует вызов дальше:
+   - `config.openConnection()`
+
+4. Фактическое JDBC-подключение происходит в:
+   - `src/repository/DatabaseConfig.java`
+   - метод: `openConnection()`
+
+5. Именно там вызывается:
+   - `DriverManager.getConnection(...)`
+
+То есть самый точный ответ:
+"Физическое подключение к БД у меня выполняется в методе
+`DatabaseConfig.openConnection()`, а вызывается это через
+`ConnectionFactory.open(...)` из `DatabaseManager.initializeDatabase()`."
+
+
+5. КАК ФОРМИРУЕТСЯ JDBC URL
+---------------------------
+
+Это делает:
+- `src/repository/DatabaseConfig.java`
+- метод: `getJdbcUrl()`
+
+Логика:
+- для SQLite: `jdbc:sqlite:/.../todolist.db`
+- для PostgreSQL: `jdbc:postgresql://host:port/dbname?sslmode=...`
+- для MySQL: `jdbc:mysql://host:port/dbname?...`
+- для Firebird: `jdbc:firebirdsql://host:port/dbname?encoding=UTF8`
+
+Загрузка JDBC-драйвера выполняется в:
+- `src/repository/DatabaseConfig.java`
+- метод: `loadDriver()`
+
+Там вызывается:
+- `Class.forName(getDriverClass())`
+
+
+6. КОГДА БД ИНИЦИАЛИЗИРУЕТСЯ ПРИ ЗАПУСКЕ
+---------------------------------------
+
+Точка входа приложения:
+- `src/app/MainApp.java`
+
+Сценарий запуска:
+
+1. Метод `main(...)`
+   - проверяет наличие JavaFX
+   - добавляет `shutdown hook`, чтобы при завершении закрыть сервисы и БД
+
+2. Метод `init()`
+   - заранее прогревает сервисы:
+     - `TaskManager.getInstance()`
+     - `AudioManager.getInstance()`
+     - `TaskReminderService.getInstance()`
+
+3. Когда вызывается `TaskManager.getInstance()`, внутри конструктора `TaskManager`
+   вызывается:
+   - `initializeStorage()`
+   - файл: `src/model/TaskManager.java`
+
+4. В `initializeStorage()` создаётся или берётся:
+   - `DatabaseManager.getInstance()`
+
+5. Конструктор `DatabaseManager` вызывает:
+   - `initializeDatabase()`
+   - файл: `src/repository/DatabaseManager.java`
+
+Значит, БД инициализируется очень рано, ещё до того, как пользователь начал
+работать в интерфейсе.
+
+
+7. ЧТО ДЕЛАЕТ `DatabaseManager.initializeDatabase()`
+----------------------------------------------------
+
+Файл:
+- `src/repository/DatabaseManager.java`
+
+Метод:
+- `initializeDatabase()`
+
+Пошагово этот метод делает следующее:
+
+1. Создаёт папку данных:
+   - `Files.createDirectories(util.PathResolver.getDataDir())`
+
+2. Читает конфиг БД:
+   - `DatabaseConfig.load()`
+
+3. Проверяет валидность конфига:
+   - `config.validate()`
+
+4. Загружает JDBC-драйвер:
+   - `config.loadDriver()`
+
+5. Определяет SQL-диалект:
+   - `SqlDialect.from(config.getType())`
+
+6. Открывает соединение:
+   - `connection = ConnectionFactory.open(config)`
+
+7. Для SQLite включает PRAGMA:
+   - метод: `enablePragmas()`
+   - включает:
+     - `PRAGMA foreign_keys = ON`
+     - `PRAGMA journal_mode = WAL`
+     - `PRAGMA synchronous = NORMAL`
+
+8. Создаёт таблицы:
+   - метод: `createTables()`
+
+9. Выполняет миграции схемы:
+   - метод: `migrateSchema()`
+
+10. Добавляет базовые системные данные:
+   - метод: `seedDefaults()`
+
+
+8. КАКИЕ ТАБЛИЦЫ СОЗДАЮТСЯ
+--------------------------
+
+Создание таблиц реализовано в:
+- `src/repository/DatabaseManager.java`
+- метод: `createTables()`
+
+Основные таблицы:
+
+1. `users`
+   - хранит аккаунты пользователей
+   - поля: `id`, `username`, `email`, `password_hash`, `password_salt`,
+     `created_at`, `updated_at`, `reset_code`, `reset_code_expires_at`
+
+2. `tasks`
+   - хранит задачи
+   - поля: `id`, `title`, `description`, `start_time`, `end_time`,
+     `priority`, `category`, `completed`, `overdue`, `created_at`, `updated_at`,
+     `sort_index`, `owner_user_id`, `recurrence_rule`, `reminder_offset`,
+     `recurrence_end`
+
+3. `tags`
+   - справочник тегов
+
+4. `task_tags`
+   - связь many-to-many между задачами и тегами
+
+5. `task_statistics`
+   - журнал операций по задачам
+
+6. `app_settings`
+   - настройки приложения
+
+Индексы тоже создаются там же.
+
+
+9. ЧТО ДЕЛАЮТ МИГРАЦИИ
+----------------------
+
+Миграции выполняются в:
+- `src/repository/DatabaseManager.java`
+- метод: `migrateSchema()`
+
+Идея такая:
+- если проект обновился, а в старой таблице нет новых колонок,
+  код не требует руками пересоздавать БД;
+- он сам проверяет наличие колонок и, если нужно, добавляет:
+  - `sort_index`
+  - `owner_user_id`
+  - `recurrence_rule`
+  - `reminder_offset`
+  - `recurrence_end`
+
+Также в новой версии проекта есть миграция таблицы `users`,
+которая убирает старую уникальность `email`.
+Это делается в:
+- `migrateUsersSchema()`
+
+
+10. ЧТО ДОБАВЛЯЕТСЯ ПРИ ПЕРВОМ СТАРТЕ
+-------------------------------------
+
+Базовые данные заполняются в:
+- `src/repository/DatabaseManager.java`
+- метод: `seedDefaults()`
+
+Туда входят:
+- стандартные теги:
+  - "Важно"
+  - "Срочно"
+  - "Работа"
+  - "Дом"
+  - "Учеба"
+
+- стандартные настройки:
+  - `use_database`
+  - `reminder_minutes`
+  - `theme`
+  - `notify_popup`
+  - `notify_sound`
+  - `notify_email`
+  - `notify_email_to`
+  - `music_enabled`
+  - `music_volume`
+  - `widget_enabled`
+
+Важно:
+- это не тестовые задачи и не тестовые пользователи;
+- это системные данные приложения.
+
+
+11. КАК ЗАГРУЖАЮТСЯ ДАННЫЕ ПРИ СТАРТЕ
+-------------------------------------
+
+Главный класс для задач:
+- `src/model/TaskManager.java`
+
+Метод:
+- `initializeStorage()`
+
+Пошагово:
+
+1. Сначала читается резервный JSON:
+   - `JsonUtil.loadTasks()`
+   - файл: `src/util/JsonUtil.java`
+
+2. Затем, если режим БД включён:
+   - создаётся `DatabaseManager.getInstance()`
+   - вызывается `dbManager.getAllTasks()`
+
+3. После этого вызывается:
+   - `mergeTasks(jsonTasks, dbTasks)`
+
+Смысл `mergeTasks(...)`:
+- если БД пустая, но в JSON есть задачи, он переносит JSON-задачи в БД;
+- если в БД уже есть задачи, они становятся основными;
+- если в JSON есть задачи, которых нет в БД, они тоже догружаются в БД.
+
+То есть проект умеет поднимать данные из старого JSON-хранилища в новую БД.
+
+
+12. КАК ПРОИСХОДИТ АВТОРИЗАЦИЯ И ПРИВЯЗКА К ПОЛЬЗОВАТЕЛЮ
+--------------------------------------------------------
+
+Контроллер окна:
+- `src/view/MainController.java`
+- метод: `ensureAuthenticated()`
+
+Сценарий:
+
+1. Если пользователь уже есть в `AuthService`, он используется сразу.
+2. Если в БД ещё нет пользователей:
+   - открывается регистрация первого аккаунта
+3. Иначе:
+   - открывается форма логина
+
+Авторизация и регистрация реализованы в:
+- `src/util/AuthService.java`
+
+Основные методы:
+- `login(String identifier, String password)`
+- `register(String username, String email, String password)`
+- `requestPasswordReset(...)`
+- `resetPassword(...)`
+
+Текущая логика пользователей:
+- `username` должен быть уникальным;
+- `email` может повторяться у нескольких пользователей;
+- если один и тот же `email` привязан к нескольким аккаунтам,
+  вход и восстановление пароля нужно делать по `username`.
+
+Создание пользователя в БД делает:
+- `src/repository/DatabaseManager.java`
+- метод: `createUser(...)`
+
+Поиск пользователя делает:
+- `findUserByUsername(...)`
+- `findUsersByEmail(...)`
+- `findUserByIdentifier(...)`
+
+После успешного входа `MainController.ensureAuthenticated()` вызывает:
+- `taskManager.setCurrentUser(user)`
+
+Это важно, потому что после этого задачи фильтруются по владельцу.
+
+
+13. КАК РАБОТАЕТ РАЗДЕЛЕНИЕ ЗАДАЧ ПО ПОЛЬЗОВАТЕЛЯМ
+--------------------------------------------------
+
+Это реализовано в:
+- `src/model/TaskManager.java`
+
+Ключевые методы:
+- `setCurrentUser(User user)`
+- `isVisibleForCurrentUser(Task task)`
+- `visibleTasksStream()`
+
+Логика:
+
+1. У каждой задачи есть поле:
+   - `owner_user_id`
+
+2. Когда выбран текущий пользователь, `TaskManager.getAllTasks()` возвращает
+   не весь внутренний список, а только видимый срез:
+   - `visibleTasksSnapshot()`
+   - `visibleTasksStream()`
+
+3. Проверка видимости делается в:
+   - `isVisibleForCurrentUser(Task task)`
+
+4. Если `owner_user_id` совпадает с `currentUser.getId()`,
+   задача видна этому пользователю.
+
+5. Если у старой задачи ещё не был указан владелец,
+   при выборе пользователя может сработать:
+   - `claimOrphanTasks(userId)`
+   Он привязывает "сиротские" задачи к выбранному пользователю.
+
+
+14. ПОЛНЫЙ СЦЕНАРИЙ: КАК ДОБАВЛЯЕТСЯ НОВАЯ ЗАДАЧА
+-------------------------------------------------
+
+Это один из самых важных сценариев для ответа преподавателю.
+
+Шаг 1. Пользователь нажимает кнопку "Добавить"
+- файл: `src/view/MainView.fxml`
+- у кнопки указано: `onAction="#handleAddTask"`
+
+Шаг 2. Срабатывает:
+- `src/view/MainController.java`
+- метод: `handleAddTask()`
+
+Что он делает:
+- вызывает `showTaskDialog(null, null)`
+
+Шаг 3. Открывается окно создания задачи
+- `showTaskDialog(...)` загружает FXML:
+  - `/view/NewTaskDialog.fxml`
+- получает контроллер:
+  - `NewTaskController`
+
+Шаг 4. Пользователь вводит данные и нажимает "Создать"
+- файл: `src/view/NewTaskController.java`
+- метод: `handleCreateTask()`
+
+Что делает `handleCreateTask()`:
+- валидирует форму через `validateForm()`
+- читает поля:
+  - title
+  - description
+  - даты и время
+  - priority
+  - category
+  - reminder
+  - recurrence
+- создаёт объект:
+  - `new Task(...)`
+- сохраняет его во внутреннее поле `createdTask`
+- закрывает окно
+
+Шаг 5. Управление возвращается в `MainController.handleAddTask()`
+- метод получает объект `Task created`
+- если объект не `null`, вызывает:
+  - `taskManager.addTask(created)`
+
+Шаг 6. Основная логика добавления идёт в:
+- `src/model/TaskManager.java`
+- метод: `addTask(Task task)`
+
+Что делает `TaskManager.addTask(...)`:
+
+1. Если выбран текущий пользователь и у задачи ещё нет владельца:
+   - `task.setOwnerUserId(currentUser.getId())`
+
+2. Если не задан порядок сортировки:
+   - `task.setSortIndex(nextSortIndex())`
+
+3. Добавляет задачу во внутренний список:
+   - `tasks.add(task)`
+
+4. Вызывает:
+   - `persistTask(task)`
+
+5. `persistTask(task)` вызывает:
+   - `dbManager.saveTask(task)`
+
+6. Затем сохраняет резервную копию:
+   - `saveJsonSnapshot()`
+   - внутри неё вызывается `JsonUtil.saveTasks(tasks)`
+
+7. После этого ещё выполняется:
+   - `checkAllTasksOverdue()`
+
+Шаг 7. Фактическая запись в БД происходит в:
+- `src/repository/DatabaseManager.java`
+- метод: `saveTask(Task task)`
+
+Что делает `DatabaseManager.saveTask(...)`:
+
+1. Берёт SQL из:
+   - `dialect.upsertTaskSql()`
+
+2. Подставляет параметры задачи в `PreparedStatement`:
+   - `id`
+   - `title`
+   - `description`
+   - `start_time`
+   - `end_time`
+   - `priority`
+   - `category`
+   - `completed`
+   - `overdue`
+   - `created_at`
+   - `updated_at`
+   - `sort_index`
+   - `owner_user_id`
+   - `recurrence_rule`
+   - `reminder_offset`
+   - `recurrence_end`
+
+3. Выполняет:
+   - `statement.executeUpdate()`
+
+4. После записи логирует операцию:
+   - `logTaskOperation(task.getId(), "UPSERT", "Task saved")`
+
+Итог:
+- задача попадает в таблицу `tasks`
+- одновременно попадает в `tasks.json` как резервный снимок
+- операция фиксируется в `task_statistics`
+
+
+15. КАК ЗАДАЧИ ЧИТАЮТСЯ ИЗ БД
+-----------------------------
+
+Чтение из БД идёт так:
+
+1. UI вызывает:
+   - `MainController.loadTasks()`
+
+2. Этот метод вызывает:
+   - `taskManager.getAllTasks()`
+
+3. `TaskManager.getAllTasks()`:
+   - при необходимости обновляет флаг просрочки
+   - возвращает только задачи, видимые текущему пользователю
+
+4. На старте сами данные из БД читаются в:
+   - `DatabaseManager.getAllTasks()`
+
+5. `DatabaseManager.getAllTasks()` выполняет:
+   - `SELECT * FROM tasks ORDER BY sort_index ASC, end_time ASC`
+
+6. Каждая строка БД превращается в Java-объект методом:
+   - `resultSetToTask(ResultSet rs)`
+
+То есть схема такая:
+- SQL-строка -> `ResultSet` -> `Task` -> `TaskViewModel` -> таблица JavaFX
+
+
+16. КАК ПРОИСХОДИТ РЕДАКТИРОВАНИЕ ЗАДАЧИ
+---------------------------------------
+
+Редактирование идёт по цепочке:
+
+1. Пользователь открывает задачу на редактирование
+   - `MainController.openEditDialog(...)`
+
+2. Повторно используется то же окно:
+   - `showTaskDialog(selected.getTask(), null)`
+
+3. В `NewTaskController.handleCreateTask()`:
+   - если `editingTask != null`,
+     поля задачи просто обновляются через сеттеры,
+     а новый объект не создаётся
+
+4. После закрытия окна `MainController.openEditDialog(...)` вызывает:
+   - `taskManager.updateTask(updated)`
+
+5. `TaskManager.updateTask(...)`:
+   - заменяет задачу во внутреннем списке
+   - вызывает `persistTask(updatedTask)`
+   - сохраняет JSON-снимок
+
+6. `persistTask(...)` вызывает:
+   - `DatabaseManager.saveTask(task)`
+
+Важно:
+- здесь не отдельный `UPDATE`, а `UPSERT`;
+- одна и та же функция `saveTask(...)` отвечает и за вставку, и за обновление.
+
+
+17. КАК ПРОИСХОДИТ УДАЛЕНИЕ ЗАДАЧИ
+----------------------------------
+
+Цепочка удаления:
+
+1. Нажатие кнопки:
+   - `MainController.handleDeleteTask()`
+
+2. Затем:
+   - `deleteTasks(selected)`
+
+3. Внутри `deleteTasks(...)` для каждой задачи вызывается:
+   - `taskManager.removeTask(task.getId())`
+
+4. `TaskManager.removeTask(...)`:
+   - удаляет задачу из внутреннего списка
+   - вызывает:
+     - `dbManager.deleteTask(taskId)`
+   - сохраняет JSON-снимок
+
+5. `DatabaseManager.deleteTask(...)`:
+   - выполняет SQL:
+     - `DELETE FROM tasks WHERE id = ?`
+   - до удаления пишет запись в статистику:
+     - `logTaskOperation(taskId, "DELETE", "Task removed")`
+
+
+18. КАК ПРОИСХОДИТ ОТМЕТКА "ВЫПОЛНЕНО"
+--------------------------------------
+
+Это делает:
+- `TaskManager.markAsCompleted(String taskId, boolean completed)`
+
+Сценарий:
+- задача находится по `id`
+- меняется `completed`
+- пересчитывается `overdue`
+- выполняется `persistTask(task)`
+- сохраняется JSON
+
+Если задача повторяющаяся, дополнительно вызывается:
+- `createNextRecurringTask(task)`
+
+То есть после завершения циклической задачи проект может автоматически создать
+следующую задачу и тоже сохранить её в БД.
+
+
+19. КАК СОХРАНЯЮТСЯ НАСТРОЙКИ ПРИЛОЖЕНИЯ В БД
+---------------------------------------------
+
+Настройки пишутся в таблицу `app_settings`.
+
+Пример:
+- `MainController.handleSaveNotificationSettings()`
+
+Там вызывается:
+- `dbManager.saveSetting("notify_popup", ...)`
+- `dbManager.saveSetting("notify_sound", ...)`
+- `dbManager.saveSetting("notify_email", ...)`
+- `dbManager.saveSetting("notify_email_to", ...)`
+- `dbManager.saveSetting("reminder_minutes", ...)`
+
+Запись реализована в:
+- `src/repository/DatabaseManager.java`
+- метод: `saveSetting(String key, String value)`
+
+Чтение:
+- метод: `getSetting(String key, String defaultValue)`
+
+
+20. КАК РАБОТАЕТ РЕЗЕРВНЫЙ JSON
+-------------------------------
+
+В проекте БД является основным хранилищем, но JSON не убран полностью.
+
+Файл:
+- `src/util/JsonUtil.java`
+
+Основные методы:
+- `loadTasks()`
+- `loadTasksFromPath(...)`
+- `saveTasks(...)`
+- `saveTasksToPath(...)`
+
+Зачем это нужно:
+- как резервная копия задач;
+- как совместимость со старой версией проекта;
+- как источник миграции, если БД пустая.
+
+Важно:
+- при каждом добавлении, обновлении и удалении `TaskManager`
+  вызывает `saveJsonSnapshot()`;
+- внутри неё вызывается `JsonUtil.saveTasks(tasks)`.
+
+То есть в проекте используется схема:
+- основное хранилище: БД
+- резервный снимок: `tasks.json`
+
+
+21. ЧТО ДЕЛАЕТ `SqlDialect`
+--------------------------
+
+Файл:
+- `src/repository/SqlDialect.java`
+
+Это вспомогательный класс, который позволяет одним и тем же Java-методам
+работать с разными СУБД.
+
+Он определяет:
+- тип автоинкремента
+- текстовые типы полей
+- формат временных полей
+- `UPSERT`
+- `INSERT IGNORE`
+- `ALTER TABLE ADD COLUMN`
+
+Например:
+- SQLite/PostgreSQL используют `ON CONFLICT`
+- MySQL использует `ON DUPLICATE KEY UPDATE`
+- Firebird использует `UPDATE OR INSERT`
+
+
+22. КАК ПРИЛОЖЕНИЕ ЗАКРЫВАЕТ СОЕДИНЕНИЕ
+---------------------------------------
+
+Закрытие выполняется в нескольких местах:
+
+1. `MainApp.main(...)`
+   - через `shutdown hook`
+
+2. `MainApp.stop()`
+   - вызывает:
+     - `TaskManager.getInstance().close()`
+
+3. `TaskManager.close()`
+   - вызывает:
+     - `dbManager.close()`
+
+4. `DatabaseManager.close()`
+   - закрывает JDBC `connection`
+
+То есть соединение не должно висеть после завершения приложения.
+
+
+23. СЛУЖЕБНАЯ ПРОВЕРКА БД И НАПОЛНЕНИЕ
+--------------------------------------
+
+Есть отдельная CLI-утилита:
+- `src/util/DatabaseCli.java`
+
+Основные режимы:
+- `probe`
+- `seed`
+
+Что делают:
+- `probe` — проверяет, что подключение работает;
+- `seed` — массово создаёт задачи для теста нагрузки.
+
+Если использовать `seed`, он действительно создаёт тестовые задачи.
+В рабочем режиме UI сам по себе тестовые задачи не создаёт.
+
+
+24. ГОТОВЫЙ УСТНЫЙ ОТВЕТ ДЛЯ ПРЕПОДАВАТЕЛЯ
+------------------------------------------
+
+Можно отвечать так:
+
+"У меня БД подключается через JDBC. Конфиг читается в `DatabaseConfig.load()`,
+потом в `DatabaseManager.initializeDatabase()` он валидируется, загружается драйвер
+и через `ConnectionFactory.open(...)` вызывается `DatabaseConfig.openConnection()`,
+где уже происходит `DriverManager.getConnection(...)`.
+
+После подключения `DatabaseManager` создаёт таблицы в `createTables()`, выполняет
+миграции в `migrateSchema()` и добавляет системные данные в `seedDefaults()`.
+
+Когда пользователь добавляет задачу, кнопка в `MainController.handleAddTask()`
+открывает окно `NewTaskController`. В `handleCreateTask()` собираются данные формы
+и создаётся объект `Task`. Потом `MainController` передаёт его в
+`TaskManager.addTask()`. Там задаче ставится `owner_user_id` текущего пользователя,
+назначается `sort_index`, затем вызывается `persistTask()`, а он уже вызывает
+`DatabaseManager.saveTask()`.
+
+`saveTask()` делает `UPSERT` в таблицу `tasks`, то есть одной функцией и вставляет,
+и обновляет задачу. После этого операция пишется в `task_statistics`. Параллельно
+`TaskManager` сохраняет резервную копию задач в `tasks.json`.
+
+При запуске приложение сначала читает `tasks.json`, потом читает БД через
+`DatabaseManager.getAllTasks()`, и в `mergeTasks()` объединяет данные, чтобы можно
+было мигрировать со старого JSON-хранилища.
+
+Отдельные пользователи работают через таблицу `users`, а видимость задач сделана
+через поле `owner_user_id`: после входа `MainController.ensureAuthenticated()`
+вызывает `TaskManager.setCurrentUser(user)`, и дальше `TaskManager.getAllTasks()`
+отдаёт только задачи, которые принадлежат текущему пользователю." 
+
+
+25. КОРОТКАЯ ШПАРГАЛКА ПО МЕТОДАМ
+---------------------------------
+
+Подключение к БД:
+- `DatabaseManager.initializeDatabase()`
+- `ConnectionFactory.open(...)`
+- `DatabaseConfig.openConnection()`
+
+Чтение конфига:
+- `DatabaseConfig.load()`
+- `DatabaseConfig.validate()`
+- `DatabaseConfig.getJdbcUrl()`
+
+Создание таблиц:
+- `DatabaseManager.createTables()`
+
+Миграции:
+- `DatabaseManager.migrateSchema()`
+- `DatabaseManager.migrateUsersSchema()`
+
+Стартовые данные:
+- `DatabaseManager.seedDefaults()`
+
+Создание пользователя:
+- `AuthService.register(...)`
+- `DatabaseManager.createUser(...)`
+
+Логин:
+- `AuthService.login(...)`
+- `DatabaseManager.findUserByUsername(...)`
+- `DatabaseManager.findUsersByEmail(...)`
+
+Добавление задачи:
+- `MainController.handleAddTask()`
+- `NewTaskController.handleCreateTask()`
+- `TaskManager.addTask(...)`
+- `TaskManager.persistTask(...)`
+- `DatabaseManager.saveTask(...)`
+
+Загрузка задач:
+- `TaskManager.initializeStorage()`
+- `TaskManager.mergeTasks(...)`
+- `DatabaseManager.getAllTasks()`
+- `DatabaseManager.resultSetToTask(...)`
+
+Редактирование:
+- `MainController.openEditDialog(...)`
+- `TaskManager.updateTask(...)`
+- `DatabaseManager.saveTask(...)`
+
+Удаление:
+- `MainController.deleteTasks(...)`
+- `TaskManager.removeTask(...)`
+- `DatabaseManager.deleteTask(...)`
+
+Настройки:
+- `MainController.handleSaveNotificationSettings()`
+- `DatabaseManager.saveSetting(...)`
+- `DatabaseManager.getSetting(...)`
+
+Резервный JSON:
+- `JsonUtil.loadTasks()`
+- `JsonUtil.saveTasks(...)`
+
+Закрытие БД:
+- `TaskManager.close()`
+- `DatabaseManager.close()`

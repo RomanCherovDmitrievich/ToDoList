@@ -5,8 +5,10 @@ import repository.DatabaseManager;
 
 import java.nio.file.Path;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 /**
  * Сервис регистрации, входа и восстановления доступа.
@@ -54,11 +56,7 @@ public final class AuthService {
     public synchronized User login(String identifier, String password) {
         String normalizedIdentifier = normalizeIdentifier(identifier);
         validatePassword(password, false);
-
-        User user = dbManager.findUserByIdentifier(normalizedIdentifier);
-        if (user == null || !PasswordUtil.verifyPassword(password, user.getPasswordSalt(), user.getPasswordHash())) {
-            throw new IllegalArgumentException("Неверный логин/email или пароль.");
-        }
+        User user = resolveUserForLogin(normalizedIdentifier, password);
 
         currentUser = user;
         return user;
@@ -69,11 +67,8 @@ public final class AuthService {
         String normalizedEmail = normalizeEmail(email);
         validatePassword(password, true);
 
-        if (dbManager.findUserByIdentifier(normalizedUsername) != null) {
+        if (dbManager.findUserByUsername(normalizedUsername) != null) {
             throw new IllegalArgumentException("Пользователь с таким логином уже существует.");
-        }
-        if (!normalizedEmail.isBlank() && dbManager.findUserByIdentifier(normalizedEmail) != null) {
-            throw new IllegalArgumentException("Пользователь с такой почтой уже существует.");
         }
 
         String salt = PasswordUtil.generateSalt();
@@ -89,28 +84,9 @@ public final class AuthService {
         return user;
     }
 
-    public synchronized EmailNotifier.DeliveryResult sendRegistrationEmail(User user) {
-        if (user == null) {
-            return new EmailNotifier.DeliveryResult(false, "Аккаунт не создан.", null);
-        }
-        if (!user.hasEmail()) {
-            return new EmailNotifier.DeliveryResult(false, "Для аккаунта не указана почта.", null);
-        }
-
-        String subject = "ToDoList: аккаунт создан";
-        String body = """
-            Аккаунт %s успешно создан.
-
-            Теперь вы можете входить в ToDoList по логину или email.
-            Если письмо пришло не вам, просто проигнорируйте его.
-            """.formatted(user.getUsername());
-
-        return emailNotifier.sendEmailDetailed(user.getEmail(), subject, body);
-    }
-
     public synchronized PasswordResetRequest requestPasswordReset(String identifier) {
         String normalizedIdentifier = normalizeIdentifier(identifier);
-        User user = dbManager.findUserByIdentifier(normalizedIdentifier);
+        User user = resolveUserForRecovery(normalizedIdentifier);
         if (user == null) {
             return new PasswordResetRequest(false, false, "Пользователь не найден.", null, null);
         }
@@ -166,7 +142,7 @@ public final class AuthService {
             throw new IllegalArgumentException("Введите код восстановления.");
         }
 
-        User user = dbManager.findUserByIdentifier(normalizedIdentifier);
+        User user = resolveUserForRecovery(normalizedIdentifier);
         if (user == null) {
             throw new IllegalArgumentException("Пользователь не найден.");
         }
@@ -221,5 +197,53 @@ public final class AuthService {
         if (strict && password.trim().length() < 6) {
             throw new IllegalArgumentException("Пароль должен содержать минимум 6 символов.");
         }
+    }
+
+    private User resolveUserForLogin(String identifier, String password) {
+        if (!looksLikeEmail(identifier)) {
+            User user = dbManager.findUserByUsername(identifier);
+            if (user == null || !PasswordUtil.verifyPassword(password, user.getPasswordSalt(), user.getPasswordHash())) {
+                throw new IllegalArgumentException("Неверный логин/email или пароль.");
+            }
+            return user;
+        }
+
+        List<User> users = dbManager.findUsersByEmail(identifier);
+        if (users.isEmpty()) {
+            throw new IllegalArgumentException("Неверный логин/email или пароль.");
+        }
+
+        List<User> matchedUsers = users.stream()
+            .filter(user -> PasswordUtil.verifyPassword(password, user.getPasswordSalt(), user.getPasswordHash()))
+            .collect(Collectors.toList());
+
+        if (matchedUsers.isEmpty()) {
+            throw new IllegalArgumentException("Неверный логин/email или пароль.");
+        }
+        if (matchedUsers.size() > 1) {
+            throw new IllegalArgumentException(
+                "На эту почту зарегистрировано несколько аккаунтов. Для входа используйте логин."
+            );
+        }
+
+        return matchedUsers.get(0);
+    }
+
+    private User resolveUserForRecovery(String identifier) {
+        if (!looksLikeEmail(identifier)) {
+            return dbManager.findUserByUsername(identifier);
+        }
+
+        List<User> users = dbManager.findUsersByEmail(identifier);
+        if (users.size() > 1) {
+            throw new IllegalArgumentException(
+                "На эту почту зарегистрировано несколько аккаунтов. Для восстановления укажите логин."
+            );
+        }
+        return users.isEmpty() ? null : users.get(0);
+    }
+
+    private boolean looksLikeEmail(String identifier) {
+        return identifier != null && identifier.contains("@");
     }
 }

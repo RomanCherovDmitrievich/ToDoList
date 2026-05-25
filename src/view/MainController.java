@@ -75,7 +75,6 @@ import model.User;
 import repository.DatabaseManager;
 import util.AudioManager;
 import util.AuthService;
-import util.EmailNotifier;
 import util.NotificationSettings;
 import util.PathResolver;
 import util.TaskReminderService;
@@ -960,7 +959,10 @@ public class MainController {
         Label errorLabel = new Label();
         errorLabel.setWrapText(true);
         errorLabel.setTextFill(Color.web("#c0392b"));
-        Label infoLabel = new Label("Если почта указана, приложение попробует отправить письмо о регистрации.");
+        Label infoLabel = new Label(
+            "Почта будет сохранена в базе данных и дальше будет использоваться для входа, " +
+            "сброса пароля и email-уведомлений."
+        );
         infoLabel.setWrapText(true);
 
         GridPane content = createFormGrid();
@@ -977,34 +979,60 @@ public class MainController {
         dialog.getDialogPane().setContent(content);
 
         User[] createdUser = new User[1];
-        EmailNotifier.DeliveryResult[] registrationDelivery = new EmailNotifier.DeliveryResult[1];
         Button createButton = (Button) dialog.getDialogPane().lookupButton(createType);
+        Button cancelButton = (Button) dialog.getDialogPane().lookupButton(ButtonType.CANCEL);
         createButton.addEventFilter(ActionEvent.ACTION, event -> {
+            event.consume();
             if (!passwordField.getText().equals(confirmField.getText())) {
                 errorLabel.setText("Пароли не совпадают.");
-                event.consume();
                 return;
             }
-            try {
-                createdUser[0] = authService.register(
-                    usernameField.getText(),
-                    emailField.getText(),
-                    passwordField.getText()
-                );
-                if (createdUser[0] != null && createdUser[0].hasEmail()) {
-                    registrationDelivery[0] = authService.sendRegistrationEmail(createdUser[0]);
-                }
-            } catch (IllegalArgumentException e) {
-                errorLabel.setText(e.getMessage());
-                event.consume();
+
+            createButton.setDisable(true);
+            if (cancelButton != null) {
+                cancelButton.setDisable(true);
             }
+            errorLabel.setText("Создаю аккаунт...");
+            errorLabel.setTextFill(Color.web("#1f2b3a"));
+
+            Thread registerThread = new Thread(() -> {
+                try {
+                    User registeredUser = authService.register(
+                        usernameField.getText(),
+                        emailField.getText(),
+                        passwordField.getText()
+                    );
+                    Platform.runLater(() -> {
+                        createdUser[0] = registeredUser;
+                        dialog.setResult(createType);
+                        dialog.close();
+                    });
+                } catch (IllegalArgumentException e) {
+                    Platform.runLater(() -> {
+                        errorLabel.setText(e.getMessage());
+                        errorLabel.setTextFill(Color.web("#c0392b"));
+                        createButton.setDisable(false);
+                        if (cancelButton != null) {
+                            cancelButton.setDisable(false);
+                        }
+                    });
+                } catch (Exception e) {
+                    Platform.runLater(() -> {
+                        errorLabel.setText("Ошибка при создании аккаунта: " + e.getMessage());
+                        errorLabel.setTextFill(Color.web("#c0392b"));
+                        createButton.setDisable(false);
+                        if (cancelButton != null) {
+                            cancelButton.setDisable(false);
+                        }
+                    });
+                }
+            });
+            registerThread.setDaemon(true);
+            registerThread.start();
         });
 
         Optional<ButtonType> result = dialog.showAndWait();
         if (result.isPresent() && result.get() == createType) {
-            if (registrationDelivery[0] != null) {
-                showEmailDeliveryInfo("Регистрация", "Аккаунт создан", registrationDelivery[0]);
-            }
             return createdUser[0];
         }
         return null;
@@ -1120,21 +1148,6 @@ public class MainController {
             return;
         }
         currentUserLabel.setText("Пользователь: " + currentUser.getDisplayName());
-    }
-
-    private void showEmailDeliveryInfo(String title, String header, EmailNotifier.DeliveryResult delivery) {
-        if (delivery == null) {
-            return;
-        }
-        String details = delivery.fallbackFile() == null
-            ? delivery.message()
-            : delivery.message() + "\nФайл: " + delivery.fallbackFile().toAbsolutePath();
-        showAlert(
-            delivery.delivered() ? Alert.AlertType.INFORMATION : Alert.AlertType.WARNING,
-            title,
-            header,
-            details
-        );
     }
 
     private GridPane createFormGrid() {

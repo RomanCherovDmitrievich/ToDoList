@@ -52,6 +52,14 @@ public enum SqlDialect {
         };
     }
 
+    public String generatedTimestampType() {
+        return switch (this) {
+            case SQLITE -> "TEXT";
+            case POSTGRESQL, FIREBIRD -> "TIMESTAMP";
+            case MYSQL -> "DATETIME";
+        };
+    }
+
     public String settingsKeyIdentifier() {
         return this == MYSQL ? "`key`" : "key";
     }

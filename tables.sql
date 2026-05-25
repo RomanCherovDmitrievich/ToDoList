@@ -9,7 +9,7 @@ PRAGMA synchronous = NORMAL;
 CREATE TABLE IF NOT EXISTS users (
     id TEXT PRIMARY KEY,
     username TEXT NOT NULL UNIQUE,
-    email TEXT UNIQUE,
+    email TEXT,
     password_hash TEXT NOT NULL,
     password_salt TEXT NOT NULL,
     created_at TEXT NOT NULL,

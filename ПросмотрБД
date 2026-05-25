@@ -1,0 +1,8 @@
+-- Показать все таблицы в текущей базе данных
+SHOW TABLES;
+
+-- Все данные
+SELECT * FROM table_name;
+
+-- Более детальная информация
+SHOW COLUMNS FROM table_name;

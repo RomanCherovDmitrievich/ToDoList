@@ -78,13 +78,14 @@ public class DatabaseManager implements TaskDao {
         String identityColumn = dialect.identityColumn();
         String textType = dialect.textType();
         String timestampType = dialect.timestampType();
+        String generatedTimestampType = dialect.generatedTimestampType();
 
         String[] ddl = {
             """
             CREATE TABLE IF NOT EXISTS users (
                 id VARCHAR(64) PRIMARY KEY,
                 username VARCHAR(100) NOT NULL UNIQUE,
-                email VARCHAR(255) UNIQUE,
+                email VARCHAR(255),
                 password_hash VARCHAR(255) NOT NULL,
                 password_salt VARCHAR(255) NOT NULL,
                 created_at %s NOT NULL,
@@ -129,7 +130,7 @@ public class DatabaseManager implements TaskDao {
                 FOREIGN KEY (task_id) REFERENCES tasks(id) ON DELETE CASCADE,
                 FOREIGN KEY (tag_id) REFERENCES tags(id) ON DELETE CASCADE
             )
-            """.formatted(timestampType),
+            """.formatted(generatedTimestampType),
             String.format("""
             CREATE TABLE IF NOT EXISTS task_statistics (
                 id %s,
@@ -139,14 +140,14 @@ public class DatabaseManager implements TaskDao {
                 details %s,
                 FOREIGN KEY (task_id) REFERENCES tasks(id) ON DELETE CASCADE
             )
-            """, identityColumn, timestampType, textType),
+            """, identityColumn, generatedTimestampType, textType),
             """
             CREATE TABLE IF NOT EXISTS app_settings (
                 %s VARCHAR(128) PRIMARY KEY,
                 value %s,
                 updated_at %s NOT NULL DEFAULT CURRENT_TIMESTAMP
             )
-            """.formatted(dialect.settingsKeyIdentifier(), textType, timestampType)
+            """.formatted(dialect.settingsKeyIdentifier(), textType, generatedTimestampType)
         };
 
         String[] indexes = dialect == SqlDialect.MYSQL
@@ -259,6 +260,8 @@ public class DatabaseManager implements TaskDao {
         if (!hasConnection()) {
             return;
         }
+        migrateUsersSchema();
+
         String textType = dialect.textType();
         String timestampType = dialect.timestampType();
         Set<String> columns = new HashSet<>();
@@ -319,6 +322,173 @@ public class DatabaseManager implements TaskDao {
         if (!columns.contains("recurrence_end")) {
             try (Statement statement = connection.createStatement()) {
                 statement.execute(alterAddColumnSql("recurrence_end " + timestampType));
+            }
+        }
+    }
+
+    private void migrateUsersSchema() throws SQLException {
+        if (!isUsersEmailUnique()) {
+            return;
+        }
+
+        switch (dialect) {
+            case SQLITE -> rebuildSqliteUsersTableWithoutUniqueEmail();
+            case MYSQL -> dropMysqlUniqueEmailIndexes();
+            case POSTGRESQL -> dropPostgresqlUniqueEmailConstraints();
+            case FIREBIRD -> dropFirebirdUniqueEmailConstraints();
+        }
+    }
+
+    private boolean isUsersEmailUnique() throws SQLException {
+        return switch (dialect) {
+            case SQLITE -> hasSqliteUniqueEmailConstraint();
+            case MYSQL -> !findMysqlUniqueEmailIndexes().isEmpty();
+            case POSTGRESQL -> !findPostgresqlUniqueEmailConstraints().isEmpty();
+            case FIREBIRD -> !findFirebirdUniqueEmailConstraints().isEmpty();
+        };
+    }
+
+    private boolean hasSqliteUniqueEmailConstraint() throws SQLException {
+        String sql = "SELECT sql FROM sqlite_master WHERE type = 'table' AND name = 'users'";
+        try (Statement statement = connection.createStatement();
+             ResultSet rs = statement.executeQuery(sql)) {
+            if (!rs.next()) {
+                return false;
+            }
+            String ddl = rs.getString("sql");
+            if (ddl == null) {
+                return false;
+            }
+            String normalized = ddl.toLowerCase();
+            return normalized.contains("email text unique")
+                || normalized.contains("email varchar(255) unique")
+                || normalized.contains("email varchar(255),")
+                && normalized.contains("unique(email)");
+        }
+    }
+
+    private void rebuildSqliteUsersTableWithoutUniqueEmail() throws SQLException {
+        boolean autoCommit = connection.getAutoCommit();
+        connection.setAutoCommit(false);
+        try (Statement statement = connection.createStatement()) {
+            statement.execute("PRAGMA foreign_keys = OFF");
+            statement.execute("ALTER TABLE users RENAME TO users_old");
+            statement.execute("""
+                CREATE TABLE users (
+                    id VARCHAR(64) PRIMARY KEY,
+                    username VARCHAR(100) NOT NULL UNIQUE,
+                    email VARCHAR(255),
+                    password_hash VARCHAR(255) NOT NULL,
+                    password_salt VARCHAR(255) NOT NULL,
+                    created_at TEXT NOT NULL,
+                    updated_at TEXT NOT NULL,
+                    reset_code VARCHAR(32),
+                    reset_code_expires_at TEXT
+                )
+                """);
+            statement.execute("""
+                INSERT INTO users(
+                    id, username, email, password_hash, password_salt,
+                    created_at, updated_at, reset_code, reset_code_expires_at
+                )
+                SELECT
+                    id, username, email, password_hash, password_salt,
+                    created_at, updated_at, reset_code, reset_code_expires_at
+                FROM users_old
+                """);
+            statement.execute("DROP TABLE users_old");
+            statement.execute("CREATE INDEX IF NOT EXISTS idx_users_username ON users(username)");
+            statement.execute("CREATE INDEX IF NOT EXISTS idx_users_email ON users(email)");
+            statement.execute("PRAGMA foreign_keys = ON");
+            connection.commit();
+        } catch (SQLException e) {
+            connection.rollback();
+            throw e;
+        } finally {
+            connection.setAutoCommit(autoCommit);
+        }
+    }
+
+    private List<String> findMysqlUniqueEmailIndexes() throws SQLException {
+        List<String> indexes = new ArrayList<>();
+        String sql = """
+            SELECT INDEX_NAME
+            FROM information_schema.statistics
+            WHERE table_schema = DATABASE()
+              AND table_name = 'users'
+              AND column_name = 'email'
+              AND non_unique = 0
+              AND index_name <> 'PRIMARY'
+            """;
+        try (Statement statement = connection.createStatement();
+             ResultSet rs = statement.executeQuery(sql)) {
+            while (rs.next()) {
+                indexes.add(rs.getString("INDEX_NAME"));
+            }
+        }
+        return indexes;
+    }
+
+    private void dropMysqlUniqueEmailIndexes() throws SQLException {
+        for (String indexName : findMysqlUniqueEmailIndexes()) {
+            try (Statement statement = connection.createStatement()) {
+                statement.execute("ALTER TABLE users DROP INDEX `" + indexName + "`");
+            }
+        }
+    }
+
+    private List<String> findPostgresqlUniqueEmailConstraints() throws SQLException {
+        List<String> constraints = new ArrayList<>();
+        String sql = """
+            SELECT c.conname
+            FROM pg_constraint c
+            JOIN pg_class t ON t.oid = c.conrelid
+            JOIN pg_namespace n ON n.oid = t.relnamespace
+            WHERE t.relname = 'users'
+              AND n.nspname = current_schema()
+              AND c.contype = 'u'
+              AND pg_get_constraintdef(c.oid) ILIKE '%(email)%'
+            """;
+        try (Statement statement = connection.createStatement();
+             ResultSet rs = statement.executeQuery(sql)) {
+            while (rs.next()) {
+                constraints.add(rs.getString("conname"));
+            }
+        }
+        return constraints;
+    }
+
+    private void dropPostgresqlUniqueEmailConstraints() throws SQLException {
+        for (String constraintName : findPostgresqlUniqueEmailConstraints()) {
+            try (Statement statement = connection.createStatement()) {
+                statement.execute("ALTER TABLE users DROP CONSTRAINT IF EXISTS " + constraintName);
+            }
+        }
+    }
+
+    private List<String> findFirebirdUniqueEmailConstraints() throws SQLException {
+        List<String> constraints = new ArrayList<>();
+        String sql = """
+            SELECT TRIM(rc.RDB$CONSTRAINT_NAME) AS constraint_name
+            FROM RDB$RELATION_CONSTRAINTS rc
+            JOIN RDB$INDEX_SEGMENTS seg ON seg.RDB$INDEX_NAME = rc.RDB$INDEX_NAME
+            WHERE rc.RDB$RELATION_NAME = 'USERS'
+              AND rc.RDB$CONSTRAINT_TYPE = 'UNIQUE'
+              AND TRIM(seg.RDB$FIELD_NAME) = 'EMAIL'
+            """;
+        try (Statement statement = connection.createStatement();
+             ResultSet rs = statement.executeQuery(sql)) {
+            while (rs.next()) {
+                constraints.add(rs.getString("constraint_name"));
+            }
+        }
+        return constraints;
+    }
+
+    private void dropFirebirdUniqueEmailConstraints() throws SQLException {
+        for (String constraintName : findFirebirdUniqueEmailConstraints()) {
+            try (Statement statement = connection.createStatement()) {
+                statement.execute("ALTER TABLE USERS DROP CONSTRAINT " + constraintName);
             }
         }
     }
@@ -676,27 +846,64 @@ public class DatabaseManager implements TaskDao {
         if (!hasConnection() || identifier == null || identifier.isBlank()) {
             return null;
         }
+        User userByUsername = findUserByUsername(identifier);
+        if (userByUsername != null) {
+            return userByUsername;
+        }
+
+        List<User> usersByEmail = findUsersByEmail(identifier);
+        return usersByEmail.size() == 1 ? usersByEmail.get(0) : null;
+    }
+
+    public synchronized User findUserByUsername(String username) {
+        if (!hasConnection() || username == null || username.isBlank()) {
+            return null;
+        }
 
         String sql = """
             SELECT *
             FROM users
             WHERE LOWER(username) = LOWER(?)
-               OR LOWER(COALESCE(email, '')) = LOWER(?)
             LIMIT 1
             """;
 
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, identifier);
-            statement.setString(2, identifier);
+            statement.setString(1, username);
             try (ResultSet rs = statement.executeQuery()) {
                 if (rs.next()) {
                     return resultSetToUser(rs);
                 }
             }
         } catch (SQLException e) {
-            System.err.println("findUserByIdentifier error: " + e.getMessage());
+            System.err.println("findUserByUsername error: " + e.getMessage());
         }
         return null;
+    }
+
+    public synchronized List<User> findUsersByEmail(String email) {
+        List<User> users = new ArrayList<>();
+        if (!hasConnection() || email == null || email.isBlank()) {
+            return users;
+        }
+
+        String sql = """
+            SELECT *
+            FROM users
+            WHERE LOWER(COALESCE(email, '')) = LOWER(?)
+            ORDER BY created_at ASC
+            """;
+
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, email);
+            try (ResultSet rs = statement.executeQuery()) {
+                while (rs.next()) {
+                    users.add(resultSetToUser(rs));
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("findUsersByEmail error: " + e.getMessage());
+        }
+        return users;
     }
 
     public synchronized User getUserById(String userId) {
