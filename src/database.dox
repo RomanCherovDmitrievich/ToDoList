@@ -36,10 +36,5 @@
  * - SQL-диалект: `repository.SqlDialect`
  * - DAO-интерфейс задач: `repository.TaskDao`
  * - Создание таблиц, миграции и UPSERT: `repository.DatabaseManager`
- * - Проверка соединения и массовая генерация: `util.DatabaseCli`
- *
- * @section database_cli Проверка соединения
- * Для ручной проверки БД используйте:
- * - `./scripts/test_db_connection.sh` — выполняет `CREATE TABLE`, `INSERT`, `SELECT`, `DROP`
- * - `./scripts/fill_tasks.sh 1000` — создаёт 1000 тестовых задач
+ * - CLI-проверка и генерация данных: `util.DatabaseCli`
  */

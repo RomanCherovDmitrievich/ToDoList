@@ -1,4 +1,0 @@
-@echo off
-setlocal
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0..\run_tests.ps1" %*
-exit /b %ERRORLEVEL%

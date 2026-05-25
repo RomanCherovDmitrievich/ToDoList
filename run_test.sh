@@ -35,10 +35,12 @@ resolve_javafx_lib() {
   local candidate
   candidate="$(ls -d javafx-sdk-* 2>/dev/null | sort -V | tail -n 1 || true)"
   if [[ -n "$candidate" && -d "$candidate/lib" ]]; then
-    if [[ ! -e ".javafx" ]]; then
-      ln -sfn "$candidate" ".javafx"
-    fi
-    echo ".javafx/lib"
+    echo "$candidate/lib"
+    return
+  fi
+  candidate="$(ls -d ../javafx-sdk-* 2>/dev/null | sort -V | tail -n 1 || true)"
+  if [[ -n "$candidate" && -d "$candidate/lib" ]]; then
+    echo "$candidate/lib"
     return
   fi
   echo ""
@@ -57,17 +59,34 @@ else
   CP_SEP=':'
 fi
 
-if [[ ! -f "$LIB_DIR/gson-2.10.1.jar" || ! -f "$LIB_DIR/sqlite-jdbc-3.45.1.0.jar" || ! -f "$LIB_DIR/slf4j-api-2.0.12.jar" || ! -f "$LIB_DIR/slf4j-nop-2.0.12.jar" || ! -f "$MAIL_API_JAR" || ! -f "$ANGUS_MAIL_JAR" || ! -f "$ACTIVATION_API_JAR" || ! -f "$ANGUS_ACTIVATION_JAR" ]]; then
-  echo "[tests] Required jars missing in lib/. Run: ./scripts/setup.sh"
-  exit 1
-fi
+REQUIRED_JARS=(
+  "$LIB_DIR/gson-2.10.1.jar"
+  "$LIB_DIR/sqlite-jdbc-3.45.1.0.jar"
+  "$LIB_DIR/slf4j-api-2.0.12.jar"
+  "$LIB_DIR/slf4j-nop-2.0.12.jar"
+  "$MAIL_API_JAR"
+  "$ANGUS_MAIL_JAR"
+  "$ACTIVATION_API_JAR"
+  "$ANGUS_ACTIVATION_JAR"
+)
 
-APP_CLASSPATH="$BIN_DIR${CP_SEP}$LIB_DIR/gson-2.10.1.jar${CP_SEP}$LIB_DIR/sqlite-jdbc-3.45.1.0.jar${CP_SEP}$LIB_DIR/slf4j-api-2.0.12.jar${CP_SEP}$LIB_DIR/slf4j-nop-2.0.12.jar${CP_SEP}$MAIL_API_JAR${CP_SEP}$ANGUS_MAIL_JAR${CP_SEP}$ACTIVATION_API_JAR${CP_SEP}$ANGUS_ACTIVATION_JAR"
+for jar in "${REQUIRED_JARS[@]}"; do
+  if [[ ! -f "$jar" ]]; then
+    echo "[tests] Required jar missing: $(basename "$jar")"
+    echo "[tests] Run ./setup.sh first."
+    exit 1
+  fi
+done
+
+APP_CLASSPATH="$BIN_DIR"
+for jar in "${REQUIRED_JARS[@]}"; do
+  APP_CLASSPATH="${APP_CLASSPATH}${CP_SEP}${jar}"
+done
 if [[ -f "$POSTGRES_JAR" ]]; then
-  APP_CLASSPATH="${APP_CLASSPATH}${CP_SEP}$POSTGRES_JAR"
+  APP_CLASSPATH="${APP_CLASSPATH}${CP_SEP}${POSTGRES_JAR}"
 fi
 if [[ -f "$MYSQL_JAR" ]]; then
-  APP_CLASSPATH="${APP_CLASSPATH}${CP_SEP}$MYSQL_JAR"
+  APP_CLASSPATH="${APP_CLASSPATH}${CP_SEP}${MYSQL_JAR}"
 fi
 
 if [[ ! -f "$JUNIT_JAR" ]]; then
@@ -81,10 +100,12 @@ if [[ ! -f "$JUNIT_JAR" ]]; then
   fi
 fi
 
-./scripts/run.sh --build-only
+./run.sh --build-only
 
 TEST_SOURCES_LIST="$REPORTS_DIR/test-sources.list"
-find "$TESTS_DIR" -name "*Test.java" -type f | sort > "$TEST_SOURCES_LIST"
+find "$TESTS_DIR" -name "*Test.java" -type f -print0 | sort -z | while IFS= read -r -d '' file; do
+  printf '"%s"\n' "$file"
+done > "$TEST_SOURCES_LIST"
 
 if [[ ! -s "$TEST_SOURCES_LIST" ]]; then
   echo "[tests] No test sources found in $TESTS_DIR"
@@ -92,7 +113,6 @@ if [[ ! -s "$TEST_SOURCES_LIST" ]]; then
 fi
 
 echo "[tests] Compiling tests..."
-
 javac \
   --module-path "$JAVAFX_LIB" \
   --add-modules javafx.controls,javafx.fxml,javafx.media \
@@ -108,7 +128,6 @@ RUNTIME_DATA_DIR="$REPORTS_DIR/runtime-data-${TIMESTAMP}"
 mkdir -p "$RUNTIME_DATA_DIR"
 
 echo "[tests] Running JUnit..."
-
 java \
   --module-path "$JAVAFX_LIB" \
   --add-modules javafx.controls,javafx.fxml,javafx.media \

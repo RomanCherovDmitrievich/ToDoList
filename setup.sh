@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$PROJECT_ROOT"
 
-LIB_DIR="lib"
+LIB_DIR="$PROJECT_ROOT/lib"
 
 printf "[setup] Project: %s\n" "$PROJECT_ROOT"
 
@@ -14,7 +14,7 @@ if ! command -v java >/dev/null 2>&1; then
 fi
 
 if ! command -v javac >/dev/null 2>&1; then
-  echo "[setup] javac not found in PATH. Install full JDK (not JRE)."
+  echo "[setup] javac not found in PATH. Install full JDK, not JRE."
   exit 1
 fi
 
@@ -45,35 +45,26 @@ download_if_missing() {
 
 download_if_missing "$LIB_DIR/gson-2.10.1.jar" \
   "https://repo1.maven.org/maven2/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar"
-
 download_if_missing "$LIB_DIR/sqlite-jdbc-3.45.1.0.jar" \
   "https://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.45.1.0/sqlite-jdbc-3.45.1.0.jar"
-
 download_if_missing "$LIB_DIR/slf4j-api-2.0.12.jar" \
   "https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.12/slf4j-api-2.0.12.jar"
-
 download_if_missing "$LIB_DIR/slf4j-nop-2.0.12.jar" \
   "https://repo1.maven.org/maven2/org/slf4j/slf4j-nop/2.0.12/slf4j-nop-2.0.12.jar"
-
 download_if_missing "$LIB_DIR/postgresql-42.7.4.jar" \
   "https://repo1.maven.org/maven2/org/postgresql/postgresql/42.7.4/postgresql-42.7.4.jar"
-
 download_if_missing "$LIB_DIR/mysql-connector-j-9.3.0.jar" \
   "https://repo1.maven.org/maven2/com/mysql/mysql-connector-j/9.3.0/mysql-connector-j-9.3.0.jar"
-
 download_if_missing "$LIB_DIR/jakarta.mail-api-2.1.5.jar" \
   "https://repo1.maven.org/maven2/jakarta/mail/jakarta.mail-api/2.1.5/jakarta.mail-api-2.1.5.jar"
-
 download_if_missing "$LIB_DIR/angus-mail-2.0.5.jar" \
   "https://repo1.maven.org/maven2/org/eclipse/angus/angus-mail/2.0.5/angus-mail-2.0.5.jar"
-
 download_if_missing "$LIB_DIR/jakarta.activation-api-2.1.4.jar" \
   "https://repo1.maven.org/maven2/jakarta/activation/jakarta.activation-api/2.1.4/jakarta.activation-api-2.1.4.jar"
-
 download_if_missing "$LIB_DIR/angus-activation-2.0.3.jar" \
   "https://repo1.maven.org/maven2/org/eclipse/angus/angus-activation/2.0.3/angus-activation-2.0.3.jar"
 
-find_javafx_dir() {
+resolve_javafx_dir() {
   if [[ -n "${JAVAFX_HOME:-}" && -d "${JAVAFX_HOME}/lib" ]]; then
     echo "${JAVAFX_HOME}"
     return
@@ -91,45 +82,27 @@ find_javafx_dir() {
     return
   fi
 
+  candidate="$(ls -d ../javafx-sdk-* 2>/dev/null | sort -V | tail -n 1 || true)"
+  if [[ -n "$candidate" && -d "$candidate/lib" ]]; then
+    echo "$candidate"
+    return
+  fi
+
   echo ""
 }
 
-JAVAFX_DIR="$(find_javafx_dir)"
+JAVAFX_DIR="$(resolve_javafx_dir)"
 if [[ -n "$JAVAFX_DIR" ]]; then
-  echo "[setup] OK: $JAVAFX_DIR/lib"
-
-  if [[ "$JAVAFX_DIR" != ".javafx" ]]; then
-    ln -sfn "$JAVAFX_DIR" ".javafx"
-    echo "[setup] Linked .javafx -> $JAVAFX_DIR"
-  fi
-
-  if [[ "$(uname -s)" == "Darwin" && -f "$JAVAFX_DIR/lib/libglass.dylib" ]]; then
-    SYS_ARCH="$(uname -m)"
-    SDK_ARCH="$(file "$JAVAFX_DIR/lib/libglass.dylib" | awk '{print $NF}')"
-    if [[ "$SYS_ARCH" == "arm64" && "$SDK_ARCH" == "arm64e" ]]; then
-      SDK_ARCH="arm64"
-    fi
-    if [[ "$SDK_ARCH" != "$SYS_ARCH" ]]; then
-      echo "[setup] WARNING: JavaFX SDK architecture mismatch."
-      echo "[setup] System: $SYS_ARCH, JavaFX: $SDK_ARCH"
-      echo "[setup] Download JavaFX SDK for macOS-$SYS_ARCH."
-    fi
-  fi
+  echo "[setup] JavaFX SDK: $JAVAFX_DIR/lib"
 else
   echo "[setup] JavaFX SDK not found."
-  echo "[setup] Use one of options:"
-  echo "  1) put javafx-sdk-<version> in project root"
-  echo "  2) export JAVAFX_HOME=/absolute/path/to/javafx-sdk"
+  echo "[setup] Put javafx-sdk-<version> in project root or export JAVAFX_HOME."
 fi
 
-mkdir -p data audio
+mkdir -p "$PROJECT_ROOT/data" "$PROJECT_ROOT/audio"
 
-cat <<MSG
+cat <<'MSG'
 [setup] Done.
 [setup] Next:
-  ./scripts/run.sh
-
-Optional:
-  export TODOLIST_AUDIO_DIR="/audio"
-  cp data/email.properties.example data/email.properties
+  ./run.sh
 MSG

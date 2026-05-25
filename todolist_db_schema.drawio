@@ -1,0 +1,43 @@
+<mxfile host="app.diagrams.net" modified="2026-05-25T14:45:00.000Z" agent="Codex" version="24.7.17">
+  <diagram id="todolist-db-schema" name="ToDoList DB Schema">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="note" value="&lt;div style=&quot;font-size:14px;font-family:Helvetica;&quot;&gt;&lt;b&gt;ToDoList: схема таблиц&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;font-size:11px;font-family:Helvetica;&quot;&gt;Типы показаны по &lt;code&gt;sql/postgresql_schema.sql&lt;/code&gt;.&lt;br/&gt;PK = primary key, FK = foreign key, UQ = unique.&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#1f2b3a;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="380" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="users" value="&lt;div style=&quot;font-family:Helvetica;font-size:15px;&quot;&gt;&lt;b&gt;users&lt;/b&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;font-family:Courier New;font-size:11px;line-height:1.5;&quot;&gt;PK id : VARCHAR(64)&lt;br/&gt;UQ username : VARCHAR(100)&lt;br/&gt;email : VARCHAR(255)&lt;br/&gt;password_hash : VARCHAR(255)&lt;br/&gt;password_salt : VARCHAR(255)&lt;br/&gt;created_at : TIMESTAMP&lt;br/&gt;updated_at : TIMESTAMP&lt;br/&gt;reset_code : VARCHAR(32)&lt;br/&gt;reset_code_expires_at : TIMESTAMP&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="40" y="140" width="320" height="245" as="geometry"/>
+        </mxCell>
+        <mxCell id="tasks" value="&lt;div style=&quot;font-family:Helvetica;font-size:15px;&quot;&gt;&lt;b&gt;tasks&lt;/b&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;font-family:Courier New;font-size:11px;line-height:1.45;&quot;&gt;PK id : VARCHAR(64)&lt;br/&gt;title : VARCHAR(255)&lt;br/&gt;description : TEXT&lt;br/&gt;start_time : TIMESTAMP&lt;br/&gt;end_time : TIMESTAMP&lt;br/&gt;priority : VARCHAR(32)&lt;br/&gt;category : VARCHAR(32)&lt;br/&gt;completed : BOOLEAN&lt;br/&gt;overdue : BOOLEAN&lt;br/&gt;created_at : TIMESTAMP&lt;br/&gt;updated_at : TIMESTAMP&lt;br/&gt;sort_index : INTEGER&lt;br/&gt;FK owner_user_id : VARCHAR(64)&lt;br/&gt;recurrence_rule : VARCHAR(64)&lt;br/&gt;reminder_offset : INTEGER&lt;br/&gt;recurrence_end : TIMESTAMP&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="420" y="120" width="350" height="340" as="geometry"/>
+        </mxCell>
+        <mxCell id="tags" value="&lt;div style=&quot;font-family:Helvetica;font-size:15px;&quot;&gt;&lt;b&gt;tags&lt;/b&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;font-family:Courier New;font-size:11px;line-height:1.5;&quot;&gt;PK id : BIGSERIAL&lt;br/&gt;UQ name : VARCHAR(128)&lt;br/&gt;color : VARCHAR(16)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="910" y="140" width="260" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_tags" value="&lt;div style=&quot;font-family:Helvetica;font-size:15px;&quot;&gt;&lt;b&gt;task_tags&lt;/b&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;font-family:Courier New;font-size:11px;line-height:1.5;&quot;&gt;PK, FK task_id : VARCHAR(64)&lt;br/&gt;PK, FK tag_id : BIGINT&lt;br/&gt;assigned_at : TIMESTAMP&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="860" y="320" width="310" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_statistics" value="&lt;div style=&quot;font-family:Helvetica;font-size:15px;&quot;&gt;&lt;b&gt;task_statistics&lt;/b&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;font-family:Courier New;font-size:11px;line-height:1.5;&quot;&gt;PK id : BIGSERIAL&lt;br/&gt;FK task_id : VARCHAR(64)&lt;br/&gt;operation_type : VARCHAR(32)&lt;br/&gt;operation_time : TIMESTAMP&lt;br/&gt;details : TEXT&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="420" y="520" width="320" height="165" as="geometry"/>
+        </mxCell>
+        <mxCell id="app_settings" value="&lt;div style=&quot;font-family:Helvetica;font-size:15px;&quot;&gt;&lt;b&gt;app_settings&lt;/b&gt;&lt;/div&gt;&lt;hr/&gt;&lt;div style=&quot;font-family:Courier New;font-size:11px;line-height:1.5;&quot;&gt;PK key : VARCHAR(128)&lt;br/&gt;value : TEXT&lt;br/&gt;updated_at : TIMESTAMP&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#fff2cc;strokeColor=#d79b00;fontColor=#1a1a1a;" vertex="1" parent="1">
+          <mxGeometry x="910" y="540" width="260" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge_tasks_users" value="N:1 owner_user_id -&gt; users.id&#10;ON DELETE SET NULL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#6c8ebf;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;" edge="1" parent="1" source="tasks" target="users">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge_tasktags_tasks" value="N:1 task_id -&gt; tasks.id&#10;ON DELETE CASCADE" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9673a6;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;" edge="1" parent="1" source="task_tags" target="tasks">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge_tasktags_tags" value="N:1 tag_id -&gt; tags.id&#10;ON DELETE CASCADE" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#82b366;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;" edge="1" parent="1" source="task_tags" target="tags">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge_taskstats_tasks" value="N:1 task_id -&gt; tasks.id&#10;ON DELETE CASCADE" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;" edge="1" parent="1" source="task_statistics" target="tasks">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

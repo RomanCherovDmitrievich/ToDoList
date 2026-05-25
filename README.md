@@ -22,9 +22,9 @@ ToDoList состоит из нескольких слоёв:
 
 Статус по Windows:
 
-- в коде уже есть Windows-ветка для путей данных и базовой проверки системных команд;
-- для Windows добавлены отдельные `PowerShell` и `.bat`-точки входа;
-- в текущем macOS-окружении я не могу физически запустить приложение на настоящей Windows-машине, поэтому Windows-поддержка в этом проходе проверена через код, скрипты запуска и кроссплатформенные ветки, но не через реальный Windows runtime.
+- в коде есть Windows-ветка для путей данных и системных команд;
+- для Windows оставлены только `setup.bat` и `run.bat`;
+- `run.bat` ищет JDK через `JAVA_HOME`, `where javac` и типовые папки `Program Files`, а `JavaFX SDK` ищет через `JAVAFX_HOME` или `javafx-sdk-*` рядом с проектом.
 
 ## Требования
 
@@ -51,8 +51,8 @@ ToDoList состоит из нескольких слоёв:
 Что нужно подготовить заранее:
 
 - распаковать `javafx-sdk-25.0.2` в корень проекта или выставить `JAVAFX_HOME`;
-- для Linux/RedOS/macOS можно использовать shell-скрипты из `scripts/`;
-- для Windows добавлены `PowerShell`-скрипты и `.bat`-обёртки;
+- для Linux/RedOS/macOS используются корневые shell-скрипты;
+- для Windows используются только `setup.bat` и `run.bat`;
 - для отправки email через SMTP при необходимости заполнить `data/email.properties`.
 
 ## Запуск
@@ -62,19 +62,13 @@ ToDoList состоит из нескольких слоёв:
 macOS / Linux / RedOS:
 
 ```bash
-./scripts/setup.sh
-```
-
-Windows PowerShell:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\setup.ps1
+./setup.sh
 ```
 
 Windows CMD:
 
 ```bat
-scripts\setup_windows.bat
+setup.bat
 ```
 
 ### Запуск desktop-приложения
@@ -82,20 +76,16 @@ scripts\setup_windows.bat
 macOS / Linux / RedOS:
 
 ```bash
-./scripts/run.sh
-```
-
-Windows PowerShell:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\run.ps1
+./run.sh
 ```
 
 Windows CMD:
 
 ```bat
-scripts\run_windows.bat
+run.bat
 ```
+
+Скрипт `run.bat` запускается напрямую через `cmd.exe` и не требует `PowerShell`.
 
 Если нужно указать собственную папку с музыкой:
 
@@ -103,14 +93,7 @@ macOS / Linux / RedOS:
 
 ```bash
 export TODOLIST_AUDIO_DIR="/audio"
-./scripts/run.sh
-```
-
-Windows PowerShell:
-
-```powershell
-$env:TODOLIST_AUDIO_DIR="C:\audio"
-powershell -ExecutionPolicy Bypass -File .\scripts\run.ps1
+./run.sh
 ```
 
 ### Запуск тестов
@@ -118,19 +101,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\run.ps1
 macOS / Linux / RedOS:
 
 ```bash
-./run_tests.sh
-```
-
-Windows PowerShell:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\run_tests.ps1
-```
-
-Windows CMD:
-
-```bat
-scripts\run_tests_windows.bat
+./run_test.sh
 ```
 
 После выполнения тестов:
@@ -138,16 +109,6 @@ scripts\run_tests_windows.bat
 - текстовый лог попадает в `tests/reports/test_results_<timestamp>.txt`;
 - JUnit XML лежит в `tests/reports/junit-xml-<timestamp>/`;
 - красивый HTML-отчёт генерируется в `tests/reports/test_report_<timestamp>.html`.
-
-### Упаковка desktop-приложения
-
-macOS / Linux / RedOS:
-
-```bash
-./scripts/package_app.sh
-```
-
-На Windows упаковка тоже поддерживается, но требует `jpackage` в составе JDK и запуск из Windows-среды.
 
 ## Что реализовано
 
@@ -188,7 +149,9 @@ macOS / Linux / RedOS:
 - `src/view`, `src/viewmodel` — UI и ViewModel.
 - `src/util` — JSON, аудио, уведомления, напоминания, темы, авторизация, CLI.
 - `tables.sql` — SQL схема БД.
-- `scripts/` — setup/run/package для macOS, RedOS/Linux, Windows.
+- Скрипты проекта:
+  - `setup.sh`, `run.sh`, `run_test.sh`, `generate_doxygen.sh`
+  - `setup.bat`, `run.bat`
 - `phone.md` — план переноса на Android/iPhone и оптимизации под телефоны.
 - `mobile/android` — buildable Android-клиент на Kotlin/Compose.
 - `mobile/ios` — buildable iPhone-клиент на Swift/SwiftUI через `XcodeGen`.
@@ -210,16 +173,7 @@ cp data/db.properties.example data/db.properties
 - `src/repository/SqlDialect.java`: различия SQL между SQLite, PostgreSQL и MySQL.
 - `src/repository/TaskDao.java`: единый DAO-интерфейс для задач.
 - `src/repository/DatabaseManager.java`: реализация DAO, создание таблиц, миграции, UPSERT задач, пользователи и настройки.
-- `src/util/DatabaseCli.java`: `probe`-проверка подключения и массовая генерация задач.
-- `scripts/test_db_connection.sh`: строки `7-21` собирают проект и запускают JDBC-проверку.
-- `scripts/fill_tasks.sh`: строки `7-27` принимают количество записей и запускают массовое заполнение.
-
-Быстрые команды:
-
-```bash
-./scripts/test_db_connection.sh
-./scripts/fill_tasks.sh 1000
-```
+- `src/util/DatabaseCli.java`: CLI-утилита для проверки подключения и генерации данных.
 
 Подробная инструкция и разбор ошибок: `подключение_к_БД.md`
 
@@ -289,18 +243,6 @@ cp data/db.properties.example data/db.properties
   - не использовать личную почту и не зависеть от `Mail.app`.
 - Если почтовая отправка не настроена, код восстановления сохраняется в `notifications_outbox.log`.
 
-## Упаковка приложения
-
-Единый скрипт упаковки:
-
-```bash
-./scripts/package_app.sh
-```
-
-- macOS: создаёт `.app` (приоритетный сценарий).
-- Linux/RedOS: создаёт `app-image`.
-- Windows: создаёт `app-image`/`exe` (если поддерживается `jpackage`).
-
 ## Календарь и синхронизация
 
 - На вкладке **Календарь** теперь есть:
@@ -337,9 +279,6 @@ cp data/db.properties.example data/db.properties
 ## Android и iPhone
 
 - Отдельный план мобильного переноса находится в `phone.md`.
-- В репозитории уже собираются отдельные мобильные клиенты:
-  - Android: `./scripts/build_android_mobile.sh`
-  - iPhone: `./scripts/build_ios_mobile.sh`
 - Фактически собранные артефакты лежат здесь:
   - Android debug APK: `mobile/android/app/build/outputs/apk/debug/app-debug.apk`
   - iPhone Simulator `.app`: `mobile/ios/build/ios-sim/Build/Products/Debug-iphonesimulator/ToDoListMobile.app`
@@ -366,7 +305,7 @@ cp data/db.properties.example data/db.properties
 ## Doxygen
 
 ```bash
-./generate_docs.sh
+./generate_doxygen.sh
 ```
 
 Важные страницы:

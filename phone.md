@@ -10,9 +10,7 @@
   - `mobile/android`
   - `mobile/ios`
   - `mobile/shared/ARCHITECTURE.md`
-- Добавлены скрипты сборки:
-  - `scripts/build_android_mobile.sh`
-  - `scripts/build_ios_mobile.sh`
+- Отдельные мобильные клиенты уже лежат в репозитории и могут собираться своими стандартными инструментами Android Studio / Xcode.
 
 ## Что важно понимать честно
 
