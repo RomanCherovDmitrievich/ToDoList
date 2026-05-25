@@ -113,31 +113,62 @@ for /f "delims=" %%D in ('dir /b /ad /o-n "%~1\\*jdk*" 2^>nul') do (
 exit /b 0
 
 :resolve_javafx_home
-if defined JAVAFX_HOME if exist "%JAVAFX_HOME%\lib" exit /b 0
-
-if exist "%PROJECT_ROOT%\.javafx\lib" (
-    set "JAVAFX_HOME=%PROJECT_ROOT%\.javafx"
-    exit /b 0
+if defined JAVAFX_HOME (
+    set "RAW_JAVAFX_HOME=%JAVAFX_HOME%"
+    call :validate_javafx_home "%JAVAFX_HOME%"
+    if not errorlevel 1 exit /b 0
+    echo [setup] Ignoring invalid JAVAFX_HOME: !RAW_JAVAFX_HOME!
 )
 
-set "JAVAFX_CANDIDATE="
+call :validate_javafx_home "%PROJECT_ROOT%\.javafx"
+if not errorlevel 1 exit /b 0
+
 for /f "delims=" %%D in ('dir /b /ad /o-n "%PROJECT_ROOT%\\javafx-sdk-*" 2^>nul') do (
-    if not defined JAVAFX_CANDIDATE set "JAVAFX_CANDIDATE=%PROJECT_ROOT%\%%D"
-)
-if defined JAVAFX_CANDIDATE if exist "%JAVAFX_CANDIDATE%\lib" (
-    set "JAVAFX_HOME=%JAVAFX_CANDIDATE%"
-    exit /b 0
+    call :validate_javafx_home "%PROJECT_ROOT%\%%D"
+    if not errorlevel 1 exit /b 0
 )
 
-set "JAVAFX_CANDIDATE="
 for /f "delims=" %%D in ('dir /b /ad /o-n "%PROJECT_ROOT%\\..\\javafx-sdk-*" 2^>nul') do (
-    if not defined JAVAFX_CANDIDATE set "JAVAFX_CANDIDATE=%PROJECT_ROOT%\..\%%D"
+    call :validate_javafx_home "%PROJECT_ROOT%\..\%%D"
+    if not errorlevel 1 exit /b 0
 )
-if defined JAVAFX_CANDIDATE if exist "%JAVAFX_CANDIDATE%\lib" (
-    for %%I in ("%JAVAFX_CANDIDATE%") do set "JAVAFX_HOME=%%~fI"
-    exit /b 0
-)
+
+call :search_javafx_under "%PROJECT_ROOT%"
+if not errorlevel 1 exit /b 0
+
+call :search_javafx_under "%PROJECT_ROOT%\.."
+if not errorlevel 1 exit /b 0
 
 echo [setup] JavaFX SDK not found.
+echo [setup] Expected one of these paths:
+echo [setup]   %PROJECT_ROOT%\javafx-sdk-25.0.2\lib\javafx.controls.jar
+if defined RAW_JAVAFX_HOME echo [setup]   !RAW_JAVAFX_HOME!\lib\javafx.controls.jar
 echo [setup] Put javafx-sdk-25.0.2 next to setup.bat or set JAVAFX_HOME.
+exit /b 1
+
+:validate_javafx_home
+if "%~1"=="" exit /b 1
+if exist "%~1\lib\javafx.controls.jar" (
+    for %%I in ("%~1") do set "JAVAFX_HOME=%%~fI"
+    exit /b 0
+)
+if exist "%~1\javafx.controls.jar" (
+    for %%I in ("%~1\..") do set "JAVAFX_HOME=%%~fI"
+    exit /b 0
+)
+for /f "delims=" %%D in ('dir /b /ad /o-n "%~1\\javafx-sdk-*" 2^>nul') do (
+    if exist "%~1\%%D\lib\javafx.controls.jar" (
+        for %%I in ("%~1\%%D") do set "JAVAFX_HOME=%%~fI"
+        exit /b 0
+    )
+)
+exit /b 1
+
+:search_javafx_under
+if "%~1"=="" exit /b 1
+if not exist "%~1" exit /b 1
+for /f "delims=" %%D in ('dir /b /ad /o-n "%~1" 2^>nul') do (
+    call :validate_javafx_home "%~1\%%D"
+    if not errorlevel 1 exit /b 0
+)
 exit /b 1
